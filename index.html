@@ -23,7 +23,13 @@
     th, td {
       border: 1px solid gray;
       padding: 8px;
+      /* Default left alignment will be overridden for specific columns below */
       text-align: left;
+    }
+    /* Center all columns except for the first two (Detection Name & Description) */
+    #detectionsTable td:not(:nth-child(1)):not(:nth-child(2)),
+    #detectionsTable th:not(:nth-child(1)):not(:nth-child(2)) {
+      text-align: center;
     }
     th {
       background-color: #C00; /* Company Red */
@@ -223,7 +229,6 @@
     }
     
     // Load data from detections.json and populate the table.
-    // The "detectionID" field (if present) is loaded but not displayed.
     function loadData() {
       fetch('detections.json?v=' + new Date().getTime())
         .then(response => response.json())
@@ -251,7 +256,7 @@
         .catch(error => console.error('Error loading JSON data:', error));
     }
     
-    // Multi-select filtering function (unchanged)
+    // Multi-select filtering function
     function filterTable() {
       const searchInput = document.getElementById("search").value.toLowerCase();
       
@@ -313,8 +318,7 @@
       filterTable();
     }
     
-    // Toggle the visibility of a table column (for both header and cells)
-    // colIndex: zero-based column index; forceShow (optional) forces column to be shown/hidden
+    // Toggle the visibility of a table column
     function toggleColumn(colIndex, forceShow = null) {
       const checkbox = document.querySelectorAll("#columnDropdown input[type='checkbox']")[colIndex];
       const showColumn = forceShow !== null ? forceShow : checkbox.checked;
@@ -338,7 +342,6 @@
       const tbody = table.tBodies[0];
       const rows = Array.from(tbody.querySelectorAll("tr"));
       
-      // Toggle sort direction for the column
       sortDirections[columnIndex] = sortDirections[columnIndex] === 'asc' ? 'desc' : 'asc';
       const direction = sortDirections[columnIndex];
       
