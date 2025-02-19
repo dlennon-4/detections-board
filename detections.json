@@ -68,5 +68,19 @@
     "connector": "",
     "tool": "Stellar Cyber",
     "dateAdded": "2025-02-19"
+  },
+  {
+    "detectionID": "ALERT006",
+    "name": "Brute Forcing via VPN",
+    "description": "",
+    "defaultStatus": "Alert Preferences",
+    "killChainStage": "Reconnaissance",
+    "mitreTactic": "Initial Access",
+    "mitreTacticID": "TA0001",
+    "mitreTechnique": "Spear Phishing",
+    "mitreTechniqueID": "T1192",
+    "connector": "Fortigate",
+    "tool": "Stellar Cyber",
+    "dateAdded": "2025-02-19"
   }
 ]
