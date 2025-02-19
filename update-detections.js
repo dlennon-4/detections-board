@@ -11,9 +11,8 @@ if (!MONDAY_API_KEY) {
   process.exit(1);
 }
 
-// Construct the query as a single-line string.
-// Note the addition of items(limit: 100) to satisfy Monday.com's API requirements.
-const query = `query { boards(ids: [${BOARD_ID}]) { id name items(limit: 100) { id name column_values { title text } } } }`;
+// Construct the query to fetch groups and their items.
+const query = `query { boards(ids: [${BOARD_ID}]) { id name groups { id title items { id name column_values { title text value } } } } }`;
 console.log("Final Query:", query);
 
 async function fetchMondayData() {
@@ -27,7 +26,23 @@ async function fetchMondayData() {
       },
       data: JSON.stringify({ query: query })
     });
-    return response.data.data.boards[0].items;
+    
+    const boards = response.data.data.boards;
+    if (!boards || boards.length === 0) {
+      console.error("No board found.");
+      process.exit(1);
+    }
+    const board = boards[0];
+    // Flatten items from all groups into a single array.
+    let items = [];
+    if (board.groups && board.groups.length > 0) {
+      board.groups.forEach(group => {
+        if (group.items && group.items.length > 0) {
+          items = items.concat(group.items);
+        }
+      });
+    }
+    return items;
   } catch (error) {
     if (error.response && error.response.data) {
       console.error("Error response data:", error.response.data);
@@ -42,7 +57,7 @@ function loadCurrentDetections() {
     const data = fs.readFileSync('detections.json', 'utf8');
     return JSON.parse(data);
   } catch (error) {
-    // If detections.json doesn't exist, return an empty array
+    // If detections.json doesn't exist, return an empty array.
     return [];
   }
 }
@@ -51,12 +66,34 @@ function writeDetections(detections) {
   fs.writeFileSync('detections.json', JSON.stringify(detections, null, 2));
 }
 
-// Map a Monday.com item to your detection JSON structure using your custom column titles.
+// Helper function to extract the most useful column value.
+function getColumnValue(cv) {
+  if (cv.text && cv.text.trim() !== "") {
+    return cv.text;
+  }
+  if (cv.value) {
+    try {
+      const parsed = JSON.parse(cv.value);
+      if (parsed && parsed.label) {
+        return parsed.label;
+      }
+      if (parsed && parsed.text) {
+        return parsed.text;
+      }
+      return JSON.stringify(parsed);
+    } catch (e) {
+      return cv.value;
+    }
+  }
+  return "";
+}
+
+// Map Monday.com item to your detection JSON structure using your custom column titles.
 function mapItemToDetection(item) {
   const columns = {};
   item.column_values.forEach(cv => {
-    // Use cv.title as the key for mapping
-    columns[cv.title] = cv.text;
+    // Use cv.title as the key for mapping and our helper function for the value.
+    columns[cv.title] = getColumnValue(cv);
   });
   
   return {
@@ -85,7 +122,7 @@ async function updateDetections() {
     detectionMap[det.detectionID] = det;
   });
   
-  // Process each item from Monday.com: update if it exists or add as new.
+  // Process each item from Monday.com: update if it exists or add new.
   mondayItems.forEach(item => {
     const detection = mapItemToDetection(item);
     detectionMap[detection.detectionID] = detection;
