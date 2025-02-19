@@ -11,8 +11,8 @@ if (!MONDAY_API_KEY) {
   process.exit(1);
 }
 
-// Query for groups and their pulses (the underlying field for items on older boards)
-const query = `query { boards(ids: [${BOARD_ID}]) { id name groups { id title pulses { id name column_values { title text value } } } } }`;
+// Construct the GraphQL query to fetch items directly from the board.
+const query = `query { boards(ids: [${BOARD_ID}]) { id name items { id name column_values { title text value } } } }`;
 console.log("Final Query:", query);
 
 async function fetchMondayData() {
@@ -33,16 +33,8 @@ async function fetchMondayData() {
       process.exit(1);
     }
     const board = boards[0];
-    // Flatten pulses from all groups into a single array.
-    let items = [];
-    if (board.groups && board.groups.length > 0) {
-      board.groups.forEach(group => {
-        if (group.pulses && group.pulses.length > 0) {
-          items = items.concat(group.pulses);
-        }
-      });
-    }
-    return items;
+    // Return items directly from the board.
+    return board.items;
   } catch (error) {
     if (error.response && error.response.data) {
       console.error("Error response data:", error.response.data);
@@ -66,7 +58,7 @@ function writeDetections(detections) {
   fs.writeFileSync('detections.json', JSON.stringify(detections, null, 2));
 }
 
-// Helper function to extract the best available column value.
+// Helper function to extract the best available value from a column.
 function getColumnValue(cv) {
   if (cv.text && cv.text.trim() !== "") {
     return cv.text;
@@ -88,7 +80,7 @@ function getColumnValue(cv) {
   return "";
 }
 
-// Map a Monday.com pulse (detection) to your detection JSON structure.
+// Map a Monday.com item to your detection JSON structure using your custom column titles.
 function mapItemToDetection(item) {
   const columns = {};
   item.column_values.forEach(cv => {
@@ -122,7 +114,7 @@ async function updateDetections() {
     detectionMap[det.detectionID] = det;
   });
   
-  // Update or add each pulse from Monday.com.
+  // Process each item from Monday.com: update if it exists or add as new.
   mondayItems.forEach(item => {
     const detection = mapItemToDetection(item);
     detectionMap[detection.detectionID] = detection;
