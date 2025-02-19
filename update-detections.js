@@ -1,13 +1,12 @@
-// Remove later, just for debugging
-console.log("BOARD_ID is:", JSON.stringify(process.env.MONDAY_BOARD_ID));
-
 // update-detections.js
 const axios = require('axios');
 const fs = require('fs');
 
 // Retrieve your Monday API key and board id from environment variables
 const MONDAY_API_KEY = process.env.MONDAY_API_KEY;
-const BOARD_ID = process.env.MONDAY_BOARD_ID; // e.g., "123456789"
+// Convert the board ID to a number:
+const BOARD_ID = Number(process.env.MONDAY_BOARD_ID); // e.g., "123456789"
+console.log("BOARD_ID as number:", BOARD_ID);
 
 // Define the GraphQL query to fetch items from the board.
 // This query retrieves the board by id and gets all items with their column values.
