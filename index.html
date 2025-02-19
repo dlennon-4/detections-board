@@ -1,36 +1,393 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SOC Detections Board</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { border: 1px solid black; padding: 10px; text-align: left; }
-        th { background-color: #f2f2f2; }
-    </style>
+  <title>SOC Detections Board</title>
+  <style>
+    /* Base styling using company colors */
+    body {
+      background-color: #CCCCCC; /* Light Gray Background */
+      color: black;
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      text-align: center;
+    }
+    #filters {
+      margin-bottom: 20px;
+    }
+    table {
+      width: 95%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    th, td {
+      border: 1px solid gray;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #C00; /* Company Red */
+      color: white;
+      cursor: pointer;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #f2f2f2; /* Light Gray */
+    }
+    tbody tr:nth-child(odd) {
+      background-color: white;
+    }
+    tbody tr:hover {
+      background-color: #ddd;
+    }
+    input, button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    /* Export CSV button stays green */
+    button.exportBtn {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button.exportBtn:hover {
+      background-color: #218838;
+    }
+    /* Reset button in company red */
+    button.resetBtn {
+      background-color: #C00;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button.resetBtn:hover {
+      background-color: #a00000;
+    }
+    /* Dropdown button for filters and column selection */
+    .dropbtn {
+      background-color: black;
+      color: white;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      margin: 10px;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 220px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding: 12px 16px;
+      z-index: 1;
+      text-align: left;
+      border: 1px solid gray;
+    }
+    .dropdown-content label {
+      display: block;
+      padding: 5px 0;
+      cursor: pointer;
+      color: black;
+    }
+    .dropdown-content label:hover {
+      background-color: #ddd;
+    }
+    .show {
+      display: block;
+    }
+  </style>
 </head>
 <body>
-    <h1>📌 SOC Detections Board</h1>
-    <table>
-        <tr>
-            <th>Date</th>
-            <th>Detection Name</th>
-            <th>Severity</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>2025-02-18</td>
-            <td>Suspicious Login</td>
-            <td>High</td>
-            <td>Unusual login detected from a foreign country.</td>
-        </tr>
-        <tr>
-            <td>2025-02-17</td>
-            <td>Ransomware Activity</td>
-            <td>Critical</td>
-            <td>Indicators of ransomware detected.</td>
-        </tr>
-    </table>
-    <p><i>Last updated: 2025-02-19</i></p>
+  <h1>📌 SOC Detections Board</h1>
+  
+  <!-- Filters -->
+  <div id="filters">
+    <!-- Text Search -->
+    <input type="text" id="search" onkeyup="filterTable()" placeholder="🔍 Search...">
+    
+    <!-- Multi-select Default Status Filter Dropdown -->
+    <div class="dropdown">
+      <button onclick="toggleDropdown('statusDropdown')" class="dropbtn">Default Status Filter ▼</button>
+      <div id="statusDropdown" class="dropdown-content">
+        <label><input type="checkbox" value="Active" checked onchange="filterTable()"> Active</label>
+        <label><input type="checkbox" value="Not Active" checked onchange="filterTable()"> Not Active</label>
+        <label><input type="checkbox" value="New Detection" checked onchange="filterTable()"> New Detection</label>
+        <label><input type="checkbox" value="Alert Preferences" checked onchange="filterTable()"> Alert Preferences</label>
+        <label><input type="checkbox" value="Muted" checked onchange="filterTable()"> Muted</label>
+        <label><input type="checkbox" value="Testing" checked onchange="filterTable()"> Testing</label>
+        <label><input type="checkbox" value="Active via Custom Rules" checked onchange="filterTable()"> Active via Custom Rules</label>
+      </div>
+    </div>
+    
+    <!-- Multi-select Tool Filter Dropdown -->
+    <div class="dropdown">
+      <button onclick="toggleDropdown('toolDropdown')" class="dropbtn">Tool Filter ▼</button>
+      <div id="toolDropdown" class="dropdown-content">
+        <label><input type="checkbox" value="Stellar Cyber" checked onchange="filterTable()"> Stellar Cyber</label>
+        <label><input type="checkbox" value="LevelBlue" checked onchange="filterTable()"> LevelBlue</label>
+        <label><input type="checkbox" value="CrowdStrike" checked onchange="filterTable()"> CrowdStrike</label>
+        <label><input type="checkbox" value="SentinelOne" checked onchange="filterTable()"> SentinelOne</label>
+      </div>
+    </div>
+    
+    <!-- Reset & Export Buttons -->
+    <button class="resetBtn" onclick="resetFilters()">❌ Reset Filters</button>
+    <button class="exportBtn" onclick="exportTableToCSV()">📤 Export CSV</button>
+    
+    <!-- Column Selection Dropdown -->
+    <div class="dropdown">
+      <button onclick="toggleDropdown('columnDropdown')" class="dropbtn">Select Columns ▼</button>
+      <div id="columnDropdown" class="dropdown-content">
+        <label><input type="checkbox" checked onchange="toggleColumn(0)"> Detection Name</label>
+        <label><input type="checkbox" checked onchange="toggleColumn(1)"> Description</label>
+        <label><input type="checkbox" checked onchange="toggleColumn(2)"> Default Status</label>
+        <label><input type="checkbox" checked onchange="toggleColumn(3)"> Kill Chain Stage</label>
+        <label><input type="checkbox" checked onchange="toggleColumn(4)"> MITRE Tactic</label>
+        <label><input type="checkbox" checked onchange="toggleColumn(5)"> MITRE Tactic ID</label>
+        <label><input type="checkbox" checked onchange="toggleColumn(6)"> MITRE Technique</label>
+        <label><input type="checkbox" checked onchange="toggleColumn(7)"> MITRE Technique ID</label>
+        <label><input type="checkbox" checked onchange="toggleColumn(8)"> Connector</label>
+        <label><input type="checkbox" checked onchange="toggleColumn(9)"> Tool</label>
+        <label><input type="checkbox" checked onchange="toggleColumn(10)"> Date Added</label>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Data Table -->
+  <table id="detectionsTable">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">Detection Name</th>
+        <th onclick="sortTable(1)">Description</th>
+        <th onclick="sortTable(2)">Default Status</th>
+        <th onclick="sortTable(3)">Kill Chain Stage</th>
+        <th onclick="sortTable(4)">MITRE Tactic</th>
+        <th onclick="sortTable(5)">MITRE Tactic ID</th>
+        <th onclick="sortTable(6)">MITRE Technique</th>
+        <th onclick="sortTable(7)">MITRE Technique ID</th>
+        <th onclick="sortTable(8)">Connector</th>
+        <th onclick="sortTable(9)">Tool</th>
+        <th onclick="sortTable(10)">Date Added</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Suspicious Login</td>
+        <td>Unusual login detected from foreign IP</td>
+        <td>Active</td>
+        <td>Reconnaissance</td>
+        <td>Initial Access</td>
+        <td>TA0001</td>
+        <td>Phishing</td>
+        <td>T1566</td>
+        <td>Connector A</td>
+        <td>CrowdStrike</td>
+        <td>2025-02-18</td>
+      </tr>
+      <tr>
+        <td>Ransomware Activity</td>
+        <td>Indicators of ransomware detected</td>
+        <td>New Detection</td>
+        <td>Delivery</td>
+        <td>Impact</td>
+        <td>TA0040</td>
+        <td>Data Encrypted</td>
+        <td>T1486</td>
+        <td>Connector B</td>
+        <td>SentinelOne</td>
+        <td>2025-02-17</td>
+      </tr>
+      <tr>
+        <td>Brute Force Attack</td>
+        <td>Multiple failed login attempts</td>
+        <td>Muted</td>
+        <td>Exploitation</td>
+        <td>Credential Access</td>
+        <td>TA0006</td>
+        <td>Password Guessing</td>
+        <td>T1110</td>
+        <td>Connector C</td>
+        <td>Stellar Cyber</td>
+        <td>2025-02-16</td>
+      </tr>
+      <tr>
+        <td>Phishing Attempt</td>
+        <td>Suspicious email with malicious links</td>
+        <td>Active via Custom Rules</td>
+        <td>Reconnaissance</td>
+        <td>Initial Access</td>
+        <td>TA0001</td>
+        <td>Spear Phishing</td>
+        <td>T1192</td>
+        <td>Connector D</td>
+        <td>LevelBlue</td>
+        <td>2025-02-15</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <p><i>Last updated: 2025-02-19</i></p>
+  
+  <script>
+    // Global object to keep track of sort directions per column
+    const sortDirections = {};
+    
+    // Toggle a dropdown (by id)
+    function toggleDropdown(id) {
+      document.getElementById(id).classList.toggle("show");
+    }
+    
+    // Close any open dropdowns if the user clicks outside
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        const dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+          dropdowns[i].classList.remove('show');
+        }
+      }
+    }
+    
+    // Multi-select filtering function
+    function filterTable() {
+      const searchInput = document.getElementById("search").value.toLowerCase();
+      
+      // Gather selected Default Status values
+      const statusCheckboxes = document.querySelectorAll("#statusDropdown input[type='checkbox']");
+      let selectedStatuses = [];
+      statusCheckboxes.forEach(cb => {
+        if (cb.checked) selectedStatuses.push(cb.value);
+      });
+      const allStatusCount = statusCheckboxes.length;
+      
+      // Gather selected Tool values
+      const toolCheckboxes = document.querySelectorAll("#toolDropdown input[type='checkbox']");
+      let selectedTools = [];
+      toolCheckboxes.forEach(cb => {
+        if (cb.checked) selectedTools.push(cb.value);
+      });
+      const allToolCount = toolCheckboxes.length;
+      
+      const table = document.getElementById("detectionsTable");
+      const rows = table.getElementsByTagName("tr");
+      
+      // Loop through data rows (skip header row)
+      for (let i = 1; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName("td");
+        const rowText = rows[i].textContent.toLowerCase();
+        
+        // Default Status is in cell index 2; Tool is in cell index 9
+        const statusText = cells[2].textContent.trim();
+        const toolText = cells[9].textContent.trim();
+        
+        // If all checkboxes are checked then treat as no filtering
+        const matchesSearch = rowText.includes(searchInput);
+        const matchesStatus = (selectedStatuses.length === allStatusCount) || selectedStatuses.includes(statusText);
+        const matchesTool = (selectedTools.length === allToolCount) || selectedTools.includes(toolText);
+        
+        rows[i].style.display = (matchesSearch && matchesStatus && matchesTool) ? "" : "none";
+      }
+    }
+    
+    // Reset filters: clears text search and re-checks all filter checkboxes and column checkboxes
+    function resetFilters() {
+      document.getElementById("search").value = "";
+      
+      // Reset Default Status filter checkboxes
+      const statusCheckboxes = document.querySelectorAll("#statusDropdown input[type='checkbox']");
+      statusCheckboxes.forEach(cb => { cb.checked = true; });
+      
+      // Reset Tool filter checkboxes
+      const toolCheckboxes = document.querySelectorAll("#toolDropdown input[type='checkbox']");
+      toolCheckboxes.forEach(cb => { cb.checked = true; });
+      
+      // Reset Column selection checkboxes
+      const columnCheckboxes = document.querySelectorAll("#columnDropdown input[type='checkbox']");
+      columnCheckboxes.forEach((cb, index) => {
+        cb.checked = true;
+        toggleColumn(index, true);
+      });
+      
+      filterTable();
+    }
+    
+    // Toggle the visibility of a table column (for both header and cells)
+    // colIndex: zero-based column index; forceShow (optional) forces column to be shown/hidden
+    function toggleColumn(colIndex, forceShow = null) {
+      const checkbox = document.querySelectorAll("#columnDropdown input[type='checkbox']")[colIndex];
+      const showColumn = forceShow !== null ? forceShow : checkbox.checked;
+      const table = document.getElementById("detectionsTable");
+      const ths = table.getElementsByTagName("th");
+      if (ths[colIndex]) {
+        ths[colIndex].style.display = showColumn ? "" : "none";
+      }
+      const rows = table.getElementsByTagName("tr");
+      for (let i = 0; i < rows.length; i++) {
+        const cells = rows[i].children;
+        if (cells[colIndex]) {
+          cells[colIndex].style.display = showColumn ? "" : "none";
+        }
+      }
+    }
+    
+    // Sort table rows based on the specified column index
+    function sortTable(columnIndex) {
+      const table = document.getElementById("detectionsTable");
+      const tbody = table.tBodies[0];
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+      
+      // Toggle sort direction for the column
+      sortDirections[columnIndex] = sortDirections[columnIndex] === 'asc' ? 'desc' : 'asc';
+      const direction = sortDirections[columnIndex];
+      
+      rows.sort((a, b) => {
+        const cellA = a.children[columnIndex].textContent.trim();
+        const cellB = b.children[columnIndex].textContent.trim();
+        // Attempt numeric comparison; if not numeric, compare as lowercase strings
+        const valA = isNaN(cellA) ? cellA.toLowerCase() : parseFloat(cellA);
+        const valB = isNaN(cellB) ? cellB.toLowerCase() : parseFloat(cellB);
+        
+        if (valA < valB) return direction === 'asc' ? -1 : 1;
+        if (valA > valB) return direction === 'asc' ? 1 : -1;
+        return 0;
+      });
+      
+      // Re-append sorted rows to the tbody
+      rows.forEach(row => tbody.appendChild(row));
+    }
+    
+    // Export visible table rows and columns to a CSV file
+    function exportTableToCSV() {
+      const csv = [];
+      const table = document.getElementById("detectionsTable");
+      const rows = table.querySelectorAll("tr");
+      
+      rows.forEach(row => {
+        const rowData = [];
+        row.querySelectorAll("th, td").forEach(cell => {
+          if (cell.style.display !== "none") {
+            const text = cell.textContent.replace(/"/g, '""');
+            rowData.push('"' + text + '"');
+          }
+        });
+        csv.push(rowData.join(","));
+      });
+      
+      const csvFile = new Blob([csv.join("\n")], { type: "text/csv" });
+      const downloadLink = document.createElement("a");
+      downloadLink.download = "detections_board.csv";
+      downloadLink.href = window.URL.createObjectURL(csvFile);
+      downloadLink.style.display = "none";
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+    }
+  </script>
 </body>
 </html>
