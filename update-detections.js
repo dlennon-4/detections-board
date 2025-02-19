@@ -1,18 +1,15 @@
-// update-detections.js
 const axios = require('axios');
 const fs = require('fs');
 
-// Retrieve your Monday API key and board id from environment variables
-const MONDAY_API_KEY = process.env.MONDAY_API_KEY;
-// Convert the board ID to a number:
-const BOARD_ID = Number(process.env.MONDAY_BOARD_ID); // e.g., "123456789"
-console.log("BOARD_ID as number:", BOARD_ID);
+// Hardcode the board ID here (as a number) instead of using an environment variable:
+const BOARD_ID = 6523846419;
 
-// Define the GraphQL query to fetch items from the board.
-// This query retrieves the board by id and gets all items with their column values.
+// Use your Monday API key as usual from the secret (or hardcode it similarly, though that’s not recommended for security):
+const MONDAY_API_KEY = process.env.MONDAY_API_KEY;
+
 const query = `
 query {
-  boards(ids: ${BOARD_ID}) {
+  boards(ids: [${BOARD_ID}]) {
     items {
       id
       name
@@ -36,7 +33,6 @@ async function fetchMondayData() {
       },
       data: JSON.stringify({ query })
     });
-    // Returns an array of items from your board
     return response.data.data.boards[0].items;
   } catch (error) {
     console.error("Error fetching Monday data:", error);
