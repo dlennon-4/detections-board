@@ -54,5 +54,19 @@
     "connector": "Connector D",
     "tool": "LevelBlue",
     "dateAdded": "2025-02-15"
+  },
+  {
+    "detectionID": "ALERT005",
+    "name": "Testing Detection",
+    "description": "",
+    "defaultStatus": "Testing",
+    "killChainStage": "Reconnaissance",
+    "mitreTactic": "Initial Access",
+    "mitreTacticID": "TA0001",
+    "mitreTechnique": "Spear Phishing",
+    "mitreTechniqueID": "T1192",
+    "connector": "",
+    "tool": "Stellar Cyber",
+    "dateAdded": "2025-02-19"
   }
 ]
