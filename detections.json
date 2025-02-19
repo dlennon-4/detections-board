@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Suspicious Login",
+    "description": "Unusual login detected from foreign IP",
+    "defaultStatus": "Active",
+    "killChainStage": "Reconnaissance",
+    "mitreTactic": "Initial Access",
+    "mitreTacticID": "TA0001",
+    "mitreTechnique": "Phishing",
+    "mitreTechniqueID": "T1566",
+    "connector": "Connector A",
+    "tool": "CrowdStrike",
+    "dateAdded": "2025-02-18"
+  },
+  {
+    "name": "Ransomware Activity",
+    "description": "Indicators of ransomware detected",
+    "defaultStatus": "New Detection",
+    "killChainStage": "Delivery",
+    "mitreTactic": "Impact",
+    "mitreTacticID": "TA0040",
+    "mitreTechnique": "Data Encrypted",
+    "mitreTechniqueID": "T1486",
+    "connector": "Connector B",
+    "tool": "SentinelOne",
+    "dateAdded": "2025-02-17"
+  },
+  {
+    "name": "Brute Force Attack",
+    "description": "Multiple failed login attempts",
+    "defaultStatus": "Muted",
+    "killChainStage": "Exploitation",
+    "mitreTactic": "Credential Access",
+    "mitreTacticID": "TA0006",
+    "mitreTechnique": "Password Guessing",
+    "mitreTechniqueID": "T1110",
+    "connector": "Connector C",
+    "tool": "Stellar Cyber",
+    "dateAdded": "2025-02-16"
+  },
+  {
+    "name": "Phishing Attempt",
+    "description": "Suspicious email with malicious links",
+    "defaultStatus": "Active via Custom Rules",
+    "killChainStage": "Reconnaissance",
+    "mitreTactic": "Initial Access",
+    "mitreTacticID": "TA0001",
+    "mitreTechnique": "Spear Phishing",
+    "mitreTechniqueID": "T1192",
+    "connector": "Connector D",
+    "tool": "LevelBlue",
+    "dateAdded": "2025-02-15"
+  }
+]
