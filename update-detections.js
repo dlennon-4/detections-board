@@ -1,19 +1,18 @@
 const axios = require('axios');
 const fs = require('fs');
 
-// Hardcoded board id (as a number)
+// Hardcode board ID as a number
 const BOARD_ID = 6523846419;
 
 // Use your Monday API key from the environment variable
 const MONDAY_API_KEY = process.env.MONDAY_API_KEY;
-
 if (!MONDAY_API_KEY) {
   console.error("MONDAY_API_KEY is not set.");
   process.exit(1);
 }
 
-// Single-line GraphQL query using cv.title to get column names
-const query = `query { boards(ids: [${BOARD_ID}]) { items { id name column_values { title text } } } }`;
+// Construct the query as a single-line string with the board ID wrapped in square brackets
+const query = "query { boards(ids: [" + BOARD_ID + "]) { items { id name column_values { title text } } } }";
 console.log("Final Query:", query);
 
 async function fetchMondayData() {
@@ -25,7 +24,7 @@ async function fetchMondayData() {
         'Authorization': MONDAY_API_KEY,
         'Content-Type': 'application/json'
       },
-      data: JSON.stringify({ query })
+      data: JSON.stringify({ query: query })
     });
     return response.data.data.boards[0].items;
   } catch (error) {
@@ -48,11 +47,11 @@ function writeDetections(detections) {
   fs.writeFileSync('detections.json', JSON.stringify(detections, null, 2));
 }
 
-// Map Monday.com item to your detection JSON structure using your custom column titles.
+// Map a Monday.com item to your detection JSON structure using your custom column titles.
 function mapItemToDetection(item) {
   const columns = {};
   item.column_values.forEach(cv => {
-    // Use cv.title for mapping keys.
+    // Use cv.title as the key for mapping
     columns[cv.title] = cv.text;
   });
   
@@ -82,7 +81,7 @@ async function updateDetections() {
     detectionMap[det.detectionID] = det;
   });
   
-  // Process each item from Monday.com: update if exists or add if new.
+  // Process each item from Monday.com: update if it exists or add as new.
   mondayItems.forEach(item => {
     const detection = mapItemToDetection(item);
     detectionMap[detection.detectionID] = detection;
