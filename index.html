@@ -177,58 +177,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Suspicious Login</td>
-        <td>Unusual login detected from foreign IP</td>
-        <td>Active</td>
-        <td>Reconnaissance</td>
-        <td>Initial Access</td>
-        <td>TA0001</td>
-        <td>Phishing</td>
-        <td>T1566</td>
-        <td>Connector A</td>
-        <td>CrowdStrike</td>
-        <td>2025-02-18</td>
-      </tr>
-      <tr>
-        <td>Ransomware Activity</td>
-        <td>Indicators of ransomware detected</td>
-        <td>New Detection</td>
-        <td>Delivery</td>
-        <td>Impact</td>
-        <td>TA0040</td>
-        <td>Data Encrypted</td>
-        <td>T1486</td>
-        <td>Connector B</td>
-        <td>SentinelOne</td>
-        <td>2025-02-17</td>
-      </tr>
-      <tr>
-        <td>Brute Force Attack</td>
-        <td>Multiple failed login attempts</td>
-        <td>Muted</td>
-        <td>Exploitation</td>
-        <td>Credential Access</td>
-        <td>TA0006</td>
-        <td>Password Guessing</td>
-        <td>T1110</td>
-        <td>Connector C</td>
-        <td>Stellar Cyber</td>
-        <td>2025-02-16</td>
-      </tr>
-      <tr>
-        <td>Phishing Attempt</td>
-        <td>Suspicious email with malicious links</td>
-        <td>Active via Custom Rules</td>
-        <td>Reconnaissance</td>
-        <td>Initial Access</td>
-        <td>TA0001</td>
-        <td>Spear Phishing</td>
-        <td>T1192</td>
-        <td>Connector D</td>
-        <td>LevelBlue</td>
-        <td>2025-02-15</td>
-      </tr>
+      <!-- Data will be dynamically loaded here from detections.json -->
     </tbody>
   </table>
   
@@ -251,6 +200,34 @@
           dropdowns[i].classList.remove('show');
         }
       }
+    }
+    
+    // Load JSON data from detections.json and populate the table
+    function loadData() {
+      fetch('detections.json')
+        .then(response => response.json())
+        .then(data => {
+          const tbody = document.querySelector('#detectionsTable tbody');
+          tbody.innerHTML = '';
+          data.forEach(detection => {
+            let row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${detection.name}</td>
+              <td>${detection.description}</td>
+              <td>${detection.defaultStatus}</td>
+              <td>${detection.killChainStage}</td>
+              <td>${detection.mitreTactic}</td>
+              <td>${detection.mitreTacticID}</td>
+              <td>${detection.mitreTechnique}</td>
+              <td>${detection.mitreTechniqueID}</td>
+              <td>${detection.connector}</td>
+              <td>${detection.tool}</td>
+              <td>${detection.dateAdded}</td>
+            `;
+            tbody.appendChild(row);
+          });
+        })
+        .catch(error => console.error('Error loading JSON data:', error));
     }
     
     // Multi-select filtering function
@@ -387,6 +364,9 @@
       downloadLink.click();
       document.body.removeChild(downloadLink);
     }
+    
+    // Load the data from detections.json when the page loads
+    window.onload = loadData;
   </script>
 </body>
 </html>
