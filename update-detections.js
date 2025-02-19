@@ -1,26 +1,20 @@
 const axios = require('axios');
 const fs = require('fs');
 
-// Hardcode the board ID here (as a number) instead of using an environment variable:
+// Hardcoded board id (as a number)
 const BOARD_ID = 6523846419;
 
-// Use your Monday API key as usual from the secret (or hardcode it similarly, though that’s not recommended for security):
+// Use your Monday API key from the environment variable
 const MONDAY_API_KEY = process.env.MONDAY_API_KEY;
 
-const query = `
-query {
-  boards(ids: [${BOARD_ID}]) {
-    items {
-      id
-      name
-      column_values {
-        id
-        text
-      }
-    }
-  }
+if (!MONDAY_API_KEY) {
+  console.error("MONDAY_API_KEY is not set.");
+  process.exit(1);
 }
-`;
+
+// Single-line GraphQL query using cv.title to get column names
+const query = `query { boards(ids: [${BOARD_ID}]) { items { id name column_values { title text } } } }`;
+console.log("Final Query:", query);
 
 async function fetchMondayData() {
   try {
@@ -45,7 +39,7 @@ function loadCurrentDetections() {
     const data = fs.readFileSync('detections.json', 'utf8');
     return JSON.parse(data);
   } catch (error) {
-    // If detections.json does not exist, return an empty array
+    // If detections.json doesn't exist, return an empty array
     return [];
   }
 }
@@ -54,16 +48,15 @@ function writeDetections(detections) {
   fs.writeFileSync('detections.json', JSON.stringify(detections, null, 2));
 }
 
-// Map a Monday.com item to your detection JSON structure
+// Map Monday.com item to your detection JSON structure using your custom column titles.
 function mapItemToDetection(item) {
-  // Create an object mapping column IDs to their text values.
   const columns = {};
   item.column_values.forEach(cv => {
-    columns[cv.id] = cv.text;
+    // Use cv.title for mapping keys.
+    columns[cv.title] = cv.text;
   });
   
   return {
-    // Use the custom detection_id column if present; otherwise, fallback to the Monday item id.
     detectionID: columns['Detection ID'] || item.id,
     name: item.name,
     description: columns['Description'] || '',
@@ -80,28 +73,23 @@ function mapItemToDetection(item) {
 }
 
 async function updateDetections() {
-  // 1. Fetch latest data from Monday.com
   const mondayItems = await fetchMondayData();
-  
-  // 2. Load current detections from detections.json
   const currentDetections = loadCurrentDetections();
   
-  // 3. Build a map (object) of current detections keyed by detectionID
+  // Build a map of current detections keyed by detectionID.
   const detectionMap = {};
   currentDetections.forEach(det => {
     detectionMap[det.detectionID] = det;
   });
   
-  // 4. Process each Monday.com item: update if detectionID exists; add if new
+  // Process each item from Monday.com: update if exists or add if new.
   mondayItems.forEach(item => {
     const detection = mapItemToDetection(item);
     detectionMap[detection.detectionID] = detection;
   });
   
-  // 5. Convert the map back to an array and write to detections.json
   const updatedDetections = Object.values(detectionMap);
   writeDetections(updatedDetections);
-  
   console.log("Detections updated successfully!");
 }
 
