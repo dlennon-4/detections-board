@@ -1,6 +1,7 @@
 [
   {
-    "name": "Suspicious Login - Using JSON File",
+    "detectionID": "ALERT001",
+    "name": "Suspicious Login - From JSON File", 
     "description": "Unusual login detected from foreign IP",
     "defaultStatus": "Active",
     "killChainStage": "Reconnaissance",
@@ -13,7 +14,8 @@
     "dateAdded": "2025-02-18"
   },
   {
-    "name": "Ransomware Activity",
+    "detectionID": "ALERT002",
+    "name": "Ransomware Activity - TESTing",
     "description": "Indicators of ransomware detected",
     "defaultStatus": "New Detection",
     "killChainStage": "Delivery",
@@ -26,7 +28,8 @@
     "dateAdded": "2025-02-17"
   },
   {
-    "name": "Brute Force Attack",
+    "detectionID": "ALERT003",
+    "name": "Brute Force Attack - A really solid alert",
     "description": "Multiple failed login attempts",
     "defaultStatus": "Muted",
     "killChainStage": "Exploitation",
@@ -39,6 +42,7 @@
     "dateAdded": "2025-02-16"
   },
   {
+    "detectionID": "ALERT004",
     "name": "Phishing Attempt",
     "description": "Suspicious email with malicious links",
     "defaultStatus": "Active via Custom Rules",
