@@ -1,6 +1,6 @@
 [
   {
-    "name": "Suspicious Login",
+    "name": "Suspicious Login - Using JSON File",
     "description": "Unusual login detected from foreign IP",
     "defaultStatus": "Active",
     "killChainStage": "Reconnaissance",
