@@ -11,8 +11,9 @@ if (!MONDAY_API_KEY) {
   process.exit(1);
 }
 
-// Construct the query as a single-line string with the board ID wrapped in square brackets
-const query = "query { boards(ids: [" + BOARD_ID + "]) { items { id name column_values { title text } } } }";
+// Construct the query as a single-line string.
+// The board ID is wrapped in an array.
+const query = `query { boards(ids: [${BOARD_ID}]) { items { id name column_values { title text } } } }`;
 console.log("Final Query:", query);
 
 async function fetchMondayData() {
@@ -28,7 +29,11 @@ async function fetchMondayData() {
     });
     return response.data.data.boards[0].items;
   } catch (error) {
-    console.error("Error fetching Monday data:", error);
+    // Log additional error details (if available)
+    if (error.response && error.response.data) {
+      console.error("Error response data:", error.response.data);
+    }
+    console.error("Error fetching Monday data:", error.message);
     process.exit(1);
   }
 }
