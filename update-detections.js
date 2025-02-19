@@ -1,7 +1,3 @@
-// Remove later, just for debugging
-console.log("MONDAY_API_KEY exists?", !!process.env.MONDAY_API_KEY);
-console.log("BOARD_ID is:", process.env.MONDAY_BOARD_ID);
-
 // update-detections.js
 const axios = require('axios');
 const fs = require('fs');
