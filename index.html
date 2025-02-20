@@ -24,6 +24,7 @@
       border-radius: 12px;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
       max-width: 98%;
+      overflow-x: auto;
     }
 
     table {
@@ -113,13 +114,17 @@
 
   <div class="filter-bar">
     <input type="text" id="search" class="search-box" onkeyup="filterTable()" placeholder="🔍 Search Detections...">
-    
+
     <div class="dropdown">
       <button class="filter-btn" onclick="toggleDropdown('statusDropdown')">Default Status ▼</button>
       <div id="statusDropdown" class="dropdown-content">
         <label><input type="checkbox" value="Active" checked onchange="filterTable()"> Active</label>
-        <label><input type="checkbox" value="Alert Preferences" checked onchange="filterTable()"> Alert Preferences</label>
+        <label><input type="checkbox" value="Not Active" checked onchange="filterTable()"> Not Active</label>
         <label><input type="checkbox" value="New Detection" checked onchange="filterTable()"> New Detection</label>
+        <label><input type="checkbox" value="Alert Preferences" checked onchange="filterTable()"> Alert Preferences</label>
+        <label><input type="checkbox" value="Muted" checked onchange="filterTable()"> Muted</label>
+        <label><input type="checkbox" value="Testing" checked onchange="filterTable()"> Testing</label>
+        <label><input type="checkbox" value="Active via Custom Rules" checked onchange="filterTable()"> Active via Custom Rules</label>
       </div>
     </div>
 
@@ -127,7 +132,26 @@
       <button class="filter-btn" onclick="toggleDropdown('toolDropdown')">Tool ▼</button>
       <div id="toolDropdown" class="dropdown-content">
         <label><input type="checkbox" value="Stellar Cyber" checked onchange="filterTable()"> Stellar Cyber</label>
-        <label><input type="checkbox" value="AWS" checked onchange="filterTable()"> AWS</label>
+        <label><input type="checkbox" value="LevelBlue" checked onchange="filterTable()"> LevelBlue</label>
+        <label><input type="checkbox" value="CrowdStrike" checked onchange="filterTable()"> CrowdStrike</label>
+        <label><input type="checkbox" value="SentinelOne" checked onchange="filterTable()"> SentinelOne</label>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="filter-btn" onclick="toggleDropdown('columnDropdown')">Select Columns ▼</button>
+      <div id="columnDropdown" class="dropdown-content">
+        <label><input type="checkbox" checked onchange="toggleColumn(0)"> Detection Name</label>
+        <label><input type="checkbox" checked onchange="toggleColumn(1)"> Description</label>
+        <label><input type="checkbox" checked onchange="toggleColumn(2)"> Default Status</label>
+        <label><input type="checkbox" checked onchange="toggleColumn(3)"> Kill Chain Stage</label>
+        <label><input type="checkbox" checked onchange="toggleColumn(4)"> MITRE Tactic</label>
+        <label><input type="checkbox" checked onchange="toggleColumn(5)"> MITRE Tactic ID</label>
+        <label><input type="checkbox" checked onchange="toggleColumn(6)"> MITRE Technique</label>
+        <label><input type="checkbox" checked onchange="toggleColumn(7)"> MITRE Technique ID</label>
+        <label><input type="checkbox" checked onchange="toggleColumn(8)"> Connector</label>
+        <label><input type="checkbox" checked onchange="toggleColumn(9)"> Tool</label>
+        <label><input type="checkbox" checked onchange="toggleColumn(10)"> Date Added</label>
       </div>
     </div>
 
@@ -139,11 +163,17 @@
     <table id="detectionsTable">
       <thead>
         <tr>
-          <th onclick="sortTable(0)">Detection Name</th>
-          <th onclick="sortTable(1)">Description</th>
-          <th onclick="sortTable(2)">Default Status</th>
-          <th onclick="sortTable(9)">Tool</th>
-          <th onclick="sortTable(10)">Date Added</th>
+          <th>Detection Name</th>
+          <th>Description</th>
+          <th>Default Status</th>
+          <th>Kill Chain Stage</th>
+          <th>MITRE Tactic</th>
+          <th>MITRE Tactic ID</th>
+          <th>MITRE Technique</th>
+          <th>MITRE Technique ID</th>
+          <th>Connector</th>
+          <th>Tool</th>
+          <th>Date Added</th>
         </tr>
       </thead>
       <tbody></tbody>
@@ -151,25 +181,12 @@
   </div>
 
   <script>
-    async function loadData() {
-      const response = await fetch('detections.json?v=' + new Date().getTime());
-      let data = await response.json();
-
-      data.sort((a, b) => a.name.localeCompare(b.name));
-
-      const tbody = document.querySelector('#detectionsTable tbody');
-      tbody.innerHTML = '';
-
-      data.forEach(detection => {
-        let row = document.createElement('tr');
-        row.innerHTML = `
-          <td>${detection.name}</td>
-          <td>${detection.description}</td>
-          <td>${detection.defaultStatus}</td>
-          <td>${detection.tool}</td>
-          <td>${detection.dateAdded}</td>
-        `;
-        tbody.appendChild(row);
+    function toggleColumn(index) {
+      const table = document.getElementById("detectionsTable");
+      table.querySelectorAll("th, td").forEach((cell, i) => {
+        if (i % 11 === index) {
+          cell.style.display = cell.style.display === "none" ? "" : "none";
+        }
       });
     }
 
@@ -177,61 +194,11 @@
       document.getElementById(id).classList.toggle("show");
     }
 
-    function filterTable() {
-      const searchInput = document.getElementById("search").value.toLowerCase();
-      const rows = document.querySelectorAll("#detectionsTable tbody tr");
-
-      const selectedStatuses = Array.from(document.querySelectorAll("#statusDropdown input:checked")).map(cb => cb.value);
-      const selectedTools = Array.from(document.querySelectorAll("#toolDropdown input:checked")).map(cb => cb.value);
-
-      rows.forEach(row => {
-        const statusText = row.cells[2].textContent.trim();
-        const toolText = row.cells[3].textContent.trim();
-        const rowText = row.textContent.toLowerCase();
-
-        const matchesSearch = rowText.includes(searchInput);
-        const matchesStatus = selectedStatuses.includes(statusText);
-        const matchesTool = selectedTools.includes(toolText);
-
-        row.style.display = matchesSearch && matchesStatus && matchesTool ? "" : "none";
-      });
-    }
-
-    function resetFilters() {
-      document.getElementById("search").value = "";
-      document.querySelectorAll("#statusDropdown input, #toolDropdown input").forEach(cb => cb.checked = true);
-      filterTable();
-    }
-
-    function exportTableToCSV() {
-      const csv = [];
-      const rows = document.querySelectorAll("#detectionsTable tr");
-
-      rows.forEach(row => {
-        const rowData = [];
-        row.querySelectorAll("th, td").forEach(cell => {
-          if (cell.style.display !== "none") {
-            const text = cell.textContent.replace(/"/g, '""');
-            rowData.push('"' + text + '"');
-          }
-        });
-        csv.push(rowData.join(","));
-      });
-
-      const csvFile = new Blob([csv.join("\n")], { type: "text/csv" });
-      const downloadLink = document.createElement("a");
-      downloadLink.download = "detections_board.csv";
-      downloadLink.href = window.URL.createObjectURL(csvFile);
-      downloadLink.click();
-    }
-
     window.onclick = function(event) {
       if (!event.target.closest('.dropdown')) {
         document.querySelectorAll(".dropdown-content").forEach(dropdown => dropdown.classList.remove("show"));
       }
     };
-
-    window.onload = loadData;
   </script>
 </body>
 </html>
