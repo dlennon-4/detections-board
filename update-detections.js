@@ -11,39 +11,51 @@ if (!MONDAY_API_KEY) {
   process.exit(1);
 }
 
-// Function to fetch all items using cursor-based pagination
+// Function to fetch all detections using pagination
 async function fetchAllMondayItems() {
   let allItems = [];
   let cursor = null;
 
   do {
-    const query = cursor 
-      ? `query { next_items_page(cursor: "${cursor}") { cursor items { id name column_values { title text value } } } }`
-      : `query { boards(ids: [${BOARD_ID}]) { items_page { cursor items { id name column_values { title text value } } } } }`;
-      
-    const response = await axios({
-      url: 'https://api.monday.com/v2/',
-      method: 'post',
-      headers: {
-        'Authorization': MONDAY_API_KEY,
-        'Content-Type': 'application/json'
-      },
-      data: JSON.stringify({ query })
-    });
+    console.log("Fetching detections from Monday.com...");
 
-    if (cursor) {
-      const page = response.data.data.next_items_page;
-      allItems = allItems.concat(page.items);
-      cursor = page.cursor;
-    } else {
-      const page = response.data.data.boards[0].items_page;
-      allItems = allItems.concat(page.items);
-      cursor = page.cursor;
+    const query = cursor 
+      ? `query { next_items_page(cursor: "${cursor}") { cursor items { id name column_values { id text value } } } }`
+      : `query { boards(ids: [${BOARD_ID}]) { items_page { cursor items { id name column_values { id text value } } } } }`;
+
+    try {
+      const response = await axios({
+        url: 'https://api.monday.com/v2/',
+        method: 'post',
+        headers: {
+          'Authorization': MONDAY_API_KEY,
+          'Content-Type': 'application/json'
+        },
+        data: JSON.stringify({ query })
+      });
+
+      if (cursor) {
+        const page = response.data.data.next_items_page;
+        allItems = allItems.concat(page.items);
+        cursor = page.cursor;
+      } else {
+        const page = response.data.data.boards[0].items_page;
+        allItems = allItems.concat(page.items);
+        cursor = page.cursor;
+      }
+
+      console.log(`Retrieved ${allItems.length} detections so far...`);
+      
+      // **Added delay to avoid rate limits**
+      await new Promise(resolve => setTimeout(resolve, 1000)); 
+
+    } catch (error) {
+      console.error("Error response data:", error.response?.data || error.message);
+      break; // Stop fetching if we hit an error
     }
 
   } while (cursor);
 
-  console.log("Retrieved Items:", JSON.stringify(allItems, null, 2)); // Debug log
   return allItems;
 }
 
@@ -85,26 +97,26 @@ function getColumnValue(cv) {
   return "";
 }
 
-// Mapping function for Monday.com data
+// Mapping function using **column IDs** instead of column titles
 function mapItemToDetection(item) {
   const columns = {};
   item.column_values.forEach(cv => {
-    columns[cv.title] = getColumnValue(cv);
+    columns[cv.id] = getColumnValue(cv); // ✅ Use column ID instead of title
   });
 
   return {
-    detectionID: columns['Detection ID'] || item.id,
+    detectionID: columns["item_id_mknaww1f"] || item.id,  // ✅ Detection ID
     name: item.name,
-    description: columns['Description'] || '',
-    defaultStatus: columns['Default Status'] || '',
-    killChainStage: columns['Kill Chain Stage'] || '',
-    mitreTactic: columns['MITRE Tactic'] || '',
-    mitreTacticID: columns['MITRE Tactic ID'] || '',
-    mitreTechnique: columns['MITRE Tech'] || '',
-    mitreTechniqueID: columns['MITRE Tech ID'] || '',
-    connector: columns['Connector'] || '',
-    tool: columns['Tool'] || '',
-    dateAdded: columns['Date Activated'] || ''
+    description: columns["text2__1"] || '',  // ✅ Description
+    defaultStatus: columns["status"] || '',  // ✅ Default Status
+    killChainStage: columns["text0__1"] || '',  // ✅ Kill Chain Stage
+    mitreTactic: columns["text__1"] || '',  // ✅ MITRE Tactic
+    mitreTacticID: columns["text6__1"] || '',  // ✅ MITRE Tactic ID
+    mitreTechnique: columns["text5__1"] || '',  // ✅ MITRE Technique
+    mitreTechniqueID: columns["text8__1"] || '',  // ✅ MITRE Technique ID
+    connector: columns["text00__1"] || '',  // ✅ Connector
+    tool: columns["text_mknaxnaj"] || '',  // ✅ Tool
+    dateAdded: columns["date__1"] || ''  // ✅ Date Activated
   };
 }
 
