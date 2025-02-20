@@ -9,18 +9,19 @@
 
   <style>
     :root {
-      --dropdown-width: 280px;
+      /* Adjust the dropdown width to 240px */
+      --dropdown-width: 240px;
 
-      /* Light Mode Variables */
-      --bg-color: #F5F5F5;
+      /* Light Mode Variables (with more visibly gray bg) */
+      --bg-color: #EBEBEB;       /* more visibly gray */
       --text-color: #000000;
 
       --card-bg: #ffffff;
       --table-border: #dddddd;
-      --header-bg: #C00; /* Company Red */
+      --header-bg: #C00;         /* Company Red (unchanged for light mode) */
       --header-text: #ffffff;
 
-      --primary-btn-bg: #000;  /* black */
+      --primary-btn-bg: #000;    /* black */
       --primary-btn-text: #fff;
       --hover-bg: #444;
       --reset-btn-bg: #C00;
@@ -37,13 +38,14 @@
 
       --card-bg: #2B2B2B;
       --table-border: #444444;
-      --header-bg: #111111;
+      /* Keep red row, but different variation of red that fits dark mode */
+      --header-bg: #700000;     /* e.g. a deeper red for dark mode */
       --header-text: #CCCCCC;
 
       --primary-btn-bg: #333333;
       --primary-btn-text: #DDDDDD;
       --hover-bg: #555555;
-      --reset-btn-bg: #700000;   
+      --reset-btn-bg: #700000;    
       --export-btn-bg: #236c38;
 
       --row-even-bg: #333333;
@@ -145,14 +147,13 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       padding: 20px;
       display: flex;
-      justify-content: space-between; /* left items on left, export on right */
+      justify-content: space-between;
       align-items: center;
       margin: 20px auto;
       max-width: 95%;
       transition: background-color 0.3s;
     }
 
-    /* Left group for filters */
     .filters-left {
       display: flex;
       flex-wrap: wrap;
@@ -160,7 +161,6 @@
       align-items: center;
     }
 
-    /* The filter (dropdown) buttons share fixed width */
     .filter-btn {
       background: var(--primary-btn-bg);
       color: var(--primary-btn-text);
@@ -178,7 +178,6 @@
       transform: translateY(-2px);
     }
 
-    /* Normal action buttons (reset, etc.) auto-size */
     .action-btn {
       background: var(--primary-btn-bg);
       color: var(--primary-btn-text);
@@ -206,6 +205,7 @@
       position: relative;
       display: inline-block;
     }
+
     .dropdown-content {
       display: none;
       position: absolute;
@@ -346,10 +346,10 @@
     // Toggle a specific column by index
     function toggleColumn(colIndex, forceShow = null) {
       const table = document.getElementById('detectionsTable');
-      const checkbox = document.querySelectorAll('#columnDropdown input[type=\"checkbox\"]')[colIndex];
+      const checkbox = document.querySelectorAll('#columnDropdown input[type="checkbox"]')[colIndex];
       const show = forceShow !== null ? forceShow : checkbox.checked;
 
-      // Toggle header cell
+      // Toggle header
       const ths = table.getElementsByTagName('th');
       if (ths[colIndex]) {
         ths[colIndex].style.display = show ? '' : 'none';
@@ -367,25 +367,13 @@
 
     // Reset filters
     function resetFilters() {
-      // Clear search
       document.getElementById('search').value = '';
-
-      // Reset status checkboxes
-      document.querySelectorAll('#statusDropdown input[type=\"checkbox\"]').forEach(cb => {
-        cb.checked = true;
-      });
-
-      // Reset tool checkboxes
-      document.querySelectorAll('#toolDropdown input[type=\"checkbox\"]').forEach(cb => {
-        cb.checked = true;
-      });
-
-      // Reset columns checkboxes
-      document.querySelectorAll('#columnDropdown input[type=\"checkbox\"]').forEach((cb, i) => {
+      document.querySelectorAll('#statusDropdown input[type="checkbox"]').forEach(cb => (cb.checked = true));
+      document.querySelectorAll('#toolDropdown input[type="checkbox"]').forEach(cb => (cb.checked = true));
+      document.querySelectorAll('#columnDropdown input[type="checkbox"]').forEach((cb, i) => {
         cb.checked = true;
         toggleColumn(i, true);
       });
-
       filterTable();
     }
 
@@ -395,12 +383,12 @@
 
       // Gather checked statuses
       const checkedStatuses = Array.from(
-        document.querySelectorAll('#statusDropdown input[type=\"checkbox\"]:checked')
+        document.querySelectorAll('#statusDropdown input[type="checkbox"]:checked')
       ).map(cb => cb.value);
 
       // Gather checked tools
       const checkedTools = Array.from(
-        document.querySelectorAll('#toolDropdown input[type=\"checkbox\"]:checked')
+        document.querySelectorAll('#toolDropdown input[type="checkbox"]:checked')
       ).map(cb => cb.value);
 
       // Filter each row
@@ -408,8 +396,7 @@
       rows.forEach(row => {
         const cells = row.querySelectorAll('td');
 
-        // Cells reference: 
-        //  0: name, 1: description, 2: defaultStatus, 9: tool
+        // 0: name, 1: description, 2: defaultStatus, 9: tool
         const name = cells[0].textContent.toLowerCase();
         const desc = cells[1].textContent.toLowerCase();
         const status = cells[2].textContent.trim();
@@ -434,12 +421,11 @@
       console.log(`Sorting column ${columnIndex}... (Implement sorting logic)`);
     }
 
-    // Load data from detections.json
     function loadData() {
       fetch('detections.json?v=' + new Date().getTime())
         .then(res => res.json())
         .then(data => {
-          // Sort by detection name ascending on load
+          // Sort by detection name A->Z on load
           data.sort((a,b) => a.name.localeCompare(b.name));
 
           const tbody = document.querySelector('#detectionsTable tbody');
@@ -465,7 +451,6 @@
         .catch(err => console.error('Error loading detections.json', err));
     }
 
-    // Initialize
     window.onload = loadData;
   </script>
 </body>
