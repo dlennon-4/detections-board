@@ -20,7 +20,7 @@
       padding: 20px;
       margin: 20px auto;
       border-radius: 12px;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
       max-width: 95%;
       overflow-x: auto;
     }
@@ -35,15 +35,14 @@
       border-bottom: 1px solid #ddd;
     }
 
-    /* Detection Name & Description left-aligned, all other columns centered */
-    #detectionsTable td:nth-child(1),
-    #detectionsTable td:nth-child(2),
-    #detectionsTable th:nth-child(1),
-    #detectionsTable th:nth-child(2) {
+    /* Left-align Detection Name & Description */
+    #detectionsTable th:nth-child(1), #detectionsTable td:nth-child(1),
+    #detectionsTable th:nth-child(2), #detectionsTable td:nth-child(2) {
       text-align: left;
     }
-    #detectionsTable td:not(:nth-child(1)):not(:nth-child(2)),
-    #detectionsTable th:not(:nth-child(1)):not(:nth-child(2)) {
+    /* Center all other columns */
+    #detectionsTable th:not(:nth-child(1)):not(:nth-child(2)),
+    #detectionsTable td:not(:nth-child(1)):not(:nth-child(2)) {
       text-align: center;
     }
 
@@ -57,12 +56,11 @@
     tbody tr:nth-child(even) {
       background: #F9F9F9;
     }
-
     tbody tr:hover {
       background: #ECECEC;
     }
 
-    /* Filters & Buttons */
+    /* Filter & Action Buttons */
     .filter-bar {
       display: flex;
       justify-content: center;
@@ -88,10 +86,11 @@
       position: relative;
       display: inline-block;
     }
+
     .dropdown-content {
       display: none;
       position: absolute;
-      background: white;
+      background-color: white;
       min-width: 220px;
       box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
       padding: 12px;
@@ -111,7 +110,6 @@
       display: block;
     }
 
-    /* Action Buttons */
     .action-btn {
       padding: 10px 16px;
       border-radius: 8px;
@@ -133,19 +131,17 @@
     }
   </style>
 </head>
-
 <body>
   <h1>📌 SOC Detections Board</h1>
 
   <!-- Filter Bar -->
   <div class="filter-bar">
     <input type="text" id="search" class="search-box" onkeyup="filterTable()" placeholder="🔍 Search Detections..." />
-    
+
     <!-- Default Status Dropdown -->
     <div class="dropdown">
-      <button onclick="toggleDropdown('statusDropdown')" class="filter-btn">Default Status ▼</button>
+      <button class="filter-btn" onclick="toggleDropdown('statusDropdown')">Default Status ▼</button>
       <div id="statusDropdown" class="dropdown-content">
-        <!-- Default Status Checkboxes -->
         <label><input type="checkbox" value="Active" checked onchange="filterTable()"> Active</label>
         <label><input type="checkbox" value="Active via Custom Rules" checked onchange="filterTable()"> Active via Custom Rules</label>
         <label><input type="checkbox" value="Testing" checked onchange="filterTable()"> Testing</label>
@@ -158,9 +154,8 @@
 
     <!-- Tool Dropdown -->
     <div class="dropdown">
-      <button onclick="toggleDropdown('toolDropdown')" class="filter-btn">Tool ▼</button>
+      <button class="filter-btn" onclick="toggleDropdown('toolDropdown')">Tool ▼</button>
       <div id="toolDropdown" class="dropdown-content">
-        <!-- Tool Checkboxes -->
         <label><input type="checkbox" value="Stellar Cyber" checked onchange="filterTable()"> Stellar Cyber</label>
         <label><input type="checkbox" value="LevelBlue" checked onchange="filterTable()"> LevelBlue</label>
         <label><input type="checkbox" value="CrowdStrike" checked onchange="filterTable()"> CrowdStrike</label>
@@ -170,7 +165,7 @@
 
     <!-- Column Selection Dropdown -->
     <div class="dropdown">
-      <button onclick="toggleDropdown('columnDropdown')" class="filter-btn">Select Columns ▼</button>
+      <button class="filter-btn" onclick="toggleDropdown('columnDropdown')">Select Columns ▼</button>
       <div id="columnDropdown" class="dropdown-content">
         <label><input type="checkbox" checked onchange="toggleColumn(0)"> Detection Name</label>
         <label><input type="checkbox" checked onchange="toggleColumn(1)"> Description</label>
@@ -208,17 +203,20 @@
           <th onclick="sortTable(10)">Date Added</th>
         </tr>
       </thead>
-      <tbody>
-        <!-- Detections from detections.json will populate here -->
-      </tbody>
+      <tbody></tbody>
     </table>
   </div>
 
   <script>
+    let detectionsData = [];
+    const sortDirections = {}; // track each column's sort direction (asc/desc)
+
+    // Toggle any dropdown
     function toggleDropdown(id) {
       document.getElementById(id).classList.toggle("show");
     }
 
+    // Toggle specific column by index
     function toggleColumn(colIndex, forceShow = null) {
       const table = document.getElementById("detectionsTable");
       const checkbox = document.querySelectorAll("#columnDropdown input[type='checkbox']")[colIndex];
@@ -230,7 +228,7 @@
         ths[colIndex].style.display = showColumn ? "" : "none";
       }
 
-      // Toggle each row's cell in this column
+      // Toggle each row cell
       const rows = table.getElementsByTagName("tr");
       for (let i = 1; i < rows.length; i++) {
         const cells = rows[i].getElementsByTagName("td");
@@ -240,77 +238,140 @@
       }
     }
 
+    // Reset filters
     function resetFilters() {
       // Clear search
       document.getElementById("search").value = "";
 
-      // Reset status checkboxes
-      document.querySelectorAll("#statusDropdown input[type='checkbox']").forEach(cb => cb.checked = true);
-
-      // Reset tool checkboxes
-      document.querySelectorAll("#toolDropdown input[type='checkbox']").forEach(cb => cb.checked = true);
-
-      // Reset column checkboxes
-      document.querySelectorAll("#columnDropdown input[type='checkbox']").forEach((cb, index) => {
+      // Check all statuses
+      document.querySelectorAll("#statusDropdown input[type='checkbox']").forEach(cb => {
         cb.checked = true;
-        toggleColumn(index, true);
+      });
+
+      // Check all tools
+      document.querySelectorAll("#toolDropdown input[type='checkbox']").forEach(cb => {
+        cb.checked = true;
+      });
+
+      // Show all columns
+      const colCheckboxes = document.querySelectorAll("#columnDropdown input[type='checkbox']");
+      colCheckboxes.forEach((cb, i) => {
+        cb.checked = true;
+        toggleColumn(i, true);
       });
 
       filterTable();
     }
 
+    // Filter table based on search text, selected statuses, and tools
     function filterTable() {
-      console.log("Filtering table... (implement your filter logic)");
-      // Example steps:
-      // 1. get search text
-      // 2. read selected statuses & tools
-      // 3. hide rows that don't match
+      const searchValue = document.getElementById("search").value.toLowerCase();
+
+      // Gather checked statuses
+      const checkedStatuses = Array.from(document.querySelectorAll("#statusDropdown input[type='checkbox']:checked"))
+        .map(cb => cb.value);
+
+      // Gather checked tools
+      const checkedTools = Array.from(document.querySelectorAll("#toolDropdown input[type='checkbox']:checked"))
+        .map(cb => cb.value);
+
+      // Filter rows in the table
+      const rows = document.querySelectorAll("#detectionsTable tbody tr");
+      rows.forEach(row => {
+        const cells = row.getElementsByTagName("td");
+
+        const name = cells[0].textContent.toLowerCase();         // Detection Name
+        const desc = cells[1].textContent.toLowerCase();         // Description
+        const status = cells[2].textContent.trim();              // Default Status
+        const tool = cells[9].textContent.trim();                // Tool
+
+        const matchesSearch = (name.includes(searchValue) || desc.includes(searchValue));
+        const matchesStatus = checkedStatuses.includes(status);
+        const matchesTool = checkedTools.includes(tool);
+
+        row.style.display = (matchesSearch && matchesStatus && matchesTool) ? "" : "none";
+      });
     }
 
+    // Export table to CSV
     function exportTableToCSV() {
-      console.log("Exporting table to CSV... (implement your CSV logic)");
-      // Implementation example:
-      // 1. gather visible columns & rows
-      // 2. generate CSV string
-      // 3. create a hidden link to download
+      let csv = [];
+      const table = document.getElementById("detectionsTable");
+      const rows = table.querySelectorAll("tr");
+
+      rows.forEach(row => {
+        const rowData = [];
+        row.querySelectorAll("th, td").forEach(cell => {
+          if (cell.style.display !== "none") {
+            let text = cell.textContent.replace(/\"/g, '""');
+            rowData.push(`\"${text}\"`);
+          }
+        });
+        csv.push(rowData.join(","));
+      });
+
+      const blob = new Blob([csv.join("\n")], { type: "text/csv" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "detections_board.csv";
+      link.click();
     }
 
+    // Sort table by column index
     function sortTable(columnIndex) {
-      console.log("Sorting by column:", columnIndex, "(implement your sort logic)");
-      // Implementation example:
-      // 1. get rows from <tbody>
-      // 2. sort them using localeCompare
-      // 3. reappend to <tbody>
+      const table = document.getElementById("detectionsTable");
+      const tbody = table.tBodies[0];
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+
+      // Toggle sort direction
+      sortDirections[columnIndex] = sortDirections[columnIndex] === "asc" ? "desc" : "asc";
+      const direction = sortDirections[columnIndex];
+
+      // Sort rows
+      rows.sort((a, b) => {
+        const cellA = a.children[columnIndex].textContent.trim().toLowerCase();
+        const cellB = b.children[columnIndex].textContent.trim().toLowerCase();
+        if (cellA < cellB) return direction === "asc" ? -1 : 1;
+        if (cellA > cellB) return direction === "asc" ? 1 : -1;
+        return 0;
+      });
+
+      rows.forEach(row => tbody.appendChild(row));
     }
 
+    // Load data from detections.json, sort by detection name A→Z
     function loadData() {
       fetch('detections.json?v=' + new Date().getTime())
         .then(response => response.json())
         .then(data => {
-          const tbody = document.querySelector('#detectionsTable tbody');
-          tbody.innerHTML = '';
+          // Sort by detection name ascending
+          data.sort((a, b) => a.name.localeCompare(b.name));
 
-          data.forEach(detection => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-              <td>${detection.name}</td>
-              <td>${detection.description}</td>
-              <td>${detection.defaultStatus}</td>
-              <td>${detection.killChainStage}</td>
-              <td>${detection.mitreTactic}</td>
-              <td>${detection.mitreTacticID}</td>
-              <td>${detection.mitreTechnique}</td>
-              <td>${detection.mitreTechniqueID}</td>
-              <td>${detection.connector}</td>
-              <td>${detection.tool}</td>
-              <td>${detection.dateAdded}</td>
+          // Populate table
+          const tbody = document.querySelector("#detectionsTable tbody");
+          tbody.innerHTML = "";
+          data.forEach(det => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+              <td>${det.name}</td>
+              <td>${det.description}</td>
+              <td>${det.defaultStatus}</td>
+              <td>${det.killChainStage}</td>
+              <td>${det.mitreTactic}</td>
+              <td>${det.mitreTacticID}</td>
+              <td>${det.mitreTechnique}</td>
+              <td>${det.mitreTechniqueID}</td>
+              <td>${det.connector}</td>
+              <td>${det.tool}</td>
+              <td>${det.dateAdded}</td>
             `;
-            tbody.appendChild(row);
+            tbody.appendChild(tr);
           });
-        });
+        })
+        .catch(err => console.error("Error loading detections:", err));
     }
 
-    // Initialize everything on page load
+    // Initialize on page load
     window.onload = loadData;
   </script>
 </body>
