@@ -2,15 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SOC Detections Board</title>
 
+  <!-- Clean, modern font: Inter -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap">
+
   <style>
+    :root {
+      --dropdown-width: 220px; /* Same width for filter dropdowns if needed */
+    }
+
     /* General Styling */
     body {
       background-color: #F5F5F5;
       color: black;
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
       margin: 20px;
       text-align: center;
     }
@@ -20,14 +26,18 @@
       padding: 20px;
       margin: 20px auto;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       max-width: 95%;
       overflow-x: auto;
     }
 
     table {
       width: 100%;
-      border-collapse: collapse;
+      border: 1px solid #ddd;        /* Subtle table border */
+      border-radius: 8px;
+      overflow: hidden;
+      border-collapse: separate;
+      border-spacing: 0;
     }
 
     th, td {
@@ -35,22 +45,18 @@
       border-bottom: 1px solid #ddd;
     }
 
-    /*
-      Sticky Header:
-      keeps the table header visible while scrolling.
-    */
+    /* Sticky header with z-index = 2 */
     th {
       background: #C00; /* Company Red */
       color: white;
       font-weight: bold;
       cursor: pointer;
-
-      position: sticky; /* Sticky is the magic */
-      top: 0;           /* Stick to the top of the container */
-      z-index: 2;       /* Above the rows so it doesn't get covered */
+      position: sticky;
+      top: 0;
+      z-index: 2;
     }
 
-    /* Left-align Detection Name & Description, center all other columns */
+    /* Left-align first two columns, center the rest */
     #detectionsTable th:nth-child(1),
     #detectionsTable td:nth-child(1),
     #detectionsTable th:nth-child(2),
@@ -65,25 +71,43 @@
     tbody tr:nth-child(even) {
       background: #F9F9F9;
     }
-
     tbody tr:hover {
       background: #ECECEC;
     }
 
-    /* Filters & Buttons */
+    /* Filter Bar card look */
     .filter-bar {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 20px;
+      margin: 20px auto;
+      max-width: 95%;
     }
 
-    /*
-      Hover Effects on Buttons:
-      Add smooth transitions and a slight lift on hover.
-    */
-    .filter-btn,
+    /* The filter (dropdown) buttons share a fixed width */
+    .filter-btn {
+      background: black;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s, transform 0.2s;
+      text-align: center;
+      width: var(--dropdown-width);
+    }
+    .filter-btn:hover {
+      background-color: #444;
+      transform: translateY(-2px);
+    }
+
+    /* The action buttons (Reset & Export) do NOT share the filter width */
     .action-btn {
       background: black;
       color: white;
@@ -92,10 +116,9 @@
       border-radius: 8px;
       cursor: pointer;
       font-size: 14px;
-
       transition: background-color 0.3s, transform 0.2s;
+      text-align: center;
     }
-    .filter-btn:hover,
     .action-btn:hover {
       background-color: #444;
       transform: translateY(-2px);
@@ -105,18 +128,23 @@
       position: relative;
       display: inline-block;
     }
+
+    /* Animated Dropdowns */
     .dropdown-content {
       display: none;
       position: absolute;
+      width: var(--dropdown-width);
       background-color: white;
-      min-width: 220px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
       padding: 12px;
-      z-index: 1;
       text-align: left;
       border: 1px solid gray;
+      margin-top: 8px;
+      z-index: 999;
 
-      margin-top: 8px; /* Slight offset below the button to prevent visual overlap */
+      opacity: 0;
+      transform: translateY(-5px);
+      transition: opacity 0.2s, transform 0.2s;
     }
     .dropdown-content label {
       display: block;
@@ -126,8 +154,10 @@
     .dropdown-content label:hover {
       background-color: #ddd;
     }
-    .show {
+    .dropdown-content.show {
       display: block;
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .export-btn {
@@ -219,90 +249,105 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Detections from detections.json populate here -->
+        <!-- Data from detections.json goes here -->
       </tbody>
     </table>
   </div>
 
   <script>
-    // Toggle any dropdown
+    let sortDirections = {}; // track each column's sort direction: 'asc' or 'desc'
+
     function toggleDropdown(id) {
-      document.getElementById(id).classList.toggle("show");
+      document.getElementById(id).classList.toggle('show');
     }
 
-    // Toggle specific column
     function toggleColumn(colIndex, forceShow = null) {
-      const table = document.getElementById("detectionsTable");
-      const checkbox = document.querySelectorAll("#columnDropdown input[type='checkbox']")[colIndex];
-      const showColumn = (forceShow !== null) ? forceShow : checkbox.checked;
+      const table = document.getElementById('detectionsTable');
+      const checkbox = document.querySelectorAll('#columnDropdown input[type=\"checkbox\"]')[colIndex];
+      const show = forceShow !== null ? forceShow : checkbox.checked;
 
       // Toggle header
-      const ths = table.getElementsByTagName("th");
+      const ths = table.getElementsByTagName('th');
       if (ths[colIndex]) {
-        ths[colIndex].style.display = showColumn ? "" : "none";
+        ths[colIndex].style.display = show ? '' : 'none';
       }
 
       // Toggle each row's cell
-      const rows = table.getElementsByTagName("tr");
+      const rows = table.getElementsByTagName('tr');
       for (let i = 1; i < rows.length; i++) {
-        const cells = rows[i].getElementsByTagName("td");
+        const cells = rows[i].getElementsByTagName('td');
         if (cells[colIndex]) {
-          cells[colIndex].style.display = showColumn ? "" : "none";
+          cells[colIndex].style.display = show ? '' : 'none';
         }
       }
     }
 
-    // Reset filters
     function resetFilters() {
-      // Clear search
-      document.getElementById("search").value = "";
-
-      // Reset statuses
-      document.querySelectorAll("#statusDropdown input[type='checkbox']").forEach(cb => cb.checked = true);
-      // Reset tools
-      document.querySelectorAll("#toolDropdown input[type='checkbox']").forEach(cb => cb.checked = true);
-      // Reset columns
-      document.querySelectorAll("#columnDropdown input[type='checkbox']").forEach((cb, i) => {
+      document.getElementById('search').value = '';
+      document.querySelectorAll('#statusDropdown input[type=\"checkbox\"]').forEach(cb => cb.checked = true);
+      document.querySelectorAll('#toolDropdown input[type=\"checkbox\"]').forEach(cb => cb.checked = true);
+      document.querySelectorAll('#columnDropdown input[type=\"checkbox\"]').forEach((cb, i) => {
         cb.checked = true;
         toggleColumn(i, true);
       });
-
       filterTable();
     }
 
-    // Filter table
     function filterTable() {
-      console.log("Filtering table... (Add your logic for filtering by status/tool/search)");
-      // Example:
-      // 1) read checked statuses & tools
-      // 2) hide rows that don't match
-      // 3) read search input for partial text in name/description
+      console.log('Filtering table... (Implement your filter logic for status/tool/search text)');
+      // e.g. read the search input, read which statuses/tools are checked, hide rows that don't match
     }
 
-    // Export to CSV
     function exportTableToCSV() {
-      console.log("Exporting table to CSV... (Add your CSV logic)");
+      console.log('Exporting CSV... (Implement CSV logic)');
     }
 
-    // Sort table by given column
-    let sortDirections = {};
     function sortTable(columnIndex) {
-      console.log(`Sorting by column ${columnIndex} (Add sorting logic)`);
+      const table = document.getElementById('detectionsTable');
+      const tbody = table.tBodies[0];
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+
+      // Toggle direction
+      if (!sortDirections[columnIndex]) {
+        sortDirections[columnIndex] = 'asc';
+      } else {
+        sortDirections[columnIndex] = (sortDirections[columnIndex] === 'asc') ? 'desc' : 'asc';
+      }
+      const direction = sortDirections[columnIndex];
+
+      // Actually sort the rows
+      rows.sort((a, b) => {
+        const cellA = a.children[columnIndex].textContent.trim().toLowerCase();
+        const cellB = b.children[columnIndex].textContent.trim().toLowerCase();
+        if (cellA < cellB) return direction === 'asc' ? -1 : 1;
+        if (cellA > cellB) return direction === 'asc' ? 1 : -1;
+        return 0;
+      });
+      rows.forEach(row => tbody.appendChild(row));
+
+      // Remove arrows from all columns
+      const allTh = table.querySelectorAll('thead th');
+      allTh.forEach(th => {
+        // remove any existing arrows
+        th.textContent = th.textContent.replace(/[▲▼]/g, '').trim();
+      });
+
+      // Add arrow to the currently sorted column
+      const arrow = direction === 'asc' ? ' ▲' : ' ▼';
+      allTh[columnIndex].textContent += arrow;
     }
 
-    // Load data from detections.json
     function loadData() {
       fetch('detections.json?v=' + new Date().getTime())
-        .then(response => response.json())
+        .then(r => r.json())
         .then(data => {
-          // Example: sort by detection name ascending on load
+          // Example: sort data by name asc on load
           data.sort((a, b) => a.name.localeCompare(b.name));
 
-          // Populate the table
-          const tbody = document.getElementById("detectionsTable").querySelector("tbody");
-          tbody.innerHTML = "";
+          const tbody = document.querySelector('#detectionsTable tbody');
+          tbody.innerHTML = '';
           data.forEach(det => {
-            const tr = document.createElement("tr");
+            const tr = document.createElement('tr');
             tr.innerHTML = `
               <td>${det.name}</td>
               <td>${det.description}</td>
@@ -319,10 +364,9 @@
             tbody.appendChild(tr);
           });
         })
-        .catch(error => console.error("Error loading detections:", error));
+        .catch(err => console.error('Error loading detections.json', err));
     }
 
-    // Init
     window.onload = loadData;
   </script>
 </body>
