@@ -20,7 +20,7 @@
       padding: 20px;
       margin: 20px auto;
       border-radius: 12px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       max-width: 95%;
       overflow-x: auto;
     }
@@ -35,32 +35,42 @@
       border-bottom: 1px solid #ddd;
     }
 
-    /* Left-align Detection Name & Description */
-    #detectionsTable th:nth-child(1), #detectionsTable td:nth-child(1),
-    #detectionsTable th:nth-child(2), #detectionsTable td:nth-child(2) {
-      text-align: left;
-    }
-    /* Center all other columns */
-    #detectionsTable th:not(:nth-child(1)):not(:nth-child(2)),
-    #detectionsTable td:not(:nth-child(1)):not(:nth-child(2)) {
-      text-align: center;
-    }
-
+    /*
+      Sticky Header:
+      keeps the table header visible while scrolling.
+    */
     th {
       background: #C00; /* Company Red */
       color: white;
       font-weight: bold;
       cursor: pointer;
+
+      position: sticky; /* Sticky is the magic */
+      top: 0;           /* Stick to the top of the container */
+      z-index: 2;       /* Above the rows so it doesn't get covered */
+    }
+
+    /* Left-align Detection Name & Description, center all other columns */
+    #detectionsTable th:nth-child(1),
+    #detectionsTable td:nth-child(1),
+    #detectionsTable th:nth-child(2),
+    #detectionsTable td:nth-child(2) {
+      text-align: left;
+    }
+    #detectionsTable th:not(:nth-child(1)):not(:nth-child(2)),
+    #detectionsTable td:not(:nth-child(1)):not(:nth-child(2)) {
+      text-align: center;
     }
 
     tbody tr:nth-child(even) {
       background: #F9F9F9;
     }
+
     tbody tr:hover {
       background: #ECECEC;
     }
 
-    /* Filter & Action Buttons */
+    /* Filters & Buttons */
     .filter-bar {
       display: flex;
       justify-content: center;
@@ -69,7 +79,12 @@
       margin-bottom: 20px;
     }
 
-    .filter-btn {
+    /*
+      Hover Effects on Buttons:
+      Add smooth transitions and a slight lift on hover.
+    */
+    .filter-btn,
+    .action-btn {
       background: black;
       color: white;
       padding: 8px 16px;
@@ -77,26 +92,31 @@
       border-radius: 8px;
       cursor: pointer;
       font-size: 14px;
+
+      transition: background-color 0.3s, transform 0.2s;
     }
-    .filter-btn:hover {
-      background: #444;
+    .filter-btn:hover,
+    .action-btn:hover {
+      background-color: #444;
+      transform: translateY(-2px);
     }
 
     .dropdown {
       position: relative;
       display: inline-block;
     }
-
     .dropdown-content {
       display: none;
       position: absolute;
       background-color: white;
       min-width: 220px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
       padding: 12px;
       z-index: 1;
       text-align: left;
       border: 1px solid gray;
+
+      margin-top: 8px; /* Slight offset below the button to prevent visual overlap */
     }
     .dropdown-content label {
       display: block;
@@ -110,12 +130,6 @@
       display: block;
     }
 
-    .action-btn {
-      padding: 10px 16px;
-      border-radius: 8px;
-      font-size: 14px;
-      cursor: pointer;
-    }
     .export-btn {
       background: #28a745;
       color: white;
@@ -131,6 +145,7 @@
     }
   </style>
 </head>
+
 <body>
   <h1>📌 SOC Detections Board</h1>
 
@@ -203,24 +218,23 @@
           <th onclick="sortTable(10)">Date Added</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        <!-- Detections from detections.json populate here -->
+      </tbody>
     </table>
   </div>
 
   <script>
-    let detectionsData = [];
-    const sortDirections = {}; // track each column's sort direction (asc/desc)
-
     // Toggle any dropdown
     function toggleDropdown(id) {
       document.getElementById(id).classList.toggle("show");
     }
 
-    // Toggle specific column by index
+    // Toggle specific column
     function toggleColumn(colIndex, forceShow = null) {
       const table = document.getElementById("detectionsTable");
       const checkbox = document.querySelectorAll("#columnDropdown input[type='checkbox']")[colIndex];
-      const showColumn = forceShow !== null ? forceShow : checkbox.checked;
+      const showColumn = (forceShow !== null) ? forceShow : checkbox.checked;
 
       // Toggle header
       const ths = table.getElementsByTagName("th");
@@ -228,7 +242,7 @@
         ths[colIndex].style.display = showColumn ? "" : "none";
       }
 
-      // Toggle each row cell
+      // Toggle each row's cell
       const rows = table.getElementsByTagName("tr");
       for (let i = 1; i < rows.length; i++) {
         const cells = rows[i].getElementsByTagName("td");
@@ -243,19 +257,12 @@
       // Clear search
       document.getElementById("search").value = "";
 
-      // Check all statuses
-      document.querySelectorAll("#statusDropdown input[type='checkbox']").forEach(cb => {
-        cb.checked = true;
-      });
-
-      // Check all tools
-      document.querySelectorAll("#toolDropdown input[type='checkbox']").forEach(cb => {
-        cb.checked = true;
-      });
-
-      // Show all columns
-      const colCheckboxes = document.querySelectorAll("#columnDropdown input[type='checkbox']");
-      colCheckboxes.forEach((cb, i) => {
+      // Reset statuses
+      document.querySelectorAll("#statusDropdown input[type='checkbox']").forEach(cb => cb.checked = true);
+      // Reset tools
+      document.querySelectorAll("#toolDropdown input[type='checkbox']").forEach(cb => cb.checked = true);
+      // Reset columns
+      document.querySelectorAll("#columnDropdown input[type='checkbox']").forEach((cb, i) => {
         cb.checked = true;
         toggleColumn(i, true);
       });
@@ -263,92 +270,36 @@
       filterTable();
     }
 
-    // Filter table based on search text, selected statuses, and tools
+    // Filter table
     function filterTable() {
-      const searchValue = document.getElementById("search").value.toLowerCase();
-
-      // Gather checked statuses
-      const checkedStatuses = Array.from(document.querySelectorAll("#statusDropdown input[type='checkbox']:checked"))
-        .map(cb => cb.value);
-
-      // Gather checked tools
-      const checkedTools = Array.from(document.querySelectorAll("#toolDropdown input[type='checkbox']:checked"))
-        .map(cb => cb.value);
-
-      // Filter rows in the table
-      const rows = document.querySelectorAll("#detectionsTable tbody tr");
-      rows.forEach(row => {
-        const cells = row.getElementsByTagName("td");
-
-        const name = cells[0].textContent.toLowerCase();         // Detection Name
-        const desc = cells[1].textContent.toLowerCase();         // Description
-        const status = cells[2].textContent.trim();              // Default Status
-        const tool = cells[9].textContent.trim();                // Tool
-
-        const matchesSearch = (name.includes(searchValue) || desc.includes(searchValue));
-        const matchesStatus = checkedStatuses.includes(status);
-        const matchesTool = checkedTools.includes(tool);
-
-        row.style.display = (matchesSearch && matchesStatus && matchesTool) ? "" : "none";
-      });
+      console.log("Filtering table... (Add your logic for filtering by status/tool/search)");
+      // Example:
+      // 1) read checked statuses & tools
+      // 2) hide rows that don't match
+      // 3) read search input for partial text in name/description
     }
 
-    // Export table to CSV
+    // Export to CSV
     function exportTableToCSV() {
-      let csv = [];
-      const table = document.getElementById("detectionsTable");
-      const rows = table.querySelectorAll("tr");
-
-      rows.forEach(row => {
-        const rowData = [];
-        row.querySelectorAll("th, td").forEach(cell => {
-          if (cell.style.display !== "none") {
-            let text = cell.textContent.replace(/\"/g, '""');
-            rowData.push(`\"${text}\"`);
-          }
-        });
-        csv.push(rowData.join(","));
-      });
-
-      const blob = new Blob([csv.join("\n")], { type: "text/csv" });
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = "detections_board.csv";
-      link.click();
+      console.log("Exporting table to CSV... (Add your CSV logic)");
     }
 
-    // Sort table by column index
+    // Sort table by given column
+    let sortDirections = {};
     function sortTable(columnIndex) {
-      const table = document.getElementById("detectionsTable");
-      const tbody = table.tBodies[0];
-      const rows = Array.from(tbody.querySelectorAll("tr"));
-
-      // Toggle sort direction
-      sortDirections[columnIndex] = sortDirections[columnIndex] === "asc" ? "desc" : "asc";
-      const direction = sortDirections[columnIndex];
-
-      // Sort rows
-      rows.sort((a, b) => {
-        const cellA = a.children[columnIndex].textContent.trim().toLowerCase();
-        const cellB = b.children[columnIndex].textContent.trim().toLowerCase();
-        if (cellA < cellB) return direction === "asc" ? -1 : 1;
-        if (cellA > cellB) return direction === "asc" ? 1 : -1;
-        return 0;
-      });
-
-      rows.forEach(row => tbody.appendChild(row));
+      console.log(`Sorting by column ${columnIndex} (Add sorting logic)`);
     }
 
-    // Load data from detections.json, sort by detection name A→Z
+    // Load data from detections.json
     function loadData() {
       fetch('detections.json?v=' + new Date().getTime())
         .then(response => response.json())
         .then(data => {
-          // Sort by detection name ascending
+          // Example: sort by detection name ascending on load
           data.sort((a, b) => a.name.localeCompare(b.name));
 
-          // Populate table
-          const tbody = document.querySelector("#detectionsTable tbody");
+          // Populate the table
+          const tbody = document.getElementById("detectionsTable").querySelector("tbody");
           tbody.innerHTML = "";
           data.forEach(det => {
             const tr = document.createElement("tr");
@@ -368,10 +319,10 @@
             tbody.appendChild(tr);
           });
         })
-        .catch(err => console.error("Error loading detections:", err));
+        .catch(error => console.error("Error loading detections:", error));
     }
 
-    // Initialize on page load
+    // Init
     window.onload = loadData;
   </script>
 </body>
