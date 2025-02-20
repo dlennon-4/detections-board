@@ -8,52 +8,120 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap">
 
   <style>
+    /* -----------------------------------------
+       1) CSS Variables for Light Mode (Default)
+       ----------------------------------------- */
     :root {
-      --dropdown-width: 220px; /* Same width for filter dropdowns if needed */
+      /* Background & Text */
+      --bg-color: #F5F5F5;
+      --text-color: #000000;
+
+      /* Card & Table Colors */
+      --card-bg: #ffffff;
+      --table-border: #dddddd;
+      --header-bg: #C00;   /* Company Red */
+      --header-text: #ffffff;
+
+      /* Buttons */
+      --primary-btn-bg: #000;  /* black */
+      --primary-btn-text: #fff;
+      --hover-bg: #444;        /* dark grey hover */
+      --reset-btn-bg: #C00;    /* reset button’s red */
+      --export-btn-bg: #28a745;
+
+      /* Table Row Colors */
+      --row-even-bg: #F9F9F9;
+      --row-hover-bg: #ECECEC;
     }
 
-    /* General Styling */
+    /* -----------------------------------------
+       2) Dark Mode Overrides
+       ----------------------------------------- */
+    .dark-mode {
+      --bg-color: #1A1A1A;
+      --text-color: #E3E3E3;
+
+      --card-bg: #2B2B2B;
+      --table-border: #444444;
+      --header-bg: #111111;
+      --header-text: #CCCCCC;
+
+      --primary-btn-bg: #333333;
+      --primary-btn-text: #DDDDDD;
+      --hover-bg: #555555;
+      --reset-btn-bg: #700000;   /* darker red for reset button */
+      --export-btn-bg: #236c38;  /* darker green for export */
+
+      --row-even-bg: #333333;
+      --row-hover-bg: #555555;
+    }
+
+    /* -----------------------------------------
+       3) Apply Variables Throughout
+       ----------------------------------------- */
     body {
-      background-color: #F5F5F5;
-      color: black;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       font-family: 'Inter', sans-serif;
       margin: 20px;
       text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .mode-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--primary-btn-bg);
+      color: var(--primary-btn-text);
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .mode-toggle:hover {
+      background-color: var(--hover-bg);
+      transform: translateY(-2px);
     }
 
     .table-container {
-      background: #fff;
+      background: var(--card-bg);
       padding: 20px;
       margin: 20px auto;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       max-width: 95%;
       overflow-x: auto;
+      transition: background-color 0.3s;
     }
 
     table {
       width: 100%;
-      border: 1px solid #ddd;        /* Subtle table border */
+      border: 1px solid var(--table-border);
       border-radius: 8px;
       overflow: hidden;
       border-collapse: separate;
       border-spacing: 0;
+      transition: border-color 0.3s;
     }
 
     th, td {
       padding: 12px;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid var(--table-border);
+      transition: border-color 0.3s;
     }
 
-    /* Sticky header with z-index = 2 */
     th {
-      background: #C00; /* Company Red */
-      color: white;
+      background: var(--header-bg);
+      color: var(--header-text);
       font-weight: bold;
       cursor: pointer;
       position: sticky;
       top: 0;
       z-index: 2;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     /* Left-align first two columns, center the rest */
@@ -69,15 +137,17 @@
     }
 
     tbody tr:nth-child(even) {
-      background: #F9F9F9;
+      background: var(--row-even-bg);
+      transition: background-color 0.3s;
     }
     tbody tr:hover {
-      background: #ECECEC;
+      background: var(--row-hover-bg);
+      transition: background-color 0.1s;
     }
 
     /* Filter Bar card look */
     .filter-bar {
-      background: #fff;
+      background: var(--card-bg);
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       padding: 20px;
@@ -87,12 +157,12 @@
       gap: 10px;
       margin: 20px auto;
       max-width: 95%;
+      transition: background-color 0.3s;
     }
 
-    /* The filter (dropdown) buttons share a fixed width */
     .filter-btn {
-      background: black;
-      color: white;
+      background: var(--primary-btn-bg);
+      color: var(--primary-btn-text);
       padding: 8px 16px;
       border: none;
       border-radius: 8px;
@@ -103,14 +173,13 @@
       width: var(--dropdown-width);
     }
     .filter-btn:hover {
-      background-color: #444;
+      background-color: var(--hover-bg);
       transform: translateY(-2px);
     }
 
-    /* The action buttons (Reset & Export) do NOT share the filter width */
     .action-btn {
-      background: black;
-      color: white;
+      background: var(--primary-btn-bg);
+      color: var(--primary-btn-text);
       padding: 8px 16px;
       border: none;
       border-radius: 8px;
@@ -120,31 +189,36 @@
       text-align: center;
     }
     .action-btn:hover {
-      background-color: #444;
+      background-color: var(--hover-bg);
       transform: translateY(-2px);
+    }
+
+    .export-btn {
+      background: var(--export-btn-bg);
+    }
+    .reset-btn {
+      background: var(--reset-btn-bg);
     }
 
     .dropdown {
       position: relative;
       display: inline-block;
     }
-
-    /* Animated Dropdowns */
     .dropdown-content {
       display: none;
       position: absolute;
       width: var(--dropdown-width);
-      background-color: white;
+      background-color: var(--card-bg);
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
       padding: 12px;
       text-align: left;
-      border: 1px solid gray;
+      border: 1px solid var(--table-border);
       margin-top: 8px;
       z-index: 999;
 
       opacity: 0;
       transform: translateY(-5px);
-      transition: opacity 0.2s, transform 0.2s;
+      transition: opacity 0.2s, transform 0.2s, background-color 0.3s, border-color 0.3s;
     }
     .dropdown-content label {
       display: block;
@@ -152,31 +226,20 @@
       cursor: pointer;
     }
     .dropdown-content label:hover {
-      background-color: #ddd;
+      background-color: var(--hover-bg);
     }
     .dropdown-content.show {
       display: block;
       opacity: 1;
       transform: translateY(0);
     }
-
-    .export-btn {
-      background: #28a745;
-      color: white;
-      border: none;
-    }
-    .reset-btn {
-      background: #C00;
-      color: white;
-      border: none;
-    }
-    .reset-btn:hover {
-      background: #a00000;
-    }
   </style>
 </head>
 
 <body>
+  <!-- Toggle for Dark/Light mode (top-right corner) -->
+  <button class="mode-toggle" onclick="toggleMode()">🌙</button>
+
   <h1>📌 SOC Detections Board</h1>
 
   <!-- Filter Bar -->
@@ -230,7 +293,6 @@
     <button class="export-btn action-btn" onclick="exportTableToCSV()">📤 Export CSV</button>
   </div>
 
-  <!-- Table Container -->
   <div class="table-container">
     <table id="detectionsTable">
       <thead>
@@ -248,14 +310,15 @@
           <th onclick="sortTable(10)">Date Added</th>
         </tr>
       </thead>
-      <tbody>
-        <!-- Data from detections.json goes here -->
-      </tbody>
+      <tbody></tbody>
     </table>
   </div>
 
   <script>
-    let sortDirections = {}; // track each column's sort direction: 'asc' or 'desc'
+    // Dark/Light Mode Toggle
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+    }
 
     function toggleDropdown(id) {
       document.getElementById(id).classList.toggle('show');
@@ -284,8 +347,8 @@
 
     function resetFilters() {
       document.getElementById('search').value = '';
-      document.querySelectorAll('#statusDropdown input[type=\"checkbox\"]').forEach(cb => cb.checked = true);
-      document.querySelectorAll('#toolDropdown input[type=\"checkbox\"]').forEach(cb => cb.checked = true);
+      document.querySelectorAll('#statusDropdown input[type=\"checkbox\"]').forEach(cb => (cb.checked = true));
+      document.querySelectorAll('#toolDropdown input[type=\"checkbox\"]').forEach(cb => (cb.checked = true));
       document.querySelectorAll('#columnDropdown input[type=\"checkbox\"]').forEach((cb, i) => {
         cb.checked = true;
         toggleColumn(i, true);
@@ -295,54 +358,29 @@
 
     function filterTable() {
       console.log('Filtering table... (Implement your filter logic for status/tool/search text)');
-      // e.g. read the search input, read which statuses/tools are checked, hide rows that don't match
     }
 
     function exportTableToCSV() {
-      console.log('Exporting CSV... (Implement CSV logic)');
+      console.log('Exporting table to CSV... (Implement CSV logic)');
     }
 
+    let sortDirections = {};
     function sortTable(columnIndex) {
-      const table = document.getElementById('detectionsTable');
-      const tbody = table.tBodies[0];
-      const rows = Array.from(tbody.querySelectorAll('tr'));
-
-      // Toggle direction
-      if (!sortDirections[columnIndex]) {
-        sortDirections[columnIndex] = 'asc';
-      } else {
-        sortDirections[columnIndex] = (sortDirections[columnIndex] === 'asc') ? 'desc' : 'asc';
-      }
-      const direction = sortDirections[columnIndex];
-
-      // Actually sort the rows
-      rows.sort((a, b) => {
-        const cellA = a.children[columnIndex].textContent.trim().toLowerCase();
-        const cellB = b.children[columnIndex].textContent.trim().toLowerCase();
-        if (cellA < cellB) return direction === 'asc' ? -1 : 1;
-        if (cellA > cellB) return direction === 'asc' ? 1 : -1;
-        return 0;
-      });
-      rows.forEach(row => tbody.appendChild(row));
-
-      // Remove arrows from all columns
-      const allTh = table.querySelectorAll('thead th');
-      allTh.forEach(th => {
-        // remove any existing arrows
-        th.textContent = th.textContent.replace(/[▲▼]/g, '').trim();
-      });
-
-      // Add arrow to the currently sorted column
-      const arrow = direction === 'asc' ? ' ▲' : ' ▼';
-      allTh[columnIndex].textContent += arrow;
+      console.log(`Sorting column ${columnIndex}... (Implement sorting logic)`);
+      // Typically you'd do something like:
+      // 1) gather rows
+      // 2) toggle asc/desc in sortDirections
+      // 3) sort rows
+      // 4) re-inject them
+      // 5) show an arrow ▲/▼
     }
 
     function loadData() {
       fetch('detections.json?v=' + new Date().getTime())
-        .then(r => r.json())
+        .then(response => response.json())
         .then(data => {
-          // Example: sort data by name asc on load
-          data.sort((a, b) => a.name.localeCompare(b.name));
+          // Sort by name ascending on load
+          data.sort((a,b) => a.name.localeCompare(b.name));
 
           const tbody = document.querySelector('#detectionsTable tbody');
           tbody.innerHTML = '';
