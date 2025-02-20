@@ -191,16 +191,13 @@
   </div>
 
   <script>
+    function toggleDropdown(id) {
+      document.getElementById(id).classList.toggle("show");
+    }
+    
     async function loadData() {
       const response = await fetch('detections.json?v=' + new Date().getTime());
       let data = await response.json();
       data.sort((a, b) => a.name.localeCompare(b.name));
 
-      document.querySelector("#detectionsTable tbody").innerHTML = data.map(d =>
-        `<tr>${Object.values(d).map(v => `<td>${v}</td>`).join('')}</tr>`
-      ).join('');
-    }
-    window.onload = loadData;
-  </script>
-</body>
-</html>
+      document.querySelector("#detectionsTable t
