@@ -230,36 +230,35 @@
     
     // Load data from detections.json and populate the table.
     function loadData() {
-      fetch('detections.json?v=' + new Date().getTime())
-        .then(response => response.json())
-        .then(data => {
-          // ✅ Sort detections A → Z by name
-          data.sort((a, b) => a.name.localeCompare(b.name));
+  fetch('detections.json?v=' + new Date().getTime())
+    .then(response => response.json())
+    .then(data => {
+      // ✅ Sort detections A → Z by name before displaying
+      data.sort((a, b) => a.name.localeCompare(b.name));
 
-          const tbody = document.querySelector('#detectionsTable tbody');
-          tbody.innerHTML = ''; // Clear previous rows
+      const tbody = document.querySelector('#detectionsTable tbody');
+      tbody.innerHTML = ''; // Clear previous rows
 
-          data.forEach(detection => {
- {
-            let row = document.createElement('tr');
-            row.innerHTML = `
-              <td>${detection.name}</td>
-              <td>${detection.description}</td>
-              <td style="background-color: ${getStatusColor(detection.defaultStatus)}">${detection.defaultStatus}</td>
-              <td>${detection.killChainStage}</td>
-              <td>${detection.mitreTactic}</td>
-              <td>${detection.mitreTacticID}</td>
-              <td>${detection.mitreTechnique}</td>
-              <td>${detection.mitreTechniqueID}</td>
-              <td>${detection.connector}</td>
-              <td>${detection.tool}</td>
-              <td>${detection.dateAdded}</td>
-            `;
-            tbody.appendChild(row);
-          });
-        })
-        .catch(error => console.error('Error loading JSON data:', error));
-    }
+      data.forEach(detection => {
+        let row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${detection.name}</td>
+          <td>${detection.description}</td>
+          <td style="background-color: ${getStatusColor(detection.defaultStatus)}">${detection.defaultStatus}</td>
+          <td>${detection.killChainStage}</td>
+          <td>${detection.mitreTactic}</td>
+          <td>${detection.mitreTacticID}</td>
+          <td>${detection.mitreTechnique}</td>
+          <td>${detection.mitreTechniqueID}</td>
+          <td>${detection.connector}</td>
+          <td>${detection.tool}</td>
+          <td>${detection.dateAdded}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    })
+    .catch(error => console.error('Error loading JSON data:', error));
+}
     
     // Multi-select filtering function
     function filterTable() {
