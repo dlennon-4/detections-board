@@ -8,57 +8,30 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap">
 
   <style>
-    /* -----------------------------------------
-       1) CSS Variables for Light Mode (Default)
-       ----------------------------------------- */
     :root {
-      /* Background & Text */
+      /* For the dropdown width (bigger now) */
+      --dropdown-width: 220px;
+
+      /* Light Mode Variables (existing) */
       --bg-color: #F5F5F5;
       --text-color: #000000;
-
-      /* Card & Table Colors */
       --card-bg: #ffffff;
       --table-border: #dddddd;
-      --header-bg: #C00;   /* Company Red */
+      --header-bg: #C00; 
       --header-text: #ffffff;
-
-      /* Buttons */
-      --primary-btn-bg: #000;  /* black */
+      --primary-btn-bg: #000; 
       --primary-btn-text: #fff;
-      --hover-bg: #444;        /* dark grey hover */
-      --reset-btn-bg: #C00;    /* reset button’s red */
+      --hover-bg: #444;
+      --reset-btn-bg: #C00;    
       --export-btn-bg: #28a745;
-
-      /* Table Row Colors */
       --row-even-bg: #F9F9F9;
       --row-hover-bg: #ECECEC;
     }
 
-    /* -----------------------------------------
-       2) Dark Mode Overrides
-       ----------------------------------------- */
-    .dark-mode {
-      --bg-color: #1A1A1A;
-      --text-color: #E3E3E3;
+    /* For Dark Mode (if present). Omitted for brevity or if not needed. 
+       .dark-mode { ... }
+    */
 
-      --card-bg: #2B2B2B;
-      --table-border: #444444;
-      --header-bg: #111111;
-      --header-text: #CCCCCC;
-
-      --primary-btn-bg: #333333;
-      --primary-btn-text: #DDDDDD;
-      --hover-bg: #555555;
-      --reset-btn-bg: #700000;   /* darker red for reset button */
-      --export-btn-bg: #236c38;  /* darker green for export */
-
-      --row-even-bg: #333333;
-      --row-hover-bg: #555555;
-    }
-
-    /* -----------------------------------------
-       3) Apply Variables Throughout
-       ----------------------------------------- */
     body {
       background-color: var(--bg-color);
       color: var(--text-color);
@@ -66,24 +39,6 @@
       margin: 20px;
       text-align: center;
       transition: background-color 0.3s, color 0.3s;
-    }
-
-    .mode-toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: var(--primary-btn-bg);
-      color: var(--primary-btn-text);
-      border: none;
-      border-radius: 8px;
-      padding: 8px 16px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-    .mode-toggle:hover {
-      background-color: var(--hover-bg);
-      transform: translateY(-2px);
     }
 
     .table-container {
@@ -102,7 +57,7 @@
       border: 1px solid var(--table-border);
       border-radius: 8px;
       overflow: hidden;
-      border-collapse: separate;
+      border-collapse: separate; 
       border-spacing: 0;
       transition: border-color 0.3s;
     }
@@ -113,6 +68,7 @@
       transition: border-color 0.3s;
     }
 
+    /* Sticky header */
     th {
       background: var(--header-bg);
       color: var(--header-text);
@@ -145,21 +101,29 @@
       transition: background-color 0.1s;
     }
 
-    /* Filter Bar card look */
+    /* Filter Bar card container */
     .filter-bar {
       background: var(--card-bg);
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       padding: 20px;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
+      justify-content: space-between; /* Puts left items on the left, export on the right */
+      align-items: center;
       margin: 20px auto;
       max-width: 95%;
       transition: background-color 0.3s;
     }
 
+    /* Left side filters group */
+    .filters-left {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    /* The filter (dropdown) buttons share fixed width */
     .filter-btn {
       background: var(--primary-btn-bg);
       color: var(--primary-btn-text);
@@ -177,6 +141,7 @@
       transform: translateY(-2px);
     }
 
+    /* Normal action buttons (reset, etc.) auto-size */
     .action-btn {
       background: var(--primary-btn-bg);
       color: var(--primary-btn-text);
@@ -233,66 +198,79 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Longer search bar */
+    .search-box {
+      width: 300px;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
   </style>
 </head>
-
 <body>
-  <!-- Toggle for Dark/Light mode (top-right corner) -->
-  <button class="mode-toggle" onclick="toggleMode()">🌙</button>
-
   <h1>📌 SOC Detections Board</h1>
 
   <!-- Filter Bar -->
   <div class="filter-bar">
-    <input type="text" id="search" class="search-box" onkeyup="filterTable()" placeholder="🔍 Search Detections..." />
+    <!-- Left group with search & filter buttons -->
+    <div class="filters-left">
+      <input type="text" id="search" class="search-box" onkeyup="filterTable()" placeholder="🔍 Search Detections..." />
 
-    <!-- Default Status Dropdown -->
-    <div class="dropdown">
-      <button class="filter-btn" onclick="toggleDropdown('statusDropdown')">Default Status ▼</button>
-      <div id="statusDropdown" class="dropdown-content">
-        <label><input type="checkbox" value="Active" checked onchange="filterTable()"> Active</label>
-        <label><input type="checkbox" value="Active via Custom Rules" checked onchange="filterTable()"> Active via Custom Rules</label>
-        <label><input type="checkbox" value="Testing" checked onchange="filterTable()"> Testing</label>
-        <label><input type="checkbox" value="New Detection" checked onchange="filterTable()"> New Detection</label>
-        <label><input type="checkbox" value="Muted" checked onchange="filterTable()"> Muted</label>
-        <label><input type="checkbox" value="Not Active" checked onchange="filterTable()"> Not Active</label>
-        <label><input type="checkbox" value="Alert Preferences" checked onchange="filterTable()"> Alert Preferences</label>
+      <!-- Default Status Dropdown -->
+      <div class="dropdown">
+        <button class="filter-btn" onclick="toggleDropdown('statusDropdown')">Default Status ▼</button>
+        <div id="statusDropdown" class="dropdown-content">
+          <label><input type="checkbox" value="Active" checked onchange="filterTable()"> Active</label>
+          <label><input type="checkbox" value="Active via Custom Rules" checked onchange="filterTable()"> Active via Custom Rules</label>
+          <label><input type="checkbox" value="Testing" checked onchange="filterTable()"> Testing</label>
+          <label><input type="checkbox" value="New Detection" checked onchange="filterTable()"> New Detection</label>
+          <label><input type="checkbox" value="Muted" checked onchange="filterTable()"> Muted</label>
+          <label><input type="checkbox" value="Not Active" checked onchange="filterTable()"> Not Active</label>
+          <label><input type="checkbox" value="Alert Preferences" checked onchange="filterTable()"> Alert Preferences</label>
+        </div>
       </div>
+
+      <!-- Tool Dropdown -->
+      <div class="dropdown">
+        <button class="filter-btn" onclick="toggleDropdown('toolDropdown')">Tool ▼</button>
+        <div id="toolDropdown" class="dropdown-content">
+          <label><input type="checkbox" value="Stellar Cyber" checked onchange="filterTable()"> Stellar Cyber</label>
+          <label><input type="checkbox" value="LevelBlue" checked onchange="filterTable()"> LevelBlue</label>
+          <label><input type="checkbox" value="CrowdStrike" checked onchange="filterTable()"> CrowdStrike</label>
+          <label><input type="checkbox" value="SentinelOne" checked onchange="filterTable()"> SentinelOne</label>
+        </div>
+      </div>
+
+      <!-- Column Selection Dropdown -->
+      <div class="dropdown">
+        <button class="filter-btn" onclick="toggleDropdown('columnDropdown')">Select Columns ▼</button>
+        <div id="columnDropdown" class="dropdown-content">
+          <label><input type="checkbox" checked onchange="toggleColumn(0)"> Detection Name</label>
+          <label><input type="checkbox" checked onchange="toggleColumn(1)"> Description</label>
+          <label><input type="checkbox" checked onchange="toggleColumn(2)"> Default Status</label>
+          <label><input type="checkbox" checked onchange="toggleColumn(3)"> Kill Chain Stage</label>
+          <label><input type="checkbox" checked onchange="toggleColumn(4)"> MITRE Tactic</label>
+          <label><input type="checkbox" checked onchange="toggleColumn(5)"> MITRE Tactic ID</label>
+          <label><input type="checkbox" checked onchange="toggleColumn(6)"> MITRE Technique</label>
+          <label><input type="checkbox" checked onchange="toggleColumn(7)"> MITRE Technique ID</label>
+          <label><input type="checkbox" checked onchange="toggleColumn(8)"> Connector</label>
+          <label><input type="checkbox" checked onchange="toggleColumn(9)"> Tool</label>
+          <label><input type="checkbox" checked onchange="toggleColumn(10)"> Date Added</label>
+        </div>
+      </div>
+
+      <button class="reset-btn action-btn" onclick="resetFilters()">❌ Reset Filters</button>
     </div>
 
-    <!-- Tool Dropdown -->
-    <div class="dropdown">
-      <button class="filter-btn" onclick="toggleDropdown('toolDropdown')">Tool ▼</button>
-      <div id="toolDropdown" class="dropdown-content">
-        <label><input type="checkbox" value="Stellar Cyber" checked onchange="filterTable()"> Stellar Cyber</label>
-        <label><input type="checkbox" value="LevelBlue" checked onchange="filterTable()"> LevelBlue</label>
-        <label><input type="checkbox" value="CrowdStrike" checked onchange="filterTable()"> CrowdStrike</label>
-        <label><input type="checkbox" value="SentinelOne" checked onchange="filterTable()"> SentinelOne</label>
-      </div>
+    <!-- Right side with Export button -->
+    <div>
+      <button class="export-btn action-btn" onclick="exportTableToCSV()">📤 Export CSV</button>
     </div>
-
-    <!-- Column Selection Dropdown -->
-    <div class="dropdown">
-      <button class="filter-btn" onclick="toggleDropdown('columnDropdown')">Select Columns ▼</button>
-      <div id="columnDropdown" class="dropdown-content">
-        <label><input type="checkbox" checked onchange="toggleColumn(0)"> Detection Name</label>
-        <label><input type="checkbox" checked onchange="toggleColumn(1)"> Description</label>
-        <label><input type="checkbox" checked onchange="toggleColumn(2)"> Default Status</label>
-        <label><input type="checkbox" checked onchange="toggleColumn(3)"> Kill Chain Stage</label>
-        <label><input type="checkbox" checked onchange="toggleColumn(4)"> MITRE Tactic</label>
-        <label><input type="checkbox" checked onchange="toggleColumn(5)"> MITRE Tactic ID</label>
-        <label><input type="checkbox" checked onchange="toggleColumn(6)"> MITRE Technique</label>
-        <label><input type="checkbox" checked onchange="toggleColumn(7)"> MITRE Technique ID</label>
-        <label><input type="checkbox" checked onchange="toggleColumn(8)"> Connector</label>
-        <label><input type="checkbox" checked onchange="toggleColumn(9)"> Tool</label>
-        <label><input type="checkbox" checked onchange="toggleColumn(10)"> Date Added</label>
-      </div>
-    </div>
-
-    <button class="reset-btn action-btn" onclick="resetFilters()">❌ Reset Filters</button>
-    <button class="export-btn action-btn" onclick="exportTableToCSV()">📤 Export CSV</button>
   </div>
 
+  <!-- Table Container -->
   <div class="table-container">
     <table id="detectionsTable">
       <thead>
@@ -310,16 +288,13 @@
           <th onclick="sortTable(10)">Date Added</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        <!-- Data from detections.json goes here -->
+      </tbody>
     </table>
   </div>
 
   <script>
-    // Dark/Light Mode Toggle
-    function toggleMode() {
-      document.body.classList.toggle('dark-mode');
-    }
-
     function toggleDropdown(id) {
       document.getElementById(id).classList.toggle('show');
     }
@@ -357,30 +332,25 @@
     }
 
     function filterTable() {
-      console.log('Filtering table... (Implement your filter logic for status/tool/search text)');
+      console.log('Filtering table... (Implement your filter logic for statuses, tools & search text)');
     }
 
     function exportTableToCSV() {
-      console.log('Exporting table to CSV... (Implement CSV logic)');
+      console.log('Exporting CSV... (Implement CSV logic)');
     }
 
     let sortDirections = {};
     function sortTable(columnIndex) {
       console.log(`Sorting column ${columnIndex}... (Implement sorting logic)`);
-      // Typically you'd do something like:
-      // 1) gather rows
-      // 2) toggle asc/desc in sortDirections
-      // 3) sort rows
-      // 4) re-inject them
-      // 5) show an arrow ▲/▼
+      // Typically you'd sort the rows, reinsert them, and optionally show an arrow
     }
 
     function loadData() {
       fetch('detections.json?v=' + new Date().getTime())
-        .then(response => response.json())
+        .then(res => res.json())
         .then(data => {
-          // Sort by name ascending on load
-          data.sort((a,b) => a.name.localeCompare(b.name));
+          // Sort by detection name A->Z on load
+          data.sort((a, b) => a.name.localeCompare(b.name));
 
           const tbody = document.querySelector('#detectionsTable tbody');
           tbody.innerHTML = '';
