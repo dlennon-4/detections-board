@@ -233,9 +233,14 @@
       fetch('detections.json?v=' + new Date().getTime())
         .then(response => response.json())
         .then(data => {
+          // ✅ Sort detections A → Z by name
+          data.sort((a, b) => a.name.localeCompare(b.name));
+
           const tbody = document.querySelector('#detectionsTable tbody');
-          tbody.innerHTML = '';
+          tbody.innerHTML = ''; // Clear previous rows
+
           data.forEach(detection => {
+ {
             let row = document.createElement('tr');
             row.innerHTML = `
               <td>${detection.name}</td>
