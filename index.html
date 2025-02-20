@@ -35,7 +35,12 @@
     th, td {
       padding: 12px;
       border-bottom: 1px solid #ddd;
-      text-align: left;
+    }
+
+    /* Center all columns EXCEPT `Detection Name` and `Description` */
+    td:not(:first-child):not(:nth-child(2)), 
+    th:not(:first-child):not(:nth-child(2)) {
+      text-align: center;
     }
 
     th {
@@ -67,6 +72,11 @@
 
     .filter-btn:hover { background: #444; }
 
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
     .dropdown-content {
       display: none;
       position: absolute;
@@ -75,6 +85,7 @@
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
       padding: 8px;
       border-radius: 8px;
+      z-index: 1000;
     }
 
     .dropdown-content label {
@@ -162,17 +173,17 @@
     <table id="detectionsTable">
       <thead>
         <tr>
-          <th>Detection Name</th>
-          <th>Description</th>
-          <th>Default Status</th>
-          <th>Kill Chain Stage</th>
-          <th>MITRE Tactic</th>
-          <th>MITRE Tactic ID</th>
-          <th>MITRE Technique</th>
-          <th>MITRE Technique ID</th>
-          <th>Connector</th>
-          <th>Tool</th>
-          <th>Date Added</th>
+          <th onclick="sortTable(0)">Detection Name</th>
+          <th onclick="sortTable(1)">Description</th>
+          <th onclick="sortTable(2)">Default Status</th>
+          <th onclick="sortTable(3)">Kill Chain Stage</th>
+          <th onclick="sortTable(4)">MITRE Tactic</th>
+          <th onclick="sortTable(5)">MITRE Tactic ID</th>
+          <th onclick="sortTable(6)">MITRE Technique</th>
+          <th onclick="sortTable(7)">MITRE Technique ID</th>
+          <th onclick="sortTable(8)">Connector</th>
+          <th onclick="sortTable(9)">Tool</th>
+          <th onclick="sortTable(10)">Date Added</th>
         </tr>
       </thead>
       <tbody></tbody>
@@ -185,24 +196,10 @@
       let data = await response.json();
       data.sort((a, b) => a.name.localeCompare(b.name));
 
-      const tbody = document.querySelector('#detectionsTable tbody');
-      tbody.innerHTML = '';
-      data.forEach(detection => tbody.insertAdjacentHTML("beforeend", `
-        <tr>
-          <td>${detection.name}</td>
-          <td>${detection.description}</td>
-          <td>${detection.defaultStatus}</td>
-          <td>${detection.killChainStage}</td>
-          <td>${detection.mitreTactic}</td>
-          <td>${detection.mitreTacticID}</td>
-          <td>${detection.mitreTechnique}</td>
-          <td>${detection.mitreTechniqueID}</td>
-          <td>${detection.connector}</td>
-          <td>${detection.tool}</td>
-          <td>${detection.dateAdded}</td>
-        </tr>`));
+      document.querySelector("#detectionsTable tbody").innerHTML = data.map(d =>
+        `<tr>${Object.values(d).map(v => `<td>${v}</td>`).join('')}</tr>`
+      ).join('');
     }
-
     window.onload = loadData;
   </script>
 </body>
