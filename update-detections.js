@@ -125,7 +125,7 @@ async function updateDetections() {
   const mondayItems = await fetchAllMondayItems();
   const currentDetections = loadCurrentDetections();
 
-  console.log("Current Detections JSON Before Update:", JSON.stringify(currentDetections, null, 2)); // Debugging log
+  console.log("Current Detections JSON Before Update:", JSON.stringify(currentDetections, null, 2));
 
   // Build a map of current detections keyed by detectionID.
   const detectionMap = {};
@@ -139,9 +139,10 @@ async function updateDetections() {
     detectionMap[detection.detectionID] = detection;
   });
 
-  const updatedDetections = Object.values(detectionMap);
+  // ✅ Sort detections A → Z by name before saving
+  const updatedDetections = Object.values(detectionMap).sort((a, b) => a.name.localeCompare(b.name));
 
-  console.log("Newly Retrieved Detections JSON:", JSON.stringify(updatedDetections, null, 2)); // Debugging log
+  console.log("Newly Retrieved Detections JSON (Sorted A→Z):", JSON.stringify(updatedDetections, null, 2));
 
   // Compare JSONs to check if there's an actual change
   if (JSON.stringify(currentDetections) === JSON.stringify(updatedDetections)) {
@@ -153,4 +154,3 @@ async function updateDetections() {
   console.log("Detections updated successfully!");
 }
 
-updateDetections();
