@@ -4,32 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SOC Detections Board</title>
-
+  
   <!-- Google Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap">
-
+  
   <style>
+    /* General Page Styling */
     body {
-      background-color: #F5F5F5;
+      background-color: #F5F5F5; /* Light Gray */
       color: #333;
       font-family: 'Inter', sans-serif;
       margin: 20px;
       text-align: center;
     }
 
-    .container {
+    /* Container for the table */
+    .table-container {
       background: #fff;
       padding: 20px;
       margin: 20px auto;
       border-radius: 12px;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-      max-width: 98%;
+      max-width: 95%;
       overflow-x: auto;
     }
 
+    /* Modern Table Styling */
     table {
       width: 100%;
       border-collapse: collapse;
+      border-radius: 8px;
+      overflow: hidden;
     }
 
     th, td {
@@ -37,21 +42,33 @@
       border-bottom: 1px solid #ddd;
     }
 
-    /* Center all columns EXCEPT `Detection Name` and `Description` */
-    td:not(:first-child):not(:nth-child(2)), 
-    th:not(:first-child):not(:nth-child(2)) {
+    /* Left align Detection Name & Description, center all other columns */
+    #detectionsTable td:not(:nth-child(1)):not(:nth-child(2)),
+    #detectionsTable th:not(:nth-child(1)):not(:nth-child(2)) {
       text-align: center;
     }
 
+    #detectionsTable td:nth-child(1),
+    #detectionsTable td:nth-child(2) {
+      text-align: left;
+    }
+
     th {
-      background: #C00;
+      background: #C00; /* Company Red */
       color: white;
+      font-weight: bold;
       cursor: pointer;
     }
 
-    tbody tr:nth-child(even) { background: #F9F9F9; }
-    tbody tr:hover { background: #ECECEC; }
+    tbody tr:nth-child(even) {
+      background: #F9F9F9; /* Light Gray */
+    }
 
+    tbody tr:hover {
+      background: #ECECEC;
+    }
+
+    /* Floating Filter Bar */
     .filter-bar {
       display: flex;
       justify-content: center;
@@ -60,7 +77,8 @@
       margin-bottom: 20px;
     }
 
-    .filter-btn {
+    /* Filter & Action Buttons */
+    .filter-btn, .action-btn {
       background: black;
       color: white;
       padding: 8px 16px;
@@ -68,10 +86,30 @@
       border-radius: 8px;
       cursor: pointer;
       font-size: 14px;
+      transition: background 0.3s;
     }
 
-    .filter-btn:hover { background: #444; }
+    .filter-btn:hover {
+      background: #444;
+    }
 
+    .export-btn {
+      background: #28a745;
+    }
+
+    .export-btn:hover {
+      background: #218838;
+    }
+
+    .reset-btn {
+      background: #C00;
+    }
+
+    .reset-btn:hover {
+      background: #a00000;
+    }
+
+    /* Dropdown Styling */
     .dropdown {
       position: relative;
       display: inline-block;
@@ -80,61 +118,47 @@
     .dropdown-content {
       display: none;
       position: absolute;
-      background-color: white;
-      min-width: 200px;
+      background: white;
+      min-width: 220px;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-      padding: 8px;
-      border-radius: 8px;
-      z-index: 1000;
+      padding: 12px;
+      z-index: 1;
+      text-align: left;
+      border: 1px solid gray;
     }
 
     .dropdown-content label {
       display: block;
       padding: 5px;
       cursor: pointer;
+      color: black;
     }
 
-    .dropdown-content label:hover { background-color: #ddd; }
-    .show { display: block; }
-
-    .search-box {
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-      font-size: 16px;
-      width: 300px;
+    .dropdown-content label:hover {
+      background: #ddd;
     }
 
-    .action-btn {
-      padding: 10px 16px;
-      border-radius: 8px;
-      font-size: 14px;
-      cursor: pointer;
+    .show {
+      display: block;
     }
-
-    .export-btn { background: #28a745; color: white; border: none; }
-    .export-btn:hover { background: #218838; }
-    .reset-btn { background: #C00; color: white; border: none; }
-    .reset-btn:hover { background: #a00000; }
   </style>
 </head>
 
 <body>
   <h1>📌 SOC Detections Board</h1>
 
+  <!-- Filter Bar -->
   <div class="filter-bar">
     <input type="text" id="search" class="search-box" onkeyup="filterTable()" placeholder="🔍 Search Detections...">
-
+    
     <div class="dropdown">
       <button class="filter-btn" onclick="toggleDropdown('statusDropdown')">Default Status ▼</button>
       <div id="statusDropdown" class="dropdown-content">
         <label><input type="checkbox" value="Active" checked onchange="filterTable()"> Active</label>
         <label><input type="checkbox" value="Not Active" checked onchange="filterTable()"> Not Active</label>
         <label><input type="checkbox" value="New Detection" checked onchange="filterTable()"> New Detection</label>
-        <label><input type="checkbox" value="Alert Preferences" checked onchange="filterTable()"> Alert Preferences</label>
         <label><input type="checkbox" value="Muted" checked onchange="filterTable()"> Muted</label>
         <label><input type="checkbox" value="Testing" checked onchange="filterTable()"> Testing</label>
-        <label><input type="checkbox" value="Active via Custom Rules" checked onchange="filterTable()"> Active via Custom Rules</label>
       </div>
     </div>
 
@@ -142,17 +166,13 @@
       <button class="filter-btn" onclick="toggleDropdown('toolDropdown')">Tool ▼</button>
       <div id="toolDropdown" class="dropdown-content">
         <label><input type="checkbox" value="Stellar Cyber" checked onchange="filterTable()"> Stellar Cyber</label>
-        <label><input type="checkbox" value="LevelBlue" checked onchange="filterTable()"> LevelBlue</label>
         <label><input type="checkbox" value="CrowdStrike" checked onchange="filterTable()"> CrowdStrike</label>
-        <label><input type="checkbox" value="SentinelOne" checked onchange="filterTable()"> SentinelOne</label>
       </div>
     </div>
 
     <div class="dropdown">
       <button class="filter-btn" onclick="toggleDropdown('columnDropdown')">Select Columns ▼</button>
       <div id="columnDropdown" class="dropdown-content">
-        <label><input type="checkbox" checked onchange="toggleColumn(0)"> Detection Name</label>
-        <label><input type="checkbox" checked onchange="toggleColumn(1)"> Description</label>
         <label><input type="checkbox" checked onchange="toggleColumn(2)"> Default Status</label>
         <label><input type="checkbox" checked onchange="toggleColumn(3)"> Kill Chain Stage</label>
         <label><input type="checkbox" checked onchange="toggleColumn(4)"> MITRE Tactic</label>
@@ -169,7 +189,8 @@
     <button class="export-btn action-btn" onclick="exportTableToCSV()">📤 Export CSV</button>
   </div>
 
-  <div class="container">
+  <!-- Table Container -->
+  <div class="table-container">
     <table id="detectionsTable">
       <thead>
         <tr>
@@ -186,18 +207,35 @@
           <th onclick="sortTable(10)">Date Added</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        <!-- Data is dynamically loaded -->
+      </tbody>
     </table>
   </div>
 
   <script>
     function toggleDropdown(id) {
-      document.getElementById(id).classList.toggle("show");
+      let dropdown = document.getElementById(id);
+      if (dropdown) {
+        dropdown.classList.toggle("show");
+      }
     }
-    
+
     async function loadData() {
       const response = await fetch('detections.json?v=' + new Date().getTime());
       let data = await response.json();
       data.sort((a, b) => a.name.localeCompare(b.name));
 
-      document.querySelector("#detectionsTable t
+      const tbody = document.querySelector('#detectionsTable tbody');
+      tbody.innerHTML = '';
+      data.forEach(detection => {
+        let row = document.createElement('tr');
+        row.innerHTML = `<td>${detection.name}</td><td>${detection.description}</td><td>${detection.defaultStatus}</td>`;
+        tbody.appendChild(row);
+      });
+    }
+
+    window.onload = loadData;
+  </script>
+</body>
+</html>
