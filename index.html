@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap">
 
   <style>
-    /* Base styling */
     body {
       background-color: #F5F5F5;
       color: #333;
@@ -27,12 +26,9 @@
       max-width: 98%;
     }
 
-    /* Table Styling */
     table {
       width: 100%;
       border-collapse: collapse;
-      border-radius: 8px;
-      overflow: hidden;
     }
 
     th, td {
@@ -44,14 +40,12 @@
     th {
       background: #C00;
       color: white;
-      font-weight: bold;
       cursor: pointer;
     }
 
     tbody tr:nth-child(even) { background: #F9F9F9; }
     tbody tr:hover { background: #ECECEC; }
 
-    /* Filters & Controls */
     .filter-bar {
       display: flex;
       justify-content: center;
@@ -68,7 +62,6 @@
       border-radius: 8px;
       cursor: pointer;
       font-size: 14px;
-      transition: background 0.3s;
     }
 
     .filter-btn:hover { background: #444; }
@@ -80,7 +73,6 @@
       min-width: 200px;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
       padding: 8px;
-      text-align: left;
       border-radius: 8px;
     }
 
@@ -107,7 +99,6 @@
       border-radius: 8px;
       font-size: 14px;
       cursor: pointer;
-      transition: background 0.3s;
     }
 
     .export-btn { background: #28a745; color: white; border: none; }
@@ -122,9 +113,24 @@
 
   <div class="filter-bar">
     <input type="text" id="search" class="search-box" onkeyup="filterTable()" placeholder="🔍 Search Detections...">
-    <button class="filter-btn" onclick="toggleDropdown('statusDropdown')">Default Status ▼</button>
-    <button class="filter-btn" onclick="toggleDropdown('toolDropdown')">Tool ▼</button>
-    <button class="filter-btn" onclick="toggleDropdown('columnDropdown')">Columns ▼</button>
+    
+    <div class="dropdown">
+      <button class="filter-btn" onclick="toggleDropdown('statusDropdown')">Default Status ▼</button>
+      <div id="statusDropdown" class="dropdown-content">
+        <label><input type="checkbox" value="Active" checked onchange="filterTable()"> Active</label>
+        <label><input type="checkbox" value="Alert Preferences" checked onchange="filterTable()"> Alert Preferences</label>
+        <label><input type="checkbox" value="New Detection" checked onchange="filterTable()"> New Detection</label>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="filter-btn" onclick="toggleDropdown('toolDropdown')">Tool ▼</button>
+      <div id="toolDropdown" class="dropdown-content">
+        <label><input type="checkbox" value="Stellar Cyber" checked onchange="filterTable()"> Stellar Cyber</label>
+        <label><input type="checkbox" value="AWS" checked onchange="filterTable()"> AWS</label>
+      </div>
+    </div>
+
     <button class="reset-btn action-btn" onclick="resetFilters()">❌ Reset Filters</button>
     <button class="export-btn action-btn" onclick="exportTableToCSV()">📤 Export CSV</button>
   </div>
@@ -136,12 +142,6 @@
           <th onclick="sortTable(0)">Detection Name</th>
           <th onclick="sortTable(1)">Description</th>
           <th onclick="sortTable(2)">Default Status</th>
-          <th onclick="sortTable(3)">Kill Chain Stage</th>
-          <th onclick="sortTable(4)">MITRE Tactic</th>
-          <th onclick="sortTable(5)">MITRE Tactic ID</th>
-          <th onclick="sortTable(6)">MITRE Technique</th>
-          <th onclick="sortTable(7)">MITRE Technique ID</th>
-          <th onclick="sortTable(8)">Connector</th>
           <th onclick="sortTable(9)">Tool</th>
           <th onclick="sortTable(10)">Date Added</th>
         </tr>
@@ -155,7 +155,6 @@
       const response = await fetch('detections.json?v=' + new Date().getTime());
       let data = await response.json();
 
-      // ✅ Sort detections A → Z by name
       data.sort((a, b) => a.name.localeCompare(b.name));
 
       const tbody = document.querySelector('#detectionsTable tbody');
@@ -167,12 +166,6 @@
           <td>${detection.name}</td>
           <td>${detection.description}</td>
           <td>${detection.defaultStatus}</td>
-          <td>${detection.killChainStage}</td>
-          <td>${detection.mitreTactic}</td>
-          <td>${detection.mitreTacticID}</td>
-          <td>${detection.mitreTechnique}</td>
-          <td>${detection.mitreTechniqueID}</td>
-          <td>${detection.connector}</td>
           <td>${detection.tool}</td>
           <td>${detection.dateAdded}</td>
         `;
@@ -184,25 +177,35 @@
       document.getElementById(id).classList.toggle("show");
     }
 
-    function resetFilters() {
-      document.getElementById("search").value = "";
-      loadData();
+    function filterTable() {
+      const searchInput = document.getElementById("search").value.toLowerCase();
+      const rows = document.querySelectorAll("#detectionsTable tbody tr");
+
+      const selectedStatuses = Array.from(document.querySelectorAll("#statusDropdown input:checked")).map(cb => cb.value);
+      const selectedTools = Array.from(document.querySelectorAll("#toolDropdown input:checked")).map(cb => cb.value);
+
+      rows.forEach(row => {
+        const statusText = row.cells[2].textContent.trim();
+        const toolText = row.cells[3].textContent.trim();
+        const rowText = row.textContent.toLowerCase();
+
+        const matchesSearch = rowText.includes(searchInput);
+        const matchesStatus = selectedStatuses.includes(statusText);
+        const matchesTool = selectedTools.includes(toolText);
+
+        row.style.display = matchesSearch && matchesStatus && matchesTool ? "" : "none";
+      });
     }
 
-    function sortTable(columnIndex) {
-      const table = document.getElementById("detectionsTable");
-      const tbody = table.tBodies[0];
-      const rows = Array.from(tbody.querySelectorAll("tr"));
-
-      rows.sort((a, b) => a.children[columnIndex].textContent.localeCompare(b.children[columnIndex].textContent));
-
-      rows.forEach(row => tbody.appendChild(row));
+    function resetFilters() {
+      document.getElementById("search").value = "";
+      document.querySelectorAll("#statusDropdown input, #toolDropdown input").forEach(cb => cb.checked = true);
+      filterTable();
     }
 
     function exportTableToCSV() {
       const csv = [];
-      const table = document.getElementById("detectionsTable");
-      const rows = table.querySelectorAll("tr");
+      const rows = document.querySelectorAll("#detectionsTable tr");
 
       rows.forEach(row => {
         const rowData = [];
@@ -219,11 +222,14 @@
       const downloadLink = document.createElement("a");
       downloadLink.download = "detections_board.csv";
       downloadLink.href = window.URL.createObjectURL(csvFile);
-      downloadLink.style.display = "none";
-      document.body.appendChild(downloadLink);
       downloadLink.click();
-      document.body.removeChild(downloadLink);
     }
+
+    window.onclick = function(event) {
+      if (!event.target.closest('.dropdown')) {
+        document.querySelectorAll(".dropdown-content").forEach(dropdown => dropdown.classList.remove("show"));
+      }
+    };
 
     window.onload = loadData;
   </script>
