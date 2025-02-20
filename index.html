@@ -9,7 +9,6 @@
 
   <style>
     :root {
-      /* For the dropdown width */
       --dropdown-width: 240px;
 
       /* Light Mode Variables */
@@ -104,6 +103,7 @@
       transition: border-color 0.3s;
     }
 
+    /* Sticky header */
     th {
       background: var(--header-bg);
       color: var(--header-text);
@@ -142,7 +142,7 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       padding: 20px;
       display: flex;
-      justify-content: space-between; 
+      justify-content: space-between;
       align-items: center;
       margin: 20px auto;
       max-width: 95%;
@@ -237,6 +237,22 @@
       border: 1px solid #ccc;
       font-size: 14px;
     }
+
+    /* The new 'casesCounter' in bottom-right corner, half size. */
+    .cases-counter {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--primary-btn-bg);
+      color: var(--primary-btn-text);
+      border-radius: 8px;
+      /* Half the size => reduce padding & smaller font. */
+      padding: 4px 8px;
+      font-size: 0.75rem; 
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 9999;
+      transition: background-color 0.3s;
+    }
   </style>
 </head>
 <body>
@@ -248,7 +264,7 @@
   <!-- Filter Bar -->
   <div class="filter-bar">
     <div class="filters-left">
-      <input type="text" id="search" class="search-box" onkeyup="filterTable()" placeholder="🔍 Search Detections..." />
+      <input type="text" id="search" class="search-box" onkeyup="filterTable()" placeholder="🔍 Search Detections...">
 
       <!-- Default Status Dropdown -->
       <div class="dropdown">
@@ -321,24 +337,18 @@
     </table>
   </div>
 
+  <!-- Smaller floating Cases Counter in bottom-right -->
+  <div id="casesCounter" class="cases-counter">Total Cases: 0</div>
+
   <script>
-    /* 
-      1) Toggle between dark/light mode by toggling .dark-mode on <body>.
-    */
     function toggleMode() {
       document.body.classList.toggle('dark-mode');
     }
 
-    /* 
-      2) Show/hide dropdown 
-    */
     function toggleDropdown(id) {
       document.getElementById(id).classList.toggle('show');
     }
 
-    /* 
-      3) Toggle a column 
-    */
     function toggleColumn(colIndex, forceShow = null) {
       const table = document.getElementById('detectionsTable');
       const checkbox = document.querySelectorAll('#columnDropdown input[type=\"checkbox\"]')[colIndex];
@@ -350,7 +360,7 @@
         ths[colIndex].style.display = show ? '' : 'none';
       }
 
-      // Toggle each row cell
+      // Toggle each row's cell
       const rows = table.getElementsByTagName('tr');
       for (let i = 1; i < rows.length; i++) {
         const cells = rows[i].getElementsByTagName('td');
@@ -360,38 +370,18 @@
       }
     }
 
-    /* 
-      4) Reset filters: uncheck everything, show all columns & run filter 
-    */
     function resetFilters() {
-      // Clear search
       document.getElementById('search').value = '';
-
-      // Reset status checkboxes
-      document.querySelectorAll('#statusDropdown input[type=\"checkbox\"]').forEach(cb => {
-        cb.checked = true;
-      });
-
-      // Reset tool checkboxes
-      document.querySelectorAll('#toolDropdown input[type=\"checkbox\"]').forEach(cb => {
-        cb.checked = true;
-      });
-
-      // Reset columns checkboxes
+      document.querySelectorAll('#statusDropdown input[type=\"checkbox\"]').forEach(cb => (cb.checked = true));
+      document.querySelectorAll('#toolDropdown input[type=\"checkbox\"]').forEach(cb => (cb.checked = true));
       document.querySelectorAll('#columnDropdown input[type=\"checkbox\"]').forEach((cb, i) => {
         cb.checked = true;
         toggleColumn(i, true);
       });
-
       filterTable();
     }
 
-    /*
-      5) Filter logic:
-         - searchValue from #search
-         - statuses from #statusDropdown
-         - tools from #toolDropdown
-    */
+    // Filter logic: search + statuses + tools
     function filterTable() {
       const searchValue = document.getElementById('search').value.toLowerCase();
 
@@ -409,8 +399,7 @@
       const rows = document.querySelectorAll('#detectionsTable tbody tr');
       rows.forEach(row => {
         const cells = row.querySelectorAll('td');
-
-        // Indices: 0 = name, 1 = desc, 2 = defaultStatus, 9 = tool
+        // 0: name, 1: desc, 2: status, 9: tool
         const name = cells[0].textContent.toLowerCase();
         const desc = cells[1].textContent.toLowerCase();
         const status = cells[2].textContent.trim();
@@ -422,28 +411,20 @@
 
         row.style.display = (matchesSearch && matchesStatus && matchesTool) ? '' : 'none';
       });
+
+      // After filtering, update the case count
+      updateCaseCount();
     }
 
-    /*
-      6) Export to CSV (Placeholder)
-    */
     function exportTableToCSV() {
       console.log('Exporting table to CSV... (Implement CSV logic)');
     }
 
-    /*
-      7) Sort table (Placeholder)
-    */
     let sortDirections = {};
     function sortTable(columnIndex) {
       console.log(`Sorting column ${columnIndex}... (Implement sorting logic)`);
     }
 
-    /*
-      8) Color-coding for default status:
-         Returns a background color for each status.
-         'Testing' & 'New Detection' share the same purple (#dda0dd).
-    */
     function getStatusColor(status) {
       switch (status) {
         case 'Active':                return '#28a745';  // green
@@ -453,27 +434,35 @@
         case 'Muted':                 return '#ffa500';  // orange
         case 'Not Active':            return '#dc3545';  // red
         case 'Alert Preferences':     return '#17a2b8';  // teal
-        default:                      return '';         // no color
+        default:                      return '';
       }
     }
 
-    /*
-      9) loadData() with color-coded 'Default Status' cell
-    */
+    // Update the smaller 'Total Cases' in bottom-right
+    function updateCaseCount() {
+      const rows = document.querySelectorAll('#detectionsTable tbody tr');
+      let visibleCount = 0;
+      rows.forEach(row => {
+        if (row.style.display !== 'none') {
+          visibleCount++;
+        }
+      });
+      document.getElementById('casesCounter').textContent = `Total Cases: ${visibleCount}`;
+    }
+
     function loadData() {
       fetch('detections.json?v=' + new Date().getTime())
         .then(res => res.json())
         .then(data => {
-          // Sort by detection name ascending on load
+          // Sort by detection name A->Z on load
           data.sort((a,b) => a.name.localeCompare(b.name));
 
           const tbody = document.querySelector('#detectionsTable tbody');
           tbody.innerHTML = '';
+
           data.forEach(det => {
             const statusColor = getStatusColor(det.defaultStatus);
 
-            // We'll inline-style ONLY the Default Status cell (index 2)
-            // The rest remain neutral
             const tr = document.createElement('tr');
             tr.innerHTML = `
               <td>${det.name}</td>
@@ -490,12 +479,8 @@
             `;
             tbody.appendChild(tr);
           });
-        })
-        .catch(err => console.error('Error loading detections.json', err));
-    }
 
-    // Initialize
-    window.onload = loadData;
-  </script>
-</body>
-</html>
+          // Once data is loaded, show initial count
+          updateCaseCount();
+        })
+        .catch(err 
