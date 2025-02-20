@@ -30,6 +30,7 @@
       --row-hover-bg: #ECECEC;
     }
 
+    /* Dark Mode Variables */
     .dark-mode {
       --bg-color: #1A1A1A;
       --text-color: #E3E3E3;
@@ -58,7 +59,7 @@
       transition: background-color 0.3s, color 0.3s;
     }
 
-    /* Toggle button for dark/light mode (top-right corner) */
+    /* Dark/Light mode toggle in top-right corner */
     .mode-toggle {
       position: absolute;
       top: 20px;
@@ -77,7 +78,7 @@
       transform: translateY(-2px);
     }
 
-    /* Table Container */
+    /* Container for the table */
     .table-container {
       background: var(--card-bg);
       padding: 20px;
@@ -89,7 +90,6 @@
       transition: background-color 0.3s;
     }
 
-    /* Table Styles */
     table {
       width: 100%;
       border: 1px solid var(--table-border);
@@ -104,6 +104,8 @@
       border-bottom: 1px solid var(--table-border);
       transition: border-color 0.3s;
     }
+
+    /* Sticky header */
     th {
       background: var(--header-bg);
       color: var(--header-text);
@@ -127,7 +129,6 @@
       text-align: center;
     }
 
-    /* Table row coloring */
     tbody tr:nth-child(even) {
       background: var(--row-even-bg);
       transition: background-color 0.3s;
@@ -137,7 +138,7 @@
       transition: background-color 0.1s;
     }
 
-    /* Filter Bar Container */
+    /* Filter Bar container */
     .filter-bar {
       background: var(--card-bg);
       border-radius: 8px;
@@ -158,7 +159,7 @@
       align-items: center;
     }
 
-    /* Filter Buttons and Action Buttons */
+    /* Filter & Action Buttons */
     .filter-btn {
       background: var(--primary-btn-bg);
       color: var(--primary-btn-text);
@@ -199,7 +200,7 @@
       background: var(--reset-btn-bg);
     }
 
-    /* Dropdown Menus */
+    /* Dropdown styling */
     .dropdown {
       position: relative;
       display: inline-block;
@@ -234,7 +235,6 @@
       transform: translateY(0);
     }
 
-    /* Search box */
     .search-box {
       width: 300px;
       padding: 8px;
@@ -243,7 +243,7 @@
       font-size: 14px;
     }
 
-    /* The 'casesCounter' in the bottom-right, half-size. */
+    /* Smaller floating Cases Counter in bottom-right */
     .cases-counter {
       position: fixed;
       bottom: 20px;
@@ -260,7 +260,7 @@
   </style>
 </head>
 <body>
-  <!-- Dark/Light Mode Toggle -->
+  <!-- Dark/Light Mode Toggle in top-right corner -->
   <button class="mode-toggle" onclick="toggleMode()">🌙</button>
 
   <h1>📌 SOC Detections Board</h1>
@@ -315,6 +315,7 @@
 
       <button class="reset-btn action-btn" onclick="resetFilters()">❌ Reset Filters</button>
     </div>
+    <!-- Right side: Export CSV -->
     <div>
       <button class="export-btn action-btn" onclick="exportTableToCSV()">📤 Export CSV</button>
     </div>
@@ -341,24 +342,27 @@
     </table>
   </div>
 
-  <!-- Cases Counter in bottom-right -->
+  <!-- Smaller floating Cases Counter in bottom-right -->
   <div id="casesCounter" class="cases-counter">Total Cases: 0</div>
 
   <script>
+    /* Dark/Light mode toggle */
     function toggleMode() {
       document.body.classList.toggle('dark-mode');
     }
 
+    /* Show/hide a dropdown */
     function toggleDropdown(id) {
       document.getElementById(id).classList.toggle('show');
     }
 
+    /* Toggle a specific column by index */
     function toggleColumn(colIndex, forceShow = null) {
       const table = document.getElementById('detectionsTable');
       const checkbox = document.querySelectorAll('#columnDropdown input[type=\"checkbox\"]')[colIndex];
-      const show = forceShow !== null ? forceShow : checkbox.checked;
+      const show = (forceShow !== null) ? forceShow : checkbox.checked;
 
-      // Toggle header
+      // Toggle header cell
       const ths = table.getElementsByTagName('th');
       if (ths[colIndex]) {
         ths[colIndex].style.display = show ? '' : 'none';
@@ -374,18 +378,31 @@
       }
     }
 
+    /* Reset filters (status/tool checkboxes, columns) */
     function resetFilters() {
+      // Clear search
       document.getElementById('search').value = '';
-      document.querySelectorAll('#statusDropdown input[type=\"checkbox\"]').forEach(cb => (cb.checked = true));
-      document.querySelectorAll('#toolDropdown input[type=\"checkbox\"]').forEach(cb => (cb.checked = true));
+
+      // Reset default status checkboxes
+      document.querySelectorAll('#statusDropdown input[type=\"checkbox\"]').forEach(cb => {
+        cb.checked = true;
+      });
+
+      // Reset tool checkboxes
+      document.querySelectorAll('#toolDropdown input[type=\"checkbox\"]').forEach(cb => {
+        cb.checked = true;
+      });
+
+      // Reset column checkboxes
       document.querySelectorAll('#columnDropdown input[type=\"checkbox\"]').forEach((cb, i) => {
         cb.checked = true;
         toggleColumn(i, true);
       });
+
       filterTable();
     }
 
-    // Filter logic: search + statuses + tools
+    /* Filter logic: search text + statuses + tools */
     function filterTable() {
       const searchValue = document.getElementById('search').value.toLowerCase();
 
@@ -402,8 +419,9 @@
       // Filter each row
       const rows = document.querySelectorAll('#detectionsTable tbody tr');
       rows.forEach(row => {
+        // If row is hidden, skip
         const cells = row.querySelectorAll('td');
-        // Indices: 0 = name, 1 = desc, 2 = defaultStatus, 9 = tool
+        // Indices: 0 = name, 1 = desc, 2 = status, 9 = tool
         const name = cells[0].textContent.toLowerCase();
         const desc = cells[1].textContent.toLowerCase();
         const status = cells[2].textContent.trim();
@@ -420,32 +438,7 @@
       updateCaseCount();
     }
 
-    // Export CSV (placeholder)
-    function exportTableToCSV() {
-      console.log('Exporting table to CSV... (Implement CSV logic)');
-    }
-
-    // Sort logic (placeholder)
-    let sortDirections = {};
-    function sortTable(columnIndex) {
-      console.log(`Sorting column ${columnIndex}... (Implement sorting logic)`);
-    }
-
-    // Colors for the Default Status cell
-    function getStatusColor(status) {
-      switch (status) {
-        case 'Active':                return '#28a745'; // green
-        case 'Active via Custom Rules': return '#90ee90'; // light green
-        case 'Testing':
-        case 'New Detection':         return '#dda0dd'; // same purple
-        case 'Muted':                 return '#ffa500'; // orange
-        case 'Not Active':            return '#dc3545'; // red
-        case 'Alert Preferences':     return '#17a2b8'; // teal
-        default:                      return '';
-      }
-    }
-
-    // Update the smaller 'Total Cases' in bottom-right
+    /* Smaller 'Total Cases' in the bottom-right */
     function updateCaseCount() {
       const rows = document.querySelectorAll('#detectionsTable tbody tr');
       let visibleCount = 0;
@@ -457,13 +450,68 @@
       document.getElementById('casesCounter').textContent = `Total Cases: ${visibleCount}`;
     }
 
-    // Load data from detections.json
+    /* Sort table placeholder */
+    let sortDirections = {};
+    function sortTable(columnIndex) {
+      console.log(`Sorting column ${columnIndex}... (Implement sorting logic)`);
+    }
+
+    /* Color-coded statuses for the 3rd cell (index=2) */
+    function getStatusColor(status) {
+      switch (status) {
+        case 'Active':                return '#28a745';  // green
+        case 'Active via Custom Rules': return '#90ee90'; // light green
+        case 'Testing':
+        case 'New Detection':         return '#dda0dd';  // same purple
+        case 'Muted':                 return '#ffa500';  // orange
+        case 'Not Active':            return '#dc3545';  // red
+        case 'Alert Preferences':     return '#17a2b8';  // teal
+        default:                      return '';
+      }
+    }
+
+    /* Replace old placeholder with a working CSV export */
+    function exportTableToCSV() {
+      const table = document.getElementById('detectionsTable');
+      const rows = table.querySelectorAll('tr');
+      let csv = [];
+
+      rows.forEach(row => {
+        // Skip hidden rows
+        if (row.style.display === 'none') return;
+
+        let rowData = [];
+        // Collect data from visible cells only
+        row.querySelectorAll('th, td').forEach(cell => {
+          if (cell.style.display === 'none') return;  // skip hidden columns
+          let text = cell.textContent.replace(/\"/g, '\"\"'); // escape quotes
+          rowData.push(`\"${text}\"`);
+        });
+
+        if (rowData.length > 0) {
+          csv.push(rowData.join(','));
+        }
+      });
+
+      const csvContent = csv.join('\n');
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'detections_board.csv');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
+
+    /* Load data from detections.json */
     function loadData() {
-      // If your older version used './detections.json', swap here if needed:
-      fetch('detections.json?v=' + new Date().getTime())  // or './detections.json'
+      // If your older version used './detections.json', do that here if needed:
+      fetch('detections.json?v=' + new Date().getTime())
         .then(res => res.json())
         .then(data => {
-          // Sort by detection name ascending on load
+          // Sort by detection name A->Z on load
           data.sort((a,b) => a.name.localeCompare(b.name));
 
           const tbody = document.querySelector('#detectionsTable tbody');
@@ -489,7 +537,7 @@
             tbody.appendChild(tr);
           });
 
-          // Once data is loaded, do an initial count
+          // After data loads, show initial case count
           updateCaseCount();
         })
         .catch(err => console.error('Error loading detections.json', err));
