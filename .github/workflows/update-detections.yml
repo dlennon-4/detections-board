@@ -1,7 +1,7 @@
 name: Update Detections from Monday.com
 
 on:
-  workflow_dispatch:  # Allows manual triggering via the GitHub UI
+  workflow_dispatch:  # ✅ Allows manual triggering via the GitHub UI
 
 jobs:
   update-detections:
@@ -9,31 +9,31 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-      
+
       - name: Install dependencies
         run: npm install axios
-      
+
       - name: Update Detections
         env:
           MONDAY_API_KEY: ${{ secrets.MONDAY_API_KEY }}
           MONDAY_BOARD_ID: ${{ secrets.MONDAY_BOARD_ID }}
         run: node update-detections.js
-      
+
       - name: Commit and Push Changes
         env:
-          GH_PAT: ${{ secrets.GH_PAT }}  # ✅ Use GitHub Personal Access Token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # ✅ Use GitHub Token for permissions
         run: |
           git config --local user.email "dan@cyflare.com"
           git config --local user.name "GitHub Detections Bot"
           git add detections.json
           if ! git diff --cached --quiet; then
             git commit -m "Auto-update detections from Monday.com"
-            git push https://x-access-token:${GH_PAT}@github.com/dlennon-4/detections-board.git HEAD:main
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
           else
             echo "No changes to commit"
           fi
