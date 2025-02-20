@@ -9,28 +9,46 @@
 
   <style>
     :root {
-      /* For the dropdown width (bigger now) */
-      --dropdown-width: 220px;
+      --dropdown-width: 280px;
 
-      /* Light Mode Variables (existing) */
+      /* Light Mode Variables */
       --bg-color: #F5F5F5;
       --text-color: #000000;
+
       --card-bg: #ffffff;
       --table-border: #dddddd;
-      --header-bg: #C00; 
+      --header-bg: #C00; /* Company Red */
       --header-text: #ffffff;
-      --primary-btn-bg: #000; 
+
+      --primary-btn-bg: #000;  /* black */
       --primary-btn-text: #fff;
       --hover-bg: #444;
-      --reset-btn-bg: #C00;    
+      --reset-btn-bg: #C00;
       --export-btn-bg: #28a745;
+
       --row-even-bg: #F9F9F9;
       --row-hover-bg: #ECECEC;
     }
 
-    /* For Dark Mode (if present). Omitted for brevity or if not needed. 
-       .dark-mode { ... }
-    */
+    /* Dark Mode Overrides */
+    .dark-mode {
+      --bg-color: #1A1A1A;
+      --text-color: #E3E3E3;
+
+      --card-bg: #2B2B2B;
+      --table-border: #444444;
+      --header-bg: #111111;
+      --header-text: #CCCCCC;
+
+      --primary-btn-bg: #333333;
+      --primary-btn-text: #DDDDDD;
+      --hover-bg: #555555;
+      --reset-btn-bg: #700000;   
+      --export-btn-bg: #236c38;
+
+      --row-even-bg: #333333;
+      --row-hover-bg: #555555;
+    }
 
     body {
       background-color: var(--bg-color);
@@ -39,6 +57,25 @@
       margin: 20px;
       text-align: center;
       transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Mode toggle button in top-right corner */
+    .mode-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--primary-btn-bg);
+      color: var(--primary-btn-text);
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .mode-toggle:hover {
+      background-color: var(--hover-bg);
+      transform: translateY(-2px);
     }
 
     .table-container {
@@ -57,7 +94,7 @@
       border: 1px solid var(--table-border);
       border-radius: 8px;
       overflow: hidden;
-      border-collapse: separate; 
+      border-collapse: separate;
       border-spacing: 0;
       transition: border-color 0.3s;
     }
@@ -80,7 +117,7 @@
       transition: background-color 0.3s, color 0.3s;
     }
 
-    /* Left-align first two columns, center the rest */
+    /* Left-align first two columns, center others */
     #detectionsTable th:nth-child(1),
     #detectionsTable td:nth-child(1),
     #detectionsTable th:nth-child(2),
@@ -108,14 +145,14 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       padding: 20px;
       display: flex;
-      justify-content: space-between; /* Puts left items on the left, export on the right */
+      justify-content: space-between; /* left items on left, export on right */
       align-items: center;
       margin: 20px auto;
       max-width: 95%;
       transition: background-color 0.3s;
     }
 
-    /* Left side filters group */
+    /* Left group for filters */
     .filters-left {
       display: flex;
       flex-wrap: wrap;
@@ -210,11 +247,14 @@
   </style>
 </head>
 <body>
+  <!-- Dark/Light Mode Toggle button in top-right corner -->
+  <button class="mode-toggle" onclick="toggleMode()">🌙</button>
+
   <h1>📌 SOC Detections Board</h1>
 
   <!-- Filter Bar -->
   <div class="filter-bar">
-    <!-- Left group with search & filter buttons -->
+    <!-- Left side with search & filters -->
     <div class="filters-left">
       <input type="text" id="search" class="search-box" onkeyup="filterTable()" placeholder="🔍 Search Detections..." />
 
@@ -264,7 +304,7 @@
       <button class="reset-btn action-btn" onclick="resetFilters()">❌ Reset Filters</button>
     </div>
 
-    <!-- Right side with Export button -->
+    <!-- Right side: Export CSV -->
     <div>
       <button class="export-btn action-btn" onclick="exportTableToCSV()">📤 Export CSV</button>
     </div>
@@ -288,23 +328,28 @@
           <th onclick="sortTable(10)">Date Added</th>
         </tr>
       </thead>
-      <tbody>
-        <!-- Data from detections.json goes here -->
-      </tbody>
+      <tbody></tbody>
     </table>
   </div>
 
   <script>
+    // Toggle Dark/Light mode
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    // Show/hide a dropdown
     function toggleDropdown(id) {
       document.getElementById(id).classList.toggle('show');
     }
 
+    // Toggle a specific column by index
     function toggleColumn(colIndex, forceShow = null) {
       const table = document.getElementById('detectionsTable');
       const checkbox = document.querySelectorAll('#columnDropdown input[type=\"checkbox\"]')[colIndex];
       const show = forceShow !== null ? forceShow : checkbox.checked;
 
-      // Toggle header
+      // Toggle header cell
       const ths = table.getElementsByTagName('th');
       if (ths[colIndex]) {
         ths[colIndex].style.display = show ? '' : 'none';
@@ -320,37 +365,82 @@
       }
     }
 
+    // Reset filters
     function resetFilters() {
+      // Clear search
       document.getElementById('search').value = '';
-      document.querySelectorAll('#statusDropdown input[type=\"checkbox\"]').forEach(cb => (cb.checked = true));
-      document.querySelectorAll('#toolDropdown input[type=\"checkbox\"]').forEach(cb => (cb.checked = true));
+
+      // Reset status checkboxes
+      document.querySelectorAll('#statusDropdown input[type=\"checkbox\"]').forEach(cb => {
+        cb.checked = true;
+      });
+
+      // Reset tool checkboxes
+      document.querySelectorAll('#toolDropdown input[type=\"checkbox\"]').forEach(cb => {
+        cb.checked = true;
+      });
+
+      // Reset columns checkboxes
       document.querySelectorAll('#columnDropdown input[type=\"checkbox\"]').forEach((cb, i) => {
         cb.checked = true;
         toggleColumn(i, true);
       });
+
       filterTable();
     }
 
+    // Filter logic: search + statuses + tools
     function filterTable() {
-      console.log('Filtering table... (Implement your filter logic for statuses, tools & search text)');
+      const searchValue = document.getElementById('search').value.toLowerCase();
+
+      // Gather checked statuses
+      const checkedStatuses = Array.from(
+        document.querySelectorAll('#statusDropdown input[type=\"checkbox\"]:checked')
+      ).map(cb => cb.value);
+
+      // Gather checked tools
+      const checkedTools = Array.from(
+        document.querySelectorAll('#toolDropdown input[type=\"checkbox\"]:checked')
+      ).map(cb => cb.value);
+
+      // Filter each row
+      const rows = document.querySelectorAll('#detectionsTable tbody tr');
+      rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+
+        // Cells reference: 
+        //  0: name, 1: description, 2: defaultStatus, 9: tool
+        const name = cells[0].textContent.toLowerCase();
+        const desc = cells[1].textContent.toLowerCase();
+        const status = cells[2].textContent.trim();
+        const tool = cells[9].textContent.trim();
+
+        const matchesSearch = (name.includes(searchValue) || desc.includes(searchValue));
+        const matchesStatus = checkedStatuses.includes(status);
+        const matchesTool = checkedTools.includes(tool);
+
+        row.style.display = (matchesSearch && matchesStatus && matchesTool) ? '' : 'none';
+      });
     }
 
+    // Export to CSV (placeholder)
     function exportTableToCSV() {
-      console.log('Exporting CSV... (Implement CSV logic)');
+      console.log('Exporting table to CSV... (Implement CSV logic)');
     }
 
+    // Sort table (placeholder)
     let sortDirections = {};
     function sortTable(columnIndex) {
       console.log(`Sorting column ${columnIndex}... (Implement sorting logic)`);
-      // Typically you'd sort the rows, reinsert them, and optionally show an arrow
     }
 
+    // Load data from detections.json
     function loadData() {
       fetch('detections.json?v=' + new Date().getTime())
         .then(res => res.json())
         .then(data => {
-          // Sort by detection name A->Z on load
-          data.sort((a, b) => a.name.localeCompare(b.name));
+          // Sort by detection name ascending on load
+          data.sort((a,b) => a.name.localeCompare(b.name));
 
           const tbody = document.querySelector('#detectionsTable tbody');
           tbody.innerHTML = '';
@@ -375,6 +465,7 @@
         .catch(err => console.error('Error loading detections.json', err));
     }
 
+    // Initialize
     window.onload = loadData;
   </script>
 </body>
