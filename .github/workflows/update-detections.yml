@@ -1,7 +1,7 @@
 name: Update Detections from Monday.com
 
 on:
-  workflow_dispatch:      # Allows manual triggering via the GitHub UI
+  workflow_dispatch:  # Allows manual triggering via the GitHub UI
 
 jobs:
   update-detections:
@@ -25,13 +25,15 @@ jobs:
         run: node update-detections.js
       
       - name: Commit and Push Changes
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}  # ✅ Use GitHub Personal Access Token
         run: |
           git config --local user.email "dan@cyflare.com"
           git config --local user.name "GitHub Detections Bot"
           git add detections.json
           if ! git diff --cached --quiet; then
             git commit -m "Auto-update detections from Monday.com"
-            git push
+            git push https://x-access-token:${GH_PAT}@github.com/dlennon-4/detections-board.git HEAD:main
           else
             echo "No changes to commit"
           fi
