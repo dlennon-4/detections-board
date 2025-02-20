@@ -84,7 +84,6 @@
     }
 
     .dropdown-content label:hover { background-color: #ddd; }
-
     .show { display: block; }
 
     .search-box {
@@ -181,24 +180,30 @@
   </div>
 
   <script>
-    function toggleColumn(index) {
-      const table = document.getElementById("detectionsTable");
-      table.querySelectorAll("th, td").forEach((cell, i) => {
-        if (i % 11 === index) {
-          cell.style.display = cell.style.display === "none" ? "" : "none";
-        }
-      });
+    async function loadData() {
+      const response = await fetch('detections.json?v=' + new Date().getTime());
+      let data = await response.json();
+      data.sort((a, b) => a.name.localeCompare(b.name));
+
+      const tbody = document.querySelector('#detectionsTable tbody');
+      tbody.innerHTML = '';
+      data.forEach(detection => tbody.insertAdjacentHTML("beforeend", `
+        <tr>
+          <td>${detection.name}</td>
+          <td>${detection.description}</td>
+          <td>${detection.defaultStatus}</td>
+          <td>${detection.killChainStage}</td>
+          <td>${detection.mitreTactic}</td>
+          <td>${detection.mitreTacticID}</td>
+          <td>${detection.mitreTechnique}</td>
+          <td>${detection.mitreTechniqueID}</td>
+          <td>${detection.connector}</td>
+          <td>${detection.tool}</td>
+          <td>${detection.dateAdded}</td>
+        </tr>`));
     }
 
-    function toggleDropdown(id) {
-      document.getElementById(id).classList.toggle("show");
-    }
-
-    window.onclick = function(event) {
-      if (!event.target.closest('.dropdown')) {
-        document.querySelectorAll(".dropdown-content").forEach(dropdown => dropdown.classList.remove("show"));
-      }
-    };
+    window.onload = loadData;
   </script>
 </body>
 </html>
