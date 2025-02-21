@@ -88,33 +88,34 @@ function writeDetections(detections) {
   console.log("✅ Detections updated successfully!");
 }
 
-// Helper function to extract the best column value
-function getColumnValue(cv) {
-  if (cv.text && cv.text.trim() !== "") {
-    return cv.text;
-  }
-  if (cv.value) {
-    try {
-      const parsed = JSON.parse(cv.value);
-      if (parsed && parsed.label) return parsed.label;
-      if (parsed && parsed.text) return parsed.text;
-      return JSON.stringify(parsed);
-    } catch (e) {
-      return cv.value;
-    }
-  }
-  return "";
+// Function to write update summary for email
+function writeSummary(newDetections, updatedDetections, deletedDetections) {
+    const summaryContent = `
+🛠 Detections Update Summary
+----------------------------
+🆕 New Detections: ${newDetections.length}
+✏️ Updated Detections: ${updatedDetections.length}
+🗑️ Deleted Detections: ${deletedDetections.length}
+
+📋 Details:
+${newDetections.map(d => `🆕 New: ${d.name} (ID: ${d.detectionID})`).join("\n")}
+${updatedDetections.map(d => `✏️ Updated: ${d.name} (ID: ${d.detectionID})`).join("\n")}
+${deletedDetections.map(d => `🗑️ Deleted: ${d.name} (ID: ${d.detectionID})`).join("\n")}
+    `;
+
+    fs.writeFileSync('update-summary.txt', summaryContent.trim());
+    console.log("✅ Summary saved to update-summary.txt");
 }
 
 // Mapping function using column IDs
 function mapItemToDetection(item) {
   const columns = {};
   item.column_values.forEach(cv => {
-    columns[cv.id] = getColumnValue(cv);
+    columns[cv.id] = cv.text || cv.value || ''; 
   });
 
   return {
-    detectionID: columns["item_id_mknaww1f"] || item.id,  // Use detectionID, fallback to id
+    detectionID: columns["item_id_mknaww1f"] || item.id, 
     name: item.name,
     description: columns["text2__1"] || '',
     defaultStatus: columns["status"] || '',
@@ -144,56 +145,40 @@ async function updateDetections() {
   const currentDetections = loadCurrentDetections();
   console.log(`📊 Existing Detections Count: ${currentDetections.length}`);
 
-  // Build a map of current detections keyed by detectionID
   const detectionMap = {};
   currentDetections.forEach(det => {
     detectionMap[det.detectionID] = det;
   });
 
-  let newDetections = 0;
-  let updatedDetections = 0;
+  let newDetections = [];
+  let updatedDetections = [];
+  let deletedDetections = [];
 
-  // Update or add each detection
   mondayItems.forEach(item => {
     const detection = mapItemToDetection(item);
     if (detection) {
       if (!detectionMap[detection.detectionID]) {
-        newDetections++;
-        console.log(`🆕 New Detection Added: ${detection.name} (ID: ${detection.detectionID})`);
+        newDetections.push(detection);
       } else if (JSON.stringify(detectionMap[detection.detectionID]) !== JSON.stringify(detection)) {
-        updatedDetections++;
-        console.log(`✏️ Modified Detection: ${detection.name} (ID: ${detection.detectionID})`);
+        updatedDetections.push(detection);
       }
       detectionMap[detection.detectionID] = detection;
     }
   });
 
-  // Identify deleted detections using detectionID
   const mondayDetectionIDs = new Set(mondayItems.map(item => mapItemToDetection(item).detectionID));
-  let deletedDetections = 0;
-
   Object.keys(detectionMap).forEach(detectionID => {
     if (!mondayDetectionIDs.has(detectionID)) {
-      console.log(`🗑️ Deleted Detection: ${detectionMap[detectionID].name} (ID: ${detectionID})`);
+      deletedDetections.push(detectionMap[detectionID]);
       delete detectionMap[detectionID];
-      deletedDetections++;
     }
   });
 
-  // Sort detections A → Z before saving
   const finalDetections = Object.values(detectionMap).sort((a, b) => a.name.localeCompare(b.name));
 
-  console.log(`📌 Total Updated Detections: ${finalDetections.length}`);
-
-  if (newDetections === 0 && updatedDetections === 0 && deletedDetections === 0) {
-    console.log("✅ No changes detected, skipping update.");
-    return;
-  }
-
-  console.log(`📢 Summary: 🆕 ${newDetections} new detections | ✏️ ${updatedDetections} updated detections | 🗑️ ${deletedDetections} deleted detections`);
-
+  console.log(`📢 Summary: 🆕 ${newDetections.length} new | ✏️ ${updatedDetections.length} updated | 🗑️ ${deletedDetections.length} deleted`);
+  writeSummary(newDetections, updatedDetections, deletedDetections);
   writeDetections(finalDetections);
 }
 
-// Run update process
 updateDetections();
