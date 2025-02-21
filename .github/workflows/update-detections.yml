@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Dependencies
         run: sudo apt-get update && sudo apt-get install -y postfix mailutils
@@ -27,7 +29,15 @@ jobs:
           npm install axios
           node update-detections.js
 
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add detections.json update-summary.txt
+          git commit -m "🔄 Auto-update detections.json on $(date)"
+          git push origin main  # Change "main" to your actual branch name
+
       - name: Send Email Notification via `mailx`
         if: always()
         run: |
-          cat update-summary.txt | mailx -s "Detection Board Update: Summary Report" dan@cyflare.com
+          cat update-summary.txt | mailx -s "🚨 Detection Board Update: Summary Report" dan@cyflare.com
