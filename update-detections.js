@@ -15,6 +15,16 @@ console.log("🚀 Script Started");
 console.log("🔑 API Key Loaded:", MONDAY_API_KEY ? "Yes" : "No");
 console.log("📋 Using Board ID:", BOARD_ID);
 
+// Function to format date from YYYY-MM-DD to MM-DD-YY
+function formatDate(dateString) {
+    if (!dateString) return "";
+    const date = new Date(dateString);
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // MM
+    const day = String(date.getDate()).padStart(2, '0'); // DD
+    const year = String(date.getFullYear()).slice(-2); // YY
+    return `${month}-${day}-${year}`;
+}
+
 // Function to fetch all detections using pagination
 async function fetchAllMondayItems() {
   let allItems = [];
@@ -126,7 +136,7 @@ function mapItemToDetection(item) {
     mitreTechniqueID: columns["text8__1"] || '',
     connector: columns["text00__1"] || '',
     tool: columns["text_mknaxnaj"] || '',
-    dateAdded: columns["date__1"] || ''
+    lastModified: formatDate(columns["date__1"])  // 🔄 Apply new format
   };
 }
 
@@ -181,4 +191,5 @@ async function updateDetections() {
   writeDetections(finalDetections);
 }
 
+// Run update process
 updateDetections();
