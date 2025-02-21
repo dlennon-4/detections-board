@@ -45,19 +45,22 @@ async function fetchAllMondayItems() {
         break;
       }
 
-      console.log(`✅ API Response Received - Items Count: ${response.data.data.boards[0]?.items_page?.items.length || 0}`);
-
-      if (cursor) {
-        const page = response.data.data.next_items_page;
-        allItems = allItems.concat(page.items);
-        cursor = page.cursor;
-      } else {
-        const page = response.data.data.boards[0].items_page;
-        allItems = allItems.concat(page.items);
-        cursor = page.cursor;
+      const page = cursor ? response.data.data.next_items_page : response.data.data.boards[0]?.items_page;
+      if (!page) {
+        console.error("❌ No page data received!");
+        break;
       }
 
+      allItems = allItems.concat(page.items || []);
+      cursor = page.cursor;
+
       console.log(`📥 Retrieved ${allItems.length} detections so far...`);
+
+      if (allItems.length !== 474) {
+        console.warn(`⚠️ Expected 474 detections, but only fetched ${allItems.length}!`);
+      }
+
+      console.log(`📌 Pagination Cursor: ${cursor}`);
 
       // **Added delay to avoid rate limits**
       await new Promise(resolve => setTimeout(resolve, 1000));
@@ -86,7 +89,7 @@ function loadCurrentDetections() {
 
 // Function to write updated detections.json
 function writeDetections(detections) {
-  console.log("💾 Writing updated detections.json...");
+  console.log(`💾 Preparing to write ${detections.length} detections to detections.json...`);
   fs.writeFileSync('detections.json', JSON.stringify(detections, null, 2) + "\n");
   console.log("✅ Detections updated successfully!");
 }
@@ -111,7 +114,12 @@ function getColumnValue(cv) {
 
 // Mapping function using column IDs
 function mapItemToDetection(item) {
-  console.log(`🔄 Mapping item: ${item.name} (ID: ${item.id})`);
+  console.log(`🔄 Mapping Detection: ${item.name} (ID: ${item.id})`);
+
+  if (!item.name || !item.id) {
+    console.warn(`⚠️ Skipping detection: Missing required fields!`, JSON.stringify(item, null, 2));
+    return null; // Skip invalid detections
+  }
 
   const columns = {};
   item.column_values.forEach(cv => {
@@ -158,13 +166,19 @@ async function updateDetections() {
   // Update or add each detection
   mondayItems.forEach(item => {
     const detection = mapItemToDetection(item);
-    detectionMap[detection.detectionID] = detection;
+    if (detection) {
+      detectionMap[detection.detectionID] = detection;
+    }
   });
 
   // Sort detections A → Z before saving
   const updatedDetections = Object.values(detectionMap).sort((a, b) => a.name.localeCompare(b.name));
 
   console.log(`📌 Total Updated Detections: ${updatedDetections.length}`);
+
+  if (updatedDetections.length !== 474) {
+    console.warn(`⚠️ Expected 474 detections, but found only ${updatedDetections.length}!`);
+  }
 
   // Compare JSONs to check if there's an actual change
   if (JSON.stringify(currentDetections) === JSON.stringify(updatedDetections)) {
