@@ -114,7 +114,7 @@ function mapItemToDetection(item) {
   });
 
   return {
-    detectionID: columns["item_id_mknaww1f"] || item.id,
+    detectionID: columns["item_id_mknaww1f"] || item.id,  // Use detectionID, fallback to id
     name: item.name,
     description: columns["text2__1"] || '',
     defaultStatus: columns["status"] || '',
@@ -168,12 +168,12 @@ async function updateDetections() {
     }
   });
 
-  // Identify deleted detections
-  const mondayIDs = new Set(mondayItems.map(item => item.id));
+  // Identify deleted detections using detectionID
+  const mondayDetectionIDs = new Set(mondayItems.map(item => mapItemToDetection(item).detectionID));
   let deletedDetections = 0;
 
   Object.keys(detectionMap).forEach(detectionID => {
-    if (!mondayIDs.has(detectionID)) {
+    if (!mondayDetectionIDs.has(detectionID)) {
       console.log(`🗑️ Deleted Detection: ${detectionMap[detectionID].name} (ID: ${detectionID})`);
       delete detectionMap[detectionID];
       deletedDetections++;
