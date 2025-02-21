@@ -55,12 +55,7 @@ async function fetchAllMondayItems() {
       cursor = page.cursor;
 
       console.log(`📥 Retrieved ${allItems.length} detections so far...`);
-
-      if (allItems.length !== 474) {
-        console.warn(`⚠️ Expected 474 detections, but only fetched ${allItems.length}!`);
-      }
-
-      console.log(`📌 Pagination Cursor: ${cursor}`);
+      console.log(`📌 Pagination Cursor: ${cursor ? cursor : "End of Data"}`);
 
       // **Added delay to avoid rate limits**
       await new Promise(resolve => setTimeout(resolve, 1000));
@@ -114,13 +109,6 @@ function getColumnValue(cv) {
 
 // Mapping function using column IDs
 function mapItemToDetection(item) {
-  console.log(`🔄 Mapping Detection: ${item.name} (ID: ${item.id})`);
-
-  if (!item.name || !item.id) {
-    console.warn(`⚠️ Skipping detection: Missing required fields!`, JSON.stringify(item, null, 2));
-    return null; // Skip invalid detections
-  }
-
   const columns = {};
   item.column_values.forEach(cv => {
     columns[cv.id] = getColumnValue(cv);
@@ -163,30 +151,37 @@ async function updateDetections() {
     detectionMap[det.detectionID] = det;
   });
 
+  let newDetections = 0;
+  let updatedDetections = 0;
+
   // Update or add each detection
   mondayItems.forEach(item => {
     const detection = mapItemToDetection(item);
     if (detection) {
+      if (!detectionMap[detection.detectionID]) {
+        newDetections++;
+        console.log(`🆕 New Detection Added: ${detection.name} (ID: ${detection.detectionID})`);
+      } else if (JSON.stringify(detectionMap[detection.detectionID]) !== JSON.stringify(detection)) {
+        updatedDetections++;
+        console.log(`✏️ Modified Detection: ${detection.name} (ID: ${detection.detectionID})`);
+      }
       detectionMap[detection.detectionID] = detection;
     }
   });
 
   // Sort detections A → Z before saving
-  const updatedDetections = Object.values(detectionMap).sort((a, b) => a.name.localeCompare(b.name));
+  const finalDetections = Object.values(detectionMap).sort((a, b) => a.name.localeCompare(b.name));
 
-  console.log(`📌 Total Updated Detections: ${updatedDetections.length}`);
+  console.log(`📌 Total Updated Detections: ${finalDetections.length}`);
 
-  if (updatedDetections.length !== 474) {
-    console.warn(`⚠️ Expected 474 detections, but found only ${updatedDetections.length}!`);
-  }
-
-  // Compare JSONs to check if there's an actual change
-  if (JSON.stringify(currentDetections) === JSON.stringify(updatedDetections)) {
+  if (newDetections === 0 && updatedDetections === 0) {
     console.log("✅ No changes detected, skipping update.");
     return;
   }
 
-  writeDetections(updatedDetections);
+  console.log(`📢 Summary: 🆕 ${newDetections} new detections | ✏️ ${updatedDetections} updated detections`);
+
+  writeDetections(finalDetections);
 }
 
 // Run update process
