@@ -30,4 +30,4 @@ jobs:
       - name: Send Email Notification via `mailx`
         if: always()
         run: |
-          cat update-summary.txt | mailx -s "🚨 Detection Board Update: Summary Report" dan@cyflare.com
+          cat update-summary.txt | mailx -s "Detection Board Update: Summary Report" dan@cyflare.com
