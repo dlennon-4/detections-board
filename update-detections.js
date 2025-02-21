@@ -55,7 +55,6 @@ async function fetchAllMondayItems() {
       cursor = page.cursor;
 
       console.log(`📥 Retrieved ${allItems.length} detections so far...`);
-      console.log(`📌 Pagination Cursor: ${cursor ? cursor : "End of Data"}`);
 
       // **Added delay to avoid rate limits**
       await new Promise(resolve => setTimeout(resolve, 1000));
