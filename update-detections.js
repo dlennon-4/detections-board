@@ -11,11 +11,6 @@ if (!MONDAY_API_KEY) {
   process.exit(1);
 }
 
-// Deining the delay function
-function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 // Function to fetch all detections using pagination
 async function fetchAllMondayItems() {
   let allItems = [];
@@ -52,7 +47,7 @@ async function fetchAllMondayItems() {
       console.log(`Retrieved ${allItems.length} detections so far...`);
       
       // **Added delay to avoid rate limits**
-      await delay(1000); 
+      await new Promise(resolve => setTimeout(resolve, 1000)); 
 
     } catch (error) {
       console.error("Error response data:", error.response?.data || error.message);
@@ -158,4 +153,3 @@ async function updateDetections() {
   writeDetections(updatedDetections);
   console.log("Detections updated successfully!");
 }
-
