@@ -168,17 +168,29 @@ async function updateDetections() {
     }
   });
 
+  // Identify deleted detections
+  const mondayIDs = new Set(mondayItems.map(item => item.id));
+  let deletedDetections = 0;
+
+  Object.keys(detectionMap).forEach(detectionID => {
+    if (!mondayIDs.has(detectionID)) {
+      console.log(`🗑️ Deleted Detection: ${detectionMap[detectionID].name} (ID: ${detectionID})`);
+      delete detectionMap[detectionID];
+      deletedDetections++;
+    }
+  });
+
   // Sort detections A → Z before saving
   const finalDetections = Object.values(detectionMap).sort((a, b) => a.name.localeCompare(b.name));
 
   console.log(`📌 Total Updated Detections: ${finalDetections.length}`);
 
-  if (newDetections === 0 && updatedDetections === 0) {
+  if (newDetections === 0 && updatedDetections === 0 && deletedDetections === 0) {
     console.log("✅ No changes detected, skipping update.");
     return;
   }
 
-  console.log(`📢 Summary: 🆕 ${newDetections} new detections | ✏️ ${updatedDetections} updated detections`);
+  console.log(`📢 Summary: 🆕 ${newDetections} new detections | ✏️ ${updatedDetections} updated detections | 🗑️ ${deletedDetections} deleted detections`);
 
   writeDetections(finalDetections);
 }
