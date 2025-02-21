@@ -200,7 +200,6 @@
       background: var(--reset-btn-bg);
     }
 
-    /* Dropdown styling */
     .dropdown {
       position: relative;
       display: inline-block;
@@ -268,7 +267,7 @@
   <!-- Filter Bar -->
   <div class="filter-bar">
     <div class="filters-left">
-      <input type="text" id="search" class="search-box" onkeyup="filterTable()" placeholder="🔍 Search Detections..." />
+      <input type="text" id="search" class="search-box" onkeyup="filterTable()" placeholder="🔍 Search Detections...">
 
       <!-- Default Status Dropdown -->
       <div class="dropdown">
@@ -315,7 +314,7 @@
 
       <button class="reset-btn action-btn" onclick="resetFilters()">❌ Reset Filters</button>
     </div>
-    <!-- Right side: Export CSV -->
+    <!-- Export CSV on the right -->
     <div>
       <button class="export-btn action-btn" onclick="exportTableToCSV()">📤 Export CSV</button>
     </div>
@@ -342,27 +341,27 @@
     </table>
   </div>
 
-  <!-- Smaller floating Cases Counter in bottom-right -->
+  <!-- Floating Cases Counter in bottom-right -->
   <div id="casesCounter" class="cases-counter">Total Cases: 0</div>
 
   <script>
-    /* Dark/Light mode toggle */
+    // Dark/Light Mode
     function toggleMode() {
       document.body.classList.toggle('dark-mode');
     }
 
-    /* Show/hide a dropdown */
+    // Show/hide dropdown
     function toggleDropdown(id) {
       document.getElementById(id).classList.toggle('show');
     }
 
-    /* Toggle a specific column by index */
+    // Toggle a specific column
     function toggleColumn(colIndex, forceShow = null) {
       const table = document.getElementById('detectionsTable');
       const checkbox = document.querySelectorAll('#columnDropdown input[type=\"checkbox\"]')[colIndex];
       const show = (forceShow !== null) ? forceShow : checkbox.checked;
 
-      // Toggle header cell
+      // Toggle header
       const ths = table.getElementsByTagName('th');
       if (ths[colIndex]) {
         ths[colIndex].style.display = show ? '' : 'none';
@@ -378,40 +377,28 @@
       }
     }
 
-    /* Reset filters (status/tool checkboxes, columns) */
+    // Reset filter checkboxes, columns, search
     function resetFilters() {
-      // Clear search
       document.getElementById('search').value = '';
-
-      // Reset default status checkboxes
-      document.querySelectorAll('#statusDropdown input[type=\"checkbox\"]').forEach(cb => {
-        cb.checked = true;
-      });
-
-      // Reset tool checkboxes
-      document.querySelectorAll('#toolDropdown input[type=\"checkbox\"]').forEach(cb => {
-        cb.checked = true;
-      });
-
-      // Reset column checkboxes
+      document.querySelectorAll('#statusDropdown input[type=\"checkbox\"]').forEach(cb => (cb.checked = true));
+      document.querySelectorAll('#toolDropdown input[type=\"checkbox\"]').forEach(cb => (cb.checked = true));
       document.querySelectorAll('#columnDropdown input[type=\"checkbox\"]').forEach((cb, i) => {
         cb.checked = true;
         toggleColumn(i, true);
       });
-
       filterTable();
     }
 
-    /* Filter logic: search text + statuses + tools */
+    // Filter logic: search, statuses, tools
     function filterTable() {
       const searchValue = document.getElementById('search').value.toLowerCase();
 
-      // Gather checked statuses
+      // Checked statuses
       const checkedStatuses = Array.from(
         document.querySelectorAll('#statusDropdown input[type=\"checkbox\"]:checked')
       ).map(cb => cb.value);
 
-      // Gather checked tools
+      // Checked tools
       const checkedTools = Array.from(
         document.querySelectorAll('#toolDropdown input[type=\"checkbox\"]:checked')
       ).map(cb => cb.value);
@@ -419,9 +406,8 @@
       // Filter each row
       const rows = document.querySelectorAll('#detectionsTable tbody tr');
       rows.forEach(row => {
-        // If row is hidden, skip
+        // 0: name, 1: desc, 2: status, 9: tool
         const cells = row.querySelectorAll('td');
-        // Indices: 0 = name, 1 = desc, 2 = status, 9 = tool
         const name = cells[0].textContent.toLowerCase();
         const desc = cells[1].textContent.toLowerCase();
         const status = cells[2].textContent.trim();
@@ -434,11 +420,10 @@
         row.style.display = (matchesSearch && matchesStatus && matchesTool) ? '' : 'none';
       });
 
-      // After filtering, update the case count
       updateCaseCount();
     }
 
-    /* Smaller 'Total Cases' in the bottom-right */
+    // Update 'Total Cases' in bottom-right
     function updateCaseCount() {
       const rows = document.querySelectorAll('#detectionsTable tbody tr');
       let visibleCount = 0;
@@ -450,27 +435,7 @@
       document.getElementById('casesCounter').textContent = `Total Cases: ${visibleCount}`;
     }
 
-    /* Sort table placeholder */
-    let sortDirections = {};
-    function sortTable(columnIndex) {
-      console.log(`Sorting column ${columnIndex}... (Implement sorting logic)`);
-    }
-
-    /* Color-coded statuses for the 3rd cell (index=2) */
-    function getStatusColor(status) {
-      switch (status) {
-        case 'Active':                return '#28a745';  // green
-        case 'Active via Custom Rules': return '#90ee90'; // light green
-        case 'Testing':
-        case 'New Detection':         return '#dda0dd';  // same purple
-        case 'Muted':                 return '#ffa500';  // orange
-        case 'Not Active':            return '#dc3545';  // red
-        case 'Alert Preferences':     return '#17a2b8';  // teal
-        default:                      return '';
-      }
-    }
-
-    /* Replace old placeholder with a working CSV export */
+    // CSV Export for visible rows/columns
     function exportTableToCSV() {
       const table = document.getElementById('detectionsTable');
       const rows = table.querySelectorAll('tr');
@@ -481,10 +446,10 @@
         if (row.style.display === 'none') return;
 
         let rowData = [];
-        // Collect data from visible cells only
         row.querySelectorAll('th, td').forEach(cell => {
-          if (cell.style.display === 'none') return;  // skip hidden columns
-          let text = cell.textContent.replace(/\"/g, '\"\"'); // escape quotes
+          // skip hidden columns
+          if (cell.style.display === 'none') return;
+          let text = cell.textContent.replace(/\"/g, '\"\"'); 
           rowData.push(`\"${text}\"`);
         });
 
@@ -505,13 +470,71 @@
       URL.revokeObjectURL(url);
     }
 
-    /* Load data from detections.json */
+    // Colors for the 'Default Status' cell
+    function getStatusColor(status) {
+      switch (status) {
+        case 'Active':                return '#28a745';  // green
+        case 'Active via Custom Rules': return '#90ee90'; // light green
+        case 'Testing':
+        case 'New Detection':         return '#dda0dd';  // same purple
+        case 'Muted':                 return '#ffa500';  // orange
+        case 'Not Active':            return '#dc3545';  // red
+        case 'Alert Preferences':     return '#17a2b8';  // teal
+        default:                      return '';
+      }
+    }
+
+    // Sorting directions
+    let sortDirections = {};
+
+    // Sort the table by the given column index
+    function sortTable(columnIndex) {
+      const table = document.getElementById('detectionsTable');
+      const tbody = table.querySelector('tbody');
+      const allRows = Array.from(tbody.querySelectorAll('tr'));
+
+      // Toggle asc/desc
+      if (!sortDirections[columnIndex]) {
+        sortDirections[columnIndex] = 'asc';
+      } else {
+        sortDirections[columnIndex] = (sortDirections[columnIndex] === 'asc') ? 'desc' : 'asc';
+      }
+      const direction = sortDirections[columnIndex];
+
+      // Filter out hidden rows prior to sorting (so we don't re-insert them)
+      const visibleRows = allRows.filter(row => row.style.display !== 'none');
+
+      visibleRows.sort((a, b) => {
+        const cellA = a.children[columnIndex].textContent.trim().toLowerCase();
+        const cellB = b.children[columnIndex].textContent.trim().toLowerCase();
+
+        if (cellA < cellB) return direction === 'asc' ? -1 : 1;
+        if (cellA > cellB) return direction === 'asc' ? 1 : -1;
+        return 0;
+      });
+
+      // Re-insert sorted rows at the end of tbody
+      visibleRows.forEach(row => tbody.appendChild(row));
+
+      // Remove any existing arrows from all columns
+      const allTh = table.querySelectorAll('thead th');
+      allTh.forEach(th => {
+        // Option A: remove arrows by regex:
+        th.textContent = th.textContent.replace(/[▲▼]/g, '').trim();
+      });
+
+      // Append arrow to the sorted column
+      const arrow = (direction === 'asc') ? ' ▲' : ' ▼';
+      allTh[columnIndex].textContent += arrow;
+    }
+
+    // Load data from detections.json
     function loadData() {
-      // If your older version used './detections.json', do that here if needed:
+      // If you used './detections.json' previously, switch to that:
       fetch('detections.json?v=' + new Date().getTime())
         .then(res => res.json())
         .then(data => {
-          // Sort by detection name A->Z on load
+          // Sort by detection name ascending on load
           data.sort((a,b) => a.name.localeCompare(b.name));
 
           const tbody = document.querySelector('#detectionsTable tbody');
@@ -537,7 +560,7 @@
             tbody.appendChild(tr);
           });
 
-          // After data loads, show initial case count
+          // Show initial count after data loads
           updateCaseCount();
         })
         .catch(err => console.error('Error loading detections.json', err));
