@@ -17,8 +17,9 @@ console.log("📋 Using Board ID:", BOARD_ID);
 
 // Function to format date from YYYY-MM-DD to MM-DD-YY
 function formatDate(dateString) {
-    if (!dateString) return "";
+    if (!dateString) return "⚠️ Missing Date!";
     const date = new Date(dateString);
+    if (isNaN(date.getTime())) return "⚠️ Invalid Date!";  // Handle invalid dates
     const month = String(date.getMonth() + 1).padStart(2, '0'); // MM
     const day = String(date.getDate()).padStart(2, '0'); // DD
     const year = String(date.getFullYear()).slice(-2); // YY
@@ -124,6 +125,9 @@ function mapItemToDetection(item) {
     columns[cv.id] = cv.text || cv.value || ''; 
   });
 
+  // 🔹 Log all available column IDs for debugging
+  console.log(`🔍 Available columns for "${item.name}" (ID: ${item.id}):`, columns);
+
   return {
     detectionID: columns["item_id_mknaww1f"] || item.id, 
     name: item.name,
@@ -136,7 +140,7 @@ function mapItemToDetection(item) {
     mitreTechniqueID: columns["text8__1"] || '',
     connector: columns["text00__1"] || '',
     tool: columns["text_mknaxnaj"] || '',
-    lastModified: columns["date__1"] ? formatDate(columns["date__1"]) : "" // 🔄 Fixed undefined issue
+    lastModified: columns["date_modified"] ? formatDate(columns["date_modified"]) : "⚠️ Missing Date!"  // 🔄 Fixed undefined issue
   };
 }
 
