@@ -1,5 +1,19 @@
 [
   {
+    "detectionID": "CY-0476",
+    "name": "__Tester Detection",
+    "description": "zzzz",
+    "defaultStatus": "New Detection",
+    "killChainStage": "Exfiltration & Impact",
+    "mitreTactic": "External Credential Access",
+    "mitreTacticID": "TA0001",
+    "mitreTechnique": "Modify Authentication Process",
+    "mitreTechniqueID": "T1499",
+    "connector": "OneLogin",
+    "tool": "CrowdStrike",
+    "dateAdded": "2025-02-21"
+  },
+  {
     "detectionID": "CY-0357",
     "name": "Abnormal Parent / Child Process",
     "description": "",
@@ -40,6 +54,20 @@
     "connector": "Acronis Cyber Protect",
     "tool": "Stellar Cyber",
     "dateAdded": "2024-10-31"
+  },
+  {
+    "detectionID": "CY-0475",
+    "name": "Another test",
+    "description": "Just a test",
+    "defaultStatus": "New Detection",
+    "killChainStage": "Exfiltration & Impact",
+    "mitreTactic": "Defense Evasion",
+    "mitreTacticID": "TA0002",
+    "mitreTechnique": "Brute Force",
+    "mitreTechniqueID": "T1078",
+    "connector": "Box",
+    "tool": "CrowdStrike",
+    "dateAdded": "2025-02-21"
   },
   {
     "detectionID": "CY-0305",
