@@ -136,7 +136,7 @@ function mapItemToDetection(item) {
     mitreTechniqueID: columns["text8__1"] || '',
     connector: columns["text00__1"] || '',
     tool: columns["text_mknaxnaj"] || '',
-    lastModified: formatDate(columns["date__1"])  // 🔄 Apply new format
+    lastModified: columns["date__1"] ? formatDate(columns["date__1"]) : "" // 🔄 Fixed undefined issue
   };
 }
 
