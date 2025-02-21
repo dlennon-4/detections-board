@@ -12,6 +12,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Install Dependencies
+        run: sudo apt-get update && sudo apt-get install -y postfix mailutils
+
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
@@ -24,12 +27,7 @@ jobs:
           npm install axios
           node update-detections.js
 
-      - name: Send Email Notification via Sendmail
+      - name: Send Email Notification via `mailx`
         if: always()
         run: |
-          echo "Subject: 🚨 Detection Board Update: Summary Report" > email.txt
-          echo "To: dan@cyflare.com" >> email.txt
-          echo "From: GitHub Actions <github-actions@github.com>" >> email.txt
-          echo "" >> email.txt
-          cat update-summary.txt >> email.txt
-          sendmail -t < email.txt
+          cat update-summary.txt | mailx -s "🚨 Detection Board Update: Summary Report" dan@cyflare.com
