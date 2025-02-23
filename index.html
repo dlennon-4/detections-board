@@ -399,49 +399,51 @@
 
     // Filter logic: search, statuses, tools
     function filterTable() {
-      const searchValue = document.getElementById('search').value.toLowerCase();
+    const searchValue = document.getElementById('search').value.toLowerCase();
 
-      // Checked statuses
-      const checkedStatuses = Array.from(
-        document.querySelectorAll('#statusDropdown input[type=\"checkbox\"]:checked')
-      ).map(cb => cb.value);
+    // Checked statuses
+    const checkedStatuses = Array.from(
+        document.querySelectorAll('#statusDropdown input[type="checkbox"]:checked')
+    ).map(cb => cb.value);
 
-      // Checked tools
-      const checkedTools = Array.from(
-        document.querySelectorAll('#toolDropdown input[type=\"checkbox\"]:checked')
-      ).map(cb => cb.value);
+    // Checked tools
+    const checkedTools = Array.from(
+        document.querySelectorAll('#toolDropdown input[type="checkbox"]:checked')
+    ).map(cb => cb.value);
 
-      // Filter each row
-      const rows = document.querySelectorAll('#detectionsTable tbody tr');
-      rows.forEach(row => {
-        // 0: name, 1: desc, 2: status, 9: tool
+    // Get all rows and first reset visibility
+    const rows = document.querySelectorAll('#detectionsTable tbody tr');
+    rows.forEach(row => row.style.display = '');  // ✅ Ensure all rows are reset
+
+    // Apply filters
+    rows.forEach(row => {
         const cells = row.querySelectorAll('td');
         const name = cells[0].textContent.toLowerCase();
         const desc = cells[1].textContent.toLowerCase();
         const status = cells[2].textContent.trim();
         const tool = cells[9].textContent.trim();
 
-        const matchesSearch = (name.includes(searchValue) || desc.includes(searchValue));
+        const matchesSearch = name.includes(searchValue) || desc.includes(searchValue);
         const matchesStatus = checkedStatuses.includes(status);
         const matchesTool = checkedTools.includes(tool);
 
+        // ✅ Only hide row if it does NOT match filters
         row.style.display = (matchesSearch && matchesStatus && matchesTool) ? '' : 'none';
-      });
+    });
+
+    updateCaseCount(); // Ensure counter updates
+}
+
 
       updateCaseCount();
     }
 
     // Update 'Total Cases' in bottom-right
     function updateCaseCount() {
-      const rows = document.querySelectorAll('#detectionsTable tbody tr');
-      let visibleCount = 0;
-      rows.forEach(row => {
-        if (row.style.display !== 'none') {
-          visibleCount++;
-        }
-      });
-      document.getElementById('casesCounter').textContent = `Total Cases: ${visibleCount}`;
-    }
+    const visibleRows = document.querySelectorAll('#detectionsTable tbody tr:not([style="display: none;"])');
+    document.getElementById('casesCounter').textContent = `Total Cases: ${visibleRows.length}`;
+}
+
 
     // CSV Export for visible rows/columns
     function exportTableToCSV() {
