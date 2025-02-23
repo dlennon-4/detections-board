@@ -44,20 +44,54 @@
       --row-hover-bg: #555555;
     }
 
+    /* Remove default margin, set background */
     body {
-      margin: 0;               /* Remove default browser margin */
+      margin: 0;
       background-color: var(--bg-color);
       color: var(--text-color);
       font-family: 'Inter', sans-serif;
-      text-align: center;
       transition: background-color 0.3s, color 0.3s;
+      text-align: center; /* So table headings, etc. are centered by default */
     }
 
-    /* Dark/Light Mode Toggle in top-right corner */
+    /****************************************
+     * Top Bar: Logo (left), Title (center), Toggle (right)
+     ****************************************/
+    .top-bar {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      padding: 10px 20px; /* Minimal top/bottom padding */
+    }
+
+    /* Logo + Link on the left */
+    .logo-section {
+      text-align: left;
+    }
+    /* If your PNG has a white background, you need a truly transparent image to remove it fully. */
+    .logo-section img {
+      max-width: 150px; /* Adjust as desired */
+      height: auto;
+      background-color: transparent; /* Only helps if image has transparency */
+    }
+    /* Link under the logo */
+    .logo-link {
+      display: block;
+      margin-top: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      color: var(--text-color);
+    }
+
+    /* Centered title in the top bar */
+    .top-bar h1 {
+      margin: 0;
+      text-align: center;
+    }
+
+    /* Dark/Light Mode Toggle on the right */
     .mode-toggle {
-      position: absolute;
-      top: 10px;
-      right: 10px;
+      justify-self: end;
       background: var(--primary-btn-bg);
       color: var(--primary-btn-text);
       border: none;
@@ -72,30 +106,9 @@
       transform: translateY(-2px);
     }
 
-    /* Centered logo + link container */
-    .logo-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;  /* center horizontally */
-      margin-top: 10px;     /* small top margin to avoid huge gap */
-    }
-    .logo-section img {
-      max-width: 200px;  /* reduce if image is pixelating */
-      height: auto;
-    }
-    .logo-link {
-      margin-top: 5px;
-      font-weight: bold;
-      text-decoration: none;
-      color: var(--text-color);
-    }
-
-    /* Main heading with minimal top/bottom margin */
-    h1 {
-      margin: 5px 0 10px 0;  /* top, right, bottom, left */
-    }
-
-    /* Filter Bar container */
+    /****************************************
+     * Filter Bar + Table
+     ****************************************/
     .filter-bar {
       background: var(--card-bg);
       border-radius: 8px;
@@ -105,7 +118,7 @@
       justify-content: space-between;
       align-items: center;
       max-width: 95%;
-      margin: 0 auto 20px auto; /* no top gap, 20px bottom */
+      margin: 0 auto 20px auto;
       transition: background-color 0.3s;
     }
 
@@ -116,11 +129,77 @@
       align-items: center;
     }
 
-    /* Container for the table */
+    .search-box {
+      width: 300px;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .filter-btn,
+    .action-btn {
+      background: var(--primary-btn-bg);
+      color: var(--primary-btn-text);
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s, transform 0.2s;
+      text-align: center;
+    }
+    .filter-btn:hover,
+    .action-btn:hover {
+      background-color: var(--hover-bg);
+      transform: translateY(-2px);
+    }
+
+    .export-btn {
+      background: var(--export-btn-bg);
+    }
+    .reset-btn {
+      background: var(--reset-btn-bg);
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      width: var(--dropdown-width);
+      background-color: var(--card-bg);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      padding: 12px;
+      text-align: left;
+      border: 1px solid var(--table-border);
+      margin-top: 8px;
+      z-index: 999;
+      opacity: 0;
+      transform: translateY(-5px);
+      transition: opacity 0.2s, transform 0.2s, background-color 0.3s, border-color 0.3s;
+    }
+    .dropdown-content label {
+      display: block;
+      padding: 5px 0;
+      cursor: pointer;
+    }
+    .dropdown-content label:hover {
+      background-color: var(--hover-bg);
+    }
+    .dropdown-content.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Table container */
     .table-container {
       background: var(--card-bg);
       padding: 20px;
-      margin: 0 auto 20px auto;  /* 20px bottom margin, no top gap */
+      margin: 0 auto 20px auto;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       max-width: 95%;
@@ -184,73 +263,6 @@
       transition: background-color 0.1s;
     }
 
-    /* Filter & Action Buttons */
-    .filter-btn,
-    .action-btn {
-      background: var(--primary-btn-bg);
-      color: var(--primary-btn-text);
-      padding: 8px 16px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background-color 0.3s, transform 0.2s;
-      text-align: center;
-    }
-    .filter-btn:hover,
-    .action-btn:hover {
-      background-color: var(--hover-bg);
-      transform: translateY(-2px);
-    }
-
-    .export-btn {
-      background: var(--export-btn-bg);
-    }
-    .reset-btn {
-      background: var(--reset-btn-bg);
-    }
-
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      width: var(--dropdown-width);
-      background-color: var(--card-bg);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      padding: 12px;
-      text-align: left;
-      border: 1px solid var(--table-border);
-      margin-top: 8px;
-      z-index: 999;
-      opacity: 0;
-      transform: translateY(-5px);
-      transition: opacity 0.2s, transform 0.2s, background-color 0.3s, border-color 0.3s;
-    }
-    .dropdown-content label {
-      display: block;
-      padding: 5px 0;
-      cursor: pointer;
-    }
-    .dropdown-content label:hover {
-      background-color: var(--hover-bg);
-    }
-    .dropdown-content.show {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .search-box {
-      width: 300px;
-      padding: 8px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 14px;
-    }
-
     /* Floating Cases Counter in bottom-right */
     .cases-counter {
       position: fixed;
@@ -268,18 +280,17 @@
   </style>
 </head>
 <body>
-  <!-- Dark/Light Mode Toggle -->
-  <button class="mode-toggle" onclick="toggleMode()">🌙</button>
+  <!-- Top Bar with 3 columns: Logo(Left), Title(Center), Toggle(Right) -->
+  <div class="top-bar">
+    <div class="logo-section">
+      <img src="CyFlareLogo.png" alt="CyFlare Logo">
+      <a href="https://cyflare.com/" target="_blank" class="logo-link">Visit CyFlare.com</a>
+    </div>
 
-  <!-- Centered Logo + Link -->
-  <div class="logo-section">
-    <!-- If this image is very small, scaling up will look pixelated. Try a bigger/higher-res image. -->
-    <img src="CyFlareLogo.png" alt="CyFlare Logo">
-    <a href="https://cyflare.com/" target="_blank" class="logo-link">Visit CyFlare.com</a>
+    <h1>CyFlare Detections Board</h1>
+
+    <button class="mode-toggle" onclick="toggleMode()">🌙</button>
   </div>
-
-  <!-- Main Heading (minimal top margin) -->
-  <h1>CyFlare Detections Board</h1>
 
   <!-- Filter Bar -->
   <div class="filter-bar">
@@ -331,6 +342,7 @@
 
       <button class="reset-btn action-btn" onclick="resetFilters()">Reset Filters</button>
     </div>
+
     <!-- Export CSV on the right -->
     <div>
       <button class="export-btn action-btn" onclick="exportTableToCSV()">Export CSV</button>
@@ -368,7 +380,7 @@
       document.body.classList.toggle('dark-mode');
     }
 
-    // Dropdown toggle
+    // Show/hide dropdown
     function toggleDropdown(id) {
       document.getElementById(id).classList.toggle('show');
     }
@@ -381,7 +393,7 @@
       }
     });
 
-    // Toggle columns
+    // Toggle a specific column
     function toggleColumn(colIndex, forceShow = null) {
       const table = document.getElementById('detectionsTable');
       const checkbox = document.querySelectorAll('#columnDropdown input[type="checkbox"]')[colIndex];
@@ -403,7 +415,7 @@
       }
     }
 
-    // Reset filters
+    // Reset filter checkboxes, columns, search
     function resetFilters() {
       document.getElementById('search').value = '';
       document.querySelectorAll('#statusDropdown input[type="checkbox"]').forEach(cb => (cb.checked = true));
@@ -415,16 +427,16 @@
       filterTable();
     }
 
-    // Filtering logic
+    // Filter logic: search, statuses, tools
     function filterTable() {
       const searchValue = document.getElementById('search').value.toLowerCase();
 
-      // Status
+      // Checked statuses
       const statusCheckboxes = document.querySelectorAll('#statusDropdown input[type="checkbox"]');
       const checkedStatuses = Array.from(statusCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
       const allStatusesChecked = (checkedStatuses.length === statusCheckboxes.length);
 
-      // Tool
+      // Checked tools
       const toolCheckboxes = document.querySelectorAll('#toolDropdown input[type="checkbox"]');
       const checkedTools = Array.from(toolCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
       const allToolsChecked = (checkedTools.length === toolCheckboxes.length);
@@ -447,7 +459,7 @@
       updateCaseCount();
     }
 
-    // Update the "Total Cases" counter
+    // Update 'Total Cases'
     function updateCaseCount() {
       const rows = document.querySelectorAll('#detectionsTable tbody tr');
       let visibleCount = 0;
@@ -459,21 +471,27 @@
       document.getElementById('casesCounter').textContent = `Total Cases: ${visibleCount}`;
     }
 
-    // Export CSV
+    // CSV Export for visible rows/columns
     function exportTableToCSV() {
       const table = document.getElementById('detectionsTable');
       const rows = table.querySelectorAll('tr');
       let csv = [];
 
       rows.forEach(row => {
+        // Skip hidden rows
         if (row.style.display === 'none') return;
+
         let rowData = [];
         row.querySelectorAll('th, td').forEach(cell => {
+          // skip hidden columns
           if (cell.style.display === 'none') return;
           let text = cell.textContent.replace(/\"/g, '\"\"');
           rowData.push(`\"${text}\"`);
         });
-        if (rowData.length > 0) csv.push(rowData.join(','));
+
+        if (rowData.length > 0) {
+          csv.push(rowData.join(','));
+        }
       });
 
       const csvContent = csv.join('\n');
@@ -488,7 +506,7 @@
       URL.revokeObjectURL(url);
     }
 
-    // Color for Default Status
+    // Colors for the 'Default Status' cell
     function getStatusColor(status) {
       switch (status) {
         case 'Active':                return '#28a745';
@@ -502,9 +520,10 @@
       }
     }
 
-    // Sorting
+    // Sorting directions
     let sortDirections = {};
 
+    // Sort the table by the given column index
     function sortTable(columnIndex) {
       const table = document.getElementById('detectionsTable');
       const tbody = table.querySelector('tbody');
@@ -519,11 +538,13 @@
       }
       const direction = sortDirections[columnIndex];
 
-      // Sort only visible rows
+      // Filter out hidden rows prior to sorting
       const visibleRows = allRows.filter(row => row.style.display !== 'none');
+
       visibleRows.sort((a, b) => {
         const cellA = a.children[columnIndex].textContent.trim().toLowerCase();
         const cellB = b.children[columnIndex].textContent.trim().toLowerCase();
+
         if (cellA < cellB) return direction === 'asc' ? -1 : 1;
         if (cellA > cellB) return direction === 'asc' ? 1 : -1;
         return 0;
@@ -536,8 +557,9 @@
       allTh.forEach(th => {
         th.textContent = th.textContent.replace(/[▲▼]/g, '').trim();
       });
-      // Append arrow
-      const arrow = direction === 'asc' ? ' ▲' : ' ▼';
+
+      // Append arrow to the sorted column
+      const arrow = (direction === 'asc') ? ' ▲' : ' ▼';
       allTh[columnIndex].textContent += arrow;
     }
 
@@ -572,13 +594,11 @@
             tbody.appendChild(tr);
           });
 
-          // Show initial count
-          updateCaseCount();
+          updateCaseCount(); // show initial total
         })
         .catch(err => console.error('Error loading detections.json', err));
     }
 
-    // Run loadData on page load
     window.onload = loadData;
   </script>
 </body>
