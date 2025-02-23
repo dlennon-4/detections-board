@@ -129,6 +129,14 @@
       text-align: center;
     }
 
+    /* Ensure Last Modified column does not wrap */
+    #detectionsTable td:nth-child(11),
+    #detectionsTable th:nth-child(11) {
+    white-space: nowrap;  /* Prevents text wrapping */
+    text-align: center;    /* Keeps it centered */
+    min-width: 100px;      /* Adjust width as needed */
+    }
+
     tbody tr:nth-child(even) {
       background: var(--row-even-bg);
       transition: background-color 0.3s;
