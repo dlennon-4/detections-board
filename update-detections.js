@@ -12,14 +12,13 @@ if (!MONDAY_API_KEY) {
 }
 
 console.log("🚀 Script Started");
-console.log("🔑 API Key Loaded:", MONDAY_API_KEY ? "Yes" : "No");
 console.log("📋 Using Board ID:", BOARD_ID);
 
 // Function to format date from YYYY-MM-DD to MM-DD-YY
 function formatDate(dateString) {
     if (!dateString) return "⚠️ Missing Date!";
     const date = new Date(dateString);
-    if (isNaN(date.getTime())) return "⚠️ Invalid Date!";  // Handle invalid dates
+    if (isNaN(date.getTime())) return "⚠️ Invalid Date!";
     const month = String(date.getMonth() + 1).padStart(2, '0'); // MM
     const day = String(date.getDate()).padStart(2, '0'); // DD
     const year = String(date.getFullYear()).slice(-2); // YY
@@ -37,8 +36,6 @@ async function fetchAllMondayItems() {
     const query = cursor 
       ? `query { next_items_page(cursor: "${cursor}") { cursor items { id name column_values { id text value } } } }`
       : `query { boards(ids: [${BOARD_ID}]) { items_page { cursor items { id name column_values { id text value } } } } }`;
-
-    console.log("🔗 Sending API Request to Monday.com");
 
     try {
       const response = await axios({
@@ -94,7 +91,7 @@ function loadCurrentDetections() {
 
 // Function to write updated detections.json
 function writeDetections(detections) {
-  console.log(`💾 Preparing to write ${detections.length} detections to detections.json...`);
+  console.log(`💾 Writing ${detections.length} detections to detections.json...`);
   fs.writeFileSync('detections.json', JSON.stringify(detections, null, 2) + "\n");
   console.log("✅ Detections updated successfully!");
 }
@@ -125,9 +122,6 @@ function mapItemToDetection(item) {
     columns[cv.id] = cv.text || cv.value || ''; 
   });
 
-  // 🔹 Log all available column IDs for debugging
-  console.log(`🔍 Available columns for "${item.name}" (ID: ${item.id}):`, columns);
-
   return {
     detectionID: columns["item_id_mknaww1f"] || item.id, 
     name: item.name,
@@ -140,7 +134,7 @@ function mapItemToDetection(item) {
     mitreTechniqueID: columns["text8__1"] || '',
     connector: columns["text00__1"] || '',
     tool: columns["text_mknaxnaj"] || '',
-    lastModified: columns["date_modified"] ? formatDate(columns["date_modified"]) : "⚠️ Missing Date!"  // 🔄 Fixed undefined issue
+    lastModified: columns["date_modified"] ? formatDate(columns["date_modified"]) : "⚠️ Missing Date!"
   };
 }
 
