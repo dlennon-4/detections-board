@@ -363,6 +363,17 @@
       document.getElementById(id).classList.toggle('show');
     }
 
+    window.addEventListener('click', function (event) {
+  // If the click target is not inside an element with class "dropdown"
+  if (!event.target.closest('.dropdown')) {
+    // Close all open dropdowns by removing the 'show' class
+    const dropdowns = document.querySelectorAll('.dropdown-content.show');
+    dropdowns.forEach(dropdown => {
+      dropdown.classList.remove('show');
+    });
+  }
+});
+
     // Toggle a specific column
     function toggleColumn(colIndex, forceShow = null) {
       const table = document.getElementById('detectionsTable');
