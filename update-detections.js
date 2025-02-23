@@ -1,39 +1,26 @@
-document.addEventListener("DOMContentLoaded", function () {
-    fetch("detections.json")
-        .then(response => response.json())
-        .then(data => {
-            populateTable(data);
-        })
-        .catch(error => console.error("Error loading detections:", error));
-});
+const axios = require('axios');
+const fs = require('fs');
 
-function populateTable(detections) {
-    const tableBody = document.querySelector("#detectionsTable tbody"); // Fix table body selection
-    tableBody.innerHTML = ""; // Clear existing rows
+// Fetch the JSON data
+async function fetchDetections() {
+    try {
+        // Replace 'detections.json' with the actual API URL or file path if necessary
+        const response = await axios.get('detections.json');
+        const detections = response.data;
 
+        // Process and format data
+        processDetections(detections);
+    } catch (error) {
+        console.error("Error loading detections:", error.message);
+    }
+}
+
+// Process detections and format the date
+function processDetections(detections) {
     detections.forEach(detection => {
-        const row = document.createElement("tr");
-
-        // Helper function to create and append table cells
-        function createCell(content) {
-            const cell = document.createElement("td");
-            cell.textContent = content || "N/A";
-            return cell;
-        }
-
-        row.appendChild(createCell(detection.name));              // Detection Name
-        row.appendChild(createCell(detection.description));       // Description
-        row.appendChild(createCell(detection.defaultStatus));     // Default Status
-        row.appendChild(createCell(detection.killChainStage));    // Kill Chain Stage
-        row.appendChild(createCell(detection.mitreTactic));       // MITRE Tactic
-        row.appendChild(createCell(detection.mitreTacticID));     // MITRE Tactic ID
-        row.appendChild(createCell(detection.mitreTechnique));    // MITRE Technique
-        row.appendChild(createCell(detection.mitreTechniqueID));  // MITRE Technique ID
-        row.appendChild(createCell(detection.connector));         // Connector
-        row.appendChild(createCell(detection.tool));              // Tool
-
-        // 🛠 Fix for "Last Modified" Column (Ensures MM-DD-YY Format)
         let lastModified = detection.lastModified ? detection.lastModified : "N/A";
+        
+        // Ensure lastModified is formatted as MM-DD-YY
         if (lastModified !== "N/A" && lastModified.includes("-")) {
             let dateParts = lastModified.split("-");
             if (dateParts.length === 3) {
@@ -41,8 +28,9 @@ function populateTable(detections) {
             }
         }
 
-        row.appendChild(createCell(lastModified)); // Last Modified Column
-
-        tableBody.appendChild(row);
+        console.log(`Detection: ${detection.name}, Last Modified: ${lastModified}`);
     });
 }
+
+// Run the function
+fetchDetections();
