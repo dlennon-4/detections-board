@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <title>CyFlare Detections Board</title>
-
-  <!-- Clean, modern font: Inter -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap">
   
   <!-- Tab Logo (favicon) -->
   <link rel="icon" href="CyFlareLogo.png" type="image/png">
   
+  <!-- Clean, modern font: Inter -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap">
+
   <style>
     :root {
       --dropdown-width: 240px;
@@ -61,7 +61,7 @@
      ****************************************/
     .top-bar {
       display: grid;
-      /* 1fr auto 1fr ensures the center is truly centered */
+      /* Use 1fr auto 1fr to center the middle column */
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
       padding: 10px 20px;
@@ -73,9 +73,10 @@
       text-align: left;
     }
     .logo-section img {
-      max-width: 120px;
+      /* Reduced size for more space; adjust max-width as needed */
+      max-width: 100px;
       height: auto;
-      background-color: transparent; /* Only works if PNG is truly transparent */
+      background-color: transparent;
     }
 
     /* Center: Title + link */
@@ -210,10 +211,8 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       max-width: 95%;
       margin: 0 auto 20px auto;
-      padding: 0;              /* Remove extra padding around the scroll area */
-      
-      /* Make table scrollable, so the header stays pinned at top */
-      max-height: 70vh;        /* or whatever height you prefer */
+      /* Set a maximum height for scrolling; adjust as needed */
+      max-height: 70vh;
       overflow-y: auto;
       position: relative;
       transition: background-color 0.3s;
@@ -237,7 +236,7 @@
     thead th {
       position: sticky;
       top: 0;
-      z-index: 2;  /* ensure header is above table rows */
+      z-index: 2;
       background: var(--header-bg);
       color: var(--header-text);
       cursor: pointer;
@@ -272,7 +271,7 @@
       min-width: 100px;
     }
 
-    /* Floating Cases Counter in bottom-right */
+    /* Floating Cases Counter */
     .cases-counter {
       position: fixed;
       bottom: 20px;
@@ -289,20 +288,18 @@
   </style>
 </head>
 <body>
-  <!-- Top Bar: 3 columns: left=logo, center=title+link, right=dark mode -->
+  <!-- Top Bar: 3 columns: left = logo, center = title & link, right = dark mode toggle -->
   <div class="top-bar">
-    <!-- Logo on the left -->
+    <!-- Left: Logo -->
     <div class="logo-section">
       <img src="CyFlareLogo.png" alt="CyFlare Logo">
     </div>
-
-    <!-- Title + link in the center -->
+    <!-- Center: Title and link underneath -->
     <div class="center-section">
       <h1>CyFlare Detections Board</h1>
       <a href="https://cyflare.com/" target="_blank" class="site-link">Visit CyFlare.com</a>
     </div>
-
-    <!-- Dark Mode toggle on the right -->
+    <!-- Right: Dark Mode Toggle -->
     <button class="mode-toggle" onclick="toggleMode()">🌙</button>
   </div>
 
@@ -310,7 +307,6 @@
   <div class="filter-bar">
     <div class="filters-left">
       <input type="text" id="search" class="search-box" onkeyup="filterTable()" placeholder="Search Detections...">
-
       <!-- Default Status Dropdown -->
       <div class="dropdown">
         <button class="filter-btn" onclick="toggleDropdown('statusDropdown')">Default Status</button>
@@ -324,7 +320,6 @@
           <label><input type="checkbox" value="Alert Preferences" checked onchange="filterTable()"> Alert Preferences</label>
         </div>
       </div>
-
       <!-- Tool Dropdown -->
       <div class="dropdown">
         <button class="filter-btn" onclick="toggleDropdown('toolDropdown')">Tool</button>
@@ -335,7 +330,6 @@
           <label><input type="checkbox" value="SentinelOne" checked onchange="filterTable()"> SentinelOne</label>
         </div>
       </div>
-
       <!-- Column Selection Dropdown -->
       <div class="dropdown">
         <button class="filter-btn" onclick="toggleDropdown('columnDropdown')">Select Columns</button>
@@ -353,17 +347,15 @@
           <label><input type="checkbox" checked onchange="toggleColumn(10)"> Last Modified</label>
         </div>
       </div>
-
       <button class="reset-btn action-btn" onclick="resetFilters()">Reset Filters</button>
     </div>
-
     <!-- Export CSV on the right -->
     <div>
       <button class="export-btn action-btn" onclick="exportTableToCSV()">Export CSV</button>
     </div>
   </div>
 
-  <!-- Scrollable table container with sticky header -->
+  <!-- Scrollable Table Container with Sticky Header -->
   <div class="table-container">
     <table id="detectionsTable">
       <thead>
@@ -407,19 +399,15 @@
       }
     });
 
-    // Toggle columns
+    // Toggle a specific column
     function toggleColumn(colIndex, forceShow = null) {
       const table = document.getElementById('detectionsTable');
       const checkbox = document.querySelectorAll('#columnDropdown input[type="checkbox"]')[colIndex];
       const show = (forceShow !== null) ? forceShow : checkbox.checked;
-
-      // Toggle header cell
       const ths = table.getElementsByTagName('th');
       if (ths[colIndex]) {
         ths[colIndex].style.display = show ? '' : 'none';
       }
-
-      // Toggle each row's cell
       const rows = table.getElementsByTagName('tr');
       for (let i = 1; i < rows.length; i++) {
         const cells = rows[i].getElementsByTagName('td');
@@ -429,7 +417,7 @@
       }
     }
 
-    // Reset all filters
+    // Reset filters
     function resetFilters() {
       document.getElementById('search').value = '';
       document.querySelectorAll('#statusDropdown input[type="checkbox"]').forEach(cb => (cb.checked = true));
@@ -444,18 +432,12 @@
     // Filter logic: search, statuses, tools
     function filterTable() {
       const searchValue = document.getElementById('search').value.toLowerCase();
-
-      // Status
       const statusCheckboxes = document.querySelectorAll('#statusDropdown input[type="checkbox"]');
       const checkedStatuses = Array.from(statusCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
       const allStatusesChecked = (checkedStatuses.length === statusCheckboxes.length);
-
-      // Tool
       const toolCheckboxes = document.querySelectorAll('#toolDropdown input[type="checkbox"]');
       const checkedTools = Array.from(toolCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
       const allToolsChecked = (checkedTools.length === toolCheckboxes.length);
-
-      // Filter each row
       const rows = document.querySelectorAll('#detectionsTable tbody tr');
       rows.forEach(row => {
         const cells = row.querySelectorAll('td');
@@ -463,18 +445,15 @@
         const desc = cells[1].textContent.toLowerCase();
         const status = cells[2].textContent.trim();
         const tool = cells[9].textContent.trim();
-
         const matchesSearch = name.includes(searchValue) || desc.includes(searchValue);
         const matchesStatus = allStatusesChecked || checkedStatuses.includes(status);
         const matchesTool = allToolsChecked || checkedTools.includes(tool);
-
         row.style.display = (matchesSearch && matchesStatus && matchesTool) ? '' : 'none';
       });
-
       updateCaseCount();
     }
 
-    // Update "Total Cases" in bottom-right
+    // Update total cases
     function updateCaseCount() {
       const rows = document.querySelectorAll('#detectionsTable tbody tr');
       let visibleCount = 0;
@@ -486,27 +465,23 @@
       document.getElementById('casesCounter').textContent = `Total Cases: ${visibleCount}`;
     }
 
-    // Export CSV for visible rows/columns
+    // CSV Export
     function exportTableToCSV() {
       const table = document.getElementById('detectionsTable');
       const rows = table.querySelectorAll('tr');
       let csv = [];
-
       rows.forEach(row => {
-        if (row.style.display === 'none') return; // skip hidden rows
-
+        if (row.style.display === 'none') return;
         let rowData = [];
         row.querySelectorAll('th, td').forEach(cell => {
-          if (cell.style.display === 'none') return; // skip hidden columns
+          if (cell.style.display === 'none') return;
           let text = cell.textContent.replace(/\"/g, '\"\"');
           rowData.push(`\"${text}\"`);
         });
-
         if (rowData.length > 0) {
           csv.push(rowData.join(','));
         }
       });
-
       const csvContent = csv.join('\n');
       const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
       const url = URL.createObjectURL(blob);
@@ -519,7 +494,7 @@
       URL.revokeObjectURL(url);
     }
 
-    // Color for Default Status
+    // Get color for Default Status
     function getStatusColor(status) {
       switch (status) {
         case 'Active':                return '#28a745';
@@ -536,21 +511,17 @@
     // Sorting directions
     let sortDirections = {};
 
-    // Sort table by given column index
+    // Sort table by column
     function sortTable(columnIndex) {
       const table = document.getElementById('detectionsTable');
       const tbody = table.querySelector('tbody');
       const allRows = Array.from(tbody.querySelectorAll('tr'));
-
-      // Toggle asc/desc
       if (!sortDirections[columnIndex]) {
         sortDirections[columnIndex] = 'asc';
       } else {
         sortDirections[columnIndex] = (sortDirections[columnIndex] === 'asc') ? 'desc' : 'asc';
       }
       const direction = sortDirections[columnIndex];
-
-      // Only sort visible rows
       const visibleRows = allRows.filter(row => row.style.display !== 'none');
       visibleRows.sort((a, b) => {
         const cellA = a.children[columnIndex].textContent.trim().toLowerCase();
@@ -559,17 +530,11 @@
         if (cellA > cellB) return direction === 'asc' ? 1 : -1;
         return 0;
       });
-
-      // Re-insert sorted rows
       visibleRows.forEach(row => tbody.appendChild(row));
-
-      // Remove existing arrows
       const allTh = table.querySelectorAll('thead th');
       allTh.forEach(th => {
         th.textContent = th.textContent.replace(/[▲▼]/g, '').trim();
       });
-
-      // Append arrow to sorted column
       const arrow = (direction === 'asc') ? ' ▲' : ' ▼';
       allTh[columnIndex].textContent += arrow;
     }
@@ -579,15 +544,11 @@
       fetch('detections.json?v=' + new Date().getTime())
         .then(res => res.json())
         .then(data => {
-          // Sort by detection name ascending on load
           data.sort((a, b) => a.name.localeCompare(b.name));
-
           const tbody = document.querySelector('#detectionsTable tbody');
           tbody.innerHTML = '';
-
           data.forEach(det => {
             const statusColor = getStatusColor(det.defaultStatus);
-
             const tr = document.createElement('tr');
             tr.innerHTML = `
               <td>${det.name}</td>
@@ -604,14 +565,11 @@
             `;
             tbody.appendChild(tr);
           });
-
-          // Show initial count
           updateCaseCount();
         })
         .catch(err => console.error('Error loading detections.json', err));
     }
 
-    // Run loadData on page load
     window.onload = loadData;
   </script>
 </body>
