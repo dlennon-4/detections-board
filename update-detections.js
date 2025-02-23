@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function populateTable(detections) {
-    const tableBody = document.getElementById("detectionsTableBody");
+    const tableBody = document.querySelector("#detectionsTable tbody"); // Fix table body selection
     tableBody.innerHTML = ""; // Clear existing rows
 
     detections.forEach(detection => {
@@ -31,12 +31,10 @@ function populateTable(detections) {
         row.appendChild(createCell(detection.mitreTechniqueID));  // MITRE Technique ID
         row.appendChild(createCell(detection.connector));         // Connector
         row.appendChild(createCell(detection.tool));              // Tool
-        
-        // 🛠 Fix for "Last Modified" Column
-        let lastModified = detection.hasOwnProperty("lastModified") ? detection.lastModified : "N/A";
 
-        // If lastModified exists, reformat from YYYY-MM-DD to MM-DD-YY
-        if (lastModified !== "N/A") {
+        // 🛠 Fix for "Last Modified" Column (Ensures MM-DD-YY Format)
+        let lastModified = detection.lastModified ? detection.lastModified : "N/A";
+        if (lastModified !== "N/A" && lastModified.includes("-")) {
             let dateParts = lastModified.split("-");
             if (dateParts.length === 3) {
                 lastModified = `${dateParts[1]}-${dateParts[2]}-${dateParts[0].slice(-2)}`;
@@ -44,7 +42,7 @@ function populateTable(detections) {
         }
 
         row.appendChild(createCell(lastModified)); // Last Modified Column
-        
+
         tableBody.appendChild(row);
     });
 }
