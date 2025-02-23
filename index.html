@@ -14,18 +14,15 @@
       /* Light Mode Variables */
       --bg-color: #EBEBEB;
       --text-color: #000000;
-
       --card-bg: #ffffff;
       --table-border: #dddddd;
       --header-bg: #C00;
       --header-text: #ffffff;
-
       --primary-btn-bg: #000;
       --primary-btn-text: #fff;
       --hover-bg: #444;
       --reset-btn-bg: #C00;
       --export-btn-bg: #28a745;
-
       --row-even-bg: #F9F9F9;
       --row-hover-bg: #ECECEC;
     }
@@ -34,36 +31,34 @@
     .dark-mode {
       --bg-color: #1A1A1A;
       --text-color: #E3E3E3;
-
       --card-bg: #2B2B2B;
       --table-border: #444444;
       --header-bg: #700000;
       --header-text: #CCCCCC;
-
       --primary-btn-bg: #333333;
       --primary-btn-text: #DDDDDD;
       --hover-bg: #555555;
       --reset-btn-bg: #700000;
       --export-btn-bg: #236c38;
-
       --row-even-bg: #333333;
       --row-hover-bg: #555555;
     }
 
+    /* Body: Reduced default margin to shrink the vertical gap. */
     body {
+      margin: 10px;
       background-color: var(--bg-color);
       color: var(--text-color);
       font-family: 'Inter', sans-serif;
-      margin: 20px;
       text-align: center;
       transition: background-color 0.3s, color 0.3s;
     }
 
-    /* Dark/Light mode toggle in top-right corner */
+    /* Dark/Light Mode Toggle in top-right corner */
     .mode-toggle {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 10px;
+      right: 10px;
       background: var(--primary-btn-bg);
       color: var(--primary-btn-text);
       border: none;
@@ -78,29 +73,55 @@
       transform: translateY(-2px);
     }
 
-    /* Logo container (aligned left) */
-    .logo-container {
-      text-align: left;
-      margin: 0 20px 10px 20px;
-    }
-    .logo-container img {
-      max-height: 500px; /* Enlarged logo */
-    }
-    .link-container {
-      text-align: left;
-      margin: 0 20px 20px 20px;
-    }
-    .link-container a {
-      font-weight: bold;
-      text-decoration: none;
-      color: var(--text-color);
+    /* Header area to hold logo & link, left-aligned */
+    .header-area {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 10px;
     }
 
-    /* Container for the table */
+    /* Larger, wider logo than the link */
+    .logo-container img {
+      width: 300px;  /* Increase or decrease as you like */
+      height: auto;  /* Keeps proportions */
+    }
+
+    /* Position the link beneath the logo, left-aligned */
+    .link-container {
+      margin-top: 5px;
+      font-size: 16px; /* Smaller text than the logo's width */
+    }
+    .link-container a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Smaller margin on the H1 to reduce the gap */
+    h1 {
+      margin: 10px 0;
+    }
+
+    /* Filter Bar container: also reduce top margin for less gap */
+    .filter-bar {
+      background: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 95%;
+      margin: 10px auto; /* Reduced from 20px */
+      transition: background-color 0.3s;
+    }
+
+    /* Table container */
     .table-container {
       background: var(--card-bg);
       padding: 20px;
-      margin: 20px auto;
+      margin: 10px auto;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       max-width: 95%;
@@ -164,45 +185,8 @@
       transition: background-color 0.1s;
     }
 
-    /* Filter Bar container */
-    .filter-bar {
-      background: var(--card-bg);
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 20px auto;
-      max-width: 95%;
-      transition: background-color 0.3s;
-    }
-
-    .filters-left {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
-
-    /* Filter & Action Buttons */
-    .filter-btn {
-      background: var(--primary-btn-bg);
-      color: var(--primary-btn-text);
-      padding: 8px 16px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background-color 0.3s, transform 0.2s;
-      text-align: center;
-      width: var(--dropdown-width);
-    }
-    .filter-btn:hover {
-      background-color: var(--hover-bg);
-      transform: translateY(-2px);
-    }
-
+    /* Buttons & dropdowns */
+    .filter-btn,
     .action-btn {
       background: var(--primary-btn-bg);
       color: var(--primary-btn-text);
@@ -214,6 +198,7 @@
       transition: background-color 0.3s, transform 0.2s;
       text-align: center;
     }
+    .filter-btn:hover,
     .action-btn:hover {
       background-color: var(--hover-bg);
       transform: translateY(-2px);
@@ -241,7 +226,6 @@
       border: 1px solid var(--table-border);
       margin-top: 8px;
       z-index: 999;
-
       opacity: 0;
       transform: translateY(-5px);
       transition: opacity 0.2s, transform 0.2s, background-color 0.3s, border-color 0.3s;
@@ -285,17 +269,21 @@
   </style>
 </head>
 <body>
-  <!-- Dark/Light Mode Toggle in top-right corner -->
+  <!-- Dark/Light Mode Toggle -->
   <button class="mode-toggle" onclick="toggleMode()">🌙</button>
 
-  <!-- Logo and Link (aligned left) -->
-  <div class="logo-container">
-    <img src="CyFlareLogo.png" alt="CyFlare Logo">
-  </div>
-  <div class="link-container">
-    <a href="https://cyflare.com/" target="_blank">Visit CyFlare.com</a>
+  <!-- Header area for logo & link -->
+  <div class="header-area">
+    <div class="logo-container">
+      <!-- Wider logo than the link -->
+      <img src="CyFlareLogo.png" alt="CyFlare Logo">
+    </div>
+    <div class="link-container">
+      <a href="https://cyflare.com/" target="_blank">Visit CyFlare.com</a>
+    </div>
   </div>
 
+  <!-- Title with reduced margin -->
   <h1>CyFlare Detections Board</h1>
 
   <!-- Filter Bar -->
@@ -348,12 +336,14 @@
 
       <button class="reset-btn action-btn" onclick="resetFilters()">Reset Filters</button>
     </div>
+
     <!-- Export CSV on the right -->
     <div>
       <button class="export-btn action-btn" onclick="exportTableToCSV()">Export CSV</button>
     </div>
   </div>
 
+  <!-- Main Table Container -->
   <div class="table-container">
     <table id="detectionsTable">
       <thead>
@@ -379,12 +369,10 @@
   <div id="casesCounter" class="cases-counter">Total Cases: 0</div>
 
   <script>
-    // Dark/Light Mode
     function toggleMode() {
       document.body.classList.toggle('dark-mode');
     }
 
-    // Show/hide dropdown
     function toggleDropdown(id) {
       document.getElementById(id).classList.toggle('show');
     }
@@ -397,7 +385,6 @@
       }
     });
 
-    // Toggle a specific column
     function toggleColumn(colIndex, forceShow = null) {
       const table = document.getElementById('detectionsTable');
       const checkbox = document.querySelectorAll('#columnDropdown input[type="checkbox"]')[colIndex];
@@ -419,7 +406,6 @@
       }
     }
 
-    // Reset filter checkboxes, columns, search
     function resetFilters() {
       document.getElementById('search').value = '';
       document.querySelectorAll('#statusDropdown input[type="checkbox"]').forEach(cb => (cb.checked = true));
@@ -435,12 +421,10 @@
     function filterTable() {
       const searchValue = document.getElementById('search').value.toLowerCase();
 
-      // Checked statuses
       const statusCheckboxes = document.querySelectorAll('#statusDropdown input[type="checkbox"]');
       const checkedStatuses = Array.from(statusCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
       const allStatusesChecked = (checkedStatuses.length === statusCheckboxes.length);
 
-      // Checked tools
       const toolCheckboxes = document.querySelectorAll('#toolDropdown input[type="checkbox"]');
       const checkedTools = Array.from(toolCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
       const allToolsChecked = (checkedTools.length === toolCheckboxes.length);
@@ -457,14 +441,12 @@
         const matchesTool = allToolsChecked || checkedTools.includes(tool);
         const matchesSearch = name.includes(searchValue) || desc.includes(searchValue);
 
-        // Show row only if it matches search, status, and tool
         row.style.display = (matchesSearch && matchesStatus && matchesTool) ? '' : 'none';
       });
 
       updateCaseCount();
     }
 
-    // Update 'Total Cases'
     function updateCaseCount() {
       const rows = document.querySelectorAll('#detectionsTable tbody tr');
       let visibleCount = 0;
@@ -476,27 +458,20 @@
       document.getElementById('casesCounter').textContent = `Total Cases: ${visibleCount}`;
     }
 
-    // CSV Export for visible rows/columns
     function exportTableToCSV() {
       const table = document.getElementById('detectionsTable');
       const rows = table.querySelectorAll('tr');
       let csv = [];
 
       rows.forEach(row => {
-        // Skip hidden rows
         if (row.style.display === 'none') return;
-
         let rowData = [];
         row.querySelectorAll('th, td').forEach(cell => {
-          // skip hidden columns
           if (cell.style.display === 'none') return;
           let text = cell.textContent.replace(/\"/g, '\"\"');
           rowData.push(`\"${text}\"`);
         });
-
-        if (rowData.length > 0) {
-          csv.push(rowData.join(','));
-        }
+        if (rowData.length > 0) csv.push(rowData.join(','));
       });
 
       const csvContent = csv.join('\n');
@@ -511,7 +486,7 @@
       URL.revokeObjectURL(url);
     }
 
-    // Colors for the 'Default Status' cell
+    // Color for Default Status
     function getStatusColor(status) {
       switch (status) {
         case 'Active':                return '#28a745';
@@ -525,85 +500,42 @@
       }
     }
 
-    // Sorting directions
+    // Sorting
     let sortDirections = {};
 
-    // Sort the table by the given column index
     function sortTable(columnIndex) {
       const table = document.getElementById('detectionsTable');
       const tbody = table.querySelector('tbody');
       const allRows = Array.from(tbody.querySelectorAll('tr'));
 
-      // Toggle asc/desc
       if (!sortDirections[columnIndex]) {
         sortDirections[columnIndex] = 'asc';
       } else {
-        sortDirections[columnIndex] = (sortDirections[columnIndex] === 'asc') ? 'desc' : 'asc';
+        sortDirections[columnIndex] =
+          sortDirections[columnIndex] === 'asc' ? 'desc' : 'asc';
       }
       const direction = sortDirections[columnIndex];
 
-      // Filter out hidden rows prior to sorting
       const visibleRows = allRows.filter(row => row.style.display !== 'none');
-
       visibleRows.sort((a, b) => {
         const cellA = a.children[columnIndex].textContent.trim().toLowerCase();
         const cellB = b.children[columnIndex].textContent.trim().toLowerCase();
-
         if (cellA < cellB) return direction === 'asc' ? -1 : 1;
         if (cellA > cellB) return direction === 'asc' ? 1 : -1;
         return 0;
       });
 
-      // Re-insert sorted rows
       visibleRows.forEach(row => tbody.appendChild(row));
 
-      // Remove existing arrows
       const allTh = table.querySelectorAll('thead th');
       allTh.forEach(th => {
         th.textContent = th.textContent.replace(/[▲▼]/g, '').trim();
       });
-
-      // Append arrow
-      const arrow = (direction === 'asc') ? ' ▲' : ' ▼';
+      const arrow = direction === 'asc' ? ' ▲' : ' ▼';
       allTh[columnIndex].textContent += arrow;
     }
 
-    // Load data from detections.json
-    function loadData() {
-      fetch('detections.json?v=' + new Date().getTime())
-        .then(res => res.json())
-        .then(data => {
-          // Sort by detection name ascending on load
-          data.sort((a, b) => a.name.localeCompare(b.name));
-
-          const tbody = document.querySelector('#detectionsTable tbody');
-          tbody.innerHTML = '';
-
-          data.forEach(det => {
-            const statusColor = getStatusColor(det.defaultStatus);
-
-            const tr = document.createElement('tr');
-            tr.innerHTML = `
-              <td>${det.name}</td>
-              <td>${det.description}</td>
-              <td style="background-color: ${statusColor}">${det.defaultStatus}</td>
-              <td>${det.killChainStage}</td>
-              <td>${det.mitreTactic}</td>
-              <td>${det.mitreTacticID}</td>
-              <td>${det.mitreTechnique}</td>
-              <td>${det.mitreTechniqueID}</td>
-              <td>${det.connector}</td>
-              <td>${det.tool}</td>
-              <td>${det.lastModified || "N/A"}</td>
-            `;
-            tbody.appendChild(tr);
-          });
-
-          updateCaseCount();
-        })
-        .catch(err => console.error('Error loading detections.json', err));
-    }
-
+    // Initial Data Load
     window.onload = loadData;
   </script>
 </body>
