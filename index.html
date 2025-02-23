@@ -132,7 +132,7 @@
     /* Ensure Last Modified column does not wrap */
     #detectionsTable td:nth-child(11),
     #detectionsTable th:nth-child(11) {
-      white-space: nowrap; 
+      white-space: nowrap;
       text-align: center;
       min-width: 100px;
     }
@@ -259,18 +259,14 @@
       color: var(--primary-btn-text);
       border-radius: 8px;
       padding: 4px 8px;
-      font-size: 0.75rem; 
+      font-size: 0.75rem;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
       z-index: 9999;
       transition: background-color 0.3s;
     }
 
-    /* Optional: style for your logos */
+    /* Logo container */
     .logo-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
       margin-bottom: 10px;
     }
     .logo-container img {
@@ -280,32 +276,24 @@
 </head>
 <body>
   <!-- Dark/Light Mode Toggle in top-right corner -->
-  <button class="mode-toggle" onclick="toggleMode()">🌙</button>
+  <button class="mode-toggle" onclick="toggleMode()">Dark Mode</button>
 
-  <!-- Logo(s) and Title -->
+  <!-- Single CyFlare Logo -->
   <div class="logo-container">
-    <!-- Example logos: replace src with your actual file names -->
+    <!-- Make sure CyFlareLogo.png is in the same folder as this file -->
     <img src="CyFlareLogo.png" alt="CyFlare Logo">
-    <img src="CyFlaretagline-2c.webp" alt="CyFlare Tagline">
   </div>
 
-  <h1>📌 CyFlare Detections Board</h1>
-
-  <!-- Link to your website -->
-  <p>
-    <a href="https://cyflare.com/" target="_blank" style="font-weight:bold; text-decoration: none; color: var(--text-color);">
-      Visit CyFlare.com
-    </a>
-  </p>
+  <h1>CyFlare Detections Board</h1>
 
   <!-- Filter Bar -->
   <div class="filter-bar">
     <div class="filters-left">
-      <input type="text" id="search" class="search-box" onkeyup="filterTable()" placeholder="🔍 Search Detections...">
+      <input type="text" id="search" class="search-box" onkeyup="filterTable()" placeholder="Search Detections...">
 
       <!-- Default Status Dropdown -->
       <div class="dropdown">
-        <button class="filter-btn" onclick="toggleDropdown('statusDropdown')">Default Status ▼</button>
+        <button class="filter-btn" onclick="toggleDropdown('statusDropdown')">Default Status</button>
         <div id="statusDropdown" class="dropdown-content">
           <label><input type="checkbox" value="Active" checked onchange="filterTable()"> Active</label>
           <label><input type="checkbox" value="Active via Custom Rules" checked onchange="filterTable()"> Active via Custom Rules</label>
@@ -319,7 +307,7 @@
 
       <!-- Tool Dropdown -->
       <div class="dropdown">
-        <button class="filter-btn" onclick="toggleDropdown('toolDropdown')">Tool ▼</button>
+        <button class="filter-btn" onclick="toggleDropdown('toolDropdown')">Tool</button>
         <div id="toolDropdown" class="dropdown-content">
           <label><input type="checkbox" value="Stellar Cyber" checked onchange="filterTable()"> Stellar Cyber</label>
           <label><input type="checkbox" value="LevelBlue" checked onchange="filterTable()"> LevelBlue</label>
@@ -330,7 +318,7 @@
 
       <!-- Column Selection Dropdown -->
       <div class="dropdown">
-        <button class="filter-btn" onclick="toggleDropdown('columnDropdown')">Select Columns ▼</button>
+        <button class="filter-btn" onclick="toggleDropdown('columnDropdown')">Select Columns</button>
         <div id="columnDropdown" class="dropdown-content">
           <label><input type="checkbox" checked onchange="toggleColumn(0)"> Detection Name</label>
           <label><input type="checkbox" checked onchange="toggleColumn(1)"> Description</label>
@@ -346,11 +334,11 @@
         </div>
       </div>
 
-      <button class="reset-btn action-btn" onclick="resetFilters()">❌ Reset Filters</button>
+      <button class="reset-btn action-btn" onclick="resetFilters()">Reset Filters</button>
     </div>
     <!-- Export CSV on the right -->
     <div>
-      <button class="export-btn action-btn" onclick="exportTableToCSV()">📤 Export CSV</button>
+      <button class="export-btn action-btn" onclick="exportTableToCSV()">Export CSV</button>
     </div>
   </div>
 
@@ -453,11 +441,8 @@
         const status = cells[2].textContent.trim();
         const tool = cells[9].textContent.trim();
 
-        // If all status checkboxes are checked, skip filtering by status
         const matchesStatus = allStatusesChecked || checkedStatuses.includes(status);
-        // If all tool checkboxes are checked, skip filtering by tool
         const matchesTool = allToolsChecked || checkedTools.includes(tool);
-
         const matchesSearch = name.includes(searchValue) || desc.includes(searchValue);
 
         // Show row only if it matches search, status, and tool
@@ -467,7 +452,7 @@
       updateCaseCount();
     }
 
-    // Update 'Total Cases' in bottom-right
+    // Update 'Total Cases'
     function updateCaseCount() {
       const rows = document.querySelectorAll('#detectionsTable tbody tr');
       let visibleCount = 0;
