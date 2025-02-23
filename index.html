@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <title>CyFlare Detections Board</title>
-  
-  <!-- Clean, modern font: Inter -->
-  <link rel="icon" href="CyFlareLogo.png" type="image/png">
 
   <!-- Clean, modern font: Inter -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap">
-
+  
+  <!-- Tab Logo (favicon) -->
+  <link rel="icon" href="CyFlareLogo.png" type="image/png">
+  
   <style>
     :root {
       --dropdown-width: 240px;
@@ -61,32 +61,32 @@
      ****************************************/
     .top-bar {
       display: grid;
-      /* 1fr auto 1fr ensures the center column is truly centered */
+      /* 1fr auto 1fr ensures the center is truly centered */
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
       padding: 10px 20px;
     }
 
-    /* Left cell: Logo */
+    /* Left: Logo */
     .logo-section {
-      justify-self: start; /* Keep it left-aligned */
-      text-align: left;    /* If you want the link left-aligned as well */
+      justify-self: start;
+      text-align: left;
     }
     .logo-section img {
-      max-width: 120px; /* Adjust if you need smaller or larger */
+      max-width: 120px;
       height: auto;
-      background-color: transparent; /* Only works if the PNG is truly transparent */
+      background-color: transparent; /* Only works if PNG is truly transparent */
     }
 
-    /* Center cell: Title + link */
+    /* Center: Title + link */
     .center-section {
       display: flex;
       flex-direction: column;
-      align-items: center; /* Title & link are both centered */
+      align-items: center;
       justify-self: center;
     }
     .center-section h1 {
-      margin: 0; /* minimal spacing */
+      margin: 0;
     }
     .center-section .site-link {
       margin-top: 4px;
@@ -95,9 +95,9 @@
       color: var(--text-color);
     }
 
-    /* Right cell: Dark/Light Mode Toggle */
+    /* Right: Dark/Light Mode Toggle */
     .mode-toggle {
-      justify-self: end; 
+      justify-self: end;
       background: var(--primary-btn-bg);
       color: var(--primary-btn-text);
       border: none;
@@ -113,7 +113,7 @@
     }
 
     /****************************************
-     * Filter Bar + Table
+     * Filter Bar
      ****************************************/
     .filter-bar {
       background: var(--card-bg);
@@ -201,15 +201,21 @@
       transform: translateY(0);
     }
 
-    /* Table container */
+    /****************************************
+     * Sticky Header Table
+     ****************************************/
     .table-container {
       background: var(--card-bg);
-      padding: 20px;
-      margin: 0 auto 20px auto;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       max-width: 95%;
-      overflow-x: auto;
+      margin: 0 auto 20px auto;
+      padding: 0;              /* Remove extra padding around the scroll area */
+      
+      /* Make table scrollable, so the header stays pinned at top */
+      max-height: 70vh;        /* or whatever height you prefer */
+      overflow-y: auto;
+      position: relative;
       transition: background-color 0.3s;
     }
 
@@ -217,7 +223,6 @@
       width: 100%;
       border: 1px solid var(--table-border);
       border-radius: 8px;
-      overflow: hidden;
       border-collapse: separate;
       border-spacing: 0;
       transition: border-color 0.3s;
@@ -228,19 +233,26 @@
       transition: border-color 0.3s;
     }
 
-    /* Sticky header */
-    th {
-      background: var(--header-bg);
-      color: var(--header-text);
-      font-weight: bold;
-      cursor: pointer;
+    /* Sticky header cells */
+    thead th {
       position: sticky;
       top: 0;
-      z-index: 2;
-      transition: background-color 0.3s, color 0.3s;
+      z-index: 2;  /* ensure header is above table rows */
+      background: var(--header-bg);
+      color: var(--header-text);
+      cursor: pointer;
     }
 
-    /* Left-align first two columns, center the rest */
+    tbody tr:nth-child(even) {
+      background: var(--row-even-bg);
+      transition: background-color 0.3s;
+    }
+    tbody tr:hover {
+      background: var(--row-hover-bg);
+      transition: background-color 0.1s;
+    }
+
+    /* Align columns: first two left, rest center */
     #detectionsTable th:nth-child(1),
     #detectionsTable td:nth-child(1),
     #detectionsTable th:nth-child(2),
@@ -252,21 +264,12 @@
       text-align: center;
     }
 
-    /* Ensure Last Modified column does not wrap */
+    /* Last Modified column no-wrap */
     #detectionsTable td:nth-child(11),
     #detectionsTable th:nth-child(11) {
       white-space: nowrap;
       text-align: center;
       min-width: 100px;
-    }
-
-    tbody tr:nth-child(even) {
-      background: var(--row-even-bg);
-      transition: background-color 0.3s;
-    }
-    tbody tr:hover {
-      background: var(--row-hover-bg);
-      transition: background-color 0.1s;
     }
 
     /* Floating Cases Counter in bottom-right */
@@ -286,21 +289,20 @@
   </style>
 </head>
 <body>
-  <!-- Top Bar: 3 columns. Left = logo, center = title & link, right = dark mode -->
+  <!-- Top Bar: 3 columns: left=logo, center=title+link, right=dark mode -->
   <div class="top-bar">
-    <!-- Left: Logo -->
+    <!-- Logo on the left -->
     <div class="logo-section">
-      <!-- Make sure this PNG is truly transparent if you want no white box -->
       <img src="CyFlareLogo.png" alt="CyFlare Logo">
     </div>
 
-    <!-- Center: Title + link -->
+    <!-- Title + link in the center -->
     <div class="center-section">
       <h1>CyFlare Detections Board</h1>
       <a href="https://cyflare.com/" target="_blank" class="site-link">Visit CyFlare.com</a>
     </div>
 
-    <!-- Right: Dark Mode toggle -->
+    <!-- Dark Mode toggle on the right -->
     <button class="mode-toggle" onclick="toggleMode()">🌙</button>
   </div>
 
@@ -361,7 +363,7 @@
     </div>
   </div>
 
-  <!-- Table Container -->
+  <!-- Scrollable table container with sticky header -->
   <div class="table-container">
     <table id="detectionsTable">
       <thead>
@@ -383,7 +385,7 @@
     </table>
   </div>
 
-  <!-- Floating Cases Counter in bottom-right -->
+  <!-- Floating Cases Counter -->
   <div id="casesCounter" class="cases-counter">Total Cases: 0</div>
 
   <script>
@@ -405,13 +407,13 @@
       }
     });
 
-    // Toggle a specific column
+    // Toggle columns
     function toggleColumn(colIndex, forceShow = null) {
       const table = document.getElementById('detectionsTable');
       const checkbox = document.querySelectorAll('#columnDropdown input[type="checkbox"]')[colIndex];
       const show = (forceShow !== null) ? forceShow : checkbox.checked;
 
-      // Toggle header
+      // Toggle header cell
       const ths = table.getElementsByTagName('th');
       if (ths[colIndex]) {
         ths[colIndex].style.display = show ? '' : 'none';
@@ -427,7 +429,7 @@
       }
     }
 
-    // Reset filter checkboxes, columns, search
+    // Reset all filters
     function resetFilters() {
       document.getElementById('search').value = '';
       document.querySelectorAll('#statusDropdown input[type="checkbox"]').forEach(cb => (cb.checked = true));
@@ -443,16 +445,17 @@
     function filterTable() {
       const searchValue = document.getElementById('search').value.toLowerCase();
 
-      // Checked statuses
+      // Status
       const statusCheckboxes = document.querySelectorAll('#statusDropdown input[type="checkbox"]');
       const checkedStatuses = Array.from(statusCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
       const allStatusesChecked = (checkedStatuses.length === statusCheckboxes.length);
 
-      // Checked tools
+      // Tool
       const toolCheckboxes = document.querySelectorAll('#toolDropdown input[type="checkbox"]');
       const checkedTools = Array.from(toolCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
       const allToolsChecked = (checkedTools.length === toolCheckboxes.length);
 
+      // Filter each row
       const rows = document.querySelectorAll('#detectionsTable tbody tr');
       rows.forEach(row => {
         const cells = row.querySelectorAll('td');
@@ -461,9 +464,9 @@
         const status = cells[2].textContent.trim();
         const tool = cells[9].textContent.trim();
 
+        const matchesSearch = name.includes(searchValue) || desc.includes(searchValue);
         const matchesStatus = allStatusesChecked || checkedStatuses.includes(status);
         const matchesTool = allToolsChecked || checkedTools.includes(tool);
-        const matchesSearch = name.includes(searchValue) || desc.includes(searchValue);
 
         row.style.display = (matchesSearch && matchesStatus && matchesTool) ? '' : 'none';
       });
@@ -471,7 +474,7 @@
       updateCaseCount();
     }
 
-    // Update 'Total Cases'
+    // Update "Total Cases" in bottom-right
     function updateCaseCount() {
       const rows = document.querySelectorAll('#detectionsTable tbody tr');
       let visibleCount = 0;
@@ -483,20 +486,18 @@
       document.getElementById('casesCounter').textContent = `Total Cases: ${visibleCount}`;
     }
 
-    // CSV Export for visible rows/columns
+    // Export CSV for visible rows/columns
     function exportTableToCSV() {
       const table = document.getElementById('detectionsTable');
       const rows = table.querySelectorAll('tr');
       let csv = [];
 
       rows.forEach(row => {
-        // Skip hidden rows
-        if (row.style.display === 'none') return;
+        if (row.style.display === 'none') return; // skip hidden rows
 
         let rowData = [];
         row.querySelectorAll('th, td').forEach(cell => {
-          // skip hidden columns
-          if (cell.style.display === 'none') return;
+          if (cell.style.display === 'none') return; // skip hidden columns
           let text = cell.textContent.replace(/\"/g, '\"\"');
           rowData.push(`\"${text}\"`);
         });
@@ -518,7 +519,7 @@
       URL.revokeObjectURL(url);
     }
 
-    // Colors for the 'Default Status' cell
+    // Color for Default Status
     function getStatusColor(status) {
       switch (status) {
         case 'Active':                return '#28a745';
@@ -535,7 +536,7 @@
     // Sorting directions
     let sortDirections = {};
 
-    // Sort the table by the given column index
+    // Sort table by given column index
     function sortTable(columnIndex) {
       const table = document.getElementById('detectionsTable');
       const tbody = table.querySelector('tbody');
@@ -545,14 +546,12 @@
       if (!sortDirections[columnIndex]) {
         sortDirections[columnIndex] = 'asc';
       } else {
-        sortDirections[columnIndex] =
-          sortDirections[columnIndex] === 'asc' ? 'desc' : 'asc';
+        sortDirections[columnIndex] = (sortDirections[columnIndex] === 'asc') ? 'desc' : 'asc';
       }
       const direction = sortDirections[columnIndex];
 
-      // Filter out hidden rows prior to sorting
+      // Only sort visible rows
       const visibleRows = allRows.filter(row => row.style.display !== 'none');
-
       visibleRows.sort((a, b) => {
         const cellA = a.children[columnIndex].textContent.trim().toLowerCase();
         const cellB = b.children[columnIndex].textContent.trim().toLowerCase();
@@ -561,6 +560,7 @@
         return 0;
       });
 
+      // Re-insert sorted rows
       visibleRows.forEach(row => tbody.appendChild(row));
 
       // Remove existing arrows
@@ -569,7 +569,7 @@
         th.textContent = th.textContent.replace(/[▲▼]/g, '').trim();
       });
 
-      // Append arrow
+      // Append arrow to sorted column
       const arrow = (direction === 'asc') ? ' ▲' : ' ▼';
       allTh[columnIndex].textContent += arrow;
     }
@@ -605,11 +605,13 @@
             tbody.appendChild(tr);
           });
 
-          updateCaseCount(); // show initial total
+          // Show initial count
+          updateCaseCount();
         })
         .catch(err => console.error('Error loading detections.json', err));
     }
 
+    // Run loadData on page load
     window.onload = loadData;
   </script>
 </body>
