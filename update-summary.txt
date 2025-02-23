@@ -1,7 +1,7 @@
 🛠 Detections Update Summary
 ----------------------------
 🆕 New Detections: 0
-✏️ Updated Detections: 474
+✏️ Updated Detections: 459
 🗑️ Deleted Detections: 0
 
 📋 Details:
@@ -190,21 +190,6 @@
 ✏️ Updated: Windows User Removed from Domain Admins Group (ID: CY-0182)
 ✏️ Updated: Windows User Removed from Local Administrators Group (ID: CY-0183)
 ✏️ Updated: Potential FastHTTP Client Bruteforce Attempt (ID: CY-0184)
-✏️ Updated: Suspicious Microsoft Entra Service Principal Activity (ID: CY-0185)
-✏️ Updated: Azure Application Gateway Changed (ID: CY-0186)
-✏️ Updated: Azure DNS Zone Changed (ID: CY-0187)
-✏️ Updated: Azure New CloudShell Created (ID: CY-0188)
-✏️ Updated: Azure Security Configuration Changed (ID: CY-0189)
-✏️ Updated: Suspicious Azure Account Permission Elevation (ID: CY-0190)
-✏️ Updated: Suspicious Azure Deployment Activity (ID: CY-0191)
-✏️ Updated: Suspicious Azure Firewall Activity (ID: CY-0192)
-✏️ Updated: Suspicious Azure Key Vault Activity (ID: CY-0193)
-✏️ Updated: Suspicious Azure Kubernetes Activity: Credential Access (ID: CY-0194)
-✏️ Updated: Suspicious Azure Kubernetes Activity: Defense Evasion (ID: CY-0195)
-✏️ Updated: Suspicious Azure Kubernetes Activity: Impact (ID: CY-0196)
-✏️ Updated: Suspicious Azure Kubernetes Activity: Persistence (ID: CY-0197)
-✏️ Updated: Suspicious Azure Kubernetes Activity: Privilege Escalation (ID: CY-0198)
-✏️ Updated: Suspicious Azure Network Activity (ID: CY-0199)
 ✏️ Updated: Google Workspace Account Manipulation (ID: CY-0200)
 ✏️ Updated: Office 365 Network Security Configuration Changed (ID: CY-0201)
 ✏️ Updated: Office 365 Sharing Policy Changed (ID: CY-0202)
