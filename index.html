@@ -44,9 +44,8 @@
       --row-hover-bg: #555555;
     }
 
-    /* Body: Reduced default margin to shrink the vertical gap. */
     body {
-      margin: 10px;
+      margin: 0;               /* Remove default browser margin */
       background-color: var(--bg-color);
       color: var(--text-color);
       font-family: 'Inter', sans-serif;
@@ -73,37 +72,30 @@
       transform: translateY(-2px);
     }
 
-    /* Header area to hold logo & link, left-aligned */
-    .header-area {
+    /* Centered logo + link container */
+    .logo-section {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      margin-left: 10px;
+      align-items: center;  /* center horizontally */
+      margin-top: 10px;     /* small top margin to avoid huge gap */
     }
-
-    /* Larger, wider logo than the link */
-    .logo-container img {
-      width: 300px;  /* Increase or decrease as you like */
-      height: auto;  /* Keeps proportions */
+    .logo-section img {
+      max-width: 200px;  /* reduce if image is pixelating */
+      height: auto;
     }
-
-    /* Position the link beneath the logo, left-aligned */
-    .link-container {
+    .logo-link {
       margin-top: 5px;
-      font-size: 16px; /* Smaller text than the logo's width */
-    }
-    .link-container a {
-      color: var(--text-color);
-      text-decoration: none;
       font-weight: bold;
+      text-decoration: none;
+      color: var(--text-color);
     }
 
-    /* Smaller margin on the H1 to reduce the gap */
+    /* Main heading with minimal top/bottom margin */
     h1 {
-      margin: 10px 0;
+      margin: 5px 0 10px 0;  /* top, right, bottom, left */
     }
 
-    /* Filter Bar container: also reduce top margin for less gap */
+    /* Filter Bar container */
     .filter-bar {
       background: var(--card-bg);
       border-radius: 8px;
@@ -113,15 +105,22 @@
       justify-content: space-between;
       align-items: center;
       max-width: 95%;
-      margin: 10px auto; /* Reduced from 20px */
+      margin: 0 auto 20px auto; /* no top gap, 20px bottom */
       transition: background-color 0.3s;
     }
 
-    /* Table container */
+    .filters-left {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    /* Container for the table */
     .table-container {
       background: var(--card-bg);
       padding: 20px;
-      margin: 10px auto;
+      margin: 0 auto 20px auto;  /* 20px bottom margin, no top gap */
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       max-width: 95%;
@@ -185,7 +184,7 @@
       transition: background-color 0.1s;
     }
 
-    /* Buttons & dropdowns */
+    /* Filter & Action Buttons */
     .filter-btn,
     .action-btn {
       background: var(--primary-btn-bg);
@@ -252,7 +251,7 @@
       font-size: 14px;
     }
 
-    /* Smaller floating Cases Counter in bottom-right */
+    /* Floating Cases Counter in bottom-right */
     .cases-counter {
       position: fixed;
       bottom: 20px;
@@ -272,18 +271,14 @@
   <!-- Dark/Light Mode Toggle -->
   <button class="mode-toggle" onclick="toggleMode()">🌙</button>
 
-  <!-- Header area for logo & link -->
-  <div class="header-area">
-    <div class="logo-container">
-      <!-- Wider logo than the link -->
-      <img src="CyFlareLogo.png" alt="CyFlare Logo">
-    </div>
-    <div class="link-container">
-      <a href="https://cyflare.com/" target="_blank">Visit CyFlare.com</a>
-    </div>
+  <!-- Centered Logo + Link -->
+  <div class="logo-section">
+    <!-- If this image is very small, scaling up will look pixelated. Try a bigger/higher-res image. -->
+    <img src="CyFlareLogo.png" alt="CyFlare Logo">
+    <a href="https://cyflare.com/" target="_blank" class="logo-link">Visit CyFlare.com</a>
   </div>
 
-  <!-- Title with reduced margin -->
+  <!-- Main Heading (minimal top margin) -->
   <h1>CyFlare Detections Board</h1>
 
   <!-- Filter Bar -->
@@ -336,14 +331,13 @@
 
       <button class="reset-btn action-btn" onclick="resetFilters()">Reset Filters</button>
     </div>
-
     <!-- Export CSV on the right -->
     <div>
       <button class="export-btn action-btn" onclick="exportTableToCSV()">Export CSV</button>
     </div>
   </div>
 
-  <!-- Main Table Container -->
+  <!-- Table Container -->
   <div class="table-container">
     <table id="detectionsTable">
       <thead>
@@ -365,14 +359,16 @@
     </table>
   </div>
 
-  <!-- Floating Cases Counter in bottom-right -->
+  <!-- Floating Cases Counter -->
   <div id="casesCounter" class="cases-counter">Total Cases: 0</div>
 
   <script>
+    // Dark/Light Mode
     function toggleMode() {
       document.body.classList.toggle('dark-mode');
     }
 
+    // Dropdown toggle
     function toggleDropdown(id) {
       document.getElementById(id).classList.toggle('show');
     }
@@ -385,6 +381,7 @@
       }
     });
 
+    // Toggle columns
     function toggleColumn(colIndex, forceShow = null) {
       const table = document.getElementById('detectionsTable');
       const checkbox = document.querySelectorAll('#columnDropdown input[type="checkbox"]')[colIndex];
@@ -406,6 +403,7 @@
       }
     }
 
+    // Reset filters
     function resetFilters() {
       document.getElementById('search').value = '';
       document.querySelectorAll('#statusDropdown input[type="checkbox"]').forEach(cb => (cb.checked = true));
@@ -417,14 +415,16 @@
       filterTable();
     }
 
-    // Filter logic: search, statuses, tools
+    // Filtering logic
     function filterTable() {
       const searchValue = document.getElementById('search').value.toLowerCase();
 
+      // Status
       const statusCheckboxes = document.querySelectorAll('#statusDropdown input[type="checkbox"]');
       const checkedStatuses = Array.from(statusCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
       const allStatusesChecked = (checkedStatuses.length === statusCheckboxes.length);
 
+      // Tool
       const toolCheckboxes = document.querySelectorAll('#toolDropdown input[type="checkbox"]');
       const checkedTools = Array.from(toolCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
       const allToolsChecked = (checkedTools.length === toolCheckboxes.length);
@@ -447,6 +447,7 @@
       updateCaseCount();
     }
 
+    // Update the "Total Cases" counter
     function updateCaseCount() {
       const rows = document.querySelectorAll('#detectionsTable tbody tr');
       let visibleCount = 0;
@@ -458,6 +459,7 @@
       document.getElementById('casesCounter').textContent = `Total Cases: ${visibleCount}`;
     }
 
+    // Export CSV
     function exportTableToCSV() {
       const table = document.getElementById('detectionsTable');
       const rows = table.querySelectorAll('tr');
@@ -508,6 +510,7 @@
       const tbody = table.querySelector('tbody');
       const allRows = Array.from(tbody.querySelectorAll('tr'));
 
+      // Toggle asc/desc
       if (!sortDirections[columnIndex]) {
         sortDirections[columnIndex] = 'asc';
       } else {
@@ -516,6 +519,7 @@
       }
       const direction = sortDirections[columnIndex];
 
+      // Sort only visible rows
       const visibleRows = allRows.filter(row => row.style.display !== 'none');
       visibleRows.sort((a, b) => {
         const cellA = a.children[columnIndex].textContent.trim().toLowerCase();
@@ -527,15 +531,54 @@
 
       visibleRows.forEach(row => tbody.appendChild(row));
 
+      // Remove existing arrows
       const allTh = table.querySelectorAll('thead th');
       allTh.forEach(th => {
         th.textContent = th.textContent.replace(/[▲▼]/g, '').trim();
       });
+      // Append arrow
       const arrow = direction === 'asc' ? ' ▲' : ' ▼';
       allTh[columnIndex].textContent += arrow;
     }
 
-    // Initial Data Load
+    // Load data from detections.json
+    function loadData() {
+      fetch('detections.json?v=' + new Date().getTime())
+        .then(res => res.json())
+        .then(data => {
+          // Sort by detection name ascending on load
+          data.sort((a, b) => a.name.localeCompare(b.name));
+
+          const tbody = document.querySelector('#detectionsTable tbody');
+          tbody.innerHTML = '';
+
+          data.forEach(det => {
+            const statusColor = getStatusColor(det.defaultStatus);
+
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+              <td>${det.name}</td>
+              <td>${det.description}</td>
+              <td style="background-color: ${statusColor}">${det.defaultStatus}</td>
+              <td>${det.killChainStage}</td>
+              <td>${det.mitreTactic}</td>
+              <td>${det.mitreTacticID}</td>
+              <td>${det.mitreTechnique}</td>
+              <td>${det.mitreTechniqueID}</td>
+              <td>${det.connector}</td>
+              <td>${det.tool}</td>
+              <td>${det.lastModified || "N/A"}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+
+          // Show initial count
+          updateCaseCount();
+        })
+        .catch(err => console.error('Error loading detections.json', err));
+    }
+
+    // Run loadData on page load
     window.onload = loadData;
   </script>
 </body>
