@@ -10,22 +10,17 @@
   <style>
     :root {
       --dropdown-width: 240px;
-
-      /* Light Mode Variables */
       --bg-color: #EBEBEB;
       --text-color: #000000;
-
       --card-bg: #ffffff;
       --table-border: #dddddd;
       --header-bg: #C00;
       --header-text: #ffffff;
-
       --primary-btn-bg: #000;
       --primary-btn-text: #fff;
       --hover-bg: #444;
       --reset-btn-bg: #C00;
       --export-btn-bg: #28a745;
-
       --row-even-bg: #F9F9F9;
       --row-hover-bg: #ECECEC;
     }
@@ -34,18 +29,15 @@
     .dark-mode {
       --bg-color: #1A1A1A;
       --text-color: #E3E3E3;
-
       --card-bg: #2B2B2B;
       --table-border: #444444;
       --header-bg: #700000;
       --header-text: #CCCCCC;
-
       --primary-btn-bg: #333333;
       --primary-btn-text: #DDDDDD;
       --hover-bg: #555555;
       --reset-btn-bg: #700000;
       --export-btn-bg: #236c38;
-
       --row-even-bg: #333333;
       --row-hover-bg: #555555;
     }
@@ -67,7 +59,6 @@
       min-width: 100px;
     }
 
-    /* Table container */
     .table-container {
       background: var(--card-bg);
       padding: 20px;
@@ -76,43 +67,70 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       max-width: 95%;
       overflow-x: auto;
-      transition: background-color 0.3s;
     }
 
     table {
       width: 100%;
       border: 1px solid var(--table-border);
-      border-radius: 8px;
-      overflow: hidden;
-      border-collapse: separate;
-      border-spacing: 0;
-      transition: border-color 0.3s;
+      border-collapse: collapse;
     }
 
     th, td {
       padding: 12px;
       border-bottom: 1px solid var(--table-border);
-      transition: border-color 0.3s;
     }
 
     th {
       background: var(--header-bg);
       color: var(--header-text);
-      font-weight: bold;
       cursor: pointer;
       position: sticky;
       top: 0;
       z-index: 2;
-      transition: background-color 0.3s, color 0.3s;
     }
+
+    /* Default Status color coding */
+    .status-active { background-color: #28a745; color: white; }
+    .status-custom { background-color: #90ee90; color: black; }
+    .status-testing, .status-new { background-color: #dda0dd; color: black; }
+    .status-muted { background-color: #ffa500; color: black; }
+    .status-inactive { background-color: #dc3545; color: white; }
+    .status-alert { background-color: #17a2b8; color: white; }
+
+    /* Dark/Light mode toggle button */
+    .mode-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--primary-btn-bg);
+      color: var(--primary-btn-text);
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .mode-toggle:hover {
+      background-color: var(--hover-bg);
+      transform: translateY(-2px);
+    }
+
   </style>
 </head>
 <body>
+  <!-- Dark/Light Mode Toggle -->
+  <button class="mode-toggle" onclick="toggleMode()">🌙</button>
+
   <h1>📌 SOC Detections Board</h1>
 
-  <!-- Filter Controls -->
-  <input type="text" id="search" placeholder="🔍 Search Detections..." onkeyup="filterTable()">
-  
+  <!-- Filter Bar -->
+  <div>
+    <input type="text" id="search" placeholder="🔍 Search..." onkeyup="filterTable()">
+    <button class="reset-btn" onclick="resetFilters()">❌ Reset Filters</button>
+    <button class="export-btn" onclick="exportTableToCSV()">📤 Export CSV</button>
+  </div>
+
   <div class="table-container">
     <table id="detectionsTable">
       <thead>
@@ -137,6 +155,10 @@
   <div id="casesCounter">Total Cases: 0</div>
 
   <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
     function loadData() {
       fetch('detections.json?v=' + new Date().getTime())
         .then(res => res.json())
@@ -147,11 +169,13 @@
           tbody.innerHTML = '';
 
           data.forEach(det => {
+            const statusClass = getStatusClass(det.defaultStatus);
+
             const tr = document.createElement('tr');
             tr.innerHTML = `
               <td>${det.name}</td>
               <td>${det.description}</td>
-              <td>${det.defaultStatus}</td>
+              <td class="${statusClass}">${det.defaultStatus}</td>
               <td>${det.killChainStage}</td>
               <td>${det.mitreTactic}</td>
               <td>${det.mitreTacticID}</td>
@@ -169,43 +193,9 @@
         .catch(err => console.error('Error loading detections.json', err));
     }
 
-    function filterTable() {
-      const rows = document.querySelectorAll('#detectionsTable tbody tr');
-      rows.forEach(row => row.style.display = '');
-
-      const searchValue = document.getElementById('search')?.value?.toLowerCase() || "";
-
-      rows.forEach(row => {
-        const cells = row.querySelectorAll('td');
-        const name = cells[0].textContent.toLowerCase();
-        const desc = cells[1].textContent.toLowerCase();
-        const status = cells[2].textContent.trim();
-        const tool = cells[9].textContent.trim();
-
-        const matchesSearch = name.includes(searchValue) || desc.includes(searchValue);
-        row.style.display = matchesSearch ? '' : 'none';
-      });
-
-      updateCaseCount();
-    }
-
     function updateCaseCount() {
       const visibleRows = document.querySelectorAll('#detectionsTable tbody tr:not([style="display: none;"])');
       document.getElementById('casesCounter').textContent = `Total Cases: ${visibleRows.length}`;
-    }
-
-    function sortTable(columnIndex) {
-      const table = document.getElementById('detectionsTable');
-      const tbody = table.querySelector('tbody');
-      const allRows = Array.from(tbody.querySelectorAll('tr'));
-
-      allRows.sort((a, b) => {
-        const cellA = a.children[columnIndex].textContent.trim().toLowerCase();
-        const cellB = b.children[columnIndex].textContent.trim().toLowerCase();
-        return cellA.localeCompare(cellB);
-      });
-
-      allRows.forEach(row => tbody.appendChild(row));
     }
 
     window.onload = loadData;
