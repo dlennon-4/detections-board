@@ -1,22 +1,8 @@
 [
   {
-    "detectionID": "CY-0526",
-    "name": "_New S1 Rule",
-    "description": "Description for new S1 Rule...",
-    "defaultStatus": "Not Active",
-    "killChainStage": "Persistent Foothold",
-    "mitreTactic": "Defense Evasion",
-    "mitreTacticID": "TA0002",
-    "mitreTechnique": "Brute Force",
-    "mitreTechniqueID": "T1204",
-    "connector": "Box",
-    "tool": "SentinelOne",
-    "lastModified": "02-23-25"
-  },
-  {
     "detectionID": "CY-0357",
     "name": "Abnormal Parent / Child Process",
-    "description": "",
+    "description": "A process that typically launches a small, consistent number of child processes has launched a new child process. Investigate the new child process or the parent process to see if it is benign.",
     "defaultStatus": "Not Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -58,7 +44,7 @@
   {
     "detectionID": "CY-0305",
     "name": "Application Usage Anomaly",
-    "description": "",
+    "description": "An internal user who usually runs a few applications with internal service IP addresses suddenly runs a new application. Investigate the application to see if it is benign. Check with the user to see if this was expected.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR NBA",
@@ -114,7 +100,7 @@
   {
     "detectionID": "CY-0204",
     "name": "AWS AMI Made Public",
-    "description": "",
+    "description": "An AWS AMI was made public. Check with the user to make sure this was intentional.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Privilege Escalation",
@@ -212,7 +198,7 @@
   {
     "detectionID": "CY-0336",
     "name": "AWS Logging Stopped",
-    "description": "",
+    "description": "AWS CloudTrail logging was stopped. Check with the user to make sure this was intentional.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
@@ -240,7 +226,7 @@
   {
     "detectionID": "CY-0416",
     "name": "AWS S3 Ransomware",
-    "description": "",
+    "description": "Possible AWS S3 ransomware was observed. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -338,7 +324,7 @@
   {
     "detectionID": "CY-0186",
     "name": "Azure Application Gateway Changed",
-    "description": "",
+    "description": "The Azure Application Gateway Changed rules are used to identify events when an Azure application's gateway is changed. Any one or more of these will trigger the Azure Application Gateway Changed alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -352,7 +338,7 @@
   {
     "detectionID": "CY-0187",
     "name": "Azure DNS Zone Changed",
-    "description": "",
+    "description": "The Azure DNS Zone Changed rules are used to identify events when an Azure DNS zone is changed. Any one or more of these will trigger the Azure DNS Zone Changed alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -366,7 +352,7 @@
   {
     "detectionID": "CY-0188",
     "name": "Azure New CloudShell Created",
-    "description": "",
+    "description": "The Azure New CloudShell Created rules are used to identify events when an Azure new Cloud Shell is changed. Any one or more of these will trigger the Azure New CloudShell Created alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -380,7 +366,7 @@
   {
     "detectionID": "CY-0189",
     "name": "Azure Security Configuration Changed",
-    "description": "",
+    "description": "The Azure Security Configuration Changed rules are used to identify events when an Azure security configuration is changed. Any one or more of these will trigger the Azure Security Configuration Changed alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -422,7 +408,7 @@
   {
     "detectionID": "CY-0337",
     "name": "Backup Catalogs Deleted by Ransomware",
-    "description": "",
+    "description": "The wbadmin.exe utility was used to delete the backup catalog. Ransomware and other malware do this to prevent system recovery. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
@@ -436,7 +422,7 @@
   {
     "detectionID": "CY-0355",
     "name": "Bad Destination Reputation Anomaly",
-    "description": "",
+    "description": "A destination IP address with a bad reputation has received an anomalously large number of connections. Investigate the connections and consider blocking the destination IP address.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "XDR Intel",
@@ -450,7 +436,7 @@
   {
     "detectionID": "CY-0308",
     "name": "Bad Reputation Login",
-    "description": "",
+    "description": "A successful login was observed from an IP address with a history of malicious activity. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR NBA",
@@ -464,7 +450,7 @@
   {
     "detectionID": "CY-0300",
     "name": "Bad Source Reputation Anomaly",
-    "description": "",
+    "description": "A source IP address with a bad reputation has made an anomalously large number of connections. Investigate the connections and consider blocking the source IP address.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR NBA",
@@ -660,7 +646,7 @@
   {
     "detectionID": "CY-0205",
     "name": "Carbon Black:XDR Anomaly",
-    "description": "",
+    "description": "The Carbon Black endpoint generates an anomalously high amount of log data or a rarely seen type of log data on the host. Investigate the device and the user, to see if this is expected.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "XDR EBA",
@@ -688,7 +674,7 @@
   {
     "detectionID": "CY-0354",
     "name": "Command & Control Reputation Anomaly",
-    "description": "",
+    "description": "An anomalously large number of connections were made to known command and control servers. Investigate the connections and source hosts. If malicious, block the IP addresses of the command and control servers.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "XDR Intel",
@@ -702,7 +688,7 @@
   {
     "detectionID": "CY-0327",
     "name": "Command Anomaly",
-    "description": "",
+    "description": "A command has been executed an anomalously large number of times compared to its typical executions or those of other commands. Investigate the command and the user to determine if this is expected.",
     "defaultStatus": "Not Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Execution",
@@ -786,7 +772,7 @@
   {
     "detectionID": "CY-0417",
     "name": "Cryptojacking",
-    "description": "",
+    "description": "An unauthorized coin miner used a computer to mine cryptocurrency. Consider blocking the source IP address.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -912,7 +898,7 @@
   {
     "detectionID": "CY-0322",
     "name": "Data Ingestion Volume Anomaly",
-    "description": "",
+    "description": "A sensor is sending an anomalously high or low volume of data, compared to its typical volume. Check the sensor. A low volume could indicate a sensor failure or other problems. For a high volume, determine the cause of the increase.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR SBA",
@@ -926,7 +912,7 @@
   {
     "detectionID": "CY-0461",
     "name": "DCERPC SMB Spoolss Named Pipe",
-    "description": "",
+    "description": "The DCERPC SMB Spoolss Named Pipe rules detect suspicious SMB traffic accessing Spoolss named pipes. Any one or more of these will trigger the DCERPC SMB Spoolss Named Pipe alert type.",
     "defaultStatus": "New Detection",
     "killChainStage": "",
     "mitreTactic": "",
@@ -968,7 +954,7 @@
   {
     "detectionID": "CY-0346",
     "name": "DGA",
-    "description": "",
+    "description": "A host is using a potential Domain Generation Algorithm (DGA). If the target domain is a malicious domain, the host might be compromised. Investigate the DGA domains and the host.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Command and Control",
@@ -982,7 +968,7 @@
   {
     "detectionID": "CY-0373",
     "name": "DHCP Server Anomaly",
-    "description": "",
+    "description": "A new DHCP server appeared in the network. This could be a hacker attempting to steer traffic. Investigate and consider telling employees to avoid this server.",
     "defaultStatus": "Active",
     "killChainStage": "Exploration",
     "mitreTactic": "XDR NBA",
@@ -1024,7 +1010,7 @@
   {
     "detectionID": "CY-0406",
     "name": "DNS Tunneling Anomaly",
-    "description": "",
+    "description": "An anomalously large number of connections tunneling high-entropy traffic through DNS were made. This can indicate data exfiltration. Investigate the tunnel and source host. If malicious, block the source host.",
     "defaultStatus": "Muted",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Exfiltration",
@@ -1122,7 +1108,7 @@
   {
     "detectionID": "CY-0330",
     "name": "Encoded PowerShell",
-    "description": "",
+    "description": "A Windows host executed an encoded PowerShell script. Investigate the script contents to see if it is malicious. If so, consider quarantining the host.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Execution",
@@ -1136,7 +1122,7 @@
   {
     "detectionID": "CY-0349",
     "name": "Encrypted C&C",
-    "description": "",
+    "description": "A connection to or from known command and control servers was observed in encrypted traffic. Consider blocking the source IP address.",
     "defaultStatus": "Muted",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Command and Control",
@@ -1164,7 +1150,7 @@
   {
     "detectionID": "CY-0314",
     "name": "Exploited C&C Connection",
-    "description": "",
+    "description": "An exploited host with vulnerabilities initiated a connection to the exploit attacker, which could indicate the host being compromised and performing C&C activities. See if the exploit was successful. Check the source host, and consider blocking.",
     "defaultStatus": "Muted",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR NBA",
@@ -1192,7 +1178,7 @@
   {
     "detectionID": "CY-0299",
     "name": "External Brute-Forced Successful User Login",
-    "description": "",
+    "description": "A successful login was observed from an IP address that had previously seen a large number of login failures, or a successful login to a user account was observed from another IP address or IP addresses that had previously seen a large number of login failures to that account. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Credential Access",
@@ -1220,7 +1206,7 @@
   {
     "detectionID": "CY-0313",
     "name": "External Exploited Vulnerability",
-    "description": "",
+    "description": "A host with a vulnerability discovered by a security scanning tool was exploited by an attack on that same vulnerability, indicating a high probability of success. Check the target to see if it was compromised.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR NBA",
@@ -1234,7 +1220,7 @@
   {
     "detectionID": "CY-0303",
     "name": "External Firewall Denial Anomaly",
-    "description": "",
+    "description": "A source host had actions blocked by a firewall too many times. Investigate the firewall rules that were violated. If suspicious, block the source IP address.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR NBA",
@@ -1248,7 +1234,7 @@
   {
     "detectionID": "CY-0304",
     "name": "External Firewall Policy Anomaly",
-    "description": "",
+    "description": "A rarely triggered firewall policy has been violated. Investigate that policy and track down the violation.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR NBA",
@@ -1262,7 +1248,7 @@
   {
     "detectionID": "CY-0281",
     "name": "External Handshake Failure",
-    "description": "",
+    "description": "There were too many handshake failures between two hosts, which might indicate port scanning. Check the source host to see if this was expected and, if not, consider blocking the host.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Reconnaissance",
@@ -1276,7 +1262,7 @@
   {
     "detectionID": "CY-0324",
     "name": "External IDS Signature Spike",
-    "description": "",
+    "description": "A source IP address transmitted an anomalous number of different IDS signatures. Typically, this indicates host penetration or vulnerability scanning.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -1290,7 +1276,7 @@
   {
     "detectionID": "CY-0280",
     "name": "External IP / Port Scan Anomaly",
-    "description": "",
+    "description": "A host has either generated an anomalous number of connections compared to the typical amount, or has triggered an anomalous number of connection failure responses, in the measured interval. This can indicate that an attacker is scanning for computers or ports to exploit. If the source IP address is internal targeting an external address, check with the user. If the source IP address is external targeting any addresses, it could be a scanning campaign.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Reconnaissance",
@@ -1304,7 +1290,7 @@
   {
     "detectionID": "CY-0345",
     "name": "External Non-Standard Port Anomaly",
-    "description": "",
+    "description": "An application had an anomalously large number of connections or a rarely seen connection on non-standard ports. Check the application to be sure this is benign.",
     "defaultStatus": "Not Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Command and Control",
@@ -1318,7 +1304,7 @@
   {
     "detectionID": "CY-0350",
     "name": "External Other Malware",
-    "description": "",
+    "description": "Malware with uncategorized malicious activity was observed. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "XDR Malware",
@@ -1332,7 +1318,7 @@
   {
     "detectionID": "CY-0325",
     "name": "External Password Spraying",
-    "description": "",
+    "description": ".An anomalously large number of failed logins with unknown user names was observed on external Windows authentication services. Check the activity after successful logins, and consider blocking the source IP addresses.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Credential Access",
@@ -1346,7 +1332,7 @@
   {
     "detectionID": "CY-0412",
     "name": "External PII Leaked",
-    "description": "",
+    "description": "Personally identifiable information (social security numbers or credit cards) has been observed in the clear. Check the source to see if it is compromised. If so, consider blocking it.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Exfiltration",
@@ -1360,7 +1346,7 @@
   {
     "detectionID": "CY-0309",
     "name": "External Plain Text Passwords Detected",
-    "description": "",
+    "description": "A plain text password was detected in unencrypted traffic. Check with the user.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR NBA",
@@ -1388,7 +1374,7 @@
   {
     "detectionID": "CY-0351",
     "name": "External PUA",
-    "description": "",
+    "description": "Unwanted applications or malware that bombards the user with advertisements has been observed. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "XDR Malware",
@@ -1402,7 +1388,7 @@
   {
     "detectionID": "CY-0422",
     "name": "External Ransomware",
-    "description": "",
+    "description": "Malware that prevents you from accessing your system or files and demands ransom payment in order to regain access was observed. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -1416,7 +1402,7 @@
   {
     "detectionID": "CY-0391",
     "name": "External RDP BlueKeep",
-    "description": "",
+    "description": "Use of a scanner by zerosum0x0 that discovers targets vulnerable to BlueKeep (CVE-2019-0708) has been observed. Check the IP address and block if necessary.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Privilege Escalation",
@@ -1430,7 +1416,7 @@
   {
     "detectionID": "CY-0296",
     "name": "External RDP Brute Force Attack",
-    "description": "",
+    "description": "An anomalously large number of RDP connections to an RDP server was observed. Check the source IP addresses to determine whether they are unknown or malicious, and monitor any successful RDP logins.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Credential Access",
@@ -1444,7 +1430,7 @@
   {
     "detectionID": "CY-0312",
     "name": "External RDP Suspicious Outbound",
-    "description": "",
+    "description": "Non-standard tools connecting to TCP port 3389 were observed. Check the IP address and block if necessary.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR NBA",
@@ -1458,7 +1444,7 @@
   {
     "detectionID": "CY-0277",
     "name": "External Scanner Behavior Anomaly",
-    "description": "",
+    "description": "An anomalously large amount of scanning behavior or a rarely seen scan behavior was found. Cross-check with the IP / Port Scan Anomaly alert.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Reconnaissance",
@@ -1472,7 +1458,7 @@
   {
     "detectionID": "CY-0286",
     "name": "External SMB Read Anomaly",
-    "description": "",
+    "description": "An IP address sent an anomalously large number of read requests to SMB protocol based service(s). Investigate the files that the IP address tried to read. If suspicious, block the source IP address.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -1486,7 +1472,7 @@
   {
     "detectionID": "CY-0298",
     "name": "External SMB Username Enumeration",
-    "description": "",
+    "description": "At least 5 different users SMB login attempts and 1 denied attempt or at least 10 different users SMB login attempts, were observed from the same source. Check the source IP address. If malicious, consider blocking it.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Credential Access",
@@ -1500,7 +1486,7 @@
   {
     "detectionID": "CY-0415",
     "name": "External SMB Write Anomaly",
-    "description": "",
+    "description": "An IP address sent an anomalously large number of SMB write requests. Investigate the files that the IP address tried to write. If suspicious, block the source IP address.",
     "defaultStatus": "Not Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -1514,7 +1500,7 @@
   {
     "detectionID": "CY-0352",
     "name": "External Spyware",
-    "description": "",
+    "description": "Malware that collects and shares information about a device without consent was observed. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "XDR Malware",
@@ -1528,7 +1514,7 @@
   {
     "detectionID": "CY-0285",
     "name": "External SQL Anomaly",
-    "description": "",
+    "description": "An IP address sent an anomalously large number of queries to one or more SQL servers. Investigate the queries. If suspicious, block the source IP address.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -1542,7 +1528,7 @@
   {
     "detectionID": "CY-0367",
     "name": "External SQL Dumpfile Execution",
-    "description": "",
+    "description": "The SQL dumpfile command was observed. This command is commonly used to dump database content or query output to a file on disk. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Exploration",
     "mitreTactic": "Collection",
@@ -1556,7 +1542,7 @@
   {
     "detectionID": "CY-0329",
     "name": "External SQL Shell Command",
-    "description": "",
+    "description": "Shell commands were observed over a SQL connection, which is a common way hackers try to gain shell access over vulnerable SQL applications. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Execution",
@@ -1584,7 +1570,7 @@
   {
     "detectionID": "CY-0424",
     "name": "External SYN Flood Attacker",
-    "description": "",
+    "description": "An attacker sends a large amount of SYN requests to a target's system in an attempt to consume enough server resources to make the system unresponsive to legitimate traffic.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -1598,7 +1584,7 @@
   {
     "detectionID": "CY-0426",
     "name": "External SYN Flood Victim",
-    "description": "",
+    "description": "A large amount of SYN requests were observed, which can indicate an attempt to consume server resources and make the target unresponsive. Check to see if the host is malicious or compromised. If so, consider blocking the source host.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -1612,7 +1598,7 @@
   {
     "detectionID": "CY-0353",
     "name": "External Trojan",
-    "description": "",
+    "description": "Malware that disguises itself as legitimate software in order to gain access to a system or files has been observed. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "XDR Malware",
@@ -1626,7 +1612,7 @@
   {
     "detectionID": "CY-0279",
     "name": "External URL Reconnaissance Anomaly",
-    "description": "",
+    "description": "An anomalous number of HTTP 4xx errors were observed. This can indicate an attacker scanning for pages to exploit. Check with the user.",
     "defaultStatus": "Active via Custom Rules",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Reconnaissance",
@@ -1640,7 +1626,7 @@
   {
     "detectionID": "CY-0317",
     "name": "External User Application Usage Anomaly",
-    "description": "",
+    "description": "A user who typically uses a small, consistent number of applications used a new application. Investigate the application, to see if it is benign. Check with the user to see if this was expected.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR UBA",
@@ -1654,7 +1640,7 @@
   {
     "detectionID": "CY-0318",
     "name": "External User Data Volume Anomaly",
-    "description": "",
+    "description": "A user had an anomalously large volume of traffic compared to its typical volume or that of its peers. Investigate the user to determine if this is expected.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR UBA",
@@ -1864,7 +1850,7 @@
   {
     "detectionID": "CY-0200",
     "name": "Google Workspace Account Manipulation",
-    "description": "",
+    "description": "A Google Workspace user was manipulated. Check with the user to make sure this was expected.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR UBA",
@@ -1934,7 +1920,7 @@
   {
     "detectionID": "CY-0297",
     "name": "Google Workspace Attack Warning",
-    "description": "",
+    "description": "Attacks to a Google Workspace account were observed. Check with the account holder.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Credential Access",
@@ -2074,7 +2060,7 @@
   {
     "detectionID": "CY-0320",
     "name": "Google Workspace Suspicious Activities",
-    "description": "",
+    "description": "Suspicious activities were observed in a Google Workspace account. Check with the account holder.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR UBA",
@@ -2144,7 +2130,7 @@
   {
     "detectionID": "CY-0321",
     "name": "Google Workspace User Suspended",
-    "description": "",
+    "description": "A Google Workspace user was suspended. Check with the user to make sure this was expected.",
     "defaultStatus": "Active via Custom Rules",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR UBA",
@@ -2228,7 +2214,7 @@
   {
     "detectionID": "CY-0379",
     "name": "Hydra Password Guessing Hack Tool",
-    "description": "",
+    "description": "A user from a Windows host executed a command-line script that launched either the hydra.exe command or a command using known Hydra parameters, which may be an inappropriate use of the Hydra password guessing tool.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Credential Access",
@@ -2242,7 +2228,7 @@
   {
     "detectionID": "CY-0454",
     "name": "ICMP Based Exfiltration or Tunneling",
-    "description": "",
+    "description": "The ICMP Based Exfiltration or Tunneling rules are used to identify data exfiltration attempts over ICMP protocol. Any one or more of these will trigger the ICMP Based Exfiltration or Tunneling alert type.",
     "defaultStatus": "New Detection",
     "killChainStage": "",
     "mitreTactic": "",
@@ -2256,7 +2242,7 @@
   {
     "detectionID": "CY-0463",
     "name": "Impacket PsExec Execution",
-    "description": "",
+    "description": "The Impacket PsExec Execution rules detect suspicious SMB traffic related to Impacket PsExec execution. Any one or more of these will trigger the Impacket PsExec Execution alert type.",
     "defaultStatus": "New Detection",
     "killChainStage": "",
     "mitreTactic": "",
@@ -2284,7 +2270,7 @@
   {
     "detectionID": "CY-0316",
     "name": "Impossible Travel Anomaly",
-    "description": "",
+    "description": "A user logged in from locations that are geographically impossible to travel between in the time frame. Check with the user.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR UBA",
@@ -2340,7 +2326,7 @@
   {
     "detectionID": "CY-0388",
     "name": "Internal Brute-Forced Successful User Login",
-    "description": "",
+    "description": "A successful login was observed from an IP address that had previously seen a large number of login failures, or a successful login to a user account was observed from another IP address or IP addresses that had previously seen a large number of login failures to that account. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Credential Access",
@@ -2368,7 +2354,7 @@
   {
     "detectionID": "CY-0375",
     "name": "Internal Exploited Vulnerability",
-    "description": "",
+    "description": "A host with a vulnerability discovered by a security scanning tool was exploited by an attack on that same vulnerability, indicating a high probability of success. Check the target to see if it was compromised.",
     "defaultStatus": "Active",
     "killChainStage": "Exploration",
     "mitreTactic": "XDR NBA",
@@ -2382,7 +2368,7 @@
   {
     "detectionID": "CY-0370",
     "name": "Internal Firewall Denial Anomaly",
-    "description": "",
+    "description": "An internal source host had actions blocked by a firewall too many times. Investigate the firewall rules that were violated. If suspicious, block the internal source IP address.",
     "defaultStatus": "Not Active",
     "killChainStage": "Exploration",
     "mitreTactic": "XDR NBA",
@@ -2396,7 +2382,7 @@
   {
     "detectionID": "CY-0371",
     "name": "Internal Firewall Policy Anomaly",
-    "description": "",
+    "description": "A rarely triggered firewall policy involving an internal source IP address and internal destination IP address has been violated. Investigate that policy and track down the violation.",
     "defaultStatus": "Not Active",
     "killChainStage": "Exploration",
     "mitreTactic": "XDR NBA",
@@ -2410,7 +2396,7 @@
   {
     "detectionID": "CY-0363",
     "name": "Internal Handshake Failure",
-    "description": "",
+    "description": "There were too many handshake failures between two internal hosts, which might indicate port scanning. Check the source host to see if this was expected, and if not, consider blocking the host.",
     "defaultStatus": "Active",
     "killChainStage": "Exploration",
     "mitreTactic": "Discovery",
@@ -2424,7 +2410,7 @@
   {
     "detectionID": "CY-0404",
     "name": "Internal IDS Signature Spike",
-    "description": "",
+    "description": "A source IP address transmitted an anomalous number of different IDS signatures. Typically, this indicates host penetration or vulnerability scanning.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Lateral Movement",
@@ -2438,7 +2424,7 @@
   {
     "detectionID": "CY-0362",
     "name": "Internal IP / Port Scan Anomaly",
-    "description": "",
+    "description": "A host has either generated an anomalous number of connections compared to the typical amount, or has triggered an anomalous number of connection failure responses, in the measured interval. This can indicate that an attacker is scanning for computers or ports to exploit. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Exploration",
     "mitreTactic": "Discovery",
@@ -2452,7 +2438,7 @@
   {
     "detectionID": "CY-0368",
     "name": "Internal Non-Standard Port Anomaly",
-    "description": "",
+    "description": "An application had an anomalously large number of connections or a rarely seen connection to an internal IP address on non-standard ports. Check the application to be sure this is benign.",
     "defaultStatus": "Not Active",
     "killChainStage": "Exploration",
     "mitreTactic": "XDR NBA",
@@ -2466,7 +2452,7 @@
   {
     "detectionID": "CY-0399",
     "name": "Internal Other Malware",
-    "description": "",
+    "description": "Malware with uncategorized malicious activity in internal traffic was observed. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "XDR Malware",
@@ -2480,7 +2466,7 @@
   {
     "detectionID": "CY-0405",
     "name": "Internal Password Spraying",
-    "description": "",
+    "description": "An anomalously large number of failed logins with unknown user names was observed on internal Windows authentication services. Check the activity after successful logins, and consider blocking the internal source IP addresses.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Credential Access",
@@ -2494,7 +2480,7 @@
   {
     "detectionID": "CY-0411",
     "name": "Internal PII Leaked",
-    "description": "",
+    "description": "Personally identifiable information (social security numbers or credit cards) has been observed in internal traffic in the clear. Check the source to see if it is compromised. If so, consider blocking it.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Exfiltration",
@@ -2508,7 +2494,7 @@
   {
     "detectionID": "CY-0372",
     "name": "Internal Plain Text Passwords Detected",
-    "description": "",
+    "description": "A plain text password was observed in unencrypted traffic between internal systems. Check with the user.",
     "defaultStatus": "Not Active",
     "killChainStage": "Exploration",
     "mitreTactic": "XDR NBA",
@@ -2536,7 +2522,7 @@
   {
     "detectionID": "CY-0401",
     "name": "Internal PUA",
-    "description": "",
+    "description": "Unwanted applications or malware that bombards the user with advertisements in internal traffic has been observed. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "XDR Malware",
@@ -2550,7 +2536,7 @@
   {
     "detectionID": "CY-0421",
     "name": "Internal Ransomware",
-    "description": "",
+    "description": "Malware that prevents you from accessing your system or files and demands ransom payment in order to regain access in internal traffic was observed. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -2564,7 +2550,7 @@
   {
     "detectionID": "CY-0390",
     "name": "Internal RDP BlueKeep",
-    "description": "",
+    "description": "The use of a scanner by zerosum0x0 that discovers targets vulnerable to BlueKeep (CVE-2019-0708) has been observed between internal hosts. Check the IP address and block if necessary.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Privilege Escalation",
@@ -2578,7 +2564,7 @@
   {
     "detectionID": "CY-0384",
     "name": "Internal RDP Brute Force Attack",
-    "description": "",
+    "description": "An anomalously large number of RDP connections from internal host(s) to an RDP server were observed. Check the source IP addresses to see if they are unknown or malicious, and monitor any successful RDP logins.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Credential Access",
@@ -2592,7 +2578,7 @@
   {
     "detectionID": "CY-0377",
     "name": "Internal RDP Suspicious Outbound",
-    "description": "",
+    "description": "Non-standard tools from an internal host connecting to TCP port 3389 in the other internal host were observed. This could indicate lateral movement attempting to establish an RDP connection. Check the IP address and block if necessary.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Lateral Movement",
@@ -2606,7 +2592,7 @@
   {
     "detectionID": "CY-0360",
     "name": "Internal Scanner Behavior Anomaly",
-    "description": "",
+    "description": "An anomalously large amount of scanning behavior or a rarely seen scan behavior between internal hosts was observed. Cross-check with the IP / Port Scan Anomaly alert.",
     "defaultStatus": "Active",
     "killChainStage": "Exploration",
     "mitreTactic": "Discovery",
@@ -2620,7 +2606,7 @@
   {
     "detectionID": "CY-0394",
     "name": "Internal SMB Read Anomaly",
-    "description": "",
+    "description": "An internal IP address sent an anomalously large number of read requests to an internal SMB protocol based service(s). Investigate the files that this internal IP address tried to read. If suspicious, block the specific internal source IP address.",
     "defaultStatus": "Not Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Lateral Movement",
@@ -2634,7 +2620,7 @@
   {
     "detectionID": "CY-0387",
     "name": "Internal SMB Username Enumeration",
-    "description": "",
+    "description": "At least 5 different users SMB login attempts and 1 denied attempt or at least 10 different users SMB login attempts, were observed from an internal IP address to other internal IP address(es). Check the source IP address. If malicious, consider blocking it.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Credential Access",
@@ -2648,7 +2634,7 @@
   {
     "detectionID": "CY-0414",
     "name": "Internal SMB Write Anomaly",
-    "description": "",
+    "description": "An internal IP address sent an anomalously large number of SMB write requests to other internal IP address(es). Investigate the files that the IP address tried to write. If suspicious, block the source IP address.",
     "defaultStatus": "Not Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Lateral Movement",
@@ -2662,7 +2648,7 @@
   {
     "detectionID": "CY-0402",
     "name": "Internal Spyware",
-    "description": "",
+    "description": "Malware that collects and shares information about a device without consent in internal traffic was observed. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "XDR Malware",
@@ -2676,7 +2662,7 @@
   {
     "detectionID": "CY-0393",
     "name": "Internal SQL Anomaly",
-    "description": "",
+    "description": "An internal IP address sent an anomalously large number of queries to an internal SQL server. Investigate the queries. If suspicious, block the source IP address.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Lateral Movement",
@@ -2690,7 +2676,7 @@
   {
     "detectionID": "CY-0366",
     "name": "Internal SQL Dumpfile Execution",
-    "description": "",
+    "description": "The SQL dumpfile command between two internal IP addresses was observed. This command is commonly used to dump database content or query output to a file on disk. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Exploration",
     "mitreTactic": "Collection",
@@ -2704,7 +2690,7 @@
   {
     "detectionID": "CY-0328",
     "name": "Internal SQL Shell Command",
-    "description": "",
+    "description": "Shell commands were observed over a SQL connection, which is a common way hackers try to gain shell access over vulnerable SQL applications. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Execution",
@@ -2718,7 +2704,7 @@
   {
     "detectionID": "CY-0369",
     "name": "Internal Suspected Malicious User Agent",
-    "description": "",
+    "description": "An internal HTTP connection was made by a user agent that has been identified as potentially malicious. Investigate the connection's destination.",
     "defaultStatus": "Not Active",
     "killChainStage": "Exploration",
     "mitreTactic": "XDR NBA",
@@ -2732,7 +2718,7 @@
   {
     "detectionID": "CY-0423",
     "name": "Internal SYN Flood Attacker",
-    "description": "",
+    "description": "An internal attacker sends a large amount of SYN requests to internal target system(s) in an attempt to consume enough server resources to make the system unresponsive to legitimate traffic.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -2746,7 +2732,7 @@
   {
     "detectionID": "CY-0425",
     "name": "Internal SYN Flood Victim",
-    "description": "",
+    "description": "An internal attacker sends a large amount of SYN requests to internal target system(s) in an attempt to consume enough server resources to make the system unresponsive to legitimate traffic.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -2760,7 +2746,7 @@
   {
     "detectionID": "CY-0403",
     "name": "Internal Trojan",
-    "description": "",
+    "description": "Malware that disguises itself as legitimate software in order to gain access to a system or files in internal traffic has been observed. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "XDR Malware",
@@ -2774,7 +2760,7 @@
   {
     "detectionID": "CY-0361",
     "name": "Internal URL Reconnaissance Anomaly",
-    "description": "",
+    "description": "An anomalous number of HTTP 4xx errors from an internal IP address to other internal IP addresses were observed. This can indicate an attacker scanning for pages to exploit. Check with the user.",
     "defaultStatus": "Not Active",
     "killChainStage": "Exploration",
     "mitreTactic": "Discovery",
@@ -2788,7 +2774,7 @@
   {
     "detectionID": "CY-0396",
     "name": "Internal User Application Usage Anomaly",
-    "description": "",
+    "description": "An internal user who usually runs a few applications with internal service IP addresses suddenly runs a new application. Investigate the application to see if it is benign. Check with the user to see if this was expected.",
     "defaultStatus": "Not Active",
     "killChainStage": "Propagation",
     "mitreTactic": "XDR UBA",
@@ -2802,7 +2788,7 @@
   {
     "detectionID": "CY-0397",
     "name": "Internal User Data Volume Anomaly",
-    "description": "",
+    "description": "A user had an anomalously large volume of internal traffic compared to its typical volume or that of its peers. Investigate the user to determine if this is expected.",
     "defaultStatus": "Not Active",
     "killChainStage": "Propagation",
     "mitreTactic": "XDR UBA",
@@ -3012,7 +2998,7 @@
   {
     "detectionID": "CY-0319",
     "name": "Login Time Anomaly",
-    "description": "",
+    "description": "A user logged in at an abnormal time. Check with the user.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR UBA",
@@ -3026,7 +3012,7 @@
   {
     "detectionID": "CY-0310",
     "name": "Malicious Site Access",
-    "description": "",
+    "description": "A host accessed a URL with a reputation for potentially hosting malware. Check the URL and, if malicious, consider blocking it. Check the host for compromise.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR NBA",
@@ -3054,7 +3040,7 @@
   {
     "detectionID": "CY-0400",
     "name": "Malware on Disk",
-    "description": "",
+    "description": "Malicious software or a potentially unwanted application was found on a device and reported as not cleaned. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "XDR Malware",
@@ -3138,7 +3124,7 @@
   {
     "detectionID": "CY-0246",
     "name": "Microsoft Entra Application Deleted",
-    "description": "",
+    "description": "The Microsoft Entra Application Deleted rules are used to identify events when a Microsoft Entra application is deleted. Any one or more of these will trigger the Microsoft Entra Application Deleted alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -3152,7 +3138,7 @@
   {
     "detectionID": "CY-0274",
     "name": "Microsoft Entra Application Permission Changes",
-    "description": "",
+    "description": "The Microsoft Entra Application Configuration Changes rules are used to identify suspicious Microsoft Entra application configuration changes. Any one or more of these will trigger the Microsoft Entra Application Configuration Changes alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Privilege Escalation",
@@ -3278,7 +3264,7 @@
   {
     "detectionID": "CY-0250",
     "name": "Microsoft Entra ID Discovery Using AzureHound",
-    "description": "",
+    "description": "The Microsoft Entra ID Discovery Using AzureHound rules are used to identify Microsoft Entra ID discovery using Azurehound. Any one or more of these will trigger the Microsoft Entra ID Discovery Using Azurehound alert type.",
     "defaultStatus": "Active",
     "killChainStage": "Exploration",
     "mitreTactic": "Discovery",
@@ -3306,7 +3292,7 @@
   {
     "detectionID": "CY-0247",
     "name": "Microsoft Entra Owner Removed from Application",
-    "description": "",
+    "description": "The Microsoft Entra Owner Removed from Application rules are used to identify events when a Microsoft Entra owner is removed from an application. Any one or more of these will trigger the Microsoft Entra Owner Removed from Application alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -3348,7 +3334,7 @@
   {
     "detectionID": "CY-0249",
     "name": "Microsoft Entra Sign-in Failures",
-    "description": "",
+    "description": "The Microsoft Entra Sign-in Failure rules are used to identify suspicious Microsoft Entra sign-in failures. Any one or more of these will trigger the Microsoft Entra Sign-in Failure alert type.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Credential Access",
@@ -3488,7 +3474,7 @@
   {
     "detectionID": "CY-0385",
     "name": "Mimikatz Credential Dump",
-    "description": "",
+    "description": "A potential Mimikatz memory dump was observed. Check the process to determine whether the host is compromised. Consider quarantining the host.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Credential Access",
@@ -3502,7 +3488,7 @@
   {
     "detectionID": "CY-0389",
     "name": "Mimikatz DCSync",
-    "description": "",
+    "description": "An attempt to replicate Active Directory for the first time on a domain controller, or the first time by that account, has occurred. Evaluate whether the replication is intended and, if not, consider disabling the account involved in the replication and investigate for further signs of compromise.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Credential Access",
@@ -3908,7 +3894,7 @@
   {
     "detectionID": "CY-0339",
     "name": "Office 365 Admin Audit Logging Disabled",
-    "description": "",
+    "description": "Office 365 admin audit logging was disabled. Make sure this change was expected.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
@@ -4020,7 +4006,7 @@
   {
     "detectionID": "CY-0420",
     "name": "Office 365 Multiple Users Deleted",
-    "description": "",
+    "description": "Office 365 observed that multiple users were deleted in a short period. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -4034,7 +4020,7 @@
   {
     "detectionID": "CY-0201",
     "name": "Office 365 Network Security Configuration Changed",
-    "description": "",
+    "description": "Office 365 identified a change to your organization's network security configuration, which is uncommon. Make sure this was expected.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -4062,7 +4048,7 @@
   {
     "detectionID": "CY-0202",
     "name": "Office 365 Sharing Policy Changed",
-    "description": "",
+    "description": "Office 365 identified a change to your organization's sharing policy, which is uncommon. Make sure this was expected.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -4076,7 +4062,7 @@
   {
     "detectionID": "CY-0203",
     "name": "Office 365 User Network Admin Changed",
-    "description": "",
+    "description": "The Office 365 account’s network admin information was changed. Make sure this change was expected.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -4230,7 +4216,7 @@
   {
     "detectionID": "CY-0301",
     "name": "Outbound Destination Country Anomaly",
-    "description": "",
+    "description": "A host that typically communicates with a small, consistent number of countries communicated with a new country. Investigate the destination to see if it is benign.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR NBA",
@@ -4258,7 +4244,7 @@
   {
     "detectionID": "CY-0378",
     "name": "Password Cracking With Hashcat",
-    "description": "",
+    "description": "A user from a Windows host executed a command-line script that launched either the hashcat.exe command or a command using known Hashcat parameters (-a -m 1000 -r). The Hashcat command is known to use a SAM file from the Windows registry along with a password list to crack passwords.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Credential Access",
@@ -4272,7 +4258,7 @@
   {
     "detectionID": "CY-0453",
     "name": "Password Reset By User Account",
-    "description": "",
+    "description": "The Password Reset By User Account rules are used to identify events when a password is reset by a user account. Any one or more of these will trigger the Password Reset By User Account alert type.",
     "defaultStatus": "New Detection",
     "killChainStage": "",
     "mitreTactic": "",
@@ -4286,7 +4272,7 @@
   {
     "detectionID": "CY-0237",
     "name": "Password Resets Anomaly",
-    "description": "",
+    "description": "An account reset/changed one or more target accounts' passwords an anomalously large number of times. Check the subject account and major target accounts.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -4300,7 +4286,7 @@
   {
     "detectionID": "CY-0326",
     "name": "Password Spraying Attempts Using Dsacls",
-    "description": "",
+    "description": "A user from a Windows host executed a command-line script to launch a command that by name and parameter list indicates an attempt to abuse dsacls.exe for password spraying.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
@@ -4314,7 +4300,7 @@
   {
     "detectionID": "CY-0462",
     "name": "Persistence and Execution at Scale via GPO Scheduled Task",
-    "description": "",
+    "description": "The Persistence and Execution at Scale via GPO Scheduled Task rules detect suspicious SMB traffic related to GPO scheduled task creation/access. Any one or more of these will trigger the Persistence and Execution at Scale via GPO Scheduled Task alert type.",
     "defaultStatus": "New Detection",
     "killChainStage": "",
     "mitreTactic": "",
@@ -4342,7 +4328,7 @@
   {
     "detectionID": "CY-0289",
     "name": "Phishing URL",
-    "description": "",
+    "description": "A connection to a site with a phishing reputation was observed. Check with the user to determine whether their system is compromised.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -4370,7 +4356,7 @@
   {
     "detectionID": "CY-0287",
     "name": "Possible Encrypted Phishing Site Visit",
-    "description": "",
+    "description": "A possible phishing site visit to a recently registered domain was observed in encrypted traffic. Check with the user to determine whether their system is compromised.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -4384,7 +4370,7 @@
   {
     "detectionID": "CY-0455",
     "name": "Possible Impacket SecretDump Remote Activity",
-    "description": "",
+    "description": "The Possible Impacket SecretDump Remote Activity rules detect suspicious SMB traffic related to credential dumping using Impacket. Any one or more of these will trigger the Possible Impacket SecretDump Remote Activity alert type.",
     "defaultStatus": "New Detection",
     "killChainStage": "",
     "mitreTactic": "",
@@ -4398,7 +4384,7 @@
   {
     "detectionID": "CY-0457",
     "name": "Possible PetitPotam Coerce Authentication Attempt",
-    "description": "",
+    "description": "The Possible Impacket SecretDump Remote Activity rules detect suspicious SMB traffic related to credential dumping using Impacket. Any one or more of these will trigger the Possible Impacket SecretDump Remote Activity alert type.",
     "defaultStatus": "New Detection",
     "killChainStage": "",
     "mitreTactic": "",
@@ -4412,7 +4398,7 @@
   {
     "detectionID": "CY-0290",
     "name": "Possible Phishing Site Visit from Email",
-    "description": "",
+    "description": "A user visited a recently registered domain shortly after using email, indicating a possible phishing site visit. Check to see if the site is malicious. If so, check with the user to see if they are compromised.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -4440,7 +4426,7 @@
   {
     "detectionID": "CY-0288",
     "name": "Possible Unencrypted Phishing Site Visit",
-    "description": "",
+    "description": "A possible phishing site visit to a recently registered domain was observed in unencrypted traffic. Check with the user to determine whether their system is compromised.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -4930,7 +4916,7 @@
   {
     "detectionID": "CY-0268",
     "name": "Potentially Malicious AWS Activity",
-    "description": "",
+    "description": "The Potentially Malicious AWS Activity rules are used to identify suspicious activity within AWS logs. Any one or more of these will trigger the Potentially Malicious AWS Activity alert type.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -4958,7 +4944,7 @@
   {
     "detectionID": "CY-0429",
     "name": "Potentially Malicious Windows Event",
-    "description": "",
+    "description": "The Potentially Malicious Windows Event rules are used to identify suspicious activity with Windows events. This is a generic rule name. Any one or more of these will trigger the Potentially Malicious Windows Event alert type.",
     "defaultStatus": "Active via Custom Rules",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
@@ -4972,7 +4958,7 @@
   {
     "detectionID": "CY-0331",
     "name": "PowerShell Remote Access",
-    "description": "",
+    "description": "A Windows host executed a PowerShell script interacting with a remote host. Investigate the script and the remote host to determine whether the script is malicious. If so, consider quarantining the host.",
     "defaultStatus": "Not Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Execution",
@@ -4986,7 +4972,7 @@
   {
     "detectionID": "CY-0392",
     "name": "Private to Private Exploit Anomaly",
-    "description": "",
+    "description": "A private IP address initiated a large number of exploit attempts identified by a given signature or a rarely seen exploit attempt to another private IP address. Investigate that signature.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Lateral Movement",
@@ -5000,7 +4986,7 @@
   {
     "detectionID": "CY-0236",
     "name": "Private to Private IPS Signature Spike",
-    "description": "",
+    "description": "A source IP address transmitted an anomalous number of different IPS signatures. Typically, this indicates host penetration or vulnerability scanning.",
     "defaultStatus": "Not Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Lateral Movement",
@@ -5014,7 +5000,7 @@
   {
     "detectionID": "CY-0282",
     "name": "Private to Public Exploit Anomaly",
-    "description": "",
+    "description": "A private IP address initiated a large number of exploit attempts identified by a given signature or a rarely seen exploit attempt to a public IP address. Investigate that signature.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -5028,7 +5014,7 @@
   {
     "detectionID": "CY-0233",
     "name": "Private to Public IPS Signature Spike",
-    "description": "",
+    "description": "A source IP address transmitted an anomalous number of different IPS signatures. Typically, this indicates host penetration or vulnerability scanning.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -5042,7 +5028,7 @@
   {
     "detectionID": "CY-0356",
     "name": "Process Anomaly",
-    "description": "",
+    "description": "A process has been launched an anomalously large number of times. Investigate the process and the user to see if this is expected.",
     "defaultStatus": "Not Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "XDR EBA",
@@ -5084,7 +5070,7 @@
   {
     "detectionID": "CY-0458",
     "name": "Protected Storage Service Access",
-    "description": "",
+    "description": "The Protected Storage Service Access rules detect suspicious SMB traffic accessing protected storage services. Any one or more of these will trigger the Protected Storage Service Access alert type.",
     "defaultStatus": "New Detection",
     "killChainStage": "",
     "mitreTactic": "",
@@ -5098,7 +5084,7 @@
   {
     "detectionID": "CY-0283",
     "name": "Public to Private Exploit Anomaly",
-    "description": "",
+    "description": "A public IP address initiated a large number of exploit attempts identified by a given signature or a rarely seen exploit attempt to a private IP address. Investigate that signature.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -5112,7 +5098,7 @@
   {
     "detectionID": "CY-0234",
     "name": "Public to Private IPS Signature Spike",
-    "description": "",
+    "description": "A source IP address transmitted an anomalous number of different IPS signatures. Typically, this indicates host penetration or vulnerability scanning.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -5126,7 +5112,7 @@
   {
     "detectionID": "CY-0284",
     "name": "Public to Public Exploit Anomaly",
-    "description": "",
+    "description": "A public IP address initiated a large number of exploit attempts identified by a given signature or a rarely seen exploit attempt to another public IP address. Investigate that signature.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -5140,7 +5126,7 @@
   {
     "detectionID": "CY-0235",
     "name": "Public to Public IPS Signature Spike",
-    "description": "",
+    "description": "A source IP address transmitted an anomalous number of different IPS signatures. Typically, this indicates host penetration or vulnerability scanning.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -5168,7 +5154,7 @@
   {
     "detectionID": "CY-0407",
     "name": "RDP Outbytes Anomaly",
-    "description": "",
+    "description": "An internal host transferred an anomalously high amount of data to external host(s) through RDP. This could indicate data exfiltration. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Exfiltration",
@@ -5182,7 +5168,7 @@
   {
     "detectionID": "CY-0342",
     "name": "RDP Port Opening",
-    "description": "",
+    "description": "Netsh commands to open TCP port 3389 were observed. This could indicate Sarwent malware attempting to establish an RDP connection. Check the IP address and block if necessary.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
@@ -5196,7 +5182,7 @@
   {
     "detectionID": "CY-0343",
     "name": "RDP Registry Modification",
-    "description": "",
+    "description": "Modifications of the property values of fDenyTSConnections and UserAuthentication to enable remote desktop connections were observed. Check the IP address and block if necessary.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
@@ -5210,7 +5196,7 @@
   {
     "detectionID": "CY-0347",
     "name": "RDP Reverse Tunnel",
-    "description": "",
+    "description": "An svchost hosting RDP termsvcs communicating with the loopback address on TCP port 3389 was observed. Check the IP address and block if necessary.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Command and Control",
@@ -5224,7 +5210,7 @@
   {
     "detectionID": "CY-0395",
     "name": "RDP Session Hijacking",
-    "description": "",
+    "description": "Changes to RDP terminal services settings were observed. Check the IP address and block if necessary.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Lateral Movement",
@@ -5238,7 +5224,7 @@
   {
     "detectionID": "CY-0344",
     "name": "RDP Settings Hijacking",
-    "description": "",
+    "description": "Changes to RDP terminal services settings were observed. Check the IP address and block if necessary.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
@@ -5252,7 +5238,7 @@
   {
     "detectionID": "CY-0348",
     "name": "RDP Suspicious Logon",
-    "description": "",
+    "description": "An RDP logon with a local source IP address was observed. This could indicate a tunneled logon. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Command and Control",
@@ -5266,7 +5252,7 @@
   {
     "detectionID": "CY-0386",
     "name": "RDP Suspicious Logon Attempt",
-    "description": "",
+    "description": "An authenticated user who is not allowed to log on remotely has attempted to connect through RDP. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Credential Access",
@@ -5280,7 +5266,7 @@
   {
     "detectionID": "CY-0311",
     "name": "Recently Registered Domains",
-    "description": "",
+    "description": "A DNS request was observed for a site that was registered less than 90 days ago. Check the domain. If suspicious, notify users.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR NBA",
@@ -5294,7 +5280,7 @@
   {
     "detectionID": "CY-0465",
     "name": "Remote Service Activity via SVCCTL Named Pipe",
-    "description": "",
+    "description": "The Remote Service Activity via SVCCTL Named Pipe rules detect suspicious SMB traffic accessing SVCCTL named pipes. Any one or more of these will trigger the Remote Service Activity via SVCCTL Named Pipe alert type.",
     "defaultStatus": "New Detection",
     "killChainStage": "",
     "mitreTactic": "",
@@ -5308,7 +5294,7 @@
   {
     "detectionID": "CY-0460",
     "name": "Remote Task Creation via ATSVC Named Pipe",
-    "description": "",
+    "description": "The Remote Task Creation via ATSVC Named Pipe rules detect suspicious SMB traffic accessing ATSVC named pipes. Any one or more of these will trigger the Remote Task Creation via ATSVC Named Pipe alert type.",
     "defaultStatus": "New Detection",
     "killChainStage": "",
     "mitreTactic": "",
@@ -5336,7 +5322,7 @@
   {
     "detectionID": "CY-0278",
     "name": "Scanner Reputation Anomaly",
-    "description": "",
+    "description": "An anomalously large amount of connections were observed from an IP address with a reputation of being a scanner. Cross-check with the IP / Port Scan Anomaly alert, and check the links and content for possible spam or phishing.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Reconnaissance",
@@ -5350,7 +5336,7 @@
   {
     "detectionID": "CY-0430",
     "name": "Sensitive Windows Active Directory Attribute Modification",
-    "description": "",
+    "description": "The Sensitive Windows Active Directory Attribute Modification rules are used to identify suspicious activity with sensitive Windows Active Directory attribute modification. Any one or more of these will trigger the Sensitive Windows Active Directory Attribute Modification alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
@@ -5364,7 +5350,7 @@
   {
     "detectionID": "CY-0431",
     "name": "Sensitive Windows Network Share File or Folder Access",
-    "description": "",
+    "description": "The Sensitive Windows Network Share File or Folder Accessed rules are used to identify suspicious activity with Windows network share file or folder access. Any one or more of these will trigger the Sensitive Windows Network Share File or Folder Accessed alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Lateral Movement",
@@ -5378,7 +5364,7 @@
   {
     "detectionID": "CY-0323",
     "name": "Sensor Status Anomaly",
-    "description": "",
+    "description": "The sensor has changed its status from \"connected\" to \"disconnected\".",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR SBA",
@@ -5420,7 +5406,7 @@
   {
     "detectionID": "CY-0333",
     "name": "SMB Impacket Lateralization",
-    "description": "",
+    "description": "The execution of wmiexec, dcomexec, atexec, smbexec, or PSExec from the Impacket framework was observed. Check the source host. If malicious, consider blocking the host.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Execution",
@@ -5434,7 +5420,7 @@
   {
     "detectionID": "CY-0332",
     "name": "SMB Specific Service Installation",
-    "description": "",
+    "description": "A specific service installation used by the Impacket tool or Metasploit was observed. Check the source host. If malicious, consider blocking the host.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Execution",
@@ -5448,7 +5434,7 @@
   {
     "detectionID": "CY-0365",
     "name": "SMB Suspicious Copy",
-    "description": "",
+    "description": "A suspicious copy command from a remote C$ or ADMIN$ share was observed. Check the source host. If malicious, consider blocking the host.",
     "defaultStatus": "Active",
     "killChainStage": "Exploration",
     "mitreTactic": "Collection",
@@ -5560,7 +5546,7 @@
   {
     "detectionID": "CY-0459",
     "name": "Startup/Logon Script added to Group Policy Object",
-    "description": "",
+    "description": "The Startup/Logon Script Added to Group Policy Object rules detect suspicious SMB traffic related to GPO script modifications. Any one or more of these will trigger the Startup/Logon Script Added to Group Policy Object alert type.",
     "defaultStatus": "New Detection",
     "killChainStage": "",
     "mitreTactic": "",
@@ -5574,7 +5560,7 @@
   {
     "detectionID": "CY-0432",
     "name": "Suspicious Access Attempt to Windows Object",
-    "description": "",
+    "description": "The Suspicious Access Attempt to Windows Object rules are used to identify suspicious activity with access attempt to Windows objects. Any one or more of these will trigger the Suspicious Access Attempt to Windows Object alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -5588,7 +5574,7 @@
   {
     "detectionID": "CY-0433",
     "name": "Suspicious Activity Related to Security-Enabled Group",
-    "description": "",
+    "description": "The Suspicious Activity Related to Security-Enabled Group rules are used to identify suspicious activity related to security-enabled groups. Any one or more of these will trigger the Suspicious Activity Related to Security-Enabled Group alert types.",
     "defaultStatus": "Active via Custom Rules",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -5602,7 +5588,7 @@
   {
     "detectionID": "CY-0262",
     "name": "Suspicious AWS Bucket Enumeration",
-    "description": "",
+    "description": "The Suspicious AWS Bucket Enumeration rules are used to identify suspicious activity related to AWS Bucket enumeration. Any one or more of these will trigger the Suspicious AWS Bucket Enumeration alert type.",
     "defaultStatus": "Active",
     "killChainStage": "Exploration",
     "mitreTactic": "Discovery",
@@ -5616,7 +5602,7 @@
   {
     "detectionID": "CY-0273",
     "name": "Suspicious AWS EBS Activity",
-    "description": "",
+    "description": "The Suspicious AWS EBS Activity rules are used to identify suspicious AWS Elastic Block Store (EBS) activity. Any one or more of these will trigger the Suspicious AWS EBS Activity alert type.",
     "defaultStatus": "Active",
     "killChainStage": "Exploration",
     "mitreTactic": "Collection",
@@ -5630,7 +5616,7 @@
   {
     "detectionID": "CY-0269",
     "name": "Suspicious AWS EC2 Activity",
-    "description": "",
+    "description": "The Suspicious AWS EC2 Activity rules are used to identify suspicious activity within AWS EC2 logs. Any one or more of these will trigger the Suspicious AWS EC2 Activity alert type.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Exfiltration",
@@ -5644,7 +5630,7 @@
   {
     "detectionID": "CY-0263",
     "name": "Suspicious AWS IAM Activity",
-    "description": "",
+    "description": "The Suspicious AWS IAM Activity rules are used to identify suspicious activity within AWS IAM logs. Any one or more of these will trigger the Suspicious AWS IAM Activity alert type.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -5658,7 +5644,7 @@
   {
     "detectionID": "CY-0270",
     "name": "Suspicious AWS RDS Event",
-    "description": "",
+    "description": "The Suspicious AWS RDS Event rules are used to identify suspicious activity related to AWS RDS events. Any one or more of these will trigger the Suspicious AWS RDS Event alert type.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -5672,7 +5658,7 @@
   {
     "detectionID": "CY-0264",
     "name": "Suspicious AWS Root Account Activity",
-    "description": "",
+    "description": "The Suspicious AWS Root Account Activity rules are used to identify suspicious activity with AWS Root Account. Any one or more of these will trigger the Suspicious AWS Root Account Activity alert type.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -5686,7 +5672,7 @@
   {
     "detectionID": "CY-0265",
     "name": "Suspicious AWS Route 53 Activity",
-    "description": "",
+    "description": "The Suspicious AWS Route 53 Activity rules are used to identify suspicious activity within AWS Route 53 logs. Any one or more of these will trigger the Suspicious AWS Route 53 Activity alert type.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -5700,7 +5686,7 @@
   {
     "detectionID": "CY-0266",
     "name": "Suspicious AWS VPC Flow Logs Modification",
-    "description": "",
+    "description": "The Suspicious AWS VPC Flow Logs Modification rules are used to identify suspicious modification of AWS VPC Flow logs. Any one or more of these will trigger the Suspicious AWS VPC Flow Logs Modification alert type.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
@@ -5714,7 +5700,7 @@
   {
     "detectionID": "CY-0190",
     "name": "Suspicious Azure Account Permission Elevation",
-    "description": "",
+    "description": "The Suspicious Azure Account Permission Elevation rules are used to identify suspicious Azure account permission elevation. Any one or more of these will trigger the Suspicious Azure Account Permission Elevation alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -5728,7 +5714,7 @@
   {
     "detectionID": "CY-0191",
     "name": "Suspicious Azure Deployment Activity",
-    "description": "",
+    "description": "The Suspicious Azure Deployment Activity rules are used to identify suspicious Azure deployment activity. Any one or more of these will trigger the Suspicious Azure Deployment Activity alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -5742,7 +5728,7 @@
   {
     "detectionID": "CY-0192",
     "name": "Suspicious Azure Firewall Activity",
-    "description": "",
+    "description": "The Suspicious Azure Firewall Activity rules are used to identify suspicious Azure firewall activity. Any one or more of these will trigger the Suspicious Azure Firewall Activity alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -5756,7 +5742,7 @@
   {
     "detectionID": "CY-0193",
     "name": "Suspicious Azure Key Vault Activity",
-    "description": "",
+    "description": "The Suspicious Azure Key Vault Activity rules are used to identify suspicious Azure Key Vault activity. Any one or more of these will trigger the Suspicious Azure Key Vault Activity alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -5770,7 +5756,7 @@
   {
     "detectionID": "CY-0194",
     "name": "Suspicious Azure Kubernetes Activity: Credential Access",
-    "description": "",
+    "description": "The Suspicious Azure Kubernetes Activity: Credential Access rules are used to identify suspicious Azure Kubernetes activity usually in the credential access stage. Any one or more of these will trigger the Suspicious Azure Kubernetes Activity: Credential Access alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -5784,7 +5770,7 @@
   {
     "detectionID": "CY-0195",
     "name": "Suspicious Azure Kubernetes Activity: Defense Evasion",
-    "description": "",
+    "description": "The Suspicious Azure Kubernetes Activity: Defense Evasion rules are used to identify suspicious Azure Kubernetes activity usually in the defense evasion stage. Any one or more of these will trigger the Suspicious Azure Kubernetes Activity: Defense Evasion alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -5798,7 +5784,7 @@
   {
     "detectionID": "CY-0196",
     "name": "Suspicious Azure Kubernetes Activity: Impact",
-    "description": "",
+    "description": "The Suspicious Azure Kubernetes Activity: Impact rules are used to identify suspicious Azure Kubernetes activity usually in the impact stage. Any one or more of these will trigger the Suspicious Azure Kubernetes Activity: Impact alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -5812,7 +5798,7 @@
   {
     "detectionID": "CY-0197",
     "name": "Suspicious Azure Kubernetes Activity: Persistence",
-    "description": "",
+    "description": "The Suspicious Azure Kubernetes Activity: Persistence rules are used to identify suspicious Azure Kubernetes activity usually in the persistence stage. Any one or more of these will trigger the Suspicious Azure Kubernetes Activity: Persistence alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -5826,7 +5812,7 @@
   {
     "detectionID": "CY-0198",
     "name": "Suspicious Azure Kubernetes Activity: Privilege Escalation",
-    "description": "",
+    "description": "The Suspicious Azure Kubernetes Activity: Privilege Escalation rules are used to identify suspicious Azure Kubernetes activity usually in the privilege escalation stage. Any one or more of these will trigger the Suspicious Azure Kubernetes Activity: Privilege Escalation alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -5840,7 +5826,7 @@
   {
     "detectionID": "CY-0199",
     "name": "Suspicious Azure Network Activity",
-    "description": "",
+    "description": "The Suspicious Azure Network Activity rules are used to identify suspicious Azure network activity. Any one or more of these will trigger the Suspicious Azure Network Activity alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -5868,7 +5854,7 @@
   {
     "detectionID": "CY-0232",
     "name": "Suspicious Connection to Another Process",
-    "description": "",
+    "description": "The Suspicious Connection to Another Process rules are used to identify suspicious connection to another process. Any one or more of these will trigger the Suspicious Connection to Another Process alert types.",
     "defaultStatus": "Not Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Execution",
@@ -5896,7 +5882,7 @@
   {
     "detectionID": "CY-0434",
     "name": "Suspicious Handle Request to Sensitive Object",
-    "description": "",
+    "description": "The Suspicious Handle Request to Sensitive Object rules are used to identify suspicious activity with handle requests to sensitive Windows objects. Any one or more of these will trigger the Suspicious Handle Request to Sensitive Object alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Credential Access",
@@ -5910,7 +5896,7 @@
   {
     "detectionID": "CY-0275",
     "name": "Suspicious LSASS Process Access",
-    "description": "",
+    "description": "The Suspicious LSASS Process Access rules are used to identify suspicious process access to or from the Local Security Authority Subsystem Service (LSASS). Any one or more of these will trigger the Suspicious LSASS Process Access alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Credential Access",
@@ -5952,7 +5938,7 @@
   {
     "detectionID": "CY-0271",
     "name": "Suspicious Modification of AWS CloudTrail Logs",
-    "description": "",
+    "description": "The Suspicious Modification of AWS CloudTrail Logs rules are used to identify suspicious activity within AWS CloudTrail logs. Any one or more of these will trigger the Suspicious Modification of AWS CloudTrail Logs alert type.",
     "defaultStatus": "Active",
     "killChainStage": "Exploration",
     "mitreTactic": "Collection",
@@ -5966,7 +5952,7 @@
   {
     "detectionID": "CY-0267",
     "name": "Suspicious Modification of AWS Route Table",
-    "description": "",
+    "description": "The Suspicious Modification of AWS Route Table rules are used to identify suspicious activity related to modification of AWS route table. Any one or more of these will trigger the Suspicious Modification of AWS Route Table alert type.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -5980,7 +5966,7 @@
   {
     "detectionID": "CY-0272",
     "name": "Suspicious Modification of S3 Bucket",
-    "description": "",
+    "description": "The Suspicious Modification of S3 Bucket rules are used to identify suspicious activity within S3 Bucket logs. Any one or more of these will trigger the Suspicious Modification of S3 Bucket alert type.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Exfiltration",
@@ -6008,7 +5994,7 @@
   {
     "detectionID": "CY-0427",
     "name": "Suspicious PowerShell Script",
-    "description": "",
+    "description": "The Suspicious PowerShell Script rules are used to identify suspicious activity relating to PowerShell scripts. Any one or more of these will trigger the Suspicious PowerShell Script alert types.",
     "defaultStatus": "Not Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Execution",
@@ -6036,7 +6022,7 @@
   {
     "detectionID": "CY-0428",
     "name": "Suspicious Process Creation Commandline",
-    "description": "",
+    "description": "The Suspicious Process Creation Commandline rules are used to identify suspicious activity relating to command-line process creation. Any one or more of these will trigger the Suspicious Process Creation Commandline alert types.",
     "defaultStatus": "Not Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Execution",
@@ -6120,7 +6106,7 @@
   {
     "detectionID": "CY-0435",
     "name": "Suspicious Windows Active Directory Operation",
-    "description": "",
+    "description": "The Suspicious Windows Active Directory Operation rules are used to identify suspicious activity with Windows Active Directory operation. Any one or more of these will trigger the Suspicious Windows Active Directory Operation alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Credential Access",
@@ -6134,7 +6120,7 @@
   {
     "detectionID": "CY-0436",
     "name": "Suspicious Windows Logon Event",
-    "description": "",
+    "description": "The Suspicious Windows Logon Event rules are used to identify suspicious activity with Windows logons. Any one or more of these will trigger the Suspicious Windows Logon alert types.",
     "defaultStatus": "Not Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
@@ -6148,7 +6134,7 @@
   {
     "detectionID": "CY-0276",
     "name": "Suspicious Windows Network Connection",
-    "description": "",
+    "description": "The Suspicious Windows Network Connection rules are used to identify suspicious Windows network connection activities. Any one or more of these will trigger the Suspicious Windows Network Connection alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
@@ -6162,7 +6148,7 @@
   {
     "detectionID": "CY-0230",
     "name": "Suspicious Windows Registry Event: Impact",
-    "description": "",
+    "description": "The Suspicious Windows Registry Event: Impact rules are used to identify suspicious Windows registry events usually in the impact stage. Any one or more of these will trigger the Suspicious Windows Registry Event: Impact alert type.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -6176,7 +6162,7 @@
   {
     "detectionID": "CY-0231",
     "name": "Suspicious Windows Registry Event: Persistence",
-    "description": "",
+    "description": "The Suspicious Windows Registry Event: Persistence rules are used to identify suspicious Windows registry events usually in the persistence stage. Any one or more of these will trigger the Suspicious Windows Registry Event: Persistence alert type.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -6232,7 +6218,7 @@
   {
     "detectionID": "CY-0376",
     "name": "Unapproved Asset Activity",
-    "description": "",
+    "description": "Activity of an asset that was marked as unapproved in one of the Investigate | Asset Analytics tabs has been observed.",
     "defaultStatus": "Not Active",
     "killChainStage": "Exploration",
     "mitreTactic": "XDR NBA",
@@ -6246,7 +6232,7 @@
   {
     "detectionID": "CY-0306",
     "name": "Uncommon Application Anomaly",
-    "description": "",
+    "description": "Private (internal assets) to public (Internet) traffic has revealed an application that has never been seen before (or been seen very rarely). Investigate that application and ensure that it is benign.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR NBA",
@@ -6260,7 +6246,7 @@
   {
     "detectionID": "CY-0358",
     "name": "Uncommon Process Anomaly",
-    "description": "",
+    "description": "Private (internal assets) to public (Internet) traffic has revealed an application that has never been seen before (or been seen very rarely). Investigate that application and ensure that it is benign.",
     "defaultStatus": "Not Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "XDR EBA",
@@ -6288,7 +6274,7 @@
   {
     "detectionID": "CY-0398",
     "name": "User Asset Access Anomaly",
-    "description": "",
+    "description": "A user who typically uses a small, consistent number of assets was observed in Windows logons, Kerberos service tickets, or SMB traffic to access a new asset. Investigate the asset and user to see if this was expected.",
     "defaultStatus": "Not Active",
     "killChainStage": "Propagation",
     "mitreTactic": "XDR UBA",
@@ -6302,7 +6288,7 @@
   {
     "detectionID": "CY-0315",
     "name": "User Login Location Anomaly",
-    "description": "",
+    "description": "A login to a user account occurred from a source IP address that is anomalously distant from the nearest location typically observed for logins to that user account.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR NBA",
@@ -6316,7 +6302,7 @@
   {
     "detectionID": "CY-0359",
     "name": "User Process Usage Anomaly",
-    "description": "",
+    "description": "A user who typically executes a small, consistent number of processes suddenly executed a new process. Investigate the process to see if it is benign. Check with the user to see if this process was expected.",
     "defaultStatus": "Not Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "XDR EBA",
@@ -6344,7 +6330,7 @@
   {
     "detectionID": "CY-0418",
     "name": "Volume Shadow Copy Deletion via VssAdmin",
-    "description": "",
+    "description": "The vssadmin.exe utility was used to delete the Shadow Copy on an endpoint. Ransomware and other malware do this to prevent system recovery. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -6358,7 +6344,7 @@
   {
     "detectionID": "CY-0419",
     "name": "Volume Shadow Copy Deletion via WMIC",
-    "description": "",
+    "description": "The wmic.exe utility was used to delete the Shadow Copy on an endpoint. Ransomware and other malware do this to prevent system recovery. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -6372,7 +6358,7 @@
   {
     "detectionID": "CY-0374",
     "name": "WAF Internal Attacker Anomaly",
-    "description": "",
+    "description": "Internal web requests from a private IP address have been blocked/alerted by the Web Application Firewall (WAF). Investigate the source requester and ensure they are not compromised.",
     "defaultStatus": "Active",
     "killChainStage": "Exploration",
     "mitreTactic": "XDR NBA",
@@ -6386,7 +6372,7 @@
   {
     "detectionID": "CY-0307",
     "name": "WAF Rule Violation Anomaly",
-    "description": "",
+    "description": "Web requests have been blocked/alerted by the Web Application Firewall (WAF) due to a surge in violations or violating a rule that is rarely invoked. Investigate the blocked/alerted web requests and ensure they are benign.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR NBA",
@@ -6456,7 +6442,7 @@
   {
     "detectionID": "CY-0456",
     "name": "Windows Network Access Suspicious desktop.ini Action",
-    "description": "",
+    "description": "The Windows Network Access Suspicious desktop.ini Action rules detect suspicious SMB traffic accessing desktop.ini files. Any one or more of these will trigger the Windows Network Access Suspicious desktop.ini Action alert type.",
     "defaultStatus": "New Detection",
     "killChainStage": "",
     "mitreTactic": "",
@@ -6512,7 +6498,7 @@
   {
     "detectionID": "CY-0437",
     "name": "Windows Suspicious Process Creation",
-    "description": "",
+    "description": "The Suspicious Windows Process Creation rules are used to identify suspicious activity associated with process creation. Any one or more of these will trigger the Suspicious Process Creation alert type.",
     "defaultStatus": "Not Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
