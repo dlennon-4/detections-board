@@ -61,7 +61,6 @@
      ****************************************/
     .top-bar {
       display: grid;
-      /* Use 1fr auto 1fr to center the middle column */
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
       padding: 10px 20px;
@@ -73,7 +72,6 @@
       text-align: left;
     }
     .logo-section img {
-      /* Reduced size for more space; adjust max-width as needed */
       max-width: 100px;
       height: auto;
       background-color: transparent;
@@ -211,7 +209,6 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       max-width: 95%;
       margin: 0 auto 20px auto;
-      /* Set a maximum height for scrolling; adjust as needed */
       max-height: 70vh;
       overflow-y: auto;
       position: relative;
@@ -284,6 +281,16 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
       z-index: 9999;
       transition: background-color 0.3s;
+    }
+
+    /* Status badge (pill/label) style */
+    .status-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 12px;
+      color: #fff;
+      font-weight: bold;
+      /* You can add margin, min-width, etc. as desired */
     }
   </style>
 </head>
@@ -439,15 +446,18 @@
       const checkedTools = Array.from(toolCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
       const allToolsChecked = (checkedTools.length === toolCheckboxes.length);
       const rows = document.querySelectorAll('#detectionsTable tbody tr');
+
       rows.forEach(row => {
         const cells = row.querySelectorAll('td');
         const name = cells[0].textContent.toLowerCase();
         const desc = cells[1].textContent.toLowerCase();
         const status = cells[2].textContent.trim();
         const tool = cells[9].textContent.trim();
+
         const matchesSearch = name.includes(searchValue) || desc.includes(searchValue);
         const matchesStatus = allStatusesChecked || checkedStatuses.includes(status);
         const matchesTool = allToolsChecked || checkedTools.includes(tool);
+
         row.style.display = (matchesSearch && matchesStatus && matchesTool) ? '' : 'none';
       });
       updateCaseCount();
@@ -497,14 +507,14 @@
     // Get color for Default Status
     function getStatusColor(status) {
       switch (status) {
-        case 'Active':                return '#28a745';
-        case 'Active via Custom Rules': return '#90ee90';
+        case 'Active':                   return '#28a745';  // Green
+        case 'Active via Custom Rules':  return '#90ee90';  // Light green
         case 'Testing':
-        case 'New Detection':         return '#dda0dd';
-        case 'Muted':                 return '#ffa500';
-        case 'Not Active':            return '#dc3545';
-        case 'Alert Preferences':     return '#17a2b8';
-        default:                      return '';
+        case 'New Detection':            return '#dda0dd';  // Plum / lavender
+        case 'Muted':                    return '#ffa500';  // Orange
+        case 'Not Active':               return '#dc3545';  // Red
+        case 'Alert Preferences':        return '#17a2b8';  // Teal-ish
+        default:                         return '';
       }
     }
 
@@ -516,6 +526,7 @@
       const table = document.getElementById('detectionsTable');
       const tbody = table.querySelector('tbody');
       const allRows = Array.from(tbody.querySelectorAll('tr'));
+      
       if (!sortDirections[columnIndex]) {
         sortDirections[columnIndex] = 'asc';
       } else {
@@ -523,6 +534,7 @@
       }
       const direction = sortDirections[columnIndex];
       const visibleRows = allRows.filter(row => row.style.display !== 'none');
+
       visibleRows.sort((a, b) => {
         const cellA = a.children[columnIndex].textContent.trim().toLowerCase();
         const cellB = b.children[columnIndex].textContent.trim().toLowerCase();
@@ -530,7 +542,9 @@
         if (cellA > cellB) return direction === 'asc' ? 1 : -1;
         return 0;
       });
+
       visibleRows.forEach(row => tbody.appendChild(row));
+
       const allTh = table.querySelectorAll('thead th');
       allTh.forEach(th => {
         th.textContent = th.textContent.replace(/[▲▼]/g, '').trim();
@@ -544,16 +558,23 @@
       fetch('detections.json?v=' + new Date().getTime())
         .then(res => res.json())
         .then(data => {
+          // Sort by name to keep consistent
           data.sort((a, b) => a.name.localeCompare(b.name));
+
           const tbody = document.querySelector('#detectionsTable tbody');
           tbody.innerHTML = '';
+
           data.forEach(det => {
             const statusColor = getStatusColor(det.defaultStatus);
             const tr = document.createElement('tr');
             tr.innerHTML = `
               <td>${det.name}</td>
               <td>${det.description}</td>
-              <td style="background-color: ${statusColor}">${det.defaultStatus}</td>
+              <td>
+                <span class="status-badge" style="background-color: ${statusColor};">
+                  ${det.defaultStatus}
+                </span>
+              </td>
               <td>${det.killChainStage}</td>
               <td>${det.mitreTactic}</td>
               <td>${det.mitreTacticID}</td>
