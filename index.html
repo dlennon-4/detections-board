@@ -290,7 +290,7 @@
       border-radius: 12px;
       color: #fff;
       font-weight: bold;
-      /* You can add margin, min-width, etc. as desired */
+      cursor: default; /* So it doesn't look clickable */
     }
   </style>
 </head>
@@ -445,8 +445,8 @@
       const toolCheckboxes = document.querySelectorAll('#toolDropdown input[type="checkbox"]');
       const checkedTools = Array.from(toolCheckboxes).filter(cb => cb.checked).map(cb => cb.value);
       const allToolsChecked = (checkedTools.length === toolCheckboxes.length);
-      const rows = document.querySelectorAll('#detectionsTable tbody tr');
 
+      const rows = document.querySelectorAll('#detectionsTable tbody tr');
       rows.forEach(row => {
         const cells = row.querySelectorAll('td');
         const name = cells[0].textContent.toLowerCase();
@@ -504,7 +504,7 @@
       URL.revokeObjectURL(url);
     }
 
-    // Get color for Default Status
+    // Color map for each status
     function getStatusColor(status) {
       switch (status) {
         case 'Active':                   return '#28a745';  // Green
@@ -514,7 +514,29 @@
         case 'Muted':                    return '#ffa500';  // Orange
         case 'Not Active':               return '#dc3545';  // Red
         case 'Alert Preferences':        return '#17a2b8';  // Teal-ish
-        default:                         return '';
+        default:                         return '#666';     // Fallback
+      }
+    }
+
+    // Tooltip text for each status
+    function getStatusDescription(status) {
+      switch (status) {
+        case 'Active':
+          return 'This detection is actively monitored and alerts are generated according to our internal thresholds.';
+        case 'Active via Custom Rules':
+          return 'While not monitored directly, we have enabled custom rules with defined thresholds/correlations to track noteworthy activity.';
+        case 'Not Active':
+          return 'This detection has low standalone value. If needed, it can be enabled—please contact your SOC Team for more details.';
+        case 'Alert Preferences':
+          return 'This detection can be toggled between Active or Muted under the “Alert Preferences” tab in ONE Platform.';
+        case 'New Detection':
+          return 'A newly introduced detection. It remains Inactive until the SOC assesses its accuracy and value.';
+        case 'Testing':
+          return 'Currently under SOC evaluation for effectiveness and fidelity. May appear in source tools for reference.';
+        case 'Muted':
+          return 'This detection automatically closes after threshold checks. It still supports correlation and alert metrics.';
+        default:
+          return '';
       }
     }
 
@@ -566,12 +588,18 @@
 
           data.forEach(det => {
             const statusColor = getStatusColor(det.defaultStatus);
+            const statusDesc  = getStatusDescription(det.defaultStatus);
+
             const tr = document.createElement('tr');
             tr.innerHTML = `
               <td>${det.name}</td>
               <td>${det.description}</td>
               <td>
-                <span class="status-badge" style="background-color: ${statusColor};">
+                <span 
+                  class="status-badge" 
+                  style="background-color: ${statusColor};"
+                  title="${statusDesc}"
+                >
                   ${det.defaultStatus}
                 </span>
               </td>
