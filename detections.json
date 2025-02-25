@@ -9,7 +9,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Event Triggered Execution",
     "mitreTechniqueID": "T1546",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -23,7 +23,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -51,7 +51,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR App Anomaly",
     "mitreTechniqueID": "XT2003",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -72,7 +72,7 @@
   {
     "detectionID": "CY-0011",
     "name": "AWS - Root logon detected",
-    "description": "",
+    "description": "A successful AWS login for the root user was detected.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -86,7 +86,7 @@
   {
     "detectionID": "CY-0076",
     "name": "AWS Access Key Created",
-    "description": "An AWS API key was created for a user",
+    "description": "An AWS API key was created for a user.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Propagation",
     "mitreTactic": "Persistence",
@@ -114,7 +114,7 @@
   {
     "detectionID": "CY-0090",
     "name": "AWS CloudTrail Important Change",
-    "description": "An AWS trail was disabled, deleted, or changed",
+    "description": "An AWS trail was disabled, deleted, or changed.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
@@ -128,7 +128,7 @@
   {
     "detectionID": "CY-0091",
     "name": "AWS Config Disabling Channel/Recorder",
-    "description": "An AWS config service was disabled",
+    "description": "An AWS config service was disabled.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
@@ -170,7 +170,7 @@
   {
     "detectionID": "CY-0092",
     "name": "AWS IAM S3Browser User or AccessKey Creation",
-    "description": "The S3 browser utility was detected creating IAM User or an AccessKey",
+    "description": "The S3 browser utility was detected creating IAM User or an AccessKey.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -184,7 +184,7 @@
   {
     "detectionID": "CY-0093",
     "name": "AWS Identity Center Identity Provider Change",
-    "description": "A change in the AWS Identity Center identity provider was detected",
+    "description": "A change in the AWS Identity Center identity provider was detected.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -331,7 +331,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "N/A"
   },
@@ -345,7 +345,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "N/A"
   },
@@ -359,7 +359,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "N/A"
   },
@@ -373,7 +373,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "N/A"
   },
@@ -415,7 +415,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Indicator Removal on Host",
     "mitreTechniqueID": "T1070",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -429,7 +429,7 @@
     "mitreTacticID": "XTA0005",
     "mitreTechnique": "XDR Bad Reputation",
     "mitreTechniqueID": "XT2010",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -443,7 +443,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR Bad Reputation",
     "mitreTechniqueID": "XT2010",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -457,7 +457,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR Bad Reputation",
     "mitreTechniqueID": "XT2010",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -471,7 +471,7 @@
     "mitreTacticID": "TA0011",
     "mitreTechnique": "Remote Access Software",
     "mitreTechniqueID": "T1219",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -527,7 +527,7 @@
     "mitreTacticID": "TA0011",
     "mitreTechnique": "Remote Access Software",
     "mitreTechniqueID": "T1219",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -541,14 +541,14 @@
     "mitreTacticID": "TA0009",
     "mitreTechnique": "Automated Collection",
     "mitreTechniqueID": "T1119",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
   {
     "detectionID": "CY-0116",
     "name": "Box - Change Admin Role",
-    "description": "A Box admin role was changed in your environment",
+    "description": "A Box admin role was changed in your environment.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Propagation",
     "mitreTactic": "Privilege Escalation",
@@ -562,7 +562,7 @@
   {
     "detectionID": "CY-0117",
     "name": "Box - Content Workflow Policy Violation",
-    "description": "A Box Work flow policy violation was detected in your environment",
+    "description": "A Box Work flow policy violation was detected in your environment.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Exploration",
     "mitreTactic": "Collection",
@@ -590,7 +590,7 @@
   {
     "detectionID": "CY-0118",
     "name": "Box - Information Barrier Disabled",
-    "description": "A Box Shield information barrier was deactivated",
+    "description": "A Box Shield information barrier was deactivated.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Resource Development",
@@ -604,7 +604,7 @@
   {
     "detectionID": "CY-0012",
     "name": "Box - Shield Alert",
-    "description": "",
+    "description": "Box Shield, detected potentially suspicious activity in your environment.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR UBA",
@@ -618,14 +618,14 @@
   {
     "detectionID": "CY-0009",
     "name": "Box - Successful Login Outside the US",
-    "description": "A Box user was seen logging in outside of the United States",
+    "description": "A Box user was seen logging in outside of the United States.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "",
     "mitreTactic": "",
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-04-24"
   },
@@ -667,7 +667,7 @@
     "mitreTacticID": "XTA0005",
     "mitreTechnique": "XDR Bad Reputation",
     "mitreTechniqueID": "XT2010",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -681,7 +681,7 @@
     "mitreTacticID": "XTA0005",
     "mitreTechnique": "XDR Command and Control Reputation",
     "mitreTechniqueID": "XT5001",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -695,28 +695,28 @@
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Command and Scripting Interpreter",
     "mitreTechniqueID": "T1059",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
   {
     "detectionID": "CY-0122",
     "name": "Conditional Access Blocked Login",
-    "description": "",
+    "description": "A Conditional Access policy blocked a login attempt for a user in your environment,  check with the user identified if this was approved activity.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
   {
     "detectionID": "CY-0033",
     "name": "Conditional Access Policy Deleted",
-    "description": "An Azure Conditional Access policy was deleted",
+    "description": "An Azure Conditional Access policy was deleted.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
@@ -737,21 +737,21 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Forced Authentication",
     "mitreTechniqueID": "T1187",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
   {
     "detectionID": "CY-0005",
     "name": "Consent to Suspicious Application",
-    "description": "A user granted consent to an application that is a known suspicious OAUTH client, indicating potential malicious activity",
+    "description": "A user granted consent to an application that is a known suspicious OAUTH client, indicating potential malicious activity.",
     "defaultStatus": "New Detection",
     "killChainStage": "",
     "mitreTactic": "",
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "02-05-25"
   },
@@ -779,7 +779,7 @@
     "mitreTacticID": "TA0040",
     "mitreTechnique": "Resource Hijacking",
     "mitreTechniqueID": "T1496",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -793,7 +793,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "External Remote Services",
     "mitreTechniqueID": "T1133",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -877,7 +877,7 @@
     "mitreTacticID": "TA0010",
     "mitreTechnique": "Exfiltration Over Web Service",
     "mitreTechniqueID": "T1567",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "03-14-24"
   },
@@ -891,7 +891,7 @@
     "mitreTacticID": "N/A",
     "mitreTechnique": "N/A",
     "mitreTechniqueID": "N/A",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -905,7 +905,7 @@
     "mitreTacticID": "XTA0003",
     "mitreTechnique": "XDR Bytes Anomaly",
     "mitreTechniqueID": "XT3001",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -919,7 +919,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "01-14-25"
   },
@@ -947,7 +947,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "02-18-25"
   },
@@ -961,7 +961,7 @@
     "mitreTacticID": "TA0011",
     "mitreTechnique": "Dynamic Resolution",
     "mitreTechniqueID": "T1568",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -975,7 +975,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR Server Anomaly",
     "mitreTechniqueID": "XT2007",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -989,7 +989,7 @@
     "mitreTacticID": "TA0010",
     "mitreTechnique": "Exfiltration Over Web Service",
     "mitreTechniqueID": "T1567",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "03-14-24"
   },
@@ -1003,7 +1003,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "10-30-24"
   },
@@ -1017,7 +1017,7 @@
     "mitreTacticID": "TA0010",
     "mitreTechnique": "Exfiltration Over Alternative Protocol",
     "mitreTechniqueID": "T1048",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1031,7 +1031,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "OS Credential Dumping",
     "mitreTechniqueID": "T1003",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1087,21 +1087,21 @@
     "mitreTacticID": "XTA0005",
     "mitreTechnique": "XDR Emerging Threat",
     "mitreTechniqueID": "XT5003",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "05-20-24"
   },
   {
     "detectionID": "CY-0043",
     "name": "Emotet Loader Execution Via .LNK File",
-    "description": "",
+    "description": "The Emotet Eopoch4 loader was detected in your environment.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Execution",
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Command and Scripting Interpreter",
     "mitreTechniqueID": "T1059",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "08-30-24"
   },
@@ -1115,7 +1115,7 @@
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Command and Scripting Interpreter",
     "mitreTechniqueID": "T1059",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1129,7 +1129,7 @@
     "mitreTacticID": "TA0011",
     "mitreTechnique": "Encrypted Channel",
     "mitreTechniqueID": "T1573",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1143,7 +1143,7 @@
     "mitreTacticID": "TA0010",
     "mitreTechnique": "Exfiltration Over Web Service",
     "mitreTechniqueID": "T1567",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "03-14-24"
   },
@@ -1157,7 +1157,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR Command and Control Connection Exploitation",
     "mitreTechniqueID": "XT2014",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1171,7 +1171,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1185,7 +1185,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1199,7 +1199,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1213,7 +1213,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR Exploitated Vulnerability",
     "mitreTechniqueID": "XT2015",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1227,7 +1227,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR Firewall Anomaly",
     "mitreTechniqueID": "XT2002",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1241,7 +1241,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR Firewall Anomaly",
     "mitreTechniqueID": "XT2002",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1255,7 +1255,7 @@
     "mitreTacticID": "TA0043",
     "mitreTechnique": "Active Scanning",
     "mitreTechniqueID": "T1595",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1269,7 +1269,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Exploit Public-Facing Application",
     "mitreTechniqueID": "T1190",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1283,7 +1283,7 @@
     "mitreTacticID": "TA0043",
     "mitreTechnique": "Active Scanning",
     "mitreTechniqueID": "T1595",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1297,7 +1297,7 @@
     "mitreTacticID": "TA0011",
     "mitreTechnique": "Non-Standard Port",
     "mitreTechniqueID": "T1571",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1311,7 +1311,7 @@
     "mitreTacticID": "XTA0006",
     "mitreTechnique": "XDR Miscellaneous Malware",
     "mitreTechniqueID": "XT6001",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1325,7 +1325,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1339,7 +1339,7 @@
     "mitreTacticID": "TA0010",
     "mitreTechnique": "Automated Exfiltration",
     "mitreTechniqueID": "T1020",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1353,7 +1353,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR Clear Password",
     "mitreTechniqueID": "XT2006",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1367,7 +1367,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1381,7 +1381,7 @@
     "mitreTacticID": "XTA0006",
     "mitreTechnique": "XDR PUA",
     "mitreTechniqueID": "XT6002",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1395,7 +1395,7 @@
     "mitreTacticID": "TA0040",
     "mitreTechnique": "Data Encrypted for Impact",
     "mitreTechniqueID": "T1486",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1409,7 +1409,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Exploitation for Privilege Escalation",
     "mitreTechniqueID": "T1068",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1423,7 +1423,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1437,7 +1437,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR App Anomaly",
     "mitreTechniqueID": "XT2003",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1451,7 +1451,7 @@
     "mitreTacticID": "TA0043",
     "mitreTechnique": "Active Scanning",
     "mitreTechniqueID": "T1595",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1465,7 +1465,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Exploit Public-Facing Application",
     "mitreTechniqueID": "T1190",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1479,7 +1479,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1493,7 +1493,7 @@
     "mitreTacticID": "TA0040",
     "mitreTechnique": "Data Manipulation",
     "mitreTechniqueID": "T1565",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1507,7 +1507,7 @@
     "mitreTacticID": "XTA0006",
     "mitreTechnique": "XDR Spyware",
     "mitreTechniqueID": "XT6003",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1521,7 +1521,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Exploit Public-Facing Application",
     "mitreTechniqueID": "T1190",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1535,7 +1535,7 @@
     "mitreTacticID": "TA0009",
     "mitreTechnique": "Data Staged",
     "mitreTechniqueID": "T1074",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1549,7 +1549,7 @@
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Command and Scripting Interpreter",
     "mitreTechniqueID": "T1059",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1563,7 +1563,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR User Agent Anomaly",
     "mitreTechniqueID": "XT2012",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1577,7 +1577,7 @@
     "mitreTacticID": "TA0040",
     "mitreTechnique": "Endpoint Denial of Service",
     "mitreTechniqueID": "T1499",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1591,7 +1591,7 @@
     "mitreTacticID": "TA0040",
     "mitreTechnique": "Endpoint Denial of Service",
     "mitreTechniqueID": "T1499",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1605,7 +1605,7 @@
     "mitreTacticID": "XTA0006",
     "mitreTechnique": "XDR Trojan",
     "mitreTechniqueID": "XT6004",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1619,7 +1619,7 @@
     "mitreTacticID": "TA0043",
     "mitreTechnique": "Active Scanning",
     "mitreTechniqueID": "T1595",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1633,7 +1633,7 @@
     "mitreTacticID": "XTA0004",
     "mitreTechnique": "XDR App Anomaly",
     "mitreTechniqueID": "XT2003",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1647,7 +1647,7 @@
     "mitreTacticID": "XTA0004",
     "mitreTechnique": "XDR Bytes Anomaly",
     "mitreTechniqueID": "XT3001",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1661,7 +1661,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1675,7 +1675,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "09-27-24"
   },
@@ -1689,7 +1689,7 @@
     "mitreTacticID": "TA0040",
     "mitreTechnique": "Data Manipulation",
     "mitreTechniqueID": "T1565",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -1703,7 +1703,7 @@
     "mitreTacticID": "XTA0001",
     "mitreTechnique": "XDR File Anomaly",
     "mitreTechniqueID": "XT1003",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "08-14-24"
   },
@@ -1717,7 +1717,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Event Triggered Execution",
     "mitreTechniqueID": "T1546",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "08-22-24"
   },
@@ -1731,7 +1731,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "08-30-24"
   },
@@ -1745,7 +1745,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "08-30-24"
   },
@@ -1815,7 +1815,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Scheduled Task/Job",
     "mitreTechniqueID": "T1053",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "05-13-24"
   },
@@ -1892,7 +1892,7 @@
   {
     "detectionID": "CY-0097",
     "name": "Google Workspace Application Removed",
-    "description": "A Google Workspace application was removed by the indicated user",
+    "description": "A Google Workspace application was removed by the indicated user.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -1906,7 +1906,7 @@
   {
     "detectionID": "CY-0047",
     "name": "Google Workspace Assign Role",
-    "description": "A Google Workspace user was assigned another user a new role..",
+    "description": "A Google Workspace user was assigned another user a new role.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -1948,7 +1948,7 @@
   {
     "detectionID": "CY-0051",
     "name": "Google Workspace Deny Access Request",
-    "description": "A Google Workspace access request was denied",
+    "description": "A Google Workspace access request was denied.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Reconnaissance",
@@ -1962,7 +1962,7 @@
   {
     "detectionID": "CY-0098",
     "name": "Google Workspace Granted Domain API Access",
-    "description": "An API access service account was granted domain authority",
+    "description": "An API access service account was granted domain authority.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Propagation",
     "mitreTactic": "Privilege Escalation",
@@ -1976,7 +1976,7 @@
   {
     "detectionID": "CY-0079",
     "name": "Google Workspace MFA Disabled",
-    "description": "MFA was disabled for a Google Workspace user account",
+    "description": "MFA was disabled for a Google Workspace user account.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -1990,7 +1990,7 @@
   {
     "detectionID": "CY-0049",
     "name": "Google Workspace Move User To Organizational Unit",
-    "description": "A Google Workspace user was moved to an organizational unir.",
+    "description": "A Google Workspace user was moved to an organizational unit.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -2053,7 +2053,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "11-05-24"
   },
@@ -2074,7 +2074,7 @@
   {
     "detectionID": "CY-0085",
     "name": "Google Workspace Suspicious Login",
-    "description": "",
+    "description": "A suspicious login was detected for a user by Google Workspace",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -2144,7 +2144,7 @@
   {
     "detectionID": "CY-0013",
     "name": "GSuite - Account Security Settings Disabling",
-    "description": "Gsuite account security settings were disabled",
+    "description": "Gsuite account security settings were disabled.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -2193,7 +2193,7 @@
     "mitreTacticID": "TA0043",
     "mitreTechnique": "Active Scanning",
     "mitreTechniqueID": "T1595",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "05-22-24"
   },
@@ -2221,7 +2221,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2235,7 +2235,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "01-14-25"
   },
@@ -2249,7 +2249,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "01-14-25"
   },
@@ -2263,7 +2263,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "05-10-24"
   },
@@ -2277,7 +2277,7 @@
     "mitreTacticID": "XTA0004",
     "mitreTechnique": "XDR Location Anomaly",
     "mitreTechniqueID": "XT2001",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2291,7 +2291,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "02-03-25"
   },
@@ -2305,7 +2305,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "02-12-25"
   },
@@ -2319,7 +2319,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2333,7 +2333,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2347,7 +2347,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2361,7 +2361,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR Exploitated Vulnerability",
     "mitreTechniqueID": "XT2015",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2375,7 +2375,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR Firewall Anomaly",
     "mitreTechniqueID": "XT2002",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2389,7 +2389,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR Firewall Anomaly",
     "mitreTechniqueID": "XT2002",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2403,7 +2403,7 @@
     "mitreTacticID": "TA0007",
     "mitreTechnique": "Network Service Scanning",
     "mitreTechniqueID": "T1046",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2417,7 +2417,7 @@
     "mitreTacticID": "TA0008",
     "mitreTechnique": "Exploitation of Remote Services",
     "mitreTechniqueID": "T1210",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2431,7 +2431,7 @@
     "mitreTacticID": "TA0007",
     "mitreTechnique": "Network Service Scanning",
     "mitreTechniqueID": "T1046",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2445,7 +2445,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR Service on Non-Standard Port",
     "mitreTechniqueID": "XT2011",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2459,7 +2459,7 @@
     "mitreTacticID": "XTA0006",
     "mitreTechnique": "XDR Miscellaneous Malware",
     "mitreTechniqueID": "XT6001",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2473,7 +2473,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2487,7 +2487,7 @@
     "mitreTacticID": "TA0010",
     "mitreTechnique": "Automated Exfiltration",
     "mitreTechniqueID": "T1020",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2501,7 +2501,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR Clear Password",
     "mitreTechniqueID": "XT2006",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2515,7 +2515,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2529,7 +2529,7 @@
     "mitreTacticID": "XTA0006",
     "mitreTechnique": "XDR PUA",
     "mitreTechniqueID": "XT6002",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2543,7 +2543,7 @@
     "mitreTacticID": "TA0040",
     "mitreTechnique": "Data Encrypted for Impact",
     "mitreTechniqueID": "T1486",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2557,7 +2557,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Exploitation for Privilege Escalation",
     "mitreTechniqueID": "T1068",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2571,7 +2571,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2585,7 +2585,7 @@
     "mitreTacticID": "TA0008",
     "mitreTechnique": "Remote Services",
     "mitreTechniqueID": "T1021",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2599,7 +2599,7 @@
     "mitreTacticID": "TA0007",
     "mitreTechnique": "Network Service Scanning",
     "mitreTechniqueID": "T1046",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2613,7 +2613,7 @@
     "mitreTacticID": "TA0008",
     "mitreTechnique": "Exploitation of Remote Services",
     "mitreTechniqueID": "T1210",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2627,7 +2627,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2641,7 +2641,7 @@
     "mitreTacticID": "TA0008",
     "mitreTechnique": "Remote Services",
     "mitreTechniqueID": "T1021",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2655,7 +2655,7 @@
     "mitreTacticID": "XTA0006",
     "mitreTechnique": "XDR Spyware",
     "mitreTechniqueID": "XT6003",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2669,7 +2669,7 @@
     "mitreTacticID": "TA0008",
     "mitreTechnique": "Exploitation of Remote Services",
     "mitreTechniqueID": "T1210",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2683,7 +2683,7 @@
     "mitreTacticID": "TA0009",
     "mitreTechnique": "Data Staged",
     "mitreTechniqueID": "T1074",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2697,7 +2697,7 @@
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Command and Scripting Interpreter",
     "mitreTechniqueID": "T1059",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2711,7 +2711,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR User Agent Anomaly",
     "mitreTechniqueID": "XT2012",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2725,7 +2725,7 @@
     "mitreTacticID": "TA0040",
     "mitreTechnique": "Endpoint Denial of Service",
     "mitreTechniqueID": "T1499",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2739,7 +2739,7 @@
     "mitreTacticID": "TA0040",
     "mitreTechnique": "Endpoint Denial of Service",
     "mitreTechniqueID": "T1499",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2753,7 +2753,7 @@
     "mitreTacticID": "XTA0006",
     "mitreTechnique": "XDR Trojan",
     "mitreTechniqueID": "XT6004",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2767,7 +2767,7 @@
     "mitreTacticID": "TA0007",
     "mitreTechnique": "Network Service Scanning",
     "mitreTechniqueID": "T1046",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2781,7 +2781,7 @@
     "mitreTacticID": "XTA0004",
     "mitreTechnique": "XDR App Anomaly",
     "mitreTechniqueID": "XT2003",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2795,7 +2795,7 @@
     "mitreTacticID": "XTA0004",
     "mitreTechnique": "XDR Bytes Anomaly",
     "mitreTechniqueID": "XT3001",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -2809,14 +2809,14 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
   {
     "detectionID": "CY-0073",
     "name": "Jumpcloud Command Run",
-    "description": "A Jumpcloud command run execution was detected in your environment",
+    "description": "A Jumpcloud command run execution was detected in your environment.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "",
@@ -2865,7 +2865,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "System Binary Proxy Execution",
     "mitreTechniqueID": "T1218",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "09-17-24"
   },
@@ -2879,14 +2879,14 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Steal or Forge Kerberos Tickets",
     "mitreTechniqueID": "T1558",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
   {
     "detectionID": "CY-0025",
     "name": "LastPass API Secret Regenerated",
-    "description": "Lastpass reported that the API Secret was regenerated",
+    "description": "Lastpass reported that the API Secret was regenerated.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -2900,7 +2900,7 @@
   {
     "detectionID": "CY-0024",
     "name": "LastPass Deactivated User",
-    "description": "Lastpass activity shows the following user was deactivated, verify if this was expected activity",
+    "description": "Lastpass activity shows the following user was deactivated, verify if this was expected activity.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -2914,7 +2914,7 @@
   {
     "detectionID": "CY-0022",
     "name": "LastPass Deleted Sites",
-    "description": "A site was deleted for a LastPass user",
+    "description": "A site was deleted for a LastPass user.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -2928,7 +2928,7 @@
   {
     "detectionID": "CY-0023",
     "name": "LastPass Employee Account Deleted",
-    "description": "Lastpass reported the following user account was deleted",
+    "description": "Lastpass reported the following user account was deleted.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -2942,7 +2942,7 @@
   {
     "detectionID": "CY-0026",
     "name": "LastPass Master Password Changed",
-    "description": "The master password was changed for LastPass",
+    "description": "The master password was changed for LastPass.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -2956,7 +2956,7 @@
   {
     "detectionID": "CY-0027",
     "name": "LastPass Multiple Failed Login Attempts",
-    "description": "Multiple login failures  were detected from the listed LastPass account",
+    "description": "Multiple login failures  were detected from the listed LastPass account.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -2991,7 +2991,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Exploit Public-Facing Application",
     "mitreTechniqueID": "T1190",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -3005,7 +3005,7 @@
     "mitreTacticID": "XTA0004",
     "mitreTechnique": "Login Time Anomaly",
     "mitreTechniqueID": "XT4005",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -3019,7 +3019,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR Bad Reputation",
     "mitreTechniqueID": "XT2010",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -3047,7 +3047,7 @@
     "mitreTacticID": "XTA0006",
     "mitreTechnique": "XDR Miscellaneous Malware",
     "mitreTechniqueID": "XT6001",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -3075,7 +3075,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "02-03-25"
   },
@@ -3131,7 +3131,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "08-20-24"
   },
@@ -3243,7 +3243,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "10-30-24"
   },
@@ -3257,7 +3257,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "10-30-24"
   },
@@ -3285,7 +3285,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "10-30-24"
   },
@@ -3299,7 +3299,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "08-20-24"
   },
@@ -3481,7 +3481,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "OS Credential Dumping",
     "mitreTechniqueID": "T1003",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -3495,7 +3495,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "OS Credential Dumping",
     "mitreTechniqueID": "T1003",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -3509,7 +3509,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "System Binary Proxy Execution",
     "mitreTechniqueID": "T1218",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "09-17-24"
   },
@@ -3537,7 +3537,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -3551,7 +3551,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -3565,7 +3565,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -3579,7 +3579,7 @@
     "mitreTacticID": "TA0040",
     "mitreTechnique": "Account Access Removal",
     "mitreTechniqueID": "T1531",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -3635,7 +3635,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Phishing",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "09-26-24"
   },
@@ -3726,7 +3726,7 @@
   {
     "detectionID": "CY-0142",
     "name": "O365 - Phish delivered due to an IP allow policy",
-    "description": "",
+    "description": "A high confidence phishing message was delivered to a mailbox due to an IP allow policy.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -3754,7 +3754,7 @@
   {
     "detectionID": "CY-0144",
     "name": "O365 - Suspicious connector activity",
-    "description": "",
+    "description": "Suspicious activity was detected on an inbound connector in your environment.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Command and Control",
@@ -3768,7 +3768,7 @@
   {
     "detectionID": "CY-0145",
     "name": "O365 - Suspicious email forwarding activity",
-    "description": "",
+    "description": "A user has autoforwarded email to a suspicious external account.",
     "defaultStatus": "Not Active",
     "killChainStage": "Exploration",
     "mitreTactic": "Collection",
@@ -3782,7 +3782,7 @@
   {
     "detectionID": "CY-0146",
     "name": "O365 - Suspicious email sending patterns detected",
-    "description": "",
+    "description": "A user in your organization has sent suspicious email and is at risk of being restricted from sending email.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -4083,7 +4083,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Create or Modify System Process",
     "mitreTechniqueID": "T1543",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "07-05-24"
   },
@@ -4097,7 +4097,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Scheduled Task/Job",
     "mitreTechniqueID": "T1053",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "07-05-24"
   },
@@ -4146,7 +4146,7 @@
   {
     "detectionID": "CY-0016",
     "name": "Okta - Threat Detected by Okta Threat Insight",
-    "description": "",
+    "description": "A threat was detected by Okta Threat Insight.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR UBA",
@@ -4174,7 +4174,7 @@
   {
     "detectionID": "CY-0004",
     "name": "OneLogin BruteForce Attempts",
-    "description": "Detects 10 or more failed login attempts within 5 minutes",
+    "description": "Detects 10 or more failed login attempts within 5 minutes.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "External Credential Access",
@@ -4188,14 +4188,14 @@
   {
     "detectionID": "CY-0002",
     "name": "OneLogin Not MFA Authenticated",
-    "description": "Detects login to OneLogin without applying MFA",
+    "description": "Detects login to OneLogin without applying MFA.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
     "mitreTacticID": "",
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "OneLogin",
     "tool": "Stellar Cyber",
     "lastModified": "02-12-25"
   },
@@ -4209,7 +4209,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "OneLogin",
     "tool": "Stellar Cyber",
     "lastModified": "02-12-25"
   },
@@ -4223,7 +4223,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR Location Anomaly",
     "mitreTechniqueID": "XT2001",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -4237,7 +4237,7 @@
     "mitreTacticID": "TA0010",
     "mitreTechnique": "Automated Exfiltration",
     "mitreTechniqueID": "T1020",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "05-27-24"
   },
@@ -4251,7 +4251,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -4265,7 +4265,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "01-14-25"
   },
@@ -4279,7 +4279,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "10-30-24"
   },
@@ -4293,7 +4293,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "System Binary Proxy Execution",
     "mitreTechniqueID": "T1218",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -4307,7 +4307,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "01-14-25"
   },
@@ -4321,7 +4321,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "10-30-24"
   },
@@ -4335,7 +4335,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Phishing",
     "mitreTechniqueID": "T1566",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -4349,7 +4349,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Direct Volume Access",
     "mitreTechniqueID": "T1006",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -4363,7 +4363,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Phishing",
     "mitreTechniqueID": "T1566",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -4377,7 +4377,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "01-14-25"
   },
@@ -4391,7 +4391,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "01-14-25"
   },
@@ -4405,7 +4405,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Phishing",
     "mitreTechniqueID": "T1566",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -4419,7 +4419,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Supply Chain Compromise",
     "mitreTechniqueID": "T1195",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -4433,7 +4433,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Phishing",
     "mitreTechniqueID": "T1566",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -4447,7 +4447,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Masquerading",
     "mitreTechniqueID": "T1036",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -4475,21 +4475,21 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-11-24"
   },
   {
     "detectionID": "CY-0055",
     "name": "Potential AD Enumeration via AdFind.exe",
-    "description": "",
+    "description": "Active Directory enumeration utilizing known AdFind CLI flags, were detected in your environment. Verify if this was authorized activity.",
     "defaultStatus": "Active",
     "killChainStage": "Exploration",
     "mitreTactic": "Discovery",
     "mitreTacticID": "TA0007",
     "mitreTechnique": "Account Discovery",
     "mitreTechniqueID": "T1087",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "08-12-24"
   },
@@ -4503,7 +4503,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Rootkit",
     "mitreTechniqueID": "T1014",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -4517,7 +4517,7 @@
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Command and Scripting Interpreter",
     "mitreTechniqueID": "T1059",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "07-29-24"
   },
@@ -4531,7 +4531,7 @@
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Scheduled Task/Job",
     "mitreTechniqueID": "T1053",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "03-29-24"
   },
@@ -4545,7 +4545,7 @@
     "mitreTacticID": "TA0010",
     "mitreTechnique": "Exfiltration Over C2 Channel",
     "mitreTechniqueID": "T1041",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "05-01-24"
   },
@@ -4559,7 +4559,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "08-30-24"
   },
@@ -4573,7 +4573,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "OS Credential Dumping",
     "mitreTechniqueID": "T1003",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "08-05-24"
   },
@@ -4587,7 +4587,7 @@
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Command and Scripting Interpreter",
     "mitreTechniqueID": "T1059",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "09-17-24"
   },
@@ -4629,21 +4629,21 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Exploitation for Credential Access",
     "mitreTechniqueID": "T1212",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
   {
     "detectionID": "CY-0007",
     "name": "Potential Impacket Execution",
-    "description": "",
+    "description": "Activity related to Impacket, a tool used to target network protocols, was detected in your environment.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Lateral Movement",
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "01-06-25"
   },
@@ -4671,7 +4671,7 @@
     "mitreTacticID": "TA0040",
     "mitreTechnique": "Endpoint Denial of Service",
     "mitreTechniqueID": "T1499",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "01-09-25"
   },
@@ -4685,7 +4685,7 @@
     "mitreTacticID": "TA0007",
     "mitreTechnique": "File and Directory Discovery",
     "mitreTechniqueID": "T1083",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -4699,7 +4699,7 @@
     "mitreTacticID": "TA0043",
     "mitreTechnique": "Gather Victim Host Information",
     "mitreTechniqueID": "T1592",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "06-11-24"
   },
@@ -4713,7 +4713,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Exploit Public-Facing Application",
     "mitreTechniqueID": "T1190",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -4727,7 +4727,7 @@
     "mitreTacticID": "TA0042",
     "mitreTechnique": "Obtain Capabilities",
     "mitreTechniqueID": "T1588",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "05-28-24"
   },
@@ -4741,7 +4741,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Masquerading",
     "mitreTechniqueID": "T1036",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "09-17-24"
   },
@@ -4755,7 +4755,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "09-26-24"
   },
@@ -4769,7 +4769,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Server Software Component",
     "mitreTechniqueID": "T1505",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -4783,7 +4783,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "10-15-24"
   },
@@ -4797,7 +4797,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Exploit Public-Facing Application",
     "mitreTechniqueID": "T1190",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "07-08-24"
   },
@@ -4811,35 +4811,35 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "System Binary Proxy Execution",
     "mitreTechniqueID": "T1218",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "05-29-24"
   },
   {
     "detectionID": "CY-0054",
     "name": "Potential Recon Activity via Nltest",
-    "description": "",
+    "description": "nltest commands were detected in your environment.",
     "defaultStatus": "Active",
     "killChainStage": "Exploration",
     "mitreTactic": "Discovery",
     "mitreTacticID": "TA0007",
     "mitreTechnique": "System Network Configuration Discovery",
     "mitreTechniqueID": "T1016",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "08-12-24"
   },
   {
     "detectionID": "CY-0163",
     "name": "Potential Royal Ransomware Activity",
-    "description": "",
+    "description": "Activity associated with known Royal Ransomware TTP's was detected in your environment.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
     "mitreTacticID": "TA0040",
     "mitreTechnique": "Data Encrypted for Impact",
     "mitreTechniqueID": "T1486",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -4853,21 +4853,21 @@
     "mitreTacticID": "TA0011",
     "mitreTechnique": "Remote Access Software",
     "mitreTechniqueID": "T1219",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "02-27-24"
   },
   {
     "detectionID": "CY-0164",
     "name": "Potential Shell Shock User Agent Request",
-    "description": "",
+    "description": "A connection attempt utilizing a user agent associated with shell shock vulnerability exploitation was detected in your environment.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Reconnaissance",
     "mitreTacticID": "TA0043",
     "mitreTechnique": "Gather Victim Host Information",
     "mitreTechniqueID": "T1592",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -4881,7 +4881,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Access Token Manipulation",
     "mitreTechniqueID": "T1134",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "05-03-24"
   },
@@ -4895,7 +4895,7 @@
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Command and Scripting Interpreter",
     "mitreTechniqueID": "T1059",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "09-17-24"
   },
@@ -4909,7 +4909,7 @@
     "mitreTacticID": "TA0007",
     "mitreTechnique": "File and Directory Discovery",
     "mitreTechniqueID": "T1083",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -4937,7 +4937,7 @@
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Command and Scripting Interpreter",
     "mitreTechniqueID": "T1059",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "07-08-24"
   },
@@ -4951,7 +4951,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Impair Defenses",
     "mitreTechniqueID": "T1562",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -4965,7 +4965,7 @@
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Command and Scripting Interpreter",
     "mitreTechniqueID": "T1059",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -4979,7 +4979,7 @@
     "mitreTacticID": "TA0008",
     "mitreTechnique": "Exploitation of Remote Services",
     "mitreTechniqueID": "T1210",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -4993,7 +4993,7 @@
     "mitreTacticID": "TA0008",
     "mitreTechnique": "Exploitation of Remote Services",
     "mitreTechniqueID": "T1210",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "10-30-24"
   },
@@ -5007,7 +5007,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Exploit Public-Facing Application",
     "mitreTechniqueID": "T1190",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5021,7 +5021,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Exploit Public-Facing Application",
     "mitreTechniqueID": "T1190",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "10-30-24"
   },
@@ -5035,7 +5035,7 @@
     "mitreTacticID": "XTA0001",
     "mitreTechnique": "XDR Process Anomaly",
     "mitreTechniqueID": "XT1001",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5063,7 +5063,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-04-24"
   },
@@ -5077,7 +5077,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "01-14-25"
   },
@@ -5091,7 +5091,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Exploit Public-Facing Application",
     "mitreTechniqueID": "T1190",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5105,7 +5105,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Exploit Public-Facing Application",
     "mitreTechniqueID": "T1190",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "10-30-24"
   },
@@ -5119,7 +5119,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Exploit Public-Facing Application",
     "mitreTechniqueID": "T1190",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5133,7 +5133,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Exploit Public-Facing Application",
     "mitreTechniqueID": "T1190",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "10-30-24"
   },
@@ -5147,7 +5147,7 @@
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Command and Scripting Interpreter",
     "mitreTechniqueID": "T1059",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5161,7 +5161,7 @@
     "mitreTacticID": "TA0010",
     "mitreTechnique": "Exfiltration Over Alternative Protocol",
     "mitreTechniqueID": "T1048",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5175,7 +5175,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Impair Defenses",
     "mitreTechniqueID": "T1562",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5189,7 +5189,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Modify Registry",
     "mitreTechniqueID": "T1112",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5203,7 +5203,7 @@
     "mitreTacticID": "TA0011",
     "mitreTechnique": "Protocol Tunneling",
     "mitreTechniqueID": "T1572",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5217,7 +5217,7 @@
     "mitreTacticID": "TA0008",
     "mitreTechnique": "Remote Service Session Hijacking",
     "mitreTechniqueID": "T1563",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5231,7 +5231,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Modify Registry",
     "mitreTechniqueID": "T1112",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5245,7 +5245,7 @@
     "mitreTacticID": "TA0011",
     "mitreTechnique": "Protocol Tunneling",
     "mitreTechniqueID": "T1572",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5259,7 +5259,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5273,7 +5273,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR New Domain",
     "mitreTechniqueID": "XT2008",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5287,7 +5287,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "01-14-25"
   },
@@ -5301,14 +5301,14 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "01-14-25"
   },
   {
     "detectionID": "CY-0095",
     "name": "Restore Public AWS RDS Instance",
-    "description": "The recovery of a new public database instance from a snapshot was detected",
+    "description": "The recovery of a new public database instance from a snapshot was detected.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
@@ -5329,7 +5329,7 @@
     "mitreTacticID": "TA0043",
     "mitreTechnique": "Active Scanning",
     "mitreTechniqueID": "T1595",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5343,7 +5343,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Domain Policy Modification",
     "mitreTechniqueID": "T1484",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5357,7 +5357,7 @@
     "mitreTacticID": "TA0008",
     "mitreTechnique": "Remote Services",
     "mitreTechniqueID": "T1021",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5371,7 +5371,7 @@
     "mitreTacticID": "XTA0003",
     "mitreTechnique": "XDR Bytes Anomaly",
     "mitreTechniqueID": "XT3001",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5399,7 +5399,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "02-18-25"
   },
@@ -5413,7 +5413,7 @@
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Windows Management Instrumentation",
     "mitreTechniqueID": "T1047",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5427,7 +5427,7 @@
     "mitreTacticID": "TA0002",
     "mitreTechnique": "System Services",
     "mitreTechniqueID": "T1569",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5441,7 +5441,7 @@
     "mitreTacticID": "TA0009",
     "mitreTechnique": "Data from Network Shared Drive",
     "mitreTechniqueID": "T1039",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5455,14 +5455,14 @@
     "mitreTacticID": "TA0043",
     "mitreTechnique": "Active Scanning",
     "mitreTechniqueID": "T1595",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
   {
     "detectionID": "CY-0081",
     "name": "SonicFW Brute Force Attempt",
-    "description": "",
+    "description": "Potential Brute Force activity has been detected due to an excessive amount of Sonicwall VPN login failures.",
     "defaultStatus": "Testing",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Credential Access",
@@ -5504,14 +5504,14 @@
   {
     "detectionID": "CY-0010",
     "name": "Sophos EDR Events",
-    "description": "",
+    "description": "A threat was detected by Sophos EDR.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Execution",
     "mitreTacticID": "TA0002",
     "mitreTechnique": "User Execution: Malicious File",
     "mitreTechniqueID": "T1204",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "11-05-24"
   },
@@ -5532,14 +5532,14 @@
   {
     "detectionID": "CY-0003",
     "name": "Sophos XG Firewall Brute Force Attempt",
-    "description": "Detects 5 or more failed logins within 30 minutes",
+    "description": "Detects 5 or more failed logins within 30 minutes.",
     "defaultStatus": "Active",
     "killChainStage": "",
     "mitreTactic": "",
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "02-12-25"
   },
@@ -5553,7 +5553,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "01-14-25"
   },
@@ -5567,7 +5567,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Phishing",
     "mitreTechniqueID": "T1566",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5581,7 +5581,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5707,7 +5707,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "N/A"
   },
@@ -5721,7 +5721,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "N/A"
   },
@@ -5735,7 +5735,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "N/A"
   },
@@ -5749,7 +5749,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "N/A"
   },
@@ -5763,7 +5763,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "N/A"
   },
@@ -5777,7 +5777,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "N/A"
   },
@@ -5791,7 +5791,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "N/A"
   },
@@ -5805,7 +5805,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "N/A"
   },
@@ -5819,7 +5819,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "N/A"
   },
@@ -5833,7 +5833,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "N/A"
   },
@@ -5847,7 +5847,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Masquerading",
     "mitreTechniqueID": "T1036",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "08-12-24"
   },
@@ -5861,7 +5861,7 @@
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Command and Scripting Interpreter",
     "mitreTechniqueID": "T1059",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "10-30-24"
   },
@@ -5875,7 +5875,7 @@
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Command and Scripting Interpreter",
     "mitreTechniqueID": "T1059",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "07-30-24"
   },
@@ -5889,7 +5889,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "OS Credential Dumping",
     "mitreTechniqueID": "T1003",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -5903,7 +5903,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "OS Credential Dumping",
     "mitreTechniqueID": "T1003",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "04-15-24"
   },
@@ -5917,7 +5917,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "10-30-24"
   },
@@ -5931,7 +5931,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "N/A"
   },
@@ -5987,7 +5987,7 @@
     "mitreTacticID": "TA0002",
     "mitreTechnique": "User Execution",
     "mitreTechniqueID": "T1204",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "08-05-24"
   },
@@ -6001,7 +6001,7 @@
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Command and Scripting Interpreter",
     "mitreTechniqueID": "T1059",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6015,7 +6015,7 @@
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Command and Scripting Interpreter",
     "mitreTechniqueID": "T1059",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6029,7 +6029,7 @@
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Command and Scripting Interpreter",
     "mitreTechniqueID": "T1059",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6043,7 +6043,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Signed Binary Proxy Execution",
     "mitreTechniqueID": "T1218",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6057,7 +6057,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "01-14-25"
   },
@@ -6071,7 +6071,7 @@
     "mitreTacticID": "TA0007",
     "mitreTechnique": "Remote System Discovery",
     "mitreTechniqueID": "T1018",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6085,21 +6085,21 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "",
     "lastModified": "02-20-25"
   },
   {
     "detectionID": "CY-0171",
     "name": "Suspicious User Agent Detection",
-    "description": "",
+    "description": "A connection attempt utilizing an abnormal user agent was detected in your environment.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Reconnaissance",
     "mitreTacticID": "TA0043",
     "mitreTechnique": "Active Scanning",
     "mitreTechniqueID": "T1595",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6113,7 +6113,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "OS Credential Dumping",
     "mitreTechniqueID": "T1003",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6127,7 +6127,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6141,7 +6141,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "N/A",
     "mitreTechniqueID": "N/A",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "04-15-24"
   },
@@ -6155,7 +6155,7 @@
     "mitreTacticID": "TA0040",
     "mitreTechnique": "N/A",
     "mitreTechniqueID": "N/A",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "10-30-24"
   },
@@ -6169,7 +6169,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "N/A",
     "mitreTechniqueID": "N/A",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "10-30-24"
   },
@@ -6183,7 +6183,7 @@
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Command and Scripting Interpreter",
     "mitreTechniqueID": "T1059",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6197,7 +6197,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "01-14-25"
   },
@@ -6225,7 +6225,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR Unapproved Asset Activity",
     "mitreTechniqueID": "XT2013",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6239,7 +6239,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR App Anomaly",
     "mitreTechniqueID": "XT2003",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6253,7 +6253,7 @@
     "mitreTacticID": "XTA0001",
     "mitreTechnique": "XDR Process Anomaly",
     "mitreTechniqueID": "XT1001",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6267,7 +6267,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "08-07-24"
   },
@@ -6281,7 +6281,7 @@
     "mitreTacticID": "XTA0004",
     "mitreTechnique": "XDR Asset Anomaly",
     "mitreTechniqueID": "XT4004",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6295,7 +6295,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR Location Anomaly",
     "mitreTechniqueID": "XT2001",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6309,7 +6309,7 @@
     "mitreTacticID": "XTA0001",
     "mitreTechnique": "XDR Process Anomaly",
     "mitreTechniqueID": "XT1001",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6337,7 +6337,7 @@
     "mitreTacticID": "TA0040",
     "mitreTechnique": "Inhibit System Recovery",
     "mitreTechniqueID": "T1490",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6351,7 +6351,7 @@
     "mitreTacticID": "TA0040",
     "mitreTechnique": "Inhibit System Recovery",
     "mitreTechniqueID": "T1490",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6365,7 +6365,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR WAF Anomaly",
     "mitreTechniqueID": "XT2009",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6379,7 +6379,7 @@
     "mitreTacticID": "XTA0002",
     "mitreTechnique": "XDR Rule Violation",
     "mitreTechniqueID": "XT2004",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6393,7 +6393,7 @@
     "mitreTacticID": "TA0040",
     "mitreTechnique": "Account Access Removal",
     "mitreTechniqueID": "T1531",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6407,7 +6407,7 @@
     "mitreTacticID": "TA0040",
     "mitreTechnique": "Account Access Removal",
     "mitreTechniqueID": "T1531",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6421,7 +6421,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Indicator Removal on Host",
     "mitreTechniqueID": "T1070",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6435,7 +6435,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Domain Policy Modification",
     "mitreTechniqueID": "T1484",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6449,7 +6449,7 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "01-14-25"
   },
@@ -6463,7 +6463,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6477,7 +6477,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6491,7 +6491,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6505,7 +6505,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Signed Binary Proxy Execution",
     "mitreTechniqueID": "T1218",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6519,7 +6519,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6533,7 +6533,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6547,7 +6547,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6561,7 +6561,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6575,7 +6575,7 @@
     "mitreTacticID": "TA0040",
     "mitreTechnique": "Account Access Removal",
     "mitreTechniqueID": "T1531",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6589,7 +6589,7 @@
     "mitreTacticID": "TA0040",
     "mitreTechnique": "Account Access Removal",
     "mitreTechniqueID": "T1531",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6603,7 +6603,7 @@
     "mitreTacticID": "N/A",
     "mitreTechnique": "N/A",
     "mitreTechniqueID": "N/A",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
@@ -6617,7 +6617,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Event Triggered Execution",
     "mitreTechniqueID": "T1546",
-    "connector": "",
+    "connector": "N/A",
     "tool": "Stellar Cyber",
     "lastModified": "08-05-24"
   }
