@@ -25,8 +25,10 @@ jobs:
       - name: Run Update Script
         env:
           MONDAY_API_KEY: ${{ secrets.MONDAY_API_KEY }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
         run: |
-          npm install axios
+          npm install axios nodemailer
           node update-detections.js
 
       - name: Commit and Push Changes
@@ -36,8 +38,3 @@ jobs:
           git add detections.json update-summary.txt
           git commit -m "🔄 Auto-update detections.json on $(date)"
           git push origin main  # Change "main" to your actual branch name
-
-      - name: Send Email Notification via `mailx`
-        if: always()
-        run: |
-          cat update-summary.txt | mailx -s "Detection Board Update: Summary Report" dan@cyflare.com
