@@ -562,7 +562,7 @@
   {
     "detectionID": "CY-0019",
     "name": "Box - File Marked Malicious",
-    "description": "",
+    "description": "Box identified a potentially malicious file in your environment.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "XDR Malware",
@@ -1038,7 +1038,7 @@
   {
     "detectionID": "CY-0128",
     "name": "Duo Security Failed Authentication",
-    "description": "",
+    "description": "A user failed a Duo Security authentication.",
     "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -1080,7 +1080,7 @@
   {
     "detectionID": "CY-0043",
     "name": "Emotet Loader Execution Via .LNK File",
-    "description": "The Emotet Eopoch4 loader was detected in your environment.",
+    "description": "Activity associated with known Emotet loader techniques was detected in your environment.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Execution",
@@ -4566,8 +4566,8 @@
   {
     "detectionID": "CY-0036",
     "name": "Potential MsiExec Masquerading",
-    "description": "",
-    "defaultStatus": "Active",
+    "description": "A suspicious msiexec process launched from an uncommon directory",
+    "defaultStatus": "Not Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
     "mitreTacticID": "TA0005",
@@ -5630,7 +5630,7 @@
   {
     "detectionID": "CY-0053",
     "name": "Suspicious Calculator Usage",
-    "description": "",
+    "description": "Suspicious use of 'calc.exe' was detected, with command line parameters or in a suspicious directory.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
