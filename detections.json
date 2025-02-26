@@ -310,7 +310,7 @@
   {
     "detectionID": "CY-0112",
     "name": "Azure AD Sign in from AzureHound",
-    "description": "",
+    "description": "A user logged in utilizing a user agent associated with the known hack tool Azure Hound.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -462,20 +462,6 @@
     "lastModified": "12-31-23"
   },
   {
-    "detectionID": "CY-0113",
-    "name": "Bifrost Malware VMWare Domain",
-    "description": "",
-    "defaultStatus": "Active",
-    "killChainStage": "Persistent Foothold",
-    "mitreTactic": "Command and Control",
-    "mitreTacticID": "TA0011",
-    "mitreTechnique": "Remote Access Software",
-    "mitreTechniqueID": "T1219",
-    "connector": "N/A",
-    "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
-  },
-  {
     "detectionID": "CY-0209",
     "name": "Bitdefender IP - Detections",
     "description": "",
@@ -534,7 +520,7 @@
   {
     "detectionID": "CY-0115",
     "name": "Bloodhound and Sharphound Hack Tools Detected",
-    "description": "",
+    "description": "Command line parameters frequently used by Bloodhound and Sharphound tools were detected in your environment.",
     "defaultStatus": "Active",
     "killChainStage": "Exploration",
     "mitreTactic": "Collection",
@@ -856,7 +842,7 @@
   {
     "detectionID": "CY-0125",
     "name": "Darktrace Detection",
-    "description": "",
+    "description": "Darktrace detected potentially malicious activity in your environment.",
     "defaultStatus": "Muted",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "XDR Intel",
@@ -870,7 +856,7 @@
   {
     "detectionID": "CY-0104",
     "name": "Data Exfiltration to Text Storage Sites and Cloud Storage",
-    "description": "",
+    "description": "A large amount of bytes were transferred to known text sites and cloud storage.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Exfiltration",
@@ -1080,7 +1066,7 @@
   {
     "detectionID": "CY-0084",
     "name": "Emerging Threat",
-    "description": "",
+    "description": "An emerging threat has been observed. Investigate the IP address, domain name, URL, or file hashes (MD5, SHA1, SHA256) and consider blocking.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "XDR Intel",
@@ -1666,20 +1652,6 @@
     "lastModified": "12-31-23"
   },
   {
-    "detectionID": "CY-0029",
-    "name": "Fake Palo Alto GlobalProtect Campaign",
-    "description": "",
-    "defaultStatus": "Active",
-    "killChainStage": "Persistent Foothold",
-    "mitreTactic": "Persistence",
-    "mitreTacticID": "",
-    "mitreTechnique": "",
-    "mitreTechniqueID": "",
-    "connector": "N/A",
-    "tool": "Stellar Cyber",
-    "lastModified": "09-27-24"
-  },
-  {
     "detectionID": "CY-0413",
     "name": "File Action Anomaly",
     "description": "Actions, such as move, copy, delete, or change attribute, were taken on a file or files an anomalous number of times. Investigate the actions and the user to see if this is expected",
@@ -1724,7 +1696,7 @@
   {
     "detectionID": "CY-0042",
     "name": "File Integrity Monitoring - Deleted",
-    "description": "",
+    "description": "A file monitored by FIM was deleted.",
     "defaultStatus": "Muted",
     "killChainStage": "",
     "mitreTactic": "",
@@ -1738,7 +1710,7 @@
   {
     "detectionID": "CY-0041",
     "name": "File Integrity Monitoring - Modified",
-    "description": "",
+    "description": "A file monitored by FIM was modified.",
     "defaultStatus": "Muted",
     "killChainStage": "",
     "mitreTactic": "",
@@ -1806,23 +1778,9 @@
     "lastModified": "10-31-24"
   },
   {
-    "detectionID": "CY-0086",
-    "name": "Forest Blizzard Activity",
-    "description": "",
-    "defaultStatus": "Active",
-    "killChainStage": "Persistent Foothold",
-    "mitreTactic": "Privilege Escalation",
-    "mitreTacticID": "TA0004",
-    "mitreTechnique": "Scheduled Task/Job",
-    "mitreTechniqueID": "T1053",
-    "connector": "N/A",
-    "tool": "Stellar Cyber",
-    "lastModified": "05-13-24"
-  },
-  {
     "detectionID": "CY-0070",
     "name": "Fortigate FW Brute Force Attempt",
-    "description": "",
+    "description": "Potential Brute Force activity has been detected due to an excessive amount of Fortigate VPN login failures.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Credential Access",
@@ -1842,7 +1800,7 @@
     "mitreTactic": "Initial Access",
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
-    "mitreTechniqueID": "",
+    "mitreTechniqueID": "T1078",
     "connector": "FortiGate",
     "tool": "Stellar Cyber",
     "lastModified": "10-24-24"
@@ -1910,10 +1868,10 @@
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
-    "mitreTacticID": "",
+    "mitreTacticID": "TA0003",
     "mitreTechnique": "Account Manipulation",
-    "mitreTechniqueID": "",
-    "connector": "GSuite",
+    "mitreTechniqueID": "T1098",
+    "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
     "lastModified": "08-27-24"
   },
@@ -1941,7 +1899,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "GSuite",
+    "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
     "lastModified": "08-27-24"
   },
@@ -1952,10 +1910,10 @@
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Reconnaissance",
-    "mitreTacticID": "",
+    "mitreTacticID": "T1098",
     "mitreTechnique": "Search Closed Sources",
     "mitreTechniqueID": "",
-    "connector": "GSuite",
+    "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
     "lastModified": "08-27-24"
   },
@@ -1996,8 +1954,8 @@
     "mitreTactic": "Persistence",
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Account Manipulation",
-    "mitreTechniqueID": "",
-    "connector": "GSuite",
+    "mitreTechniqueID": "T1098",
+    "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
     "lastModified": "08-27-24"
   },
@@ -2008,10 +1966,10 @@
     "defaultStatus": "Not Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
-    "mitreTacticID": "",
+    "mitreTacticID": "TA0003",
     "mitreTechnique": "Account Manipulation",
-    "mitreTechniqueID": "",
-    "connector": "GSuite",
+    "mitreTechniqueID": "T1098",
+    "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
     "lastModified": "08-27-24"
   },
@@ -2050,10 +2008,10 @@
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "XDR UBA",
-    "mitreTacticID": "",
-    "mitreTechnique": "",
-    "mitreTechniqueID": "",
-    "connector": "N/A",
+    "mitreTacticID": "XTA0004",
+    "mitreTechnique": "XDR Anomaly",
+    "mitreTechniqueID": "XT1000",
+    "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
     "lastModified": "11-05-24"
   },
@@ -2081,7 +2039,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "GSuite",
+    "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
     "lastModified": "05-14-24"
   },
@@ -2092,10 +2050,10 @@
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
-    "mitreTacticID": "",
+    "mitreTacticID": "TA0003",
     "mitreTechnique": "Account Manipulation",
-    "mitreTechniqueID": "",
-    "connector": "GSuite",
+    "mitreTechniqueID": "T1098",
+    "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
     "lastModified": "08-27-24"
   },
@@ -2109,7 +2067,7 @@
     "mitreTacticID": "TA0040",
     "mitreTechnique": "Account Access Removal",
     "mitreTechniqueID": "T1531",
-    "connector": "GSuite",
+    "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
     "lastModified": "08-30-24"
   },
@@ -2165,7 +2123,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "GSuite",
+    "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
     "lastModified": "07-10-24"
   },
@@ -2179,14 +2137,14 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Trusted Relationship",
     "mitreTechniqueID": "T1199",
-    "connector": "GSuite",
+    "connector": "GSuiteGoogle Cloud Audit Logging",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
   },
   {
     "detectionID": "CY-0083",
     "name": "High Fidelity External URL Scanning",
-    "description": "",
+    "description": "An anomalous number of HTTP 4xx errors were observed. This can indicate an attacker scanning for pages to exploit. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -2256,7 +2214,7 @@
   {
     "detectionID": "CY-0087",
     "name": "Impossible Travel",
-    "description": "",
+    "description": "A user logged in from locations that are geographically impossible to travel between in the time frame. Check with the user.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -2890,9 +2848,9 @@
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
-    "mitreTacticID": "",
+    "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
-    "mitreTechniqueID": "",
+    "mitreTechniqueID": "T1078",
     "connector": "LastPass",
     "tool": "Stellar Cyber",
     "lastModified": "10-22-24"
@@ -2946,7 +2904,7 @@
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
-    "mitreTacticID": "",
+    "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "",
     "connector": "LastPass",
@@ -3026,7 +2984,7 @@
   {
     "detectionID": "CY-0034",
     "name": "Malware Detected in OneDrive File",
-    "description": "",
+    "description": "OneDrive detected a file potentially containing malware.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Execution",
@@ -3502,7 +3460,7 @@
   {
     "detectionID": "CY-0037",
     "name": "MsiExec Web Install",
-    "description": "",
+    "description": "A suspicious msiexec process with parameters containing web addresses.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
@@ -3530,7 +3488,7 @@
   {
     "detectionID": "CY-0132",
     "name": "Multiple Login Failures from One Source (Destination IP)",
-    "description": "",
+    "description": "5+ login failure related alerts were detected targeting one destination IP in your environment",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Credential Access",
@@ -3544,7 +3502,7 @@
   {
     "detectionID": "CY-0133",
     "name": "Multiple Login Failures from One Source (Source IP)",
-    "description": "",
+    "description": "5+ login failure related alerts were detected originating from the same source ip within the past hour.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Credential Access",
@@ -3558,7 +3516,7 @@
   {
     "detectionID": "CY-0134",
     "name": "Multiple Login Failures from One Source (Workstation)",
-    "description": "",
+    "description": "5+ login failure related alerts were detected originating from the same workstation in your environment.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Credential Access",
@@ -3626,20 +3584,6 @@
     "lastModified": "10-31-24"
   },
   {
-    "detectionID": "CY-0031",
-    "name": "NoName Ransomware Email Activity",
-    "description": "",
-    "defaultStatus": "Active",
-    "killChainStage": "Initial Attempts",
-    "mitreTactic": "Initial Access",
-    "mitreTacticID": "TA0001",
-    "mitreTechnique": "Phishing",
-    "mitreTechniqueID": "",
-    "connector": "N/A",
-    "tool": "Stellar Cyber",
-    "lastModified": "09-26-24"
-  },
-  {
     "detectionID": "CY-0136",
     "name": "O365 - A potentially malicious URL click was detected",
     "description": "O365 reported that a user clicked a potentially malicious URL.",
@@ -3677,20 +3621,6 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "Office 365",
-    "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
-  },
-  {
-    "detectionID": "CY-0139",
-    "name": "O365 - File Malware Detected",
-    "description": "",
-    "defaultStatus": "Active",
-    "killChainStage": "Persistent Foothold",
-    "mitreTactic": "Execution",
-    "mitreTacticID": "TA0002",
-    "mitreTechnique": "User Execution",
-    "mitreTechniqueID": "T1204",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
     "lastModified": "12-31-23"
@@ -3808,20 +3738,6 @@
     "lastModified": "11-05-24"
   },
   {
-    "detectionID": "CY-0147",
-    "name": "O365 - Unusual external user file activity",
-    "description": "",
-    "defaultStatus": "Not Active",
-    "killChainStage": "Persistent Foothold",
-    "mitreTactic": "Execution",
-    "mitreTacticID": "TA0002",
-    "mitreTechnique": "User Execution",
-    "mitreTechniqueID": "T1204",
-    "connector": "Office 365",
-    "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
-  },
-  {
     "detectionID": "CY-0015",
     "name": "O365 - Unusual volume of external file sharing",
     "description": "O365 reported a spike in external file sharing for the indicated user.",
@@ -3834,20 +3750,6 @@
     "connector": "Office 365",
     "tool": "Stellar Cyber",
     "lastModified": "11-05-24"
-  },
-  {
-    "detectionID": "CY-0148",
-    "name": "O365 - User impersonation phish delivered to inbox or folder",
-    "description": "",
-    "defaultStatus": "Not Active",
-    "killChainStage": "Persistent Foothold",
-    "mitreTactic": "Defense Evasion",
-    "mitreTacticID": "TA0005",
-    "mitreTechnique": "Impersonation",
-    "mitreTechniqueID": "T1656",
-    "connector": "Office 365",
-    "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
   },
   {
     "detectionID": "CY-0149",
@@ -3866,7 +3768,7 @@
   {
     "detectionID": "CY-0032",
     "name": "O365 Potential Nation State Activity",
-    "description": "",
+    "description": "Microsoft Threat Intelligence Center detected an attempt to compromise accounts from your tenant.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -4174,13 +4076,13 @@
   {
     "detectionID": "CY-0004",
     "name": "OneLogin BruteForce Attempts",
-    "description": "Detects 10 or more failed login attempts within 5 minutes.",
+    "description": "Potential Brute Force activity has been detected due to an excessive amount of OneLogin failures",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
-    "mitreTactic": "External Credential Access",
-    "mitreTacticID": "",
+    "mitreTactic": "Credential Access",
+    "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
-    "mitreTechniqueID": "",
+    "mitreTechniqueID": "T1110",
     "connector": "OneLogin",
     "tool": "Stellar Cyber",
     "lastModified": "02-12-25"
@@ -4192,9 +4094,9 @@
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
-    "mitreTacticID": "",
+    "mitreTacticID": "TA0005",
     "mitreTechnique": "Modify Authentication Process",
-    "mitreTechniqueID": "",
+    "mitreTechniqueID": "T1556",
     "connector": "OneLogin",
     "tool": "Stellar Cyber",
     "lastModified": "02-12-25"
@@ -4206,9 +4108,9 @@
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
-    "mitreTacticID": "",
+    "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
-    "mitreTechniqueID": "",
+    "mitreTechniqueID": "T1078",
     "connector": "OneLogin",
     "tool": "Stellar Cyber",
     "lastModified": "02-12-25"
@@ -4410,20 +4312,6 @@
     "lastModified": "12-31-23"
   },
   {
-    "detectionID": "CY-0156",
-    "name": "Possible Realtek SDK Vulnerability Exploit",
-    "description": "",
-    "defaultStatus": "Active",
-    "killChainStage": "Initial Attempts",
-    "mitreTactic": "Initial Access",
-    "mitreTacticID": "TA0001",
-    "mitreTechnique": "Supply Chain Compromise",
-    "mitreTechniqueID": "T1195",
-    "connector": "N/A",
-    "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
-  },
-  {
     "detectionID": "CY-0288",
     "name": "Possible Unencrypted Phishing Site Visit",
     "description": "A possible phishing site visit to a recently registered domain was observed in unencrypted traffic. Check with the user to determine whether their system is compromised.",
@@ -4438,23 +4326,9 @@
     "lastModified": "12-31-23"
   },
   {
-    "detectionID": "CY-0157",
-    "name": "Possible Volt Typhoon Activity",
-    "description": "",
-    "defaultStatus": "Active",
-    "killChainStage": "Persistent Foothold",
-    "mitreTactic": "Defense Evasion",
-    "mitreTacticID": "TA0005",
-    "mitreTechnique": "Masquerading",
-    "mitreTechniqueID": "T1036",
-    "connector": "N/A",
-    "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
-  },
-  {
     "detectionID": "CY-0062",
     "name": "Potential Account Compromise Axios User Agent",
-    "description": "",
+    "description": "A login attempt was detected utilizing the Axios client, indicating a potential AITM attack against the account",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -4566,7 +4440,7 @@
   {
     "detectionID": "CY-0059",
     "name": "Potential Credential Dumping Via LSASS Process Clone",
-    "description": "",
+    "description": "A suspicious LSASS process, process clone was detected. This could indicated credential dumping activity.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Credential Access",
@@ -4609,7 +4483,7 @@
     "detectionID": "CY-0184",
     "name": "Potential FastHTTP Client Bruteforce Attempt",
     "description": "A login attempt was detected utilizing the FastHTTP client, indicating a potential brute force attack against the account",
-    "defaultStatus": "New Detection",
+    "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
     "mitreTacticID": "TA0001",
@@ -4617,21 +4491,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Azure",
     "tool": "Stellar Cyber",
-    "lastModified": "01-15-25"
-  },
-  {
-    "detectionID": "CY-0159",
-    "name": "Potential IceID compromise",
-    "description": "",
-    "defaultStatus": "Active",
-    "killChainStage": "Initial Attempts",
-    "mitreTactic": "Credential Access",
-    "mitreTacticID": "TA0006",
-    "mitreTechnique": "Exploitation for Credential Access",
-    "mitreTechniqueID": "T1212",
-    "connector": "N/A",
-    "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "lastModified": "02-26-25"
   },
   {
     "detectionID": "CY-0007",
@@ -4650,7 +4510,7 @@
   {
     "detectionID": "CY-0020",
     "name": "Potential Jumpcloud Radius Brute Force Attempt",
-    "description": "",
+    "description": "Potential Brute Force activity has been detected due to an excessive amount of Jumpcloud Radius login failures.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -4676,20 +4536,6 @@
     "lastModified": "01-09-25"
   },
   {
-    "detectionID": "CY-0160",
-    "name": "Potential Linux ESXiRansomware Activity",
-    "description": "",
-    "defaultStatus": "Active",
-    "killChainStage": "Exploration",
-    "mitreTactic": "Discovery",
-    "mitreTacticID": "TA0007",
-    "mitreTechnique": "File and Directory Discovery",
-    "mitreTechniqueID": "T1083",
-    "connector": "N/A",
-    "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
-  },
-  {
     "detectionID": "CY-0075",
     "name": "Potential Linux Recon Activity",
     "description": "",
@@ -4704,23 +4550,9 @@
     "lastModified": "06-11-24"
   },
   {
-    "detectionID": "CY-0161",
-    "name": "Potential ManageEngine RCE Attempt",
-    "description": "",
-    "defaultStatus": "Active",
-    "killChainStage": "Initial Attempts",
-    "mitreTactic": "Initial Access",
-    "mitreTacticID": "TA0001",
-    "mitreTechnique": "Exploit Public-Facing Application",
-    "mitreTechniqueID": "T1190",
-    "connector": "N/A",
-    "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
-  },
-  {
     "detectionID": "CY-0080",
     "name": "Potential Metasploit Activity",
-    "description": "",
+    "description": "Activity associated with Metasploit, a known penetration testing tool was detected.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Resource Development",
@@ -4746,37 +4578,9 @@
     "lastModified": "09-17-24"
   },
   {
-    "detectionID": "CY-0030",
-    "name": "Potential NoName Ransomware Activity",
-    "description": "",
-    "defaultStatus": "Active",
-    "killChainStage": "Persistent Foothold",
-    "mitreTactic": "",
-    "mitreTacticID": "",
-    "mitreTechnique": "",
-    "mitreTechniqueID": "",
-    "connector": "N/A",
-    "tool": "Stellar Cyber",
-    "lastModified": "09-26-24"
-  },
-  {
-    "detectionID": "CY-0162",
-    "name": "Potential Outlook Vulnerability Activity",
-    "description": "",
-    "defaultStatus": "Active",
-    "killChainStage": "Persistent Foothold",
-    "mitreTactic": "Persistence",
-    "mitreTacticID": "TA0003",
-    "mitreTechnique": "Server Software Component",
-    "mitreTechniqueID": "T1505",
-    "connector": "N/A",
-    "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
-  },
-  {
     "detectionID": "CY-0028",
     "name": "Potential Pass the Hash Asset Access Anomaly",
-    "description": "",
+    "description": "A windows user logged into a new host with indicators related to the Pass the Hash attack.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -4886,20 +4690,6 @@
     "lastModified": "05-03-24"
   },
   {
-    "detectionID": "CY-0038",
-    "name": "Potential Volt Typhoon Command Activity",
-    "description": "",
-    "defaultStatus": "Active",
-    "killChainStage": "Persistent Foothold",
-    "mitreTactic": "Execution",
-    "mitreTacticID": "TA0002",
-    "mitreTechnique": "Command and Scripting Interpreter",
-    "mitreTechniqueID": "T1059",
-    "connector": "N/A",
-    "tool": "Stellar Cyber",
-    "lastModified": "09-17-24"
-  },
-  {
     "detectionID": "CY-0165",
     "name": "Potential Windows ESXiRansomware Activity",
     "description": "",
@@ -4930,7 +4720,7 @@
   {
     "detectionID": "CY-0065",
     "name": "Potentially Malicious Windows Activity",
-    "description": "",
+    "description": "A potentially malicious windows event has been detected in your environment, specifically indicated by the rule ID.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Execution",
@@ -5056,7 +4846,7 @@
   {
     "detectionID": "CY-0008",
     "name": "ProofPoint TAP Permitted Clicks",
-    "description": "",
+    "description": "Proofpoint detected a user in your environment clicked a potentially suspicious email.",
     "defaultStatus": "Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -5532,14 +5322,14 @@
   {
     "detectionID": "CY-0003",
     "name": "Sophos XG Firewall Brute Force Attempt",
-    "description": "Detects 5 or more failed logins within 30 minutes.",
+    "description": "Potential Brute force activity has been detected due to an excessive amount of Sophos XG login failures",
     "defaultStatus": "Active",
-    "killChainStage": "",
-    "mitreTactic": "",
-    "mitreTacticID": "",
-    "mitreTechnique": "",
-    "mitreTechniqueID": "",
-    "connector": "N/A",
+    "killChainStage": "Initial Attempts",
+    "mitreTactic": "Credential Access",
+    "mitreTacticID": "TA0006",
+    "mitreTechnique": "Brute Force",
+    "mitreTechniqueID": "T1110",
+    "connector": "Sophos",
     "tool": "Stellar Cyber",
     "lastModified": "02-12-25"
   },
@@ -5980,7 +5770,7 @@
   {
     "detectionID": "CY-0058",
     "name": "Suspicious Outlook Child Process",
-    "description": "",
+    "description": "A suspicious process was spawned from an Outlook process.",
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Execution",
@@ -6258,20 +6048,6 @@
     "lastModified": "12-31-23"
   },
   {
-    "detectionID": "CY-0056",
-    "name": "Use of Legacy Authentication Protocols",
-    "description": "",
-    "defaultStatus": "Active",
-    "killChainStage": "Initial Attempts",
-    "mitreTactic": "Initial Access",
-    "mitreTacticID": "TA0001",
-    "mitreTechnique": "Valid Accounts",
-    "mitreTechniqueID": "T1078",
-    "connector": "N/A",
-    "tool": "Stellar Cyber",
-    "lastModified": "08-07-24"
-  },
-  {
     "detectionID": "CY-0398",
     "name": "User Asset Access Anomaly",
     "description": "A user who typically uses a small, consistent number of assets was observed in Windows logons, Kerberos service tickets, or SMB traffic to access a new asset. Investigate the asset and user to see if this was expected.",
@@ -6386,7 +6162,7 @@
   {
     "detectionID": "CY-0121",
     "name": "Windows Account Lockout Event",
-    "description": "",
+    "description": "A windows user's account was locked out in your environment.",
     "defaultStatus": "Muted",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -6400,7 +6176,7 @@
   {
     "detectionID": "CY-0172",
     "name": "Windows Account Lockout Event",
-    "description": "",
+    "description": "A windows user's account was locked out in your environment.",
     "defaultStatus": "Muted",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -6414,7 +6190,7 @@
   {
     "detectionID": "CY-0173",
     "name": "Windows Audit Log Cleared",
-    "description": "",
+    "description": "The windows audit log was cleared by a user in your environment",
     "defaultStatus": "Not Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
