@@ -1,13 +1,7 @@
 🛠 Detections Update Summary
 ----------------------------
 🆕 New Detections: 0
-✏️ Updated Detections: 5
+✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 
 📋 Details:
-
-✏️ Updated: Box - File Marked Malicious (ID: CY-0019)
-✏️ Updated: Potential MsiExec Masquerading (ID: CY-0036)
-✏️ Updated: Emotet Loader Execution Via .LNK File (ID: CY-0043)
-✏️ Updated: Suspicious Calculator Usage (ID: CY-0053)
-✏️ Updated: Duo Security Failed Authentication (ID: CY-0128)
