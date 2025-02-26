@@ -1,5 +1,6 @@
 const axios = require('axios');
 const fs = require('fs');
+const nodemailer = require('nodemailer'); // Added for Gmail SMTP
 
 // Hardcoded board ID
 const BOARD_ID = 6523846419;
@@ -16,13 +17,13 @@ console.log("📋 Using Board ID:", BOARD_ID);
 
 // Function to format date from YYYY-MM-DD to MM-DD-YY
 function formatDate(dateString) {
-    if (!dateString) return "⚠️ Missing Date!";
-    const date = new Date(dateString);
-    if (isNaN(date.getTime())) return "⚠️ Invalid Date!";
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // MM
-    const day = String(date.getDate()).padStart(2, '0'); // DD
-    const year = String(date.getFullYear()).slice(-2); // YY
-    return `${month}-${day}-${year}`;
+  if (!dateString) return "⚠️ Missing Date!";
+  const date = new Date(dateString);
+  if (isNaN(date.getTime())) return "⚠️ Invalid Date!";
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  const year = String(date.getFullYear()).slice(-2);
+  return `${month}-${day}-${year}`;
 }
 
 // Function to fetch all detections using pagination
@@ -64,7 +65,7 @@ async function fetchAllMondayItems() {
 
       console.log(`📥 Retrieved ${allItems.length} detections so far...`);
 
-      // **Added delay to avoid rate limits**
+      // Added delay to avoid rate limits
       await new Promise(resolve => setTimeout(resolve, 1000));
 
     } catch (error) {
@@ -98,7 +99,7 @@ function writeDetections(detections) {
 
 // Function to write update summary for email
 function writeSummary(newDetections, updatedDetections, deletedDetections) {
-    const summaryContent = `
+  const summaryContent = `
 🛠 Detections Update Summary
 ----------------------------
 🆕 New Detections: ${newDetections.length}
@@ -109,10 +110,9 @@ function writeSummary(newDetections, updatedDetections, deletedDetections) {
 ${newDetections.map(d => `🆕 New: ${d.name} (ID: ${d.detectionID})`).join("\n")}
 ${updatedDetections.map(d => `✏️ Updated: ${d.name} (ID: ${d.detectionID})`).join("\n")}
 ${deletedDetections.map(d => `🗑️ Deleted: ${d.name} (ID: ${d.detectionID})`).join("\n")}
-    `;
-
-    fs.writeFileSync('update-summary.txt', summaryContent.trim());
-    console.log("✅ Summary saved to update-summary.txt");
+  `;
+  fs.writeFileSync('update-summary.txt', summaryContent.trim());
+  console.log("✅ Summary saved to update-summary.txt");
 }
 
 // Mapping function using column IDs
@@ -134,8 +134,43 @@ function mapItemToDetection(item) {
     mitreTechniqueID: columns["text8__1"] || '',
     connector: columns["text00__1"] || '',
     tool: columns["text_mknaxnaj"] || '',
-    lastModified: columns["date__1"] && columns["date__1"] !== "" ? formatDate(columns["date__1"]) : "N/A"  // 🛠 Fixed issue
+    lastModified: columns["date__1"] && columns["date__1"] !== "" ? formatDate(columns["date__1"]) : "N/A"
   };
+}
+
+// New function to send email using Gmail via Nodemailer
+async function sendEmail() {
+  // Read update-summary.txt
+  let summary;
+  try {
+    summary = fs.readFileSync('update-summary.txt', 'utf8');
+  } catch (err) {
+    console.error("❌ Could not read update-summary.txt:", err);
+    return;
+  }
+
+  // Create a transporter using Gmail SMTP.
+  let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_APP_PASSWORD
+    }
+  });
+
+  const mailOptions = {
+    from: process.env.GMAIL_USER,
+    to: 'dan@cyflare.com',
+    subject: 'Detection Board Update: Summary Report',
+    html: `<pre>${summary}</pre>`  // Use <pre> to preserve formatting
+  };
+
+  try {
+    let info = await transporter.sendMail(mailOptions);
+    console.log('✅ Email sent: ' + info.response);
+  } catch (error) {
+    console.error('❌ Error sending email:', error);
+  }
 }
 
 // Function to update detections.json
@@ -187,6 +222,9 @@ async function updateDetections() {
   console.log(`📢 Summary: 🆕 ${newDetections.length} new | ✏️ ${updatedDetections.length} updated | 🗑️ ${deletedDetections.length} deleted`);
   writeSummary(newDetections, updatedDetections, deletedDetections);
   writeDetections(finalDetections);
+
+  // Send email notification using Gmail
+  await sendEmail();
 }
 
 // Run update process
