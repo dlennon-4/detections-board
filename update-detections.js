@@ -149,6 +149,9 @@ async function sendEmail() {
     return;
   }
 
+  // Convert newlines to <br> tags for HTML email formatting
+  const summaryHTML = summary.replace(/\n/g, '<br>');
+
   // Create a transporter using Gmail SMTP.
   let transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -162,7 +165,7 @@ async function sendEmail() {
     from: process.env.GMAIL_USER,
     to: 'dan@cyflare.com',
     subject: 'Detection Board Update: Summary Report',
-    html: `<pre>${summary}</pre>`  // Use <pre> to preserve formatting
+    html: summaryHTML
   };
 
   try {
