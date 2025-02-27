@@ -16,7 +16,7 @@
   {
     "detectionID": "CY-0292",
     "name": "Account Login Failure Anomaly",
-    "description": "An anomalously large number of login failures from an internal source IP address to an internal destination IP address was observed for an account",
+    "description": "An anomalously large number of login failures from an internal source IP address to an internal destination IP address was observed for an account.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Credential Access",
@@ -58,7 +58,7 @@
   {
     "detectionID": "CY-0108",
     "name": "AWS - Malicious Host Access",
-    "description": "AWS activity was detected from a source with a negative reputation",
+    "description": "AWS activity was detected from a source with a negative reputation.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -212,7 +212,7 @@
   {
     "detectionID": "CY-0109",
     "name": "AWS Not MFA Authenticated",
-    "description": "A successful AWS login occurred without MFA verification",
+    "description": "A successful AWS login occurred without MFA verification.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -296,7 +296,7 @@
   {
     "detectionID": "CY-0111",
     "name": "Azure AD Risk Detection",
-    "description": "Azure AD reported risky sign in activity from the indicated user",
+    "description": "Azure AD reported risky sign in activity from the indicated user.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -380,7 +380,7 @@
   {
     "detectionID": "CY-0107",
     "name": "Azure User Added to Global Admin Group",
-    "description": "An Azure user was added to the Global Admin group in your environment",
+    "description": "An Azure user was added to the Global Admin group in your environment.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Propagation",
     "mitreTactic": "Privilege Escalation",
@@ -940,7 +940,7 @@
   {
     "detectionID": "CY-0472",
     "name": "Device Registration Azure Risk Correlation",
-    "description": "A device was registered to a user following a risky sign-in via Azure AD",
+    "description": "A device was registered to a user following a risky sign-in via Azure AD.",
     "defaultStatus": "Testing",
     "killChainStage": "",
     "mitreTactic": "",
@@ -1066,7 +1066,7 @@
   {
     "detectionID": "CY-0072",
     "name": "Duo User Bypass Status Update",
-    "description": "A Duo user was added to bypass status, allowing the user to login without MFA",
+    "description": "A Duo user was added to bypass status, allowing the user to login without MFA.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -2046,7 +2046,7 @@
   {
     "detectionID": "CY-0085",
     "name": "Google Workspace Suspicious Login",
-    "description": "A suspicious login was detected for a user by Google Workspace",
+    "description": "A suspicious login was detected for a user by Google Workspace.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -2144,7 +2144,7 @@
   {
     "detectionID": "CY-0129",
     "name": "GSuite - Two Factor Auth Failure",
-    "description": "A Google Workspace user failed two factor authentication during sign-in attempt",
+    "description": "A Google Workspace user failed two factor authentication during sign-in attempt.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -2256,7 +2256,7 @@
   {
     "detectionID": "CY-0467",
     "name": "Inbox Rule Azure Risk Correlation",
-    "description": "A new inbox rule has been created following a suspicious sign in attempt categorized by Azure AD",
+    "description": "A new inbox rule has been created following a suspicious sign in attempt categorized by Azure AD.",
     "defaultStatus": "Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -3040,7 +3040,7 @@
   {
     "detectionID": "CY-0468",
     "name": "MFA Registration Azure Risk Correlation",
-    "description": "MFA Registration was initiated for an account that was recently detected as a risky sign-in via Azure AD",
+    "description": "MFA Registration was initiated for an account that was recently detected as a risky sign-in via Azure AD.",
     "defaultStatus": "Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -3502,7 +3502,7 @@
   {
     "detectionID": "CY-0132",
     "name": "Multiple Login Failures from One Source (Destination IP)",
-    "description": "5+ login failure related alerts were detected targeting one destination IP in your environment",
+    "description": "5+ login failure related alerts were detected targeting one destination IP in your environment.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Credential Access",
@@ -3544,7 +3544,7 @@
   {
     "detectionID": "CY-0135",
     "name": "Multiple Users Deleted",
-    "description": "Multiple windows users (5+) were deleted within a 30 minute time frame were deleted in the environment",
+    "description": "Multiple windows users (5+) were deleted within a 30 minute time frame were deleted in the environment.",
     "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -3614,7 +3614,7 @@
   {
     "detectionID": "CY-0138",
     "name": "O365 - Creation of forwarding or redirect rule",
-    "description": "A forwarding or redirect rule was enabled by the following user",
+    "description": "A forwarding or redirect rule was enabled by the following user.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Exploration",
     "mitreTactic": "Collection",
@@ -3628,7 +3628,7 @@
   {
     "detectionID": "CY-0137",
     "name": "O365 - Elevation of Exchange admin privilege",
-    "description": "A user was assigned admin permissions in your Exchange environment",
+    "description": "A user was assigned admin permissions in your Exchange environment.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Propagation",
     "mitreTactic": "Privilege Escalation",
@@ -4034,7 +4034,7 @@
   {
     "detectionID": "CY-0152",
     "name": "Okta - Attempt to Deactivate Okta Policy",
-    "description": "An attempt was made to deactivate an Okta policy",
+    "description": "An attempt was made to deactivate an Okta policy.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Propagation",
     "mitreTactic": "Privilege Escalation",
@@ -4048,7 +4048,7 @@
   {
     "detectionID": "CY-0153",
     "name": "Okta - Attempt to Modify Okta Policy",
-    "description": "An attempt was made to modify an Okta policy in the environment",
+    "description": "An attempt was made to modify an Okta policy in the environment.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Propagation",
     "mitreTactic": "Privilege Escalation",
@@ -4090,7 +4090,7 @@
   {
     "detectionID": "CY-0004",
     "name": "OneLogin BruteForce Attempts",
-    "description": "Potential Brute Force activity has been detected due to an excessive amount of OneLogin failures",
+    "description": "Potential Brute Force activity has been detected due to an excessive amount of OneLogin failures.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Credential Access",
@@ -4118,7 +4118,7 @@
   {
     "detectionID": "CY-0001",
     "name": "OneLogin Successful Login Outside US",
-    "description": "Detects a successful login from outside US for OneLogin",
+    "description": "Detects a successful login from outside US for OneLogin.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -4342,7 +4342,7 @@
   {
     "detectionID": "CY-0062",
     "name": "Potential Account Compromise Axios User Agent",
-    "description": "A login attempt was detected utilizing the Axios client, indicating a potential AITM attack against the account",
+    "description": "A login attempt was detected utilizing the Axios client, indicating a potential AITM attack against the account.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -4356,7 +4356,7 @@
   {
     "detectionID": "CY-0469",
     "name": "Potential Account Compromise Token Theft",
-    "description": "Potential token theft (Same session ID's seen from two separate IP's within a short time frame) alert seen from account that recently triggered Azure risky sign in alert",
+    "description": "Potential token theft (Same session ID's seen from two separate IP's within a short time frame) alert seen from account that recently triggered Azure risky sign in alert.",
     "defaultStatus": "Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -4496,7 +4496,7 @@
   {
     "detectionID": "CY-0184",
     "name": "Potential FastHTTP Client Bruteforce Attempt",
-    "description": "A login attempt was detected utilizing the FastHTTP client, indicating a potential brute force attack against the account",
+    "description": "A login attempt was detected utilizing the FastHTTP client, indicating a potential brute force attack against the account.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
@@ -4580,7 +4580,7 @@
   {
     "detectionID": "CY-0036",
     "name": "Potential MsiExec Masquerading",
-    "description": "A suspicious msiexec process launched from an uncommon directory",
+    "description": "A suspicious msiexec process launched from an uncommon directory.",
     "defaultStatus": "Not Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
@@ -5336,7 +5336,7 @@
   {
     "detectionID": "CY-0003",
     "name": "Sophos XG Firewall Brute Force Attempt",
-    "description": "Potential Brute force activity has been detected due to an excessive amount of Sophos XG login failures",
+    "description": "Potential Brute force activity has been detected due to an excessive amount of Sophos XG login failures.",
     "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Credential Access",
@@ -6204,7 +6204,7 @@
   {
     "detectionID": "CY-0173",
     "name": "Windows Audit Log Cleared",
-    "description": "The windows audit log was cleared by a user in your environment",
+    "description": "The windows audit log was cleared by a user in your environment.",
     "defaultStatus": "Not Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Defense Evasion",
@@ -6218,7 +6218,7 @@
   {
     "detectionID": "CY-0174",
     "name": "Windows Domain Policy Changed",
-    "description": "A change was detected for a local computer's security policy",
+    "description": "A change was detected for a local computer's security policy.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Propagation",
     "mitreTactic": "Privilege Escalation",
@@ -6246,7 +6246,7 @@
   {
     "detectionID": "CY-0175",
     "name": "Windows Security-Enabled Global Group Created",
-    "description": "A security-enabled global group was created",
+    "description": "A security-enabled global group was created.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -6260,7 +6260,7 @@
   {
     "detectionID": "CY-0176",
     "name": "Windows Security-Enabled Local Group Created",
-    "description": "A security-enabled local group was created",
+    "description": "A security-enabled local group was created.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -6274,7 +6274,7 @@
   {
     "detectionID": "CY-0177",
     "name": "Windows Security-Enabled Universal Group Created",
-    "description": "A security-enabled universal group was created",
+    "description": "A security-enabled universal group was created.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -6302,7 +6302,7 @@
   {
     "detectionID": "CY-0178",
     "name": "Windows User Added to Security-Enabled Global Domain Admins Group",
-    "description": "A member was added to a security-enabled global Domain Adminsgroup",
+    "description": "A member was added to a security-enabled global Domain Adminsgroup.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -6316,7 +6316,7 @@
   {
     "detectionID": "CY-0179",
     "name": "Windows User Added to Security-Enabled Local Administrators Group",
-    "description": "A member was added to a security-enabled local group",
+    "description": "A member was added to a security-enabled local group.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -6330,7 +6330,7 @@
   {
     "detectionID": "CY-0180",
     "name": "Windows User Added to Universal Group - Enterprise Admins",
-    "description": "A member was added to the security-enabled universal group Enterprise Admins",
+    "description": "A member was added to the security-enabled universal group Enterprise Admins.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -6344,7 +6344,7 @@
   {
     "detectionID": "CY-0181",
     "name": "Windows User Added to Universal Group - Schema Admins",
-    "description": "A member was added to the security-enabled universal group Schema Admins",
+    "description": "A member was added to the security-enabled universal group Schema Admins.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
@@ -6358,7 +6358,7 @@
   {
     "detectionID": "CY-0182",
     "name": "Windows User Removed from Domain Admins Group",
-    "description": "A member was removed from a security-enabled global Domain Admins group",
+    "description": "A member was removed from a security-enabled global Domain Admins group.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
@@ -6372,7 +6372,7 @@
   {
     "detectionID": "CY-0183",
     "name": "Windows User Removed from Local Administrators Group",
-    "description": "A member was removed from a security-enabled local administrators group",
+    "description": "A member was removed from a security-enabled local administrators group.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",

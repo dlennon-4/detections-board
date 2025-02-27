@@ -1,8 +1,43 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 1
-✏️ Updated Detections: 0
+🆕 New Detections: 0
+✏️ Updated Detections: 35
 🗑️ Deleted Detections: 0
 
 📋 Details:
-🆕 New: CrowdStrike Detections (ID: CY-0527)
+
+✏️ Updated: OneLogin Successful Login Outside US (ID: CY-0001)
+✏️ Updated: Sophos XG Firewall Brute Force Attempt (ID: CY-0003)
+✏️ Updated: OneLogin BruteForce Attempts (ID: CY-0004)
+✏️ Updated: Potential MsiExec Masquerading (ID: CY-0036)
+✏️ Updated: Potential Account Compromise Axios User Agent (ID: CY-0062)
+✏️ Updated: Duo User Bypass Status Update (ID: CY-0072)
+✏️ Updated: Google Workspace Suspicious Login (ID: CY-0085)
+✏️ Updated: Azure User Added to Global Admin Group (ID: CY-0107)
+✏️ Updated: AWS - Malicious Host Access (ID: CY-0108)
+✏️ Updated: AWS Not MFA Authenticated (ID: CY-0109)
+✏️ Updated: Azure AD Risk Detection (ID: CY-0111)
+✏️ Updated: GSuite - Two Factor Auth Failure (ID: CY-0129)
+✏️ Updated: Multiple Login Failures from One Source (Destination IP) (ID: CY-0132)
+✏️ Updated: Multiple Users Deleted (ID: CY-0135)
+✏️ Updated: O365 - Elevation of Exchange admin privilege (ID: CY-0137)
+✏️ Updated: O365 - Creation of forwarding or redirect rule (ID: CY-0138)
+✏️ Updated: Okta - Attempt to Deactivate Okta Policy (ID: CY-0152)
+✏️ Updated: Okta - Attempt to Modify Okta Policy (ID: CY-0153)
+✏️ Updated: Windows Audit Log Cleared (ID: CY-0173)
+✏️ Updated: Windows Domain Policy Changed (ID: CY-0174)
+✏️ Updated: Windows Security-Enabled Global Group Created (ID: CY-0175)
+✏️ Updated: Windows Security-Enabled Local Group Created (ID: CY-0176)
+✏️ Updated: Windows Security-Enabled Universal Group Created (ID: CY-0177)
+✏️ Updated: Windows User Added to Security-Enabled Global Domain Admins Group (ID: CY-0178)
+✏️ Updated: Windows User Added to Security-Enabled Local Administrators Group (ID: CY-0179)
+✏️ Updated: Windows User Added to Universal Group - Enterprise Admins (ID: CY-0180)
+✏️ Updated: Windows User Added to Universal Group - Schema Admins (ID: CY-0181)
+✏️ Updated: Windows User Removed from Domain Admins Group (ID: CY-0182)
+✏️ Updated: Windows User Removed from Local Administrators Group (ID: CY-0183)
+✏️ Updated: Potential FastHTTP Client Bruteforce Attempt (ID: CY-0184)
+✏️ Updated: Account Login Failure Anomaly (ID: CY-0292)
+✏️ Updated: Inbox Rule Azure Risk Correlation (ID: CY-0467)
+✏️ Updated: MFA Registration Azure Risk Correlation (ID: CY-0468)
+✏️ Updated: Potential Account Compromise Token Theft (ID: CY-0469)
+✏️ Updated: Device Registration Azure Risk Correlation (ID: CY-0472)
