@@ -442,15 +442,28 @@
       filterTable();
     }
 
-    // Toggle hide/show for Kill Chain & MITRE columns (columns 3-7)
-    let kcAndMitreVisible = true;
-    function toggleKCMitre() {
-      const indices = [3, 4, 5, 6, 7];
-      kcAndMitreVisible = !kcAndMitreVisible;
-      indices.forEach(index => toggleColumn(index, kcAndMitreVisible));
-      const btn = document.getElementById('toggleKCMitreBtn');
-      btn.textContent = kcAndMitreVisible ? 'Hide KC & MITRE Columns' : 'Show KC & MITRE Columns';
+// Toggle hide/show for Kill Chain & MITRE columns (columns 3-7)
+let kcAndMitreVisible = true;
+function toggleKCMitre() {
+  const indices = [3, 4, 5, 6, 7];
+  kcAndMitreVisible = !kcAndMitreVisible;
+  
+  // Get all column checkboxes from the Select Columns dropdown
+  const columnCheckboxes = document.querySelectorAll('#columnDropdown input[type="checkbox"]');
+  
+  indices.forEach(index => {
+    // Toggle the visibility of the column using the existing toggleColumn function
+    toggleColumn(index, kcAndMitreVisible);
+    // Update the checkbox state for the corresponding column
+    if (columnCheckboxes[index]) {
+      columnCheckboxes[index].checked = kcAndMitreVisible;
     }
+  });
+  
+  // Update button label
+  const btn = document.getElementById('toggleKCMitreBtn');
+  btn.textContent = kcAndMitreVisible ? 'Hide KC & MITRE Columns' : 'Show KC & MITRE Columns';
+}
 
     // Filter logic: search, statuses, tools
     function filterTable() {
