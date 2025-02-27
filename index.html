@@ -290,7 +290,7 @@
       border-radius: 12px;
       color: #fff;
       font-weight: bold;
-      cursor: default; /* So it doesn't look clickable */
+      cursor: default;
     }
   </style>
 </head>
@@ -314,6 +314,7 @@
   <div class="filter-bar">
     <div class="filters-left">
       <input type="text" id="search" class="search-box" onkeyup="filterTable()" placeholder="Search Detections...">
+      
       <!-- Default Status Dropdown -->
       <div class="dropdown">
         <button class="filter-btn" onclick="toggleDropdown('statusDropdown')">Default Status</button>
@@ -327,16 +328,16 @@
           <label><input type="checkbox" value="Alert Preferences" checked onchange="filterTable()"> Alert Preferences</label>
         </div>
       </div>
-      <!-- Tool Dropdown -->
+      
+      <!-- Tool Dropdown (only Stellar Cyber & CrowdStrike) -->
       <div class="dropdown">
         <button class="filter-btn" onclick="toggleDropdown('toolDropdown')">Tool</button>
         <div id="toolDropdown" class="dropdown-content">
           <label><input type="checkbox" value="Stellar Cyber" checked onchange="filterTable()"> Stellar Cyber</label>
-          <label><input type="checkbox" value="LevelBlue" checked onchange="filterTable()"> LevelBlue</label>
           <label><input type="checkbox" value="CrowdStrike" checked onchange="filterTable()"> CrowdStrike</label>
-          <label><input type="checkbox" value="SentinelOne" checked onchange="filterTable()"> SentinelOne</label>
         </div>
       </div>
+      
       <!-- Column Selection Dropdown -->
       <div class="dropdown">
         <button class="filter-btn" onclick="toggleDropdown('columnDropdown')">Select Columns</button>
@@ -354,8 +355,13 @@
           <label><input type="checkbox" checked onchange="toggleColumn(10)"> Last Modified</label>
         </div>
       </div>
+      
       <button class="reset-btn action-btn" onclick="resetFilters()">Reset Filters</button>
+      
+      <!-- New Button: Toggle Hide/Show Kill Chain & MITRE Columns -->
+      <button class="action-btn" id="toggleKCMitreBtn" onclick="toggleKCMitre()">Hide KC & MITRE Columns</button>
     </div>
+    
     <!-- Export CSV on the right -->
     <div>
       <button class="export-btn action-btn" onclick="exportTableToCSV()">Export CSV</button>
@@ -436,6 +442,16 @@
       filterTable();
     }
 
+    // Toggle hide/show for Kill Chain & MITRE columns (columns 3-7)
+    let kcAndMitreVisible = true;
+    function toggleKCMitre() {
+      const indices = [3, 4, 5, 6, 7];
+      kcAndMitreVisible = !kcAndMitreVisible;
+      indices.forEach(index => toggleColumn(index, kcAndMitreVisible));
+      const btn = document.getElementById('toggleKCMitreBtn');
+      btn.textContent = kcAndMitreVisible ? 'Hide KC & MITRE Columns' : 'Show KC & MITRE Columns';
+    }
+
     // Filter logic: search, statuses, tools
     function filterTable() {
       const searchValue = document.getElementById('search').value.toLowerCase();
@@ -507,14 +523,14 @@
     // Color map for each status
     function getStatusColor(status) {
       switch (status) {
-        case 'Active':                   return '#28a745';  // Green
-        case 'Active via Custom Rules':  return '#90ee90';  // Light green
+        case 'Active':                   return '#28a745';
+        case 'Active via Custom Rules':  return '#90ee90';
         case 'Testing':
-        case 'New Detection':            return '#dda0dd';  // Plum / lavender
-        case 'Muted':                    return '#ffa500';  // Orange
-        case 'Not Active':               return '#dc3545';  // Red
-        case 'Alert Preferences':        return '#17a2b8';  // Teal-ish
-        default:                         return '#666';     // Fallback
+        case 'New Detection':            return '#dda0dd';
+        case 'Muted':                    return '#ffa500';
+        case 'Not Active':               return '#dc3545';
+        case 'Alert Preferences':        return '#17a2b8';
+        default:                         return '#666';
       }
     }
 
