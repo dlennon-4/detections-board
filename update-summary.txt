@@ -1,7 +1,8 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 0
+🆕 New Detections: 1
 ✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 
 📋 Details:
+🆕 New: CrowdStrike Detections (ID: CY-0527)

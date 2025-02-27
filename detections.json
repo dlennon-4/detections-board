@@ -756,6 +756,20 @@
     "lastModified": "10-31-24"
   },
   {
+    "detectionID": "CY-0527",
+    "name": "CrowdStrike Detections",
+    "description": "Coming Soon!",
+    "defaultStatus": "Active",
+    "killChainStage": "N/A",
+    "mitreTactic": "N/A",
+    "mitreTacticID": "N/A",
+    "mitreTechnique": "N/A",
+    "mitreTechniqueID": "N/A",
+    "connector": "N/A",
+    "tool": "CrowdStrike",
+    "lastModified": "02-27-25"
+  },
+  {
     "detectionID": "CY-0417",
     "name": "Cryptojacking",
     "description": "An unauthorized coin miner used a computer to mine cryptocurrency. Consider blocking the source IP address.",
