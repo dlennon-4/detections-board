@@ -4788,6 +4788,20 @@
     "lastModified": "10-30-24"
   },
   {
+    "detectionID": "CY-0528",
+    "name": "Rar Usage with Password and Compression Level",
+    "description": "Detects the use of rar.exe, on the command line, to create an archive with password protection or with a specific compression level. This is pretty indicative of malicious actions.",
+    "defaultStatus": "New Detection",
+    "killChainStage": "Exploration",
+    "mitreTactic": "Collection",
+    "mitreTacticID": "TA0009",
+    "mitreTechnique": "Archive Collected Data",
+    "mitreTechniqueID": "T1560",
+    "connector": "N/A",
+    "tool": "",
+    "lastModified": "03-03-25"
+  },
+  {
     "detectionID": "CY-0407",
     "name": "RDP Outbytes Anomaly",
     "description": "An internal host transferred an anomalously high amount of data to external host(s) through RDP. This could indicate data exfiltration. Check with the user.",
