@@ -95,7 +95,7 @@ function writeDetections(detections) {
   console.log("✅ Detections updated successfully!");
 }
 
-// Function to write an update summary to a text file for email notification
+// Function to write an update summary for email notification
 function writeSummary(newDetections, updatedDetections, deletedDetections) {
   const summaryContent = `
 🛠 Detections Update Summary
@@ -113,8 +113,8 @@ ${deletedDetections.map(d => `🗑️ Deleted: ${d.name} (ID: ${d.detectionID})`
   console.log("✅ Summary saved to update-summary.txt");
 }
 
-// Mapping function: Convert a Monday.com item to a detection object
-// Note: Removed lastModified; we now only map fields that we use.
+// Mapping function: Convert a Monday.com item to a detection object.
+// Removed lastModified field.
 function mapItemToDetection(item) {
   const columns = {};
   item.column_values.forEach(cv => {
@@ -133,11 +133,10 @@ function mapItemToDetection(item) {
     mitreTechniqueID: columns["text8__1"] || '',
     connector: columns["text00__1"] || '',
     tool: columns["text_mknaxnaj"] || ''
-    // No lastModified field anymore.
   };
 }
 
-// Update detections: fetch Monday items, compare with current detections, and update detections.json accordingly.
+// Update detections: fetch Monday items, compare with current detections, and update detections.json.
 async function updateDetections() {
   console.log("🔄 Updating detections...");
 
@@ -152,7 +151,7 @@ async function updateDetections() {
   const currentDetections = loadCurrentDetections();
   console.log(`📊 Existing Detections Count: ${currentDetections.length}`);
 
-  // Build a map of current detections by detectionID
+  // Build a map of current detections by detectionID.
   const detectionMap = {};
   currentDetections.forEach(det => {
     // If a detection lacks a dateAdded, default it to "01-01-2025"
@@ -164,7 +163,7 @@ async function updateDetections() {
   let updatedDetections = [];
   let deletedDetections = [];
 
-  // Process each Monday item
+  // Process each Monday item.
   mondayItems.forEach(item => {
     const detection = mapItemToDetection(item);
     // If detection is new, assign the current date as dateAdded.
@@ -172,9 +171,9 @@ async function updateDetections() {
       detection.dateAdded = formatDate(new Date());
       newDetections.push(detection);
     } else {
-      // Preserve the existing dateAdded
+      // Preserve the existing dateAdded.
       detection.dateAdded = detectionMap[detection.detectionID].dateAdded;
-      // Compare existing detection object with the new one.
+      // Compare the existing detection object with the new one.
       if (JSON.stringify(detectionMap[detection.detectionID]) !== JSON.stringify(detection)) {
         updatedDetections.push(detection);
       }
@@ -182,7 +181,7 @@ async function updateDetections() {
     detectionMap[detection.detectionID] = detection;
   });
 
-  // Identify deleted detections (present in current detections but not in Monday items)
+  // Identify deleted detections (present in current detections but not in Monday items).
   const mondayDetectionIDs = new Set(mondayItems.map(item => mapItemToDetection(item).detectionID));
   Object.keys(detectionMap).forEach(detectionID => {
     if (!mondayDetectionIDs.has(detectionID)) {
@@ -197,11 +196,11 @@ async function updateDetections() {
   writeSummary(newDetections, updatedDetections, deletedDetections);
   writeDetections(finalDetections);
 
-  // Send email notification using Gmail
+  // Send email notification using Gmail.
   await sendEmail();
 }
 
-// New function to send email using Gmail via Nodemailer
+// New function to send email using Gmail via Nodemailer.
 async function sendEmail() {
   let summary;
   try {
@@ -236,5 +235,5 @@ async function sendEmail() {
   }
 }
 
-// Run update process
+// Run update process.
 updateDetections();
