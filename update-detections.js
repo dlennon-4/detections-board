@@ -1,6 +1,6 @@
 const axios = require('axios');
 const fs = require('fs');
-const nodemailer = require('nodemailer'); // Added for Gmail SMTP
+const nodemailer = require('nodemailer'); // For Gmail SMTP
 
 // Hardcoded board ID
 const BOARD_ID = 6523846419;
@@ -15,18 +15,17 @@ if (!MONDAY_API_KEY) {
 console.log("🚀 Script Started");
 console.log("📋 Using Board ID:", BOARD_ID);
 
-// Function to format date from YYYY-MM-DD to MM-DD-YY
-function formatDate(dateString) {
-  if (!dateString) return "⚠️ Missing Date!";
-  const date = new Date(dateString);
+// Function to format a Date object (or a date string) into MM-DD-YYYY format
+function formatDate(dateInput) {
+  let date = dateInput instanceof Date ? dateInput : new Date(dateInput);
   if (isNaN(date.getTime())) return "⚠️ Invalid Date!";
   const month = String(date.getMonth() + 1).padStart(2, '0');
   const day = String(date.getDate()).padStart(2, '0');
-  const year = String(date.getFullYear()).slice(-2);
+  const year = date.getFullYear();
   return `${month}-${day}-${year}`;
 }
 
-// Function to fetch all detections using pagination
+// Function to fetch all detections from Monday.com using pagination
 async function fetchAllMondayItems() {
   let allItems = [];
   let cursor = null;
@@ -65,20 +64,19 @@ async function fetchAllMondayItems() {
 
       console.log(`📥 Retrieved ${allItems.length} detections so far...`);
 
-      // Added delay to avoid rate limits
+      // Delay to help avoid rate limits
       await new Promise(resolve => setTimeout(resolve, 1000));
 
     } catch (error) {
       console.error("❌ Error fetching data:", error.response?.data || error.message);
       break;
     }
-
   } while (cursor);
 
   return allItems;
 }
 
-// Function to read current detections.json
+// Function to load current detections from detections.json
 function loadCurrentDetections() {
   try {
     console.log("📂 Loading detections.json...");
@@ -90,14 +88,14 @@ function loadCurrentDetections() {
   }
 }
 
-// Function to write updated detections.json
+// Function to write updated detections to detections.json
 function writeDetections(detections) {
   console.log(`💾 Writing ${detections.length} detections to detections.json...`);
   fs.writeFileSync('detections.json', JSON.stringify(detections, null, 2) + "\n");
   console.log("✅ Detections updated successfully!");
 }
 
-// Function to write update summary for email
+// Function to write an update summary to a text file for email notification
 function writeSummary(newDetections, updatedDetections, deletedDetections) {
   const summaryContent = `
 🛠 Detections Update Summary
@@ -107,7 +105,7 @@ function writeSummary(newDetections, updatedDetections, deletedDetections) {
 🗑️ Deleted Detections: ${deletedDetections.length}
 
 📋 Details:
-${newDetections.map(d => `🆕 New: ${d.name} (ID: ${d.detectionID})`).join("\n")}
+${newDetections.map(d => `🆕 New: ${d.name} (ID: ${d.detectionID}) Added on: ${d.dateAdded}`).join("\n")}
 ${updatedDetections.map(d => `✏️ Updated: ${d.name} (ID: ${d.detectionID})`).join("\n")}
 ${deletedDetections.map(d => `🗑️ Deleted: ${d.name} (ID: ${d.detectionID})`).join("\n")}
   `;
@@ -115,11 +113,12 @@ ${deletedDetections.map(d => `🗑️ Deleted: ${d.name} (ID: ${d.detectionID})`
   console.log("✅ Summary saved to update-summary.txt");
 }
 
-// Mapping function using column IDs
+// Mapping function: Convert a Monday.com item to a detection object
+// Note: Removed lastModified; we now only map fields that we use.
 function mapItemToDetection(item) {
   const columns = {};
   item.column_values.forEach(cv => {
-    columns[cv.id] = cv.text || cv.value || ''; 
+    columns[cv.id] = cv.text || cv.value || '';
   });
 
   return {
@@ -133,14 +132,77 @@ function mapItemToDetection(item) {
     mitreTechnique: columns["text5__1"] || '',
     mitreTechniqueID: columns["text8__1"] || '',
     connector: columns["text00__1"] || '',
-    tool: columns["text_mknaxnaj"] || '',
-    lastModified: columns["date__1"] && columns["date__1"] !== "" ? formatDate(columns["date__1"]) : "N/A"
+    tool: columns["text_mknaxnaj"] || ''
+    // No lastModified field anymore.
   };
+}
+
+// Update detections: fetch Monday items, compare with current detections, and update detections.json accordingly.
+async function updateDetections() {
+  console.log("🔄 Updating detections...");
+
+  const mondayItems = await fetchAllMondayItems();
+  if (mondayItems.length === 0) {
+    console.log("⚠️ No detections fetched from Monday.com!");
+    return;
+  }
+
+  console.log(`📝 Found ${mondayItems.length} detections from Monday.com`);
+
+  const currentDetections = loadCurrentDetections();
+  console.log(`📊 Existing Detections Count: ${currentDetections.length}`);
+
+  // Build a map of current detections by detectionID
+  const detectionMap = {};
+  currentDetections.forEach(det => {
+    // If a detection lacks a dateAdded, default it to "01-01-2025"
+    if (!det.dateAdded) det.dateAdded = "01-01-2025";
+    detectionMap[det.detectionID] = det;
+  });
+
+  let newDetections = [];
+  let updatedDetections = [];
+  let deletedDetections = [];
+
+  // Process each Monday item
+  mondayItems.forEach(item => {
+    const detection = mapItemToDetection(item);
+    // If detection is new, assign the current date as dateAdded.
+    if (!detectionMap[detection.detectionID]) {
+      detection.dateAdded = formatDate(new Date());
+      newDetections.push(detection);
+    } else {
+      // Preserve the existing dateAdded
+      detection.dateAdded = detectionMap[detection.detectionID].dateAdded;
+      // Compare existing detection object with the new one.
+      if (JSON.stringify(detectionMap[detection.detectionID]) !== JSON.stringify(detection)) {
+        updatedDetections.push(detection);
+      }
+    }
+    detectionMap[detection.detectionID] = detection;
+  });
+
+  // Identify deleted detections (present in current detections but not in Monday items)
+  const mondayDetectionIDs = new Set(mondayItems.map(item => mapItemToDetection(item).detectionID));
+  Object.keys(detectionMap).forEach(detectionID => {
+    if (!mondayDetectionIDs.has(detectionID)) {
+      deletedDetections.push(detectionMap[detectionID]);
+      delete detectionMap[detectionID];
+    }
+  });
+
+  const finalDetections = Object.values(detectionMap).sort((a, b) => a.name.localeCompare(b.name));
+
+  console.log(`📢 Summary: 🆕 ${newDetections.length} new | ✏️ ${updatedDetections.length} updated | 🗑️ ${deletedDetections.length} deleted`);
+  writeSummary(newDetections, updatedDetections, deletedDetections);
+  writeDetections(finalDetections);
+
+  // Send email notification using Gmail
+  await sendEmail();
 }
 
 // New function to send email using Gmail via Nodemailer
 async function sendEmail() {
-  // Read update-summary.txt
   let summary;
   try {
     summary = fs.readFileSync('update-summary.txt', 'utf8');
@@ -149,10 +211,8 @@ async function sendEmail() {
     return;
   }
 
-  // Convert newlines to <br> tags for HTML email formatting
   const summaryHTML = summary.replace(/\n/g, '<br>');
 
-  // Create a transporter using Gmail SMTP.
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -174,60 +234,6 @@ async function sendEmail() {
   } catch (error) {
     console.error('❌ Error sending email:', error);
   }
-}
-
-// Function to update detections.json
-async function updateDetections() {
-  console.log("🔄 Updating detections...");
-
-  const mondayItems = await fetchAllMondayItems();
-  if (mondayItems.length === 0) {
-    console.log("⚠️ No detections fetched from Monday.com!");
-    return;
-  }
-
-  console.log(`📝 Found ${mondayItems.length} detections from Monday.com`);
-
-  const currentDetections = loadCurrentDetections();
-  console.log(`📊 Existing Detections Count: ${currentDetections.length}`);
-
-  const detectionMap = {};
-  currentDetections.forEach(det => {
-    detectionMap[det.detectionID] = det;
-  });
-
-  let newDetections = [];
-  let updatedDetections = [];
-  let deletedDetections = [];
-
-  mondayItems.forEach(item => {
-    const detection = mapItemToDetection(item);
-    if (detection) {
-      if (!detectionMap[detection.detectionID]) {
-        newDetections.push(detection);
-      } else if (JSON.stringify(detectionMap[detection.detectionID]) !== JSON.stringify(detection)) {
-        updatedDetections.push(detection);
-      }
-      detectionMap[detection.detectionID] = detection;
-    }
-  });
-
-  const mondayDetectionIDs = new Set(mondayItems.map(item => mapItemToDetection(item).detectionID));
-  Object.keys(detectionMap).forEach(detectionID => {
-    if (!mondayDetectionIDs.has(detectionID)) {
-      deletedDetections.push(detectionMap[detectionID]);
-      delete detectionMap[detectionID];
-    }
-  });
-
-  const finalDetections = Object.values(detectionMap).sort((a, b) => a.name.localeCompare(b.name));
-
-  console.log(`📢 Summary: 🆕 ${newDetections.length} new | ✏️ ${updatedDetections.length} updated | 🗑️ ${deletedDetections.length} deleted`);
-  writeSummary(newDetections, updatedDetections, deletedDetections);
-  writeDetections(finalDetections);
-
-  // Send email notification using Gmail
-  await sendEmail();
 }
 
 // Run update process
