@@ -95,7 +95,7 @@
       transform: translateY(-2px);
     }
 
-    /* New Badge (Light Blue) */
+    /* New Badge using Light Blue */
     .new-badge {
       background-color: #add8e6; /* Light blue */
       color: #333;
@@ -325,6 +325,7 @@
 
       <button class="reset-btn action-btn" onclick="resetFilters()">Reset Filters</button>
       <button class="action-btn" id="toggleKCMitreBtn" onclick="toggleKCMitre()">Hide KC & MITRE Columns</button>
+      <button class="action-btn" id="newFilterBtn" onclick="toggleNewOnlyFilter()">Show New Only</button>
     </div>
     <div>
       <button class="export-btn action-btn" onclick="exportTableToCSV()">Export CSV</button>
@@ -372,6 +373,14 @@
       }
     });
 
+    // Global flag for filtering new detections only
+    let newOnlyFilter = false;
+    function toggleNewOnlyFilter() {
+      newOnlyFilter = !newOnlyFilter;
+      document.getElementById('newFilterBtn').textContent = newOnlyFilter ? "Show All" : "Show New Only";
+      filterTable();
+    }
+
     // Toggle Column Visibility
     function toggleColumn(colIndex, forceShow = null) {
       const table = document.getElementById('detectionsTable');
@@ -399,6 +408,8 @@
         cb.checked = true;
         toggleColumn(i, true);
       });
+      newOnlyFilter = false;
+      document.getElementById('newFilterBtn').textContent = "Show New Only";
       filterTable();
     }
 
@@ -432,15 +443,19 @@
       rows.forEach(row => {
         const cells = row.querySelectorAll('td');
         const name = cells[0].textContent.toLowerCase();
-        const desc = cells[1].textContent.toLowerCase();
+        const descText = cells[1].textContent.toLowerCase();
         const status = cells[2].textContent.trim();
         const tool = cells[9].textContent.trim();
 
-        const matchesSearch = name.includes(searchValue) || desc.includes(searchValue);
+        const matchesSearch = name.includes(searchValue) || descText.includes(searchValue);
         const matchesStatus = allStatusesChecked || checkedStatuses.includes(status);
         const matchesTool = allToolsChecked || checkedTools.includes(tool);
-
-        row.style.display = (matchesSearch && matchesStatus && matchesTool) ? '' : 'none';
+        let newOnlyPass = true;
+        if(newOnlyFilter) {
+          // Check if the description cell contains the new badge (by checking for the class "new-badge")
+          newOnlyPass = cells[1].innerHTML.indexOf('new-badge') !== -1;
+        }
+        row.style.display = (matchesSearch && matchesStatus && matchesTool && newOnlyPass) ? '' : 'none';
       });
       updateCaseCount();
     }
@@ -487,14 +502,14 @@
       return new Date(parts[2], parts[0]-1, parts[1]);
     }
 
-    // Helper: Check if a given date (in MM-DD-YYYY format) is within the last 90 days
+    // Helper: Check if a given date (in MM-DD-YYYY format) is within the last 30 days
     function isRecent(dateStr) {
       const dt = parseDate(dateStr);
       if (!dt) return false;
       const today = new Date();
       const diffMs = today - dt;
       const diffDays = diffMs / (1000 * 60 * 60 * 24);
-      return diffDays <= 90;
+      return diffDays <= 30;
     }
 
     // Status Badge Styling for default status
@@ -567,10 +582,10 @@
           tbody.innerHTML = '';
 
           data.forEach(det => {
-            // Build description column: prepend a "New" badge if dateAdded is recent
+            // Build the description: prepend a "New" badge if dateAdded is within the last 30 days
             let displayDesc = det.description;
             if (det.dateAdded && isRecent(det.dateAdded)) {
-              displayDesc = '<span class="new-badge">New</span> ' + displayDesc;
+              displayDesc = '<span class="new-badge" title="This detection was added to this board within the last 30 days">New</span> ' + displayDesc;
             }
             
             const statusColor = getStatusColor(det.defaultStatus);
