@@ -11,7 +11,7 @@
     "mitreTechniqueID": "T1546",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0292",
@@ -25,7 +25,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0207",
@@ -39,7 +39,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Acronis Cyber Protect",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0305",
@@ -53,7 +53,7 @@
     "mitreTechniqueID": "XT2003",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0108",
@@ -67,7 +67,7 @@
     "mitreTechniqueID": "T1190",
     "connector": "AWS",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0011",
@@ -81,7 +81,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "AWS",
     "tool": "Stellar Cyber",
-    "lastModified": "11-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0076",
@@ -95,7 +95,7 @@
     "mitreTechniqueID": "T1136",
     "connector": "AWS",
     "tool": "Stellar Cyber",
-    "lastModified": "06-04-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0204",
@@ -109,7 +109,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "AWS CloudTrail",
     "tool": "Stellar Cyber",
-    "lastModified": "11-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0090",
@@ -123,7 +123,7 @@
     "mitreTechniqueID": "T1578",
     "connector": "AWS CloudTrail",
     "tool": "Stellar Cyber",
-    "lastModified": "04-08-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0091",
@@ -137,7 +137,7 @@
     "mitreTechniqueID": "T1578",
     "connector": "AWS",
     "tool": "Stellar Cyber",
-    "lastModified": "04-08-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0077",
@@ -151,7 +151,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "AWS CloudTrail",
     "tool": "Stellar Cyber",
-    "lastModified": "06-03-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0208",
@@ -165,7 +165,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "AWS GuardDuty",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0092",
@@ -179,7 +179,7 @@
     "mitreTechniqueID": "T1136",
     "connector": "AWS",
     "tool": "Stellar Cyber",
-    "lastModified": "04-08-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0093",
@@ -193,7 +193,7 @@
     "mitreTechniqueID": "T1556",
     "connector": "AWS",
     "tool": "Stellar Cyber",
-    "lastModified": "04-08-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0336",
@@ -207,7 +207,7 @@
     "mitreTechniqueID": "T1562",
     "connector": "AWS CloudTrail",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0109",
@@ -221,7 +221,7 @@
     "mitreTechniqueID": "T1199",
     "connector": "AWS",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0416",
@@ -235,7 +235,7 @@
     "mitreTechniqueID": "T1486",
     "connector": "AWS CloudTrail",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0094",
@@ -249,7 +249,7 @@
     "mitreTechniqueID": "T1562",
     "connector": "AWS",
     "tool": "Stellar Cyber",
-    "lastModified": "04-08-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0110",
@@ -263,7 +263,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0334",
@@ -277,7 +277,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0338",
@@ -291,7 +291,7 @@
     "mitreTechniqueID": "T1484",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0111",
@@ -305,7 +305,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0112",
@@ -319,7 +319,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0186",
@@ -333,7 +333,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "N/A"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0187",
@@ -347,7 +347,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "N/A"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0188",
@@ -361,7 +361,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "N/A"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0189",
@@ -375,7 +375,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "N/A"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0107",
@@ -389,7 +389,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "02-08-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0439",
@@ -403,7 +403,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0337",
@@ -417,7 +417,7 @@
     "mitreTechniqueID": "T1070",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0355",
@@ -431,7 +431,7 @@
     "mitreTechniqueID": "XT2010",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0308",
@@ -445,7 +445,7 @@
     "mitreTechniqueID": "XT2010",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0300",
@@ -459,7 +459,7 @@
     "mitreTechniqueID": "XT2010",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0209",
@@ -473,7 +473,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "BitDefender",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0210",
@@ -487,7 +487,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "BitDefender",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0211",
@@ -501,7 +501,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "BitDefender",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0114",
@@ -515,7 +515,7 @@
     "mitreTechniqueID": "T1219",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0115",
@@ -529,7 +529,7 @@
     "mitreTechniqueID": "T1119",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0116",
@@ -543,7 +543,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "Box",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0117",
@@ -557,7 +557,7 @@
     "mitreTechniqueID": "T1074",
     "connector": "Box",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0019",
@@ -571,7 +571,7 @@
     "mitreTechniqueID": "XT6001",
     "connector": "Box",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0118",
@@ -585,7 +585,7 @@
     "mitreTechniqueID": "T1584",
     "connector": "Box",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0012",
@@ -599,7 +599,7 @@
     "mitreTechniqueID": "XT1000",
     "connector": "Box",
     "tool": "Stellar Cyber",
-    "lastModified": "11-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0009",
@@ -613,7 +613,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Box",
     "tool": "Stellar Cyber",
-    "lastModified": "12-04-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0212",
@@ -627,7 +627,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Carbon Black",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0205",
@@ -641,7 +641,7 @@
     "mitreTechniqueID": "XT1000",
     "connector": "Carbon Black",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0120",
@@ -655,7 +655,7 @@
     "mitreTechniqueID": "XT2010",
     "connector": "Cisco Umbrella",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0354",
@@ -669,7 +669,7 @@
     "mitreTechniqueID": "XT5001",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0327",
@@ -683,7 +683,7 @@
     "mitreTechniqueID": "T1059",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0122",
@@ -697,7 +697,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0033",
@@ -711,7 +711,7 @@
     "mitreTechniqueID": "T1484",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "09-23-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0005",
@@ -725,7 +725,7 @@
     "mitreTechniqueID": "T1558",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "03-04-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0213",
@@ -739,7 +739,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "CrowdStrike",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0527",
@@ -753,7 +753,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "N/A",
     "tool": "CrowdStrike",
-    "lastModified": "02-27-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0417",
@@ -767,7 +767,7 @@
     "mitreTechniqueID": "T1496",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0214",
@@ -781,7 +781,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Cybereason",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0206",
@@ -795,7 +795,7 @@
     "mitreTechniqueID": "XT1000",
     "connector": "Cylance",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0216",
@@ -809,7 +809,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Cylance",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0218",
@@ -823,7 +823,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Cynet",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0125",
@@ -837,7 +837,7 @@
     "mitreTechniqueID": "XT5000",
     "connector": "Darktrace",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0104",
@@ -851,7 +851,7 @@
     "mitreTechniqueID": "T1567",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "03-14-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0126",
@@ -865,7 +865,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0322",
@@ -879,7 +879,7 @@
     "mitreTechniqueID": "XT3001",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0461",
@@ -893,7 +893,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "01-14-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0217",
@@ -907,7 +907,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Deep Instinct",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0472",
@@ -921,7 +921,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "02-18-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0346",
@@ -935,7 +935,7 @@
     "mitreTechniqueID": "T1568",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0373",
@@ -949,7 +949,7 @@
     "mitreTechniqueID": "XT2007",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0103",
@@ -963,7 +963,7 @@
     "mitreTechniqueID": "T1567",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "03-14-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0240",
@@ -977,7 +977,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "10-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0406",
@@ -991,7 +991,7 @@
     "mitreTechniqueID": "T1048",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0124",
@@ -1005,7 +1005,7 @@
     "mitreTechniqueID": "T1003",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0127",
@@ -1019,7 +1019,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Duo",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0128",
@@ -1033,7 +1033,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Duo",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0072",
@@ -1047,7 +1047,7 @@
     "mitreTechniqueID": "T1556",
     "connector": "Duo",
     "tool": "Stellar Cyber",
-    "lastModified": "06-12-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0084",
@@ -1061,7 +1061,7 @@
     "mitreTechniqueID": "XT5003",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "05-20-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0043",
@@ -1075,7 +1075,7 @@
     "mitreTechniqueID": "T1059",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "08-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0330",
@@ -1089,7 +1089,7 @@
     "mitreTechniqueID": "T1059",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0349",
@@ -1103,7 +1103,7 @@
     "mitreTechniqueID": "T1573",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0105",
@@ -1117,7 +1117,7 @@
     "mitreTechniqueID": "T1567",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "03-14-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0314",
@@ -1131,7 +1131,7 @@
     "mitreTechniqueID": "XT2014",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0293",
@@ -1145,7 +1145,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0299",
@@ -1159,7 +1159,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0295",
@@ -1173,7 +1173,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0313",
@@ -1187,7 +1187,7 @@
     "mitreTechniqueID": "XT2015",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0303",
@@ -1201,7 +1201,7 @@
     "mitreTechniqueID": "XT2002",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0304",
@@ -1215,7 +1215,7 @@
     "mitreTechniqueID": "XT2002",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0281",
@@ -1229,7 +1229,7 @@
     "mitreTechniqueID": "T1595",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0324",
@@ -1243,7 +1243,7 @@
     "mitreTechniqueID": "T1190",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0280",
@@ -1257,7 +1257,7 @@
     "mitreTechniqueID": "T1595",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0345",
@@ -1271,7 +1271,7 @@
     "mitreTechniqueID": "T1571",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0350",
@@ -1285,7 +1285,7 @@
     "mitreTechniqueID": "XT6001",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0325",
@@ -1299,7 +1299,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0412",
@@ -1313,7 +1313,7 @@
     "mitreTechniqueID": "T1020",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0309",
@@ -1327,7 +1327,7 @@
     "mitreTechniqueID": "XT2006",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0294",
@@ -1341,7 +1341,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0351",
@@ -1355,7 +1355,7 @@
     "mitreTechniqueID": "XT6002",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0422",
@@ -1369,7 +1369,7 @@
     "mitreTechniqueID": "T1486",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0391",
@@ -1383,7 +1383,7 @@
     "mitreTechniqueID": "T1068",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0296",
@@ -1397,7 +1397,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0312",
@@ -1411,7 +1411,7 @@
     "mitreTechniqueID": "XT2003",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0277",
@@ -1425,7 +1425,7 @@
     "mitreTechniqueID": "T1595",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0286",
@@ -1439,7 +1439,7 @@
     "mitreTechniqueID": "T1190",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0298",
@@ -1453,7 +1453,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0415",
@@ -1467,7 +1467,7 @@
     "mitreTechniqueID": "T1565",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0352",
@@ -1481,7 +1481,7 @@
     "mitreTechniqueID": "XT6003",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0285",
@@ -1495,7 +1495,7 @@
     "mitreTechniqueID": "T1190",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0367",
@@ -1509,7 +1509,7 @@
     "mitreTechniqueID": "T1074",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0329",
@@ -1523,7 +1523,7 @@
     "mitreTechniqueID": "T1059",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0302",
@@ -1537,7 +1537,7 @@
     "mitreTechniqueID": "XT2012",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0424",
@@ -1551,7 +1551,7 @@
     "mitreTechniqueID": "T1499",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0426",
@@ -1565,7 +1565,7 @@
     "mitreTechniqueID": "T1499",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0353",
@@ -1579,7 +1579,7 @@
     "mitreTechniqueID": "XT6004",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0279",
@@ -1593,7 +1593,7 @@
     "mitreTechniqueID": "T1595",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0317",
@@ -1607,7 +1607,7 @@
     "mitreTechniqueID": "XT2003",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0318",
@@ -1621,7 +1621,7 @@
     "mitreTechniqueID": "XT3001",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0291",
@@ -1635,7 +1635,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0413",
@@ -1649,7 +1649,7 @@
     "mitreTechniqueID": "T1565",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0248",
@@ -1663,7 +1663,7 @@
     "mitreTechniqueID": "XT1003",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "08-14-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0052",
@@ -1677,7 +1677,7 @@
     "mitreTechniqueID": "T1546",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "08-22-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0042",
@@ -1691,7 +1691,7 @@
     "mitreTechniqueID": "T1546",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "08-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0041",
@@ -1705,7 +1705,7 @@
     "mitreTechniqueID": "T1546",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "08-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0215",
@@ -1719,7 +1719,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "FireEye HX",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0219",
@@ -1733,7 +1733,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "FireEye HX",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0220",
@@ -1747,7 +1747,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "FireEye HX",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0221",
@@ -1761,7 +1761,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "FireEye HX",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0070",
@@ -1775,7 +1775,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "FortiGate",
     "tool": "Stellar Cyber",
-    "lastModified": "06-26-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0021",
@@ -1789,7 +1789,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "FortiGate",
     "tool": "Stellar Cyber",
-    "lastModified": "10-24-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0200",
@@ -1803,7 +1803,7 @@
     "mitreTechniqueID": "XT4007",
     "connector": "GSuite",
     "tool": "Stellar Cyber",
-    "lastModified": "11-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0440",
@@ -1817,7 +1817,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0096",
@@ -1831,7 +1831,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
-    "lastModified": "04-01-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0097",
@@ -1845,7 +1845,7 @@
     "mitreTechniqueID": "T1485",
     "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
-    "lastModified": "04-01-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0047",
@@ -1859,7 +1859,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
-    "lastModified": "08-27-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0297",
@@ -1873,7 +1873,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "GSuite",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0050",
@@ -1887,7 +1887,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
-    "lastModified": "08-27-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0051",
@@ -1901,7 +1901,7 @@
     "mitreTechniqueID": "T1597",
     "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
-    "lastModified": "08-27-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0098",
@@ -1915,7 +1915,7 @@
     "mitreTechniqueID": "T1484",
     "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
-    "lastModified": "04-01-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0079",
@@ -1929,7 +1929,7 @@
     "mitreTechniqueID": "T1556",
     "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
-    "lastModified": "05-29-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0049",
@@ -1943,7 +1943,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
-    "lastModified": "08-27-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0048",
@@ -1957,7 +1957,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
-    "lastModified": "08-27-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0099",
@@ -1971,7 +1971,7 @@
     "mitreTechniqueID": "T1531",
     "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
-    "lastModified": "04-01-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0100",
@@ -1985,7 +1985,7 @@
     "mitreTechniqueID": "T1531",
     "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
-    "lastModified": "04-01-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0018",
@@ -1999,7 +1999,7 @@
     "mitreTechniqueID": "XT1000",
     "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
-    "lastModified": "11-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0320",
@@ -2013,7 +2013,7 @@
     "mitreTechniqueID": "XT4006",
     "connector": "GSuite",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0085",
@@ -2027,7 +2027,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
-    "lastModified": "05-14-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0046",
@@ -2041,7 +2041,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
-    "lastModified": "08-27-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0045",
@@ -2055,7 +2055,7 @@
     "mitreTechniqueID": "T1531",
     "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
-    "lastModified": "08-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0101",
@@ -2069,7 +2069,7 @@
     "mitreTechniqueID": "T1548",
     "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
-    "lastModified": "04-01-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0321",
@@ -2083,7 +2083,7 @@
     "mitreTechniqueID": "XT4007",
     "connector": "GSuite",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0013",
@@ -2097,7 +2097,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
-    "lastModified": "11-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0063",
@@ -2111,7 +2111,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
-    "lastModified": "07-10-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0129",
@@ -2125,7 +2125,7 @@
     "mitreTechniqueID": "T1199",
     "connector": "Google Cloud Audit Logging",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0083",
@@ -2139,7 +2139,7 @@
     "mitreTechniqueID": "T1595",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "05-22-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0238",
@@ -2153,7 +2153,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Huntress",
     "tool": "Stellar Cyber",
-    "lastModified": "10-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0379",
@@ -2167,7 +2167,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0454",
@@ -2181,7 +2181,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "01-14-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0463",
@@ -2195,7 +2195,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "01-14-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0087",
@@ -2209,7 +2209,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "05-10-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0316",
@@ -2223,7 +2223,7 @@
     "mitreTechniqueID": "XT2001",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0467",
@@ -2237,7 +2237,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "02-03-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0470",
@@ -2251,7 +2251,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "02-12-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0381",
@@ -2265,7 +2265,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0388",
@@ -2279,7 +2279,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0383",
@@ -2293,7 +2293,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0375",
@@ -2307,7 +2307,7 @@
     "mitreTechniqueID": "XT2015",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0370",
@@ -2321,7 +2321,7 @@
     "mitreTechniqueID": "XT2002",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0371",
@@ -2335,7 +2335,7 @@
     "mitreTechniqueID": "XT2002",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0363",
@@ -2349,7 +2349,7 @@
     "mitreTechniqueID": "T1046",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0404",
@@ -2363,7 +2363,7 @@
     "mitreTechniqueID": "T1210",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0362",
@@ -2377,7 +2377,7 @@
     "mitreTechniqueID": "T1046",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0368",
@@ -2391,7 +2391,7 @@
     "mitreTechniqueID": "XT2011",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0399",
@@ -2405,7 +2405,7 @@
     "mitreTechniqueID": "XT6001",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0405",
@@ -2419,7 +2419,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0411",
@@ -2433,7 +2433,7 @@
     "mitreTechniqueID": "T1020",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0372",
@@ -2447,7 +2447,7 @@
     "mitreTechniqueID": "XT2006",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0382",
@@ -2461,7 +2461,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0401",
@@ -2475,7 +2475,7 @@
     "mitreTechniqueID": "XT6002",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0421",
@@ -2489,7 +2489,7 @@
     "mitreTechniqueID": "T1486",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0390",
@@ -2503,7 +2503,7 @@
     "mitreTechniqueID": "T1068",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0384",
@@ -2517,7 +2517,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0377",
@@ -2531,7 +2531,7 @@
     "mitreTechniqueID": "T1021",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0360",
@@ -2545,7 +2545,7 @@
     "mitreTechniqueID": "T1046",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0394",
@@ -2559,7 +2559,7 @@
     "mitreTechniqueID": "T1210",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0387",
@@ -2573,7 +2573,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0414",
@@ -2587,7 +2587,7 @@
     "mitreTechniqueID": "T1021",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0402",
@@ -2601,7 +2601,7 @@
     "mitreTechniqueID": "XT6003",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0393",
@@ -2615,7 +2615,7 @@
     "mitreTechniqueID": "T1210",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0366",
@@ -2629,7 +2629,7 @@
     "mitreTechniqueID": "T1074",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0328",
@@ -2643,7 +2643,7 @@
     "mitreTechniqueID": "T1059",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0369",
@@ -2657,7 +2657,7 @@
     "mitreTechniqueID": "XT2012",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0423",
@@ -2671,7 +2671,7 @@
     "mitreTechniqueID": "T1499",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0425",
@@ -2685,7 +2685,7 @@
     "mitreTechniqueID": "T1499",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0403",
@@ -2699,7 +2699,7 @@
     "mitreTechniqueID": "XT6004",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0361",
@@ -2713,7 +2713,7 @@
     "mitreTechniqueID": "T1046",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0396",
@@ -2727,7 +2727,7 @@
     "mitreTechniqueID": "XT2003",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0397",
@@ -2741,7 +2741,7 @@
     "mitreTechniqueID": "XT3001",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0380",
@@ -2755,7 +2755,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0073",
@@ -2769,7 +2769,7 @@
     "mitreTechniqueID": "T1059",
     "connector": "JumpCloud",
     "tool": "Stellar Cyber",
-    "lastModified": "06-11-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0074",
@@ -2783,7 +2783,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "JumpCloud",
     "tool": "Stellar Cyber",
-    "lastModified": "06-11-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0069",
@@ -2797,7 +2797,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "JumpCloud",
     "tool": "Stellar Cyber",
-    "lastModified": "07-04-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0039",
@@ -2811,7 +2811,7 @@
     "mitreTechniqueID": "T1218",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "09-17-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0025",
@@ -2825,7 +2825,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "LastPass",
     "tool": "Stellar Cyber",
-    "lastModified": "10-22-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0024",
@@ -2839,7 +2839,7 @@
     "mitreTechniqueID": "T1531",
     "connector": "LastPass",
     "tool": "Stellar Cyber",
-    "lastModified": "10-23-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0022",
@@ -2853,7 +2853,7 @@
     "mitreTechniqueID": "T1485",
     "connector": "LastPass",
     "tool": "Stellar Cyber",
-    "lastModified": "10-23-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0023",
@@ -2867,7 +2867,7 @@
     "mitreTechniqueID": "T1531",
     "connector": "LastPass",
     "tool": "Stellar Cyber",
-    "lastModified": "10-23-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0026",
@@ -2881,7 +2881,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "LastPass",
     "tool": "Stellar Cyber",
-    "lastModified": "10-22-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0027",
@@ -2895,7 +2895,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "LastPass",
     "tool": "Stellar Cyber",
-    "lastModified": "10-21-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0441",
@@ -2909,7 +2909,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "LimaCharlie",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0319",
@@ -2923,7 +2923,7 @@
     "mitreTechniqueID": "XT4005",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0310",
@@ -2937,7 +2937,7 @@
     "mitreTechniqueID": "XT2010",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0034",
@@ -2951,7 +2951,7 @@
     "mitreTechniqueID": "T1204",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "09-18-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0400",
@@ -2965,7 +2965,7 @@
     "mitreTechniqueID": "XT6001",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0035",
@@ -2979,7 +2979,7 @@
     "mitreTechniqueID": "T1530",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "09-18-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0468",
@@ -2993,7 +2993,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "02-03-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0442",
@@ -3007,7 +3007,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0449",
@@ -3021,7 +3021,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Microsoft Defender",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0253",
@@ -3035,7 +3035,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "07-01-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0246",
@@ -3049,7 +3049,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "08-20-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0274",
@@ -3063,7 +3063,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "04-15-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0260",
@@ -3077,7 +3077,7 @@
     "mitreTechniqueID": "T1555",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "07-01-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0261",
@@ -3091,7 +3091,7 @@
     "mitreTechniqueID": "T1484",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "07-01-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0259",
@@ -3105,7 +3105,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "11-14-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0251",
@@ -3119,7 +3119,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "07-01-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0257",
@@ -3133,7 +3133,7 @@
     "mitreTechniqueID": "T1484",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "07-01-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0256",
@@ -3147,7 +3147,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "07-01-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0241",
@@ -3161,7 +3161,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "10-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0242",
@@ -3175,7 +3175,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "10-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0250",
@@ -3189,7 +3189,7 @@
     "mitreTechniqueID": "T1087",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "07-01-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0243",
@@ -3203,7 +3203,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "10-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0247",
@@ -3217,7 +3217,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "08-20-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0252",
@@ -3231,7 +3231,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "07-01-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0258",
@@ -3245,7 +3245,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "07-01-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0249",
@@ -3259,7 +3259,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "07-01-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0255",
@@ -3273,7 +3273,7 @@
     "mitreTechniqueID": "T1556",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "07-01-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0245",
@@ -3287,7 +3287,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "10-22-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0254",
@@ -3301,7 +3301,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "07-01-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0443",
@@ -3315,7 +3315,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Mimecast",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0444",
@@ -3329,7 +3329,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Mimecast",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0445",
@@ -3343,7 +3343,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Mimecast",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0446",
@@ -3357,7 +3357,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Mimecast",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0447",
@@ -3371,7 +3371,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Mimecast",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0448",
@@ -3385,7 +3385,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Mimecast",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0385",
@@ -3399,7 +3399,7 @@
     "mitreTechniqueID": "T1003",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0389",
@@ -3413,7 +3413,7 @@
     "mitreTechniqueID": "T1003",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0037",
@@ -3427,7 +3427,7 @@
     "mitreTechniqueID": "T1218",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "09-17-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0068",
@@ -3441,7 +3441,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "JumpCloud",
     "tool": "Stellar Cyber",
-    "lastModified": "07-04-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0132",
@@ -3455,7 +3455,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0133",
@@ -3469,7 +3469,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0134",
@@ -3483,7 +3483,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0135",
@@ -3497,7 +3497,7 @@
     "mitreTechniqueID": "T1531",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0225",
@@ -3511,7 +3511,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Netskope",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0226",
@@ -3525,7 +3525,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Netskope",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0227",
@@ -3539,7 +3539,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Netskope",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0136",
@@ -3553,7 +3553,7 @@
     "mitreTechniqueID": "T1566",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0138",
@@ -3567,7 +3567,7 @@
     "mitreTechniqueID": "T1114",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0137",
@@ -3581,7 +3581,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0140",
@@ -3595,7 +3595,7 @@
     "mitreTechniqueID": "T1204",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0141",
@@ -3609,7 +3609,7 @@
     "mitreTechniqueID": "T1204",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0142",
@@ -3623,7 +3623,7 @@
     "mitreTechniqueID": "T1566",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0143",
@@ -3637,7 +3637,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0144",
@@ -3651,7 +3651,7 @@
     "mitreTechniqueID": "T0884",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0145",
@@ -3665,7 +3665,7 @@
     "mitreTechniqueID": "T1114",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0146",
@@ -3679,7 +3679,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0014",
@@ -3693,7 +3693,7 @@
     "mitreTechniqueID": "T1531",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "11-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0015",
@@ -3707,7 +3707,7 @@
     "mitreTechniqueID": "T1030",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "11-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0149",
@@ -3721,7 +3721,7 @@
     "mitreTechniqueID": "T1531",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0032",
@@ -3735,7 +3735,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "09-24-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0450",
@@ -3749,7 +3749,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Oracle Cloud Infrastructure",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0339",
@@ -3763,7 +3763,7 @@
     "mitreTechniqueID": "T1562",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0335",
@@ -3777,7 +3777,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0408",
@@ -3791,7 +3791,7 @@
     "mitreTechniqueID": "T1048",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0409",
@@ -3805,7 +3805,7 @@
     "mitreTechniqueID": "T1048",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0410",
@@ -3819,7 +3819,7 @@
     "mitreTechniqueID": "T1537",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0340",
@@ -3833,7 +3833,7 @@
     "mitreTechniqueID": "T1562",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0150",
@@ -3847,7 +3847,7 @@
     "mitreTechniqueID": "T1556",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0364",
@@ -3861,7 +3861,7 @@
     "mitreTechniqueID": "T1074",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0420",
@@ -3875,7 +3875,7 @@
     "mitreTechniqueID": "T1531",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0201",
@@ -3889,7 +3889,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "11-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0341",
@@ -3903,7 +3903,7 @@
     "mitreTechniqueID": "T1556",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0202",
@@ -3917,7 +3917,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "11-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0203",
@@ -3931,7 +3931,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "11-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0067",
@@ -3945,7 +3945,7 @@
     "mitreTechniqueID": "T1543",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "07-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0066",
@@ -3959,7 +3959,7 @@
     "mitreTechniqueID": "T1053",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "07-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0151",
@@ -3973,7 +3973,7 @@
     "mitreTechniqueID": "T1485",
     "connector": "Okta",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0152",
@@ -3987,7 +3987,7 @@
     "mitreTechniqueID": "T1484",
     "connector": "Okta",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0153",
@@ -4001,7 +4001,7 @@
     "mitreTechniqueID": "T1484",
     "connector": "Okta",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0016",
@@ -4015,7 +4015,7 @@
     "mitreTechniqueID": "XT1000",
     "connector": "Okta",
     "tool": "Stellar Cyber",
-    "lastModified": "11-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0154",
@@ -4029,7 +4029,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Okta",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0004",
@@ -4043,7 +4043,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "OneLogin",
     "tool": "Stellar Cyber",
-    "lastModified": "02-12-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0002",
@@ -4057,7 +4057,7 @@
     "mitreTechniqueID": "T1556",
     "connector": "OneLogin",
     "tool": "Stellar Cyber",
-    "lastModified": "02-12-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0001",
@@ -4071,7 +4071,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "OneLogin",
     "tool": "Stellar Cyber",
-    "lastModified": "02-12-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0301",
@@ -4085,7 +4085,7 @@
     "mitreTechniqueID": "XT2001",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0082",
@@ -4099,7 +4099,7 @@
     "mitreTechniqueID": "T1020",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "05-27-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0378",
@@ -4113,7 +4113,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0453",
@@ -4127,7 +4127,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "01-14-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0237",
@@ -4141,7 +4141,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "10-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0326",
@@ -4155,7 +4155,7 @@
     "mitreTechniqueID": "T1218",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0462",
@@ -4169,7 +4169,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "01-14-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0244",
@@ -4183,7 +4183,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "10-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0289",
@@ -4197,7 +4197,7 @@
     "mitreTechniqueID": "T1566",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0287",
@@ -4211,7 +4211,7 @@
     "mitreTechniqueID": "T1566",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0455",
@@ -4225,7 +4225,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "01-14-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0457",
@@ -4239,7 +4239,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "01-14-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0290",
@@ -4253,7 +4253,7 @@
     "mitreTechniqueID": "T1566",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0288",
@@ -4267,7 +4267,7 @@
     "mitreTechniqueID": "T1566",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0062",
@@ -4281,7 +4281,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Office 365",
     "tool": "Stellar Cyber",
-    "lastModified": "07-26-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0469",
@@ -4295,7 +4295,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-11-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0055",
@@ -4309,7 +4309,7 @@
     "mitreTechniqueID": "T1087",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "08-12-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0061",
@@ -4323,7 +4323,7 @@
     "mitreTechniqueID": "T1059",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "07-29-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0044",
@@ -4337,7 +4337,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "08-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0059",
@@ -4351,7 +4351,7 @@
     "mitreTechniqueID": "T1003",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "08-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0040",
@@ -4365,7 +4365,7 @@
     "mitreTechniqueID": "T1059",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "09-17-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0184",
@@ -4379,7 +4379,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "03-04-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0007",
@@ -4393,7 +4393,7 @@
     "mitreTechniqueID": "T1021",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "01-06-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0020",
@@ -4407,7 +4407,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "JumpCloud",
     "tool": "Stellar Cyber",
-    "lastModified": "10-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0006",
@@ -4421,7 +4421,7 @@
     "mitreTechniqueID": "T1499",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "01-09-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0080",
@@ -4435,7 +4435,7 @@
     "mitreTechniqueID": "T1588",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "05-28-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0036",
@@ -4449,7 +4449,7 @@
     "mitreTechniqueID": "T1036",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "09-17-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0028",
@@ -4463,7 +4463,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "10-15-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0064",
@@ -4477,7 +4477,7 @@
     "mitreTechniqueID": "T1190",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "07-08-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0078",
@@ -4491,7 +4491,7 @@
     "mitreTechniqueID": "T1218",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "05-29-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0054",
@@ -4505,7 +4505,7 @@
     "mitreTechniqueID": "T1016",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "08-12-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0163",
@@ -4519,7 +4519,7 @@
     "mitreTechniqueID": "T1486",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0106",
@@ -4533,7 +4533,7 @@
     "mitreTechniqueID": "T1219",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "02-27-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0164",
@@ -4547,7 +4547,7 @@
     "mitreTechniqueID": "T1592",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0088",
@@ -4561,7 +4561,7 @@
     "mitreTechniqueID": "T1134",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "05-03-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0268",
@@ -4575,7 +4575,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "AWS CloudTrail",
     "tool": "Stellar Cyber",
-    "lastModified": "06-03-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0065",
@@ -4589,7 +4589,7 @@
     "mitreTechniqueID": "T1059",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "07-08-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0429",
@@ -4603,7 +4603,7 @@
     "mitreTechniqueID": "T1562",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0331",
@@ -4617,7 +4617,7 @@
     "mitreTechniqueID": "T1059",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0392",
@@ -4631,7 +4631,7 @@
     "mitreTechniqueID": "T1210",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0236",
@@ -4645,7 +4645,7 @@
     "mitreTechniqueID": "T1210",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "10-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0282",
@@ -4659,7 +4659,7 @@
     "mitreTechniqueID": "T1190",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0233",
@@ -4673,7 +4673,7 @@
     "mitreTechniqueID": "T1190",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "10-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0356",
@@ -4687,7 +4687,7 @@
     "mitreTechniqueID": "XT1001",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0451",
@@ -4701,7 +4701,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "ProofPoint TAP",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0008",
@@ -4715,7 +4715,7 @@
     "mitreTechniqueID": "T1204",
     "connector": "Proofpoint TAP",
     "tool": "Stellar Cyber",
-    "lastModified": "12-04-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0458",
@@ -4729,7 +4729,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "01-14-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0283",
@@ -4743,7 +4743,7 @@
     "mitreTechniqueID": "T1190",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0234",
@@ -4757,7 +4757,7 @@
     "mitreTechniqueID": "T1190",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "10-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0284",
@@ -4771,7 +4771,7 @@
     "mitreTechniqueID": "T1190",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0235",
@@ -4785,7 +4785,7 @@
     "mitreTechniqueID": "T1190",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "10-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0528",
@@ -4799,7 +4799,7 @@
     "mitreTechniqueID": "T1560",
     "connector": "N/A",
     "tool": "",
-    "lastModified": "03-04-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0407",
@@ -4813,7 +4813,7 @@
     "mitreTechniqueID": "T1048",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0342",
@@ -4827,7 +4827,7 @@
     "mitreTechniqueID": "T1562",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0343",
@@ -4841,7 +4841,7 @@
     "mitreTechniqueID": "T1112",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0347",
@@ -4855,7 +4855,7 @@
     "mitreTechniqueID": "T1572",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0395",
@@ -4869,7 +4869,7 @@
     "mitreTechniqueID": "T1563",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0344",
@@ -4883,7 +4883,7 @@
     "mitreTechniqueID": "T1112",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0348",
@@ -4897,7 +4897,7 @@
     "mitreTechniqueID": "T1572",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0386",
@@ -4911,7 +4911,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0311",
@@ -4925,7 +4925,7 @@
     "mitreTechniqueID": "XT2008",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0465",
@@ -4939,7 +4939,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "01-14-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0460",
@@ -4953,7 +4953,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "01-14-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0095",
@@ -4967,7 +4967,7 @@
     "mitreTechniqueID": "T1578",
     "connector": "AWS CloudTrail",
     "tool": "Stellar Cyber",
-    "lastModified": "04-08-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0278",
@@ -4981,7 +4981,7 @@
     "mitreTechniqueID": "T1595",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0430",
@@ -4995,7 +4995,7 @@
     "mitreTechniqueID": "T1484",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0431",
@@ -5009,7 +5009,7 @@
     "mitreTechniqueID": "T1021",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0323",
@@ -5023,7 +5023,7 @@
     "mitreTechniqueID": "XT3001",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0222",
@@ -5037,7 +5037,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "SentinelOne",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0471",
@@ -5051,7 +5051,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "02-18-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0333",
@@ -5065,7 +5065,7 @@
     "mitreTechniqueID": "T1047",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0332",
@@ -5079,7 +5079,7 @@
     "mitreTechniqueID": "T1569",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0365",
@@ -5093,7 +5093,7 @@
     "mitreTechniqueID": "T1039",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0167",
@@ -5107,7 +5107,7 @@
     "mitreTechniqueID": "T1595",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0081",
@@ -5121,7 +5121,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "Sonic FW",
     "tool": "Stellar Cyber",
-    "lastModified": "05-27-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0228",
@@ -5135,7 +5135,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Sophos",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0017",
@@ -5149,7 +5149,7 @@
     "mitreTechniqueID": "XT6001",
     "connector": "Sophos",
     "tool": "Stellar Cyber",
-    "lastModified": "11-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0010",
@@ -5163,7 +5163,7 @@
     "mitreTechniqueID": "T1204",
     "connector": "Sophos",
     "tool": "Stellar Cyber",
-    "lastModified": "11-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0229",
@@ -5177,7 +5177,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Sophos",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0003",
@@ -5191,7 +5191,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "Sophos",
     "tool": "Stellar Cyber",
-    "lastModified": "02-12-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0459",
@@ -5205,7 +5205,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "01-14-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0432",
@@ -5219,7 +5219,7 @@
     "mitreTechniqueID": "T1566",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0433",
@@ -5233,7 +5233,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0262",
@@ -5247,7 +5247,7 @@
     "mitreTechniqueID": "T1580",
     "connector": "AWS CloudTrail",
     "tool": "Stellar Cyber",
-    "lastModified": "06-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0273",
@@ -5261,7 +5261,7 @@
     "mitreTechniqueID": "T1074",
     "connector": "AWS CloudTrail",
     "tool": "Stellar Cyber",
-    "lastModified": "06-03-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0269",
@@ -5275,7 +5275,7 @@
     "mitreTechniqueID": "T1537",
     "connector": "AWS CloudTrail",
     "tool": "Stellar Cyber",
-    "lastModified": "06-03-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0263",
@@ -5289,7 +5289,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "AWS CloudTrail",
     "tool": "Stellar Cyber",
-    "lastModified": "06-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0270",
@@ -5303,7 +5303,7 @@
     "mitreTechniqueID": "T1485",
     "connector": "AWS CloudTrail",
     "tool": "Stellar Cyber",
-    "lastModified": "06-03-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0264",
@@ -5317,7 +5317,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "AWS CloudTrail",
     "tool": "Stellar Cyber",
-    "lastModified": "06-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0265",
@@ -5331,7 +5331,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "AWS CloudTrail",
     "tool": "Stellar Cyber",
-    "lastModified": "06-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0266",
@@ -5345,7 +5345,7 @@
     "mitreTechniqueID": "T1562",
     "connector": "AWS CloudTrail",
     "tool": "Stellar Cyber",
-    "lastModified": "06-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0190",
@@ -5359,7 +5359,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "N/A"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0191",
@@ -5373,7 +5373,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "N/A"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0192",
@@ -5387,7 +5387,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "N/A"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0193",
@@ -5401,7 +5401,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "N/A"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0194",
@@ -5415,7 +5415,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "N/A"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0195",
@@ -5429,7 +5429,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "N/A"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0196",
@@ -5443,7 +5443,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "N/A"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0197",
@@ -5457,7 +5457,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "N/A"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0198",
@@ -5471,7 +5471,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "N/A"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0199",
@@ -5485,7 +5485,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "N/A"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0053",
@@ -5499,7 +5499,7 @@
     "mitreTechniqueID": "T1036",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "08-12-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0232",
@@ -5513,7 +5513,7 @@
     "mitreTechniqueID": "T1059",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "10-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0060",
@@ -5527,7 +5527,7 @@
     "mitreTechniqueID": "T1059",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "07-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0434",
@@ -5541,7 +5541,7 @@
     "mitreTechniqueID": "T1003",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0275",
@@ -5555,7 +5555,7 @@
     "mitreTechniqueID": "T1003",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "04-15-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0239",
@@ -5569,7 +5569,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "10-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0185",
@@ -5583,7 +5583,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "N/A"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0271",
@@ -5597,7 +5597,7 @@
     "mitreTechniqueID": "T1530",
     "connector": "AWS CloudTrail",
     "tool": "Stellar Cyber",
-    "lastModified": "06-03-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0267",
@@ -5611,7 +5611,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "AWS CloudTrail",
     "tool": "Stellar Cyber",
-    "lastModified": "06-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0272",
@@ -5625,7 +5625,7 @@
     "mitreTechniqueID": "T1537",
     "connector": "AWS CloudTrail",
     "tool": "Stellar Cyber",
-    "lastModified": "06-03-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0058",
@@ -5639,7 +5639,7 @@
     "mitreTechniqueID": "T1204",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "08-05-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0427",
@@ -5653,7 +5653,7 @@
     "mitreTechniqueID": "T1059",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0168",
@@ -5667,7 +5667,7 @@
     "mitreTechniqueID": "T1059",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0428",
@@ -5681,7 +5681,7 @@
     "mitreTechniqueID": "T1059",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0169",
@@ -5695,7 +5695,7 @@
     "mitreTechniqueID": "T1218",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0464",
@@ -5709,7 +5709,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "01-14-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0473",
@@ -5723,7 +5723,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "",
-    "lastModified": "02-20-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0171",
@@ -5737,7 +5737,7 @@
     "mitreTechniqueID": "T1595",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0435",
@@ -5751,7 +5751,7 @@
     "mitreTechniqueID": "T1003",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0436",
@@ -5765,7 +5765,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0276",
@@ -5779,7 +5779,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "04-15-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0230",
@@ -5793,7 +5793,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "10-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0231",
@@ -5807,7 +5807,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "10-30-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0438",
@@ -5821,7 +5821,7 @@
     "mitreTechniqueID": "T1059",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0466",
@@ -5835,7 +5835,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "01-14-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0223",
@@ -5849,7 +5849,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Trend Micro Vision One",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0376",
@@ -5863,7 +5863,7 @@
     "mitreTechniqueID": "XT2013",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0306",
@@ -5877,7 +5877,7 @@
     "mitreTechniqueID": "XT2003",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0358",
@@ -5891,7 +5891,7 @@
     "mitreTechniqueID": "XT1001",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0398",
@@ -5905,7 +5905,7 @@
     "mitreTechniqueID": "XT4004",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0315",
@@ -5919,7 +5919,7 @@
     "mitreTechniqueID": "XT2001",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0359",
@@ -5933,7 +5933,7 @@
     "mitreTechniqueID": "XT1001",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0224",
@@ -5947,7 +5947,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "Varonis-Datadvantage",
     "tool": "Stellar Cyber",
-    "lastModified": "10-31-24"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0418",
@@ -5961,7 +5961,7 @@
     "mitreTechniqueID": "T1490",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0419",
@@ -5975,7 +5975,7 @@
     "mitreTechniqueID": "T1490",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0374",
@@ -5989,7 +5989,7 @@
     "mitreTechniqueID": "XT2009",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0307",
@@ -6003,7 +6003,7 @@
     "mitreTechniqueID": "XT2004",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0121",
@@ -6017,7 +6017,7 @@
     "mitreTechniqueID": "T1531",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0172",
@@ -6031,7 +6031,7 @@
     "mitreTechniqueID": "T1531",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0173",
@@ -6045,7 +6045,7 @@
     "mitreTechniqueID": "T1070",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0174",
@@ -6059,7 +6059,7 @@
     "mitreTechniqueID": "T1484",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0456",
@@ -6073,7 +6073,7 @@
     "mitreTechniqueID": "",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "01-14-25"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0175",
@@ -6087,7 +6087,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0176",
@@ -6101,7 +6101,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0177",
@@ -6115,7 +6115,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0437",
@@ -6129,7 +6129,7 @@
     "mitreTechniqueID": "T1218",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0178",
@@ -6143,7 +6143,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0179",
@@ -6157,7 +6157,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0180",
@@ -6171,7 +6171,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0181",
@@ -6185,7 +6185,7 @@
     "mitreTechniqueID": "T1098",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0182",
@@ -6199,7 +6199,7 @@
     "mitreTechniqueID": "T1531",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0183",
@@ -6213,7 +6213,7 @@
     "mitreTechniqueID": "T1531",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0452",
@@ -6227,7 +6227,7 @@
     "mitreTechniqueID": "N/A",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "12-31-23"
+    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0057",
@@ -6241,6 +6241,6 @@
     "mitreTechniqueID": "T1546",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "lastModified": "08-05-24"
+    "dateAdded": "01-01-2025"
   }
 ]
