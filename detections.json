@@ -5838,6 +5838,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0529",
+    "name": "Test Rule for CrowdStrike",
+    "description": "Test rule, please ignore.",
+    "defaultStatus": "Muted",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "CrowdStrike",
+    "dateAdded": "03-04-2025"
+  },
+  {
     "detectionID": "CY-0223",
     "name": "Trend Micro Vision One - Detections",
     "description": "Stellar Cyber detected a suspicious alert originally reported by Trend Micro Vision One.",
