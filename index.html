@@ -216,7 +216,7 @@
     tbody tr:hover {
       background: var(--row-hover-bg);
     }
-    /* Align first two columns left, rest center */
+    /* Align first two columns left, rest centered */
     #detectionsTable th:nth-child(1),
     #detectionsTable td:nth-child(1),
     #detectionsTable th:nth-child(2),
@@ -379,7 +379,7 @@
       }
     }
 
-    // Reset Filters Function
+    // Reset Filters
     function resetFilters() {
       document.getElementById('search').value = '';
       document.querySelectorAll('#statusDropdown input[type="checkbox"]').forEach(cb => (cb.checked = true));
@@ -472,8 +472,7 @@
     // Helper: Parse date in MM-DD-YYYY format
     function parseDate(str) {
       if(!str) return null;
-      const parts = str.split('-');
-      // parts[0]=MM, parts[1]=DD, parts[2]=YYYY
+      const parts = str.split('-'); // Expected: MM-DD-YYYY
       return new Date(parts[2], parts[0]-1, parts[1]);
     }
 
@@ -487,7 +486,7 @@
       return diffDays <= 90;
     }
 
-    // Status Badge Color and Description (for defaultStatus)
+    // Status Badge Styling for default status
     function getStatusColor(status) {
       switch (status) {
         case 'Active':                   return '#28a745';
@@ -503,19 +502,19 @@
     function getStatusDescription(status) {
       switch (status) {
         case 'Active':
-          return 'This detection is actively monitored and alerts are generated according to our internal thresholds.';
+          return 'This detection is actively monitored and alerts are generated.';
         case 'Active via Custom Rules':
-          return 'While not monitored directly, we have enabled custom rules with defined thresholds to track noteworthy activity.';
+          return 'Enabled custom rules track noteworthy activity.';
         case 'Not Active':
-          return 'This detection typically has low standalone value and is primarily used for correlation with higher-fidelity alerts.';
+          return 'This detection has low standalone value.';
         case 'Alert Preferences':
-          return 'This detection can be toggled between Active or Muted under the “Alert Preferences” tab in ONE Platform.';
+          return 'Toggling available under Alert Preferences.';
         case 'New Detection':
-          return 'A newly introduced detection. It remains inactive until assessed.';
+          return 'A newly introduced detection awaiting assessment.';
         case 'Testing':
-          return 'Currently under SOC evaluation for effectiveness.';
+          return 'Under SOC evaluation.';
         case 'Muted':
-          return 'This detection automatically closes after threshold checks but still supports correlation.';
+          return 'Automatically closed after threshold checks.';
         default:
           return '';
       }
@@ -551,15 +550,15 @@
       fetch('detections.json?v=' + new Date().getTime())
         .then(res => res.json())
         .then(data => {
-          // Sort data alphabetically by detection name
+          // Sort detections alphabetically by name
           data.sort((a, b) => a.name.localeCompare(b.name));
           const tbody = document.querySelector('#detectionsTable tbody');
           tbody.innerHTML = '';
 
           data.forEach(det => {
-            // Append an emoji to the detection name if either dateAdded or dateUpdated is recent (within 90 days)
+            // Append an emoji to the detection name if its dateAdded is within the last 90 days
             let displayName = det.name;
-            if ((det.dateAdded && isRecent(det.dateAdded)) || (det.dateUpdated && isRecent(det.dateUpdated))) {
+            if (det.dateAdded && isRecent(det.dateAdded)) {
               displayName += " 🆕";
             }
             
