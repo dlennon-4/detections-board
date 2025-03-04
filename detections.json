@@ -11,7 +11,7 @@
     "mitreTechniqueID": "T1546",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "dateAdded": "12-01-2025"
+    "dateAdded": "12-01-2024"
   },
   {
     "detectionID": "CY-0292",
@@ -25,7 +25,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "N/A",
     "tool": "Stellar Cyber",
-    "dateAdded": "12-01-2025"
+    "dateAdded": "12-01-2024"
   },
   {
     "detectionID": "CY-0207",
@@ -2284,7 +2284,7 @@
   {
     "detectionID": "CY-0383",
     "name": "Internal Credential Stuffing",
-    "description": "An anomalously large amount of username/password testing was observed on an internal Windows authentication service. Check the activity after successful logins, and consider blocking the internal source IP addresses.",
+    "description": "An anomalously large amount of username/password ing was observed on an internal Windows authentication service. Check the activity after successful logins, and consider blocking the internal source IP addresses.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Propagation",
     "mitreTactic": "Credential Access",
