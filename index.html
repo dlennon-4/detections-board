@@ -95,13 +95,14 @@
       transform: translateY(-2px);
     }
 
+    /* New Badge (Light Blue) */
     .new-badge {
-      background-color: #ffdd57; /* A soft yellow background */
-      color: #333;              /* Dark text */
+      background-color: #add8e6; /* Light blue */
+      color: #333;
       padding: 2px 6px;
       border-radius: 4px;
       font-size: 0.75em;
-      margin-left: 4px;
+      margin-right: 4px;
       font-weight: bold;
     }
 
@@ -555,51 +556,51 @@
       allTh[columnIndex].textContent += (direction === 'asc' ? ' ▲' : ' ▼');
     }
 
-// Load Data and Build Table Rows
-  function loadData() {
-    fetch('detections.json?v=' + new Date().getTime())
-      .then(res => res.json())
-      .then(data => {
-        // Sort detections alphabetically by name
-        data.sort((a, b) => a.name.localeCompare(b.name));
-        const tbody = document.querySelector('#detectionsTable tbody');
-        tbody.innerHTML = '';
+    // Load Data and Build Table Rows
+    function loadData() {
+      fetch('detections.json?v=' + new Date().getTime())
+        .then(res => res.json())
+        .then(data => {
+          // Sort detections alphabetically by name
+          data.sort((a, b) => a.name.localeCompare(b.name));
+          const tbody = document.querySelector('#detectionsTable tbody');
+          tbody.innerHTML = '';
 
-        data.forEach(det => {
-          // Append a "New" badge if dateAdded is within the last 90 days
-          let displayName = det.name;
-          if (det.dateAdded && isRecent(det.dateAdded)) {
-            displayName += ' <span class="new-badge">New</span>';
-          }
-          
-          const statusColor = getStatusColor(det.defaultStatus);
-          const statusDesc  = getStatusDescription(det.defaultStatus);
+          data.forEach(det => {
+            // Build description column: prepend a "New" badge if dateAdded is recent
+            let displayDesc = det.description;
+            if (det.dateAdded && isRecent(det.dateAdded)) {
+              displayDesc = '<span class="new-badge">New</span> ' + displayDesc;
+            }
+            
+            const statusColor = getStatusColor(det.defaultStatus);
+            const statusDesc  = getStatusDescription(det.defaultStatus);
 
-          const tr = document.createElement('tr');
-          tr.innerHTML = `
-            <td>${displayName}</td>
-            <td>${det.description}</td>
-            <td>
-              <span class="status-badge" style="background-color: ${statusColor};" title="${statusDesc}">
-                ${det.defaultStatus}
-              </span>
-            </td>
-            <td>${det.killChainStage}</td>
-            <td>${det.mitreTactic}</td>
-            <td>${det.mitreTacticID}</td>
-            <td>${det.mitreTechnique}</td>
-            <td>${det.mitreTechniqueID}</td>
-            <td>${det.connector}</td>
-            <td>${det.tool}</td>
-          `;
-          tbody.appendChild(tr);
-        });
-        updateCaseCount();
-      })
-      .catch(err => console.error('Error loading detections.json', err));
-  }
-  
-  window.onload = loadData;
-</script>
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+              <td>${det.name}</td>
+              <td>${displayDesc}</td>
+              <td>
+                <span class="status-badge" style="background-color: ${statusColor};" title="${statusDesc}">
+                  ${det.defaultStatus}
+                </span>
+              </td>
+              <td>${det.killChainStage}</td>
+              <td>${det.mitreTactic}</td>
+              <td>${det.mitreTacticID}</td>
+              <td>${det.mitreTechnique}</td>
+              <td>${det.mitreTechniqueID}</td>
+              <td>${det.connector}</td>
+              <td>${det.tool}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+          updateCaseCount();
+        })
+        .catch(err => console.error('Error loading detections.json', err));
+    }
+    
+    window.onload = loadData;
+  </script>
 </body>
 </html>
