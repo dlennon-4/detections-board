@@ -717,7 +717,7 @@
     "detectionID": "CY-0005",
     "name": "Consent to Suspicious Application",
     "description": "A user granted consent to an application that is a known suspicious OAUTH client, indicating potential malicious activity.",
-    "defaultStatus": "New Detection",
+    "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Credential Access",
     "mitreTacticID": "TA0006",
@@ -725,7 +725,7 @@
     "mitreTechniqueID": "T1558",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "02-05-25"
+    "lastModified": "03-04-25"
   },
   {
     "detectionID": "CY-0213",
@@ -4379,7 +4379,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "lastModified": "02-26-25"
+    "lastModified": "03-04-25"
   },
   {
     "detectionID": "CY-0007",
@@ -4791,7 +4791,7 @@
     "detectionID": "CY-0528",
     "name": "Rar Usage with Password and Compression Level",
     "description": "Detects the use of rar.exe, on the command line, to create an archive with password protection or with a specific compression level. This is pretty indicative of malicious actions.",
-    "defaultStatus": "New Detection",
+    "defaultStatus": "Active",
     "killChainStage": "Exploration",
     "mitreTactic": "Collection",
     "mitreTacticID": "TA0009",
@@ -4799,7 +4799,7 @@
     "mitreTechniqueID": "T1560",
     "connector": "N/A",
     "tool": "",
-    "lastModified": "03-03-25"
+    "lastModified": "03-04-25"
   },
   {
     "detectionID": "CY-0407",
