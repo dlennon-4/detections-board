@@ -2284,7 +2284,7 @@
   {
     "detectionID": "CY-0383",
     "name": "Internal Credential Stuffing",
-    "description": "An anomalously large amount of username/password ing was observed on an internal Windows authentication service. Check the activity after successful logins, and consider blocking the internal source IP addresses.",
+    "description": "An anomalously large amount of username/password testing was observed on an internal Windows authentication service. Check the activity after successful logins, and consider blocking the internal source IP addresses.",
     "defaultStatus": "Alert Preferences",
     "killChainStage": "Propagation",
     "mitreTactic": "Credential Access",
@@ -5836,20 +5836,6 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
-  },
-  {
-    "detectionID": "CY-0529",
-    "name": "Test Rule for CrowdStrike",
-    "description": "Test rule, please ignore.",
-    "defaultStatus": "Muted",
-    "killChainStage": "",
-    "mitreTactic": "",
-    "mitreTacticID": "",
-    "mitreTechnique": "",
-    "mitreTechniqueID": "",
-    "connector": "",
-    "tool": "CrowdStrike",
-    "dateAdded": "03-04-2025"
   },
   {
     "detectionID": "CY-0223",
