@@ -725,7 +725,7 @@
     "mitreTechniqueID": "T1558",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "dateAdded": "01-01-2025"
+    "dateAdded": "03-01-2025"
   },
   {
     "detectionID": "CY-0213",
@@ -4043,7 +4043,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "OneLogin",
     "tool": "Stellar Cyber",
-    "dateAdded": "01-01-2025"
+    "dateAdded": "03-01-2025"
   },
   {
     "detectionID": "CY-0002",
@@ -4057,7 +4057,7 @@
     "mitreTechniqueID": "T1556",
     "connector": "OneLogin",
     "tool": "Stellar Cyber",
-    "dateAdded": "01-01-2025"
+    "dateAdded": "03-01-2025"
   },
   {
     "detectionID": "CY-0001",
@@ -4071,7 +4071,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "OneLogin",
     "tool": "Stellar Cyber",
-    "dateAdded": "01-01-2025"
+    "dateAdded": "03-01-2025"
   },
   {
     "detectionID": "CY-0301",
@@ -4379,7 +4379,7 @@
     "mitreTechniqueID": "T1078",
     "connector": "Azure AD",
     "tool": "Stellar Cyber",
-    "dateAdded": "01-01-2025"
+    "dateAdded": "03-01-2025"
   },
   {
     "detectionID": "CY-0007",
@@ -4799,7 +4799,7 @@
     "mitreTechniqueID": "T1560",
     "connector": "N/A",
     "tool": "",
-    "dateAdded": "01-01-2025"
+    "dateAdded": "03-01-2025"
   },
   {
     "detectionID": "CY-0407",
@@ -5191,7 +5191,7 @@
     "mitreTechniqueID": "T1110",
     "connector": "Sophos",
     "tool": "Stellar Cyber",
-    "dateAdded": "01-01-2025"
+    "dateAdded": "03-01-2025"
   },
   {
     "detectionID": "CY-0459",
