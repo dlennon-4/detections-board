@@ -3,7 +3,7 @@ name: Update Detections and Send Email
 on:
   schedule:
     - cron: '0 21 * * 1-5'  # Runs at 4 PM EST (21:00 UTC) Monday to Friday
-  workflow_dispatch:  # Allows manual execution
+  workflow_dispatch:
 
 jobs:
   update-detections:
@@ -31,10 +31,13 @@ jobs:
           npm install axios nodemailer
           node update-detections.js
 
+      - name: Display Update Summary
+        run: cat update-summary.txt
+
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add detections.json update-summary.txt
-          git commit -m "🔄 Auto-update detections.json on $(date)"
-          git push origin main  # Change "main" to your actual branch name
+          git commit -m "🔄 Auto-update detections.json on $(date)" || echo "No changes to commit"
+          git push origin main
