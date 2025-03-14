@@ -2926,6 +2926,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0530",
+    "name": "Login Time Anomaly RDP Correlation",
+    "description": "",
+    "defaultStatus": "Testing",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "",
+    "dateAdded": "03-14-2025"
+  },
+  {
     "detectionID": "CY-0310",
     "name": "Malicious Site Access",
     "description": "A host accessed a URL with a reputation for potentially hosting malware. Check the URL and, if malicious, consider blocking it. Check the host for compromise.",
