@@ -1,8 +1,7 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 1
+🆕 New Detections: 0
 ✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 
 📋 Details:
-🆕 New: Login Time Anomaly RDP Correlation (ID: CY-0530) Added on: 03-14-2025
