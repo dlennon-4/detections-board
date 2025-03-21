@@ -19,7 +19,7 @@
       --text-color: #000000;
       --card-bg: #ffffff;
       --table-border: #dddddd;
-      --header-bg: #C00;         /* Red header */
+      --header-bg: #C00;   /* Red header */
       --header-text: #ffffff;
       --primary-btn-bg: #000;
       --primary-btn-text: #fff;
@@ -208,31 +208,29 @@
       background: var(--card-bg);
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      max-width: 95%;
+      /* Expand the table area a bit more: */
+      max-width: 98%;
       margin: 0 auto 20px auto;
-      max-height: 76vh;
+      max-height: 85vh;
       overflow-y: auto;
       transition: background-color 0.3s;
     }
     table {
       width: 100%;
-      /* Keep typical border rules or none, as you prefer. Example: */
-      border: 1px solid var(--table-border);
-      border-collapse: separate;
+      /* Remove top/bottom borders so no white line at top */
+      border: none;
+      border-collapse: collapse;
       border-spacing: 0;
       transition: border-color 0.3s;
     }
     th, td {
       padding: 12px;
+      /* By default, let's keep a bottom border for body rows: */
       border-bottom: 1px solid var(--table-border);
       transition: border-color 0.3s;
     }
 
-    /* 
-      Only show black vertical lines in the header row. 
-      1) Remove all default borders on header cells
-      2) Add black border-right except on the last cell
-    */
+    /* Only black vertical lines in the header row */
     thead th {
       position: sticky;
       top: 0;
@@ -240,10 +238,13 @@
       background: var(--header-bg);
       color: var(--header-text);
       cursor: pointer;
-      border: none !important;
+      /* Remove any bottom or side borders from the header cells */
+      border-bottom: none !important;
+      border-right: none !important;
     }
+    /* Insert black border between header columns except the last */
     thead th:not(:last-child) {
-      border-right: 1px solid black;
+      border-right: 1px solid black !important;
     }
 
     tbody tr:nth-child(even) {
@@ -478,7 +479,7 @@
 
         let newOnlyPass = true;
         if (newOnlyFilter) {
-          // Check if the description cell contains the new badge (by checking for the class "new-badge")
+          // Check if the description cell contains the new badge
           newOnlyPass = cells[1].innerHTML.indexOf('new-badge') !== -1;
         }
         row.style.display = (matchesSearch && matchesStatus && matchesTool && newOnlyPass) ? '' : 'none';
