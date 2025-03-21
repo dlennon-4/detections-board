@@ -56,22 +56,28 @@
       text-align: center;
     }
 
-    /* Top Bar */
+    /* Top Bar (absolutely center the title) */
     .top-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 20px;
-      background-color: var(--card-bg); /* Ensures same bg as filter bar */
+      position: relative;
+      height: 80px; /* Adjust if needed for your logo size */
+    }
+    .logo-section {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
     }
     .logo-section img {
       max-width: 250px;
       height: auto;
+      display: block; /* Removes inline image gaps */
       background-color: transparent;
-      display: block; /* Removes the white line under the image */
     }
     .center-section {
-      flex: 1;        /* Allows true centering */
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
       text-align: center;
     }
     .center-section h1 {
@@ -82,9 +88,13 @@
       font-weight: bold;
       text-decoration: none;
       color: var(--text-color);
-      display: block; /* Places link on its own line below H1 */
+      display: block; 
     }
     .mode-toggle {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
       background: var(--primary-btn-bg);
       color: var(--primary-btn-text);
       border: none;
@@ -207,7 +217,6 @@
     table {
       width: 100%;
       border: 1px solid var(--table-border);
-      border-radius: 8px;
       border-collapse: separate;
       border-spacing: 0;
       transition: border-color 0.3s;
@@ -224,6 +233,8 @@
       background: var(--header-bg);
       color: var(--header-text);
       cursor: pointer;
+      /* Remove the white line under column titles */
+      border-bottom: none !important;
     }
     tbody tr:nth-child(even) {
       background: var(--row-even-bg);
@@ -456,7 +467,7 @@
         const matchesTool = allToolsChecked || checkedTools.includes(tool);
 
         let newOnlyPass = true;
-        if(newOnlyFilter) {
+        if (newOnlyFilter) {
           // Check if the description cell contains the new badge (by checking for the class "new-badge")
           newOnlyPass = cells[1].innerHTML.indexOf('new-badge') !== -1;
         }
@@ -469,7 +480,9 @@
     function updateCaseCount() {
       const rows = document.querySelectorAll('#detectionsTable tbody tr');
       let visibleCount = 0;
-      rows.forEach(row => { if (row.style.display !== 'none') visibleCount++; });
+      rows.forEach(row => { 
+        if (row.style.display !== 'none') visibleCount++; 
+      });
       document.getElementById('casesCounter').textContent = `Total Cases: ${visibleCount}`;
     }
 
@@ -561,6 +574,7 @@
       sortDirections[columnIndex] = sortDirections[columnIndex] === 'asc' ? 'desc' : 'asc';
       const direction = sortDirections[columnIndex];
       
+      // Only sort visible rows
       const visibleRows = rowsArray.filter(row => row.style.display !== 'none');
       visibleRows.sort((a, b) => {
         const cellA = a.children[columnIndex].textContent.trim().toLowerCase();
@@ -570,14 +584,20 @@
         return 0;
       });
       
+      // Re-append sorted rows
       visibleRows.forEach(row => tbody.appendChild(row));
+      
+      // Update sort arrows
       const allTh = table.querySelectorAll('thead th');
-      allTh.forEach(th => { th.textContent = th.textContent.replace(/[▲▼]/g, '').trim(); });
+      allTh.forEach(th => {
+        th.textContent = th.textContent.replace(/[▲▼]/g, '').trim();
+      });
       allTh[columnIndex].textContent += (direction === 'asc' ? ' ▲' : ' ▼');
     }
 
     // Load Data and Build Table Rows
     function loadData() {
+      // Add cache-busting query param so you always get fresh data in dev
       fetch('detections.json?v=' + new Date().getTime())
         .then(res => res.json())
         .then(data => {
@@ -587,7 +607,7 @@
           tbody.innerHTML = '';
 
           data.forEach(det => {
-            // Build the description: prepend a "New" badge if dateAdded is within the last 30 days
+            // Mark as "New" if added in last 30 days
             let displayDesc = det.description;
             if (det.dateAdded && isRecent(det.dateAdded)) {
               displayDesc = '<span class="new-badge" title="This detection was added to this board within the last 30 days">New</span> ' + displayDesc;
