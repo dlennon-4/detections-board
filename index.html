@@ -19,7 +19,7 @@
       --text-color: #000000;
       --card-bg: #ffffff;
       --table-border: #dddddd;
-      --header-bg: #C00;
+      --header-bg: #C00;         /* Red header */
       --header-text: #ffffff;
       --primary-btn-bg: #000;
       --primary-btn-text: #fff;
@@ -216,6 +216,7 @@
     }
     table {
       width: 100%;
+      /* Keep typical border rules or none, as you prefer. Example: */
       border: 1px solid var(--table-border);
       border-collapse: separate;
       border-spacing: 0;
@@ -226,6 +227,12 @@
       border-bottom: 1px solid var(--table-border);
       transition: border-color 0.3s;
     }
+
+    /* 
+      Only show black vertical lines in the header row. 
+      1) Remove all default borders on header cells
+      2) Add black border-right except on the last cell
+    */
     thead th {
       position: sticky;
       top: 0;
@@ -233,9 +240,12 @@
       background: var(--header-bg);
       color: var(--header-text);
       cursor: pointer;
-      /* Remove the white line under column titles */
-      border-bottom: none !important;
+      border: none !important;
     }
+    thead th:not(:last-child) {
+      border-right: 1px solid black;
+    }
+
     tbody tr:nth-child(even) {
       background: var(--row-even-bg);
     }
