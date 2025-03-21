@@ -62,13 +62,16 @@
       align-items: center;
       justify-content: space-between;
       padding: 10px 20px;
+      background-color: var(--card-bg); /* Ensures same bg as filter bar */
     }
     .logo-section img {
       max-width: 250px;
       height: auto;
       background-color: transparent;
+      display: block; /* Removes the white line under the image */
     }
     .center-section {
+      flex: 1;        /* Allows true centering */
       text-align: center;
     }
     .center-section h1 {
@@ -79,6 +82,7 @@
       font-weight: bold;
       text-decoration: none;
       color: var(--text-color);
+      display: block; /* Places link on its own line below H1 */
     }
     .mode-toggle {
       background: var(--primary-btn-bg);
@@ -450,6 +454,7 @@
         const matchesSearch = name.includes(searchValue) || descText.includes(searchValue);
         const matchesStatus = allStatusesChecked || checkedStatuses.includes(status);
         const matchesTool = allToolsChecked || checkedTools.includes(tool);
+
         let newOnlyPass = true;
         if(newOnlyFilter) {
           // Check if the description cell contains the new badge (by checking for the class "new-badge")
