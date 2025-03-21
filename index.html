@@ -208,16 +208,14 @@
       background: var(--card-bg);
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      /* Expand the table area a bit more: */
       max-width: 98%;
       margin: 0 auto 20px auto;
       max-height: 85vh;
-      overflow-y: auto;
+      overflow: auto; /* Let it scroll both ways if needed */
       transition: background-color 0.3s;
     }
     table {
       width: 100%;
-      /* Remove top/bottom borders so no white line at top */
       border: none;
       border-collapse: collapse;
       border-spacing: 0;
@@ -225,12 +223,11 @@
     }
     th, td {
       padding: 12px;
-      /* By default, let's keep a bottom border for body rows: */
       border-bottom: 1px solid var(--table-border);
       transition: border-color 0.3s;
     }
 
-    /* Only black vertical lines in the header row */
+    /* No lines in the top (header) row */
     thead th {
       position: sticky;
       top: 0;
@@ -238,13 +235,7 @@
       background: var(--header-bg);
       color: var(--header-text);
       cursor: pointer;
-      /* Remove any bottom or side borders from the header cells */
-      border-bottom: none !important;
-      border-right: none !important;
-    }
-    /* Insert black border between header columns except the last */
-    thead th:not(:last-child) {
-      border-right: 1px solid black !important;
+      border: none !important;
     }
 
     tbody tr:nth-child(even) {
@@ -268,7 +259,8 @@
     /* Floating Cases Counter */
     .cases-counter {
       position: fixed;
-      bottom: 1px;
+      /* Move it up so the scrollbar is not hidden behind it */
+      bottom: 35px;
       right: 45px;
       background: var(--primary-btn-bg);
       color: var(--primary-btn-text);
