@@ -1,10 +1,7 @@
 🛠 Detections Update Summary
 ----------------------------
 🆕 New Detections: 0
-✏️ Updated Detections: 2
+✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 
 📋 Details:
-
-✏️ Updated: Suspicious Script Remote Access Correlation (ID: CY-0473)
-✏️ Updated: Login Time Anomaly RDP Correlation (ID: CY-0530)
