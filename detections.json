@@ -2240,20 +2240,6 @@
     "dateAdded": "01-01-2025"
   },
   {
-    "detectionID": "CY-0470",
-    "name": "Inbox Rule Created After Login Correlation",
-    "description": "An inbox rule was created shortly after a successful login. This is commonly detected when user accounts are compromised to maintain persistence. Verify with the user if this is valid activity.",
-    "defaultStatus": "Testing",
-    "killChainStage": "",
-    "mitreTactic": "",
-    "mitreTacticID": "",
-    "mitreTechnique": "",
-    "mitreTechniqueID": "",
-    "connector": "N/A",
-    "tool": "Stellar Cyber",
-    "dateAdded": "01-01-2025"
-  },
-  {
     "detectionID": "CY-0381",
     "name": "Internal Account Login Failure Anomaly",
     "description": "An anomalously large number of login failures from an internal source IP address to an internal destination IP address was observed for an account. Check with the user.",

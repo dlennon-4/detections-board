@@ -2,6 +2,9 @@
 ----------------------------
 🆕 New Detections: 0
 ✏️ Updated Detections: 0
-🗑️ Deleted Detections: 0
+🗑️ Deleted Detections: 1
 
 📋 Details:
+
+
+🗑️ Deleted: Inbox Rule Created After Login Correlation (ID: CY-0470)
