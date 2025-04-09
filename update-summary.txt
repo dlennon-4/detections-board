@@ -1,28 +1,7 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 4
-✏️ Updated Detections: 16
-🗑️ Deleted Detections: 1
+🆕 New Detections: 0
+✏️ Updated Detections: 0
+🗑️ Deleted Detections: 0
 
 📋 Details:
-🆕 New: Long App Session Anomaly (ID: CY-0532) Added on: 04-08-2025
-🆕 New: Steal or Forge Kerberos Tickets (ID: CY-0533) Added on: 04-08-2025
-🆕 New: Emerging Threat (ID: CY-0534) Added on: 04-08-2025
-🆕 New: Account Creation Anomaly (ID: CY-0535) Added on: 04-08-2025
-✏️ Updated: OneLogin Not MFA Authenticated (ID: CY-0002)
-✏️ Updated: Windows Account Lockout Event (ID: CY-0121)
-✏️ Updated: Suspicious Microsoft Entra Device Activity (ID: CY-0239)
-✏️ Updated: Mimecast Attachment Protect - Detections (ID: CY-0443)
-✏️ Updated: Mimecast AV - Detections (ID: CY-0444)
-✏️ Updated: Mimecast Impersonation Protect - Detections (ID: CY-0445)
-✏️ Updated: Mimecast Internal Email Protect - Detections (ID: CY-0446)
-✏️ Updated: Mimecast Malicious Receipt Log - Detections (ID: CY-0447)
-✏️ Updated: Mimecast URL Protect - Detections (ID: CY-0448)
-✏️ Updated: Suspicious Windows Registry Event: Impact (ID: CY-0230)
-✏️ Updated: Suspicious Microsoft Entra Service Principal Activity (ID: CY-0185)
-✏️ Updated: Microsoft Entra Application Configuration Changes (ID: CY-0253)
-✏️ Updated: DCERPC SMB Spoolss Named Pipe (ID: CY-0461)
-✏️ Updated: Public to Private Exploit Anomaly (ID: CY-0283)
-✏️ Updated: Private to Private Exploit Anomaly (ID: CY-0392)
-✏️ Updated: Private to Public Exploit Anomaly (ID: CY-0282)
-🗑️ Deleted: Windows Account Lockout Event (ID: CY-0172)
