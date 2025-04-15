@@ -4522,6 +4522,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0536",
+    "name": "Potential Powershell C2 with Dynamic Timestamp",
+    "description": "Detects PowerShell using IP address and timestamp-based URLs with in-memory execution via iex and irm.",
+    "defaultStatus": "Testing",
+    "killChainStage": "Persistent Foothold",
+    "mitreTactic": "Execution",
+    "mitreTacticID": "TA0002",
+    "mitreTechnique": "Command and Scripting Interpreter",
+    "mitreTechniqueID": "T1059",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "04-15-2025"
+  },
+  {
     "detectionID": "CY-0078",
     "name": "Potential Raspberry Robin CPL Execution Activity",
     "description": "The execution of a \".CPL\" file in the user temp directory via the Shell32 DLL \"Control_RunDLL\" export function was detected. This has been observed in multiple Raspberry-Robin variants.",
@@ -4840,7 +4854,7 @@
     "mitreTechnique": "Archive Collected Data",
     "mitreTechniqueID": "T1560",
     "connector": "N/A",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "03-01-2025"
   },
   {
