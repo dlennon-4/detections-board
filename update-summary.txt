@@ -1,7 +1,10 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 0
+🆕 New Detections: 3
 ✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 
 📋 Details:
+🆕 New: PowerShell Suspicious Payload Encoded and Compressed (ID: CY-0537) Added on: 04-18-2025
+🆕 New: RDP Port Opened via Netsh Firewall Command (ID: CY-0538) Added on: 04-18-2025
+🆕 New: WMI Firewall Rule Enabled via Netsh (ID: CY-0539) Added on: 04-18-2025

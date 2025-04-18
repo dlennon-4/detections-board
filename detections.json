@@ -4676,6 +4676,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0537",
+    "name": "PowerShell Suspicious Payload Encoded and Compressed",
+    "description": "Identifies the use of .NET functionality for decompression and base64 decoding combined in PowerShell scripts, which malware and security tools heavily use to deobfuscate payloads and load into memory",
+    "defaultStatus": "Testing",
+    "killChainStage": "Persistent Foothold",
+    "mitreTactic": "Execution",
+    "mitreTacticID": "TA0002",
+    "mitreTechnique": "Command and Scripting Interpreter",
+    "mitreTechniqueID": "T1059",
+    "connector": "N/A",
+    "tool": "",
+    "dateAdded": "04-18-2025"
+  },
+  {
     "detectionID": "CY-0392",
     "name": "Private to Private Exploit Anomaly",
     "description": "A private IP address initiated a large number of exploit attempts identified by a given signature or a rarely seen exploit attempt to another private IP address. Investigate that signature.",
@@ -4870,6 +4884,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0538",
+    "name": "RDP Port Opened via Netsh Firewall Command",
+    "description": "Detects use of netsh to allow inbound RDP (port 3389) through Windows Firewall.",
+    "defaultStatus": "Testing",
+    "killChainStage": "Propagation",
+    "mitreTactic": "Lateral Movement",
+    "mitreTacticID": "TA0008",
+    "mitreTechnique": "Remote Service Session Hijacking",
+    "mitreTechniqueID": "T1563",
+    "connector": "N/A",
+    "tool": "",
+    "dateAdded": "04-18-2025"
   },
   {
     "detectionID": "CY-0342",
@@ -6298,5 +6326,19 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0539",
+    "name": "WMI Firewall Rule Enabled via Netsh",
+    "description": "Detects the use of netsh to enable Windows Management Instrumentation (WMI) firewall rules, which may be used for remote execution or lateral movement",
+    "defaultStatus": "New Detection",
+    "killChainStage": "Persistent Foothold",
+    "mitreTactic": "Execution",
+    "mitreTacticID": "TA0002",
+    "mitreTechnique": "Windows Management Instrumentation",
+    "mitreTechniqueID": "T1047",
+    "connector": "N/A",
+    "tool": "",
+    "dateAdded": "04-18-2025"
   }
 ]
