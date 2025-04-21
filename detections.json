@@ -4466,6 +4466,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0540",
+    "name": "Potential Medusa Ransomware Process Execution",
+    "description": "Potential execution of the known Gaze.exe Medusa Ransomware file was detected in the environment.",
+    "defaultStatus": "Testing",
+    "killChainStage": "Exfiltration & Impact",
+    "mitreTactic": "Impact",
+    "mitreTacticID": "TA0040",
+    "mitreTechnique": "Data Encrypted for Impact",
+    "mitreTechniqueID": "T1486",
+    "connector": "N/A",
+    "tool": "",
+    "dateAdded": "04-21-2025"
+  },
+  {
     "detectionID": "CY-0080",
     "name": "Potential Metasploit Activity",
     "description": "Activity associated with Metasploit, a known penetration testing tool was detected.",
@@ -6331,7 +6345,7 @@
     "detectionID": "CY-0539",
     "name": "WMI Firewall Rule Enabled via Netsh",
     "description": "Detects the use of netsh to enable Windows Management Instrumentation (WMI) firewall rules, which may be used for remote execution or lateral movement",
-    "defaultStatus": "New Detection",
+    "defaultStatus": "Testing",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Execution",
     "mitreTacticID": "TA0002",

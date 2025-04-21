@@ -1,10 +1,9 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 3
-✏️ Updated Detections: 0
+🆕 New Detections: 1
+✏️ Updated Detections: 1
 🗑️ Deleted Detections: 0
 
 📋 Details:
-🆕 New: PowerShell Suspicious Payload Encoded and Compressed (ID: CY-0537) Added on: 04-18-2025
-🆕 New: RDP Port Opened via Netsh Firewall Command (ID: CY-0538) Added on: 04-18-2025
-🆕 New: WMI Firewall Rule Enabled via Netsh (ID: CY-0539) Added on: 04-18-2025
+🆕 New: Potential Medusa Ransomware Process Execution (ID: CY-0540) Added on: 04-21-2025
+✏️ Updated: WMI Firewall Rule Enabled via Netsh (ID: CY-0539)
