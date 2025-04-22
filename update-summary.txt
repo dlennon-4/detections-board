@@ -1,9 +1,17 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 1
-✏️ Updated Detections: 1
+🆕 New Detections: 5
+✏️ Updated Detections: 5
 🗑️ Deleted Detections: 0
 
 📋 Details:
-🆕 New: Potential Medusa Ransomware Process Execution (ID: CY-0540) Added on: 04-21-2025
+🆕 New: FortiManager Jsconsole Privilege escalation (ID: CY-0545) Added on: 04-22-2025
+🆕 New: Zip A Folder With PowerShell For Staging In Temp (ID: CY-0541) Added on: 04-22-2025
+🆕 New: Compress Data and Lock With Password for Exfiltration With 7zip (ID: CY-0542) Added on: 04-22-2025
+🆕 New: Compress Data and Lock With Password for Exfiltration With WINZIP (ID: CY-0543) Added on: 04-22-2025
+🆕 New: Suspicious CrushFTP Child Process (ID: CY-0544) Added on: 04-22-2025
+✏️ Updated: Potential Powershell C2 with Dynamic Timestamp (ID: CY-0536)
+✏️ Updated: PowerShell Suspicious Payload Encoded and Compressed (ID: CY-0537)
+✏️ Updated: RDP Port Opened via Netsh Firewall Command (ID: CY-0538)
 ✏️ Updated: WMI Firewall Rule Enabled via Netsh (ID: CY-0539)
+✏️ Updated: Potential Medusa Ransomware Process Execution (ID: CY-0540)

@@ -700,6 +700,34 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0542",
+    "name": "Compress Data and Lock With Password for Exfiltration With 7zip",
+    "description": "Detects the use of 7zip to compress or encrypt data that is collected prior to exfiltration.",
+    "defaultStatus": "Active",
+    "killChainStage": "Persistent Foothold",
+    "mitreTactic": "Execution",
+    "mitreTacticID": "TA0002",
+    "mitreTechnique": "Command and Scripting Interpreter",
+    "mitreTechniqueID": "T1059",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "04-22-2025"
+  },
+  {
+    "detectionID": "CY-0543",
+    "name": "Compress Data and Lock With Password for Exfiltration With WINZIP",
+    "description": "Detects the use of winzip to compress or encrypt data that is collected prior to exfiltration.",
+    "defaultStatus": "Active",
+    "killChainStage": "Persistent Foothold",
+    "mitreTactic": "Execution",
+    "mitreTacticID": "TA0002",
+    "mitreTechnique": "Command and Scripting Interpreter",
+    "mitreTechniqueID": "T1059",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "04-22-2025"
+  },
+  {
     "detectionID": "CY-0122",
     "name": "Conditional Access Blocked Login",
     "description": "A Conditional Access policy blocked a login attempt for a user in your environment,  check with the user identified if this was approved activity.",
@@ -1804,6 +1832,20 @@
     "connector": "FortiGate",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0545",
+    "name": "FortiManager Jsconsole Privilege escalation",
+    "description": "Detects JConsole login attemps on the Fortigate device",
+    "defaultStatus": "Active",
+    "killChainStage": "Initial Attempts",
+    "mitreTactic": "Initial Access",
+    "mitreTacticID": "",
+    "mitreTechnique": "Exploit Public-Facing Application",
+    "mitreTechniqueID": "",
+    "connector": "FortiGate",
+    "tool": "",
+    "dateAdded": "04-22-2025"
   },
   {
     "detectionID": "CY-0021",
@@ -4469,14 +4511,14 @@
     "detectionID": "CY-0540",
     "name": "Potential Medusa Ransomware Process Execution",
     "description": "Potential execution of the known Gaze.exe Medusa Ransomware file was detected in the environment.",
-    "defaultStatus": "Testing",
+    "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Impact",
     "mitreTacticID": "TA0040",
     "mitreTechnique": "Data Encrypted for Impact",
     "mitreTechniqueID": "T1486",
     "connector": "N/A",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "04-21-2025"
   },
   {
@@ -4539,7 +4581,7 @@
     "detectionID": "CY-0536",
     "name": "Potential Powershell C2 with Dynamic Timestamp",
     "description": "Detects PowerShell using IP address and timestamp-based URLs with in-memory execution via iex and irm.",
-    "defaultStatus": "Testing",
+    "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Execution",
     "mitreTacticID": "TA0002",
@@ -4693,14 +4735,14 @@
     "detectionID": "CY-0537",
     "name": "PowerShell Suspicious Payload Encoded and Compressed",
     "description": "Identifies the use of .NET functionality for decompression and base64 decoding combined in PowerShell scripts, which malware and security tools heavily use to deobfuscate payloads and load into memory",
-    "defaultStatus": "Testing",
+    "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Execution",
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Command and Scripting Interpreter",
     "mitreTechniqueID": "T1059",
     "connector": "N/A",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "04-18-2025"
   },
   {
@@ -4910,7 +4952,7 @@
     "mitreTechnique": "Remote Service Session Hijacking",
     "mitreTechniqueID": "T1563",
     "connector": "N/A",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "04-18-2025"
   },
   {
@@ -5642,6 +5684,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0544",
+    "name": "Suspicious CrushFTP Child Process",
+    "description": "Detects suspicious child processes spawned by the CrushFTP service that may indicate exploitation of remote code execution vulnerabilities",
+    "defaultStatus": "Testing",
+    "killChainStage": "Persistent Foothold",
+    "mitreTactic": "Execution",
+    "mitreTacticID": "TA0002",
+    "mitreTechnique": "Command and Scripting Interpreter",
+    "mitreTechniqueID": "T1059",
+    "connector": "N/A",
+    "tool": "",
+    "dateAdded": "04-22-2025"
+  },
+  {
     "detectionID": "CY-0434",
     "name": "Suspicious Handle Request to Sensitive Object",
     "description": "The Suspicious Handle Request to Sensitive Object rules are used to identify suspicious activity with handle requests to sensitive Windows objects. Any one or more of these will trigger the Suspicious Handle Request to Sensitive Object alert type.",
@@ -6345,14 +6401,28 @@
     "detectionID": "CY-0539",
     "name": "WMI Firewall Rule Enabled via Netsh",
     "description": "Detects the use of netsh to enable Windows Management Instrumentation (WMI) firewall rules, which may be used for remote execution or lateral movement",
-    "defaultStatus": "Testing",
+    "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Execution",
     "mitreTacticID": "TA0002",
     "mitreTechnique": "Windows Management Instrumentation",
     "mitreTechniqueID": "T1047",
     "connector": "N/A",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "04-18-2025"
+  },
+  {
+    "detectionID": "CY-0541",
+    "name": "Zip A Folder With PowerShell For Staging In Temp",
+    "description": "Detects the use of living off the land tools to zip a file and stage it in the Windows temporary folder for later exfiltration",
+    "defaultStatus": "Active",
+    "killChainStage": "Persistent Foothold",
+    "mitreTactic": "Execution",
+    "mitreTacticID": "TA0002",
+    "mitreTechnique": "Command and Scripting Interpreter",
+    "mitreTechniqueID": "T1059",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "04-22-2025"
   }
 ]
