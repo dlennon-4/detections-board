@@ -1,11 +1,29 @@
 🛠 Detections Update Summary
 ----------------------------
 🆕 New Detections: 0
-✏️ Updated Detections: 109
-🗑️ Deleted Detections: 2
+✏️ Updated Detections: 127
+🗑️ Deleted Detections: 1
 
 📋 Details:
 
+✏️ Updated: FortiManager Jsconsole Privilege escalation (ID: CY-0545)
+✏️ Updated: Suspicious CrushFTP Child Process (ID: CY-0544)
+✏️ Updated: Long App Session Anomaly (ID: CY-0532)
+✏️ Updated: Steal or Forge Kerberos Tickets (ID: CY-0533)
+✏️ Updated: Emerging Threat (ID: CY-0534)
+✏️ Updated: Account Creation Anomaly (ID: CY-0535)
+✏️ Updated: Suspicious Script Remote Access Correlation (ID: CY-0473)
+✏️ Updated: Login Time Anomaly RDP Correlation (ID: CY-0530)
+✏️ Updated: M365 Exchange Online - Audit Logging Disabled Individual Mailbox (ID: CY-0546)
+✏️ Updated: M365 Exchange Online - Suspicious Modification of Default or Anonymous Mailbox Permissions (ID: CY-0547)
+✏️ Updated: M365 Exchange Online - New or Modified Management Role Assignments (ID: CY-0548)
+✏️ Updated: M365 Exchange Online - Unified Audit Logging Disabled Globally (ID: CY-0549)
+✏️ Updated: Entra ID - MFA Fraud Reported by End User (ID: CY-0550)
+✏️ Updated: Entra ID - New User Observed Consenting to new Application (ID: CY-0551)
+✏️ Updated: Entra ID - Password Spray Detection by Source IP (ID: CY-0552)
+✏️ Updated: Entra ID - Privileged Azure Role Assigned to Group in PIM as Eligible Assignment (ID: CY-0553)
+✏️ Updated: Entra ID - Privileged Role Assigned to Group in PIM as Active Assignment (ID: CY-0554)
+✏️ Updated: Entra ID - Privileged Role Assigned to Group in PIM as Eligible Assignment (ID: CY-0555)
 ✏️ Updated: Entra ID - Privileged Role Assigned to Group outside of PIM (ID: CY-0556)
 ✏️ Updated: Entra ID - Privileged Role Assigned to Service Principal outside of PIM (ID: CY-0557)
 ✏️ Updated: Entra ID - Privileged Role Assigned to User Account outside of PIM (ID: CY-0558)
@@ -16,13 +34,13 @@
 ✏️ Updated: Entra ID - Admin Assigned High Privilege Permissions to an Application (ID: CY-0563)
 ✏️ Updated: Entra ID - Successful Authentication from Malicious IP Address (ID: CY-0564)
 ✏️ Updated: Entra ID - All Domains Allowed in Collaboration Restrictions (ID: CY-0566)
+✏️ Updated: Entra ID - Bulk Download Service Principals List (ID: CY-0565)
 ✏️ Updated: Entra ID - Conditional Access Policy Bypass via Intune Company Portal App (ID: CY-0567)
 ✏️ Updated: Entra ID - Security Group Renamed to ESX Admins (ID: CY-0568)
 ✏️ Updated: Entra ID - Successful Authentication Without MFA (ID: CY-0569)
 ✏️ Updated: Account Lockout (ID: CY-0570)
 ✏️ Updated: Suspicious SignIns From A Non Registered Device (ID: CY-0571)
 ✏️ Updated: Potential MFA Bypass Using Legacy Client Authentication (ID: CY-0572)
-✏️ Updated: Account Disabled or Blocked for Sign in Attempts (ID: CY-0573)
 ✏️ Updated: Sign-in Failure Due to Conditional Access Requirements Not Met (ID: CY-0574)
 ✏️ Updated: Entra ID - CA Policy Removed by Non Approved Actor - Sigma (ID: CY-0575)
 ✏️ Updated: Entra ID - Global Administrator Role Assigned (ID: CY-0576)
@@ -115,5 +133,4 @@
 ✏️ Updated: Entra ID - Application/Service Principal Owner Added by User (ID: CY-0665)
 ✏️ Updated: Entra ID - Cross-tenant Access Settings Organization Modified (ID: CY-0666)
 ✏️ Updated: Entra ID - Potential Brute Force Attack through Azure Powershell (ID: CY-0667)
-🗑️ Deleted: CY - Azure - Network Security Group Modified to Allow Ingress from Public Internet (ID: CY-0626)
-🗑️ Deleted: CY - M365 Exchange Online - Suspicious Search Query On Exchange Mailbox (ID: CY-0586)
+🗑️ Deleted: CrowdStrike Detections (ID: CY-0527)

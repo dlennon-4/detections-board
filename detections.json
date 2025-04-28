@@ -24,7 +24,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "04-08-2025"
   },
   {
@@ -52,7 +52,7 @@
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -304,7 +304,7 @@
     "mitreTechnique": "Command and Scripting Interpreter",
     "mitreTechniqueID": "T1059",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -318,7 +318,7 @@
     "mitreTechnique": "Impair Defenses",
     "mitreTechniqueID": "T1562",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -332,7 +332,7 @@
     "mitreTechnique": "Impair Defenses",
     "mitreTechniqueID": "T1562",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -346,7 +346,7 @@
     "mitreTechnique": "Impair Defenses",
     "mitreTechniqueID": "T1562",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -360,7 +360,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -374,7 +374,7 @@
     "mitreTechnique": "Abuse Elevation Control Mechanism",
     "mitreTechniqueID": "T1548",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -388,7 +388,7 @@
     "mitreTechnique": "Cloud Service Discovery",
     "mitreTechniqueID": "T1526",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -402,7 +402,7 @@
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -416,7 +416,7 @@
     "mitreTechnique": "Impair Defenses",
     "mitreTechniqueID": "T1562",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -430,7 +430,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -444,7 +444,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -710,7 +710,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -864,7 +864,7 @@
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -992,20 +992,6 @@
     "connector": "CrowdStrike",
     "tool": "Stellar Cyber",
     "dateAdded": "03-04-2025"
-  },
-  {
-    "detectionID": "CY-0527",
-    "name": "CrowdStrike Detections",
-    "description": "Coming Soon!",
-    "defaultStatus": "Active",
-    "killChainStage": "N/A",
-    "mitreTactic": "N/A",
-    "mitreTacticID": "N/A",
-    "mitreTechnique": "N/A",
-    "mitreTechniqueID": "N/A",
-    "connector": "N/A",
-    "tool": "CrowdStrike",
-    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0417",
@@ -1172,7 +1158,7 @@
     "mitreTechnique": "Phishing",
     "mitreTechniqueID": "T1566",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1186,7 +1172,7 @@
     "mitreTechnique": "Phishing",
     "mitreTechniqueID": "T1566",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1200,7 +1186,7 @@
     "mitreTechnique": "Phishing",
     "mitreTechniqueID": "T1566",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1214,7 +1200,7 @@
     "mitreTechnique": "Phishing",
     "mitreTechniqueID": "T1566",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1228,7 +1214,7 @@
     "mitreTechnique": "Phishing",
     "mitreTechniqueID": "T1566",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1256,7 +1242,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1298,7 +1284,7 @@
     "mitreTechnique": "Account Discovery",
     "mitreTechniqueID": "T1087",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1424,7 +1410,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "04-08-2025"
   },
   {
@@ -1480,7 +1466,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1494,7 +1480,7 @@
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1508,7 +1494,7 @@
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1522,7 +1508,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1536,7 +1522,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1550,7 +1536,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1564,7 +1550,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1578,7 +1564,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1592,7 +1578,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1606,7 +1592,7 @@
     "mitreTechnique": "Unsecured Credentials",
     "mitreTechniqueID": "T1552",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1620,7 +1606,7 @@
     "mitreTechnique": "Remote System Discovery",
     "mitreTechniqueID": "T1018",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1634,7 +1620,7 @@
     "mitreTechnique": "Permission Groups Discovery",
     "mitreTechniqueID": "T1069",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1648,7 +1634,7 @@
     "mitreTechnique": "Cloud Service Discovery",
     "mitreTechniqueID": "T1526",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1662,7 +1648,7 @@
     "mitreTechnique": "Account Discovery",
     "mitreTechniqueID": "T1087",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1676,7 +1662,7 @@
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1690,7 +1676,7 @@
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1704,7 +1690,7 @@
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1718,7 +1704,7 @@
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1732,7 +1718,7 @@
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1746,7 +1732,7 @@
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1760,7 +1746,7 @@
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1774,7 +1760,7 @@
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1788,7 +1774,7 @@
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1802,7 +1788,7 @@
     "mitreTechnique": "Exploitation for Privilege Escalation",
     "mitreTechniqueID": "T1068",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1816,7 +1802,7 @@
     "mitreTechnique": "Trusted Relationship",
     "mitreTechniqueID": "T1199",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1830,7 +1816,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1844,7 +1830,7 @@
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1858,7 +1844,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1872,7 +1858,7 @@
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1886,7 +1872,7 @@
     "mitreTechnique": "Steal Application Access Token",
     "mitreTechniqueID": "T1528",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1900,7 +1886,7 @@
     "mitreTechnique": "Exploitation for Privilege Escalation",
     "mitreTechniqueID": "T1068",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1914,7 +1900,7 @@
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1928,7 +1914,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1942,7 +1928,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1956,7 +1942,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1970,7 +1956,7 @@
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1984,7 +1970,7 @@
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -1998,7 +1984,7 @@
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2012,7 +1998,7 @@
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2026,7 +2012,7 @@
     "mitreTechnique": "Steal Application Access Token",
     "mitreTechniqueID": "T1528",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2040,7 +2026,7 @@
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2054,7 +2040,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2068,7 +2054,7 @@
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2082,7 +2068,7 @@
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2096,7 +2082,7 @@
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2110,7 +2096,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2124,7 +2110,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2138,7 +2124,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2152,7 +2138,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2166,7 +2152,7 @@
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2180,7 +2166,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2194,7 +2180,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2208,7 +2194,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2222,7 +2208,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2236,7 +2222,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2250,7 +2236,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2264,7 +2250,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2278,7 +2264,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2292,7 +2278,7 @@
     "mitreTechnique": "Steal Application Access Token",
     "mitreTechniqueID": "T1528",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2306,7 +2292,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2320,7 +2306,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2334,7 +2320,7 @@
     "mitreTechnique": "Exploitation for Privilege Escalation",
     "mitreTechniqueID": "T1068",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2348,7 +2334,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2362,7 +2348,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2376,7 +2362,7 @@
     "mitreTechnique": "Create Account",
     "mitreTechniqueID": "T1136",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2390,7 +2376,7 @@
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2404,7 +2390,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2418,7 +2404,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2432,7 +2418,7 @@
     "mitreTechnique": "Phishing",
     "mitreTechniqueID": "T1566",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2446,7 +2432,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2460,7 +2446,7 @@
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2474,7 +2460,7 @@
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2488,7 +2474,7 @@
     "mitreTechnique": "Phishing",
     "mitreTechniqueID": "T1566",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2502,7 +2488,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2516,7 +2502,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -2530,7 +2516,7 @@
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -3216,7 +3202,7 @@
     "mitreTechnique": "Exploit Public-Facing Application",
     "mitreTechniqueID": "",
     "connector": "FortiGate",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "04-22-2025"
   },
   {
@@ -4364,7 +4350,7 @@
     "mitreTechnique": "Remote Services",
     "mitreTechniqueID": "T1021",
     "connector": "N/A",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "03-14-2025"
   },
   {
@@ -4378,7 +4364,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -4392,7 +4378,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "04-08-2025"
   },
   {
@@ -4406,7 +4392,7 @@
     "mitreTechnique": "Email Collection",
     "mitreTechniqueID": "T1114",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -4420,7 +4406,7 @@
     "mitreTechnique": "Hide Artifacts",
     "mitreTechniqueID": "T1564",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -4434,7 +4420,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -4448,7 +4434,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -4462,7 +4448,7 @@
     "mitreTechnique": "Email Collection",
     "mitreTechniqueID": "T1114",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -4476,7 +4462,7 @@
     "mitreTechnique": "Email Collection",
     "mitreTechniqueID": "T1114",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -4490,7 +4476,7 @@
     "mitreTechnique": "Email Collection",
     "mitreTechniqueID": "T1114",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -4504,7 +4490,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -4518,7 +4504,7 @@
     "mitreTechnique": "Abuse Elevation Control Mechanism",
     "mitreTechniqueID": "T1548",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -4532,7 +4518,7 @@
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -4546,7 +4532,7 @@
     "mitreTechnique": "Hide Artifacts",
     "mitreTechniqueID": "T1564",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -4560,7 +4546,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -4574,7 +4560,7 @@
     "mitreTechnique": "Email Collection",
     "mitreTechniqueID": "T1114",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -4588,7 +4574,7 @@
     "mitreTechnique": "Impair Defenses",
     "mitreTechniqueID": "T1562",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -4602,7 +4588,7 @@
     "mitreTechnique": "Data Encrypted for Impact",
     "mitreTechniqueID": "T1565",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -4616,7 +4602,7 @@
     "mitreTechnique": "Data from Information Repositories",
     "mitreTechniqueID": "T1213",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -5134,7 +5120,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -6170,7 +6156,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -6842,7 +6828,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -7010,7 +6996,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "04-08-2025"
   },
   {
@@ -7346,7 +7332,7 @@
     "mitreTechnique": "Command and Scripting Interpreter",
     "mitreTechniqueID": "T1059",
     "connector": "N/A",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "04-22-2025"
   },
   {
@@ -7542,7 +7528,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "N/A",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
   },
   {
@@ -7556,7 +7542,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
@@ -7738,7 +7724,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "",
-    "tool": "",
+    "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
   {
