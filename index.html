@@ -372,7 +372,7 @@
   </div>
 
   <!-- Floating Cases Counter -->
-  <div id="casesCounter" class="cases-counter">Total Cases: 0</div>
+  <div id="casesCounter" class="cases-counter">Total Detections: 0</div>
 
   <script>
     // Toggle Dark/Light Mode
@@ -486,7 +486,7 @@
       rows.forEach(row => { 
         if (row.style.display !== 'none') visibleCount++; 
       });
-      document.getElementById('casesCounter').textContent = `Total Cases: ${visibleCount}`;
+      document.getElementById('casesCounter').textContent = `Total Detections: ${visibleCount}`;
     }
 
     // Export Table to CSV
