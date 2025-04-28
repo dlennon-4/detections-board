@@ -53,7 +53,10 @@ async function fetchAllMondayItems() {
         break;
       }
 
-      const page = cursor ? response.data.data.next_items_page : response.data.data.boards[0]?.items_page;
+      const page = cursor
+        ? response.data.data.next_items_page
+        : response.data.data.boards[0]?.items_page;
+
       if (!page) {
         console.error("❌ No page data received!");
         break;
@@ -114,7 +117,6 @@ ${deletedDetections.map(d => `🗑️ Deleted: ${d.name} (ID: ${d.detectionID})`
 }
 
 // Mapping function: Convert a Monday.com item to a detection object.
-// Removed lastModified field.
 function mapItemToDetection(item) {
   const columns = {};
   item.column_values.forEach(cv => {
@@ -122,7 +124,7 @@ function mapItemToDetection(item) {
   });
 
   return {
-    detectionID: columns["item_id_mknaww1f"] || item.id, 
+    detectionID: columns["item_id_mknaww1f"] || item.id,
     name: item.name,
     description: columns["text2__1"] || '',
     defaultStatus: columns["status"] || '',
@@ -166,23 +168,40 @@ async function updateDetections() {
   // Process each Monday item.
   mondayItems.forEach(item => {
     const detection = mapItemToDetection(item);
-    // If detection is new, assign the current date as dateAdded.
+
+    // ⛔️ Skip any detection that is "Awaiting Approval"
+    if (detection.defaultStatus === "Awaiting Approval") {
+      return;
+    }
+
+    // If detection is brand-new, stamp it with today’s date
     if (!detectionMap[detection.detectionID]) {
       detection.dateAdded = formatDate(new Date());
       newDetections.push(detection);
+
     } else {
-      // Preserve the existing dateAdded.
+      // Otherwise preserve original dateAdded
       detection.dateAdded = detectionMap[detection.detectionID].dateAdded;
-      // Compare the existing detection object with the new one.
+      // If any other field changed, mark it updated
       if (JSON.stringify(detectionMap[detection.detectionID]) !== JSON.stringify(detection)) {
         updatedDetections.push(detection);
       }
     }
+
+    // Write/overwrite into our map
     detectionMap[detection.detectionID] = detection;
   });
 
-  // Identify deleted detections (present in current detections but not in Monday items).
-  const mondayDetectionIDs = new Set(mondayItems.map(item => mapItemToDetection(item).detectionID));
+  // Now figure out which ones to delete:
+  // Any detection in our old JSON that did NOT appear (as a non-Awaiting-Approval)
+  // in Monday’s feed should be removed.
+  const mondayDetectionIDs = new Set(
+    mondayItems
+      .map(item => mapItemToDetection(item))
+      .filter(det => det.defaultStatus !== "Awaiting Approval")
+      .map(det => det.detectionID)
+  );
+
   Object.keys(detectionMap).forEach(detectionID => {
     if (!mondayDetectionIDs.has(detectionID)) {
       deletedDetections.push(detectionMap[detectionID]);
@@ -190,17 +209,19 @@ async function updateDetections() {
     }
   });
 
-  const finalDetections = Object.values(detectionMap).sort((a, b) => a.name.localeCompare(b.name));
+  // Sort remaining detections alphabetically and write everything out
+  const finalDetections = Object.values(detectionMap)
+    .sort((a, b) => a.name.localeCompare(b.name));
 
   console.log(`📢 Summary: 🆕 ${newDetections.length} new | ✏️ ${updatedDetections.length} updated | 🗑️ ${deletedDetections.length} deleted`);
   writeSummary(newDetections, updatedDetections, deletedDetections);
   writeDetections(finalDetections);
 
-  // Send email notification using Gmail.
+  // Fire off your email notification
   await sendEmail();
 }
 
-// New function to send email using Gmail via Nodemailer.
+// Send update summary via Gmail (Nodemailer)
 async function sendEmail() {
   let summary;
   try {
@@ -235,5 +256,5 @@ async function sendEmail() {
   }
 }
 
-// Run update process.
+// Kick it all off
 updateDetections();
