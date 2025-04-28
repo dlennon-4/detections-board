@@ -99,13 +99,14 @@ function writeDetections(detections) {
 }
 
 // Function to write an update summary for email notification
-function writeSummary(newDetections, updatedDetections, deletedDetections) {
+function writeSummary(newDetections, updatedDetections, deletedDetections, awaitingApprovalCount) {
   const summaryContent = `
 🛠 Detections Update Summary
 ----------------------------
 🆕 New Detections: ${newDetections.length}
 ✏️ Updated Detections: ${updatedDetections.length}
 🗑️ Deleted Detections: ${deletedDetections.length}
+🟡 Awaiting Approval: ${awaitingApprovalCount}
 
 📋 Details:
 ${newDetections.map(d => `🆕 New: ${d.name} (ID: ${d.detectionID}) Added on: ${d.dateAdded}`).join("\n")}
@@ -149,6 +150,12 @@ async function updateDetections() {
   }
 
   console.log(`📝 Found ${mondayItems.length} detections from Monday.com`);
+
+  // Count how many are Awaiting Approval
+  const awaitingApprovalCount = mondayItems
+    .map(item => mapItemToDetection(item))
+    .filter(det => det.defaultStatus === "Awaiting Approval")
+    .length;
 
   const currentDetections = loadCurrentDetections();
   console.log(`📊 Existing Detections Count: ${currentDetections.length}`);
@@ -213,8 +220,8 @@ async function updateDetections() {
   const finalDetections = Object.values(detectionMap)
     .sort((a, b) => a.name.localeCompare(b.name));
 
-  console.log(`📢 Summary: 🆕 ${newDetections.length} new | ✏️ ${updatedDetections.length} updated | 🗑️ ${deletedDetections.length} deleted`);
-  writeSummary(newDetections, updatedDetections, deletedDetections);
+  console.log(`📢 Summary: 🆕 ${newDetections.length} new | ✏️ ${updatedDetections.length} updated | 🗑️ ${deletedDetections.length} deleted | 🟡 ${awaitingApprovalCount} awaiting approval`);
+  writeSummary(newDetections, updatedDetections, deletedDetections, awaitingApprovalCount);
   writeDetections(finalDetections);
 
   // Fire off your email notification
@@ -244,7 +251,7 @@ async function sendEmail() {
   const mailOptions = {
     from: process.env.GMAIL_USER,
     to: 'dan@cyflare.com',
-    subject: 'Detection Board Update: Summary Report',
+    subject: `Detection Board Update: ${new Date().toLocaleDateString()}`,
     html: summaryHTML
   };
 
