@@ -1465,7 +1465,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1479,7 +1479,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1493,7 +1493,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1507,7 +1507,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1521,7 +1521,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1535,7 +1535,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1549,7 +1549,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1563,7 +1563,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1577,7 +1577,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1591,7 +1591,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Unsecured Credentials",
     "mitreTechniqueID": "T1552",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1605,7 +1605,7 @@
     "mitreTacticID": "TA0007",
     "mitreTechnique": "Remote System Discovery",
     "mitreTechniqueID": "T1018",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1619,7 +1619,7 @@
     "mitreTacticID": "TA0007",
     "mitreTechnique": "Permission Groups Discovery",
     "mitreTechniqueID": "T1069",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1633,7 +1633,7 @@
     "mitreTacticID": "TA0007",
     "mitreTechnique": "Cloud Service Discovery",
     "mitreTechniqueID": "T1526",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1647,7 +1647,7 @@
     "mitreTacticID": "TA0007",
     "mitreTechnique": "Account Discovery",
     "mitreTechniqueID": "T1087",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1661,7 +1661,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1675,7 +1675,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1689,7 +1689,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1703,7 +1703,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1717,7 +1717,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1731,7 +1731,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1745,7 +1745,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1759,7 +1759,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1773,7 +1773,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1787,7 +1787,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Exploitation for Privilege Escalation",
     "mitreTechniqueID": "T1068",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1801,7 +1801,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Trusted Relationship",
     "mitreTechniqueID": "T1199",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1815,7 +1815,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1829,7 +1829,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1843,7 +1843,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1857,7 +1857,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1871,7 +1871,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Steal Application Access Token",
     "mitreTechniqueID": "T1528",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1885,7 +1885,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Exploitation for Privilege Escalation",
     "mitreTechniqueID": "T1068",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1899,7 +1899,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1913,7 +1913,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1927,7 +1927,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1941,7 +1941,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1955,7 +1955,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1969,7 +1969,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1983,7 +1983,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -1997,7 +1997,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2011,7 +2011,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Steal Application Access Token",
     "mitreTechniqueID": "T1528",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2025,7 +2025,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2039,7 +2039,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2053,7 +2053,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2067,7 +2067,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2081,7 +2081,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2095,7 +2095,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2109,7 +2109,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2123,7 +2123,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2137,7 +2137,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2151,7 +2151,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2165,7 +2165,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2179,7 +2179,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2193,7 +2193,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2207,7 +2207,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2221,7 +2221,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2235,7 +2235,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2249,7 +2249,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2263,7 +2263,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2277,7 +2277,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Steal Application Access Token",
     "mitreTechniqueID": "T1528",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2291,7 +2291,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2305,7 +2305,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2319,7 +2319,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Exploitation for Privilege Escalation",
     "mitreTechniqueID": "T1068",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2333,7 +2333,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2347,7 +2347,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2361,7 +2361,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Create Account",
     "mitreTechniqueID": "T1136",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2375,7 +2375,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2389,7 +2389,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2403,7 +2403,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2417,7 +2417,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Phishing",
     "mitreTechniqueID": "T1566",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2430,8 +2430,8 @@
     "mitreTactic": "Persistence",
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Valid Accounts",
-    "mitreTechniqueID": "",
-    "connector": "",
+    "mitreTechniqueID": "T1078",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2445,7 +2445,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2459,7 +2459,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2473,7 +2473,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Phishing",
     "mitreTechniqueID": "T1566",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2487,7 +2487,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2501,7 +2501,7 @@
     "mitreTacticID": "TA0001",
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -2515,7 +2515,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
-    "connector": "",
+    "connector": "Azure AD",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -4405,7 +4405,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Hide Artifacts",
     "mitreTechniqueID": "T1564",
-    "connector": "",
+    "connector": "Exchange",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -4503,7 +4503,7 @@
     "mitreTacticID": "TA0004",
     "mitreTechnique": "Abuse Elevation Control Mechanism",
     "mitreTechniqueID": "T1548",
-    "connector": "",
+    "connector": "Exchange",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -4545,7 +4545,7 @@
     "mitreTacticID": "TA0003",
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
-    "connector": "",
+    "connector": "Exchange",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
@@ -4573,7 +4573,7 @@
     "mitreTacticID": "TA0005",
     "mitreTechnique": "Impair Defenses",
     "mitreTechniqueID": "T1562",
-    "connector": "",
+    "connector": "Exchange",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
   },
