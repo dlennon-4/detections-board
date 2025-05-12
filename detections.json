@@ -742,6 +742,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0676",
+    "name": "BloodHound Enumeration Activity",
+    "description": "",
+    "defaultStatus": "New Detection",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar Cyber",
+    "dateAdded": "05-12-2025"
+  },
+  {
     "detectionID": "CY-0116",
     "name": "Box - Change Admin Role",
     "description": "A Box admin role was changed in your environment.",
@@ -880,6 +894,20 @@
     "connector": "Cisco Umbrella",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0674",
+    "name": "Cloud Drive Data Exfiltration Anomaly",
+    "description": "",
+    "defaultStatus": "New Detection",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar Cyber",
+    "dateAdded": "05-12-2025"
   },
   {
     "detectionID": "CY-0354",
@@ -1300,6 +1328,48 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0677",
+    "name": "DNS Query to Anonymous File Upload Domains",
+    "description": "",
+    "defaultStatus": "New Detection",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar Cyber",
+    "dateAdded": "05-12-2025"
+  },
+  {
+    "detectionID": "CY-0678",
+    "name": "DNS Query to External Service Interaction Domains",
+    "description": "",
+    "defaultStatus": "New Detection",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar Cyber",
+    "dateAdded": "05-12-2025"
+  },
+  {
+    "detectionID": "CY-0679",
+    "name": "DNS Query to Monero Crypto Coin Mining Pool Domains",
+    "description": "",
+    "defaultStatus": "New Detection",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar Cyber",
+    "dateAdded": "05-12-2025"
   },
   {
     "detectionID": "CY-0240",
@@ -7348,6 +7418,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0675",
+    "name": "Suspicious LDAP Search Request",
+    "description": "",
+    "defaultStatus": "New Detection",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar Cyber",
+    "dateAdded": "05-12-2025"
   },
   {
     "detectionID": "CY-0275",
