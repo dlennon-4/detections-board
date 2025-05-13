@@ -1,14 +1,8 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 6
+🆕 New Detections: 0
 ✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 1
 
 📋 Details:
-🆕 New: Cloud Drive Data Exfiltration Anomaly (ID: CY-0674) Added on: 05-12-2025
-🆕 New: Suspicious LDAP Search Request (ID: CY-0675) Added on: 05-12-2025
-🆕 New: BloodHound Enumeration Activity (ID: CY-0676) Added on: 05-12-2025
-🆕 New: DNS Query to Anonymous File Upload Domains (ID: CY-0677) Added on: 05-12-2025
-🆕 New: DNS Query to External Service Interaction Domains (ID: CY-0678) Added on: 05-12-2025
-🆕 New: DNS Query to Monero Crypto Coin Mining Pool Domains (ID: CY-0679) Added on: 05-12-2025
