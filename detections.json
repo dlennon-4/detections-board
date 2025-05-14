@@ -1456,6 +1456,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0680",
+    "name": "Duo User Marked as Fraud",
+    "description": "Detects reported Duo fraud attempts by the user.",
+    "defaultStatus": "Active",
+    "killChainStage": "Initial Attempts",
+    "mitreTactic": "Initial Access",
+    "mitreTacticID": "",
+    "mitreTechnique": "Valid Accounts",
+    "mitreTechniqueID": "",
+    "connector": "Duo",
+    "tool": "Stellar Cyber",
+    "dateAdded": "05-14-2025"
+  },
+  {
     "detectionID": "CY-0084",
     "name": "Emerging Threat",
     "description": "An emerging threat has been observed. Investigate the IP address, domain name, URL, or file hashes (MD5, SHA1, SHA256) and consider blocking.",
