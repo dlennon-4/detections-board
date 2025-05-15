@@ -1,9 +1,8 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 1
+🆕 New Detections: 0
 ✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 1
 
 📋 Details:
-🆕 New: Duo User Marked as Fraud (ID: CY-0680) Added on: 05-14-2025
