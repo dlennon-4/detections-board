@@ -6188,6 +6188,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0682",
+    "name": "Potential Katz Stealer User Agent",
+    "description": "Detects network connections with a suspicious user-agent string containing \"katz-ontop\", which may indicate Katz Stealer activity.",
+    "defaultStatus": "Testing",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "",
+    "dateAdded": "05-27-2025"
+  },
+  {
     "detectionID": "CY-0006",
     "name": "Potential LDAP Nightmare Exploitation",
     "description": "Detects exploitation attempt of CVE-2024-49113 known as LDAP Nightmare, based on \"Application Error\" log where the faulting application is \"lsass.exe\" and the faulting module is \"WLDAP32.dll\".",
@@ -6653,7 +6667,7 @@
     "detectionID": "CY-0538",
     "name": "RDP Port Opened via Netsh Firewall Command",
     "description": "Detects use of netsh to allow inbound RDP (port 3389) through Windows Firewall.",
-    "defaultStatus": "Testing",
+    "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Lateral Movement",
     "mitreTacticID": "TA0008",
@@ -7409,7 +7423,7 @@
     "detectionID": "CY-0544",
     "name": "Suspicious CrushFTP Child Process",
     "description": "Detects suspicious child processes spawned by the CrushFTP service that may indicate exploitation of remote code execution vulnerabilities",
-    "defaultStatus": "Testing",
+    "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Execution",
     "mitreTacticID": "TA0002",
