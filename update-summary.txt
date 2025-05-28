@@ -1,11 +1,9 @@
 🛠 Detections Update Summary
 ----------------------------
 🆕 New Detections: 1
-✏️ Updated Detections: 2
+✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
-🟡 Awaiting Approval: 2
+🟡 Awaiting Approval: 1
 
 📋 Details:
-🆕 New: Potential Katz Stealer User Agent (ID: CY-0682) Added on: 05-27-2025
-✏️ Updated: RDP Port Opened via Netsh Firewall Command (ID: CY-0538)
-✏️ Updated: Suspicious CrushFTP Child Process (ID: CY-0544)
+🆕 New: DNS Query to Katz Stealer Domain (ID: CY-0685) Added on: 05-28-2025
