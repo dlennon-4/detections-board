@@ -744,7 +744,7 @@
   {
     "detectionID": "CY-0676",
     "name": "BloodHound Enumeration Activity",
-    "description": "",
+    "description": "The BloodHound Enumeration Activity rules are used to identify potential domain enumeration activity from BloodHound or other Active Directory data collection tools. Any one or more of these will trigger the BloodHound Enumeration Activity alert type.",
     "defaultStatus": "New Detection",
     "killChainStage": "",
     "mitreTactic": "",
@@ -898,7 +898,7 @@
   {
     "detectionID": "CY-0674",
     "name": "Cloud Drive Data Exfiltration Anomaly",
-    "description": "",
+    "description": "An account downloaded an atypical number of files over a 24-hour period. Check the user and the targeted files.",
     "defaultStatus": "New Detection",
     "killChainStage": "",
     "mitreTactic": "",
@@ -1332,7 +1332,7 @@
   {
     "detectionID": "CY-0677",
     "name": "DNS Query to Anonymous File Upload Domains",
-    "description": "",
+    "description": "The DNS Query to Anonymous File Upload Domains rules are used to identify DNS queries to anonymous file upload platform domains often used for malicious purposes. Any one or more of these will trigger the DNS Query to Anonymous File Upload Domains alert type.",
     "defaultStatus": "New Detection",
     "killChainStage": "",
     "mitreTactic": "",
@@ -1346,7 +1346,7 @@
   {
     "detectionID": "CY-0678",
     "name": "DNS Query to External Service Interaction Domains",
-    "description": "",
+    "description": "The DNS Query to External Service Interaction Domains rules are used to identify DNS queries to external service interaction domains often used for out-of-band interactions after successful RCE. Any one or more of these will trigger the DNS Query to External Service Interaction Domains alert type.",
     "defaultStatus": "New Detection",
     "killChainStage": "",
     "mitreTactic": "",
@@ -1374,7 +1374,7 @@
   {
     "detectionID": "CY-0679",
     "name": "DNS Query to Monero Crypto Coin Mining Pool Domains",
-    "description": "",
+    "description": "The DNS Query to Monero Crypto Coin Mining Pool Domains rules are used to identify DNS queries to Monero crypto coin mining pool domains. Any one or more of these will trigger the DNS Query to Monero Crypto Coin Mining Pool Domains alert type.",
     "defaultStatus": "New Detection",
     "killChainStage": "",
     "mitreTactic": "",
@@ -7464,7 +7464,7 @@
   {
     "detectionID": "CY-0675",
     "name": "Suspicious LDAP Search Request",
-    "description": "",
+    "description": "A suspicious LDAP search request was observed for the first time. This behavior indicates that an attacker might be attempting to collect information from the Active Directory (AD) service.",
     "defaultStatus": "New Detection",
     "killChainStage": "",
     "mitreTactic": "",
