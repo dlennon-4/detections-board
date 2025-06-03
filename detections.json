@@ -1428,6 +1428,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0687",
+    "name": "Duo Fraud Impossible Travel Correlation",
+    "description": "Detects a correlation between Duo fraud events with Impossible travel activity.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "Duo",
+    "tool": "Stellar Cyber",
+    "dateAdded": "06-03-2025"
+  },
+  {
     "detectionID": "CY-0127",
     "name": "Duo Login Outside the US",
     "description": "A successful login outside the US was detected for the following Duo user.",
@@ -6228,6 +6242,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0688",
+    "name": "Potential Luna Moth Domain",
+    "description": "Detects potential traffic connections to known Luna Moth ransomware domain naming conventions.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "06-03-2025"
   },
   {
     "detectionID": "CY-0540",

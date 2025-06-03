@@ -1,11 +1,10 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 0
-✏️ Updated Detections: 2
+🆕 New Detections: 2
+✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 1
 
 📋 Details:
-
-✏️ Updated: Potential Katz Stealer User Agent (ID: CY-0682)
-✏️ Updated: DNS Query to Katz Stealer Domain (ID: CY-0685)
+🆕 New: Potential Luna Moth Domain (ID: CY-0688) Added on: 06-03-2025
+🆕 New: Duo Fraud Impossible Travel Correlation (ID: CY-0687) Added on: 06-03-2025
