@@ -6006,6 +6006,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0681",
+    "name": "Possible Defendnot Antivirus Manipulation",
+    "description": "Detects Defendnot activity which aims to replace existing Defender protections",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "",
+    "dateAdded": "06-05-2025"
+  },
+  {
     "detectionID": "CY-0287",
     "name": "Possible Encrypted Phishing Site Visit",
     "description": "A possible phishing site visit to a recently registered domain was observed in encrypted traffic. Check with the user to determine whether their system is compromised.",
