@@ -1,9 +1,8 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 1
+🆕 New Detections: 0
 ✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
-🟡 Awaiting Approval: 0
+🟡 Awaiting Approval: 1
 
 📋 Details:
-🆕 New: Possible Defendnot Antivirus Manipulation (ID: CY-0681) Added on: 06-05-2025
