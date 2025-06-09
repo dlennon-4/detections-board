@@ -341,7 +341,7 @@
       </div>
 
       <button class="reset-btn action-btn" onclick="resetFilters()">Reset Filters</button>
-      <button class="action-btn" id="toggleKCMitreBtn" onclick="toggleKCMitre()">Hide KC & MITRE Columns</button>
+      <button class="action-btn" id="toggleMitreBtn" onclick="toggleMitreColumns()">Hide MITRE Columns</button>
       <button class="action-btn" id="newFilterBtn" onclick="toggleNewOnlyFilter()">Show New Only</button>
     </div>
     <div>
@@ -429,20 +429,20 @@
       filterTable();
     }
 
-    // Toggle Hide/Show for Kill Chain & MITRE Columns (columns 3-7)
-    let kcAndMitreVisible = true;
-    function toggleKCMitre() {
-      const indices = [3,4,5,6];
-      kcAndMitreVisible = !kcAndMitreVisible;
+    // Toggle Hide/Show for MITRE Columns (columns 3-6)
+    let mitreVisible = true;
+    function toggleMitreColumns() {
+      const indices = [3,4,5,6]; // MITRE Tactic, Tactic ID, Technique, Technique ID
+      mitreVisible = !mitreVisible;
       const columnCheckboxes = document.querySelectorAll('#columnDropdown input[type="checkbox"]');
       indices.forEach(index => {
-        toggleColumn(index, kcAndMitreVisible);
+        toggleColumn(index, mitreVisible);
         if (columnCheckboxes[index]) {
-          columnCheckboxes[index].checked = kcAndMitreVisible;
+          columnCheckboxes[index].checked = mitreVisible;
         }
       });
-      const btn = document.getElementById('toggleKCMitreBtn');
-      btn.textContent = kcAndMitreVisible ? 'Hide KC & MITRE Columns' : 'Show KC & MITRE Columns';
+      const btn = document.getElementById('toggleMitreBtn');
+      btn.textContent = mitreVisible ? 'Hide MITRE Columns' : 'Show MITRE Columns';
     }
 
     // Filter Table Logic
