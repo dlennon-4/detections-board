@@ -331,8 +331,7 @@
           <label><input type="checkbox" checked onchange="toggleColumn(0)"> Detection Name</label>
           <label><input type="checkbox" checked onchange="toggleColumn(1)"> Description</label>
           <label><input type="checkbox" checked onchange="toggleColumn(2)"> Default Status</label>
-          <label><input type="checkbox" checked onchange="toggleColumn(3)"> Kill Chain Stage</label>
-          <label><input type="checkbox" checked onchange="toggleColumn(4)"> MITRE Tactic</label>
+                    <label><input type="checkbox" checked onchange="toggleColumn(4)"> MITRE Tactic</label>
           <label><input type="checkbox" checked onchange="toggleColumn(5)"> MITRE Tactic ID</label>
           <label><input type="checkbox" checked onchange="toggleColumn(6)"> MITRE Technique</label>
           <label><input type="checkbox" checked onchange="toggleColumn(7)"> MITRE Technique ID</label>
@@ -358,8 +357,7 @@
           <th onclick="sortTable(0)">Detection Name</th>
           <th onclick="sortTable(1)">Description</th>
           <th onclick="sortTable(2)">Default Status</th>
-          <th onclick="sortTable(3)">Kill Chain Stage</th>
-          <th onclick="sortTable(4)">MITRE Tactic</th>
+                    <th onclick="sortTable(4)">MITRE Tactic</th>
           <th onclick="sortTable(5)">MITRE Tactic ID</th>
           <th onclick="sortTable(6)">MITRE Technique</th>
           <th onclick="sortTable(7)">MITRE Technique ID</th>
@@ -434,7 +432,7 @@
     // Toggle Hide/Show for Kill Chain & MITRE Columns (columns 3-7)
     let kcAndMitreVisible = true;
     function toggleKCMitre() {
-      const indices = [3,4,5,6,7];
+      const indices = [3,4,5,6];
       kcAndMitreVisible = !kcAndMitreVisible;
       const columnCheckboxes = document.querySelectorAll('#columnDropdown input[type="checkbox"]');
       indices.forEach(index => {
@@ -463,7 +461,7 @@
         const name = cells[0].textContent.toLowerCase();
         const descText = cells[1].textContent.toLowerCase();
         const status = cells[2].textContent.trim();
-        const tool = cells[9].textContent.trim();
+        const tool = cells[8].textContent.trim();
 
         const matchesSearch = name.includes(searchValue) || descText.includes(searchValue);
         const matchesStatus = allStatusesChecked || checkedStatuses.includes(status);
@@ -628,8 +626,7 @@
                   ${det.defaultStatus}
                 </span>
               </td>
-              <td>${det.killChainStage}</td>
-              <td>${det.mitreTactic}</td>
+                            <td>${det.mitreTactic}</td>
               <td>${det.mitreTacticID}</td>
               <td>${det.mitreTechnique}</td>
               <td>${det.mitreTechniqueID}</td>
