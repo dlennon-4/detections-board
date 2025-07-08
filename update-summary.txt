@@ -1,8 +1,21 @@
 🛠 Detections Update Summary
 ----------------------------
 🆕 New Detections: 0
-✏️ Updated Detections: 0
+✏️ Updated Detections: 12
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 2
 
 📋 Details:
+
+✏️ Updated: Conditional Access Blocked Login (ID: CY-0122)
+✏️ Updated: Cloud Drive Data Exfiltration Anomaly (ID: CY-0674)
+✏️ Updated: Suspicious LDAP Search Request (ID: CY-0675)
+✏️ Updated: BloodHound Enumeration Activity (ID: CY-0676)
+✏️ Updated: DNS Query to Anonymous File Upload Domains (ID: CY-0677)
+✏️ Updated: DNS Query to External Service Interaction Domains (ID: CY-0678)
+✏️ Updated: DNS Query to Monero Crypto Coin Mining Pool Domains (ID: CY-0679)
+✏️ Updated: Suspicious PsExec Execution (ID: CY-0464)
+✏️ Updated: T1047 Wmiprvse Wbemcomn DLL Hijack (ID: CY-0466)
+✏️ Updated: Windows Network Access Suspicious desktop.ini Action (ID: CY-0456)
+✏️ Updated: Startup/Logon Script added to Group Policy Object (ID: CY-0459)
+✏️ Updated: Password Reset By User Account (ID: CY-0453)
