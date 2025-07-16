@@ -1,8 +1,18 @@
 🛠 Detections Update Summary
 ----------------------------
 🆕 New Detections: 0
-✏️ Updated Detections: 0
+✏️ Updated Detections: 9
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 4
 
 📋 Details:
+
+✏️ Updated: Cloud Drive Data Exfiltration Anomaly (ID: CY-0674)
+✏️ Updated: Remote Task Creation via ATSVC Named Pipe (ID: CY-0460)
+✏️ Updated: Remote Service Activity via SVCCTL Named Pipe (ID: CY-0465)
+✏️ Updated: Protected Storage Service Access (ID: CY-0458)
+✏️ Updated: Possible Impacket SecretDump Remote Activity (ID: CY-0455)
+✏️ Updated: Possible PetitPotam Coerce Authentication Attempt (ID: CY-0457)
+✏️ Updated: Persistence and Execution at Scale via GPO Scheduled Task (ID: CY-0462)
+✏️ Updated: Impacket PsExec Execution (ID: CY-0463)
+✏️ Updated: ICMP Based Exfiltration or Tunneling (ID: CY-0454)
