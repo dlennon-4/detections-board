@@ -7616,6 +7616,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0694",
+    "name": "Suspicious Script Execution from Temp or Downloads Directory",
+    "description": "Detects `wscript.exe` executions where the command line includes indicators of execution from user or temp folders involving `.zip` or `.js` files",
+    "defaultStatus": "Testing",
+    "killChainStage": "Propagation",
+    "mitreTactic": "Execution",
+    "mitreTacticID": "TA0002",
+    "mitreTechnique": "Command and Scripting Interpreter",
+    "mitreTechniqueID": "T1059",
+    "connector": "N/A",
+    "tool": "",
+    "dateAdded": "07-17-2025"
+  },
+  {
     "detectionID": "CY-0473",
     "name": "Suspicious Script Remote Access Correlation",
     "description": "",
