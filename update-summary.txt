@@ -1,9 +1,8 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 1
+🆕 New Detections: 0
 ✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 4
 
 📋 Details:
-🆕 New: Suspicious Script Execution from Temp or Downloads Directory (ID: CY-0694) Added on: 07-17-2025
