@@ -6090,6 +6090,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0698",
+    "name": "Potential Conditional Access Blocked Login VPN Correlation",
+    "description": "Detects user attempts to get around conditional access policies using VPNs.",
+    "defaultStatus": "Testing",
+    "killChainStage": "Initial Attempts",
+    "mitreTactic": "Initial Access",
+    "mitreTacticID": "",
+    "mitreTechnique": "Valid Accounts",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "",
+    "dateAdded": "07-24-2025"
+  },
+  {
     "detectionID": "CY-0059",
     "name": "Potential Credential Dumping Via LSASS Process Clone",
     "description": "A suspicious LSASS process, process clone was detected. This could indicated credential dumping activity.",
