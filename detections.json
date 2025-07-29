@@ -14,6 +14,20 @@
     "dateAdded": "12-01-2024"
   },
   {
+    "detectionID": "CY-0700",
+    "name": "Account Created and Deleted in Short Timeframe",
+    "description": "Detects when an account was created and deleted in a short period of time.",
+    "defaultStatus": "Active",
+    "killChainStage": "Persistent Foothold",
+    "mitreTactic": "Defense Evasion",
+    "mitreTacticID": "TA0005",
+    "mitreTechnique": "Valid Accounts",
+    "mitreTechniqueID": "T1078",
+    "connector": "Azure AD",
+    "tool": "",
+    "dateAdded": "07-29-2025"
+  },
+  {
     "detectionID": "CY-0535",
     "name": "Account Creation Anomaly",
     "description": "An anomalously large number of accounts were created in a 5-minute interval or a user created an account for the first time in at least 14 days. Check the originating account and the new accounts for malicious behavior.",
@@ -1412,6 +1426,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0701",
+    "name": "Dormant Account Anomaly",
+    "description": "",
+    "defaultStatus": "New Detection",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "",
+    "dateAdded": "07-29-2025"
   },
   {
     "detectionID": "CY-0124",
