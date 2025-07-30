@@ -1,10 +1,8 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 2
+🆕 New Detections: 0
 ✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 26
 
 📋 Details:
-🆕 New: Account Created and Deleted in Short Timeframe (ID: CY-0700) Added on: 07-29-2025
-🆕 New: Dormant Account Anomaly (ID: CY-0701) Added on: 07-29-2025
