@@ -6008,7 +6008,7 @@
   {
     "detectionID": "CY-0457",
     "name": "Possible PetitPotam Coerce Authentication Attempt",
-    "description": "The Possible Impacket SecretDump Remote Activity rules detect suspicious SMB traffic related to credential dumping using Impacket. Any one or more of these will trigger the Possible Impacket SecretDump Remote Activity alert type.",
+    "description": "The following rules detect suspicious SMB traffic related to PetitPotam coerced authentication. Any one or more of these will trigger the Possible PetitPotam Coerce Authentication Attempt Alert.",
     "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Credential Access",
