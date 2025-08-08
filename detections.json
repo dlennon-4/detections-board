@@ -4760,6 +4760,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0693",
+    "name": "Malicious URL Click Azure Risk Correlation",
+    "description": "A user recently triggered an Azure AD Risk detection following a potentially malicious URL click, this can indicate a compromised account after a successful phishing attempt.",
+    "defaultStatus": "Testing",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "",
+    "dateAdded": "08-08-2025"
+  },
+  {
     "detectionID": "CY-0034",
     "name": "Malware Detected in OneDrive File",
     "description": "OneDrive detected a file potentially containing malware.",
@@ -6116,6 +6130,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0722",
+    "name": "Potential Compromise Account Following High Confidence Phish Delivery",
+    "description": "",
+    "defaultStatus": "Testing",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "",
+    "dateAdded": "08-08-2025"
   },
   {
     "detectionID": "CY-0698",

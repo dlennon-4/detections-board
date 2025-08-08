@@ -1,8 +1,10 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 0
+🆕 New Detections: 2
 ✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
-🟡 Awaiting Approval: 26
+🟡 Awaiting Approval: 25
 
 📋 Details:
+🆕 New: Malicious URL Click Azure Risk Correlation (ID: CY-0693) Added on: 08-08-2025
+🆕 New: Potential Compromise Account Following High Confidence Phish Delivery (ID: CY-0722) Added on: 08-08-2025
