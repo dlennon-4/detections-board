@@ -7056,6 +7056,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0723",
+    "name": "SonicWall VPN Potential Suspicious Activity",
+    "description": "",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "",
+    "dateAdded": "08-12-2025"
+  },
+  {
     "detectionID": "CY-0228",
     "name": "Sophos Alert",
     "description": "Stellar Cyber detected a suspicious alert originally reported by Sophos.",
