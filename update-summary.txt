@@ -1,9 +1,8 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 1
+🆕 New Detections: 0
 ✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 25
 
 📋 Details:
-🆕 New: SonicWall VPN Potential Suspicious Activity (ID: CY-0723) Added on: 08-12-2025
