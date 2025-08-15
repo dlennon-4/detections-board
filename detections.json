@@ -98,6 +98,34 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0728",
+    "name": "AMSI Disabled via Registry Modification",
+    "description": "Detects changes to the Windows registry that disable the Antimalware Scan Interface (AMSI) by setting the AmsiEnable value to 0. Threat actors commonly use this technique to impair security defenses and evade detection. Disabling AMSI allows malicious payloads to execute without interference, significantly increasing the risk of system compromise, privilege escalation, and data exfiltration.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "",
+    "dateAdded": "08-15-2025"
+  },
+  {
+    "detectionID": "CY-0729",
+    "name": "APDS XSS Redirection",
+    "description": "",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "",
+    "dateAdded": "08-15-2025"
+  },
+  {
     "detectionID": "CY-0305",
     "name": "Application Usage Anomaly",
     "description": "An internal user who usually runs a few applications with internal service IP addresses suddenly runs a new application. Investigate the application to see if it is benign. Check with the user to see if this was expected.",
@@ -670,6 +698,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0727",
+    "name": "Base64 Decode and Execute Memory Dump Python Script",
+    "description": "Detects the use of base64 decoding followed by the execution of a Python script designed to perform memory dumping operations. Such scripts may be used to extract sensitive information, including secrets and credentials, from the memory of CI/CD pipeline runners. This behavior is indicative of potential supply chain compromises or unauthorized analysis attempts. Monitoring for such activities is crucial to detect security threats and prevent unauthorized access to sensitive data.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "",
+    "dateAdded": "08-15-2025"
   },
   {
     "detectionID": "CY-0209",
@@ -6454,6 +6496,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0724",
+    "name": "Potential Web Shell Creation in LAYOUTS Directory",
+    "description": "Detects a command script containing indicators of a web shell being written to a sensitive SharePoint system directory. This behavior is a strong indicator of compromise. Attackers who have successfully exploited a SharePoint vulnerability often use command scripts (like PowerShell) to drop a web shell (.aspx file) onto the server.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "",
+    "dateAdded": "08-15-2025"
+  },
+  {
     "detectionID": "CY-0268",
     "name": "Potentially Malicious AWS Activity",
     "description": "The Potentially Malicious AWS Activity rules are used to identify suspicious activity within AWS logs. Any one or more of these will trigger the Potentially Malicious AWS Activity alert type.",
@@ -7686,6 +7742,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0726",
+    "name": "Suspicious Process Spawned by SharePoint IIS Worker Process",
+    "description": "Detects the creation of a suspicious child process, such as a command shell or common reconnaissance tool, by the Internet Information Services (IIS) worker process (w3wp.exe) running a SharePoint application pool. This behavior is highly anomalous and is a strong indicator of post-exploitation activity. An attacker, after successfully exploiting a remote code execution (RCE) vulnerability like CVE-2025-53770, will often spawn a shell to execute further commands on the compromised server.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "",
+    "dateAdded": "08-15-2025"
+  },
+  {
     "detectionID": "CY-0464",
     "name": "Suspicious PsExec Execution",
     "description": "The Suspicious PsExec Execution rules detect suspicious SMB traffic related to PsExec Execution activities. Any one or more of these will trigger the Suspicious PsExec Execution alert type.",
@@ -8034,6 +8104,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0725",
+    "name": "Web Shell File Detected in LAYOUTS Directory",
+    "description": "Detects the creation or modification of a suspicious aspx file, within the critical SharePoint LAYOUTS directory. This activity is a definitive indicator of a web shell being planted on the server. The LAYOUTS directory is a common target for attackers because files placed there can be executed by the web server. The file spinstall0.aspx is a known indicator of compromise associated with post-exploitation activity following a successful SharePoint vulnerability exploit.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "",
+    "dateAdded": "08-15-2025"
   },
   {
     "detectionID": "CY-0121",
