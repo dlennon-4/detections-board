@@ -1,14 +1,15 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 6
-✏️ Updated Detections: 0
+🆕 New Detections: 0
+✏️ Updated Detections: 6
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 25
 
 📋 Details:
-🆕 New: Potential Web Shell Creation in LAYOUTS Directory (ID: CY-0724) Added on: 08-15-2025
-🆕 New: Web Shell File Detected in LAYOUTS Directory (ID: CY-0725) Added on: 08-15-2025
-🆕 New: Suspicious Process Spawned by SharePoint IIS Worker Process (ID: CY-0726) Added on: 08-15-2025
-🆕 New: Base64 Decode and Execute Memory Dump Python Script (ID: CY-0727) Added on: 08-15-2025
-🆕 New: AMSI Disabled via Registry Modification (ID: CY-0728) Added on: 08-15-2025
-🆕 New: APDS XSS Redirection (ID: CY-0729) Added on: 08-15-2025
+
+✏️ Updated: Potential Web Shell Creation in LAYOUTS Directory (ID: CY-0724)
+✏️ Updated: Web Shell File Detected in LAYOUTS Directory (ID: CY-0725)
+✏️ Updated: Suspicious Process Spawned by SharePoint IIS Worker Process (ID: CY-0726)
+✏️ Updated: Base64 Decode and Execute Memory Dump Python Script (ID: CY-0727)
+✏️ Updated: AMSI Disabled via Registry Modification (ID: CY-0728)
+✏️ Updated: APDS XSS Redirection (ID: CY-0729)
