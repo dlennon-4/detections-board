@@ -1,12 +1,12 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 0
+🆕 New Detections: 1
 ✏️ Updated Detections: 6
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 25
 
 📋 Details:
-
+🆕 New: Bloodhound Tool Execution (ID: CY-0730) Added on: 08-19-2025
 ✏️ Updated: Potential Web Shell Creation in LAYOUTS Directory (ID: CY-0724)
 ✏️ Updated: Web Shell File Detected in LAYOUTS Directory (ID: CY-0725)
 ✏️ Updated: Suspicious Process Spawned by SharePoint IIS Worker Process (ID: CY-0726)
