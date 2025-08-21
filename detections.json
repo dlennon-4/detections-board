@@ -822,7 +822,7 @@
     "mitreTechnique": "System Network Configuration Discovery",
     "mitreTechniqueID": "T1016",
     "connector": "",
-    "tool": "",
+    "tool": "SentinelOne EDR",
     "dateAdded": "08-19-2025"
   },
   {
@@ -1314,20 +1314,6 @@
     "connector": "",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
-  },
-  {
-    "detectionID": "CY-0472",
-    "name": "Device Registration Azure Risk Correlation",
-    "description": "A device was registered to a user following a risky sign-in via Azure AD.",
-    "defaultStatus": "Testing",
-    "killChainStage": "Propagation",
-    "mitreTactic": "Persistence",
-    "mitreTacticID": "TA0003",
-    "mitreTechnique": "Account Manipulation",
-    "mitreTechniqueID": "T1098",
-    "connector": "Azure AD",
-    "tool": "Stellar Cyber",
-    "dateAdded": "01-01-2025"
   },
   {
     "detectionID": "CY-0655",
@@ -7024,20 +7010,6 @@
     "mitreTechnique": "N/A",
     "mitreTechniqueID": "N/A",
     "connector": "SentinelOne",
-    "tool": "Stellar Cyber",
-    "dateAdded": "01-01-2025"
-  },
-  {
-    "detectionID": "CY-0471",
-    "name": "Short Lived User Account Correlation",
-    "description": "This detection identifies potential malicious activity where a Microsoft Entra ID account is created and subsequently deleted within a short period.",
-    "defaultStatus": "Testing",
-    "killChainStage": "",
-    "mitreTactic": "",
-    "mitreTacticID": "",
-    "mitreTechnique": "",
-    "mitreTechniqueID": "",
-    "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
   },

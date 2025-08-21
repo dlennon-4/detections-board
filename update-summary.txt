@@ -1,8 +1,12 @@
 🛠 Detections Update Summary
 ----------------------------
 🆕 New Detections: 0
-✏️ Updated Detections: 0
-🗑️ Deleted Detections: 0
-🟡 Awaiting Approval: 25
+✏️ Updated Detections: 1
+🗑️ Deleted Detections: 2
+🟡 Awaiting Approval: 26
 
 📋 Details:
+
+✏️ Updated: Bloodhound Tool Execution (ID: CY-0730)
+🗑️ Deleted: Device Registration Azure Risk Correlation (ID: CY-0472)
+🗑️ Deleted: Short Lived User Account Correlation (ID: CY-0471)
