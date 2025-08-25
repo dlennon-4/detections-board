@@ -1358,6 +1358,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0733",
+    "name": "Direct Send Phishing Campaign Activity",
+    "description": "A user received and accessed a malicious email associated with an ongoing direct send phishing campaign.",
+    "defaultStatus": "Testing",
+    "killChainStage": "Initial Attempts",
+    "mitreTactic": "Initial Access",
+    "mitreTacticID": "TA0001",
+    "mitreTechnique": "Phishing",
+    "mitreTechniqueID": "T1566",
+    "connector": "Office 365",
+    "tool": "Stellar Cyber",
+    "dateAdded": "08-25-2025"
+  },
+  {
     "detectionID": "CY-0579",
     "name": "Discovery Using AzureHound",
     "description": "Detects AzureHound (A BloodHound data collector for Microsoft Azure) activity via the default User-Agent that is used during its operation after successful authentication.",
