@@ -910,6 +910,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0732",
+    "name": "Browser Executing PuTTY and Launching Rundll32",
+    "description": "Detects the execution of rundll32.exe by PuTTY.exe, a behavior that may suggest the misuse of legitimate software to execute unauthorized or malicious code. This activity is significant as it could be indicative of adversaries attempting to leverage PuTTY, a trusted SSH and telnet client, to run malicious scripts or payloads through the Windows host process. Such actions could be part of a broader strategy for initial access, privilege escalation, or lateral movement within a network. Monitoring this behavior helps identify potential security threats that exploit legitimate tools for malicious purposes.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "Defense Evasion",
+    "mitreTacticID": "TA0005",
+    "mitreTechnique": "System Binary Proxy Execution",
+    "mitreTechniqueID": "T1218",
+    "connector": "",
+    "tool": "SentinelOne EDR",
+    "dateAdded": "08-26-2025"
+  },
+  {
     "detectionID": "CY-0212",
     "name": "Carbon Black - Detections",
     "description": "Stellar Cyber detected a suspicious alert originally reported by Carbon Black.",
@@ -966,10 +980,24 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0734",
+    "name": "Clear Windows RDP Event Log via Wevtutil Command Execution",
+    "description": "Detects the execution of the wevtutil command to clear the Microsoft-Windows-TerminalServices-RDPClient/Operational event log on Windows endpoints. This activity typically uses command-line utilities such as powershell.exe or cmd.exe targeting the RDP client operational log. Adversaries may clear RDP logs to erase evidence of remote access or lateral movement. The rule triggers when process creation or command script events contain wevtutil with the cl flag and specify the RDP client log. This behavior is suspicious and may indicate attempts to cover tracks following unauthorized RDP activity.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "Defense Evasion",
+    "mitreTacticID": "TA0005",
+    "mitreTechnique": "Indicator Removal",
+    "mitreTechniqueID": "T1070",
+    "connector": "",
+    "tool": "SentinelOne EDR",
+    "dateAdded": "08-26-2025"
+  },
+  {
     "detectionID": "CY-0674",
     "name": "Cloud Drive Data Exfiltration Anomaly",
     "description": "An account downloaded an atypical number of files over a 24-hour period. Check the user and the targeted files.",
-    "defaultStatus": "Active",
+    "defaultStatus": "Muted",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Exfiltration",
     "mitreTacticID": "TA0010",
