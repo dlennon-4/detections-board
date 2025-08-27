@@ -1,11 +1,8 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 2
-✏️ Updated Detections: 1
+🆕 New Detections: 0
+✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 25
 
 📋 Details:
-🆕 New: Browser Executing PuTTY and Launching Rundll32 (ID: CY-0732) Added on: 08-26-2025
-🆕 New: Clear Windows RDP Event Log via Wevtutil Command Execution (ID: CY-0734) Added on: 08-26-2025
-✏️ Updated: Cloud Drive Data Exfiltration Anomaly (ID: CY-0674)
