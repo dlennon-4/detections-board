@@ -3405,7 +3405,7 @@
     "detectionID": "CY-0070",
     "name": "Fortigate FW Brute Force Attempt",
     "description": "Potential Brute Force activity has been detected due to an excessive amount of Fortigate VPN login failures.",
-    "defaultStatus": "Active",
+    "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Credential Access",
     "mitreTacticID": "TA0006",
@@ -7250,6 +7250,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "04-08-2025"
+  },
+  {
+    "detectionID": "CY-0735",
+    "name": "Successful Fortigate VPN Brute Force Attempt",
+    "description": "An IP identified as having multiple Fortigate VPN Login failures had a successful login shortly after.",
+    "defaultStatus": "Testing",
+    "killChainStage": "Initial Attempts",
+    "mitreTactic": "Credential Access",
+    "mitreTacticID": "TA0006",
+    "mitreTechnique": "Brute Force",
+    "mitreTechniqueID": "T1110",
+    "connector": "",
+    "tool": "Stellar Cyber",
+    "dateAdded": "08-28-2025"
   },
   {
     "detectionID": "CY-0432",

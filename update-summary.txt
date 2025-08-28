@@ -1,8 +1,10 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 0
-✏️ Updated Detections: 0
+🆕 New Detections: 1
+✏️ Updated Detections: 1
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 25
 
 📋 Details:
+🆕 New: Successful Fortigate VPN Brute Force Attempt (ID: CY-0735) Added on: 08-28-2025
+✏️ Updated: Fortigate FW Brute Force Attempt (ID: CY-0070)
