@@ -6412,6 +6412,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0736",
+    "name": "Potential Okta Brute Force Attempt",
+    "description": "Multiple Okta login failures for the same username were detected in your environment, indicating a potential Brute Force Attack against this user's account.",
+    "defaultStatus": "Testing",
+    "killChainStage": "Initial Attempts",
+    "mitreTactic": "Credential Access",
+    "mitreTacticID": "TA0006",
+    "mitreTechnique": "Brute Force",
+    "mitreTechniqueID": "T1110",
+    "connector": "Okta",
+    "tool": "Stellar Cyber",
+    "dateAdded": "08-29-2025"
+  },
+  {
     "detectionID": "CY-0028",
     "name": "Potential Pass the Hash Asset Access Anomaly",
     "description": "A windows user logged into a new host with indicators related to the Pass the Hash attack.",
