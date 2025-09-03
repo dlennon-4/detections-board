@@ -4427,7 +4427,7 @@
     "detectionID": "CY-0069",
     "name": "Jumpcloud MFA Push Failure",
     "description": "A failed MFA push attempt was detected for a user in your environment.",
-    "defaultStatus": "Testing",
+    "defaultStatus": "Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
     "mitreTacticID": "TA0001",
@@ -6230,18 +6230,18 @@
     "dateAdded": "08-08-2025"
   },
   {
-    "detectionID": "CY-0698",
+    "detectionID": "CY-0737",
     "name": "Potential Conditional Access Blocked Login VPN Correlation",
-    "description": "Detects user attempts to get around conditional access policies using VPNs.",
-    "defaultStatus": "Testing",
-    "killChainStage": "Initial Attempts",
-    "mitreTactic": "Initial Access",
+    "description": "",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
     "mitreTacticID": "",
-    "mitreTechnique": "Valid Accounts",
+    "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "",
-    "tool": "",
-    "dateAdded": "07-24-2025"
+    "tool": "Stellar Cyber",
+    "dateAdded": "09-03-2025"
   },
   {
     "detectionID": "CY-0059",
@@ -6522,6 +6522,34 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0697",
+    "name": "Potential SharePoint Post Exploitation Attempt",
+    "description": "Detects potential exploitation of SharePoint spintall, toolpane, or .aspx files in specified paths leading to exfiltration or remote code execution.",
+    "defaultStatus": "Active",
+    "killChainStage": "Exfiltration & Impact",
+    "mitreTactic": "Exfiltration",
+    "mitreTacticID": "",
+    "mitreTechnique": "Exfiltration Over Alternative Protocol",
+    "mitreTechniqueID": "",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "09-03-2025"
+  },
+  {
+    "detectionID": "CY-0696",
+    "name": "Potential SharePoint RCE Attempt",
+    "description": "Detects potential traffic connections associated with SharePoint CVE-2025-53770.",
+    "defaultStatus": "Active",
+    "killChainStage": "Initial Attempts",
+    "mitreTactic": "Initial Access",
+    "mitreTacticID": "",
+    "mitreTechnique": "Exploit Public-Facing Application",
+    "mitreTechniqueID": "",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "09-03-2025"
   },
   {
     "detectionID": "CY-0164",

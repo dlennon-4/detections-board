@@ -1,8 +1,13 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 0
-✏️ Updated Detections: 0
-🗑️ Deleted Detections: 0
-🟡 Awaiting Approval: 25
+🆕 New Detections: 3
+✏️ Updated Detections: 1
+🗑️ Deleted Detections: 1
+🟡 Awaiting Approval: 23
 
 📋 Details:
+🆕 New: Potential SharePoint Post Exploitation Attempt (ID: CY-0697) Added on: 09-03-2025
+🆕 New: Potential SharePoint RCE Attempt (ID: CY-0696) Added on: 09-03-2025
+🆕 New: Potential Conditional Access Blocked Login VPN Correlation (ID: CY-0737) Added on: 09-03-2025
+✏️ Updated: Jumpcloud MFA Push Failure (ID: CY-0069)
+🗑️ Deleted: Potential Conditional Access Blocked Login VPN Correlation (ID: CY-0698)
