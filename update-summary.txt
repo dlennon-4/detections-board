@@ -1,28 +1,8 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 20
+🆕 New Detections: 0
 ✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 3
 
 📋 Details:
-🆕 New: Suspicious OCI IAM Activity: Impact (ID: CY-0702) Added on: 09-05-2025
-🆕 New: Suspicious OCI IAM Activity: Persistence (ID: CY-0703) Added on: 09-05-2025
-🆕 New: Suspicious Modification of OCI Route Table (ID: CY-0704) Added on: 09-05-2025
-🆕 New: Suspicious Configuration Change to OCI Network Security Group (ID: CY-0705) Added on: 09-05-2025
-🆕 New: Suspicious OCI Object Storage Activity (ID: CY-0706) Added on: 09-05-2025
-🆕 New: Suspicious OCI Logging Activity (ID: CY-0707) Added on: 09-05-2025
-🆕 New: Suspicious OCI Security Service Impairment (ID: CY-0708) Added on: 09-05-2025
-🆕 New: Suspicious OCI Bucket Enumeration (ID: CY-0709) Added on: 09-05-2025
-🆕 New: Suspicious OCI Instance Image Export (ID: CY-0710) Added on: 09-05-2025
-🆕 New: Suspicious OCI Kubernetes Activity (ID: CY-0711) Added on: 09-05-2025
-🆕 New: Suspicious OCI Event Rule Deletion (ID: CY-0712) Added on: 09-05-2025
-🆕 New: Suspicious OCI Inbound SSH Connection (ID: CY-0713) Added on: 09-05-2025
-🆕 New: OCI Insecure Metadata Endpoint (ID: CY-0714) Added on: 09-05-2025
-🆕 New: OCI Instance Metadata Access (ID: CY-0715) Added on: 09-05-2025
-🆕 New: OCI Discovery Activity (ID: CY-0716) Added on: 09-05-2025
-🆕 New: Suspicious OCI Instance Activity (ID: CY-0717) Added on: 09-05-2025
-🆕 New: Suspicious OCI Scanning Activity (ID: CY-0718) Added on: 09-05-2025
-🆕 New: OCI Unexpected User Agent (ID: CY-0719) Added on: 09-05-2025
-🆕 New: Suspicious OCI Bucket Public Access Type Configuration (ID: CY-0720) Added on: 09-05-2025
-🆕 New: OCI Insecure NFS Export Configuration (ID: CY-0721) Added on: 09-05-2025
