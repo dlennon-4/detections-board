@@ -7854,6 +7854,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0740",
+    "name": "Suspicious Notepad Activity on Domain Controller",
+    "description": "Files located within ProgramData were accessed via Notepad on a Domain Controller, this could indicate potential Discovery efforts by a malicious actor.",
+    "defaultStatus": "Testing",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar Cyber",
+    "dateAdded": "09-12-2025"
+  },
+  {
     "detectionID": "CY-0709",
     "name": "Suspicious OCI Bucket Enumeration",
     "description": "",
@@ -8106,6 +8120,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0738",
+    "name": "Suspicious Process Following RDP Logon",
+    "description": "A suspicious process was identified by a user that recently that logged into a Domain Controller via RDP.",
+    "defaultStatus": "Testing",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar Cyber",
+    "dateAdded": "09-12-2025"
+  },
+  {
     "detectionID": "CY-0726",
     "name": "Suspicious Process Spawned by SharePoint IIS Worker Process",
     "description": "Detects the creation of a suspicious child process, such as a command shell or common reconnaissance tool, by the Internet Information Services (IIS) worker process (w3wp.exe) running a SharePoint application pool. This behavior is highly anomalous and is a strong indicator of post-exploitation activity. An attacker, after successfully exploiting a remote code execution (RCE) vulnerability like CVE-2025-53770, will often spawn a shell to execute further commands on the compromised server.",
@@ -8356,6 +8384,20 @@
     "connector": "",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
+  },
+  {
+    "detectionID": "CY-0739",
+    "name": "User Added to Security Enabled Local Group Following Password Reset",
+    "description": "A user was added to a Security-Enabled Local Group following a password reset, this could indicate potential privelege escalation or staging for lateral movement.",
+    "defaultStatus": "Testing",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar Cyber",
+    "dateAdded": "09-12-2025"
   },
   {
     "detectionID": "CY-0398",
