@@ -1,11 +1,8 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 3
+🆕 New Detections: 0
 ✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 3
 
 📋 Details:
-🆕 New: Suspicious Notepad Activity on Domain Controller (ID: CY-0740) Added on: 09-12-2025
-🆕 New: Suspicious Process Following RDP Logon (ID: CY-0738) Added on: 09-12-2025
-🆕 New: User Added to Security Enabled Local Group Following Password Reset (ID: CY-0739) Added on: 09-12-2025
