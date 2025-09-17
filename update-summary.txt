@@ -1,8 +1,16 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 0
-✏️ Updated Detections: 0
-🗑️ Deleted Detections: 0
-🟡 Awaiting Approval: 4
+🆕 New Detections: 1
+✏️ Updated Detections: 6
+🗑️ Deleted Detections: 1
+🟡 Awaiting Approval: 5
 
 📋 Details:
+🆕 New: Sonicwall Smurf Amplification Attack Dropped (ID: CY-0742) Added on: 09-17-2025
+✏️ Updated: Potential SharePoint Post Exploitation Attempt (ID: CY-0697)
+✏️ Updated: Potential SharePoint RCE Attempt (ID: CY-0696)
+✏️ Updated: Duo Fraud Impossible Travel Correlation (ID: CY-0687)
+✏️ Updated: Duo User Marked as Fraud (ID: CY-0680)
+✏️ Updated: FortiManager Jsconsole Privilege escalation (ID: CY-0545)
+✏️ Updated: High Fidelity External URL Scanning (ID: CY-0083)
+🗑️ Deleted: SonicWall VPN Potential Suspicious Activity (ID: CY-0723)
