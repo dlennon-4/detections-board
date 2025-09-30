@@ -6342,6 +6342,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0744",
+    "name": "Potential EDR Freeze Attempt",
+    "description": "Detects attempts to freeze a process likely an EDR or an antimalware service process through EDR-Freeze that abuses the WerFaultSecure.exe process to suspend security software.",
+    "defaultStatus": "Active",
+    "killChainStage": "Exfiltration & Impact",
+    "mitreTactic": "Defense Evasion",
+    "mitreTacticID": "TA0005",
+    "mitreTechnique": "Impair Defenses",
+    "mitreTechniqueID": "T1562",
+    "connector": "",
+    "tool": "Stellar Cyber",
+    "dateAdded": "09-30-2025"
+  },
+  {
     "detectionID": "CY-0184",
     "name": "Potential FastHTTP Client Bruteforce Attempt",
     "description": "A login attempt was detected utilizing the FastHTTP client, indicating a potential brute force attack against the account.",
