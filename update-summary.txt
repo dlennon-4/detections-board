@@ -1,8 +1,11 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 0
-✏️ Updated Detections: 0
+🆕 New Detections: 2
+✏️ Updated Detections: 1
 🗑️ Deleted Detections: 0
-🟡 Awaiting Approval: 5
+🟡 Awaiting Approval: 6
 
 📋 Details:
+🆕 New: Potential Amatera Stealer Activity (ID: CY-0692) Added on: 10-15-2025
+🆕 New: Anydesk Remote Access Software Service Installation (ID: CY-0741) Added on: 10-15-2025
+✏️ Updated: Potential Pass the Hash Asset Access Anomaly (ID: CY-0028)

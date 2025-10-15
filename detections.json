@@ -112,6 +112,20 @@
     "dateAdded": "08-15-2025"
   },
   {
+    "detectionID": "CY-0741",
+    "name": "Anydesk Remote Access Software Service Installation",
+    "description": "Detects the installation of the anydesk software service. Which could be an indication of anydesk abuse if you the software isn't already used.",
+    "defaultStatus": "Active",
+    "killChainStage": "Persistent Foothold",
+    "mitreTactic": "Command and Control",
+    "mitreTacticID": "TA0011",
+    "mitreTechnique": "Remote Access Software",
+    "mitreTechniqueID": "T1219",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "10-15-2025"
+  },
+  {
     "detectionID": "CY-0729",
     "name": "APDS XSS Redirection",
     "description": "Detects the creation of malicious Microsoft Management Console (MMC) files crafted to exploit a known XSS vulnerability in the apds.dll library for arbitrary code execution. Adversaries can abuse this vulnerability by embedding malicious script within specially crafted MMC files. When a user opens such a file, the script executes within the context of the user's session, potentially allowing for arbitrary code execution. This can lead to various malicious activities, including privilege escalation, installation of malware, data exfiltration, and further compromise of the affected system. By leveraging the trusted nature of MMC files, adversaries can trick users into executing malicious code without raising immediate suspicion.",
@@ -6258,6 +6272,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0692",
+    "name": "Potential Amatera Stealer Activity",
+    "description": "",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "",
+    "dateAdded": "10-15-2025"
+  },
+  {
     "detectionID": "CY-0061",
     "name": "Potential APT FIN7 Exploitation Activity",
     "description": "The execution of the process notepad++.exe from a suspicious parent process was detected. This activity has been associated with the APT group FIN7.",
@@ -6513,7 +6541,7 @@
     "detectionID": "CY-0028",
     "name": "Potential Pass the Hash Asset Access Anomaly",
     "description": "A windows user logged into a new host with indicators related to the Pass the Hash attack.",
-    "defaultStatus": "Active",
+    "defaultStatus": "Not Active",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
     "mitreTacticID": "TA0001",
