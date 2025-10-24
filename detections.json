@@ -4410,6 +4410,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0770",
+    "name": "IP Console Routing Activity",
+    "description": "",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "SentinelOne EDR",
+    "dateAdded": "10-24-2025"
+  },
+  {
     "detectionID": "CY-0073",
     "name": "Jumpcloud Command Run",
     "description": "A Jumpcloud command run execution was detected in your environment.",
@@ -4868,7 +4882,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "08-08-2025"
   },
   {
@@ -6324,7 +6338,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "08-08-2025"
   },
   {
