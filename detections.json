@@ -6720,6 +6720,20 @@
     "dateAdded": "08-15-2025"
   },
   {
+    "detectionID": "CY-0772",
+    "name": "Potential Windows Server Update Services Remote Code Execution",
+    "description": "Suspicious child process activity associated with CVE-2025-59287, successful exploitation of this vulnerability can allow malicious actors to remotely execute malicious code with SYSTEM privileges.",
+    "defaultStatus": "Active",
+    "killChainStage": "Persistent Foothold",
+    "mitreTactic": "Execution",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar Cyber",
+    "dateAdded": "10-27-2025"
+  },
+  {
     "detectionID": "CY-0268",
     "name": "Potentially Malicious AWS Activity",
     "description": "The Potentially Malicious AWS Activity rules are used to identify suspicious activity within AWS logs. Any one or more of these will trigger the Potentially Malicious AWS Activity alert type.",

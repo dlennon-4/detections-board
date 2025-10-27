@@ -1,11 +1,9 @@
 🛠 Detections Update Summary
 ----------------------------
 🆕 New Detections: 1
-✏️ Updated Detections: 2
+✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
-🟡 Awaiting Approval: 22
+🟡 Awaiting Approval: 23
 
 📋 Details:
-🆕 New: IP Console Routing Activity (ID: CY-0770) Added on: 10-24-2025
-✏️ Updated: Malicious URL Click Azure Risk Correlation (ID: CY-0693)
-✏️ Updated: Potential Compromise Account Following High Confidence Phish Delivery (ID: CY-0722)
+🆕 New: Potential Windows Server Update Services Remote Code Execution (ID: CY-0772) Added on: 10-27-2025
