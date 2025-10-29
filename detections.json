@@ -7317,7 +7317,7 @@
     "mitreTacticID": "TA0006",
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
-    "connector": "Sonic FW",
+    "connector": "Sonicwall",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
   },
@@ -7331,9 +7331,23 @@
     "mitreTacticID": "",
     "mitreTechnique": "",
     "mitreTechniqueID": "",
-    "connector": "Sonic FW",
+    "connector": "Sonicwall",
     "tool": "Stellar Cyber",
     "dateAdded": "09-17-2025"
+  },
+  {
+    "detectionID": "CY-0773",
+    "name": "Sonicwall User Created",
+    "description": "A new user was created on a Sonicwall device. Verify if this is expected and approved activity.",
+    "defaultStatus": "Active",
+    "killChainStage": "Persistent Foothold",
+    "mitreTactic": "Persistence",
+    "mitreTacticID": "",
+    "mitreTechnique": "Create Account",
+    "mitreTechniqueID": "",
+    "connector": "Sonicwall",
+    "tool": "Stellar Cyber",
+    "dateAdded": "10-29-2025"
   },
   {
     "detectionID": "CY-0228",

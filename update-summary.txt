@@ -1,37 +1,11 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 0
-✏️ Updated Detections: 28
+🆕 New Detections: 1
+✏️ Updated Detections: 2
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 23
 
 📋 Details:
-
-✏️ Updated: Potential Katz Stealer User Agent (ID: CY-0682)
-✏️ Updated: DNS Query to Katz Stealer Domain (ID: CY-0685)
-✏️ Updated: Possible Defendnot Antivirus Manipulation (ID: CY-0681)
-✏️ Updated: Potential Amatera Stealer Activity (ID: CY-0692)
-✏️ Updated: Suspicious Script Execution from Temp or Downloads Directory (ID: CY-0694)
-✏️ Updated: Suspicious Notepad Activity on Domain Controller (ID: CY-0740)
-✏️ Updated: Potential EDR Freeze Attempt (ID: CY-0744)
-✏️ Updated: Potential Windows Server Update Services Remote Code Execution (ID: CY-0772)
-✏️ Updated: Suspicious OCI IAM Activity: Impact (ID: CY-0702)
-✏️ Updated: Suspicious OCI IAM Activity: Persistence (ID: CY-0703)
-✏️ Updated: Suspicious Modification of OCI Route Table (ID: CY-0704)
-✏️ Updated: Suspicious Configuration Change to OCI Network Security Group (ID: CY-0705)
-✏️ Updated: Suspicious OCI Object Storage Activity (ID: CY-0706)
-✏️ Updated: Suspicious OCI Logging Activity (ID: CY-0707)
-✏️ Updated: Suspicious OCI Security Service Impairment (ID: CY-0708)
-✏️ Updated: Suspicious OCI Bucket Enumeration (ID: CY-0709)
-✏️ Updated: Suspicious OCI Instance Image Export (ID: CY-0710)
-✏️ Updated: Suspicious OCI Kubernetes Activity (ID: CY-0711)
-✏️ Updated: Suspicious OCI Event Rule Deletion (ID: CY-0712)
-✏️ Updated: Suspicious OCI Inbound SSH Connection (ID: CY-0713)
-✏️ Updated: OCI Insecure Metadata Endpoint (ID: CY-0714)
-✏️ Updated: OCI Instance Metadata Access (ID: CY-0715)
-✏️ Updated: OCI Discovery Activity (ID: CY-0716)
-✏️ Updated: Suspicious OCI Instance Activity (ID: CY-0717)
-✏️ Updated: Suspicious OCI Scanning Activity (ID: CY-0718)
-✏️ Updated: OCI Unexpected User Agent (ID: CY-0719)
-✏️ Updated: Suspicious OCI Bucket Public Access Type Configuration (ID: CY-0720)
-✏️ Updated: OCI Insecure NFS Export Configuration (ID: CY-0721)
+🆕 New: Sonicwall User Created (ID: CY-0773) Added on: 10-29-2025
+✏️ Updated: SonicFW Brute Force Attempt (ID: CY-0081)
+✏️ Updated: Sonicwall Smurf Amplification Attack Dropped (ID: CY-0742)
