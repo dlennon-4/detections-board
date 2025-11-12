@@ -3,6 +3,6 @@
 🆕 New Detections: 0
 ✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
-🟡 Awaiting Approval: 41
+🟡 Awaiting Approval: 43
 
 📋 Details:
