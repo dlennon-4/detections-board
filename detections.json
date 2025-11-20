@@ -252,6 +252,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0793",
+    "name": "AWS Create User",
+    "description": "",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar",
+    "dateAdded": "11-20-2025"
+  },
+  {
     "detectionID": "CY-0208",
     "name": "AWS GuardDuty - Detections",
     "description": "Stellar Cyber detected a suspicious alert originally reported by AWS GuardDuty.",
@@ -3458,6 +3472,48 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0777",
+    "name": "Global - FortiGate Firewall Local User Account Created",
+    "description": "This detection identifies the creation of a local user account on a FortiGate firewall by looking for log entries where the msg field contains \"user.local\" and the action is \"Add\" within FortiGate logs. Reference ticket #264318.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "FortiGate",
+    "tool": "Stellar",
+    "dateAdded": "11-20-2025"
+  },
+  {
+    "detectionID": "CY-0776",
+    "name": "Global - FortiGate FW System Admin Account Created",
+    "description": "This detection identifies the creation of a system administrator user on a FortiGate firewall by looking for a msg field that starts with \"Add\" and contains \"system.admin\" within FortiGate logs. Reference ticket #264318.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "FortiGate",
+    "tool": "Stellar",
+    "dateAdded": "11-20-2025"
+  },
+  {
+    "detectionID": "CY-0750",
+    "name": "Global - Suspicious SonicWall VPN Login Attempt",
+    "description": "Login from two different ips (may want to switch it to two different countries)",
+    "defaultStatus": "Testing",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "Sonicwall",
+    "tool": "Stellar Cyber",
+    "dateAdded": "11-20-2025"
+  },
+  {
     "detectionID": "CY-0200",
     "name": "Google Workspace Account Manipulation",
     "description": "A Google Workspace user was manipulated. Check with the user to make sure this was expected.",
@@ -3848,6 +3904,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0763",
+    "name": "ICMP Based Exfiltration or Tunneling",
+    "description": "",
+    "defaultStatus": "Muted",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "11-20-2025"
   },
   {
     "detectionID": "CY-0463",
@@ -7462,6 +7532,20 @@
     "dateAdded": "08-28-2025"
   },
   {
+    "detectionID": "CY-0766",
+    "name": "Suspected Network Beaconing Activity",
+    "description": "",
+    "defaultStatus": "Muted",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "11-20-2025"
+  },
+  {
     "detectionID": "CY-0432",
     "name": "Suspicious Access Attempt to Windows Object",
     "description": "The Suspicious Access Attempt to Windows Object rules are used to identify suspicious activity with access attempt to Windows objects. Any one or more of these will trigger the Suspicious Access Attempt to Windows Object alert type.",
@@ -7810,6 +7894,34 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "04-22-2025"
+  },
+  {
+    "detectionID": "CY-0780",
+    "name": "Suspicious FortiGate Log Settings Modification",
+    "description": "The log settings on a FortiGate firewall have been modified. This may indicate potential unauthorized configuration changes.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar",
+    "dateAdded": "11-20-2025"
+  },
+  {
+    "detectionID": "CY-0781",
+    "name": "Suspicious FortiGate User Group Modification",
+    "description": "A user group on a FortiGate firewall has been modified. This may indicate potential unauthorized access.",
+    "defaultStatus": "Testing",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar",
+    "dateAdded": "11-20-2025"
   },
   {
     "detectionID": "CY-0434",
@@ -8288,6 +8400,20 @@
     "dateAdded": "04-23-2025"
   },
   {
+    "detectionID": "CY-0743",
+    "name": "Suspicious SonicWall VPN Login Attempt",
+    "description": "Multiple login attempts have been detected from multiple public IP's within a short time frame.",
+    "defaultStatus": "Testing",
+    "killChainStage": "Initial Attempts",
+    "mitreTactic": "Initial Access",
+    "mitreTacticID": "TA0001",
+    "mitreTechnique": "Valid Accounts",
+    "mitreTechniqueID": "T1078",
+    "connector": "Sonicwall",
+    "tool": "Stellar Cyber",
+    "dateAdded": "11-20-2025"
+  },
+  {
     "detectionID": "CY-0171",
     "name": "Suspicious User Agent Detection",
     "description": "A connection attempt utilizing an abnormal user agent was detected in your environment.",
@@ -8454,6 +8580,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0765",
+    "name": "Uncommon Top-Level Domain Anomaly",
+    "description": "",
+    "defaultStatus": "Muted",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "11-20-2025"
   },
   {
     "detectionID": "CY-0657",
