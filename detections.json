@@ -6524,20 +6524,6 @@
     "dateAdded": "05-27-2025"
   },
   {
-    "detectionID": "CY-0006",
-    "name": "Potential LDAP Nightmare Exploitation",
-    "description": "Detects exploitation attempt of CVE-2024-49113 known as LDAP Nightmare, based on \"Application Error\" log where the faulting application is \"lsass.exe\" and the faulting module is \"WLDAP32.dll\".",
-    "defaultStatus": "Active",
-    "killChainStage": "Exfiltration & Impact",
-    "mitreTactic": "Impact",
-    "mitreTacticID": "TA0040",
-    "mitreTechnique": "Endpoint Denial of Service",
-    "mitreTechniqueID": "T1499",
-    "connector": "N/A",
-    "tool": "Stellar Cyber",
-    "dateAdded": "01-01-2025"
-  },
-  {
     "detectionID": "CY-0688",
     "name": "Potential Luna Moth Domain",
     "description": "Detects potential traffic connections to known Luna Moth ransomware domain naming conventions.",
@@ -6687,20 +6673,6 @@
     "mitreTacticID": "TA0007",
     "mitreTechnique": "System Network Configuration Discovery",
     "mitreTechniqueID": "T1016",
-    "connector": "N/A",
-    "tool": "Stellar Cyber",
-    "dateAdded": "01-01-2025"
-  },
-  {
-    "detectionID": "CY-0163",
-    "name": "Potential Royal Ransomware Activity",
-    "description": "Activity associated with known Royal Ransomware TTP's was detected in your environment.",
-    "defaultStatus": "Active",
-    "killChainStage": "Exfiltration & Impact",
-    "mitreTactic": "Impact",
-    "mitreTacticID": "TA0040",
-    "mitreTechnique": "Data Encrypted for Impact",
-    "mitreTechniqueID": "T1486",
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
