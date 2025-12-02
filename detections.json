@@ -254,7 +254,7 @@
   {
     "detectionID": "CY-0793",
     "name": "AWS Create User",
-    "description": "",
+    "description": "A new user was created in an AWS account. Verify if this is expected and approved activity.",
     "defaultStatus": "Active",
     "killChainStage": "",
     "mitreTactic": "",
