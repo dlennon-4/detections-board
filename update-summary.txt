@@ -1,10 +1,8 @@
 🛠 Detections Update Summary
 ----------------------------
 🆕 New Detections: 0
-✏️ Updated Detections: 1
+✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 23
 
 📋 Details:
-
-✏️ Updated: AWS Create User (ID: CY-0793)
