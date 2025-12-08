@@ -3500,6 +3500,20 @@
     "dateAdded": "11-20-2025"
   },
   {
+    "detectionID": "CY-0794",
+    "name": "Global - Fortiweb AuthBypass",
+    "description": "This query detects  exploitation attempts of CVE-2025-64446 (FortiWeb Auth Bypass) by searching for POST requests to the signature path ./cgi-bin/fwbcgi.  We skip a direct status_code == 200 filter to keep the query robust: some logs may lack the status code field. By excluding known failure codes (403/404) and retaining entries with missing codes, we prevent false negatives due to incomplete logging. POC ref: https://www.rapid7.com/blog/post/etr-critical-vulnerability-in-fortinet-fortiweb-exploited-in-the-wild/ https://github.com/watchtowrlabs/watchTowr-vs-Fortiweb-AuthBypass/blob/main/watchTowr-vs-Fortiweb-AuthBypass.py",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "FortiGate",
+    "tool": "Stellar",
+    "dateAdded": "12-08-2025"
+  },
+  {
     "detectionID": "CY-0750",
     "name": "Global - Suspicious SonicWall VPN Login Attempt",
     "description": "Login from two different ips (may want to switch it to two different countries)",
