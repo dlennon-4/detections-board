@@ -1,9 +1,8 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 1
+🆕 New Detections: 0
 ✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 24
 
 📋 Details:
-🆕 New: Global - Fortinet Potential Auth Bypass Exploitation (ID: CY-0801) Added on: 12-17-2025
