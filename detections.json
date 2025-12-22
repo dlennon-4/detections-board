@@ -812,6 +812,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0778",
+    "name": "Bitter APT Q37 - WinRAR Normal.dotm Overwrite",
+    "description": "Archives exploiting path traversal to overwrite Normal.dotm (caught by watching winrar.exe writes to the real Normal.dotm). Link: https://cyflare.sharepoint.com/_layouts/15/Doc.aspx?sourcedoc={69b9c539-906e-4352-97f0-d04303e5bdb9}&action=edit&wd=target%28Emerging%20Threat.one%7C675f774d-d4c5-4378-8f9e-ef1be9352bf3%2FWinRAR%20Zero-Day%20Normal.dotm%20Overwrite%20%20C%7Cbad81e05-0bcb-4223-8359-5e5c3156c709%2F%29&wdorigin=NavigationUrl",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar",
+    "dateAdded": "12-22-2025"
+  },
+  {
     "detectionID": "CY-0115",
     "name": "Bloodhound and Sharphound Hack Tools Detected",
     "description": "Command line parameters frequently used by Bloodhound and Sharphound tools were detected in your environment.",
@@ -1025,7 +1039,7 @@
     "detectionID": "CY-0674",
     "name": "Cloud Drive Data Exfiltration Anomaly",
     "description": "An account downloaded an atypical number of files over a 24-hour period. Check the user and the targeted files.",
-    "defaultStatus": "Muted",
+    "defaultStatus": "Active",
     "killChainStage": "Exfiltration & Impact",
     "mitreTactic": "Exfiltration",
     "mitreTacticID": "TA0010",
@@ -3304,6 +3318,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0775",
+    "name": "F5 Big IP Multiple Login Failures",
+    "description": "Alert detects multiple login failures on an F5 device from one source IP through SSH on the configuration utility.",
+    "defaultStatus": "Testing",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar",
+    "dateAdded": "12-22-2025"
+  },
+  {
     "detectionID": "CY-0413",
     "name": "File Action Anomaly",
     "description": "Actions, such as move, copy, delete, or change attribute, were taken on a file or files an anomalous number of times. Investigate the actions and the user to see if this is expected",
@@ -3430,6 +3458,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0777",
+    "name": "Fortigate Firewall Local User Account Created",
+    "description": "This detection identifies the creation of a local user account on a FortiGate firewall by looking for log entries where the msg field contains \"user.local\" and the action is \"Add\" within FortiGate logs. Reference ticket #264318.",
+    "defaultStatus": "Alert Preferences Pending",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "FortiGate",
+    "tool": "Stellar",
+    "dateAdded": "11-20-2025"
+  },
+  {
     "detectionID": "CY-0070",
     "name": "Fortigate FW Brute Force Attempt",
     "description": "Potential Brute Force activity has been detected due to an excessive amount of Fortigate VPN login failures.",
@@ -3442,6 +3484,20 @@
     "connector": "FortiGate",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0776",
+    "name": "FortiGate FW System Admin Account Created",
+    "description": "This detection identifies the creation of a system administrator user on a FortiGate firewall by looking for a msg field that starts with \"Add\" and contains \"system.admin\" within FortiGate logs. Reference ticket #264318.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "FortiGate",
+    "tool": "Stellar",
+    "dateAdded": "11-20-2025"
   },
   {
     "detectionID": "CY-0545",
@@ -3470,34 +3526,6 @@
     "connector": "FortiGate",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
-  },
-  {
-    "detectionID": "CY-0777",
-    "name": "Global - FortiGate Firewall Local User Account Created",
-    "description": "This detection identifies the creation of a local user account on a FortiGate firewall by looking for log entries where the msg field contains \"user.local\" and the action is \"Add\" within FortiGate logs. Reference ticket #264318.",
-    "defaultStatus": "Active",
-    "killChainStage": "",
-    "mitreTactic": "",
-    "mitreTacticID": "",
-    "mitreTechnique": "",
-    "mitreTechniqueID": "",
-    "connector": "FortiGate",
-    "tool": "Stellar",
-    "dateAdded": "11-20-2025"
-  },
-  {
-    "detectionID": "CY-0776",
-    "name": "Global - FortiGate FW System Admin Account Created",
-    "description": "This detection identifies the creation of a system administrator user on a FortiGate firewall by looking for a msg field that starts with \"Add\" and contains \"system.admin\" within FortiGate logs. Reference ticket #264318.",
-    "defaultStatus": "Active",
-    "killChainStage": "",
-    "mitreTactic": "",
-    "mitreTacticID": "",
-    "mitreTechnique": "",
-    "mitreTechniqueID": "",
-    "connector": "FortiGate",
-    "tool": "Stellar",
-    "dateAdded": "11-20-2025"
   },
   {
     "detectionID": "CY-0801",
@@ -3946,6 +3974,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "11-20-2025"
+  },
+  {
+    "detectionID": "CY-0799",
+    "name": "IIS Webshell Recon Activity",
+    "description": "",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar Cyber",
+    "dateAdded": "12-22-2025"
   },
   {
     "detectionID": "CY-0463",
@@ -4674,6 +4716,20 @@
     "connector": "LimaCharlie",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0767",
+    "name": "Login Attempt Location Count",
+    "description": "",
+    "defaultStatus": "Not Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "AWS,Okta,O365,Azure,Gsuite,Salesforce",
+    "tool": "Stellar Cyber",
+    "dateAdded": "12-22-2025"
   },
   {
     "detectionID": "CY-0319",
@@ -5768,6 +5824,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0768",
+    "name": "OCI Cross Tenancy Communication",
+    "description": "",
+    "defaultStatus": "Not Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "OCI",
+    "tool": "Stellar Cyber",
+    "dateAdded": "12-22-2025"
+  },
+  {
     "detectionID": "CY-0716",
     "name": "OCI Discovery Activity",
     "description": "The OCI Discovery Activity rules are used to identify suspicious discovery activity in OCI. Any one or more of these will trigger the OCI Discovery Activity alert type.",
@@ -5990,6 +6060,20 @@
     "connector": "Office 365",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0779",
+    "name": "Office Macro C Compilation",
+    "description": "Office (Excel/Word) used as an execution vector to create or compile C# payloads (caught by watching Office → csc.exe/InstallUtil.exe) Link: https://cyflare.sharepoint.com/_layouts/15/Doc.aspx?sourcedoc={69b9c539-906e-4352-97f0-d04303e5bdb9}&action=edit&wd=target%28Emerging%20Threat.one%7C675f774d-d4c5-4378-8f9e-ef1be9352bf3%2FWinRAR%20Zero-Day%20Normal.dotm%20Overwrite%20%20C%7Cbad81e05-0bcb-4223-8359-5e5c3156c709%2F%29&wdorigin=NavigationUrl",
+    "defaultStatus": "Testing",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar",
+    "dateAdded": "12-22-2025"
   },
   {
     "detectionID": "CY-0067",
@@ -6230,6 +6314,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0800",
+    "name": "Persistence Via TypedPaths",
+    "description": "Detects modification addition to the 'TypedPaths' key in the user or admin registry via the commandline. Which might indicate persistence attempt",
+    "defaultStatus": "Active",
+    "killChainStage": "Persistent Foothold",
+    "mitreTactic": "Execution",
+    "mitreTacticID": "TA0002",
+    "mitreTechnique": "Command and Scripting Interpreter",
+    "mitreTechniqueID": "T1059",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "12-22-2025"
+  },
+  {
     "detectionID": "CY-0244",
     "name": "Phishing Domain with File Extension TLD",
     "description": "DNS query to TLDs that resemble file extensions. Attackers may use these TLDs for phishing.",
@@ -6384,20 +6482,6 @@
     "dateAdded": "01-01-2025"
   },
   {
-    "detectionID": "CY-0692",
-    "name": "Potential Amatera Stealer Activity",
-    "description": "",
-    "defaultStatus": "Active",
-    "killChainStage": "Propagation",
-    "mitreTactic": "XDR Malware",
-    "mitreTacticID": "XTA0006",
-    "mitreTechnique": "XDR Miscellaneous Malware",
-    "mitreTechniqueID": "XT6001",
-    "connector": "N/A",
-    "tool": "Stellar Cyber",
-    "dateAdded": "10-15-2025"
-  },
-  {
     "detectionID": "CY-0061",
     "name": "Potential APT FIN7 Exploitation Activity",
     "description": "The execution of the process notepad++.exe from a suspicious parent process was detected. This activity has been associated with the APT group FIN7.",
@@ -6424,6 +6508,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0802",
+    "name": "Potential Brickstorm Malware Activity",
+    "description": "",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar Cyber",
+    "dateAdded": "12-22-2025"
   },
   {
     "detectionID": "CY-0722",
@@ -7409,7 +7507,7 @@
     "detectionID": "CY-0773",
     "name": "Sonicwall User Created",
     "description": "A new user was created on a Sonicwall device. Verify if this is expected and approved activity.",
-    "defaultStatus": "Active",
+    "defaultStatus": "Alert Preferences Pending",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
     "mitreTacticID": "",
@@ -7896,10 +7994,24 @@
     "dateAdded": "04-22-2025"
   },
   {
+    "detectionID": "CY-0785",
+    "name": "Suspicious File Creation By Web Server Process",
+    "description": "Detects the creation of unexpected files by the web server process w3wp.exe following asp.net machine key compromise.",
+    "defaultStatus": "Testing",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar",
+    "dateAdded": "12-22-2025"
+  },
+  {
     "detectionID": "CY-0780",
-    "name": "Suspicious FortiGate Log Settings Modification",
+    "name": "Suspicious Fortigate Log Settings Modification",
     "description": "The log settings on a FortiGate firewall have been modified. This may indicate potential unauthorized configuration changes.",
-    "defaultStatus": "Active",
+    "defaultStatus": "Alert Preferences Pending",
     "killChainStage": "",
     "mitreTactic": "",
     "mitreTacticID": "",
@@ -8048,6 +8160,20 @@
     "connector": "AWS CloudTrail",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0784",
+    "name": "Suspicious Module Loaded in IIS Server",
+    "description": "Detects when a suspicious IIS global native module is installed following asp.net machine key compromise",
+    "defaultStatus": "Testing",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar",
+    "dateAdded": "12-22-2025"
   },
   {
     "detectionID": "CY-0740",
@@ -8734,6 +8860,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0754",
+    "name": "WDAC Policy Changes",
+    "description": "Malicious actors are abusing Windows Defender Application Control (WDAC) to disable Endpoint Detection and Response (EDR) tools by deploying unauthorized WDAC policies. This threat hunting query detects potential policy abuse by monitoring for the creation or renaming of WDAC files (e.g., SiPolicy.p7b) in the C:\\Windows\\System32\\CodeIntegrity\\ directory, as seen in malware campaigns like Krueger and DreamDemon. It also includes detection of relevant registry modifications linked to WDAC deployment.",
+    "defaultStatus": "Testing",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "12-22-2025"
   },
   {
     "detectionID": "CY-0725",
