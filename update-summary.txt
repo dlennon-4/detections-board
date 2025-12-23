@@ -1,25 +1,9 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 11
-✏️ Updated Detections: 5
-🗑️ Deleted Detections: 1
+🆕 New Detections: 1
+✏️ Updated Detections: 0
+🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 10
 
 📋 Details:
-🆕 New: Potential Brickstorm Malware Activity (ID: CY-0802) Added on: 12-22-2025
-🆕 New: Persistence Via TypedPaths (ID: CY-0800) Added on: 12-22-2025
-🆕 New: IIS Webshell Recon Activity (ID: CY-0799) Added on: 12-22-2025
-🆕 New: WDAC Policy Changes (ID: CY-0754) Added on: 12-22-2025
-🆕 New: F5 Big IP Multiple Login Failures (ID: CY-0775) Added on: 12-22-2025
-🆕 New: Bitter APT Q37 - WinRAR Normal.dotm Overwrite (ID: CY-0778) Added on: 12-22-2025
-🆕 New: Office Macro C Compilation (ID: CY-0779) Added on: 12-22-2025
-🆕 New: Suspicious Module Loaded in IIS Server (ID: CY-0784) Added on: 12-22-2025
-🆕 New: Suspicious File Creation By Web Server Process (ID: CY-0785) Added on: 12-22-2025
-🆕 New: Login Attempt Location Count (ID: CY-0767) Added on: 12-22-2025
-🆕 New: OCI Cross Tenancy Communication (ID: CY-0768) Added on: 12-22-2025
-✏️ Updated: Sonicwall User Created (ID: CY-0773)
-✏️ Updated: FortiGate FW System Admin Account Created (ID: CY-0776)
-✏️ Updated: Fortigate Firewall Local User Account Created (ID: CY-0777)
-✏️ Updated: Suspicious Fortigate Log Settings Modification (ID: CY-0780)
-✏️ Updated: Cloud Drive Data Exfiltration Anomaly (ID: CY-0674)
-🗑️ Deleted: Potential Amatera Stealer Activity (ID: CY-0692)
+🆕 New: Cato Networks: (ID: CY-0803) Added on: 12-23-2025

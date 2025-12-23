@@ -994,6 +994,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0803",
+    "name": "Cato Networks:",
+    "description": "",
+    "defaultStatus": "Not Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar Cyber",
+    "dateAdded": "12-23-2025"
+  },
+  {
     "detectionID": "CY-0612",
     "name": "Certificate-Based Authentication Enabled",
     "description": "Detects when certificate based authentication has been enabled in an Azure Active Directory tenant.",
