@@ -8498,6 +8498,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0804",
+    "name": "Suspicious Script Dropped in Startup Location",
+    "description": "",
+    "defaultStatus": "Testing",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar Cyber",
+    "dateAdded": "12-31-2025"
+  },
+  {
     "detectionID": "CY-0694",
     "name": "Suspicious Script Execution from Temp or Downloads Directory",
     "description": "Detects `wscript.exe` executions where the command line includes indicators of execution from user or temp folders involving `.zip` or `.js` files",
