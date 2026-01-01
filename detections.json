@@ -3992,7 +3992,7 @@
   {
     "detectionID": "CY-0799",
     "name": "IIS Webshell Recon Activity",
-    "description": "",
+    "description": "Detects when the IIS APPPOOL subject executes a Windows event that ends with whoami.exe.",
     "defaultStatus": "Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -6526,7 +6526,7 @@
   {
     "detectionID": "CY-0802",
     "name": "Potential Brickstorm Malware Activity",
-    "description": "",
+    "description": "BRICKSTORM is a sophisticated backdoor for VMware vSphere (specifically VMware vCenter servers and VMware ESXI) and Windows environments. Once compromised, the cyber actors can use their access to the vCenter management console to steal cloned virtual machine (VM) snapshots for credential extraction and create hidden, rogue VMs.",
     "defaultStatus": "Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -7619,7 +7619,7 @@
     "detectionID": "CY-0533",
     "name": "Steal or Forge Kerberos Tickets",
     "description": "The Steal or Forge Kerberos Tickets rules are used to identify suspicious activity to steal or forge Kerberos tickets. Any one or more of these will trigger the Steal or Forge Kerberos Tickets alert type.",
-    "defaultStatus": "Not Active",
+    "defaultStatus": "Active",
     "killChainStage": "Propagation",
     "mitreTactic": "Credential Access",
     "mitreTacticID": "TA0006",

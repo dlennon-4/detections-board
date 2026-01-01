@@ -1,9 +1,12 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 1
-✏️ Updated Detections: 0
+🆕 New Detections: 0
+✏️ Updated Detections: 3
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 10
 
 📋 Details:
-🆕 New: Suspicious Script Dropped in Startup Location (ID: CY-0804) Added on: 12-31-2025
+
+✏️ Updated: Potential Brickstorm Malware Activity (ID: CY-0802)
+✏️ Updated: IIS Webshell Recon Activity (ID: CY-0799)
+✏️ Updated: Steal or Forge Kerberos Tickets (ID: CY-0533)
