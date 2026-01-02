@@ -8400,6 +8400,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0805",
+    "name": "Suspicious Powershell Invocations",
+    "description": "Suspicious PowerShell invocation command parameters were detected.",
+    "defaultStatus": "Testing",
+    "killChainStage": "Propagation",
+    "mitreTactic": "Execution",
+    "mitreTacticID": "",
+    "mitreTechnique": "Command and Scripting Interpreter",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar Cyber",
+    "dateAdded": "01-02-2026"
+  },
+  {
     "detectionID": "CY-0427",
     "name": "Suspicious PowerShell Script",
     "description": "The Suspicious PowerShell Script rules are used to identify suspicious activity relating to PowerShell scripts. Any one or more of these will trigger the Suspicious PowerShell Script alert types.",
