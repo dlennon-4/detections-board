@@ -1,14 +1,8 @@
 🛠 Detections Update Summary
 ----------------------------
 🆕 New Detections: 0
-✏️ Updated Detections: 5
+✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 10
 
 📋 Details:
-
-✏️ Updated: Potential Brickstorm Malware Activity (ID: CY-0802)
-✏️ Updated: Sonicwall User Created (ID: CY-0773)
-✏️ Updated: Fortigate Firewall Local User Account Created (ID: CY-0777)
-✏️ Updated: Suspicious Fortigate Log Settings Modification (ID: CY-0780)
-✏️ Updated: Global - Fortinet Potential Auth Bypass Exploitation (ID: CY-0801)
