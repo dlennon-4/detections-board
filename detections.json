@@ -8512,6 +8512,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0806",
+    "name": "Suspicious Rundll32 Activity Invoking Sys File",
+    "description": "Detects suspicious process related to rundll32 based on command line that includes a *.sys file",
+    "defaultStatus": "Active",
+    "killChainStage": "Persistent Foothold",
+    "mitreTactic": "Defense Evasion",
+    "mitreTacticID": "TA0005",
+    "mitreTechnique": "System Binary Proxy Execution",
+    "mitreTechniqueID": "T1218",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "01-09-2026"
+  },
+  {
     "detectionID": "CY-0804",
     "name": "Suspicious Script Dropped in Startup Location",
     "description": "",
