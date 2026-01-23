@@ -1,8 +1,10 @@
 🛠 Detections Update Summary
 ----------------------------
 🆕 New Detections: 0
-✏️ Updated Detections: 0
+✏️ Updated Detections: 1
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 10
 
 📋 Details:
+
+✏️ Updated: Suspicious Script Dropped in Startup Location (ID: CY-0804)

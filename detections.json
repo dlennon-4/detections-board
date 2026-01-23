@@ -8529,7 +8529,7 @@
     "detectionID": "CY-0804",
     "name": "Suspicious Script Dropped in Startup Location",
     "description": "",
-    "defaultStatus": "Testing",
+    "defaultStatus": "Active",
     "killChainStage": "",
     "mitreTactic": "",
     "mitreTacticID": "",
