@@ -5628,6 +5628,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0813",
+    "name": "Notepad Updater DNS Query to Uncommon Domains",
+    "description": "Detects when the Notepad++ updater (gup.exe) makes DNS queries to domains that are not part of the known legitimate update infrastructure.",
+    "defaultStatus": "Active",
+    "killChainStage": "Initial Attempts",
+    "mitreTactic": "Initial Access",
+    "mitreTacticID": "TA0001",
+    "mitreTechnique": "Supply Chain Compromise",
+    "mitreTechniqueID": "T1195",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "02-05-2026"
+  },
+  {
     "detectionID": "CY-0136",
     "name": "O365 - A potentially malicious URL click was detected",
     "description": "O365 reported that a user clicked a potentially malicious URL.",
@@ -6242,6 +6256,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0815",
+    "name": "Outbound Spam Anomaly",
+    "description": "Detects anomalous, high-volume, or malicious outbound email, often signaling compromised accounts indicated by \"HygieneTenantEvents\"",
+    "defaultStatus": "Active",
+    "killChainStage": "Persistent Foothold",
+    "mitreTactic": "Persistence",
+    "mitreTacticID": "TA0003",
+    "mitreTechnique": "Valid Accounts",
+    "mitreTechniqueID": "T1078",
+    "connector": "Office 365",
+    "tool": "Stellar Cyber",
+    "dateAdded": "02-05-2026"
   },
   {
     "detectionID": "CY-0082",
@@ -7524,7 +7552,7 @@
     "defaultStatus": "Active",
     "killChainStage": "Persistent Foothold",
     "mitreTactic": "Persistence",
-    "mitreTacticID": "",
+    "mitreTacticID": "TA0003",
     "mitreTechnique": "Create Account",
     "mitreTechniqueID": "",
     "connector": "Sonicwall",
@@ -7950,6 +7978,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0812",
+    "name": "Suspicious Child Process of Notepad Updater GUP.Exe",
+    "description": "Detects suspicious child process creation by the Notepad++ updater process (gup.exe).",
+    "defaultStatus": "Active",
+    "killChainStage": "Initial Attempts",
+    "mitreTactic": "Credential Access",
+    "mitreTacticID": "TA0006",
+    "mitreTechnique": "Adversary-in-the-Middle",
+    "mitreTechniqueID": "T1557",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "02-05-2026"
   },
   {
     "detectionID": "CY-0705",
@@ -8528,7 +8570,7 @@
   {
     "detectionID": "CY-0804",
     "name": "Suspicious Script Dropped in Startup Location",
-    "description": "",
+    "description": "Detects scripts dropped in the AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\ file path.",
     "defaultStatus": "Active",
     "killChainStage": "",
     "mitreTactic": "",
@@ -8748,6 +8790,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0811",
+    "name": "Uncommon File Created by Notepad Updater Gup.exe",
+    "description": "Detects when the Notepad++ updater (gup.exe) creates files in suspicious or uncommon locations.",
+    "defaultStatus": "Active",
+    "killChainStage": "Initial Attempts",
+    "mitreTactic": "Credential Access",
+    "mitreTacticID": "TA0006",
+    "mitreTechnique": "Adversary-in-the-Middle",
+    "mitreTechniqueID": "T1557",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "02-05-2026"
   },
   {
     "detectionID": "CY-0358",

@@ -1,8 +1,14 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 0
-✏️ Updated Detections: 0
+🆕 New Detections: 4
+✏️ Updated Detections: 2
 🗑️ Deleted Detections: 0
-🟡 Awaiting Approval: 10
+🟡 Awaiting Approval: 11
 
 📋 Details:
+🆕 New: Outbound Spam Anomaly (ID: CY-0815) Added on: 02-05-2026
+🆕 New: Notepad Updater DNS Query to Uncommon Domains (ID: CY-0813) Added on: 02-05-2026
+🆕 New: Suspicious Child Process of Notepad Updater GUP.Exe (ID: CY-0812) Added on: 02-05-2026
+🆕 New: Uncommon File Created by Notepad Updater Gup.exe (ID: CY-0811) Added on: 02-05-2026
+✏️ Updated: Suspicious Script Dropped in Startup Location (ID: CY-0804)
+✏️ Updated: Sonicwall User Created (ID: CY-0773)
