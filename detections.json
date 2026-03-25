@@ -6902,6 +6902,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0820",
+    "name": "Potential Teams Chat Phishing Attempt",
+    "description": "A suspicious external user created a Teams chat with a user in your organization, potentially imitating internal support to obtain credentials or gain remote access to the endpoint.",
+    "defaultStatus": "Active",
+    "killChainStage": "Initial Attempts",
+    "mitreTactic": "Initial Access",
+    "mitreTacticID": "TA0001",
+    "mitreTechnique": "Phishing",
+    "mitreTechniqueID": "T1566",
+    "connector": "Office 365",
+    "tool": "Stellar Cyber",
+    "dateAdded": "03-25-2026"
+  },
+  {
     "detectionID": "CY-0088",
     "name": "Potential Token Theft",
     "description": "The session ID for the user was detected from two IP's, this could indicate that the user has had the sign in token stolen by a malicious actor.",
@@ -8484,6 +8498,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0822",
+    "name": "Suspicious Process Created by mshta.exe",
+    "description": "A suspicious process process has been created by mshta.exe. This can indicate an attacker is using built-in Windows functionality to perform malicious activity.",
+    "defaultStatus": "Active",
+    "killChainStage": "Persistent Foothold",
+    "mitreTactic": "Defense Evasion",
+    "mitreTacticID": "TA0005",
+    "mitreTechnique": "Signed Binary Proxy Execution",
+    "mitreTechniqueID": "T1218",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "03-25-2026"
+  },
+  {
     "detectionID": "CY-0428",
     "name": "Suspicious Process Creation Commandline",
     "description": "The Suspicious Process Creation Commandline rules are used to identify suspicious activity relating to command-line process creation. Any one or more of these will trigger the Suspicious Process Creation Commandline alert types.",
@@ -9238,6 +9266,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "04-18-2025"
+  },
+  {
+    "detectionID": "CY-0821",
+    "name": "Wscript Shell Run In CommandLine",
+    "description": "Detects the presence of the keywords \"Wscript\", \"Shell\" and \"Run\" in the command, which could indicate a suspicious activity",
+    "defaultStatus": "Active",
+    "killChainStage": "Persistent Foothold",
+    "mitreTactic": "Execution",
+    "mitreTacticID": "TA0002",
+    "mitreTechnique": "Command and Scripting Interpreter",
+    "mitreTechniqueID": "T1059",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "03-25-2026"
   },
   {
     "detectionID": "CY-0541",
