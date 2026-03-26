@@ -1,11 +1,8 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 3
+🆕 New Detections: 0
 ✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 11
 
 📋 Details:
-🆕 New: Suspicious Process Created by mshta.exe (ID: CY-0822) Added on: 03-25-2026
-🆕 New: Wscript Shell Run In CommandLine (ID: CY-0821) Added on: 03-25-2026
-🆕 New: Potential Teams Chat Phishing Attempt (ID: CY-0820) Added on: 03-25-2026
