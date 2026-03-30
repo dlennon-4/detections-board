@@ -966,6 +966,20 @@
     "dateAdded": "08-26-2025"
   },
   {
+    "detectionID": "CY-0826",
+    "name": "Bypass UAC via Fodhelper",
+    "description": "Identifies use of Fodhelper.exe to bypass User Account Control. Adversaries use this technique to execute privileged processes.",
+    "defaultStatus": "Testing",
+    "killChainStage": "Propagation",
+    "mitreTactic": "Lateral Movement",
+    "mitreTacticID": "TA0008",
+    "mitreTechnique": "Use Alternate Authentication Material",
+    "mitreTechniqueID": "T1550",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "03-30-2026"
+  },
+  {
     "detectionID": "CY-0212",
     "name": "Carbon Black - Detections",
     "description": "Stellar Cyber detected a suspicious alert originally reported by Carbon Black.",
@@ -7098,6 +7112,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0827",
+    "name": "Process Memory Dump Via Comsvcs",
+    "description": "Detects a process memory dump via \"comsvcs.dll\" using rundll32, covering multiple different techniques (ordinal, minidump function, etc.)",
+    "defaultStatus": "Testing",
+    "killChainStage": "Persistent Foothold",
+    "mitreTactic": "Defense Evasion",
+    "mitreTacticID": "TA0002",
+    "mitreTechnique": "Masquerading",
+    "mitreTechniqueID": "T1036",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "03-30-2026"
+  },
+  {
     "detectionID": "CY-0451",
     "name": "Proofpoint TAP - Detections",
     "description": "Stellar Cyber detected a suspicious alert originally reported by Proofpoint TAP.",
@@ -7390,6 +7418,20 @@
     "connector": "AWS CloudTrail",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0828",
+    "name": "Rubeus Hacktool Execution",
+    "description": "Detects the execution of the hacktool Rubeus via PE information of command line parameters.",
+    "defaultStatus": "Testing",
+    "killChainStage": "Propagation",
+    "mitreTactic": "Lateral Movement",
+    "mitreTacticID": "TA0008",
+    "mitreTechnique": "Use Alternate Authentication Material",
+    "mitreTechniqueID": "T1550",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "03-30-2026"
   },
   {
     "detectionID": "CY-0278",
@@ -8062,6 +8104,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "04-22-2025"
+  },
+  {
+    "detectionID": "CY-0829",
+    "name": "Suspicious Download Via Certutil.exe",
+    "description": "Detects the execution of certutil with certain flags that allow the utility to download files.",
+    "defaultStatus": "Testing",
+    "killChainStage": "Persistent Foothold",
+    "mitreTactic": "Defense Evasion",
+    "mitreTacticID": "TA0005",
+    "mitreTechnique": "Obfuscated Files or Information",
+    "mitreTechniqueID": "T1140",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "03-30-2026"
   },
   {
     "detectionID": "CY-0785",
