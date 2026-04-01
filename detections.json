@@ -269,7 +269,7 @@
     "detectionID": "CY-0793",
     "name": "AWS Create User",
     "description": "A new user was created in an AWS account. Verify if this is expected and approved activity.",
-    "defaultStatus": "Active",
+    "defaultStatus": "Alert Preferences",
     "killChainStage": "",
     "mitreTactic": "",
     "mitreTacticID": "",
@@ -6956,6 +6956,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0834",
+    "name": "Potential TrustConnect RAT Installed",
+    "description": "",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar",
+    "dateAdded": "04-01-2026"
   },
   {
     "detectionID": "CY-0724",

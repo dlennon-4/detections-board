@@ -1,9 +1,10 @@
 🛠 Detections Update Summary
 ----------------------------
 🆕 New Detections: 1
-✏️ Updated Detections: 0
+✏️ Updated Detections: 1
 🗑️ Deleted Detections: 0
-🟡 Awaiting Approval: 15
+🟡 Awaiting Approval: 16
 
 📋 Details:
-🆕 New: Abnormal User Login Location (ID: CY-0832) Added on: 03-31-2026
+🆕 New: Potential TrustConnect RAT Installed (ID: CY-0834) Added on: 04-01-2026
+✏️ Updated: AWS Create User (ID: CY-0793)
