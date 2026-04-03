@@ -1,8 +1,13 @@
 🛠 Detections Update Summary
 ----------------------------
 🆕 New Detections: 0
-✏️ Updated Detections: 0
+✏️ Updated Detections: 4
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 16
 
 📋 Details:
+
+✏️ Updated: Suspicious Download Via Certutil.exe (ID: CY-0829)
+✏️ Updated: Rubeus Hacktool Execution (ID: CY-0828)
+✏️ Updated: Process Memory Dump Via Comsvcs (ID: CY-0827)
+✏️ Updated: Bypass UAC via Fodhelper (ID: CY-0826)
