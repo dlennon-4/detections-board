@@ -7227,7 +7227,7 @@
     "detectionID": "CY-0284",
     "name": "Public to Public Exploit Anomaly",
     "description": "A public IP address initiated a large number of exploit attempts identified by a given signature or a rarely seen exploit attempt to another public IP address. Investigate that signature.",
-    "defaultStatus": "Active",
+    "defaultStatus": "Alert Preferences",
     "killChainStage": "Initial Attempts",
     "mitreTactic": "Initial Access",
     "mitreTacticID": "TA0001",
