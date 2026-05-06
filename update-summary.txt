@@ -1,8 +1,9 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 0
+🆕 New Detections: 1
 ✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 100
 
 📋 Details:
+🆕 New: Global - Outbytes Anomaly Suspicious Port Usage (ID: CY-0920) Added on: 05-06-2026
