@@ -1,8 +1,10 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 0
-✏️ Updated Detections: 0
+🆕 New Detections: 1
+✏️ Updated Detections: 1
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 101
 
 📋 Details:
+🆕 New: Potential MiniPlasma Exploit Registry Change (ID: CY-0922) Added on: 05-19-2026
+✏️ Updated: Abnormal User Login Location (ID: CY-0832)

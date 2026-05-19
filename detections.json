@@ -16,14 +16,14 @@
   {
     "detectionID": "CY-0832",
     "name": "Abnormal User Login Location",
-    "description": "",
+    "description": "A login to a user account occurred from a source IP address that is anomalously distant from the nearest location typically observed for logins to that user account.",
     "defaultStatus": "Testing",
-    "killChainStage": "",
-    "mitreTactic": "",
-    "mitreTacticID": "",
-    "mitreTechnique": "",
-    "mitreTechniqueID": "",
-    "connector": "",
+    "killChainStage": "Initial Attempts",
+    "mitreTactic": "Initial Access",
+    "mitreTacticID": "TA0001",
+    "mitreTechnique": "Valid Accounts",
+    "mitreTechniqueID": "T1078",
+    "connector": "Office 365 / Entra ID",
     "tool": "Stellar Cyber",
     "dateAdded": "03-31-2026"
   },
@@ -6788,6 +6788,20 @@
     "connector": "",
     "tool": "CrowdStrike",
     "dateAdded": "04-23-2025"
+  },
+  {
+    "detectionID": "CY-0922",
+    "name": "Potential MiniPlasma Exploit Registry Change",
+    "description": "A suspicious registry modification associated to the MiniPlasma exploit (CVE-2020-17103) was detected, resulting in potential Windows local privilege escalation",
+    "defaultStatus": "Testing",
+    "killChainStage": "Persistent Foothold",
+    "mitreTactic": "Privilege Escalation",
+    "mitreTacticID": "TA0004",
+    "mitreTechnique": "Exploitation for Privilege Escalation",
+    "mitreTechniqueID": "T1068",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "05-19-2026"
   },
   {
     "detectionID": "CY-0036",
