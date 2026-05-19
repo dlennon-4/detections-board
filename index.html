@@ -68,7 +68,7 @@
     body {
       margin: 0;
       background-color: var(--bg-color);
-      color: var(--text-color);
+      color: #435f57;
       font-family: 'Inter', sans-serif;
       transition: background-color 0.3s, color 0.3s;
       text-align: center;
@@ -170,7 +170,7 @@
     }
     .filter-btn,
     .action-btn {
-      background: var(--primary-btn-bg);
+      background: #435f57;
       color: var(--primary-btn-text);
       padding: 8px 16px;
       border: none;
@@ -587,6 +587,18 @@
       }
     }
 
+    
+    function getStatusTextColor(status) {
+      switch (status) {
+        case 'Testing':
+        case 'Muted':
+          return '#000000';
+        default:
+          return '#ffffff';
+      }
+    }
+
+
     // Sorting Functionality
     let sortDirections = {};
     function sortTable(columnIndex) {
@@ -644,7 +656,7 @@
               <td>${det.name}</td>
               <td>${displayDesc}</td>
               <td>
-                <span class="status-badge" style="background-color: ${statusColor};" title="${statusDesc}">
+                <span class="status-badge" style="background-color: ${statusColor}; color: ${getStatusTextColor(det.defaultStatus)};" title="${statusDesc}">
                   ${det.defaultStatus}
                 </span>
               </td>
