@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CyFlare Detections Board</title>
+  <title>Cyflare Detections Board</title>
   
   <!-- Tab Logo (favicon) -->
   <link rel="icon" href="cyflare_logo_only_shield.png" type="image/png">
@@ -14,37 +14,55 @@
     :root {
       --dropdown-width: 240px;
 
+      /* Cyflare Color System */
+      --mountain-green: #435f57;
+      --white-cap: #fafafa;
+      --vivid-blue: #066cf4;
+      --marigold: #de9e36;
+      --slate-purple: #8282d2;
+      --crimson: #220c10;
+
       /* Light Mode Variables */
-      --bg-color: #EBEBEB;
-      --text-color: #000000;
+      --bg-color: var(--white-cap);
+      --text-color: var(--crimson);
       --card-bg: #ffffff;
-      --table-border: #dddddd;
-      --header-bg: #C00;   /* Red header */
-      --header-text: #ffffff;
-      --primary-btn-bg: #000;
-      --primary-btn-text: #fff;
-      --hover-bg: #444;
-      --reset-btn-bg: #C00;
-      --export-btn-bg: #28a745;
-      --row-even-bg: #F9F9F9;
-      --row-hover-bg: #ECECEC;
+      --table-border: #d7dedb;
+      --header-bg: var(--mountain-green);
+      --header-text: var(--white-cap);
+      --primary-btn-bg: var(--vivid-blue);
+      --primary-btn-text: var(--white-cap);
+      --hover-bg: var(--mountain-green);
+      --reset-btn-bg: var(--crimson);
+      --export-btn-bg: var(--mountain-green);
+      --row-even-bg: #f3f6f5;
+      --row-hover-bg: #e5ece9;
+      --input-bg: #ffffff;
+      --input-border: #c5cfcc;
+      --link-color: var(--vivid-blue);
+      --badge-new-bg: var(--marigold);
+      --badge-new-text: var(--crimson);
     }
 
     /* Dark Mode Variables */
     .dark-mode {
-      --bg-color: #1A1A1A;
-      --text-color: #E3E3E3;
-      --card-bg: #2B2B2B;
-      --table-border: #444444;
-      --header-bg: #700000;
-      --header-text: #CCCCCC;
-      --primary-btn-bg: #333333;
-      --primary-btn-text: #DDDDDD;
-      --hover-bg: #555555;
-      --reset-btn-bg: #700000;
-      --export-btn-bg: #236c38;
-      --row-even-bg: #333333;
-      --row-hover-bg: #555555;
+      --bg-color: var(--crimson);
+      --text-color: var(--white-cap);
+      --card-bg: #30171c;
+      --table-border: #604950;
+      --header-bg: var(--mountain-green);
+      --header-text: var(--white-cap);
+      --primary-btn-bg: var(--vivid-blue);
+      --primary-btn-text: var(--white-cap);
+      --hover-bg: var(--slate-purple);
+      --reset-btn-bg: var(--marigold);
+      --export-btn-bg: var(--mountain-green);
+      --row-even-bg: #3a2026;
+      --row-hover-bg: #4a2a31;
+      --input-bg: #3a2026;
+      --input-border: #604950;
+      --link-color: var(--marigold);
+      --badge-new-bg: var(--marigold);
+      --badge-new-text: var(--crimson);
     }
 
     body {
@@ -87,7 +105,7 @@
       margin-top: 4px;
       font-weight: bold;
       text-decoration: none;
-      color: var(--text-color);
+      color: var(--link-color);
       display: block; 
     }
     .mode-toggle {
@@ -109,10 +127,10 @@
       transform: translateY(-2px);
     }
 
-    /* New Badge using Light Blue */
+    /* New Badge */
     .new-badge {
-      background-color: #add8e6; /* Light blue */
-      color: #333;
+      background-color: var(--badge-new-bg);
+      color: #ffffff;
       padding: 2px 6px;
       border-radius: 4px;
       font-size: 0.75em;
@@ -144,8 +162,11 @@
       width: 300px;
       padding: 8px;
       border-radius: 6px;
-      border: 1px solid #ccc;
+      border: 1px solid var(--input-border);
+      background: var(--input-bg);
+      color: var(--text-color);
       font-size: 14px;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
     }
     .filter-btn,
     .action-btn {
@@ -277,7 +298,7 @@
       display: inline-block;
       padding: 4px 8px;
       border-radius: 12px;
-      color: #fff;
+      color: var(--badge-new-text);
       font-weight: bold;
       cursor: default;
     }
@@ -287,11 +308,11 @@
   <!-- Top Bar -->
   <div class="top-bar">
     <div class="logo-section">
-      <img src="cyflare logo.png" alt="CyFlare Logo">
+      <img src="cyflare logo.png" alt="Cyflare Logo">
     </div>
     <div class="center-section">
-      <h1>CyFlare Detections Board</h1>
-      <a href="https://cyflare.com/" target="_blank" class="site-link">Visit CyFlare.com</a>
+      <h1>Cyflare Detections Board</h1>
+      <a href="https://cyflare.com/" target="_blank" class="site-link">Visit Cyflare.com</a>
     </div>
     <button class="mode-toggle" onclick="toggleMode()">🌙</button>
   </div>
@@ -332,12 +353,12 @@
           <label><input type="checkbox" checked onchange="toggleColumn(0)"> Detection Name</label>
           <label><input type="checkbox" checked onchange="toggleColumn(1)"> Description</label>
           <label><input type="checkbox" checked onchange="toggleColumn(2)"> Default Status</label>
-                    <label><input type="checkbox" checked onchange="toggleColumn(4)"> MITRE Tactic</label>
-          <label><input type="checkbox" checked onchange="toggleColumn(5)"> MITRE Tactic ID</label>
-          <label><input type="checkbox" checked onchange="toggleColumn(6)"> MITRE Technique</label>
-          <label><input type="checkbox" checked onchange="toggleColumn(7)"> MITRE Technique ID</label>
-          <label><input type="checkbox" checked onchange="toggleColumn(8)"> Connector</label>
-          <label><input type="checkbox" checked onchange="toggleColumn(9)"> Tool</label>
+          <label><input type="checkbox" checked onchange="toggleColumn(3)"> MITRE Tactic</label>
+          <label><input type="checkbox" checked onchange="toggleColumn(4)"> MITRE Tactic ID</label>
+          <label><input type="checkbox" checked onchange="toggleColumn(5)"> MITRE Technique</label>
+          <label><input type="checkbox" checked onchange="toggleColumn(6)"> MITRE Technique ID</label>
+          <label><input type="checkbox" checked onchange="toggleColumn(7)"> Connector</label>
+          <label><input type="checkbox" checked onchange="toggleColumn(8)"> Tool</label>
         </div>
       </div>
 
@@ -358,12 +379,12 @@
           <th onclick="sortTable(0)">Detection Name</th>
           <th onclick="sortTable(1)">Description</th>
           <th onclick="sortTable(2)">Default Status</th>
-                    <th onclick="sortTable(4)">MITRE Tactic</th>
-          <th onclick="sortTable(5)">MITRE Tactic ID</th>
-          <th onclick="sortTable(6)">MITRE Technique</th>
-          <th onclick="sortTable(7)">MITRE Technique ID</th>
-          <th onclick="sortTable(8)">Connector</th>
-          <th onclick="sortTable(9)">Tool</th>
+          <th onclick="sortTable(3)">MITRE Tactic</th>
+          <th onclick="sortTable(4)">MITRE Tactic ID</th>
+          <th onclick="sortTable(5)">MITRE Technique</th>
+          <th onclick="sortTable(6)">MITRE Technique ID</th>
+          <th onclick="sortTable(7)">Connector</th>
+          <th onclick="sortTable(8)">Tool</th>
         </tr>
       </thead>
       <tbody></tbody>
@@ -535,14 +556,14 @@
     // Status Badge Styling for default status
     function getStatusColor(status) {
       switch (status) {
-        case 'Active':                   return '#28a745';
-        case 'Active via Custom Rules':  return '#90ee90';
+        case 'Active':                   return '#435f57'; // Mountain Green
+        case 'Active via Custom Rules':  return '#8282d2'; // Slate Purple
         case 'Testing':
-        case 'New Detection':            return '#dda0dd';
-        case 'Muted':                    return '#ffa500';
-        case 'Not Active':               return '#dc3545';
-        case 'Alert Preferences':        return '#17a2b8';
-        default:                         return '#666';
+        case 'New Detection':            return '#de9e36'; // Marigold
+        case 'Muted':                    return '#8282d2'; // Slate Purple
+        case 'Not Active':               return '#220c10'; // Crimson
+        case 'Alert Preferences':        return '#066cf4'; // Vivid Blue
+        default:                         return '#435f57';
       }
     }
     function getStatusDescription(status) {
@@ -627,7 +648,7 @@
                   ${det.defaultStatus}
                 </span>
               </td>
-                            <td>${det.mitreTactic}</td>
+              <td>${det.mitreTactic}</td>
               <td>${det.mitreTacticID}</td>
               <td>${det.mitreTechnique}</td>
               <td>${det.mitreTechniqueID}</td>
