@@ -8890,6 +8890,20 @@
     "dateAdded": "01-01-2025"
   },
   {
+    "detectionID": "CY-0923",
+    "name": "Token Theft Login Location Correlation",
+    "description": "",
+    "defaultStatus": "Testing",
+    "killChainStage": "Initial Attempts",
+    "mitreTactic": "Initial Access",
+    "mitreTacticID": "TA0001",
+    "mitreTechnique": "Valid Accounts",
+    "mitreTechniqueID": "T1078",
+    "connector": "Office 365",
+    "tool": "Stellar Cyber",
+    "dateAdded": "05-28-2026"
+  },
+  {
     "detectionID": "CY-0223",
     "name": "Trend Micro Vision One - Detections",
     "description": "Stellar Cyber detected a suspicious alert originally reported by Trend Micro Vision One.",

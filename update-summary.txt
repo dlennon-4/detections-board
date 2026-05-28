@@ -1,8 +1,9 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 0
+🆕 New Detections: 1
 ✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 101
 
 📋 Details:
+🆕 New: Token Theft Login Location Correlation (ID: CY-0923) Added on: 05-28-2026
