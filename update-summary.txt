@@ -1,8 +1,16 @@
 🛠 Detections Update Summary
 ----------------------------
 🆕 New Detections: 0
-✏️ Updated Detections: 0
+✏️ Updated Detections: 7
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 101
 
 📋 Details:
+
+✏️ Updated: Suspicious Powershell Invocations (ID: CY-0805)
+✏️ Updated: Global - Outbytes Anomaly Suspicious Port Usage (ID: CY-0920)
+✏️ Updated: Global - Fortinet Potential Auth Bypass Exploitation (ID: CY-0801)
+✏️ Updated: Potential Conditional Access Blocked Login VPN Correlation (ID: CY-0737)
+✏️ Updated: Suspicious Process Following RDP Logon (ID: CY-0738)
+✏️ Updated: User Added to Security Enabled Local Group Following Password Reset (ID: CY-0739)
+✏️ Updated: Duo Fraud Impossible Travel Correlation (ID: CY-0687)
