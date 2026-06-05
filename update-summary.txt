@@ -1,14 +1,13 @@
 🛠 Detections Update Summary
 ----------------------------
 🆕 New Detections: 0
-✏️ Updated Detections: 5
+✏️ Updated Detections: 4
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 101
 
 📋 Details:
 
-✏️ Updated: Suspicious Script Dropped in Startup Location (ID: CY-0804)
-✏️ Updated: Potential Brickstorm Malware Activity (ID: CY-0802)
-✏️ Updated: Office Macro C Compilation (ID: CY-0779)
-✏️ Updated: Suspicious FortiGate User Group Modification (ID: CY-0781)
-✏️ Updated: Internal IP / Port Scan Anomaly (ID: CY-0362)
+✏️ Updated: ICMP Based Exfiltration or Tunneling (ID: CY-0763)
+✏️ Updated: Uncommon Top-Level Domain Anomaly (ID: CY-0765)
+✏️ Updated: Suspected Network Beaconing Activity (ID: CY-0766)
+✏️ Updated: Login Attempt Location Count (ID: CY-0767)
