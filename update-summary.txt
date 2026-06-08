@@ -1,13 +1,8 @@
 🛠 Detections Update Summary
 ----------------------------
 🆕 New Detections: 0
-✏️ Updated Detections: 4
+✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 101
 
 📋 Details:
-
-✏️ Updated: ICMP Based Exfiltration or Tunneling (ID: CY-0763)
-✏️ Updated: Uncommon Top-Level Domain Anomaly (ID: CY-0765)
-✏️ Updated: Suspected Network Beaconing Activity (ID: CY-0766)
-✏️ Updated: Login Attempt Location Count (ID: CY-0767)
