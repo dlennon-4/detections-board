@@ -3612,6 +3612,20 @@
     "dateAdded": "05-06-2026"
   },
   {
+    "detectionID": "CY-0924",
+    "name": "Global - Suspicious Rundll32 Script in CommandLine",
+    "description": "",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar Cyber",
+    "dateAdded": "06-17-2026"
+  },
+  {
     "detectionID": "CY-0750",
     "name": "Global - Suspicious SonicWall VPN Login Attempt",
     "description": "Login from two different ips (may want to switch it to two different countries)",
@@ -3624,6 +3638,20 @@
     "connector": "Sonicwall",
     "tool": "Stellar Cyber",
     "dateAdded": "11-20-2025"
+  },
+  {
+    "detectionID": "CY-0925",
+    "name": "Global - Windows MavInject DLL Injection",
+    "description": "",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Stellar Cyber",
+    "dateAdded": "06-17-2026"
   },
   {
     "detectionID": "CY-0200",
