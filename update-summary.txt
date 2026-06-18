@@ -1,10 +1,8 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 2
+🆕 New Detections: 0
 ✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 100
 
 📋 Details:
-🆕 New: Global - Suspicious Rundll32 Script in CommandLine (ID: CY-0924) Added on: 06-17-2026
-🆕 New: Global - Windows MavInject DLL Injection (ID: CY-0925) Added on: 06-17-2026
