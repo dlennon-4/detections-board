@@ -5068,6 +5068,20 @@
     "dateAdded": "04-23-2025"
   },
   {
+    "detectionID": "CY-0911",
+    "name": "M365 Identity OAuth Illicit Consent Grant by Rare Client and User",
+    "description": "Identifies an Microsoft 365 illicit consent grant request on-behalf-of a registered Entra ID application. Adversaries may create and register an application in Microsoft Entra ID for the purpose of requesting user consent to access resources in Microsoft 365. This is accomplished by tricking a user into granting consent to the application, typically via a pre-made phishing URL. This establishes an OAuth grant that allows the malicious client applocation to access resources in Microsoft 365 on-behalf-of the user.",
+    "defaultStatus": "Not Active",
+    "killChainStage": "",
+    "mitreTactic": "Initial Access",
+    "mitreTacticID": "TA0001",
+    "mitreTechnique": "Phishing",
+    "mitreTechniqueID": "T1556",
+    "connector": "Office 365",
+    "tool": "Elastic",
+    "dateAdded": "06-30-2026"
+  },
+  {
     "detectionID": "CY-0625",
     "name": "M365 OneDrive - Unusual File Extension Changed on Synchronised File",
     "description": "This rule looks for instances where there has been a OneDrive file sync of a file where the file extension has changed. This rule covers both OneDrive and SharePoint, however as SharePoint is built off a OneDrive backend all events appear as \"OneDrive\" events. This activity can be indicative of ransomware on a host machine where the files are synchronised to a OneDrive or SharePoint repository. This will be especially useful for organizations that have external / guest users utilising collaboration infrastructure within their environment. OneDrive/SharePoint typically has a delay of 10-20m for the event pull. Additionally OneDrive/SharePoint will generate a lot of logs. Therefore the recommended scheduling is 10m looking over a 15m time window.",
