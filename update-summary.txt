@@ -1,9 +1,8 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 1
+🆕 New Detections: 0
 ✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 113
 
 📋 Details:
-🆕 New: M365 Identity OAuth Illicit Consent Grant by Rare Client and User (ID: CY-0911) Added on: 06-30-2026
