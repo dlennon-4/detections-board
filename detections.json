@@ -5110,6 +5110,20 @@
     "dateAdded": "04-23-2025"
   },
   {
+    "detectionID": "CY-0916",
+    "name": "M365 Threat Intelligence Signal",
+    "description": "Identifies Microsoft 365 audit logs generated for Threat Intelligence signals by Microsoft Defender for Office 365. This includes phishing and malware events, campaign-related threat detections, file-based threats in SharePoint, OneDrive, and Teams, as well as Microsoft Threat Intelligence Center (MSTIC) signals. These events provide early indicators of compromise attempts and can be correlated with other signals for threat hunting and detection.",
+    "defaultStatus": "Not Active",
+    "killChainStage": "",
+    "mitreTactic": "Initial Access",
+    "mitreTacticID": "TA0001",
+    "mitreTechnique": "Phishing",
+    "mitreTechniqueID": "T1566",
+    "connector": "Office 365",
+    "tool": "Elastic",
+    "dateAdded": "07-08-2026"
+  },
+  {
     "detectionID": "CY-0310",
     "name": "Malicious Site Access",
     "description": "A host accessed a URL with a reputation for potentially hosting malware. Check the URL and, if malicious, consider blocking it. Check the host for compromise.",
