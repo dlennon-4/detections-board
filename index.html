@@ -15,7 +15,7 @@
 
   <style>
     :root {
-      --dropdown-width: 250px;
+      --dropdown-width: 255px;
 
       /* =======================================================
          CYFLARE BRAND COLORS
@@ -29,18 +29,12 @@
       --crimson: #220c10;
 
       /* =======================================================
-         TOOL / COMPANY COLORS
+         TOOL COLORS
          ======================================================= */
 
       --stellar-color: #f58220;
-      --stellar-dark: #c75f00;
-
       --crowdstrike-color: #d12127;
-      --crowdstrike-dark: #9f161b;
-
       --sentinelone-color: #6f3ff5;
-      --sentinelone-dark: #5125c7;
-
       --cyflare-itdr-color: #066cf4;
       --cyflare-itdr-dark: #435f57;
 
@@ -52,7 +46,6 @@
       --text-color: var(--crimson);
 
       --card-bg: #ffffff;
-
       --table-border: #d7dedb;
 
       --header-bg: var(--mountain-green);
@@ -84,11 +77,9 @@
 
     .dark-mode {
       --bg-color: var(--crimson);
-
       --text-color: #f1f4f3;
 
       --card-bg: #30171c;
-
       --table-border: #604950;
 
       --header-bg: var(--mountain-green);
@@ -399,17 +390,13 @@
 
       border-radius: 6px;
 
-      font-family:
-        'Inter',
-        sans-serif;
-
+      font-family: 'Inter', sans-serif;
       font-size: 14px;
       font-weight: 400;
     }
 
     .search-box::placeholder {
       color: #6f7774;
-
       opacity: 1;
     }
 
@@ -426,19 +413,14 @@
       padding: 8px 16px;
 
       background: var(--mountain-green);
-
       color: var(--white-cap);
 
       border: none;
-
       border-radius: 8px;
 
       cursor: pointer;
 
-      font-family:
-        'Inter',
-        sans-serif;
-
+      font-family: 'Inter', sans-serif;
       font-size: 14px;
       font-weight: 500;
 
@@ -454,18 +436,12 @@
     .filter-btn:hover,
     .action-btn:hover {
       background-color: var(--hover-bg);
-
       transform: translateY(-2px);
     }
-
-    /* =========================================================
-       ACTIVE FILTER INDICATOR
-       ========================================================= */
 
     .filter-btn.filter-active,
     .action-btn.filter-active {
       background: var(--marigold);
-
       color: var(--crimson);
 
       font-weight: 600;
@@ -473,13 +449,6 @@
       box-shadow:
         0 0 0 2px
         rgba(222,158,54,0.18);
-    }
-
-    .filter-btn.filter-active:hover,
-    .action-btn.filter-active:hover {
-      background: #e7aa45;
-
-      color: var(--crimson);
     }
 
     .reset-btn {
@@ -496,7 +465,6 @@
 
     .dropdown {
       position: relative;
-
       display: inline-block;
     }
 
@@ -508,7 +476,6 @@
       width: var(--dropdown-width);
 
       margin-top: 8px;
-
       padding: 12px;
 
       background-color: var(--card-bg);
@@ -541,13 +508,19 @@
     }
 
     .dropdown-content label {
-      display: block;
+      display: flex;
 
-      padding: 5px 0;
+      align-items: center;
+
+      gap: 8px;
+
+      padding: 6px 5px;
 
       cursor: pointer;
 
       font-weight: 400;
+
+      border-radius: 6px;
     }
 
     .dropdown-content label:hover {
@@ -559,45 +532,17 @@
     }
 
     /* =========================================================
-       TOOL FILTER
+       FILTER OPTION PILLS
        ========================================================= */
 
-    .tool-option {
-      display: flex !important;
-
-      align-items: center;
-
-      gap: 8px;
-
-      margin: 4px 0;
-
-      padding:
-        7px 8px !important;
-
-      border-radius: 7px;
-
-      transition:
-        background-color 0.2s;
-    }
-
-    .tool-option input {
-      width: 15px;
-      height: 15px;
-
-      cursor: pointer;
-    }
-
-    .tool-filter-badge {
+    .filter-option-pill {
       display: inline-flex;
 
       align-items: center;
 
-      padding:
-        4px 9px;
+      padding: 4px 9px;
 
       border-radius: 999px;
-
-      color: #ffffff;
 
       font-size: 0.82rem;
       font-weight: 600;
@@ -607,41 +552,189 @@
       white-space: nowrap;
     }
 
+    /* =========================================================
+       DEFAULT STATUS DROPDOWN COLORS
+       ========================================================= */
+
+    .status-option.active input {
+      accent-color: var(--mountain-green);
+    }
+
+    .status-option.active .filter-option-pill {
+      background: var(--mountain-green);
+      color: #ffffff;
+    }
+
+    .status-option.alert-preferences input {
+      accent-color: var(--vivid-blue);
+    }
+
+    .status-option.alert-preferences .filter-option-pill {
+      background: var(--vivid-blue);
+      color: #ffffff;
+    }
+
+    .status-option.new-detection input {
+      accent-color: var(--marigold);
+    }
+
+    .status-option.new-detection .filter-option-pill {
+      background: var(--marigold);
+      color: var(--crimson);
+    }
+
+    .status-option.testing input {
+      accent-color: var(--marigold);
+    }
+
+    .status-option.testing .filter-option-pill {
+      background: var(--marigold);
+      color: var(--crimson);
+    }
+
+    .status-option.muted input {
+      accent-color: var(--slate-purple);
+    }
+
+    .status-option.muted .filter-option-pill {
+      background: var(--slate-purple);
+      color: #ffffff;
+    }
+
+    .status-option.not-active input {
+      accent-color: var(--crimson);
+    }
+
+    .status-option.not-active .filter-option-pill {
+      background: var(--crimson);
+      color: #ffffff;
+    }
+
+    /* =========================================================
+       TOOL FILTER
+       ========================================================= */
+
+    .tool-option input {
+      width: 15px;
+      height: 15px;
+
+      cursor: pointer;
+    }
+
     .tool-option.stellar input {
       accent-color: var(--stellar-color);
     }
 
-    .tool-filter-badge.stellar {
+    .tool-option.stellar .filter-option-pill {
       background: var(--stellar-color);
+      color: #ffffff;
     }
 
     .tool-option.crowdstrike input {
       accent-color: var(--crowdstrike-color);
     }
 
-    .tool-filter-badge.crowdstrike {
+    .tool-option.crowdstrike .filter-option-pill {
       background: var(--crowdstrike-color);
+      color: #ffffff;
     }
 
     .tool-option.sentinelone input {
       accent-color: var(--sentinelone-color);
     }
 
-    .tool-filter-badge.sentinelone {
+    .tool-option.sentinelone .filter-option-pill {
       background: var(--sentinelone-color);
+      color: #ffffff;
     }
 
     .tool-option.cyflare-itdr input {
       accent-color: var(--cyflare-itdr-color);
     }
 
-    .tool-filter-badge.cyflare-itdr {
+    .tool-option.cyflare-itdr .filter-option-pill {
       background:
         linear-gradient(
           135deg,
           var(--cyflare-itdr-dark),
           var(--cyflare-itdr-color)
         );
+
+      color: #ffffff;
+    }
+
+    /* =========================================================
+       SELECT COLUMNS COLOR CODING
+       ========================================================= */
+
+    .column-option input {
+      cursor: pointer;
+    }
+
+    /* Primary detection information */
+
+    .column-option.primary input {
+      accent-color: var(--mountain-green);
+    }
+
+    .column-option.primary .filter-option-pill {
+      background: var(--mountain-green);
+      color: #ffffff;
+    }
+
+    /* Status */
+
+    .column-option.status input {
+      accent-color: var(--vivid-blue);
+    }
+
+    .column-option.status .filter-option-pill {
+      background: var(--vivid-blue);
+      color: #ffffff;
+    }
+
+    /* Tool */
+
+    .column-option.tool input {
+      accent-color: var(--slate-purple);
+    }
+
+    .column-option.tool .filter-option-pill {
+      background: var(--slate-purple);
+      color: #ffffff;
+    }
+
+    /* Connector */
+
+    .column-option.connector input {
+      accent-color: var(--vivid-blue);
+    }
+
+    .column-option.connector .filter-option-pill {
+      background: #4c87c8;
+      color: #ffffff;
+    }
+
+    /* MITRE */
+
+    .column-option.mitre input {
+      accent-color: var(--marigold);
+    }
+
+    .column-option.mitre .filter-option-pill {
+      background: #f1d7a9;
+      color: var(--crimson);
+
+      border:
+        1px solid
+        var(--marigold);
+    }
+
+    .dark-mode .column-option.mitre .filter-option-pill {
+      background: #6a4a18;
+      color: #ffffff;
+
+      border-color: var(--marigold);
     }
 
     /* =========================================================
@@ -699,8 +792,7 @@
 
       color: var(--header-text);
 
-      border:
-        none !important;
+      border: none !important;
 
       cursor: pointer;
 
@@ -716,7 +808,7 @@
     }
 
     /* =========================================================
-       DARK MODE TABLE READABILITY
+       DARK TABLE
        ========================================================= */
 
     .dark-mode
@@ -745,7 +837,6 @@
     tbody
     td {
       color: #e6ecea;
-
       font-weight: 400;
     }
 
@@ -754,7 +845,6 @@
     tbody
     td:first-child {
       color: #f4f7f6;
-
       font-weight: 500;
     }
 
@@ -766,7 +856,7 @@
     }
 
     /* =========================================================
-       TABLE ALIGNMENT
+       ALIGNMENT
        ========================================================= */
 
     #detectionsTable th:nth-child(1),
@@ -830,18 +920,15 @@
     }
 
     .table-tool-badge.stellar {
-      background:
-        var(--stellar-color);
+      background: var(--stellar-color);
     }
 
     .table-tool-badge.crowdstrike {
-      background:
-        var(--crowdstrike-color);
+      background: var(--crowdstrike-color);
     }
 
     .table-tool-badge.sentinelone {
-      background:
-        var(--sentinelone-color);
+      background: var(--sentinelone-color);
     }
 
     .table-tool-badge.cyflare-itdr {
@@ -854,8 +941,7 @@
     }
 
     .table-tool-badge.other {
-      background:
-        var(--mountain-green);
+      background: var(--mountain-green);
     }
 
     /* =========================================================
@@ -864,7 +950,6 @@
 
     .new-badge {
       background-color: var(--badge-new-bg);
-
       color: #ffffff;
 
       padding:
@@ -940,7 +1025,7 @@
   </div>
 
   <!-- =========================================================
-       SUMMARY STRIP
+       SUMMARY
        ========================================================= -->
 
   <div class="summary-strip">
@@ -1015,8 +1100,6 @@
 
     <div class="filters-left">
 
-      <!-- Search -->
-
       <input
         type="text"
         id="search"
@@ -1026,7 +1109,7 @@
       >
 
       <!-- =====================================================
-           DEFAULT STATUS FILTER
+           STATUS
            ===================================================== -->
 
       <div class="dropdown">
@@ -1044,64 +1127,94 @@
           class="dropdown-content"
         >
 
-          <label>
+          <label class="status-option active">
+
             <input
               type="checkbox"
               value="Active"
               checked
               onchange="filterTable()"
             >
-            Active
+
+            <span class="filter-option-pill">
+              Active
+            </span>
+
           </label>
 
-          <label>
+          <label class="status-option alert-preferences">
+
             <input
               type="checkbox"
               value="Alert Preferences"
               checked
               onchange="filterTable()"
             >
-            Alert Preferences
+
+            <span class="filter-option-pill">
+              Alert Preferences
+            </span>
+
           </label>
 
-          <label>
+          <label class="status-option new-detection">
+
             <input
               type="checkbox"
               value="New Detection"
               checked
               onchange="filterTable()"
             >
-            New Detection
+
+            <span class="filter-option-pill">
+              New Detection
+            </span>
+
           </label>
 
-          <label>
+          <label class="status-option testing">
+
             <input
               type="checkbox"
               value="Testing"
               checked
               onchange="filterTable()"
             >
-            Testing
+
+            <span class="filter-option-pill">
+              Testing
+            </span>
+
           </label>
 
-          <label>
+          <label class="status-option muted">
+
             <input
               type="checkbox"
               value="Muted"
               checked
               onchange="filterTable()"
             >
-            Muted
+
+            <span class="filter-option-pill">
+              Muted
+            </span>
+
           </label>
 
-          <label>
+          <label class="status-option not-active">
+
             <input
               type="checkbox"
               value="Not Active"
               checked
               onchange="filterTable()"
             >
-            Not Active
+
+            <span class="filter-option-pill">
+              Not Active
+            </span>
+
           </label>
 
         </div>
@@ -1109,7 +1222,7 @@
       </div>
 
       <!-- =====================================================
-           TOOL FILTER
+           TOOL
            ===================================================== -->
 
       <div class="dropdown">
@@ -1127,9 +1240,7 @@
           class="dropdown-content"
         >
 
-          <label
-            class="tool-option stellar"
-          >
+          <label class="tool-option stellar">
 
             <input
               type="checkbox"
@@ -1138,17 +1249,13 @@
               onchange="filterTable()"
             >
 
-            <span
-              class="tool-filter-badge stellar"
-            >
+            <span class="filter-option-pill">
               Stellar Cyber
             </span>
 
           </label>
 
-          <label
-            class="tool-option crowdstrike"
-          >
+          <label class="tool-option crowdstrike">
 
             <input
               type="checkbox"
@@ -1157,17 +1264,13 @@
               onchange="filterTable()"
             >
 
-            <span
-              class="tool-filter-badge crowdstrike"
-            >
+            <span class="filter-option-pill">
               CrowdStrike
             </span>
 
           </label>
 
-          <label
-            class="tool-option sentinelone"
-          >
+          <label class="tool-option sentinelone">
 
             <input
               type="checkbox"
@@ -1176,17 +1279,13 @@
               onchange="filterTable()"
             >
 
-            <span
-              class="tool-filter-badge sentinelone"
-            >
+            <span class="filter-option-pill">
               SentinelOne EDR
             </span>
 
           </label>
 
-          <label
-            class="tool-option cyflare-itdr"
-          >
+          <label class="tool-option cyflare-itdr">
 
             <input
               type="checkbox"
@@ -1195,9 +1294,7 @@
               onchange="filterTable()"
             >
 
-            <span
-              class="tool-filter-badge cyflare-itdr"
-            >
+            <span class="filter-option-pill">
               Cyflare ITDR
             </span>
 
@@ -1208,7 +1305,7 @@
       </div>
 
       <!-- =====================================================
-           COLUMN SELECTION
+           SELECT COLUMNS
            ===================================================== -->
 
       <div class="dropdown">
@@ -1225,94 +1322,137 @@
           class="dropdown-content"
         >
 
-          <label>
+          <label class="column-option primary">
+
             <input
               type="checkbox"
               checked
               onchange="toggleColumn(0)"
             >
-            Detection Name
+
+            <span class="filter-option-pill">
+              Detection Name
+            </span>
+
           </label>
 
-          <label>
+          <label class="column-option primary">
+
             <input
               type="checkbox"
               checked
               onchange="toggleColumn(1)"
             >
-            Description
+
+            <span class="filter-option-pill">
+              Description
+            </span>
+
           </label>
 
-          <label>
+          <label class="column-option status">
+
             <input
               type="checkbox"
               checked
               onchange="toggleColumn(2)"
             >
-            Default Status
+
+            <span class="filter-option-pill">
+              Default Status
+            </span>
+
           </label>
 
-          <label>
+          <label class="column-option tool">
+
             <input
               type="checkbox"
               checked
               onchange="toggleColumn(3)"
             >
-            Connector
+
+            <span class="filter-option-pill">
+              Tool
+            </span>
+
           </label>
 
-          <label>
+          <label class="column-option connector">
+
             <input
               type="checkbox"
               checked
               onchange="toggleColumn(4)"
             >
-            Tool
+
+            <span class="filter-option-pill">
+              Connector
+            </span>
+
           </label>
 
-          <label>
+          <label class="column-option mitre">
+
             <input
               type="checkbox"
               checked
               onchange="toggleColumn(5)"
             >
-            MITRE Tactic
+
+            <span class="filter-option-pill">
+              MITRE Tactic
+            </span>
+
           </label>
 
-          <label>
+          <label class="column-option mitre">
+
             <input
               type="checkbox"
               checked
               onchange="toggleColumn(6)"
             >
-            MITRE Tactic ID
+
+            <span class="filter-option-pill">
+              MITRE Tactic ID
+            </span>
+
           </label>
 
-          <label>
+          <label class="column-option mitre">
+
             <input
               type="checkbox"
               checked
               onchange="toggleColumn(7)"
             >
-            MITRE Technique
+
+            <span class="filter-option-pill">
+              MITRE Technique
+            </span>
+
           </label>
 
-          <label>
+          <label class="column-option mitre">
+
             <input
               type="checkbox"
               checked
               onchange="toggleColumn(8)"
             >
-            MITRE Technique ID
+
+            <span class="filter-option-pill">
+              MITRE Technique ID
+            </span>
+
           </label>
 
         </div>
 
       </div>
 
-      <!-- =====================================================
-           ACTIONS
-           ===================================================== -->
+      <!-- Actions -->
 
       <button
         class="reset-btn action-btn"
@@ -1355,13 +1495,11 @@
   <!-- =========================================================
        TABLE
 
-       NEW COLUMN ORDER:
-
        0 Detection Name
        1 Description
        2 Default Status
-       3 Connector
-       4 Tool
+       3 Tool
+       4 Connector
        5 MITRE Tactic
        6 MITRE Tactic ID
        7 MITRE Technique
@@ -1389,11 +1527,11 @@
           </th>
 
           <th onclick="sortTable(3)">
-            Connector
+            Tool
           </th>
 
           <th onclick="sortTable(4)">
-            Tool
+            Connector
           </th>
 
           <th onclick="sortTable(5)">
@@ -1425,7 +1563,7 @@
   <script>
 
     /* =========================================================
-       DARK / LIGHT MODE
+       LIGHT / DARK MODE
        ========================================================= */
 
     function toggleMode() {
@@ -1440,11 +1578,11 @@
         );
 
       button.textContent =
-        document.body.classList.contains(
-          'dark-mode'
-        )
-          ? '☀️'
-          : '🌙';
+        document.body
+          .classList
+          .contains('dark-mode')
+            ? '☀️'
+            : '🌙';
 
     }
 
@@ -1491,21 +1629,45 @@
 
 
     /* =========================================================
-       ACTIVE FILTER BUTTON STATE
+       NEW ONLY
+       ========================================================= */
+
+    let newOnlyFilter =
+      false;
+
+
+    function toggleNewOnlyFilter() {
+
+      newOnlyFilter =
+        !newOnlyFilter;
+
+      const button =
+        document.getElementById(
+          'newFilterBtn'
+        );
+
+      button.textContent =
+        newOnlyFilter
+          ? 'Showing New Only'
+          : 'Show New Only';
+
+      filterTable();
+
+    }
+
+
+    /* =========================================================
+       FILTER BUTTON STATES
        ========================================================= */
 
     function updateFilterButtonStates() {
-
-      /* -------------------------
-         DEFAULT STATUS
-         ------------------------- */
 
       const statusCheckboxes =
         document.querySelectorAll(
           '#statusDropdown input[type="checkbox"]'
         );
 
-      const checkedStatuses =
+      const selectedStatuses =
         Array
           .from(statusCheckboxes)
           .filter(
@@ -1519,7 +1681,7 @@
         );
 
       if (
-        checkedStatuses.length ===
+        selectedStatuses.length ===
         statusCheckboxes.length
       ) {
 
@@ -1535,7 +1697,7 @@
       } else {
 
         statusButton.textContent =
-          `Default Status (${checkedStatuses.length}/${statusCheckboxes.length})`;
+          `Default Status (${selectedStatuses.length}/${statusCheckboxes.length})`;
 
         statusButton
           .classList
@@ -1546,16 +1708,12 @@
       }
 
 
-      /* -------------------------
-         TOOL
-         ------------------------- */
-
       const toolCheckboxes =
         document.querySelectorAll(
           '#toolDropdown input[type="checkbox"]'
         );
 
-      const checkedTools =
+      const selectedTools =
         Array
           .from(toolCheckboxes)
           .filter(
@@ -1569,7 +1727,7 @@
         );
 
       if (
-        checkedTools.length ===
+        selectedTools.length ===
         toolCheckboxes.length
       ) {
 
@@ -1585,7 +1743,7 @@
       } else {
 
         toolButton.textContent =
-          `Tool (${checkedTools.length}/${toolCheckboxes.length})`;
+          `Tool (${selectedTools.length}/${toolCheckboxes.length})`;
 
         toolButton
           .classList
@@ -1595,10 +1753,6 @@
 
       }
 
-
-      /* -------------------------
-         NEW ONLY
-         ------------------------- */
 
       const newButton =
         document.getElementById(
@@ -1624,33 +1778,6 @@
           );
 
       }
-
-    }
-
-
-    /* =========================================================
-       NEW FILTER
-       ========================================================= */
-
-    let newOnlyFilter =
-      false;
-
-
-    function toggleNewOnlyFilter() {
-
-      newOnlyFilter =
-        !newOnlyFilter;
-
-      document
-        .getElementById(
-          'newFilterBtn'
-        )
-        .textContent =
-          newOnlyFilter
-            ? 'Showing New Only'
-            : 'Show New Only';
-
-      filterTable();
 
     }
 
@@ -1790,12 +1917,6 @@
         .textContent =
           'Show New Only';
 
-      /*
-        Reset MITRE state because
-        all columns have just been
-        shown again.
-      */
-
       mitreVisible =
         true;
 
@@ -1812,10 +1933,7 @@
 
 
     /* =========================================================
-       MITRE COLUMN TOGGLE
-
-       MITRE columns are now:
-       5, 6, 7, 8
+       MITRE TOGGLE
        ========================================================= */
 
     let mitreVisible =
@@ -1944,13 +2062,13 @@
             );
 
           /*
-            New Column Layout
+            Column Layout
 
             0 Detection Name
             1 Description
-            2 Status
-            3 Connector
-            4 Tool
+            2 Default Status
+            3 Tool
+            4 Connector
             5 MITRE Tactic
             6 MITRE Tactic ID
             7 MITRE Technique
@@ -1972,16 +2090,16 @@
               .textContent
               .trim();
 
-          const connector =
+          const tool =
             cells[3]
+              .textContent
+              .trim();
+
+          const connector =
+            cells[4]
               .textContent
               .trim()
               .toLowerCase();
-
-          const tool =
-            cells[4]
-              .textContent
-              .trim();
 
           const mitreTactic =
             cells[5]
@@ -2003,13 +2121,6 @@
               .textContent
               .toLowerCase();
 
-          /*
-            Search now searches the
-            entire useful detection
-            record, not just name
-            and description.
-          */
-
           const matchesSearch =
             name.includes(
               searchValue
@@ -2017,14 +2128,19 @@
             description.includes(
               searchValue
             ) ||
-            connector.includes(
-              searchValue
-            ) ||
+            status
+              .toLowerCase()
+              .includes(
+                searchValue
+              ) ||
             tool
               .toLowerCase()
               .includes(
                 searchValue
               ) ||
+            connector.includes(
+              searchValue
+            ) ||
             mitreTactic.includes(
               searchValue
             ) ||
@@ -2098,9 +2214,7 @@
         );
 
       let total = 0;
-
       let active = 0;
-
       let testingNew = 0;
 
       const tools =
@@ -2138,13 +2252,8 @@
               .textContent
               .trim();
 
-          /*
-            Tool moved from
-            column 8 to column 4.
-          */
-
           const tool =
-            cells[4]
+            cells[3]
               .textContent
               .trim();
 
@@ -2220,27 +2329,18 @@
       ) {
 
         case 'Stellar Cyber':
-
           return 'stellar';
 
-
         case 'CrowdStrike':
-
           return 'crowdstrike';
 
-
         case 'SentinelOne EDR':
-
           return 'sentinelone';
 
-
         case 'Cyflare ITDR':
-
           return 'cyflare-itdr';
 
-
         default:
-
           return 'other';
 
       }
@@ -2478,39 +2578,25 @@
       ) {
 
         case 'Active':
-
           return '#435f57';
 
-
         case 'Active via Custom Rules':
-
           return '#8282d2';
-
 
         case 'Testing':
-
         case 'New Detection':
-
           return '#de9e36';
 
-
         case 'Muted':
-
           return '#8282d2';
 
-
         case 'Not Active':
-
           return '#220c10';
 
-
         case 'Alert Preferences':
-
           return '#066cf4';
 
-
         default:
-
           return '#435f57';
 
       }
@@ -2527,42 +2613,27 @@
       ) {
 
         case 'Active':
-
           return 'This detection is actively monitored and alerts are generated.';
 
-
         case 'Active via Custom Rules':
-
           return 'Enabled custom rules track noteworthy activity.';
 
-
         case 'Not Active':
-
           return 'This detection has low standalone value.';
 
-
         case 'Alert Preferences':
-
           return 'Toggling available under Alert Preferences.';
 
-
         case 'New Detection':
-
           return 'A newly introduced detection awaiting assessment.';
 
-
         case 'Testing':
-
           return 'Under SOC evaluation.';
 
-
         case 'Muted':
-
           return 'Automatically closed after threshold checks.';
 
-
         default:
-
           return '';
 
       }
@@ -2579,14 +2650,10 @@
       ) {
 
         case 'Testing':
-
         case 'Muted':
-
           return '#000000';
 
-
         default:
-
           return '#ffffff';
 
       }
@@ -2595,7 +2662,7 @@
 
 
     /* =========================================================
-       SORT TABLE
+       SORTING
        ========================================================= */
 
     const sortDirections =
@@ -2800,20 +2867,6 @@
                     'tr'
                   );
 
-                /*
-                  NEW DISPLAY ORDER:
-
-                  Detection
-                  Description
-                  Status
-                  Connector
-                  Tool
-                  MITRE Tactic
-                  MITRE Tactic ID
-                  MITRE Technique
-                  MITRE Technique ID
-                */
-
                 row.innerHTML = `
 
                   <td>
@@ -2840,11 +2893,11 @@
                   </td>
 
                   <td>
-                    ${det.connector}
+                    ${toolBadge}
                   </td>
 
                   <td>
-                    ${toolBadge}
+                    ${det.connector}
                   </td>
 
                   <td>
