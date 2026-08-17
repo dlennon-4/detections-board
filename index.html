@@ -4,10 +4,8 @@
   <meta charset="UTF-8">
   <title>Cyflare Detections Board</title>
 
-  <!-- Tab Logo -->
   <link rel="icon" href="cyflare_logo_only_shield.png" type="image/png">
 
-  <!-- Cyflare Body Font -->
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
@@ -17,10 +15,7 @@
     :root {
       --dropdown-width: 270px;
 
-      /* =======================================================
-         CYFLARE BRAND COLORS
-         ======================================================= */
-
+      /* Cyflare */
       --mountain-green: #435f57;
       --white-cap: #fafafa;
       --vivid-blue: #066cf4;
@@ -28,86 +23,42 @@
       --slate-purple: #8282d2;
       --crimson: #220c10;
 
-      /* =======================================================
-         TOOL COLORS
-         ======================================================= */
-
+      /* Tool colors */
       --stellar-color: #f58220;
       --crowdstrike-color: #d12127;
       --sentinelone-color: #6f3ff5;
       --cyflare-itdr-color: #066cf4;
       --cyflare-itdr-dark: #435f57;
 
-      /* =======================================================
-         LIGHT MODE
-         ======================================================= */
-
+      /* Light */
       --bg-color: var(--white-cap);
       --text-color: var(--crimson);
-
       --card-bg: #ffffff;
       --table-border: #d7dedb;
-
       --header-bg: var(--mountain-green);
       --header-text: var(--white-cap);
-
-      --primary-btn-bg: var(--vivid-blue);
-      --primary-btn-text: var(--white-cap);
-
       --hover-bg: var(--mountain-green);
-
-      --reset-btn-bg: var(--crimson);
-      --export-btn-bg: var(--mountain-green);
-
       --row-even-bg: #f3f6f5;
       --row-hover-bg: #e5ece9;
-
       --input-bg: #ffffff;
       --input-border: #c5cfcc;
-
       --link-color: var(--vivid-blue);
-
-      --badge-new-bg: var(--marigold);
-      --badge-new-text: var(--crimson);
     }
-
-    /* =========================================================
-       DARK MODE
-       ========================================================= */
 
     .dark-mode {
       --bg-color: var(--crimson);
       --text-color: #f1f4f3;
-
       --card-bg: #30171c;
       --table-border: #604950;
-
       --header-bg: var(--mountain-green);
       --header-text: var(--white-cap);
-
-      --primary-btn-bg: var(--vivid-blue);
-      --primary-btn-text: var(--white-cap);
-
       --hover-bg: var(--slate-purple);
-
-      --reset-btn-bg: var(--marigold);
-      --export-btn-bg: var(--mountain-green);
-
       --row-even-bg: #3a2026;
       --row-hover-bg: #4a2a31;
-
       --input-bg: #3a2026;
       --input-border: #765d63;
-
       --link-color: var(--marigold);
-
-      --badge-new-bg: var(--marigold);
-      --badge-new-text: var(--crimson);
     }
-
-    /* =========================================================
-       GLOBAL
-       ========================================================= */
 
     * {
       box-sizing: border-box;
@@ -115,23 +66,15 @@
 
     body {
       margin: 0;
-
-      background-color: var(--bg-color);
+      background: var(--bg-color);
       color: var(--text-color);
-
       font-family: 'Inter', sans-serif;
-      font-weight: 400;
-
       text-align: center;
-
-      transition:
-        background-color 0.3s,
-        color 0.3s;
     }
 
-    /* =========================================================
-       TOP BAR
-       ========================================================= */
+    /* =========================
+       TOP
+       ========================= */
 
     .top-bar {
       position: relative;
@@ -149,109 +92,76 @@
       max-width: 250px;
       height: auto;
       display: block;
-      background-color: transparent;
     }
 
     .center-section {
       position: absolute;
       left: 50%;
       top: 50%;
-
       transform: translate(-50%, -50%);
-      text-align: center;
     }
 
     .center-section h1 {
       margin: 0;
-
       color: var(--mountain-green);
-
       font-size: 2rem;
       font-weight: 600;
     }
 
     .dark-mode .center-section h1 {
-      color: #f4f7f6;
+      color: var(--white-cap);
     }
 
-    .center-section .site-link {
+    .site-link {
       display: block;
-
       margin-top: 4px;
-
       color: var(--link-color);
-
       text-decoration: none;
-
       font-weight: 600;
     }
 
     .mode-toggle {
       position: absolute;
-
       right: 20px;
       top: 50%;
-
       transform: translateY(-50%);
-
       padding: 8px 16px;
-
-      background: var(--primary-btn-bg);
-      color: var(--primary-btn-text);
-
+      background: var(--vivid-blue);
+      color: white;
       border: none;
       border-radius: 8px;
-
       cursor: pointer;
-
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
     }
 
-    /* =========================================================
-       SUMMARY STRIP
-       ========================================================= */
+    /* =========================
+       SUMMARY
+       ========================= */
 
     .summary-strip {
       max-width: 95%;
-
       margin: 0 auto 14px auto;
-
       display: grid;
-
       grid-template-columns: repeat(4, 1fr);
-
       gap: 12px;
     }
 
     .summary-card {
       position: relative;
-
       overflow: hidden;
-
       padding: 14px 18px;
-
       background: var(--card-bg);
-
       border: 1px solid var(--table-border);
       border-radius: 10px;
-
-      box-shadow:
-        0 2px 6px
-        rgba(0,0,0,0.08);
-
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       text-align: left;
     }
 
     .summary-card::before {
       content: "";
-
       position: absolute;
-
       left: 0;
       top: 0;
       bottom: 0;
-
       width: 5px;
     }
 
@@ -273,142 +183,88 @@
 
     .summary-value {
       display: block;
-
       margin-bottom: 6px;
-
       color: var(--mountain-green);
-
       font-size: 1.8rem;
       font-weight: 700;
-
-      line-height: 1;
-    }
-
-    .summary-label {
-      display: block;
-
-      color: var(--text-color);
-
-      font-size: 0.72rem;
-      font-weight: 600;
-
-      text-transform: uppercase;
-
-      letter-spacing: 0.6px;
     }
 
     .dark-mode .summary-value {
       color: var(--white-cap);
     }
 
-    .dark-mode .summary-label {
-      color: #d9e0de;
+    .summary-label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
     }
 
-    /* =========================================================
+    /* =========================
        FILTER BAR
-       ========================================================= */
+       ========================= */
 
     .filter-bar {
       max-width: 95%;
-
       margin: 0 auto 20px auto;
-
       padding: 20px;
-
       display: flex;
       flex-wrap: wrap;
-
       justify-content: space-between;
       align-items: center;
-
       background: var(--card-bg);
-
       border-radius: 8px;
-
-      box-shadow:
-        0 2px 6px
-        rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     .filters-left {
       display: flex;
       flex-wrap: wrap;
-
       gap: 10px;
-
       align-items: center;
     }
 
     .search-box {
       width: 300px;
-
       padding: 8px;
-
       background: var(--input-bg);
       color: var(--text-color);
-
       border: 1px solid var(--input-border);
       border-radius: 6px;
-
       font-family: 'Inter', sans-serif;
-      font-size: 14px;
-    }
-
-    .search-box::placeholder {
-      color: #6f7774;
-      opacity: 1;
-    }
-
-    .dark-mode .search-box::placeholder {
-      color: #b8c3c0;
     }
 
     .filter-btn,
     .action-btn {
       padding: 8px 16px;
-
       background: var(--mountain-green);
-      color: var(--white-cap);
-
+      color: white;
       border: none;
       border-radius: 8px;
-
       cursor: pointer;
-
       font-family: 'Inter', sans-serif;
-      font-size: 14px;
       font-weight: 500;
-
-      transition:
-        background-color 0.2s,
-        transform 0.2s;
-    }
-
-    .filter-btn:hover,
-    .action-btn:hover {
-      transform: translateY(-2px);
     }
 
     .filter-btn.filter-active,
     .action-btn.filter-active {
       background: var(--marigold);
       color: var(--crimson);
-
       font-weight: 600;
     }
 
     .reset-btn {
-      background: var(--reset-btn-bg);
+      background: var(--crimson);
     }
 
     .export-btn {
-      background: var(--export-btn-bg);
+      background: var(--mountain-green);
     }
 
-    /* =========================================================
+    /* =========================
        DROPDOWNS
-       ========================================================= */
+       ========================= */
 
     .dropdown {
       position: relative;
@@ -417,25 +273,15 @@
 
     .dropdown-content {
       display: none;
-
       position: absolute;
-
       width: var(--dropdown-width);
-
       margin-top: 8px;
       padding: 12px;
-
-      background-color: var(--card-bg);
-
+      background: var(--card-bg);
       border: 1px solid var(--table-border);
       border-radius: 8px;
-
-      box-shadow:
-        0 8px 16px
-        rgba(0,0,0,0.2);
-
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
       text-align: left;
-
       z-index: 999;
     }
 
@@ -445,88 +291,52 @@
 
     .dropdown-content label {
       display: flex;
-
       align-items: center;
-
       gap: 8px;
-
       padding: 6px 5px;
-
-      cursor: pointer;
-
       border-radius: 6px;
+      cursor: pointer;
     }
 
     .dropdown-content label:hover {
-      background-color: var(--row-hover-bg);
-    }
-
-    .dark-mode .dropdown-content {
-      color: #f4f7f6;
-    }
-
-    /* =========================================================
-       FILTER OPTION LAYOUT
-       ========================================================= */
-
-    .filter-option-pill {
-      display: inline-flex;
-
-      align-items: center;
-
-      padding: 4px 9px;
-
-      border-radius: 999px;
-
-      font-size: 0.82rem;
-      font-weight: 600;
-
-      white-space: nowrap;
+      background: var(--row-hover-bg);
     }
 
     .filter-option-row {
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
       flex: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-      min-width: 0;
+    .filter-option-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      white-space: nowrap;
     }
 
     .filter-count {
-      display: inline-flex;
-
-      align-items: center;
-      justify-content: center;
-
       min-width: 30px;
-
       margin-left: 8px;
-
       padding: 3px 7px;
-
       border-radius: 999px;
-
       background: #edf1f0;
       color: var(--mountain-green);
-
       font-size: 0.74rem;
       font-weight: 700;
-
-      line-height: 1;
+      text-align: center;
     }
 
     .dark-mode .filter-count {
       background: #52363c;
-      color: #f4f7f6;
+      color: white;
     }
 
-    /* =========================================================
-       STATUS COLORS
-       ========================================================= */
+    /* Status filter colors */
 
     .status-option.active input {
       accent-color: var(--mountain-green);
@@ -534,7 +344,7 @@
 
     .status-option.active .filter-option-pill {
       background: var(--mountain-green);
-      color: #ffffff;
+      color: white;
     }
 
     .status-option.alert-preferences input {
@@ -543,16 +353,16 @@
 
     .status-option.alert-preferences .filter-option-pill {
       background: var(--vivid-blue);
-      color: #ffffff;
+      color: white;
     }
 
-    .status-option.new-detection input,
-    .status-option.testing input {
+    .status-option.testing input,
+    .status-option.new-detection input {
       accent-color: var(--marigold);
     }
 
-    .status-option.new-detection .filter-option-pill,
-    .status-option.testing .filter-option-pill {
+    .status-option.testing .filter-option-pill,
+    .status-option.new-detection .filter-option-pill {
       background: var(--marigold);
       color: var(--crimson);
     }
@@ -563,7 +373,7 @@
 
     .status-option.muted .filter-option-pill {
       background: var(--slate-purple);
-      color: #ffffff;
+      color: white;
     }
 
     .status-option.not-active input {
@@ -572,12 +382,10 @@
 
     .status-option.not-active .filter-option-pill {
       background: var(--crimson);
-      color: #ffffff;
+      color: white;
     }
 
-    /* =========================================================
-       TOOL COLORS
-       ========================================================= */
+    /* Tool filter colors */
 
     .tool-option.stellar input {
       accent-color: var(--stellar-color);
@@ -585,7 +393,7 @@
 
     .tool-option.stellar .filter-option-pill {
       background: var(--stellar-color);
-      color: #ffffff;
+      color: white;
     }
 
     .tool-option.crowdstrike input {
@@ -594,7 +402,7 @@
 
     .tool-option.crowdstrike .filter-option-pill {
       background: var(--crowdstrike-color);
-      color: #ffffff;
+      color: white;
     }
 
     .tool-option.sentinelone input {
@@ -603,7 +411,7 @@
 
     .tool-option.sentinelone .filter-option-pill {
       background: var(--sentinelone-color);
-      color: #ffffff;
+      color: white;
     }
 
     .tool-option.cyflare-itdr input {
@@ -611,118 +419,83 @@
     }
 
     .tool-option.cyflare-itdr .filter-option-pill {
-      background:
-        linear-gradient(
-          135deg,
-          var(--cyflare-itdr-dark),
-          var(--cyflare-itdr-color)
-        );
-
-      color: #ffffff;
+      background: linear-gradient(
+        135deg,
+        var(--cyflare-itdr-dark),
+        var(--cyflare-itdr-color)
+      );
+      color: white;
     }
 
-    /* =========================================================
-       SELECT COLUMNS COLORS
-       ========================================================= */
-
-    .column-option.primary input {
-      accent-color: var(--mountain-green);
-    }
+    /* Column colors */
 
     .column-option.primary .filter-option-pill {
       background: var(--mountain-green);
-      color: #ffffff;
-    }
-
-    .column-option.status input {
-      accent-color: var(--vivid-blue);
+      color: white;
     }
 
     .column-option.status .filter-option-pill {
       background: var(--vivid-blue);
-      color: #ffffff;
-    }
-
-    .column-option.tool input {
-      accent-color: var(--slate-purple);
+      color: white;
     }
 
     .column-option.tool .filter-option-pill {
       background: var(--slate-purple);
-      color: #ffffff;
-    }
-
-    .column-option.connector input {
-      accent-color: #4c87c8;
+      color: white;
     }
 
     .column-option.connector .filter-option-pill {
       background: #4c87c8;
-      color: #ffffff;
-    }
-
-    .column-option.mitre input {
-      accent-color: var(--marigold);
+      color: white;
     }
 
     .column-option.mitre .filter-option-pill {
       background: #f1d7a9;
       color: var(--crimson);
-
       border: 1px solid var(--marigold);
     }
 
-    /* =========================================================
+    /* =========================
        TABLE
-       ========================================================= */
+       ========================= */
 
     .table-container {
       max-width: 98%;
       max-height: 85vh;
-
       margin: 0 auto 20px auto;
-
       overflow: auto;
-
       background: var(--card-bg);
-
       border-radius: 12px;
-
-      box-shadow:
-        0 4px 10px
-        rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     table {
       width: 100%;
-
       border-collapse: collapse;
     }
 
     th,
     td {
       padding: 12px;
-
-      border-bottom:
-        1px solid
-        var(--table-border);
+      border-bottom: 1px solid var(--table-border);
     }
 
     thead th {
       position: sticky;
-
       top: 0;
-
       z-index: 2;
-
       background: var(--header-bg);
-      color: var(--header-text);
-
-      border: none !important;
-
+      color: white;
+      border: none;
       cursor: pointer;
-
       font-weight: 600;
+    }
+
+    tbody tr {
+      cursor: pointer;
+      transition:
+        background-color 0.15s,
+        transform 0.1s;
     }
 
     tbody tr:nth-child(even) {
@@ -733,20 +506,16 @@
       background: var(--row-hover-bg);
     }
 
-    /* =========================================================
-       DARK TABLE
-       ========================================================= */
-
     .dark-mode #detectionsTable tbody tr:nth-child(odd) {
-      background-color: #30171c;
+      background: #30171c;
     }
 
     .dark-mode #detectionsTable tbody tr:nth-child(even) {
-      background-color: #3a2026;
+      background: #3a2026;
     }
 
     .dark-mode #detectionsTable tbody tr:hover {
-      background-color: #4a2a31;
+      background: #4a2a31;
     }
 
     .dark-mode #detectionsTable tbody td {
@@ -757,10 +526,6 @@
       color: #f4f7f6;
       font-weight: 500;
     }
-
-    /* =========================================================
-       TABLE ALIGNMENT
-       ========================================================= */
 
     #detectionsTable th:nth-child(1),
     #detectionsTable td:nth-child(1),
@@ -774,37 +539,27 @@
       text-align: center;
     }
 
-    /* =========================================================
-       STATUS + TOOL BADGES
-       ========================================================= */
+    /* =========================
+       BADGES
+       ========================= */
 
     .status-badge {
       display: inline-block;
-
       padding: 4px 8px;
-
       border-radius: 12px;
-
       font-weight: 700;
     }
 
     .table-tool-badge {
       display: inline-flex;
-
       align-items: center;
       justify-content: center;
-
       min-width: 110px;
-
       padding: 5px 10px;
-
       border-radius: 999px;
-
-      color: #ffffff !important;
-
+      color: white !important;
       font-size: 0.78rem;
       font-weight: 600;
-
       white-space: nowrap;
     }
 
@@ -821,40 +576,205 @@
     }
 
     .table-tool-badge.cyflare-itdr {
-      background:
-        linear-gradient(
-          135deg,
-          var(--cyflare-itdr-dark),
-          var(--cyflare-itdr-color)
-        );
+      background: linear-gradient(
+        135deg,
+        var(--cyflare-itdr-dark),
+        var(--cyflare-itdr-color)
+      );
     }
 
     .table-tool-badge.other {
       background: var(--mountain-green);
     }
 
-    /* =========================================================
-       NEW BADGE
-       ========================================================= */
-
     .new-badge {
-      background-color: var(--badge-new-bg);
-      color: #ffffff;
-
+      background: var(--marigold);
+      color: white;
       padding: 2px 6px;
-
       border-radius: 4px;
-
-      font-size: 0.75em;
-
       margin-right: 4px;
-
+      font-size: 0.75em;
       font-weight: 700;
     }
 
-    @media (max-width: 900px) {
+    /* =========================
+       DETECTION MODAL
+       ========================= */
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 20, 19, 0.62);
+      backdrop-filter: blur(3px);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .modal-overlay.show {
+      display: flex;
+    }
+
+    .detection-modal {
+      width: min(760px, 95vw);
+      max-height: 88vh;
+      overflow-y: auto;
+      background: var(--card-bg);
+      color: var(--text-color);
+      border-radius: 14px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+      text-align: left;
+      animation: modalIn 0.18s ease-out;
+    }
+
+    @keyframes modalIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.99);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .modal-header {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 22px;
+      background: var(--mountain-green);
+      color: var(--white-cap);
+      border-radius: 14px 14px 0 0;
+    }
+
+    .modal-header-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: 700;
+      opacity: 0.9;
+    }
+
+    .modal-close {
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.12);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .modal-close:hover {
+      background: rgba(255,255,255,0.22);
+    }
+
+    .modal-body {
+      padding: 24px;
+    }
+
+    .modal-detection-name {
+      margin: 0 0 14px 0;
+      color: var(--mountain-green);
+      font-size: 1.55rem;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .dark-mode .modal-detection-name {
+      color: var(--white-cap);
+    }
+
+    .modal-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .modal-section {
+      margin-bottom: 22px;
+    }
+
+    .modal-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .modal-section-title {
+      margin-bottom: 7px;
+      color: var(--mountain-green);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .dark-mode .modal-section-title {
+      color: var(--marigold);
+    }
+
+    .modal-description {
+      margin: 0;
+      line-height: 1.65;
+      color: var(--text-color);
+    }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .modal-field {
+      padding: 13px 14px;
+      background: #f3f6f5;
+      border: 1px solid var(--table-border);
+      border-radius: 8px;
+    }
+
+    .dark-mode .modal-field {
+      background: #3a2026;
+    }
+
+    .modal-field-label {
+      display: block;
+      margin-bottom: 5px;
+      color: #71807b;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .dark-mode .modal-field-label {
+      color: #b9c5c1;
+    }
+
+    .modal-field-value {
+      display: block;
+      font-weight: 500;
+      word-break: break-word;
+    }
+
+    @media (max-width: 700px) {
       .summary-strip {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .modal-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -863,24 +783,16 @@
 
 <body>
 
-  <!-- =========================================================
-       TOP
-       ========================================================= -->
+  <!-- TOP -->
 
   <div class="top-bar">
 
     <div class="logo-section">
-      <img
-        src="cyflare logo.png"
-        alt="Cyflare Logo"
-      >
+      <img src="cyflare logo.png" alt="Cyflare Logo">
     </div>
 
     <div class="center-section">
-
-      <h1>
-        Cyflare Detections Board
-      </h1>
+      <h1>Cyflare Detections Board</h1>
 
       <a
         href="https://cyflare.com/"
@@ -889,7 +801,6 @@
       >
         Visit Cyflare.com
       </a>
-
     </div>
 
     <button
@@ -901,77 +812,33 @@
 
   </div>
 
-  <!-- =========================================================
-       SUMMARY
-       ========================================================= -->
+  <!-- SUMMARY -->
 
   <div class="summary-strip">
 
     <div class="summary-card total">
-
-      <span
-        class="summary-value"
-        id="summaryTotal"
-      >
-        0
-      </span>
-
-      <span class="summary-label">
-        Total Detections
-      </span>
-
+      <span class="summary-value" id="summaryTotal">0</span>
+      <span class="summary-label">Total Detections</span>
     </div>
 
     <div class="summary-card active">
-
-      <span
-        class="summary-value"
-        id="summaryActive"
-      >
-        0
-      </span>
-
-      <span class="summary-label">
-        Active
-      </span>
-
+      <span class="summary-value" id="summaryActive">0</span>
+      <span class="summary-label">Active</span>
     </div>
 
     <div class="summary-card testing">
-
-      <span
-        class="summary-value"
-        id="summaryTesting"
-      >
-        0
-      </span>
-
-      <span class="summary-label">
-        Testing / New
-      </span>
-
+      <span class="summary-value" id="summaryTesting">0</span>
+      <span class="summary-label">Testing / New</span>
     </div>
 
     <div class="summary-card tools">
-
-      <span
-        class="summary-value"
-        id="summaryTools"
-      >
-        0
-      </span>
-
-      <span class="summary-label">
-        Tools
-      </span>
-
+      <span class="summary-value" id="summaryTools">0</span>
+      <span class="summary-label">Tools</span>
     </div>
 
   </div>
 
-  <!-- =========================================================
-       FILTERS
-       ========================================================= -->
+  <!-- FILTERS -->
 
   <div class="filter-bar">
 
@@ -1002,10 +869,7 @@
           class="dropdown-content"
         >
 
-          <label
-            class="status-option active"
-            data-status="Active"
-          >
+          <label class="status-option active">
 
             <input
               type="checkbox"
@@ -1015,26 +879,13 @@
             >
 
             <div class="filter-option-row">
-
-              <span class="filter-option-pill">
-                Active
-              </span>
-
-              <span
-                class="filter-count"
-                data-count-status="Active"
-              >
-                0
-              </span>
-
+              <span class="filter-option-pill">Active</span>
+              <span class="filter-count" data-count-status="Active">0</span>
             </div>
 
           </label>
 
-          <label
-            class="status-option alert-preferences"
-            data-status="Alert Preferences"
-          >
+          <label class="status-option alert-preferences">
 
             <input
               type="checkbox"
@@ -1044,26 +895,13 @@
             >
 
             <div class="filter-option-row">
-
-              <span class="filter-option-pill">
-                Alert Preferences
-              </span>
-
-              <span
-                class="filter-count"
-                data-count-status="Alert Preferences"
-              >
-                0
-              </span>
-
+              <span class="filter-option-pill">Alert Preferences</span>
+              <span class="filter-count" data-count-status="Alert Preferences">0</span>
             </div>
 
           </label>
 
-          <label
-            class="status-option new-detection"
-            data-status="New Detection"
-          >
+          <label class="status-option new-detection">
 
             <input
               type="checkbox"
@@ -1073,26 +911,13 @@
             >
 
             <div class="filter-option-row">
-
-              <span class="filter-option-pill">
-                New Detection
-              </span>
-
-              <span
-                class="filter-count"
-                data-count-status="New Detection"
-              >
-                0
-              </span>
-
+              <span class="filter-option-pill">New Detection</span>
+              <span class="filter-count" data-count-status="New Detection">0</span>
             </div>
 
           </label>
 
-          <label
-            class="status-option testing"
-            data-status="Testing"
-          >
+          <label class="status-option testing">
 
             <input
               type="checkbox"
@@ -1102,26 +927,13 @@
             >
 
             <div class="filter-option-row">
-
-              <span class="filter-option-pill">
-                Testing
-              </span>
-
-              <span
-                class="filter-count"
-                data-count-status="Testing"
-              >
-                0
-              </span>
-
+              <span class="filter-option-pill">Testing</span>
+              <span class="filter-count" data-count-status="Testing">0</span>
             </div>
 
           </label>
 
-          <label
-            class="status-option muted"
-            data-status="Muted"
-          >
+          <label class="status-option muted">
 
             <input
               type="checkbox"
@@ -1131,26 +943,13 @@
             >
 
             <div class="filter-option-row">
-
-              <span class="filter-option-pill">
-                Muted
-              </span>
-
-              <span
-                class="filter-count"
-                data-count-status="Muted"
-              >
-                0
-              </span>
-
+              <span class="filter-option-pill">Muted</span>
+              <span class="filter-count" data-count-status="Muted">0</span>
             </div>
 
           </label>
 
-          <label
-            class="status-option not-active"
-            data-status="Not Active"
-          >
+          <label class="status-option not-active">
 
             <input
               type="checkbox"
@@ -1160,18 +959,8 @@
             >
 
             <div class="filter-option-row">
-
-              <span class="filter-option-pill">
-                Not Active
-              </span>
-
-              <span
-                class="filter-count"
-                data-count-status="Not Active"
-              >
-                0
-              </span>
-
+              <span class="filter-option-pill">Not Active</span>
+              <span class="filter-count" data-count-status="Not Active">0</span>
             </div>
 
           </label>
@@ -1207,18 +996,8 @@
             >
 
             <div class="filter-option-row">
-
-              <span class="filter-option-pill">
-                Stellar Cyber
-              </span>
-
-              <span
-                class="filter-count"
-                data-count-tool="Stellar Cyber"
-              >
-                0
-              </span>
-
+              <span class="filter-option-pill">Stellar Cyber</span>
+              <span class="filter-count" data-count-tool="Stellar Cyber">0</span>
             </div>
 
           </label>
@@ -1233,18 +1012,8 @@
             >
 
             <div class="filter-option-row">
-
-              <span class="filter-option-pill">
-                CrowdStrike
-              </span>
-
-              <span
-                class="filter-count"
-                data-count-tool="CrowdStrike"
-              >
-                0
-              </span>
-
+              <span class="filter-option-pill">CrowdStrike</span>
+              <span class="filter-count" data-count-tool="CrowdStrike">0</span>
             </div>
 
           </label>
@@ -1259,18 +1028,8 @@
             >
 
             <div class="filter-option-row">
-
-              <span class="filter-option-pill">
-                SentinelOne EDR
-              </span>
-
-              <span
-                class="filter-count"
-                data-count-tool="SentinelOne EDR"
-              >
-                0
-              </span>
-
+              <span class="filter-option-pill">SentinelOne EDR</span>
+              <span class="filter-count" data-count-tool="SentinelOne EDR">0</span>
             </div>
 
           </label>
@@ -1285,18 +1044,8 @@
             >
 
             <div class="filter-option-row">
-
-              <span class="filter-option-pill">
-                Cyflare ITDR
-              </span>
-
-              <span
-                class="filter-count"
-                data-count-tool="Cyflare ITDR"
-              >
-                0
-              </span>
-
+              <span class="filter-option-pill">Cyflare ITDR</span>
+              <span class="filter-count" data-count-tool="Cyflare ITDR">0</span>
             </div>
 
           </label>
@@ -1305,7 +1054,7 @@
 
       </div>
 
-      <!-- SELECT COLUMNS -->
+      <!-- COLUMNS -->
 
       <div class="dropdown">
 
@@ -1396,40 +1145,24 @@
     </div>
 
     <div>
-
       <button
         class="export-btn action-btn"
         onclick="exportTableToCSV()"
       >
         Export CSV
       </button>
-
     </div>
 
   </div>
 
-  <!-- =========================================================
-       TABLE
-
-       0 Detection Name
-       1 Description
-       2 Default Status
-       3 Tool
-       4 Connector
-       5 MITRE Tactic
-       6 MITRE Tactic ID
-       7 MITRE Technique
-       8 MITRE Technique ID
-       ========================================================= -->
+  <!-- TABLE -->
 
   <div class="table-container">
 
     <table id="detectionsTable">
 
       <thead>
-
         <tr>
-
           <th onclick="sortTable(0)">Detection Name</th>
           <th onclick="sortTable(1)">Description</th>
           <th onclick="sortTable(2)">Default Status</th>
@@ -1439,14 +1172,140 @@
           <th onclick="sortTable(6)">MITRE Tactic ID</th>
           <th onclick="sortTable(7)">MITRE Technique</th>
           <th onclick="sortTable(8)">MITRE Technique ID</th>
-
         </tr>
-
       </thead>
 
       <tbody></tbody>
 
     </table>
+
+  </div>
+
+  <!-- =========================================================
+       DETECTION DETAILS MODAL
+       ========================================================= -->
+
+  <div
+    id="detectionModalOverlay"
+    class="modal-overlay"
+    onclick="handleModalBackdropClick(event)"
+  >
+
+    <div
+      class="detection-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalDetectionName"
+    >
+
+      <div class="modal-header">
+
+        <span class="modal-header-title">
+          Detection Details
+        </span>
+
+        <button
+          class="modal-close"
+          onclick="closeDetectionModal()"
+          aria-label="Close detection details"
+        >
+          ×
+        </button>
+
+      </div>
+
+      <div class="modal-body">
+
+        <h2
+          class="modal-detection-name"
+          id="modalDetectionName"
+        ></h2>
+
+        <div
+          class="modal-badges"
+          id="modalBadges"
+        ></div>
+
+        <div class="modal-section">
+
+          <div class="modal-section-title">
+            Description
+          </div>
+
+          <p
+            class="modal-description"
+            id="modalDescription"
+          ></p>
+
+        </div>
+
+        <div class="modal-section">
+
+          <div class="modal-section-title">
+            Detection Context
+          </div>
+
+          <div class="modal-grid">
+
+            <div class="modal-field">
+              <span class="modal-field-label">Connector</span>
+              <span class="modal-field-value" id="modalConnector"></span>
+            </div>
+
+            <div class="modal-field">
+              <span class="modal-field-label">Detection ID</span>
+              <span class="modal-field-value" id="modalDetectionID"></span>
+            </div>
+
+            <div class="modal-field">
+              <span class="modal-field-label">Date Added</span>
+              <span class="modal-field-value" id="modalDateAdded"></span>
+            </div>
+
+            <div class="modal-field">
+              <span class="modal-field-label">Kill Chain Stage</span>
+              <span class="modal-field-value" id="modalKillChain"></span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="modal-section">
+
+          <div class="modal-section-title">
+            MITRE ATT&CK
+          </div>
+
+          <div class="modal-grid">
+
+            <div class="modal-field">
+              <span class="modal-field-label">Tactic</span>
+              <span class="modal-field-value" id="modalMitreTactic"></span>
+            </div>
+
+            <div class="modal-field">
+              <span class="modal-field-label">Tactic ID</span>
+              <span class="modal-field-value" id="modalMitreTacticID"></span>
+            </div>
+
+            <div class="modal-field">
+              <span class="modal-field-label">Technique</span>
+              <span class="modal-field-value" id="modalMitreTechnique"></span>
+            </div>
+
+            <div class="modal-field">
+              <span class="modal-field-label">Technique ID</span>
+              <span class="modal-field-value" id="modalMitreTechniqueID"></span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
 
   </div>
 
@@ -1457,28 +1316,30 @@
 
     const sortDirections = {};
 
-    /* =========================================================
+    /* =========================
        MODE
-       ========================================================= */
+       ========================= */
 
     function toggleMode() {
 
-      document.body
-        .classList
-        .toggle('dark-mode');
+      document.body.classList.toggle(
+        'dark-mode'
+      );
 
-      document
-        .querySelector('.mode-toggle')
-        .textContent =
-          document.body.classList.contains('dark-mode')
-            ? '☀️'
-            : '🌙';
+      document.querySelector(
+        '.mode-toggle'
+      ).textContent =
+        document.body.classList.contains(
+          'dark-mode'
+        )
+          ? '☀️'
+          : '🌙';
 
     }
 
-    /* =========================================================
+    /* =========================
        DROPDOWNS
-       ========================================================= */
+       ========================= */
 
     function toggleDropdown(id) {
 
@@ -1494,7 +1355,9 @@
       function(e) {
 
         if (
-          !e.target.closest('.dropdown')
+          !e.target.closest(
+            '.dropdown'
+          )
         ) {
 
           document
@@ -1513,9 +1376,162 @@
       }
     );
 
-    /* =========================================================
+    /* =========================
+       MODAL
+       ========================= */
+
+    function openDetectionModal(det) {
+
+      document.getElementById(
+        'modalDetectionName'
+      ).textContent =
+        det.name || 'Unnamed Detection';
+
+      document.getElementById(
+        'modalDescription'
+      ).textContent =
+        det.description || 'No description available.';
+
+      document.getElementById(
+        'modalConnector'
+      ).textContent =
+        det.connector || 'N/A';
+
+      document.getElementById(
+        'modalDetectionID'
+      ).textContent =
+        det.detectionID || 'N/A';
+
+      document.getElementById(
+        'modalDateAdded'
+      ).textContent =
+        det.dateAdded || 'N/A';
+
+      document.getElementById(
+        'modalKillChain'
+      ).textContent =
+        det.killChainStage || 'N/A';
+
+      document.getElementById(
+        'modalMitreTactic'
+      ).textContent =
+        det.mitreTactic || 'N/A';
+
+      document.getElementById(
+        'modalMitreTacticID'
+      ).textContent =
+        det.mitreTacticID || 'N/A';
+
+      document.getElementById(
+        'modalMitreTechnique'
+      ).textContent =
+        det.mitreTechnique || 'N/A';
+
+      document.getElementById(
+        'modalMitreTechniqueID'
+      ).textContent =
+        det.mitreTechniqueID || 'N/A';
+
+      const statusBadge = `
+        <span
+          class="status-badge"
+          style="
+            background-color: ${getStatusColor(det.defaultStatus)};
+            color: ${getStatusTextColor(det.defaultStatus)};
+          "
+        >
+          ${det.defaultStatus || 'Unknown Status'}
+        </span>
+      `;
+
+      const toolBadge =
+        getToolBadge(det.tool);
+
+      document.getElementById(
+        'modalBadges'
+      ).innerHTML =
+        statusBadge +
+        toolBadge;
+
+      document
+        .getElementById(
+          'detectionModalOverlay'
+        )
+        .classList
+        .add('show');
+
+      document.body.style.overflow =
+        'hidden';
+
+    }
+
+    function closeDetectionModal() {
+
+      document
+        .getElementById(
+          'detectionModalOverlay'
+        )
+        .classList
+        .remove('show');
+
+      document.body.style.overflow =
+        '';
+
+    }
+
+    function handleModalBackdropClick(
+      event
+    ) {
+
+      if (
+        event.target.id ===
+        'detectionModalOverlay'
+      ) {
+
+        closeDetectionModal();
+
+      }
+
+    }
+
+    document.addEventListener(
+      'keydown',
+      function(event) {
+
+        if (
+          event.key === 'Escape'
+        ) {
+
+          closeDetectionModal();
+
+        }
+
+      }
+    );
+
+    /* =========================
+       NEW FILTER
+       ========================= */
+
+    function toggleNewOnlyFilter() {
+
+      newOnlyFilter =
+        !newOnlyFilter;
+
+      document.getElementById(
+        'newFilterBtn'
+      ).textContent =
+        newOnlyFilter
+          ? 'Showing New Only'
+          : 'Show New Only';
+
+      filterTable();
+
+    }
+
+    /* =========================
        COLUMN VISIBILITY
-       ========================================================= */
+       ========================= */
 
     function toggleColumn(
       colIndex,
@@ -1538,7 +1554,9 @@
           : checkbox.checked;
 
       const ths =
-        table.getElementsByTagName('th');
+        table.getElementsByTagName(
+          'th'
+        );
 
       if (
         ths[colIndex]
@@ -1552,7 +1570,9 @@
       }
 
       const rows =
-        table.getElementsByTagName('tr');
+        table.getElementsByTagName(
+          'tr'
+        );
 
       for (
         let i = 1;
@@ -1562,16 +1582,20 @@
 
         const cells =
           rows[i]
-            .getElementsByTagName('td');
+            .getElementsByTagName(
+              'td'
+            );
 
         if (
           cells[colIndex]
         ) {
 
-          cells[colIndex].style.display =
-            show
-              ? ''
-              : 'none';
+          cells[colIndex]
+            .style
+            .display =
+              show
+                ? ''
+                : 'none';
 
         }
 
@@ -1579,29 +1603,9 @@
 
     }
 
-    /* =========================================================
-       NEW FILTER
-       ========================================================= */
-
-    function toggleNewOnlyFilter() {
-
-      newOnlyFilter =
-        !newOnlyFilter;
-
-      document
-        .getElementById('newFilterBtn')
-        .textContent =
-          newOnlyFilter
-            ? 'Showing New Only'
-            : 'Show New Only';
-
-      filterTable();
-
-    }
-
-    /* =========================================================
+    /* =========================
        MITRE
-       ========================================================= */
+       ========================= */
 
     function toggleMitreColumns() {
 
@@ -1632,24 +1636,24 @@
         }
       );
 
-      document
-        .getElementById('toggleMitreBtn')
-        .textContent =
-          mitreVisible
-            ? 'Hide MITRE Columns'
-            : 'Show MITRE Columns';
+      document.getElementById(
+        'toggleMitreBtn'
+      ).textContent =
+        mitreVisible
+          ? 'Hide MITRE Columns'
+          : 'Show MITRE Columns';
 
     }
 
-    /* =========================================================
+    /* =========================
        RESET
-       ========================================================= */
+       ========================= */
 
     function resetFilters() {
 
-      document
-        .getElementById('search')
-        .value = '';
+      document.getElementById(
+        'search'
+      ).value = '';
 
       document
         .querySelectorAll(
@@ -1692,23 +1696,23 @@
       mitreVisible =
         true;
 
-      document
-        .getElementById('newFilterBtn')
-        .textContent =
-          'Show New Only';
+      document.getElementById(
+        'newFilterBtn'
+      ).textContent =
+        'Show New Only';
 
-      document
-        .getElementById('toggleMitreBtn')
-        .textContent =
-          'Hide MITRE Columns';
+      document.getElementById(
+        'toggleMitreBtn'
+      ).textContent =
+        'Hide MITRE Columns';
 
       filterTable();
 
     }
 
-    /* =========================================================
-       SEARCH MATCH HELPER
-       ========================================================= */
+    /* =========================
+       HELPERS
+       ========================= */
 
     function rowMatchesSearch(
       cells,
@@ -1730,14 +1734,12 @@
             cell
               .textContent
               .toLowerCase()
-              .includes(searchValue)
+              .includes(
+                searchValue
+              )
         );
 
     }
-
-    /* =========================================================
-       NEW MATCH HELPER
-       ========================================================= */
 
     function rowMatchesNewFilter(
       cells
@@ -1754,22 +1756,120 @@
       return (
         cells[1]
           .innerHTML
-          .indexOf('new-badge') !== -1
+          .indexOf(
+            'new-badge'
+          ) !== -1
       );
 
     }
 
-    /* =========================================================
-       UPDATE FACET COUNTS
+    /* =========================
+       FILTER BUTTON STATES
+       ========================= */
 
-       Status counts:
-       search + tool + new
-       but IGNORE status selection.
+    function updateFilterButtonStates() {
 
-       Tool counts:
-       search + status + new
-       but IGNORE tool selection.
-       ========================================================= */
+      const statusCheckboxes =
+        document.querySelectorAll(
+          '#statusDropdown input[type="checkbox"]'
+        );
+
+      const selectedStatuses =
+        Array
+          .from(
+            statusCheckboxes
+          )
+          .filter(
+            cb =>
+              cb.checked
+          );
+
+      const statusButton =
+        document.getElementById(
+          'statusFilterBtn'
+        );
+
+      if (
+        selectedStatuses.length ===
+        statusCheckboxes.length
+      ) {
+
+        statusButton.textContent =
+          'Default Status';
+
+        statusButton.classList.remove(
+          'filter-active'
+        );
+
+      } else {
+
+        statusButton.textContent =
+          `Default Status (${selectedStatuses.length}/${statusCheckboxes.length})`;
+
+        statusButton.classList.add(
+          'filter-active'
+        );
+
+      }
+
+      const toolCheckboxes =
+        document.querySelectorAll(
+          '#toolDropdown input[type="checkbox"]'
+        );
+
+      const selectedTools =
+        Array
+          .from(
+            toolCheckboxes
+          )
+          .filter(
+            cb =>
+              cb.checked
+          );
+
+      const toolButton =
+        document.getElementById(
+          'toolFilterBtn'
+        );
+
+      if (
+        selectedTools.length ===
+        toolCheckboxes.length
+      ) {
+
+        toolButton.textContent =
+          'Tool';
+
+        toolButton.classList.remove(
+          'filter-active'
+        );
+
+      } else {
+
+        toolButton.textContent =
+          `Tool (${selectedTools.length}/${toolCheckboxes.length})`;
+
+        toolButton.classList.add(
+          'filter-active'
+        );
+
+      }
+
+      document
+        .getElementById(
+          'newFilterBtn'
+        )
+        .classList
+        .toggle(
+          'filter-active',
+          newOnlyFilter
+        );
+
+    }
+
+    /* =========================
+       DROPDOWN COUNTS
+       ========================= */
 
     function updateDropdownCounts() {
 
@@ -1780,7 +1880,9 @@
 
       const searchValue =
         document
-          .getElementById('search')
+          .getElementById(
+            'search'
+          )
           .value
           .trim()
           .toLowerCase();
@@ -1817,25 +1919,16 @@
               cb.value
           );
 
-      const statusCounts =
-        {};
-
-      const toolCounts =
-        {};
+      const statusCounts = {};
+      const toolCounts = {};
 
       rows.forEach(
         row => {
 
           const cells =
-            row.querySelectorAll('td');
-
-          if (
-            cells.length < 9
-          ) {
-
-            return;
-
-          }
+            row.querySelectorAll(
+              'td'
+            );
 
           const status =
             cells[2]
@@ -1858,20 +1951,12 @@
               cells
             );
 
-          /*
-            STATUS COUNT
-
-            Ignore status selections,
-            but respect Tool filter.
-          */
-
-          const matchesToolForStatus =
-            checkedTools.includes(tool);
-
           if (
             matchesSearch &&
             matchesNew &&
-            matchesToolForStatus
+            checkedTools.includes(
+              tool
+            )
           ) {
 
             statusCounts[
@@ -1885,22 +1970,12 @@
 
           }
 
-          /*
-            TOOL COUNT
-
-            Ignore Tool selections,
-            but respect Status filter.
-          */
-
-          const matchesStatusForTool =
-            checkedStatuses.includes(
-              status
-            );
-
           if (
             matchesSearch &&
             matchesNew &&
-            matchesStatusForTool
+            checkedStatuses.includes(
+              status
+            )
           ) {
 
             toolCounts[
@@ -1924,15 +1999,13 @@
         .forEach(
           element => {
 
-            const status =
+            const key =
               element.getAttribute(
                 'data-count-status'
               );
 
             element.textContent =
-              statusCounts[
-                status
-              ] || 0;
+              statusCounts[key] || 0;
 
           }
         );
@@ -1944,144 +2017,41 @@
         .forEach(
           element => {
 
-            const tool =
+            const key =
               element.getAttribute(
                 'data-count-tool'
               );
 
             element.textContent =
-              toolCounts[
-                tool
-              ] || 0;
+              toolCounts[key] || 0;
 
           }
         );
 
     }
 
-    /* =========================================================
-       FILTER BUTTON STATES
-       ========================================================= */
-
-    function updateFilterButtonStates() {
-
-      const statusCheckboxes =
-        document.querySelectorAll(
-          '#statusDropdown input[type="checkbox"]'
-        );
-
-      const checkedStatuses =
-        Array
-          .from(statusCheckboxes)
-          .filter(
-            cb =>
-              cb.checked
-          );
-
-      const statusButton =
-        document.getElementById(
-          'statusFilterBtn'
-        );
-
-      if (
-        checkedStatuses.length ===
-        statusCheckboxes.length
-      ) {
-
-        statusButton.textContent =
-          'Default Status';
-
-        statusButton
-          .classList
-          .remove('filter-active');
-
-      } else {
-
-        statusButton.textContent =
-          `Default Status (${checkedStatuses.length}/${statusCheckboxes.length})`;
-
-        statusButton
-          .classList
-          .add('filter-active');
-
-      }
-
-      const toolCheckboxes =
-        document.querySelectorAll(
-          '#toolDropdown input[type="checkbox"]'
-        );
-
-      const checkedTools =
-        Array
-          .from(toolCheckboxes)
-          .filter(
-            cb =>
-              cb.checked
-          );
-
-      const toolButton =
-        document.getElementById(
-          'toolFilterBtn'
-        );
-
-      if (
-        checkedTools.length ===
-        toolCheckboxes.length
-      ) {
-
-        toolButton.textContent =
-          'Tool';
-
-        toolButton
-          .classList
-          .remove('filter-active');
-
-      } else {
-
-        toolButton.textContent =
-          `Tool (${checkedTools.length}/${toolCheckboxes.length})`;
-
-        toolButton
-          .classList
-          .add('filter-active');
-
-      }
-
-      const newButton =
-        document.getElementById(
-          'newFilterBtn'
-        );
-
-      newButton
-        .classList
-        .toggle(
-          'filter-active',
-          newOnlyFilter
-        );
-
-    }
-
-    /* =========================================================
+    /* =========================
        FILTER TABLE
-       ========================================================= */
+       ========================= */
 
     function filterTable() {
 
       const searchValue =
         document
-          .getElementById('search')
+          .getElementById(
+            'search'
+          )
           .value
           .trim()
           .toLowerCase();
 
-      const statusCheckboxes =
-        document.querySelectorAll(
-          '#statusDropdown input[type="checkbox"]'
-        );
-
       const checkedStatuses =
         Array
-          .from(statusCheckboxes)
+          .from(
+            document.querySelectorAll(
+              '#statusDropdown input[type="checkbox"]'
+            )
+          )
           .filter(
             cb =>
               cb.checked
@@ -2090,15 +2060,14 @@
             cb =>
               cb.value
           );
-
-      const toolCheckboxes =
-        document.querySelectorAll(
-          '#toolDropdown input[type="checkbox"]'
-        );
 
       const checkedTools =
         Array
-          .from(toolCheckboxes)
+          .from(
+            document.querySelectorAll(
+              '#toolDropdown input[type="checkbox"]'
+            )
+          )
           .filter(
             cb =>
               cb.checked
@@ -2108,79 +2077,62 @@
               cb.value
           );
 
-      const rows =
-        document.querySelectorAll(
+      document
+        .querySelectorAll(
           '#detectionsTable tbody tr'
+        )
+        .forEach(
+          row => {
+
+            const cells =
+              row.querySelectorAll(
+                'td'
+              );
+
+            const status =
+              cells[2]
+                .textContent
+                .trim();
+
+            const tool =
+              cells[3]
+                .textContent
+                .trim();
+
+            const show =
+              rowMatchesSearch(
+                cells,
+                searchValue
+              ) &&
+              checkedStatuses.includes(
+                status
+              ) &&
+              checkedTools.includes(
+                tool
+              ) &&
+              rowMatchesNewFilter(
+                cells
+              );
+
+            row.style.display =
+              show
+                ? ''
+                : 'none';
+
+          }
         );
 
-      rows.forEach(
-        row => {
-
-          const cells =
-            row.querySelectorAll('td');
-
-          const status =
-            cells[2]
-              .textContent
-              .trim();
-
-          const tool =
-            cells[3]
-              .textContent
-              .trim();
-
-          const matchesSearch =
-            rowMatchesSearch(
-              cells,
-              searchValue
-            );
-
-          const matchesStatus =
-            checkedStatuses.includes(
-              status
-            );
-
-          const matchesTool =
-            checkedTools.includes(
-              tool
-            );
-
-          const matchesNew =
-            rowMatchesNewFilter(
-              cells
-            );
-
-          row.style.display =
-            (
-              matchesSearch &&
-              matchesStatus &&
-              matchesTool &&
-              matchesNew
-            )
-              ? ''
-              : 'none';
-
-        }
-      );
-
       updateFilterButtonStates();
-
       updateDropdownCounts();
-
       updateSummaryMetrics();
 
     }
 
-    /* =========================================================
+    /* =========================
        SUMMARY
-       ========================================================= */
+       ========================= */
 
     function updateSummaryMetrics() {
-
-      const rows =
-        document.querySelectorAll(
-          '#detectionsTable tbody tr'
-        );
 
       let total = 0;
       let active = 0;
@@ -2189,90 +2141,98 @@
       const tools =
         new Set();
 
-      rows.forEach(
-        row => {
+      document
+        .querySelectorAll(
+          '#detectionsTable tbody tr'
+        )
+        .forEach(
+          row => {
 
-          if (
-            row.style.display ===
-            'none'
-          ) {
+            if (
+              row.style.display ===
+              'none'
+            ) {
 
-            return;
+              return;
+
+            }
+
+            const cells =
+              row.querySelectorAll(
+                'td'
+              );
+
+            total++;
+
+            const status =
+              cells[2]
+                .textContent
+                .trim();
+
+            const tool =
+              cells[3]
+                .textContent
+                .trim();
+
+            if (
+              status === 'Active'
+            ) {
+
+              active++;
+
+            }
+
+            if (
+              status === 'Testing' ||
+              status === 'New Detection'
+            ) {
+
+              testingNew++;
+
+            }
+
+            if (
+              tool
+            ) {
+
+              tools.add(tool);
+
+            }
 
           }
+        );
 
-          const cells =
-            row.querySelectorAll('td');
+      document.getElementById(
+        'summaryTotal'
+      ).textContent =
+        total;
 
-          total++;
+      document.getElementById(
+        'summaryActive'
+      ).textContent =
+        active;
 
-          const status =
-            cells[2]
-              .textContent
-              .trim();
+      document.getElementById(
+        'summaryTesting'
+      ).textContent =
+        testingNew;
 
-          const tool =
-            cells[3]
-              .textContent
-              .trim();
-
-          if (
-            status === 'Active'
-          ) {
-
-            active++;
-
-          }
-
-          if (
-            status === 'Testing' ||
-            status === 'New Detection'
-          ) {
-
-            testingNew++;
-
-          }
-
-          if (
-            tool
-          ) {
-
-            tools.add(tool);
-
-          }
-
-        }
-      );
-
-      document
-        .getElementById('summaryTotal')
-        .textContent =
-          total;
-
-      document
-        .getElementById('summaryActive')
-        .textContent =
-          active;
-
-      document
-        .getElementById('summaryTesting')
-        .textContent =
-          testingNew;
-
-      document
-        .getElementById('summaryTools')
-        .textContent =
-          tools.size;
+      document.getElementById(
+        'summaryTools'
+      ).textContent =
+        tools.size;
 
     }
 
-    /* =========================================================
+    /* =========================
        TOOL BADGES
-       ========================================================= */
+       ========================= */
 
     function getToolClass(tool) {
 
-      switch (tool) {
+      switch (
+        tool
+      ) {
 
         case 'Stellar Cyber':
           return 'stellar';
@@ -2304,20 +2264,24 @@
       }
 
       return `
-        <span class="table-tool-badge ${getToolClass(tool)}">
+        <span
+          class="table-tool-badge ${getToolClass(tool)}"
+        >
           ${tool}
         </span>
       `;
 
     }
 
-    /* =========================================================
+    /* =========================
        STATUS
-       ========================================================= */
+       ========================= */
 
     function getStatusColor(status) {
 
-      switch (status) {
+      switch (
+        status
+      ) {
 
         case 'Active':
           return '#435f57';
@@ -2347,7 +2311,9 @@
 
     function getStatusTextColor(status) {
 
-      switch (status) {
+      switch (
+        status
+      ) {
 
         case 'Testing':
         case 'Muted':
@@ -2362,7 +2328,9 @@
 
     function getStatusDescription(status) {
 
-      switch (status) {
+      switch (
+        status
+      ) {
 
         case 'Active':
           return 'This detection is actively monitored and alerts are generated.';
@@ -2386,9 +2354,9 @@
 
     }
 
-    /* =========================================================
+    /* =========================
        DATE
-       ========================================================= */
+       ========================= */
 
     function parseDate(str) {
 
@@ -2414,7 +2382,9 @@
     function isRecent(dateStr) {
 
       const dt =
-        parseDate(dateStr);
+        parseDate(
+          dateStr
+        );
 
       if (
         !dt
@@ -2441,23 +2411,22 @@
 
     }
 
-    /* =========================================================
+    /* =========================
        SORT
-       ========================================================= */
+       ========================= */
 
     function sortTable(columnIndex) {
 
-      const table =
-        document.getElementById(
-          'detectionsTable'
-        );
-
       const tbody =
-        table.querySelector('tbody');
+        document.querySelector(
+          '#detectionsTable tbody'
+        );
 
       const rows =
         Array.from(
-          tbody.querySelectorAll('tr')
+          tbody.querySelectorAll(
+            'tr'
+          )
         );
 
       sortDirections[
@@ -2507,27 +2476,25 @@
 
       rows.forEach(
         row =>
-          tbody.appendChild(row)
+          tbody.appendChild(
+            row
+          )
       );
 
     }
 
-    /* =========================================================
+    /* =========================
        CSV
-       ========================================================= */
+       ========================= */
 
     function exportTableToCSV() {
 
-      const table =
-        document.getElementById(
-          'detectionsTable'
-        );
+      const csv = [];
 
-      const csv =
-        [];
-
-      table
-        .querySelectorAll('tr')
+      document
+        .querySelectorAll(
+          '#detectionsTable tr'
+        )
         .forEach(
           row => {
 
@@ -2540,8 +2507,7 @@
 
             }
 
-            const rowData =
-              [];
+            const rowData = [];
 
             row
               .querySelectorAll(
@@ -2597,7 +2563,9 @@
         );
 
       const link =
-        document.createElement('a');
+        document.createElement(
+          'a'
+        );
 
       link.href =
         url;
@@ -2619,9 +2587,9 @@
 
     }
 
-    /* =========================================================
-       LOAD
-       ========================================================= */
+    /* =========================
+       LOAD DATA
+       ========================= */
 
     function loadData() {
 
@@ -2677,6 +2645,9 @@
                     'tr'
                   );
 
+                row.title =
+                  'Click to view detection details';
+
                 row.innerHTML = `
 
                   <td>
@@ -2725,6 +2696,22 @@
                   </td>
 
                 `;
+
+                /*
+                  THIS IS WHAT MAKES
+                  THE ROW CLICKABLE.
+                */
+
+                row.addEventListener(
+                  'click',
+                  function() {
+
+                    openDetectionModal(
+                      det
+                    );
+
+                  }
+                );
 
                 tbody.appendChild(
                   row
