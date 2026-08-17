@@ -15,10 +15,7 @@
     :root {
       --dropdown-width: 270px;
 
-      /* =======================================================
-         CYFLARE BRAND
-         ======================================================= */
-
+      /* CYFLARE BRAND */
       --mountain-green: #435f57;
       --white-cap: #fafafa;
       --vivid-blue: #066cf4;
@@ -26,23 +23,16 @@
       --slate-purple: #8282d2;
       --crimson: #220c10;
 
-      /* =======================================================
-         TOOL COLORS
-         ======================================================= */
-
+      /* TOOL COLORS */
       --stellar-color: #f58220;
       --crowdstrike-color: #d12127;
       --sentinelone-color: #6f3ff5;
       --cyflare-itdr-color: #066cf4;
       --cyflare-itdr-dark: #435f57;
 
-      /* =======================================================
-         LIGHT MODE
-         ======================================================= */
-
+      /* LIGHT MODE */
       --bg-color: var(--white-cap);
       --text-color: var(--crimson);
-
       --card-bg: #ffffff;
 
       --table-border: #e4e9e7;
@@ -63,14 +53,9 @@
       --connector-text: #435f57;
     }
 
-    /* =========================================================
-       DARK MODE
-       ========================================================= */
-
     .dark-mode {
       --bg-color: var(--crimson);
       --text-color: #f1f4f3;
-
       --card-bg: #30171c;
 
       --table-border: #523b41;
@@ -91,23 +76,16 @@
       --connector-text: #e7eeeb;
     }
 
-    /* =========================================================
-       GLOBAL
-       ========================================================= */
-
     * {
       box-sizing: border-box;
     }
 
     body {
       margin: 0;
-
       background-color: var(--bg-color);
       color: var(--text-color);
-
       font-family: 'Inter', sans-serif;
       font-weight: 400;
-
       text-align: center;
 
       transition:
@@ -126,36 +104,28 @@
 
     .logo-section {
       position: absolute;
-
       left: 20px;
       top: 50%;
-
       transform: translateY(-50%);
     }
 
     .logo-section img {
       max-width: 250px;
       height: auto;
-
       display: block;
     }
 
     .center-section {
       position: absolute;
-
       left: 50%;
       top: 50%;
-
       transform: translate(-50%, -50%);
-
       text-align: center;
     }
 
     .center-section h1 {
       margin: 0;
-
       color: var(--mountain-green);
-
       font-size: 2rem;
       font-weight: 600;
     }
@@ -166,23 +136,17 @@
 
     .site-link {
       display: block;
-
       margin-top: 4px;
-
       color: var(--link-color);
-
       text-decoration: none;
-
       font-size: 0.9rem;
       font-weight: 600;
     }
 
     .mode-toggle {
       position: absolute;
-
       right: 20px;
       top: 50%;
-
       transform: translateY(-50%);
 
       padding: 8px 16px;
@@ -197,37 +161,23 @@
 
       font-family: 'Inter', sans-serif;
       font-size: 14px;
-
-      transition:
-        background-color 0.2s,
-        transform 0.2s;
-    }
-
-    .mode-toggle:hover {
-      transform:
-        translateY(-50%)
-        translateY(-2px);
     }
 
     /* =========================================================
-       SUMMARY
+       SUMMARY CARDS
        ========================================================= */
 
     .summary-strip {
       max-width: 95%;
-
       margin: 0 auto 14px auto;
 
       display: grid;
-
       grid-template-columns: repeat(4, 1fr);
-
       gap: 12px;
     }
 
     .summary-card {
       position: relative;
-
       overflow: hidden;
 
       padding: 15px 18px;
@@ -237,39 +187,27 @@
       border: 1px solid var(--table-border);
       border-radius: 10px;
 
-      box-shadow:
-        0 2px 6px
-        rgba(0,0,0,0.07);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.07);
 
       text-align: left;
-
       cursor: pointer;
 
       transition:
         transform 0.18s,
-        box-shadow 0.18s,
-        border-color 0.18s;
+        box-shadow 0.18s;
     }
 
     .summary-card:hover {
       transform: translateY(-2px);
-
-      border-color: #ccd6d2;
-
-      box-shadow:
-        0 5px 14px
-        rgba(0,0,0,0.11);
+      box-shadow: 0 5px 14px rgba(0,0,0,0.11);
     }
 
     .summary-card::before {
       content: "";
-
       position: absolute;
-
       left: 0;
       top: 0;
       bottom: 0;
-
       width: 5px;
     }
 
@@ -291,14 +229,12 @@
 
     .summary-value {
       display: block;
-
       margin-bottom: 6px;
 
       color: var(--mountain-green);
 
       font-size: 1.8rem;
       font-weight: 700;
-
       line-height: 1;
     }
 
@@ -308,28 +244,18 @@
 
     .summary-label {
       display: block;
-
       font-size: 0.7rem;
       font-weight: 700;
-
       text-transform: uppercase;
-
       letter-spacing: 0.7px;
     }
 
     .summary-action {
       display: block;
-
       margin-top: 7px;
-
       color: #87928e;
-
       font-size: 0.67rem;
       font-weight: 500;
-    }
-
-    .dark-mode .summary-action {
-      color: #aeb9b5;
     }
 
     /* =========================================================
@@ -338,9 +264,7 @@
 
     .filter-bar {
       max-width: 95%;
-
-      margin: 0 auto 18px auto;
-
+      margin: 0 auto 12px auto;
       padding: 18px;
 
       display: flex;
@@ -352,26 +276,20 @@
       background: var(--card-bg);
 
       border: 1px solid var(--table-border);
-
       border-radius: 10px;
 
-      box-shadow:
-        0 2px 7px
-        rgba(0,0,0,0.07);
+      box-shadow: 0 2px 7px rgba(0,0,0,0.07);
     }
 
     .filters-left {
       display: flex;
       flex-wrap: wrap;
-
       gap: 9px;
-
       align-items: center;
     }
 
     .search-box {
       width: 300px;
-
       padding: 9px 11px;
 
       background: var(--input-bg);
@@ -382,16 +300,6 @@
 
       font-family: 'Inter', sans-serif;
       font-size: 13px;
-    }
-
-    .search-box:focus {
-      outline: none;
-
-      border-color: var(--vivid-blue);
-
-      box-shadow:
-        0 0 0 2px
-        rgba(6,108,244,0.10);
     }
 
     .filter-btn,
@@ -409,22 +317,12 @@
       font-family: 'Inter', sans-serif;
       font-size: 13px;
       font-weight: 500;
-
-      transition:
-        transform 0.16s,
-        background-color 0.16s;
-    }
-
-    .filter-btn:hover,
-    .action-btn:hover {
-      transform: translateY(-1px);
     }
 
     .filter-btn.filter-active,
     .action-btn.filter-active {
       background: var(--marigold);
       color: var(--crimson);
-
       font-weight: 600;
     }
 
@@ -442,7 +340,6 @@
 
     .dropdown {
       position: relative;
-
       display: inline-block;
     }
 
@@ -461,9 +358,7 @@
       border: 1px solid var(--table-border);
       border-radius: 9px;
 
-      box-shadow:
-        0 10px 25px
-        rgba(0,0,0,0.18);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.18);
 
       text-align: left;
 
@@ -476,9 +371,7 @@
 
     .dropdown-content label {
       display: flex;
-
       align-items: center;
-
       gap: 8px;
 
       padding: 6px 5px;
@@ -496,14 +389,12 @@
       flex: 1;
 
       display: flex;
-
       align-items: center;
       justify-content: space-between;
     }
 
     .filter-option-pill {
       display: inline-flex;
-
       align-items: center;
 
       padding: 4px 9px;
@@ -520,7 +411,6 @@
       min-width: 30px;
 
       margin-left: 8px;
-
       padding: 3px 7px;
 
       background: #edf1f0;
@@ -540,7 +430,7 @@
     }
 
     /* =========================================================
-       STATUS DROPDOWN COLORS
+       STATUS COLORS
        ========================================================= */
 
     .status-option.active input {
@@ -594,17 +484,9 @@
        TOOL COLORS
        ========================================================= */
 
-    .tool-option.stellar input {
-      accent-color: var(--stellar-color);
-    }
-
     .tool-option.stellar .filter-option-pill {
       background: var(--stellar-color);
       color: #ffffff;
-    }
-
-    .tool-option.crowdstrike input {
-      accent-color: var(--crowdstrike-color);
     }
 
     .tool-option.crowdstrike .filter-option-pill {
@@ -612,59 +494,19 @@
       color: #ffffff;
     }
 
-    .tool-option.sentinelone input {
-      accent-color: var(--sentinelone-color);
-    }
-
     .tool-option.sentinelone .filter-option-pill {
       background: var(--sentinelone-color);
       color: #ffffff;
     }
 
-    .tool-option.cyflare-itdr input {
-      accent-color: var(--cyflare-itdr-color);
-    }
-
     .tool-option.cyflare-itdr .filter-option-pill {
-      background:
-        linear-gradient(
-          135deg,
-          var(--cyflare-itdr-dark),
-          var(--cyflare-itdr-color)
-        );
+      background: linear-gradient(
+        135deg,
+        var(--cyflare-itdr-dark),
+        var(--cyflare-itdr-color)
+      );
 
       color: #ffffff;
-    }
-
-    /* =========================================================
-       SELECT COLUMNS
-       ========================================================= */
-
-    .column-option.primary .filter-option-pill {
-      background: var(--mountain-green);
-      color: #ffffff;
-    }
-
-    .column-option.status .filter-option-pill {
-      background: var(--vivid-blue);
-      color: #ffffff;
-    }
-
-    .column-option.tool .filter-option-pill {
-      background: var(--slate-purple);
-      color: #ffffff;
-    }
-
-    .column-option.connector .filter-option-pill {
-      background: #4c87c8;
-      color: #ffffff;
-    }
-
-    .column-option.mitre .filter-option-pill {
-      background: #f1d7a9;
-      color: var(--crimson);
-
-      border: 1px solid var(--marigold);
     }
 
     /* =========================================================
@@ -673,11 +515,9 @@
 
     .table-meta-bar {
       max-width: 98%;
-
       margin: 0 auto 7px auto;
 
       display: flex;
-
       justify-content: flex-end;
       align-items: center;
 
@@ -698,38 +538,58 @@
       border-radius: 50%;
     }
 
-    .dark-mode .table-meta-bar {
-      color: #b9c3bf;
+    /* =========================================================
+       TABLE CONTAINER
+       THIS CREATES THE SCROLLING AREA
+       ========================================================= */
+
+    .table-container {
+      position: relative;
+
+      max-width: 98%;
+
+      /*
+       * IMPORTANT:
+       * This gives the table its own vertical scrolling area.
+       * The header will remain frozen inside this container.
+       */
+      max-height: 85vh;
+
+      margin: 0 auto 20px auto;
+
+      overflow-x: auto;
+      overflow-y: auto;
+
+      background: var(--card-bg);
+
+      border: 1px solid var(--table-border);
+      border-radius: 12px;
+
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+
+      /*
+       * Allows sticky header to establish the correct
+       * stacking context.
+       */
+      isolation: isolate;
     }
 
     /* =========================================================
        TABLE
        ========================================================= */
 
-    .table-container {
-      max-width: 98%;
-      max-height: 85vh;
-
-      margin: 0 auto 20px auto;
-
-      overflow: auto;
-
-      background: var(--card-bg);
-
-      border: 1px solid var(--table-border);
-
-      border-radius: 12px;
-
-      box-shadow:
-        0 4px 14px
-        rgba(0,0,0,0.08);
-    }
-
-    table {
+    #detectionsTable {
       width: 100%;
 
+      /*
+       * IMPORTANT:
+       * Sticky TH elements are more reliable with
+       * border-collapse: separate.
+       */
       border-collapse: separate;
       border-spacing: 0;
+
+      background: var(--card-bg);
     }
 
     th,
@@ -738,21 +598,35 @@
     }
 
     /* =========================================================
-       PREMIUM TABLE HEADER
+       FROZEN TABLE HEADER
        ========================================================= */
 
-    thead th {
-      position: sticky;
+    #detectionsTable thead {
+      position: relative;
+      z-index: 30;
+    }
 
+    #detectionsTable thead th {
+      /*
+       * THIS IS WHAT FREEZES EACH COLUMN TITLE.
+       */
+      position: sticky;
       top: 0;
 
-      z-index: 2;
+      /*
+       * Keeps table rows/badges underneath the header.
+       */
+      z-index: 30;
 
       padding-top: 15px;
       padding-bottom: 15px;
 
-      background: var(--header-bg);
-      color: var(--header-text);
+      /*
+       * Must remain fully opaque or table rows can
+       * visually appear behind the header.
+       */
+      background-color: var(--mountain-green);
+      color: var(--white-cap);
 
       border: none;
 
@@ -767,24 +641,27 @@
 
       white-space: nowrap;
 
+      /*
+       * Slight shadow makes the frozen header visually
+       * separate from the detections scrolling below it.
+       */
       box-shadow:
-        inset 0 -1px 0
-        rgba(255,255,255,0.12);
+        inset 0 -1px 0 rgba(255,255,255,0.14),
+        0 3px 5px rgba(0,0,0,0.16);
     }
 
-    thead {
-      filter:
-        drop-shadow(
-          0 2px 3px
-          rgba(0,0,0,0.10)
-        );
+    /*
+     * Explicit dark-mode background ensures the header
+     * never becomes transparent when scrolling.
+     */
+    .dark-mode #detectionsTable thead th {
+      background-color: var(--mountain-green);
+      color: var(--white-cap);
     }
 
     .header-content {
       display: inline-flex;
-
       align-items: center;
-
       gap: 5px;
     }
 
@@ -797,8 +674,6 @@
 
       font-size: 0.8rem;
       font-weight: 700;
-
-      transition: color 0.15s;
     }
 
     th.sort-active .sort-indicator {
@@ -806,7 +681,7 @@
     }
 
     /* =========================================================
-       MODERN ROWS
+       TABLE ROWS
        ========================================================= */
 
     tbody tr {
@@ -826,18 +701,13 @@
     }
 
     tbody td {
-      border-bottom:
-        1px solid
-        var(--table-border-soft);
-
+      border-bottom: 1px solid var(--table-border-soft);
       color: var(--text-color);
     }
 
     tbody tr:last-child td {
       border-bottom: none;
     }
-
-    /* Blue interaction accent */
 
     tbody tr:hover {
       background: var(--row-hover-bg);
@@ -864,7 +734,7 @@
     }
 
     /* =========================================================
-       DETECTION NAME / DESCRIPTION HIERARCHY
+       DETECTION TEXT
        ========================================================= */
 
     .detection-name {
@@ -894,7 +764,7 @@
     }
 
     /* =========================================================
-       ALIGNMENT
+       COLUMN ALIGNMENT
        ========================================================= */
 
     #detectionsTable th:nth-child(1),
@@ -910,7 +780,7 @@
     }
 
     /* =========================================================
-       REFINED BADGES
+       BADGES
        ========================================================= */
 
     .status-badge {
@@ -946,9 +816,7 @@
       color: #ffffff !important;
 
       font-size: 0.72rem;
-      font-weight: 650;
-
-      line-height: 1.15;
+      font-weight: 600;
 
       white-space: nowrap;
     }
@@ -966,21 +834,16 @@
     }
 
     .table-tool-badge.cyflare-itdr {
-      background:
-        linear-gradient(
-          135deg,
-          var(--cyflare-itdr-dark),
-          var(--cyflare-itdr-color)
-        );
+      background: linear-gradient(
+        135deg,
+        var(--cyflare-itdr-dark),
+        var(--cyflare-itdr-color)
+      );
     }
 
     .table-tool-badge.other {
       background: var(--mountain-green);
     }
-
-    /* =========================================================
-       CONNECTOR BADGE
-       ========================================================= */
 
     .connector-badge {
       display: inline-flex;
@@ -996,20 +859,11 @@
       color: var(--connector-text);
 
       border: 1px solid var(--table-border);
-
       border-radius: 8px;
 
       font-size: 0.71rem;
-      font-weight: 550;
-
-      line-height: 1.2;
-
-      white-space: normal;
+      font-weight: 500;
     }
-
-    /* =========================================================
-       NEW BADGE
-       ========================================================= */
 
     .new-badge {
       display: inline-block;
@@ -1035,13 +889,11 @@
       display: none;
 
       position: fixed;
-
       inset: 0;
 
       padding: 24px;
 
-      background:
-        rgba(15,20,19,0.64);
+      background: rgba(15,20,19,0.64);
 
       backdrop-filter: blur(4px);
 
@@ -1066,37 +918,13 @@
 
       border-radius: 14px;
 
-      box-shadow:
-        0 20px 55px
-        rgba(0,0,0,0.36);
+      box-shadow: 0 20px 55px rgba(0,0,0,0.36);
 
       text-align: left;
-
-      animation:
-        modalIn
-        0.18s
-        ease-out;
-    }
-
-    @keyframes modalIn {
-      from {
-        opacity: 0;
-        transform:
-          translateY(8px)
-          scale(0.99);
-      }
-
-      to {
-        opacity: 1;
-        transform:
-          translateY(0)
-          scale(1);
-      }
     }
 
     .modal-header {
       position: sticky;
-
       top: 0;
 
       z-index: 2;
@@ -1111,19 +939,13 @@
       background: var(--mountain-green);
       color: var(--white-cap);
 
-      border-radius:
-        14px
-        14px
-        0
-        0;
+      border-radius: 14px 14px 0 0;
     }
 
     .modal-header-title {
       font-size: 0.76rem;
       font-weight: 700;
-
       text-transform: uppercase;
-
       letter-spacing: 0.9px;
     }
 
@@ -1136,9 +958,7 @@
       align-items: center;
       justify-content: center;
 
-      background:
-        rgba(255,255,255,0.12);
-
+      background: rgba(255,255,255,0.12);
       color: #ffffff;
 
       border: none;
@@ -1154,15 +974,12 @@
     }
 
     .modal-detection-name {
-      margin:
-        0 0 14px 0;
+      margin: 0 0 14px 0;
 
       color: var(--mountain-green);
 
       font-size: 1.55rem;
       font-weight: 700;
-
-      line-height: 1.25;
     }
 
     .dark-mode .modal-detection-name {
@@ -1201,19 +1018,12 @@
 
     .modal-description {
       margin: 0;
-
       line-height: 1.65;
     }
 
     .modal-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(
-          2,
-          minmax(0,1fr)
-        );
-
+      grid-template-columns: repeat(2, minmax(0,1fr));
       gap: 12px;
     }
 
@@ -1222,10 +1032,7 @@
 
       background: #f3f6f5;
 
-      border:
-        1px solid
-        var(--table-border);
-
+      border: 1px solid var(--table-border);
       border-radius: 8px;
     }
 
@@ -1244,12 +1051,7 @@
       font-weight: 700;
 
       text-transform: uppercase;
-
       letter-spacing: 0.6px;
-    }
-
-    .dark-mode .modal-field-label {
-      color: #b9c5c1;
     }
 
     .modal-field-value {
@@ -1268,8 +1070,7 @@
     @media (max-width: 900px) {
 
       .summary-strip {
-        grid-template-columns:
-          repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
 
     }
@@ -1277,8 +1078,7 @@
     @media (max-width: 700px) {
 
       .modal-grid {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
       }
 
     }
@@ -1288,17 +1088,12 @@
 
 <body>
 
-  <!-- =========================================================
-       TOP BAR
-       ========================================================= -->
+  <!-- TOP BAR -->
 
   <div class="top-bar">
 
     <div class="logo-section">
-      <img
-        src="cyflare logo.png"
-        alt="Cyflare Logo"
-      >
+      <img src="cyflare logo.png" alt="Cyflare Logo">
     </div>
 
     <div class="center-section">
@@ -1326,109 +1121,49 @@
 
   </div>
 
-  <!-- =========================================================
-       CLICKABLE SUMMARY
-       ========================================================= -->
+  <!-- SUMMARY -->
 
   <div class="summary-strip">
 
     <div
       class="summary-card total"
-      onclick="showAllDetections()"
-      title="Reset filters and show all detections"
+      onclick="resetFilters()"
     >
-
-      <span
-        class="summary-value"
-        id="summaryTotal"
-      >
-        0
-      </span>
-
-      <span class="summary-label">
-        Total Detections
-      </span>
-
-      <span class="summary-action">
-        Click to show all
-      </span>
-
+      <span class="summary-value" id="summaryTotal">0</span>
+      <span class="summary-label">Total Detections</span>
+      <span class="summary-action">Click to show all</span>
     </div>
 
     <div
       class="summary-card active"
       onclick="filterActiveDetections()"
-      title="Show Active detections"
     >
-
-      <span
-        class="summary-value"
-        id="summaryActive"
-      >
-        0
-      </span>
-
-      <span class="summary-label">
-        Active
-      </span>
-
-      <span class="summary-action">
-        Click to filter
-      </span>
-
+      <span class="summary-value" id="summaryActive">0</span>
+      <span class="summary-label">Active</span>
+      <span class="summary-action">Click to filter</span>
     </div>
 
     <div
       class="summary-card testing"
       onclick="filterTestingNewDetections()"
-      title="Show Testing and New Detection statuses"
     >
-
-      <span
-        class="summary-value"
-        id="summaryTesting"
-      >
-        0
-      </span>
-
-      <span class="summary-label">
-        Testing / New
-      </span>
-
-      <span class="summary-action">
-        Click to filter
-      </span>
-
+      <span class="summary-value" id="summaryTesting">0</span>
+      <span class="summary-label">Testing / New</span>
+      <span class="summary-action">Click to filter</span>
     </div>
 
     <div
       class="summary-card tools"
       onclick="openToolDropdown()"
-      title="Open Tool filter"
     >
-
-      <span
-        class="summary-value"
-        id="summaryTools"
-      >
-        0
-      </span>
-
-      <span class="summary-label">
-        Tools
-      </span>
-
-      <span class="summary-action">
-        Click to view tools
-      </span>
-
+      <span class="summary-value" id="summaryTools">0</span>
+      <span class="summary-label">Tools</span>
+      <span class="summary-action">Click to view tools</span>
     </div>
 
   </div>
 
-  <!-- =========================================================
-       FILTERS
-       ========================================================= -->
+  <!-- FILTER BAR -->
 
   <div class="filter-bar">
 
@@ -1439,10 +1174,8 @@
         id="search"
         class="search-box"
         onkeyup="filterTable()"
-        placeholder="Search detections, MITRE IDs, tools, connectors..."
+        placeholder="Search Detections..."
       >
-
-      <!-- STATUS -->
 
       <div class="dropdown">
 
@@ -1454,172 +1187,59 @@
           Default Status
         </button>
 
-        <div
-          id="statusDropdown"
-          class="dropdown-content"
-        >
+        <div id="statusDropdown" class="dropdown-content">
 
           <label class="status-option active">
-
-            <input
-              type="checkbox"
-              value="Active"
-              checked
-              onchange="filterTable()"
-            >
-
+            <input type="checkbox" value="Active" checked onchange="filterTable()">
             <div class="filter-option-row">
-
-              <span class="filter-option-pill">
-                Active
-              </span>
-
-              <span
-                class="filter-count"
-                data-count-status="Active"
-              >
-                0
-              </span>
-
+              <span class="filter-option-pill">Active</span>
+              <span class="filter-count" data-count-status="Active">0</span>
             </div>
-
           </label>
 
           <label class="status-option alert-preferences">
-
-            <input
-              type="checkbox"
-              value="Alert Preferences"
-              checked
-              onchange="filterTable()"
-            >
-
+            <input type="checkbox" value="Alert Preferences" checked onchange="filterTable()">
             <div class="filter-option-row">
-
-              <span class="filter-option-pill">
-                Alert Preferences
-              </span>
-
-              <span
-                class="filter-count"
-                data-count-status="Alert Preferences"
-              >
-                0
-              </span>
-
+              <span class="filter-option-pill">Alert Preferences</span>
+              <span class="filter-count" data-count-status="Alert Preferences">0</span>
             </div>
-
           </label>
 
           <label class="status-option new-detection">
-
-            <input
-              type="checkbox"
-              value="New Detection"
-              checked
-              onchange="filterTable()"
-            >
-
+            <input type="checkbox" value="New Detection" checked onchange="filterTable()">
             <div class="filter-option-row">
-
-              <span class="filter-option-pill">
-                New Detection
-              </span>
-
-              <span
-                class="filter-count"
-                data-count-status="New Detection"
-              >
-                0
-              </span>
-
+              <span class="filter-option-pill">New Detection</span>
+              <span class="filter-count" data-count-status="New Detection">0</span>
             </div>
-
           </label>
 
           <label class="status-option testing">
-
-            <input
-              type="checkbox"
-              value="Testing"
-              checked
-              onchange="filterTable()"
-            >
-
+            <input type="checkbox" value="Testing" checked onchange="filterTable()">
             <div class="filter-option-row">
-
-              <span class="filter-option-pill">
-                Testing
-              </span>
-
-              <span
-                class="filter-count"
-                data-count-status="Testing"
-              >
-                0
-              </span>
-
+              <span class="filter-option-pill">Testing</span>
+              <span class="filter-count" data-count-status="Testing">0</span>
             </div>
-
           </label>
 
           <label class="status-option muted">
-
-            <input
-              type="checkbox"
-              value="Muted"
-              checked
-              onchange="filterTable()"
-            >
-
+            <input type="checkbox" value="Muted" checked onchange="filterTable()">
             <div class="filter-option-row">
-
-              <span class="filter-option-pill">
-                Muted
-              </span>
-
-              <span
-                class="filter-count"
-                data-count-status="Muted"
-              >
-                0
-              </span>
-
+              <span class="filter-option-pill">Muted</span>
+              <span class="filter-count" data-count-status="Muted">0</span>
             </div>
-
           </label>
 
           <label class="status-option not-active">
-
-            <input
-              type="checkbox"
-              value="Not Active"
-              checked
-              onchange="filterTable()"
-            >
-
+            <input type="checkbox" value="Not Active" checked onchange="filterTable()">
             <div class="filter-option-row">
-
-              <span class="filter-option-pill">
-                Not Active
-              </span>
-
-              <span
-                class="filter-count"
-                data-count-status="Not Active"
-              >
-                0
-              </span>
-
+              <span class="filter-option-pill">Not Active</span>
+              <span class="filter-count" data-count-status="Not Active">0</span>
             </div>
-
           </label>
 
         </div>
 
       </div>
-
-      <!-- TOOL -->
 
       <div class="dropdown">
 
@@ -1631,120 +1251,43 @@
           Tool
         </button>
 
-        <div
-          id="toolDropdown"
-          class="dropdown-content"
-        >
+        <div id="toolDropdown" class="dropdown-content">
 
           <label class="tool-option stellar">
-
-            <input
-              type="checkbox"
-              value="Stellar Cyber"
-              checked
-              onchange="filterTable()"
-            >
-
+            <input type="checkbox" value="Stellar Cyber" checked onchange="filterTable()">
             <div class="filter-option-row">
-
-              <span class="filter-option-pill">
-                Stellar Cyber
-              </span>
-
-              <span
-                class="filter-count"
-                data-count-tool="Stellar Cyber"
-              >
-                0
-              </span>
-
+              <span class="filter-option-pill">Stellar Cyber</span>
+              <span class="filter-count" data-count-tool="Stellar Cyber">0</span>
             </div>
-
           </label>
 
           <label class="tool-option crowdstrike">
-
-            <input
-              type="checkbox"
-              value="CrowdStrike"
-              checked
-              onchange="filterTable()"
-            >
-
+            <input type="checkbox" value="CrowdStrike" checked onchange="filterTable()">
             <div class="filter-option-row">
-
-              <span class="filter-option-pill">
-                CrowdStrike
-              </span>
-
-              <span
-                class="filter-count"
-                data-count-tool="CrowdStrike"
-              >
-                0
-              </span>
-
+              <span class="filter-option-pill">CrowdStrike</span>
+              <span class="filter-count" data-count-tool="CrowdStrike">0</span>
             </div>
-
           </label>
 
           <label class="tool-option sentinelone">
-
-            <input
-              type="checkbox"
-              value="SentinelOne EDR"
-              checked
-              onchange="filterTable()"
-            >
-
+            <input type="checkbox" value="SentinelOne EDR" checked onchange="filterTable()">
             <div class="filter-option-row">
-
-              <span class="filter-option-pill">
-                SentinelOne EDR
-              </span>
-
-              <span
-                class="filter-count"
-                data-count-tool="SentinelOne EDR"
-              >
-                0
-              </span>
-
+              <span class="filter-option-pill">SentinelOne EDR</span>
+              <span class="filter-count" data-count-tool="SentinelOne EDR">0</span>
             </div>
-
           </label>
 
           <label class="tool-option cyflare-itdr">
-
-            <input
-              type="checkbox"
-              value="Cyflare ITDR"
-              checked
-              onchange="filterTable()"
-            >
-
+            <input type="checkbox" value="Cyflare ITDR" checked onchange="filterTable()">
             <div class="filter-option-row">
-
-              <span class="filter-option-pill">
-                Cyflare ITDR
-              </span>
-
-              <span
-                class="filter-count"
-                data-count-tool="Cyflare ITDR"
-              >
-                0
-              </span>
-
+              <span class="filter-option-pill">Cyflare ITDR</span>
+              <span class="filter-count" data-count-tool="Cyflare ITDR">0</span>
             </div>
-
           </label>
 
         </div>
 
       </div>
-
-      <!-- COLUMNS -->
 
       <div class="dropdown">
 
@@ -1755,54 +1298,51 @@
           Select Columns
         </button>
 
-        <div
-          id="columnDropdown"
-          class="dropdown-content"
-        >
+        <div id="columnDropdown" class="dropdown-content">
 
-          <label class="column-option primary">
+          <label>
             <input type="checkbox" checked onchange="toggleColumn(0)">
-            <span class="filter-option-pill">Detection Name</span>
+            Detection Name
           </label>
 
-          <label class="column-option primary">
+          <label>
             <input type="checkbox" checked onchange="toggleColumn(1)">
-            <span class="filter-option-pill">Description</span>
+            Description
           </label>
 
-          <label class="column-option status">
+          <label>
             <input type="checkbox" checked onchange="toggleColumn(2)">
-            <span class="filter-option-pill">Default Status</span>
+            Default Status
           </label>
 
-          <label class="column-option tool">
+          <label>
             <input type="checkbox" checked onchange="toggleColumn(3)">
-            <span class="filter-option-pill">Tool</span>
+            Tool
           </label>
 
-          <label class="column-option connector">
+          <label>
             <input type="checkbox" checked onchange="toggleColumn(4)">
-            <span class="filter-option-pill">Connector</span>
+            Connector
           </label>
 
-          <label class="column-option mitre">
+          <label>
             <input type="checkbox" checked onchange="toggleColumn(5)">
-            <span class="filter-option-pill">MITRE Tactic</span>
+            MITRE Tactic
           </label>
 
-          <label class="column-option mitre">
+          <label>
             <input type="checkbox" checked onchange="toggleColumn(6)">
-            <span class="filter-option-pill">MITRE Tactic ID</span>
+            MITRE Tactic ID
           </label>
 
-          <label class="column-option mitre">
+          <label>
             <input type="checkbox" checked onchange="toggleColumn(7)">
-            <span class="filter-option-pill">MITRE Technique</span>
+            MITRE Technique
           </label>
 
-          <label class="column-option mitre">
+          <label>
             <input type="checkbox" checked onchange="toggleColumn(8)">
-            <span class="filter-option-pill">MITRE Technique ID</span>
+            MITRE Technique ID
           </label>
 
         </div>
@@ -1834,33 +1374,25 @@
 
     </div>
 
-    <div>
-
-      <button
-        class="export-btn action-btn"
-        onclick="exportTableToCSV()"
-      >
-        Export CSV
-      </button>
-
-    </div>
+    <button
+      class="export-btn action-btn"
+      onclick="exportTableToCSV()"
+    >
+      Export CSV
+    </button>
 
   </div>
 
-  <!-- =========================================================
-       TABLE HINT
-       ========================================================= -->
+  <!-- TABLE INSTRUCTION -->
 
   <div class="table-meta-bar">
-
     <span class="table-meta-dot"></span>
-
     Click any detection to view details
-
   </div>
 
   <!-- =========================================================
        TABLE
+       HEADER IS NOW FROZEN INSIDE THIS SCROLLING CONTAINER
        ========================================================= -->
 
   <div class="table-container">
@@ -1868,137 +1400,72 @@
     <table id="detectionsTable">
 
       <thead>
-
         <tr>
 
           <th onclick="sortTable(0)">
-
             <span class="header-content">
-
               Detection Name
-
-              <span class="sort-indicator">
-                ↕
-              </span>
-
+              <span class="sort-indicator">↕</span>
             </span>
-
           </th>
 
           <th onclick="sortTable(1)">
-
             <span class="header-content">
-
               Description
-
-              <span class="sort-indicator">
-                ↕
-              </span>
-
+              <span class="sort-indicator">↕</span>
             </span>
-
           </th>
 
           <th onclick="sortTable(2)">
-
             <span class="header-content">
-
               Default Status
-
-              <span class="sort-indicator">
-                ↕
-              </span>
-
+              <span class="sort-indicator">↕</span>
             </span>
-
           </th>
 
           <th onclick="sortTable(3)">
-
             <span class="header-content">
-
               Tool
-
-              <span class="sort-indicator">
-                ↕
-              </span>
-
+              <span class="sort-indicator">↕</span>
             </span>
-
           </th>
 
           <th onclick="sortTable(4)">
-
             <span class="header-content">
-
               Connector
-
-              <span class="sort-indicator">
-                ↕
-              </span>
-
+              <span class="sort-indicator">↕</span>
             </span>
-
           </th>
 
           <th onclick="sortTable(5)">
-
             <span class="header-content">
-
               MITRE Tactic
-
-              <span class="sort-indicator">
-                ↕
-              </span>
-
+              <span class="sort-indicator">↕</span>
             </span>
-
           </th>
 
           <th onclick="sortTable(6)">
-
             <span class="header-content">
-
               MITRE Tactic ID
-
-              <span class="sort-indicator">
-                ↕
-              </span>
-
+              <span class="sort-indicator">↕</span>
             </span>
-
           </th>
 
           <th onclick="sortTable(7)">
-
             <span class="header-content">
-
               MITRE Technique
-
-              <span class="sort-indicator">
-                ↕
-              </span>
-
+              <span class="sort-indicator">↕</span>
             </span>
-
           </th>
 
           <th onclick="sortTable(8)">
-
             <span class="header-content">
-
               MITRE Technique ID
-
-              <span class="sort-indicator">
-                ↕
-              </span>
-
+              <span class="sort-indicator">↕</span>
             </span>
-
           </th>
 
         </tr>
-
       </thead>
 
       <tbody></tbody>
@@ -2007,9 +1474,7 @@
 
   </div>
 
-  <!-- =========================================================
-       MODAL
-       ========================================================= -->
+  <!-- DETECTION MODAL -->
 
   <div
     id="detectionModalOverlay"
@@ -2017,12 +1482,7 @@
     onclick="handleModalBackdropClick(event)"
   >
 
-    <div
-      class="detection-modal"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="modalDetectionName"
-    >
+    <div class="detection-modal">
 
       <div class="modal-header">
 
@@ -2033,7 +1493,6 @@
         <button
           class="modal-close"
           onclick="closeDetectionModal()"
-          aria-label="Close detection details"
         >
           ×
         </button>
@@ -2074,55 +1533,23 @@
           <div class="modal-grid">
 
             <div class="modal-field">
-
-              <span class="modal-field-label">
-                Connector
-              </span>
-
-              <span
-                class="modal-field-value"
-                id="modalConnector"
-              ></span>
-
+              <span class="modal-field-label">Connector</span>
+              <span class="modal-field-value" id="modalConnector"></span>
             </div>
 
             <div class="modal-field">
-
-              <span class="modal-field-label">
-                Detection ID
-              </span>
-
-              <span
-                class="modal-field-value"
-                id="modalDetectionID"
-              ></span>
-
+              <span class="modal-field-label">Detection ID</span>
+              <span class="modal-field-value" id="modalDetectionID"></span>
             </div>
 
             <div class="modal-field">
-
-              <span class="modal-field-label">
-                Date Added
-              </span>
-
-              <span
-                class="modal-field-value"
-                id="modalDateAdded"
-              ></span>
-
+              <span class="modal-field-label">Date Added</span>
+              <span class="modal-field-value" id="modalDateAdded"></span>
             </div>
 
             <div class="modal-field">
-
-              <span class="modal-field-label">
-                Kill Chain Stage
-              </span>
-
-              <span
-                class="modal-field-value"
-                id="modalKillChain"
-              ></span>
-
+              <span class="modal-field-label">Kill Chain Stage</span>
+              <span class="modal-field-value" id="modalKillChain"></span>
             </div>
 
           </div>
@@ -2138,55 +1565,23 @@
           <div class="modal-grid">
 
             <div class="modal-field">
-
-              <span class="modal-field-label">
-                Tactic
-              </span>
-
-              <span
-                class="modal-field-value"
-                id="modalMitreTactic"
-              ></span>
-
+              <span class="modal-field-label">Tactic</span>
+              <span class="modal-field-value" id="modalMitreTactic"></span>
             </div>
 
             <div class="modal-field">
-
-              <span class="modal-field-label">
-                Tactic ID
-              </span>
-
-              <span
-                class="modal-field-value"
-                id="modalMitreTacticID"
-              ></span>
-
+              <span class="modal-field-label">Tactic ID</span>
+              <span class="modal-field-value" id="modalMitreTacticID"></span>
             </div>
 
             <div class="modal-field">
-
-              <span class="modal-field-label">
-                Technique
-              </span>
-
-              <span
-                class="modal-field-value"
-                id="modalMitreTechnique"
-              ></span>
-
+              <span class="modal-field-label">Technique</span>
+              <span class="modal-field-value" id="modalMitreTechnique"></span>
             </div>
 
             <div class="modal-field">
-
-              <span class="modal-field-label">
-                Technique ID
-              </span>
-
-              <span
-                class="modal-field-value"
-                id="modalMitreTechniqueID"
-              ></span>
-
+              <span class="modal-field-label">Technique ID</span>
+              <span class="modal-field-value" id="modalMitreTechniqueID"></span>
             </div>
 
           </div>
@@ -2206,69 +1601,69 @@
 
     const sortDirections = {};
 
-    /* =========================================================
-       MODE
-       ========================================================= */
-
     function toggleMode() {
 
-      document.body
-        .classList
-        .toggle(
-          'dark-mode'
-        );
+      document.body.classList.toggle('dark-mode');
 
-      document
-        .querySelector(
-          '.mode-toggle'
-        )
-        .textContent =
-          document.body
-            .classList
-            .contains(
-              'dark-mode'
-            )
-              ? '☀️'
-              : '🌙';
+      document.querySelector('.mode-toggle').textContent =
+        document.body.classList.contains('dark-mode')
+          ? '☀️'
+          : '🌙';
 
     }
 
-    /* =========================================================
-       SUMMARY CARD ACTIONS
-       ========================================================= */
+    function toggleDropdown(id) {
 
-    function showAllDetections() {
+      const target = document.getElementById(id);
 
-      resetFilters();
+      document.querySelectorAll('.dropdown-content.show').forEach(
+        dropdown => {
+
+          if (dropdown !== target) {
+            dropdown.classList.remove('show');
+          }
+
+        }
+      );
+
+      target.classList.toggle('show');
+
+    }
+
+    window.addEventListener('click', function(e) {
+
+      if (
+        !e.target.closest('.dropdown') &&
+        !e.target.closest('.summary-card.tools')
+      ) {
+
+        document.querySelectorAll('.dropdown-content.show').forEach(
+          dropdown => dropdown.classList.remove('show')
+        );
+
+      }
+
+    });
+
+    function openToolDropdown() {
+
+      document.querySelectorAll('.dropdown-content.show').forEach(
+        dropdown => dropdown.classList.remove('show')
+      );
+
+      document.getElementById('toolDropdown').classList.add('show');
 
     }
 
     function filterActiveDetections() {
 
-      const statusCheckboxes =
-        document.querySelectorAll(
-          '#statusDropdown input[type="checkbox"]'
-        );
-
-      statusCheckboxes.forEach(
+      document.querySelectorAll(
+        '#statusDropdown input[type="checkbox"]'
+      ).forEach(
         checkbox => {
-
-          checkbox.checked =
-            checkbox.value ===
-            'Active';
-
+          checkbox.checked = checkbox.value === 'Active';
         }
       );
-
-      newOnlyFilter =
-        false;
-
-      document
-        .getElementById(
-          'newFilterBtn'
-        )
-        .textContent =
-          'Show New Only';
 
       filterTable();
 
@@ -2276,317 +1671,38 @@
 
     function filterTestingNewDetections() {
 
-      const statusCheckboxes =
-        document.querySelectorAll(
-          '#statusDropdown input[type="checkbox"]'
-        );
-
-      statusCheckboxes.forEach(
+      document.querySelectorAll(
+        '#statusDropdown input[type="checkbox"]'
+      ).forEach(
         checkbox => {
 
           checkbox.checked =
-            (
-              checkbox.value ===
-              'Testing' ||
-              checkbox.value ===
-              'New Detection'
-            );
+            checkbox.value === 'Testing' ||
+            checkbox.value === 'New Detection';
 
         }
       );
 
-      newOnlyFilter =
-        false;
-
-      document
-        .getElementById(
-          'newFilterBtn'
-        )
-        .textContent =
-          'Show New Only';
-
       filterTable();
 
     }
-
-    function openToolDropdown() {
-
-      document
-        .querySelectorAll(
-          '.dropdown-content.show'
-        )
-        .forEach(
-          dropdown =>
-            dropdown
-              .classList
-              .remove(
-                'show'
-              )
-        );
-
-      document
-        .getElementById(
-          'toolDropdown'
-        )
-        .classList
-        .add(
-          'show'
-        );
-
-    }
-
-    /* =========================================================
-       DROPDOWNS
-       ========================================================= */
-
-    function toggleDropdown(id) {
-
-      const target =
-        document.getElementById(id);
-
-      document
-        .querySelectorAll(
-          '.dropdown-content.show'
-        )
-        .forEach(
-          dropdown => {
-
-            if (
-              dropdown !== target
-            ) {
-
-              dropdown
-                .classList
-                .remove(
-                  'show'
-                );
-
-            }
-
-          }
-        );
-
-      target
-        .classList
-        .toggle(
-          'show'
-        );
-
-    }
-
-    window.addEventListener(
-      'click',
-      function(e) {
-
-        if (
-          !e.target.closest(
-            '.dropdown'
-          ) &&
-          !e.target.closest(
-            '.summary-card.tools'
-          )
-        ) {
-
-          document
-            .querySelectorAll(
-              '.dropdown-content.show'
-            )
-            .forEach(
-              dropdown =>
-                dropdown
-                  .classList
-                  .remove(
-                    'show'
-                  )
-            );
-
-        }
-
-      }
-    );
-
-    /* =========================================================
-       MODAL
-       ========================================================= */
-
-    function openDetectionModal(det) {
-
-      document.getElementById(
-        'modalDetectionName'
-      ).textContent =
-        det.name ||
-        'Unnamed Detection';
-
-      document.getElementById(
-        'modalDescription'
-      ).textContent =
-        det.description ||
-        'No description available.';
-
-      document.getElementById(
-        'modalConnector'
-      ).textContent =
-        det.connector ||
-        'N/A';
-
-      document.getElementById(
-        'modalDetectionID'
-      ).textContent =
-        det.detectionID ||
-        'N/A';
-
-      document.getElementById(
-        'modalDateAdded'
-      ).textContent =
-        det.dateAdded ||
-        'N/A';
-
-      document.getElementById(
-        'modalKillChain'
-      ).textContent =
-        det.killChainStage ||
-        'N/A';
-
-      document.getElementById(
-        'modalMitreTactic'
-      ).textContent =
-        det.mitreTactic ||
-        'N/A';
-
-      document.getElementById(
-        'modalMitreTacticID'
-      ).textContent =
-        det.mitreTacticID ||
-        'N/A';
-
-      document.getElementById(
-        'modalMitreTechnique'
-      ).textContent =
-        det.mitreTechnique ||
-        'N/A';
-
-      document.getElementById(
-        'modalMitreTechniqueID'
-      ).textContent =
-        det.mitreTechniqueID ||
-        'N/A';
-
-      const statusBadge = `
-        <span
-          class="status-badge"
-          style="
-            background-color: ${getStatusColor(det.defaultStatus)};
-            color: ${getStatusTextColor(det.defaultStatus)};
-          "
-        >
-          ${det.defaultStatus || 'Unknown Status'}
-        </span>
-      `;
-
-      document.getElementById(
-        'modalBadges'
-      ).innerHTML =
-        statusBadge +
-        getToolBadge(
-          det.tool
-        );
-
-      document
-        .getElementById(
-          'detectionModalOverlay'
-        )
-        .classList
-        .add(
-          'show'
-        );
-
-      document.body.style.overflow =
-        'hidden';
-
-    }
-
-    function closeDetectionModal() {
-
-      document
-        .getElementById(
-          'detectionModalOverlay'
-        )
-        .classList
-        .remove(
-          'show'
-        );
-
-      document.body.style.overflow =
-        '';
-
-    }
-
-    function handleModalBackdropClick(
-      event
-    ) {
-
-      if (
-        event.target.id ===
-        'detectionModalOverlay'
-      ) {
-
-        closeDetectionModal();
-
-      }
-
-    }
-
-    document.addEventListener(
-      'keydown',
-      function(event) {
-
-        if (
-          event.key ===
-          'Escape'
-        ) {
-
-          closeDetectionModal();
-
-        }
-
-      }
-    );
-
-    /* =========================================================
-       NEW FILTER
-       ========================================================= */
 
     function toggleNewOnlyFilter() {
 
-      newOnlyFilter =
-        !newOnlyFilter;
+      newOnlyFilter = !newOnlyFilter;
 
-      document
-        .getElementById(
-          'newFilterBtn'
-        )
-        .textContent =
-          newOnlyFilter
-            ? 'Showing New Only'
-            : 'Show New Only';
+      document.getElementById('newFilterBtn').textContent =
+        newOnlyFilter
+          ? 'Showing New Only'
+          : 'Show New Only';
 
       filterTable();
 
     }
 
-    /* =========================================================
-       COLUMN VISIBILITY
-       ========================================================= */
+    function toggleColumn(colIndex, forceShow = null) {
 
-    function toggleColumn(
-      colIndex,
-      forceShow = null
-    ) {
-
-      const table =
-        document.getElementById(
-          'detectionsTable'
-        );
+      const table = document.getElementById('detectionsTable');
 
       const checkbox =
         document.querySelectorAll(
@@ -2599,60 +1715,31 @@
           : checkbox.checked;
 
       const th =
-        table.querySelectorAll(
-          'thead th'
-        )[colIndex];
+        table.querySelectorAll('thead th')[colIndex];
 
-      if (
-        th
-      ) {
-
-        th.style.display =
-          show
-            ? ''
-            : 'none';
-
+      if (th) {
+        th.style.display = show ? '' : 'none';
       }
 
-      table
-        .querySelectorAll(
-          'tbody tr'
-        )
-        .forEach(
-          row => {
+      table.querySelectorAll('tbody tr').forEach(
+        row => {
 
-            const cell =
-              row.children[
-                colIndex
-              ];
+          const cell = row.children[colIndex];
 
-            if (
-              cell
-            ) {
-
-              cell.style.display =
-                show
-                  ? ''
-                  : 'none';
-
-            }
-
+          if (cell) {
+            cell.style.display = show ? '' : 'none';
           }
-        );
+
+        }
+      );
 
     }
 
-    /* =========================================================
-       MITRE
-       ========================================================= */
-
     function toggleMitreColumns() {
 
-      const indices =
-        [5, 6, 7, 8];
+      const indices = [5, 6, 7, 8];
 
-      mitreVisible =
-        !mitreVisible;
+      mitreVisible = !mitreVisible;
 
       const checkboxes =
         document.querySelectorAll(
@@ -2662,546 +1749,111 @@
       indices.forEach(
         index => {
 
-          checkboxes[
-            index
-          ].checked =
-            mitreVisible;
+          checkboxes[index].checked = mitreVisible;
 
-          toggleColumn(
-            index,
-            mitreVisible
-          );
+          toggleColumn(index, mitreVisible);
 
         }
       );
 
-      document
-        .getElementById(
-          'toggleMitreBtn'
-        )
-        .textContent =
-          mitreVisible
-            ? 'Hide MITRE Columns'
-            : 'Show MITRE Columns';
+      document.getElementById('toggleMitreBtn').textContent =
+        mitreVisible
+          ? 'Hide MITRE Columns'
+          : 'Show MITRE Columns';
 
     }
 
-    /* =========================================================
-       RESET
-       ========================================================= */
-
     function resetFilters() {
 
-      document
-        .getElementById(
-          'search'
-        )
-        .value = '';
+      document.getElementById('search').value = '';
 
-      document
-        .querySelectorAll(
-          '#statusDropdown input[type="checkbox"]'
-        )
-        .forEach(
-          checkbox =>
-            checkbox.checked =
-              true
-        );
+      document.querySelectorAll(
+        '#statusDropdown input[type="checkbox"]'
+      ).forEach(
+        checkbox => checkbox.checked = true
+      );
 
-      document
-        .querySelectorAll(
-          '#toolDropdown input[type="checkbox"]'
-        )
-        .forEach(
-          checkbox =>
-            checkbox.checked =
-              true
-        );
+      document.querySelectorAll(
+        '#toolDropdown input[type="checkbox"]'
+      ).forEach(
+        checkbox => checkbox.checked = true
+      );
 
-      document
-        .querySelectorAll(
-          '#columnDropdown input[type="checkbox"]'
-        )
-        .forEach(
-          (
-            checkbox,
-            index
-          ) => {
+      newOnlyFilter = false;
 
-            checkbox.checked =
-              true;
-
-            toggleColumn(
-              index,
-              true
-            );
-
-          }
-        );
-
-      newOnlyFilter =
-        false;
-
-      mitreVisible =
-        true;
-
-      document
-        .getElementById(
-          'newFilterBtn'
-        )
-        .textContent =
-          'Show New Only';
-
-      document
-        .getElementById(
-          'toggleMitreBtn'
-        )
-        .textContent =
-          'Hide MITRE Columns';
+      document.getElementById('newFilterBtn').textContent =
+        'Show New Only';
 
       filterTable();
 
     }
 
-    /* =========================================================
-       SEARCH HELPERS
-       ========================================================= */
-
-    function rowMatchesSearch(
-      cells,
-      searchValue
-    ) {
-
-      if (
-        !searchValue
-      ) {
-
-        return true;
-
-      }
-
-      return Array
-        .from(
-          cells
-        )
-        .some(
-          cell =>
-            cell
-              .textContent
-              .toLowerCase()
-              .includes(
-                searchValue
-              )
-        );
-
-    }
-
-    function rowMatchesNewFilter(
-      cells
-    ) {
-
-      if (
-        !newOnlyFilter
-      ) {
-
-        return true;
-
-      }
-
-      return (
-        cells[1]
-          .innerHTML
-          .indexOf(
-            'new-badge'
-          ) !== -1
-      );
-
-    }
-
-    /* =========================================================
-       FILTER BUTTON STATES
-       ========================================================= */
-
-    function updateFilterButtonStates() {
-
-      const statusCheckboxes =
-        document.querySelectorAll(
-          '#statusDropdown input[type="checkbox"]'
-        );
-
-      const selectedStatuses =
-        Array
-          .from(
-            statusCheckboxes
-          )
-          .filter(
-            checkbox =>
-              checkbox.checked
-          );
-
-      const statusButton =
-        document.getElementById(
-          'statusFilterBtn'
-        );
-
-      if (
-        selectedStatuses.length ===
-        statusCheckboxes.length
-      ) {
-
-        statusButton.textContent =
-          'Default Status';
-
-        statusButton
-          .classList
-          .remove(
-            'filter-active'
-          );
-
-      } else {
-
-        statusButton.textContent =
-          `Default Status (${selectedStatuses.length}/${statusCheckboxes.length})`;
-
-        statusButton
-          .classList
-          .add(
-            'filter-active'
-          );
-
-      }
-
-      const toolCheckboxes =
-        document.querySelectorAll(
-          '#toolDropdown input[type="checkbox"]'
-        );
-
-      const selectedTools =
-        Array
-          .from(
-            toolCheckboxes
-          )
-          .filter(
-            checkbox =>
-              checkbox.checked
-          );
-
-      const toolButton =
-        document.getElementById(
-          'toolFilterBtn'
-        );
-
-      if (
-        selectedTools.length ===
-        toolCheckboxes.length
-      ) {
-
-        toolButton.textContent =
-          'Tool';
-
-        toolButton
-          .classList
-          .remove(
-            'filter-active'
-          );
-
-      } else {
-
-        toolButton.textContent =
-          `Tool (${selectedTools.length}/${toolCheckboxes.length})`;
-
-        toolButton
-          .classList
-          .add(
-            'filter-active'
-          );
-
-      }
-
-      document
-        .getElementById(
-          'newFilterBtn'
-        )
-        .classList
-        .toggle(
-          'filter-active',
-          newOnlyFilter
-        );
-
-    }
-
-    /* =========================================================
-       FACET COUNTS
-       ========================================================= */
-
-    function updateDropdownCounts() {
-
-      const rows =
-        document.querySelectorAll(
-          '#detectionsTable tbody tr'
-        );
+    function filterTable() {
 
       const searchValue =
-        document
-          .getElementById(
-            'search'
-          )
+        document.getElementById('search')
           .value
           .trim()
           .toLowerCase();
 
       const checkedStatuses =
-        Array
-          .from(
-            document.querySelectorAll(
-              '#statusDropdown input[type="checkbox"]'
-            )
+        Array.from(
+          document.querySelectorAll(
+            '#statusDropdown input[type="checkbox"]'
           )
-          .filter(
-            checkbox =>
-              checkbox.checked
-          )
-          .map(
-            checkbox =>
-              checkbox.value
-          );
+        )
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value);
 
       const checkedTools =
-        Array
-          .from(
-            document.querySelectorAll(
-              '#toolDropdown input[type="checkbox"]'
-            )
+        Array.from(
+          document.querySelectorAll(
+            '#toolDropdown input[type="checkbox"]'
           )
-          .filter(
-            checkbox =>
-              checkbox.checked
-          )
-          .map(
-            checkbox =>
-              checkbox.value
-          );
+        )
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value);
 
-      const statusCounts = {};
-      const toolCounts = {};
-
-      rows.forEach(
+      document.querySelectorAll(
+        '#detectionsTable tbody tr'
+      ).forEach(
         row => {
 
-          const cells =
-            row.querySelectorAll(
-              'td'
-            );
+          const cells = row.querySelectorAll('td');
 
           const status =
-            cells[2]
-              .textContent
-              .trim();
+            cells[2].textContent.trim();
 
           const tool =
-            cells[3]
-              .textContent
-              .trim();
+            cells[3].textContent.trim();
 
-          const matchesSearch =
-            rowMatchesSearch(
-              cells,
-              searchValue
+          const searchMatch =
+            Array.from(cells).some(
+              cell =>
+                cell.textContent
+                  .toLowerCase()
+                  .includes(searchValue)
             );
 
-          const matchesNew =
-            rowMatchesNewFilter(
-              cells
-            );
+          const newMatch =
+            !newOnlyFilter ||
+            cells[1].innerHTML.includes('new-badge');
 
-          if (
-            matchesSearch &&
-            matchesNew &&
-            checkedTools.includes(
-              tool
-            )
-          ) {
+          const show =
+            searchMatch &&
+            checkedStatuses.includes(status) &&
+            checkedTools.includes(tool) &&
+            newMatch;
 
-            statusCounts[
-              status
-            ] =
-              (
-                statusCounts[
-                  status
-                ] || 0
-              ) + 1;
-
-          }
-
-          if (
-            matchesSearch &&
-            matchesNew &&
-            checkedStatuses.includes(
-              status
-            )
-          ) {
-
-            toolCounts[
-              tool
-            ] =
-              (
-                toolCounts[
-                  tool
-                ] || 0
-              ) + 1;
-
-          }
+          row.style.display =
+            show ? '' : 'none';
 
         }
       );
 
-      document
-        .querySelectorAll(
-          '[data-count-status]'
-        )
-        .forEach(
-          element => {
-
-            const key =
-              element
-                .getAttribute(
-                  'data-count-status'
-                );
-
-            element.textContent =
-              statusCounts[
-                key
-              ] || 0;
-
-          }
-        );
-
-      document
-        .querySelectorAll(
-          '[data-count-tool]'
-        )
-        .forEach(
-          element => {
-
-            const key =
-              element
-                .getAttribute(
-                  'data-count-tool'
-                );
-
-            element.textContent =
-              toolCounts[
-                key
-              ] || 0;
-
-          }
-        );
-
-    }
-
-    /* =========================================================
-       FILTER
-       ========================================================= */
-
-    function filterTable() {
-
-      const searchValue =
-        document
-          .getElementById(
-            'search'
-          )
-          .value
-          .trim()
-          .toLowerCase();
-
-      const checkedStatuses =
-        Array
-          .from(
-            document.querySelectorAll(
-              '#statusDropdown input[type="checkbox"]'
-            )
-          )
-          .filter(
-            checkbox =>
-              checkbox.checked
-          )
-          .map(
-            checkbox =>
-              checkbox.value
-          );
-
-      const checkedTools =
-        Array
-          .from(
-            document.querySelectorAll(
-              '#toolDropdown input[type="checkbox"]'
-            )
-          )
-          .filter(
-            checkbox =>
-              checkbox.checked
-          )
-          .map(
-            checkbox =>
-              checkbox.value
-          );
-
-      document
-        .querySelectorAll(
-          '#detectionsTable tbody tr'
-        )
-        .forEach(
-          row => {
-
-            const cells =
-              row.querySelectorAll(
-                'td'
-              );
-
-            const status =
-              cells[2]
-                .textContent
-                .trim();
-
-            const tool =
-              cells[3]
-                .textContent
-                .trim();
-
-            const show =
-              rowMatchesSearch(
-                cells,
-                searchValue
-              ) &&
-              checkedStatuses.includes(
-                status
-              ) &&
-              checkedTools.includes(
-                tool
-              ) &&
-              rowMatchesNewFilter(
-                cells
-              );
-
-            row.style.display =
-              show
-                ? ''
-                : 'none';
-
-          }
-        );
-
-      updateFilterButtonStates();
-
-      updateDropdownCounts();
-
       updateSummaryMetrics();
 
     }
-
-    /* =========================================================
-       SUMMARY METRICS
-       ========================================================= */
 
     function updateSummaryMetrics() {
 
@@ -3209,114 +1861,55 @@
       let active = 0;
       let testingNew = 0;
 
-      const tools =
-        new Set();
+      const tools = new Set();
 
-      document
-        .querySelectorAll(
-          '#detectionsTable tbody tr'
-        )
-        .forEach(
-          row => {
+      document.querySelectorAll(
+        '#detectionsTable tbody tr'
+      ).forEach(
+        row => {
 
-            if (
-              row.style.display ===
-              'none'
-            ) {
-
-              return;
-
-            }
-
-            const cells =
-              row.querySelectorAll(
-                'td'
-              );
-
-            total++;
-
-            const status =
-              cells[2]
-                .textContent
-                .trim();
-
-            const tool =
-              cells[3]
-                .textContent
-                .trim();
-
-            if (
-              status ===
-              'Active'
-            ) {
-
-              active++;
-
-            }
-
-            if (
-              status ===
-              'Testing' ||
-              status ===
-              'New Detection'
-            ) {
-
-              testingNew++;
-
-            }
-
-            if (
-              tool
-            ) {
-
-              tools.add(
-                tool
-              );
-
-            }
-
+          if (row.style.display === 'none') {
+            return;
           }
-        );
 
-      document
-        .getElementById(
-          'summaryTotal'
-        )
-        .textContent =
-          total;
+          const cells = row.querySelectorAll('td');
 
-      document
-        .getElementById(
-          'summaryActive'
-        )
-        .textContent =
-          active;
+          total++;
 
-      document
-        .getElementById(
-          'summaryTesting'
-        )
-        .textContent =
-          testingNew;
+          const status =
+            cells[2].textContent.trim();
 
-      document
-        .getElementById(
-          'summaryTools'
-        )
-        .textContent =
-          tools.size;
+          const tool =
+            cells[3].textContent.trim();
+
+          if (status === 'Active') {
+            active++;
+          }
+
+          if (
+            status === 'Testing' ||
+            status === 'New Detection'
+          ) {
+            testingNew++;
+          }
+
+          if (tool) {
+            tools.add(tool);
+          }
+
+        }
+      );
+
+      document.getElementById('summaryTotal').textContent = total;
+      document.getElementById('summaryActive').textContent = active;
+      document.getElementById('summaryTesting').textContent = testingNew;
+      document.getElementById('summaryTools').textContent = tools.size;
 
     }
 
-    /* =========================================================
-       TOOL BADGES
-       ========================================================= */
-
     function getToolClass(tool) {
 
-      switch (
-        tool
-      ) {
+      switch (tool) {
 
         case 'Stellar Cyber':
           return 'stellar';
@@ -3339,58 +1932,36 @@
 
     function getToolBadge(tool) {
 
-      if (
-        !tool
-      ) {
-
+      if (!tool) {
         return '';
-
       }
 
       return `
-        <span
-          class="table-tool-badge ${getToolClass(tool)}"
-        >
-          ${tool}
+        <span class="table-tool-badge ${getToolClass(tool)}">
+          ${escapeHTML(tool)}
         </span>
       `;
 
     }
 
-    /* =========================================================
-       CONNECTOR BADGE
-       ========================================================= */
-
-    function getConnectorBadge(
-      connector
-    ) {
+    function getConnectorBadge(connector) {
 
       const displayValue =
-        connector &&
-        connector.trim()
+        connector && connector.trim()
           ? connector
           : 'N/A';
 
       return `
-        <span
-          class="connector-badge"
-          title="${displayValue}"
-        >
-          ${displayValue}
+        <span class="connector-badge">
+          ${escapeHTML(displayValue)}
         </span>
       `;
 
     }
 
-    /* =========================================================
-       STATUS
-       ========================================================= */
-
     function getStatusColor(status) {
 
-      switch (
-        status
-      ) {
+      switch (status) {
 
         case 'Active':
           return '#435f57';
@@ -3418,13 +1989,9 @@
 
     }
 
-    function getStatusTextColor(
-      status
-    ) {
+    function getStatusTextColor(status) {
 
-      switch (
-        status
-      ) {
+      switch (status) {
 
         case 'Testing':
         case 'Muted':
@@ -3437,60 +2004,13 @@
 
     }
 
-    function getStatusDescription(
-      status
-    ) {
-
-      switch (
-        status
-      ) {
-
-        case 'Active':
-          return 'This detection is actively monitored and alerts are generated.';
-
-        case 'Active via Custom Rules':
-          return 'Enabled custom rules track noteworthy activity.';
-
-        case 'Not Active':
-          return 'This detection has low standalone value.';
-
-        case 'Alert Preferences':
-          return 'Toggling available under Alert Preferences.';
-
-        case 'New Detection':
-          return 'A newly introduced detection awaiting assessment.';
-
-        case 'Testing':
-          return 'Under SOC evaluation.';
-
-        case 'Muted':
-          return 'Automatically closed after threshold checks.';
-
-        default:
-          return '';
-
-      }
-
-    }
-
-    /* =========================================================
-       DATE
-       ========================================================= */
-
     function parseDate(str) {
 
-      if (
-        !str
-      ) {
-
+      if (!str) {
         return null;
-
       }
 
-      const parts =
-        str.split(
-          '-'
-        );
+      const parts = str.split('-');
 
       return new Date(
         parts[2],
@@ -3500,47 +2020,23 @@
 
     }
 
-    function isRecent(
-      dateStr
-    ) {
+    function isRecent(dateStr) {
 
-      const dt =
-        parseDate(
-          dateStr
-        );
+      const dt = parseDate(dateStr);
 
-      if (
-        !dt
-      ) {
-
+      if (!dt) {
         return false;
-
       }
 
       const diffDays =
-        (
-          new Date() - dt
-        ) /
-        (
-          1000 *
-          60 *
-          60 *
-          24
-        );
+        (new Date() - dt) /
+        (1000 * 60 * 60 * 24);
 
-      return (
-        diffDays <= 30
-      );
+      return diffDays <= 30;
 
     }
 
-    /* =========================================================
-       SORT
-       ========================================================= */
-
-    function sortTable(
-      columnIndex
-    ) {
+    function sortTable(columnIndex) {
 
       const tbody =
         document.querySelector(
@@ -3549,112 +2045,65 @@
 
       const rows =
         Array.from(
-          tbody.querySelectorAll(
-            'tr'
-          )
+          tbody.querySelectorAll('tr')
         );
 
-      sortDirections[
-        columnIndex
-      ] =
-        sortDirections[
-          columnIndex
-        ] === 'asc'
+      sortDirections[columnIndex] =
+        sortDirections[columnIndex] === 'asc'
           ? 'desc'
           : 'asc';
 
       const direction =
-        sortDirections[
-          columnIndex
-        ];
+        sortDirections[columnIndex];
 
       rows.sort(
         (a, b) => {
 
           const aText =
-            a.children[
-              columnIndex
-            ]
+            a.children[columnIndex]
               .textContent
               .trim()
               .toLowerCase();
 
           const bText =
-            b.children[
-              columnIndex
-            ]
+            b.children[columnIndex]
               .textContent
               .trim()
               .toLowerCase();
 
-          return direction ===
-            'asc'
-              ? aText.localeCompare(
-                  bText
-                )
-              : bText.localeCompare(
-                  aText
-                );
+          return direction === 'asc'
+            ? aText.localeCompare(bText)
+            : bText.localeCompare(aText);
 
         }
       );
 
       rows.forEach(
-        row =>
-          tbody.appendChild(
-            row
-          )
+        row => tbody.appendChild(row)
       );
 
-      const headers =
-        document.querySelectorAll(
-          '#detectionsTable thead th'
-        );
+      document.querySelectorAll(
+        '#detectionsTable thead th'
+      ).forEach(
+        (header, index) => {
 
-      headers.forEach(
-        (
-          header,
-          index
-        ) => {
-
-          header
-            .classList
-            .remove(
-              'sort-active'
-            );
+          header.classList.remove('sort-active');
 
           const indicator =
-            header.querySelector(
-              '.sort-indicator'
-            );
+            header.querySelector('.sort-indicator');
 
-          if (
-            indicator
-          ) {
-
-            indicator.textContent =
-              '↕';
-
+          if (indicator) {
+            indicator.textContent = '↕';
           }
 
-          if (
-            index ===
-            columnIndex
-          ) {
+          if (index === columnIndex) {
 
-            header
-              .classList
-              .add(
-                'sort-active'
-              );
+            header.classList.add('sort-active');
 
-            if (
-              indicator
-            ) {
+            if (indicator) {
 
               indicator.textContent =
-                direction ===
-                'asc'
+                direction === 'asc'
                   ? '↑'
                   : '↓';
 
@@ -3667,113 +2116,171 @@
 
     }
 
-    /* =========================================================
-       CSV
-       ========================================================= */
+    function escapeHTML(value) {
+
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+
+    }
+
+    function openDetectionModal(det) {
+
+      document.getElementById('modalDetectionName').textContent =
+        det.name || 'Unnamed Detection';
+
+      document.getElementById('modalDescription').textContent =
+        det.description || 'No description available.';
+
+      document.getElementById('modalConnector').textContent =
+        det.connector || 'N/A';
+
+      document.getElementById('modalDetectionID').textContent =
+        det.detectionID || 'N/A';
+
+      document.getElementById('modalDateAdded').textContent =
+        det.dateAdded || 'N/A';
+
+      document.getElementById('modalKillChain').textContent =
+        det.killChainStage || 'N/A';
+
+      document.getElementById('modalMitreTactic').textContent =
+        det.mitreTactic || 'N/A';
+
+      document.getElementById('modalMitreTacticID').textContent =
+        det.mitreTacticID || 'N/A';
+
+      document.getElementById('modalMitreTechnique').textContent =
+        det.mitreTechnique || 'N/A';
+
+      document.getElementById('modalMitreTechniqueID').textContent =
+        det.mitreTechniqueID || 'N/A';
+
+      document.getElementById('modalBadges').innerHTML = `
+
+        <span
+          class="status-badge"
+          style="
+            background-color: ${getStatusColor(det.defaultStatus)};
+            color: ${getStatusTextColor(det.defaultStatus)};
+          "
+        >
+          ${escapeHTML(det.defaultStatus || 'Unknown Status')}
+        </span>
+
+        ${getToolBadge(det.tool)}
+
+      `;
+
+      document
+        .getElementById('detectionModalOverlay')
+        .classList
+        .add('show');
+
+      document.body.style.overflow = 'hidden';
+
+    }
+
+    function closeDetectionModal() {
+
+      document
+        .getElementById('detectionModalOverlay')
+        .classList
+        .remove('show');
+
+      document.body.style.overflow = '';
+
+    }
+
+    function handleModalBackdropClick(event) {
+
+      if (
+        event.target.id ===
+        'detectionModalOverlay'
+      ) {
+        closeDetectionModal();
+      }
+
+    }
+
+    document.addEventListener(
+      'keydown',
+      function(event) {
+
+        if (event.key === 'Escape') {
+          closeDetectionModal();
+        }
+
+      }
+    );
 
     function exportTableToCSV() {
 
       const csv = [];
 
-      document
-        .querySelectorAll(
-          '#detectionsTable tr'
-        )
-        .forEach(
-          row => {
+      document.querySelectorAll(
+        '#detectionsTable tr'
+      ).forEach(
+        row => {
 
-            if (
-              row.style.display ===
-              'none'
-            ) {
+          if (row.style.display === 'none') {
+            return;
+          }
 
-              return;
+          const rowData = [];
+
+          row.querySelectorAll(
+            'th, td'
+          ).forEach(
+            cell => {
+
+              if (cell.style.display === 'none') {
+                return;
+              }
+
+              const text =
+                cell.textContent
+                  .replace(/"/g, '""')
+                  .trim();
+
+              rowData.push(`"${text}"`);
 
             }
+          );
 
-            const rowData = [];
+          csv.push(rowData.join(','));
 
-            row
-              .querySelectorAll(
-                'th, td'
-              )
-              .forEach(
-                cell => {
-
-                  if (
-                    cell.style.display ===
-                    'none'
-                  ) {
-
-                    return;
-
-                  }
-
-                  const text =
-                    cell
-                      .textContent
-                      .replace(
-                        /"/g,
-                        '""'
-                      )
-                      .trim();
-
-                  rowData.push(
-                    `"${text}"`
-                  );
-
-                }
-              );
-
-            csv.push(
-              rowData.join(',')
-            );
-
-          }
-        );
+        }
+      );
 
       const blob =
         new Blob(
           [csv.join('\n')],
           {
-            type:
-              'text/csv;charset=utf-8;'
+            type: 'text/csv;charset=utf-8;'
           }
         );
 
       const url =
-        URL.createObjectURL(
-          blob
-        );
+        URL.createObjectURL(blob);
 
       const link =
-        document.createElement(
-          'a'
-        );
+        document.createElement('a');
 
-      link.href =
-        url;
+      link.href = url;
+      link.download = 'detections_board.csv';
 
-      link.download =
-        'detections_board.csv';
-
-      document.body.appendChild(
-        link
-      );
+      document.body.appendChild(link);
 
       link.click();
-
       link.remove();
 
-      URL.revokeObjectURL(
-        url
-      );
+      URL.revokeObjectURL(url);
 
     }
-
-    /* =========================================================
-       LOAD DATA
-       ========================================================= */
 
     function loadData() {
 
@@ -3782,147 +2289,130 @@
         new Date().getTime()
       )
 
-        .then(
-          response =>
-            response.json()
-        )
+      .then(
+        response => response.json()
+      )
 
-        .then(
-          data => {
+      .then(
+        data => {
 
-            data.sort(
-              (a, b) =>
-                a.name.localeCompare(
-                  b.name
-                )
+          data.sort(
+            (a, b) =>
+              a.name.localeCompare(b.name)
+          );
+
+          const tbody =
+            document.querySelector(
+              '#detectionsTable tbody'
             );
 
-            const tbody =
-              document.querySelector(
-                '#detectionsTable tbody'
-              );
+          tbody.innerHTML = '';
 
-            tbody.innerHTML =
-              '';
+          data.forEach(
+            det => {
 
-            data.forEach(
-              det => {
-
-                let description =
-                  det.description ||
-                  '';
-
-                if (
-                  det.dateAdded &&
-                  isRecent(
-                    det.dateAdded
-                  )
-                ) {
-
-                  description =
-                    '<span class="new-badge">New</span>' +
-                    description;
-
-                }
-
-                const row =
-                  document.createElement(
-                    'tr'
-                  );
-
-                row.title =
-                  'Click to view detection details';
-
-                row.innerHTML = `
-
-                  <td>
-                    <span class="detection-name">
-                      ${det.name || ''}
-                    </span>
-                  </td>
-
-                  <td>
-                    <span class="detection-description">
-                      ${description}
-                    </span>
-                  </td>
-
-                  <td>
-
-                    <span
-                      class="status-badge"
-                      style="
-                        background-color: ${getStatusColor(det.defaultStatus)};
-                        color: ${getStatusTextColor(det.defaultStatus)};
-                      "
-                      title="${getStatusDescription(det.defaultStatus)}"
-                    >
-                      ${det.defaultStatus || ''}
-                    </span>
-
-                  </td>
-
-                  <td>
-                    ${getToolBadge(det.tool)}
-                  </td>
-
-                  <td>
-                    ${getConnectorBadge(det.connector)}
-                  </td>
-
-                  <td>
-                    ${det.mitreTactic || ''}
-                  </td>
-
-                  <td>
-                    ${det.mitreTacticID || ''}
-                  </td>
-
-                  <td>
-                    ${det.mitreTechnique || ''}
-                  </td>
-
-                  <td>
-                    ${det.mitreTechniqueID || ''}
-                  </td>
-
-                `;
-
-                row.addEventListener(
-                  'click',
-                  function() {
-
-                    openDetectionModal(
-                      det
-                    );
-
-                  }
+              let description =
+                escapeHTML(
+                  det.description || ''
                 );
 
-                tbody.appendChild(
-                  row
-                );
+              if (
+                det.dateAdded &&
+                isRecent(det.dateAdded)
+              ) {
+
+                description =
+                  '<span class="new-badge">New</span>' +
+                  description;
 
               }
-            );
 
-            filterTable();
+              const row =
+                document.createElement('tr');
 
-          }
-        )
+              row.title =
+                'Click to view detection details';
 
-        .catch(
-          error =>
-            console.error(
-              'Error loading detections.json',
-              error
-            )
-        );
+              row.innerHTML = `
+
+                <td>
+                  <span class="detection-name">
+                    ${escapeHTML(det.name || '')}
+                  </span>
+                </td>
+
+                <td>
+                  <span class="detection-description">
+                    ${description}
+                  </span>
+                </td>
+
+                <td>
+                  <span
+                    class="status-badge"
+                    style="
+                      background-color: ${getStatusColor(det.defaultStatus)};
+                      color: ${getStatusTextColor(det.defaultStatus)};
+                    "
+                  >
+                    ${escapeHTML(det.defaultStatus || '')}
+                  </span>
+                </td>
+
+                <td>
+                  ${getToolBadge(det.tool)}
+                </td>
+
+                <td>
+                  ${getConnectorBadge(det.connector)}
+                </td>
+
+                <td>
+                  ${escapeHTML(det.mitreTactic || '')}
+                </td>
+
+                <td>
+                  ${escapeHTML(det.mitreTacticID || '')}
+                </td>
+
+                <td>
+                  ${escapeHTML(det.mitreTechnique || '')}
+                </td>
+
+                <td>
+                  ${escapeHTML(det.mitreTechniqueID || '')}
+                </td>
+
+              `;
+
+              row.addEventListener(
+                'click',
+                function() {
+                  openDetectionModal(det);
+                }
+              );
+
+              tbody.appendChild(row);
+
+            }
+          );
+
+          filterTable();
+
+        }
+      )
+
+      .catch(
+        error =>
+          console.error(
+            'Error loading detections.json',
+            error
+          )
+      );
 
     }
 
-    window.onload =
-      loadData;
+    window.onload = loadData;
 
   </script>
 
