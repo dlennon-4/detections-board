@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Cyflare Detections Board</title>
-  
+
   <!-- Tab Logo (favicon) -->
   <link rel="icon" href="cyflare_logo_only_shield.png" type="image/png">
-  
-  <!-- Clean, modern font: Inter -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap">
+
+  <!-- Cyflare Body Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
 
   <style>
     :root {
@@ -29,52 +29,81 @@
       --table-border: #d7dedb;
       --header-bg: var(--mountain-green);
       --header-text: var(--white-cap);
+
       --primary-btn-bg: var(--vivid-blue);
       --primary-btn-text: var(--white-cap);
+
       --hover-bg: var(--mountain-green);
       --reset-btn-bg: var(--crimson);
       --export-btn-bg: var(--mountain-green);
+
       --row-even-bg: #f3f6f5;
       --row-hover-bg: #e5ece9;
+
       --input-bg: #ffffff;
       --input-border: #c5cfcc;
+
       --link-color: var(--vivid-blue);
+
       --badge-new-bg: var(--marigold);
       --badge-new-text: var(--crimson);
     }
 
-    /* Dark Mode Variables */
+    /* =========================================================
+       DARK MODE
+       ========================================================= */
+
     .dark-mode {
       --bg-color: var(--crimson);
-      --text-color: var(--white-cap);
+
+      /* Improved high-contrast text */
+      --text-color: #f1f4f3;
+
       --card-bg: #30171c;
       --table-border: #604950;
+
       --header-bg: var(--mountain-green);
       --header-text: var(--white-cap);
+
       --primary-btn-bg: var(--vivid-blue);
       --primary-btn-text: var(--white-cap);
+
       --hover-bg: var(--slate-purple);
       --reset-btn-bg: var(--marigold);
       --export-btn-bg: var(--mountain-green);
+
       --row-even-bg: #3a2026;
       --row-hover-bg: #4a2a31;
+
       --input-bg: #3a2026;
-      --input-border: #604950;
+      --input-border: #765d63;
+
       --link-color: var(--marigold);
+
       --badge-new-bg: var(--marigold);
       --badge-new-text: var(--crimson);
     }
+
+    /* =========================================================
+       BODY
+       ========================================================= */
 
     body {
       margin: 0;
       background-color: var(--bg-color);
-      color: #435f57;
+      color: var(--text-color);
       font-family: 'Inter', sans-serif;
-      transition: background-color 0.3s, color 0.3s;
+      font-weight: 400;
+      transition:
+        background-color 0.3s,
+        color 0.3s;
       text-align: center;
     }
 
-    /* Top Bar (absolutely center the title) */
+    /* =========================================================
+       TOP BAR
+       ========================================================= */
+
     .top-bar {
       position: relative;
       height: 80px;
@@ -104,11 +133,17 @@
 
     .center-section h1 {
       margin: 0;
+      font-weight: 600;
+      color: var(--mountain-green);
+    }
+
+    .dark-mode .center-section h1 {
+      color: #f4f7f6;
     }
 
     .center-section .site-link {
       margin-top: 4px;
-      font-weight: bold;
+      font-weight: 600;
       text-decoration: none;
       color: var(--link-color);
       display: block;
@@ -119,14 +154,22 @@
       right: 20px;
       top: 50%;
       transform: translateY(-50%);
+
       background: var(--primary-btn-bg);
       color: var(--primary-btn-text);
+
       border: none;
       border-radius: 8px;
+
       padding: 8px 16px;
+
       cursor: pointer;
+
       font-size: 14px;
-      transition: background-color 0.3s, transform 0.2s;
+
+      transition:
+        background-color 0.3s,
+        transform 0.2s;
     }
 
     .mode-toggle:hover {
@@ -134,60 +177,235 @@
       transform: translateY(-2px);
     }
 
-    /* New Badge */
+    /* =========================================================
+       SUMMARY STRIP
+       ========================================================= */
+
+    .summary-strip {
+      max-width: 95%;
+      margin: 0 auto 14px auto;
+
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .summary-card {
+      background: var(--card-bg);
+
+      border: 1px solid var(--table-border);
+      border-radius: 10px;
+
+      padding: 14px 18px;
+
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+      text-align: left;
+
+      position: relative;
+      overflow: hidden;
+
+      transition:
+        background-color 0.3s,
+        border-color 0.3s,
+        transform 0.2s,
+        box-shadow 0.2s;
+    }
+
+    .summary-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    }
+
+    .summary-card::before {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      top: 0;
+      bottom: 0;
+
+      width: 5px;
+    }
+
+    .summary-card.total::before {
+      background: var(--mountain-green);
+    }
+
+    .summary-card.active::before {
+      background: var(--vivid-blue);
+    }
+
+    .summary-card.testing::before {
+      background: var(--marigold);
+    }
+
+    .summary-card.tools::before {
+      background: var(--slate-purple);
+    }
+
+    .summary-value {
+      display: block;
+
+      font-size: 1.8rem;
+      line-height: 1;
+
+      font-weight: 700;
+
+      color: var(--mountain-green);
+
+      margin-bottom: 6px;
+    }
+
+    .summary-label {
+      display: block;
+
+      font-size: 0.72rem;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.6px;
+
+      font-weight: 600;
+
+      color: var(--text-color);
+    }
+
+    .dark-mode .summary-value {
+      color: #fafafa;
+    }
+
+    .dark-mode .summary-label {
+      color: #d9e0de;
+    }
+
+    @media (max-width: 900px) {
+      .summary-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .summary-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* =========================================================
+       NEW BADGE
+       ========================================================= */
+
     .new-badge {
       background-color: var(--badge-new-bg);
       color: #ffffff;
+
       padding: 2px 6px;
+
       border-radius: 4px;
+
       font-size: 0.75em;
+
       margin-right: 4px;
-      font-weight: bold;
+
+      font-weight: 700;
     }
 
-    /* Filter Bar */
+    /* =========================================================
+       FILTER BAR
+       ========================================================= */
+
     .filter-bar {
       background: var(--card-bg);
+
       border-radius: 8px;
+
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
       padding: 20px;
+
       display: flex;
       flex-wrap: wrap;
+
       justify-content: space-between;
       align-items: center;
+
       max-width: 95%;
+
       margin: 0 auto 20px auto;
+
       transition: background-color 0.3s;
     }
 
     .filters-left {
       display: flex;
       flex-wrap: wrap;
+
       gap: 10px;
+
       align-items: center;
     }
 
     .search-box {
       width: 300px;
+
       padding: 8px;
+
       border-radius: 6px;
+
       border: 1px solid var(--input-border);
+
       background: var(--input-bg);
+
       color: var(--text-color);
+
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+
       font-size: 14px;
-      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+      transition:
+        background-color 0.3s,
+        color 0.3s,
+        border-color 0.3s;
+    }
+
+    .search-box::placeholder {
+      color: #6f7774;
+      opacity: 1;
+    }
+
+    .dark-mode .search-box {
+      color: #f4f7f6;
+    }
+
+    .dark-mode .search-box::placeholder {
+      color: #b8c3c0;
+      opacity: 1;
     }
 
     .filter-btn,
     .action-btn {
-      background: #435f57;
+      background: var(--mountain-green);
       color: var(--primary-btn-text);
+
       padding: 8px 16px;
+
       border: none;
+
       border-radius: 8px;
+
       cursor: pointer;
+
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+
       font-size: 14px;
-      transition: background-color 0.3s, transform 0.2s;
+
+      transition:
+        background-color 0.3s,
+        transform 0.2s;
+
       text-align: center;
     }
 
@@ -212,24 +430,44 @@
 
     .dropdown-content {
       display: none;
+
       position: absolute;
+
       width: var(--dropdown-width);
+
       background-color: var(--card-bg);
+
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+
       padding: 12px;
+
       text-align: left;
+
       border: 1px solid var(--table-border);
+
       margin-top: 8px;
+
       z-index: 999;
+
       opacity: 0;
+
       transform: translateY(-5px);
-      transition: opacity 0.2s, transform 0.2s, background-color 0.3s, border-color 0.3s;
+
+      transition:
+        opacity 0.2s,
+        transform 0.2s,
+        background-color 0.3s,
+        border-color 0.3s;
     }
 
     .dropdown-content label {
       display: block;
+
       padding: 5px 0;
+
       cursor: pointer;
+
+      font-weight: 400;
     }
 
     .dropdown-content label:hover {
@@ -238,45 +476,82 @@
 
     .dropdown-content.show {
       display: block;
+
       opacity: 1;
+
       transform: translateY(0);
     }
 
-    /* Table Styles */
+    .dark-mode .dropdown-content {
+      color: #f4f7f6;
+    }
+
+    /* =========================================================
+       TABLE
+       ========================================================= */
+
     .table-container {
       background: var(--card-bg);
+
       border-radius: 12px;
+
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
       max-width: 98%;
+
       margin: 0 auto 20px auto;
+
       max-height: 85vh;
+
       overflow: auto;
+
       transition: background-color 0.3s;
     }
 
     table {
       width: 100%;
+
       border: none;
+
       border-collapse: collapse;
       border-spacing: 0;
+
       transition: border-color 0.3s;
     }
 
-    th, td {
+    th,
+    td {
       padding: 12px;
+
       border-bottom: 1px solid var(--table-border);
-      transition: border-color 0.3s;
+
+      transition:
+        border-color 0.3s,
+        background-color 0.2s,
+        color 0.3s;
     }
+
+    /* Table Header */
 
     thead th {
       position: sticky;
+
       top: 0;
+
       z-index: 2;
+
       background: var(--header-bg);
+
       color: var(--header-text);
+
       cursor: pointer;
+
       border: none !important;
+
+      font-weight: 600;
     }
+
+    /* Light Mode Rows */
 
     tbody tr:nth-child(even) {
       background: var(--row-even-bg);
@@ -285,6 +560,56 @@
     tbody tr:hover {
       background: var(--row-hover-bg);
     }
+
+    /* =========================================================
+       DARK MODE TABLE READABILITY
+       ========================================================= */
+
+    .dark-mode #detectionsTable tbody tr:nth-child(odd) {
+      background-color: #30171c;
+    }
+
+    .dark-mode #detectionsTable tbody tr:nth-child(even) {
+      background-color: #3a2026;
+    }
+
+    .dark-mode #detectionsTable tbody tr:hover {
+      background-color: #4a2a31;
+    }
+
+    .dark-mode #detectionsTable tbody td {
+      color: #e6ecea;
+      font-weight: 400;
+    }
+
+    /*
+      Make Detection Name more prominent
+      without making the whole table overly bright.
+    */
+    .dark-mode #detectionsTable tbody td:first-child {
+      color: #f4f7f6;
+      font-weight: 500;
+    }
+
+    /*
+      Slightly brighter description text so long descriptions
+      remain easy to scan.
+    */
+    .dark-mode #detectionsTable tbody td:nth-child(2) {
+      color: #e9eeec;
+    }
+
+    /*
+      MITRE / Connector / Tool columns remain readable but
+      slightly softer than primary detection information.
+    */
+    .dark-mode #detectionsTable tbody td:nth-child(n+4) {
+      color: #dbe3e0;
+    }
+
+    /* =========================================================
+       TABLE ALIGNMENT
+       ========================================================= */
 
     #detectionsTable th:nth-child(1),
     #detectionsTable td:nth-child(1),
@@ -298,55 +623,129 @@
       text-align: center;
     }
 
-    /* Floating Cases Counter */
-    .cases-counter {
-      position: fixed;
-      bottom: 35px;
-      right: 45px;
-      background: var(--primary-btn-bg);
-      color: var(--primary-btn-text);
-      border-radius: 8px;
-      padding: 4px 8px;
-      font-size: 0.75rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      z-index: 9999;
-      transition: background-color 0.3s;
-    }
+    /* =========================================================
+       STATUS BADGES
+       ========================================================= */
 
-    /* Status Badge */
     .status-badge {
       display: inline-block;
+
       padding: 4px 8px;
+
       border-radius: 12px;
+
       color: var(--badge-new-text);
-      font-weight: bold;
+
+      font-weight: 700;
+
       cursor: default;
     }
+
   </style>
 </head>
 
 <body>
 
-  <!-- Top Bar -->
+  <!-- =========================================================
+       TOP BAR
+       ========================================================= -->
+
   <div class="top-bar">
+
     <div class="logo-section">
       <img src="cyflare logo.png" alt="Cyflare Logo">
     </div>
 
     <div class="center-section">
       <h1>Cyflare Detections Board</h1>
-      <a href="https://cyflare.com/" target="_blank" class="site-link">
+
+      <a
+        href="https://cyflare.com/"
+        target="_blank"
+        class="site-link"
+      >
         Visit Cyflare.com
       </a>
     </div>
 
-    <button class="mode-toggle" onclick="toggleMode()">🌙</button>
+    <button
+      class="mode-toggle"
+      onclick="toggleMode()"
+    >
+      🌙
+    </button>
+
   </div>
 
-  <!-- Filter Bar -->
+  <!-- =========================================================
+       SUMMARY STRIP
+       ========================================================= -->
+
+  <div class="summary-strip">
+
+    <div class="summary-card total">
+      <span
+        class="summary-value"
+        id="summaryTotal"
+      >
+        0
+      </span>
+
+      <span class="summary-label">
+        Total Detections
+      </span>
+    </div>
+
+    <div class="summary-card active">
+      <span
+        class="summary-value"
+        id="summaryActive"
+      >
+        0
+      </span>
+
+      <span class="summary-label">
+        Active
+      </span>
+    </div>
+
+    <div class="summary-card testing">
+      <span
+        class="summary-value"
+        id="summaryTesting"
+      >
+        0
+      </span>
+
+      <span class="summary-label">
+        Testing / New
+      </span>
+    </div>
+
+    <div class="summary-card tools">
+      <span
+        class="summary-value"
+        id="summaryTools"
+      >
+        0
+      </span>
+
+      <span class="summary-label">
+        Tools
+      </span>
+    </div>
+
+  </div>
+
+  <!-- =========================================================
+       FILTER BAR
+       ========================================================= -->
+
   <div class="filter-bar">
 
     <div class="filters-left">
+
+      <!-- Search -->
 
       <input
         type="text"
@@ -356,7 +755,8 @@
         placeholder="Search Detections..."
       >
 
-      <!-- Default Status Dropdown -->
+      <!-- Default Status -->
+
       <div class="dropdown">
 
         <button
@@ -370,6 +770,7 @@
           id="statusDropdown"
           class="dropdown-content"
         >
+
           <label>
             <input
               type="checkbox"
@@ -429,11 +830,13 @@
             >
             Not Active
           </label>
+
         </div>
 
       </div>
 
-      <!-- Tool Dropdown -->
+      <!-- Tool -->
+
       <div class="dropdown">
 
         <button
@@ -489,9 +892,11 @@
           </label>
 
         </div>
+
       </div>
 
-      <!-- Column Selection Dropdown -->
+      <!-- Column Selection -->
+
       <div class="dropdown">
 
         <button
@@ -505,18 +910,93 @@
           id="columnDropdown"
           class="dropdown-content"
         >
-          <label><input type="checkbox" checked onchange="toggleColumn(0)"> Detection Name</label>
-          <label><input type="checkbox" checked onchange="toggleColumn(1)"> Description</label>
-          <label><input type="checkbox" checked onchange="toggleColumn(2)"> Default Status</label>
-          <label><input type="checkbox" checked onchange="toggleColumn(3)"> MITRE Tactic</label>
-          <label><input type="checkbox" checked onchange="toggleColumn(4)"> MITRE Tactic ID</label>
-          <label><input type="checkbox" checked onchange="toggleColumn(5)"> MITRE Technique</label>
-          <label><input type="checkbox" checked onchange="toggleColumn(6)"> MITRE Technique ID</label>
-          <label><input type="checkbox" checked onchange="toggleColumn(7)"> Connector</label>
-          <label><input type="checkbox" checked onchange="toggleColumn(8)"> Tool</label>
+
+          <label>
+            <input
+              type="checkbox"
+              checked
+              onchange="toggleColumn(0)"
+            >
+            Detection Name
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              checked
+              onchange="toggleColumn(1)"
+            >
+            Description
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              checked
+              onchange="toggleColumn(2)"
+            >
+            Default Status
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              checked
+              onchange="toggleColumn(3)"
+            >
+            MITRE Tactic
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              checked
+              onchange="toggleColumn(4)"
+            >
+            MITRE Tactic ID
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              checked
+              onchange="toggleColumn(5)"
+            >
+            MITRE Technique
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              checked
+              onchange="toggleColumn(6)"
+            >
+            MITRE Technique ID
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              checked
+              onchange="toggleColumn(7)"
+            >
+            Connector
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              checked
+              onchange="toggleColumn(8)"
+            >
+            Tool
+          </label>
+
         </div>
 
       </div>
+
+      <!-- Actions -->
 
       <button
         class="reset-btn action-btn"
@@ -544,33 +1024,68 @@
     </div>
 
     <div>
+
       <button
         class="export-btn action-btn"
         onclick="exportTableToCSV()"
       >
         Export CSV
       </button>
+
     </div>
 
   </div>
 
-  <!-- Table Container -->
+  <!-- =========================================================
+       TABLE
+       ========================================================= -->
+
   <div class="table-container">
 
     <table id="detectionsTable">
 
       <thead>
+
         <tr>
-          <th onclick="sortTable(0)">Detection Name</th>
-          <th onclick="sortTable(1)">Description</th>
-          <th onclick="sortTable(2)">Default Status</th>
-          <th onclick="sortTable(3)">MITRE Tactic</th>
-          <th onclick="sortTable(4)">MITRE Tactic ID</th>
-          <th onclick="sortTable(5)">MITRE Technique</th>
-          <th onclick="sortTable(6)">MITRE Technique ID</th>
-          <th onclick="sortTable(7)">Connector</th>
-          <th onclick="sortTable(8)">Tool</th>
+
+          <th onclick="sortTable(0)">
+            Detection Name
+          </th>
+
+          <th onclick="sortTable(1)">
+            Description
+          </th>
+
+          <th onclick="sortTable(2)">
+            Default Status
+          </th>
+
+          <th onclick="sortTable(3)">
+            MITRE Tactic
+          </th>
+
+          <th onclick="sortTable(4)">
+            MITRE Tactic ID
+          </th>
+
+          <th onclick="sortTable(5)">
+            MITRE Technique
+          </th>
+
+          <th onclick="sortTable(6)">
+            MITRE Technique ID
+          </th>
+
+          <th onclick="sortTable(7)">
+            Connector
+          </th>
+
+          <th onclick="sortTable(8)">
+            Tool
+          </th>
+
         </tr>
+
       </thead>
 
       <tbody></tbody>
@@ -579,54 +1094,108 @@
 
   </div>
 
-  <!-- Floating Cases Counter -->
-  <div
-    id="casesCounter"
-    class="cases-counter"
-  >
-    Total Detections: 0
-  </div>
-
   <script>
 
-    // Toggle Dark/Light Mode
+    /* =========================================================
+       LIGHT / DARK MODE
+       ========================================================= */
+
     function toggleMode() {
+
       document.body.classList.toggle('dark-mode');
-    }
 
-    // Dropdown Toggle
-    function toggleDropdown(id) {
-      document.getElementById(id).classList.toggle('show');
-    }
+      const button =
+        document.querySelector('.mode-toggle');
 
-    window.addEventListener('click', function(e) {
-      if (!e.target.closest('.dropdown')) {
-        document
-          .querySelectorAll('.dropdown-content.show')
-          .forEach(dd => dd.classList.remove('show'));
+      if (
+        document.body.classList.contains('dark-mode')
+      ) {
+
+        button.textContent = '☀️';
+
+      } else {
+
+        button.textContent = '🌙';
+
       }
-    });
 
-    // Global flag for filtering new detections only
+    }
+
+
+    /* =========================================================
+       DROPDOWNS
+       ========================================================= */
+
+    function toggleDropdown(id) {
+
+      document
+        .getElementById(id)
+        .classList
+        .toggle('show');
+
+    }
+
+
+    window.addEventListener(
+      'click',
+      function(e) {
+
+        if (
+          !e.target.closest('.dropdown')
+        ) {
+
+          document
+            .querySelectorAll(
+              '.dropdown-content.show'
+            )
+            .forEach(
+              dropdown =>
+                dropdown.classList.remove('show')
+            );
+
+        }
+
+      }
+    );
+
+
+    /* =========================================================
+       NEW DETECTIONS FILTER
+       ========================================================= */
+
     let newOnlyFilter = false;
+
 
     function toggleNewOnlyFilter() {
 
-      newOnlyFilter = !newOnlyFilter;
+      newOnlyFilter =
+        !newOnlyFilter;
 
-      document.getElementById('newFilterBtn').textContent =
-        newOnlyFilter
-          ? "Show All"
-          : "Show New Only";
+      document
+        .getElementById('newFilterBtn')
+        .textContent =
+          newOnlyFilter
+            ? 'Show All'
+            : 'Show New Only';
 
       filterTable();
+
     }
 
-    // Toggle Column Visibility
-    function toggleColumn(colIndex, forceShow = null) {
+
+    /* =========================================================
+       COLUMN VISIBILITY
+       ========================================================= */
+
+    function toggleColumn(
+      colIndex,
+      forceShow = null
+    ) {
 
       const table =
-        document.getElementById('detectionsTable');
+        document.getElementById(
+          'detectionsTable'
+        );
 
       const checkbox =
         document.querySelectorAll(
@@ -634,81 +1203,114 @@
         )[colIndex];
 
       const show =
-        (forceShow !== null)
+        forceShow !== null
           ? forceShow
           : checkbox.checked;
 
       const ths =
         table.getElementsByTagName('th');
 
-      if (ths[colIndex]) {
+      if (
+        ths[colIndex]
+      ) {
+
         ths[colIndex].style.display =
-          show ? '' : 'none';
+          show
+            ? ''
+            : 'none';
+
       }
 
       const rows =
         table.getElementsByTagName('tr');
 
-      for (let i = 1; i < rows.length; i++) {
+      for (
+        let i = 1;
+        i < rows.length;
+        i++
+      ) {
 
         const cells =
-          rows[i].getElementsByTagName('td');
+          rows[i]
+            .getElementsByTagName('td');
 
-        if (cells[colIndex]) {
+        if (
+          cells[colIndex]
+        ) {
+
           cells[colIndex].style.display =
-            show ? '' : 'none';
+            show
+              ? ''
+              : 'none';
+
         }
+
       }
+
     }
 
-    // Reset Filters
+
+    /* =========================================================
+       RESET FILTERS
+       ========================================================= */
+
     function resetFilters() {
 
-      document.getElementById('search').value = '';
+      document
+        .getElementById('search')
+        .value = '';
 
       document
         .querySelectorAll(
           '#statusDropdown input[type="checkbox"]'
         )
-        .forEach(cb => (
-          cb.checked = true
-        ));
+        .forEach(
+          cb => cb.checked = true
+        );
 
       document
         .querySelectorAll(
           '#toolDropdown input[type="checkbox"]'
         )
-        .forEach(cb => (
-          cb.checked = true
-        ));
+        .forEach(
+          cb => cb.checked = true
+        );
 
       document
         .querySelectorAll(
           '#columnDropdown input[type="checkbox"]'
         )
-        .forEach((cb, i) => {
+        .forEach(
+          (cb, index) => {
 
-          cb.checked = true;
+            cb.checked = true;
 
-          toggleColumn(
-            i,
-            true
-          );
+            toggleColumn(
+              index,
+              true
+            );
 
-        });
+          }
+        );
 
       newOnlyFilter = false;
 
-      document.getElementById(
-        'newFilterBtn'
-      ).textContent =
-        "Show New Only";
+      document
+        .getElementById('newFilterBtn')
+        .textContent =
+          'Show New Only';
 
       filterTable();
+
     }
 
-    // Toggle Hide/Show for MITRE Columns
+
+    /* =========================================================
+       MITRE COLUMN TOGGLE
+       ========================================================= */
+
     let mitreVisible = true;
+
 
     function toggleMitreColumns() {
 
@@ -723,34 +1325,43 @@
           '#columnDropdown input[type="checkbox"]'
         );
 
-      indices.forEach(index => {
+      indices.forEach(
+        index => {
 
-        toggleColumn(
-          index,
-          mitreVisible
-        );
+          toggleColumn(
+            index,
+            mitreVisible
+          );
 
-        if (columnCheckboxes[index]) {
+          if (
+            columnCheckboxes[index]
+          ) {
 
-          columnCheckboxes[index].checked =
-            mitreVisible;
+            columnCheckboxes[index]
+              .checked =
+                mitreVisible;
+
+          }
 
         }
+      );
 
-      });
-
-      const btn =
-        document.getElementById(
+      document
+        .getElementById(
           'toggleMitreBtn'
-        );
+        )
+        .textContent =
+          mitreVisible
+            ? 'Hide MITRE Columns'
+            : 'Show MITRE Columns';
 
-      btn.textContent =
-        mitreVisible
-          ? 'Hide MITRE Columns'
-          : 'Show MITRE Columns';
     }
 
-    // Filter Table Logic
+
+    /* =========================================================
+       FILTER TABLE
+       ========================================================= */
+
     function filterTable() {
 
       const searchValue =
@@ -767,8 +1378,12 @@
       const checkedStatuses =
         Array
           .from(statusCheckboxes)
-          .filter(cb => cb.checked)
-          .map(cb => cb.value);
+          .filter(
+            cb => cb.checked
+          )
+          .map(
+            cb => cb.value
+          );
 
       const allStatusesChecked =
         checkedStatuses.length ===
@@ -782,8 +1397,12 @@
       const checkedTools =
         Array
           .from(toolCheckboxes)
-          .filter(cb => cb.checked)
-          .map(cb => cb.value);
+          .filter(
+            cb => cb.checked
+          )
+          .map(
+            cb => cb.value
+          );
 
       const allToolsChecked =
         checkedTools.length ===
@@ -794,96 +1413,200 @@
           '#detectionsTable tbody tr'
         );
 
-      rows.forEach(row => {
+      rows.forEach(
+        row => {
 
-        const cells =
-          row.querySelectorAll('td');
+          const cells =
+            row.querySelectorAll('td');
 
-        const name =
-          cells[0]
-            .textContent
-            .toLowerCase();
+          const name =
+            cells[0]
+              .textContent
+              .toLowerCase();
 
-        const descText =
-          cells[1]
-            .textContent
-            .toLowerCase();
-
-        const status =
-          cells[2]
-            .textContent
-            .trim();
-
-        const tool =
-          cells[8]
-            .textContent
-            .trim();
-
-        const matchesSearch =
-          name.includes(searchValue) ||
-          descText.includes(searchValue);
-
-        const matchesStatus =
-          allStatusesChecked ||
-          checkedStatuses.includes(status);
-
-        const matchesTool =
-          allToolsChecked ||
-          checkedTools.includes(tool);
-
-        let newOnlyPass = true;
-
-        if (newOnlyFilter) {
-
-          newOnlyPass =
+          const description =
             cells[1]
-              .innerHTML
-              .indexOf('new-badge') !== -1;
+              .textContent
+              .toLowerCase();
+
+          const status =
+            cells[2]
+              .textContent
+              .trim();
+
+          const tool =
+            cells[8]
+              .textContent
+              .trim();
+
+          const matchesSearch =
+            name.includes(searchValue) ||
+            description.includes(searchValue);
+
+          const matchesStatus =
+            allStatusesChecked ||
+            checkedStatuses.includes(status);
+
+          const matchesTool =
+            allToolsChecked ||
+            checkedTools.includes(tool);
+
+          let newOnlyPass =
+            true;
+
+          if (
+            newOnlyFilter
+          ) {
+
+            newOnlyPass =
+              cells[1]
+                .innerHTML
+                .indexOf(
+                  'new-badge'
+                ) !== -1;
+
+          }
+
+          row.style.display =
+            (
+              matchesSearch &&
+              matchesStatus &&
+              matchesTool &&
+              newOnlyPass
+            )
+              ? ''
+              : 'none';
 
         }
+      );
 
-        row.style.display =
-          (
-            matchesSearch &&
-            matchesStatus &&
-            matchesTool &&
-            newOnlyPass
-          )
-            ? ''
-            : 'none';
+      updateSummaryMetrics();
 
-      });
-
-      updateCaseCount();
     }
 
-    // Update Cases Counter
-    function updateCaseCount() {
+
+    /* =========================================================
+       SUMMARY METRICS
+       ========================================================= */
+
+    function updateSummaryMetrics() {
 
       const rows =
         document.querySelectorAll(
           '#detectionsTable tbody tr'
         );
 
-      let visibleCount = 0;
+      let total = 0;
 
-      rows.forEach(row => {
+      let active = 0;
 
-        if (
-          row.style.display !== 'none'
-        ) {
-          visibleCount++;
+      let testingNew = 0;
+
+      const tools =
+        new Set();
+
+
+      rows.forEach(
+        row => {
+
+          if (
+            row.style.display === 'none'
+          ) {
+
+            return;
+
+          }
+
+          const cells =
+            row.querySelectorAll('td');
+
+          if (
+            cells.length < 9
+          ) {
+
+            return;
+
+          }
+
+          total++;
+
+          const status =
+            cells[2]
+              .textContent
+              .trim();
+
+          const tool =
+            cells[8]
+              .textContent
+              .trim();
+
+          if (
+            status === 'Active'
+          ) {
+
+            active++;
+
+          }
+
+          if (
+            status === 'Testing' ||
+            status === 'New Detection'
+          ) {
+
+            testingNew++;
+
+          }
+
+          if (
+            tool
+          ) {
+
+            tools.add(tool);
+
+          }
+
         }
+      );
 
-      });
 
-      document.getElementById(
-        'casesCounter'
-      ).textContent =
-        `Total Detections: ${visibleCount}`;
+      document
+        .getElementById(
+          'summaryTotal'
+        )
+        .textContent =
+          total;
+
+
+      document
+        .getElementById(
+          'summaryActive'
+        )
+        .textContent =
+          active;
+
+
+      document
+        .getElementById(
+          'summaryTesting'
+        )
+        .textContent =
+          testingNew;
+
+
+      document
+        .getElementById(
+          'summaryTools'
+        )
+        .textContent =
+          tools.size;
+
     }
 
-    // Export Table to CSV
+
+    /* =========================================================
+       EXPORT CSV
+       ========================================================= */
+
     function exportTableToCSV() {
 
       const table =
@@ -894,52 +1617,74 @@
       const rows =
         table.querySelectorAll('tr');
 
-      let csv = [];
+      const csv =
+        [];
 
-      rows.forEach(row => {
 
-        if (
-          row.style.display === 'none'
-        ) {
-          return;
-        }
+      rows.forEach(
+        row => {
 
-        let rowData = [];
+          if (
+            row.style.display === 'none'
+          ) {
 
-        row
-          .querySelectorAll('th, td')
-          .forEach(cell => {
+            return;
 
-            if (
-              cell.style.display === 'none'
-            ) {
-              return;
-            }
+          }
 
-            let text =
-              cell.textContent.replace(
-                /\"/g,
-                '\"\"'
-              );
+          const rowData =
+            [];
 
-            rowData.push(
-              `"${text}"`
+
+          row
+            .querySelectorAll(
+              'th, td'
+            )
+            .forEach(
+              cell => {
+
+                if (
+                  cell.style.display === 'none'
+                ) {
+
+                  return;
+
+                }
+
+                const text =
+                  cell
+                    .textContent
+                    .replace(
+                      /"/g,
+                      '""'
+                    )
+                    .trim();
+
+                rowData.push(
+                  `"${text}"`
+                );
+
+              }
             );
 
-          });
 
-        if (
-          rowData.length > 0
-        ) {
-          csv.push(
-            rowData.join(',')
-          );
+          if (
+            rowData.length > 0
+          ) {
+
+            csv.push(
+              rowData.join(',')
+            );
+
+          }
+
         }
+      );
 
-      });
 
       const csvContent =
         csv.join('\n');
+
 
       const blob =
         new Blob(
@@ -950,66 +1695,101 @@
           }
         );
 
+
       const url =
-        URL.createObjectURL(blob);
+        URL.createObjectURL(
+          blob
+        );
+
 
       const link =
-        document.createElement('a');
+        document.createElement(
+          'a'
+        );
 
-      link.href = url;
+
+      link.href =
+        url;
+
 
       link.setAttribute(
         'download',
         'detections_board.csv'
       );
 
+
       document.body.appendChild(
         link
       );
 
+
       link.click();
+
 
       document.body.removeChild(
         link
       );
 
+
       URL.revokeObjectURL(
         url
       );
+
     }
 
-    // Parse MM-DD-YYYY
+
+    /* =========================================================
+       DATE HELPERS
+       ========================================================= */
+
     function parseDate(str) {
 
-      if (!str) {
+      if (
+        !str
+      ) {
+
         return null;
+
       }
+
 
       const parts =
         str.split('-');
+
 
       return new Date(
         parts[2],
         parts[0] - 1,
         parts[1]
       );
+
     }
 
-    // Determine if added within 30 days
+
     function isRecent(dateStr) {
 
       const dt =
-        parseDate(dateStr);
+        parseDate(
+          dateStr
+        );
 
-      if (!dt) {
+
+      if (
+        !dt
+      ) {
+
         return false;
+
       }
+
 
       const today =
         new Date();
 
+
       const diffMs =
         today - dt;
+
 
       const diffDays =
         diffMs /
@@ -1020,85 +1800,144 @@
           24
         );
 
-      return diffDays <= 30;
+
+      return (
+        diffDays <= 30
+      );
+
     }
 
-    // Status Badge Styling
+
+    /* =========================================================
+       STATUS BADGES
+       ========================================================= */
+
     function getStatusColor(status) {
 
-      switch (status) {
+      switch (
+        status
+      ) {
 
         case 'Active':
+
           return '#435f57';
 
+
         case 'Active via Custom Rules':
+
           return '#8282d2';
+
 
         case 'Testing':
 
         case 'New Detection':
+
           return '#de9e36';
 
+
         case 'Muted':
+
           return '#8282d2';
 
+
         case 'Not Active':
+
           return '#220c10';
 
+
         case 'Alert Preferences':
+
           return '#066cf4';
 
+
         default:
+
           return '#435f57';
+
       }
+
     }
+
 
     function getStatusDescription(status) {
 
-      switch (status) {
+      switch (
+        status
+      ) {
 
         case 'Active':
+
           return 'This detection is actively monitored and alerts are generated.';
 
+
         case 'Active via Custom Rules':
+
           return 'Enabled custom rules track noteworthy activity.';
 
+
         case 'Not Active':
+
           return 'This detection has low standalone value.';
 
+
         case 'Alert Preferences':
+
           return 'Toggling available under Alert Preferences.';
 
+
         case 'New Detection':
+
           return 'A newly introduced detection awaiting assessment.';
 
+
         case 'Testing':
+
           return 'Under SOC evaluation.';
 
+
         case 'Muted':
+
           return 'Automatically closed after threshold checks.';
 
+
         default:
+
           return '';
+
       }
+
     }
+
 
     function getStatusTextColor(status) {
 
-      switch (status) {
+      switch (
+        status
+      ) {
 
         case 'Testing':
 
         case 'Muted':
+
           return '#000000';
 
+
         default:
+
           return '#ffffff';
+
       }
+
     }
 
-    // Sorting Functionality
-    let sortDirections = {};
+
+    /* =========================================================
+       SORTING
+       ========================================================= */
+
+    const sortDirections =
+      {};
+
 
     function sortTable(columnIndex) {
 
@@ -1107,13 +1946,20 @@
           'detectionsTable'
         );
 
+
       const tbody =
-        table.querySelector('tbody');
+        table.querySelector(
+          'tbody'
+        );
+
 
       const rowsArray =
         Array.from(
-          tbody.querySelectorAll('tr')
+          tbody.querySelectorAll(
+            'tr'
+          )
         );
+
 
       sortDirections[columnIndex] =
         sortDirections[columnIndex] ===
@@ -1121,8 +1967,12 @@
           ? 'desc'
           : 'asc';
 
+
       const direction =
-        sortDirections[columnIndex];
+        sortDirections[
+          columnIndex
+        ];
+
 
       const visibleRows =
         rowsArray.filter(
@@ -1131,61 +1981,104 @@
             'none'
         );
 
-      visibleRows.sort((a, b) => {
 
-        const cellA =
-          a.children[columnIndex]
-            .textContent
-            .trim()
-            .toLowerCase();
+      visibleRows.sort(
+        (a, b) => {
 
-        const cellB =
-          b.children[columnIndex]
-            .textContent
-            .trim()
-            .toLowerCase();
+          const cellA =
+            a
+              .children[
+                columnIndex
+              ]
+              .textContent
+              .trim()
+              .toLowerCase();
 
-        if (cellA < cellB) {
-          return direction === 'asc'
-            ? -1
-            : 1;
+
+          const cellB =
+            b
+              .children[
+                columnIndex
+              ]
+              .textContent
+              .trim()
+              .toLowerCase();
+
+
+          if (
+            cellA < cellB
+          ) {
+
+            return direction ===
+              'asc'
+                ? -1
+                : 1;
+
+          }
+
+
+          if (
+            cellA > cellB
+          ) {
+
+            return direction ===
+              'asc'
+                ? 1
+                : -1;
+
+          }
+
+
+          return 0;
+
         }
+      );
 
-        if (cellA > cellB) {
-          return direction === 'asc'
-            ? 1
-            : -1;
-        }
-
-        return 0;
-      });
 
       visibleRows.forEach(
         row =>
-          tbody.appendChild(row)
+          tbody.appendChild(
+            row
+          )
       );
+
 
       const allTh =
         table.querySelectorAll(
           'thead th'
         );
 
-      allTh.forEach(th => {
 
-        th.textContent =
-          th.textContent
-            .replace(/[▲▼]/g, '')
-            .trim();
+      allTh.forEach(
+        th => {
 
-      });
+          th.textContent =
+            th
+              .textContent
+              .replace(
+                /[▲▼]/g,
+                ''
+              )
+              .trim();
 
-      allTh[columnIndex].textContent +=
+        }
+      );
+
+
+      allTh[
+        columnIndex
+      ].textContent +=
         direction === 'asc'
           ? ' ▲'
           : ' ▼';
+
     }
 
-    // Load Data and Build Table Rows
+
+    /* =========================================================
+       LOAD DATA
+       ========================================================= */
+
     function loadData() {
 
       fetch(
@@ -1194,104 +2087,147 @@
       )
 
         .then(
-          res => res.json()
+          response =>
+            response.json()
         )
 
-        .then(data => {
+        .then(
+          data => {
 
-          data.sort(
-            (a, b) =>
-              a.name.localeCompare(
-                b.name
-              )
-          );
-
-          const tbody =
-            document.querySelector(
-              '#detectionsTable tbody'
+            data.sort(
+              (a, b) =>
+                a.name.localeCompare(
+                  b.name
+                )
             );
 
-          tbody.innerHTML = '';
 
-          data.forEach(det => {
-
-            let displayDesc =
-              det.description;
-
-            if (
-              det.dateAdded &&
-              isRecent(det.dateAdded)
-            ) {
-
-              displayDesc =
-                '<span class="new-badge" title="This detection was added to this board within the last 30 days">New</span> ' +
-                displayDesc;
-
-            }
-
-            const statusColor =
-              getStatusColor(
-                det.defaultStatus
+            const tbody =
+              document.querySelector(
+                '#detectionsTable tbody'
               );
 
-            const statusDesc =
-              getStatusDescription(
-                det.defaultStatus
-              );
 
-            const tr =
-              document.createElement(
-                'tr'
-              );
+            tbody.innerHTML =
+              '';
 
-            tr.innerHTML = `
-              <td>${det.name}</td>
 
-              <td>${displayDesc}</td>
+            data.forEach(
+              det => {
 
-              <td>
-                <span
-                  class="status-badge"
-                  style="
-                    background-color: ${statusColor};
-                    color: ${getStatusTextColor(det.defaultStatus)};
-                  "
-                  title="${statusDesc}"
-                >
-                  ${det.defaultStatus}
-                </span>
-              </td>
+                let displayDesc =
+                  det.description;
 
-              <td>${det.mitreTactic}</td>
 
-              <td>${det.mitreTacticID}</td>
+                if (
+                  det.dateAdded &&
+                  isRecent(
+                    det.dateAdded
+                  )
+                ) {
 
-              <td>${det.mitreTechnique}</td>
+                  displayDesc =
+                    '<span class="new-badge" title="This detection was added to this board within the last 30 days">New</span> ' +
+                    displayDesc;
 
-              <td>${det.mitreTechniqueID}</td>
+                }
 
-              <td>${det.connector}</td>
 
-              <td>${det.tool}</td>
-            `;
+                const statusColor =
+                  getStatusColor(
+                    det.defaultStatus
+                  );
 
-            tbody.appendChild(
-              tr
+
+                const statusDescription =
+                  getStatusDescription(
+                    det.defaultStatus
+                  );
+
+
+                const row =
+                  document.createElement(
+                    'tr'
+                  );
+
+
+                row.innerHTML = `
+
+                  <td>
+                    ${det.name}
+                  </td>
+
+                  <td>
+                    ${displayDesc}
+                  </td>
+
+                  <td>
+
+                    <span
+                      class="status-badge"
+                      style="
+                        background-color: ${statusColor};
+                        color: ${getStatusTextColor(det.defaultStatus)};
+                      "
+                      title="${statusDescription}"
+                    >
+
+                      ${det.defaultStatus}
+
+                    </span>
+
+                  </td>
+
+                  <td>
+                    ${det.mitreTactic}
+                  </td>
+
+                  <td>
+                    ${det.mitreTacticID}
+                  </td>
+
+                  <td>
+                    ${det.mitreTechnique}
+                  </td>
+
+                  <td>
+                    ${det.mitreTechniqueID}
+                  </td>
+
+                  <td>
+                    ${det.connector}
+                  </td>
+
+                  <td>
+                    ${det.tool}
+                  </td>
+
+                `;
+
+
+                tbody.appendChild(
+                  row
+                );
+
+              }
             );
 
-          });
 
-          updateCaseCount();
+            updateSummaryMetrics();
 
-        })
+          }
+        )
 
-        .catch(err =>
-          console.error(
-            'Error loading detections.json',
-            err
-          )
+        .catch(
+          error =>
+            console.error(
+              'Error loading detections.json',
+              error
+            )
         );
+
     }
+
 
     window.onload =
       loadData;
