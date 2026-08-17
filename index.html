@@ -8,7 +8,10 @@
   <link rel="icon" href="cyflare_logo_only_shield.png" type="image/png">
 
   <!-- Cyflare Body Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+  >
 
   <style>
     :root {
@@ -47,7 +50,9 @@
 
       --bg-color: var(--white-cap);
       --text-color: var(--crimson);
+
       --card-bg: #ffffff;
+
       --table-border: #d7dedb;
 
       --header-bg: var(--mountain-green);
@@ -79,9 +84,11 @@
 
     .dark-mode {
       --bg-color: var(--crimson);
+
       --text-color: #f1f4f3;
 
       --card-bg: #30171c;
+
       --table-border: #604950;
 
       --header-bg: var(--mountain-green);
@@ -108,7 +115,7 @@
     }
 
     /* =========================================================
-       BODY
+       GLOBAL
        ========================================================= */
 
     * {
@@ -212,6 +219,7 @@
 
       cursor: pointer;
 
+      font-family: 'Inter', sans-serif;
       font-size: 14px;
 
       transition:
@@ -234,14 +242,11 @@
     .summary-strip {
       max-width: 95%;
 
-      margin:
-        0 auto
-        14px auto;
+      margin: 0 auto 14px auto;
 
       display: grid;
 
-      grid-template-columns:
-        repeat(4, 1fr);
+      grid-template-columns: repeat(4, 1fr);
 
       gap: 12px;
     }
@@ -255,10 +260,7 @@
 
       background: var(--card-bg);
 
-      border:
-        1px solid
-        var(--table-border);
-
+      border: 1px solid var(--table-border);
       border-radius: 10px;
 
       box-shadow:
@@ -275,8 +277,7 @@
     }
 
     .summary-card:hover {
-      transform:
-        translateY(-2px);
+      transform: translateY(-2px);
 
       box-shadow:
         0 4px 10px
@@ -296,23 +297,19 @@
     }
 
     .summary-card.total::before {
-      background:
-        var(--mountain-green);
+      background: var(--mountain-green);
     }
 
     .summary-card.active::before {
-      background:
-        var(--vivid-blue);
+      background: var(--vivid-blue);
     }
 
     .summary-card.testing::before {
-      background:
-        var(--marigold);
+      background: var(--marigold);
     }
 
     .summary-card.tools::before {
-      background:
-        var(--slate-purple);
+      background: var(--slate-purple);
     }
 
     .summary-value {
@@ -320,8 +317,7 @@
 
       margin-bottom: 6px;
 
-      color:
-        var(--mountain-green);
+      color: var(--mountain-green);
 
       font-size: 1.8rem;
       font-weight: 700;
@@ -332,8 +328,7 @@
     .summary-label {
       display: block;
 
-      color:
-        var(--text-color);
+      color: var(--text-color);
 
       font-size: 0.72rem;
       font-weight: 600;
@@ -358,22 +353,17 @@
     .filter-bar {
       max-width: 95%;
 
-      margin:
-        0 auto
-        20px auto;
+      margin: 0 auto 20px auto;
 
       padding: 20px;
 
       display: flex;
       flex-wrap: wrap;
 
-      justify-content:
-        space-between;
-
+      justify-content: space-between;
       align-items: center;
 
-      background:
-        var(--card-bg);
+      background: var(--card-bg);
 
       border-radius: 8px;
 
@@ -399,11 +389,9 @@
 
       padding: 8px;
 
-      background:
-        var(--input-bg);
+      background: var(--input-bg);
 
-      color:
-        var(--text-color);
+      color: var(--text-color);
 
       border:
         1px solid
@@ -435,14 +423,11 @@
 
     .filter-btn,
     .action-btn {
-      padding:
-        8px 16px;
+      padding: 8px 16px;
 
-      background:
-        var(--mountain-green);
+      background: var(--mountain-green);
 
-      color:
-        var(--white-cap);
+      color: var(--white-cap);
 
       border: none;
 
@@ -461,26 +446,48 @@
 
       transition:
         background-color 0.3s,
-        transform 0.2s;
+        color 0.3s,
+        transform 0.2s,
+        box-shadow 0.2s;
     }
 
     .filter-btn:hover,
     .action-btn:hover {
-      background-color:
-        var(--hover-bg);
+      background-color: var(--hover-bg);
 
-      transform:
-        translateY(-2px);
+      transform: translateY(-2px);
+    }
+
+    /* =========================================================
+       ACTIVE FILTER INDICATOR
+       ========================================================= */
+
+    .filter-btn.filter-active,
+    .action-btn.filter-active {
+      background: var(--marigold);
+
+      color: var(--crimson);
+
+      font-weight: 600;
+
+      box-shadow:
+        0 0 0 2px
+        rgba(222,158,54,0.18);
+    }
+
+    .filter-btn.filter-active:hover,
+    .action-btn.filter-active:hover {
+      background: #e7aa45;
+
+      color: var(--crimson);
     }
 
     .reset-btn {
-      background:
-        var(--reset-btn-bg);
+      background: var(--reset-btn-bg);
     }
 
     .export-btn {
-      background:
-        var(--export-btn-bg);
+      background: var(--export-btn-bg);
     }
 
     /* =========================================================
@@ -498,19 +505,19 @@
 
       position: absolute;
 
-      width:
-        var(--dropdown-width);
+      width: var(--dropdown-width);
 
       margin-top: 8px;
 
       padding: 12px;
 
-      background-color:
-        var(--card-bg);
+      background-color: var(--card-bg);
 
       border:
         1px solid
         var(--table-border);
+
+      border-radius: 8px;
 
       box-shadow:
         0 8px 16px
@@ -522,8 +529,7 @@
 
       opacity: 0;
 
-      transform:
-        translateY(-5px);
+      transform: translateY(-5px);
     }
 
     .dropdown-content.show {
@@ -531,15 +537,13 @@
 
       opacity: 1;
 
-      transform:
-        translateY(0);
+      transform: translateY(0);
     }
 
     .dropdown-content label {
       display: block;
 
-      padding:
-        5px 0;
+      padding: 5px 0;
 
       cursor: pointer;
 
@@ -547,8 +551,7 @@
     }
 
     .dropdown-content label:hover {
-      background-color:
-        var(--row-hover-bg);
+      background-color: var(--row-hover-bg);
     }
 
     .dark-mode .dropdown-content {
@@ -604,47 +607,32 @@
       white-space: nowrap;
     }
 
-    /* Stellar Cyber */
-
     .tool-option.stellar input {
-      accent-color:
-        var(--stellar-color);
+      accent-color: var(--stellar-color);
     }
 
     .tool-filter-badge.stellar {
-      background:
-        var(--stellar-color);
+      background: var(--stellar-color);
     }
 
-    /* CrowdStrike */
-
     .tool-option.crowdstrike input {
-      accent-color:
-        var(--crowdstrike-color);
+      accent-color: var(--crowdstrike-color);
     }
 
     .tool-filter-badge.crowdstrike {
-      background:
-        var(--crowdstrike-color);
+      background: var(--crowdstrike-color);
     }
 
-    /* SentinelOne */
-
     .tool-option.sentinelone input {
-      accent-color:
-        var(--sentinelone-color);
+      accent-color: var(--sentinelone-color);
     }
 
     .tool-filter-badge.sentinelone {
-      background:
-        var(--sentinelone-color);
+      background: var(--sentinelone-color);
     }
 
-    /* Cyflare ITDR */
-
     .tool-option.cyflare-itdr input {
-      accent-color:
-        var(--cyflare-itdr-color);
+      accent-color: var(--cyflare-itdr-color);
     }
 
     .tool-filter-badge.cyflare-itdr {
@@ -664,14 +652,11 @@
       max-width: 98%;
       max-height: 85vh;
 
-      margin:
-        0 auto
-        20px auto;
+      margin: 0 auto 20px auto;
 
       overflow: auto;
 
-      background:
-        var(--card-bg);
+      background: var(--card-bg);
 
       border-radius: 12px;
 
@@ -685,9 +670,7 @@
 
       border: none;
 
-      border-collapse:
-        collapse;
-
+      border-collapse: collapse;
       border-spacing: 0;
     }
 
@@ -712,11 +695,9 @@
 
       z-index: 2;
 
-      background:
-        var(--header-bg);
+      background: var(--header-bg);
 
-      color:
-        var(--header-text);
+      color: var(--header-text);
 
       border:
         none !important;
@@ -727,41 +708,36 @@
     }
 
     tbody tr:nth-child(even) {
-      background:
-        var(--row-even-bg);
+      background: var(--row-even-bg);
     }
 
     tbody tr:hover {
-      background:
-        var(--row-hover-bg);
+      background: var(--row-hover-bg);
     }
 
     /* =========================================================
-       DARK MODE TABLE
+       DARK MODE TABLE READABILITY
        ========================================================= */
 
     .dark-mode
     #detectionsTable
     tbody
     tr:nth-child(odd) {
-      background-color:
-        #30171c;
+      background-color: #30171c;
     }
 
     .dark-mode
     #detectionsTable
     tbody
     tr:nth-child(even) {
-      background-color:
-        #3a2026;
+      background-color: #3a2026;
     }
 
     .dark-mode
     #detectionsTable
     tbody
     tr:hover {
-      background-color:
-        #4a2a31;
+      background-color: #4a2a31;
     }
 
     .dark-mode
@@ -787,13 +763,6 @@
     tbody
     td:nth-child(2) {
       color: #e9eeec;
-    }
-
-    .dark-mode
-    #detectionsTable
-    tbody
-    td:nth-child(n+4) {
-      color: #dbe3e0;
     }
 
     /* =========================================================
@@ -890,6 +859,27 @@
     }
 
     /* =========================================================
+       NEW BADGE
+       ========================================================= */
+
+    .new-badge {
+      background-color: var(--badge-new-bg);
+
+      color: #ffffff;
+
+      padding:
+        2px 6px;
+
+      border-radius: 4px;
+
+      font-size: 0.75em;
+
+      margin-right: 4px;
+
+      font-weight: 700;
+    }
+
+    /* =========================================================
        RESPONSIVE
        ========================================================= */
 
@@ -902,8 +892,7 @@
 
     @media (max-width: 520px) {
       .summary-strip {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
       }
     }
 
@@ -951,7 +940,7 @@
   </div>
 
   <!-- =========================================================
-       SUMMARY
+       SUMMARY STRIP
        ========================================================= -->
 
   <div class="summary-strip">
@@ -1026,6 +1015,8 @@
 
     <div class="filters-left">
 
+      <!-- Search -->
+
       <input
         type="text"
         id="search"
@@ -1034,12 +1025,15 @@
         placeholder="Search Detections..."
       >
 
-      <!-- Default Status -->
+      <!-- =====================================================
+           DEFAULT STATUS FILTER
+           ===================================================== -->
 
       <div class="dropdown">
 
         <button
           class="filter-btn"
+          id="statusFilterBtn"
           onclick="toggleDropdown('statusDropdown')"
         >
           Default Status
@@ -1122,6 +1116,7 @@
 
         <button
           class="filter-btn"
+          id="toolFilterBtn"
           onclick="toggleDropdown('toolDropdown')"
         >
           Tool
@@ -1212,7 +1207,9 @@
 
       </div>
 
-      <!-- Column Selection -->
+      <!-- =====================================================
+           COLUMN SELECTION
+           ===================================================== -->
 
       <div class="dropdown">
 
@@ -1261,7 +1258,7 @@
               checked
               onchange="toggleColumn(3)"
             >
-            MITRE Tactic
+            Connector
           </label>
 
           <label>
@@ -1270,7 +1267,7 @@
               checked
               onchange="toggleColumn(4)"
             >
-            MITRE Tactic ID
+            Tool
           </label>
 
           <label>
@@ -1279,7 +1276,7 @@
               checked
               onchange="toggleColumn(5)"
             >
-            MITRE Technique
+            MITRE Tactic
           </label>
 
           <label>
@@ -1288,7 +1285,7 @@
               checked
               onchange="toggleColumn(6)"
             >
-            MITRE Technique ID
+            MITRE Tactic ID
           </label>
 
           <label>
@@ -1297,7 +1294,7 @@
               checked
               onchange="toggleColumn(7)"
             >
-            Connector
+            MITRE Technique
           </label>
 
           <label>
@@ -1306,12 +1303,16 @@
               checked
               onchange="toggleColumn(8)"
             >
-            Tool
+            MITRE Technique ID
           </label>
 
         </div>
 
       </div>
+
+      <!-- =====================================================
+           ACTIONS
+           ===================================================== -->
 
       <button
         class="reset-btn action-btn"
@@ -1353,6 +1354,18 @@
 
   <!-- =========================================================
        TABLE
+
+       NEW COLUMN ORDER:
+
+       0 Detection Name
+       1 Description
+       2 Default Status
+       3 Connector
+       4 Tool
+       5 MITRE Tactic
+       6 MITRE Tactic ID
+       7 MITRE Technique
+       8 MITRE Technique ID
        ========================================================= -->
 
   <div class="table-container">
@@ -1376,27 +1389,27 @@
           </th>
 
           <th onclick="sortTable(3)">
-            MITRE Tactic
-          </th>
-
-          <th onclick="sortTable(4)">
-            MITRE Tactic ID
-          </th>
-
-          <th onclick="sortTable(5)">
-            MITRE Technique
-          </th>
-
-          <th onclick="sortTable(6)">
-            MITRE Technique ID
-          </th>
-
-          <th onclick="sortTable(7)">
             Connector
           </th>
 
-          <th onclick="sortTable(8)">
+          <th onclick="sortTable(4)">
             Tool
+          </th>
+
+          <th onclick="sortTable(5)">
+            MITRE Tactic
+          </th>
+
+          <th onclick="sortTable(6)">
+            MITRE Tactic ID
+          </th>
+
+          <th onclick="sortTable(7)">
+            MITRE Technique
+          </th>
+
+          <th onclick="sortTable(8)">
+            MITRE Technique ID
           </th>
 
         </tr>
@@ -1478,6 +1491,144 @@
 
 
     /* =========================================================
+       ACTIVE FILTER BUTTON STATE
+       ========================================================= */
+
+    function updateFilterButtonStates() {
+
+      /* -------------------------
+         DEFAULT STATUS
+         ------------------------- */
+
+      const statusCheckboxes =
+        document.querySelectorAll(
+          '#statusDropdown input[type="checkbox"]'
+        );
+
+      const checkedStatuses =
+        Array
+          .from(statusCheckboxes)
+          .filter(
+            checkbox =>
+              checkbox.checked
+          );
+
+      const statusButton =
+        document.getElementById(
+          'statusFilterBtn'
+        );
+
+      if (
+        checkedStatuses.length ===
+        statusCheckboxes.length
+      ) {
+
+        statusButton.textContent =
+          'Default Status';
+
+        statusButton
+          .classList
+          .remove(
+            'filter-active'
+          );
+
+      } else {
+
+        statusButton.textContent =
+          `Default Status (${checkedStatuses.length}/${statusCheckboxes.length})`;
+
+        statusButton
+          .classList
+          .add(
+            'filter-active'
+          );
+
+      }
+
+
+      /* -------------------------
+         TOOL
+         ------------------------- */
+
+      const toolCheckboxes =
+        document.querySelectorAll(
+          '#toolDropdown input[type="checkbox"]'
+        );
+
+      const checkedTools =
+        Array
+          .from(toolCheckboxes)
+          .filter(
+            checkbox =>
+              checkbox.checked
+          );
+
+      const toolButton =
+        document.getElementById(
+          'toolFilterBtn'
+        );
+
+      if (
+        checkedTools.length ===
+        toolCheckboxes.length
+      ) {
+
+        toolButton.textContent =
+          'Tool';
+
+        toolButton
+          .classList
+          .remove(
+            'filter-active'
+          );
+
+      } else {
+
+        toolButton.textContent =
+          `Tool (${checkedTools.length}/${toolCheckboxes.length})`;
+
+        toolButton
+          .classList
+          .add(
+            'filter-active'
+          );
+
+      }
+
+
+      /* -------------------------
+         NEW ONLY
+         ------------------------- */
+
+      const newButton =
+        document.getElementById(
+          'newFilterBtn'
+        );
+
+      if (
+        newOnlyFilter
+      ) {
+
+        newButton
+          .classList
+          .add(
+            'filter-active'
+          );
+
+      } else {
+
+        newButton
+          .classList
+          .remove(
+            'filter-active'
+          );
+
+      }
+
+    }
+
+
+    /* =========================================================
        NEW FILTER
        ========================================================= */
 
@@ -1496,7 +1647,7 @@
         )
         .textContent =
           newOnlyFilter
-            ? 'Show All'
+            ? 'Showing New Only'
             : 'Show New Only';
 
       filterTable();
@@ -1582,7 +1733,7 @@
 
 
     /* =========================================================
-       RESET
+       RESET FILTERS
        ========================================================= */
 
     function resetFilters() {
@@ -1598,8 +1749,8 @@
           '#statusDropdown input[type="checkbox"]'
         )
         .forEach(
-          cb =>
-            cb.checked = true
+          checkbox =>
+            checkbox.checked = true
         );
 
       document
@@ -1607,8 +1758,8 @@
           '#toolDropdown input[type="checkbox"]'
         )
         .forEach(
-          cb =>
-            cb.checked = true
+          checkbox =>
+            checkbox.checked = true
         );
 
       document
@@ -1616,9 +1767,10 @@
           '#columnDropdown input[type="checkbox"]'
         )
         .forEach(
-          (cb, index) => {
+          (checkbox, index) => {
 
-            cb.checked = true;
+            checkbox.checked =
+              true;
 
             toggleColumn(
               index,
@@ -1638,13 +1790,32 @@
         .textContent =
           'Show New Only';
 
+      /*
+        Reset MITRE state because
+        all columns have just been
+        shown again.
+      */
+
+      mitreVisible =
+        true;
+
+      document
+        .getElementById(
+          'toggleMitreBtn'
+        )
+        .textContent =
+          'Hide MITRE Columns';
+
       filterTable();
 
     }
 
 
     /* =========================================================
-       MITRE COLUMNS
+       MITRE COLUMN TOGGLE
+
+       MITRE columns are now:
+       5, 6, 7, 8
        ========================================================= */
 
     let mitreVisible =
@@ -1654,7 +1825,7 @@
     function toggleMitreColumns() {
 
       const indices =
-        [3, 4, 5, 6];
+        [5, 6, 7, 8];
 
       mitreVisible =
         !mitreVisible;
@@ -1710,6 +1881,7 @@
             'search'
           )
           .value
+          .trim()
           .toLowerCase();
 
       const statusCheckboxes =
@@ -1723,10 +1895,12 @@
             statusCheckboxes
           )
           .filter(
-            cb => cb.checked
+            checkbox =>
+              checkbox.checked
           )
           .map(
-            cb => cb.value
+            checkbox =>
+              checkbox.value
           );
 
       const allStatusesChecked =
@@ -1744,10 +1918,12 @@
             toolCheckboxes
           )
           .filter(
-            cb => cb.checked
+            checkbox =>
+              checkbox.checked
           )
           .map(
-            cb => cb.value
+            checkbox =>
+              checkbox.value
           );
 
       const allToolsChecked =
@@ -1767,6 +1943,20 @@
               'td'
             );
 
+          /*
+            New Column Layout
+
+            0 Detection Name
+            1 Description
+            2 Status
+            3 Connector
+            4 Tool
+            5 MITRE Tactic
+            6 MITRE Tactic ID
+            7 MITRE Technique
+            8 MITRE Technique ID
+          */
+
           const name =
             cells[0]
               .textContent
@@ -1782,23 +1972,69 @@
               .textContent
               .trim();
 
-          /*
-            Works even though Tool is now
-            displayed as a colored badge,
-            because textContent still returns
-            the tool name.
-          */
+          const connector =
+            cells[3]
+              .textContent
+              .trim()
+              .toLowerCase();
 
           const tool =
-            cells[8]
+            cells[4]
               .textContent
               .trim();
+
+          const mitreTactic =
+            cells[5]
+              .textContent
+              .toLowerCase();
+
+          const mitreTacticID =
+            cells[6]
+              .textContent
+              .toLowerCase();
+
+          const mitreTechnique =
+            cells[7]
+              .textContent
+              .toLowerCase();
+
+          const mitreTechniqueID =
+            cells[8]
+              .textContent
+              .toLowerCase();
+
+          /*
+            Search now searches the
+            entire useful detection
+            record, not just name
+            and description.
+          */
 
           const matchesSearch =
             name.includes(
               searchValue
             ) ||
             description.includes(
+              searchValue
+            ) ||
+            connector.includes(
+              searchValue
+            ) ||
+            tool
+              .toLowerCase()
+              .includes(
+                searchValue
+              ) ||
+            mitreTactic.includes(
+              searchValue
+            ) ||
+            mitreTacticID.includes(
+              searchValue
+            ) ||
+            mitreTechnique.includes(
+              searchValue
+            ) ||
+            mitreTechniqueID.includes(
               searchValue
             );
 
@@ -1843,13 +2079,15 @@
         }
       );
 
+      updateFilterButtonStates();
+
       updateSummaryMetrics();
 
     }
 
 
     /* =========================================================
-       SUMMARY
+       SUMMARY METRICS
        ========================================================= */
 
     function updateSummaryMetrics() {
@@ -1860,7 +2098,9 @@
         );
 
       let total = 0;
+
       let active = 0;
+
       let testingNew = 0;
 
       const tools =
@@ -1898,8 +2138,13 @@
               .textContent
               .trim();
 
+          /*
+            Tool moved from
+            column 8 to column 4.
+          */
+
           const tool =
-            cells[8]
+            cells[4]
               .textContent
               .trim();
 
@@ -2156,7 +2401,7 @@
 
 
     /* =========================================================
-       DATES
+       DATE HELPERS
        ========================================================= */
 
     function parseDate(str) {
@@ -2475,8 +2720,7 @@
       allTh[
         columnIndex
       ].textContent +=
-        direction ===
-        'asc'
+        direction === 'asc'
           ? ' ▲'
           : ' ▼';
 
@@ -2556,6 +2800,20 @@
                     'tr'
                   );
 
+                /*
+                  NEW DISPLAY ORDER:
+
+                  Detection
+                  Description
+                  Status
+                  Connector
+                  Tool
+                  MITRE Tactic
+                  MITRE Tactic ID
+                  MITRE Technique
+                  MITRE Technique ID
+                */
+
                 row.innerHTML = `
 
                   <td>
@@ -2582,6 +2840,14 @@
                   </td>
 
                   <td>
+                    ${det.connector}
+                  </td>
+
+                  <td>
+                    ${toolBadge}
+                  </td>
+
+                  <td>
                     ${det.mitreTactic}
                   </td>
 
@@ -2597,14 +2863,6 @@
                     ${det.mitreTechniqueID}
                   </td>
 
-                  <td>
-                    ${det.connector}
-                  </td>
-
-                  <td>
-                    ${toolBadge}
-                  </td>
-
                 `;
 
                 tbody.appendChild(
@@ -2613,6 +2871,8 @@
 
               }
             );
+
+            updateFilterButtonStates();
 
             updateSummaryMetrics();
 
