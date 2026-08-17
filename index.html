@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Cyflare Detections Board</title>
 
-  <!-- Tab Logo (favicon) -->
+  <!-- Tab Logo -->
   <link rel="icon" href="cyflare_logo_only_shield.png" type="image/png">
 
   <!-- Cyflare Body Font -->
@@ -12,9 +12,12 @@
 
   <style>
     :root {
-      --dropdown-width: 240px;
+      --dropdown-width: 250px;
 
-      /* Cyflare Color System */
+      /* =======================================================
+         CYFLARE BRAND COLORS
+         ======================================================= */
+
       --mountain-green: #435f57;
       --white-cap: #fafafa;
       --vivid-blue: #066cf4;
@@ -22,11 +25,31 @@
       --slate-purple: #8282d2;
       --crimson: #220c10;
 
-      /* Light Mode Variables */
+      /* =======================================================
+         TOOL / COMPANY COLORS
+         ======================================================= */
+
+      --stellar-color: #f58220;
+      --stellar-dark: #c75f00;
+
+      --crowdstrike-color: #d12127;
+      --crowdstrike-dark: #9f161b;
+
+      --sentinelone-color: #6f3ff5;
+      --sentinelone-dark: #5125c7;
+
+      --cyflare-itdr-color: #066cf4;
+      --cyflare-itdr-dark: #435f57;
+
+      /* =======================================================
+         LIGHT MODE
+         ======================================================= */
+
       --bg-color: var(--white-cap);
       --text-color: var(--crimson);
       --card-bg: #ffffff;
       --table-border: #d7dedb;
+
       --header-bg: var(--mountain-green);
       --header-text: var(--white-cap);
 
@@ -34,6 +57,7 @@
       --primary-btn-text: var(--white-cap);
 
       --hover-bg: var(--mountain-green);
+
       --reset-btn-bg: var(--crimson);
       --export-btn-bg: var(--mountain-green);
 
@@ -55,8 +79,6 @@
 
     .dark-mode {
       --bg-color: var(--crimson);
-
-      /* Improved high-contrast text */
       --text-color: #f1f4f3;
 
       --card-bg: #30171c;
@@ -69,6 +91,7 @@
       --primary-btn-text: var(--white-cap);
 
       --hover-bg: var(--slate-purple);
+
       --reset-btn-bg: var(--marigold);
       --export-btn-bg: var(--mountain-green);
 
@@ -88,16 +111,24 @@
        BODY
        ========================================================= */
 
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
+
       background-color: var(--bg-color);
       color: var(--text-color);
+
       font-family: 'Inter', sans-serif;
       font-weight: 400;
+
+      text-align: center;
+
       transition:
         background-color 0.3s,
         color 0.3s;
-      text-align: center;
     }
 
     /* =========================================================
@@ -111,30 +142,40 @@
 
     .logo-section {
       position: absolute;
+
       left: 20px;
       top: 50%;
+
       transform: translateY(-50%);
     }
 
     .logo-section img {
       max-width: 250px;
       height: auto;
+
       display: block;
+
       background-color: transparent;
     }
 
     .center-section {
       position: absolute;
+
       left: 50%;
       top: 50%;
+
       transform: translate(-50%, -50%);
+
       text-align: center;
     }
 
     .center-section h1 {
       margin: 0;
-      font-weight: 600;
+
       color: var(--mountain-green);
+
+      font-size: 2rem;
+      font-weight: 600;
     }
 
     .dark-mode .center-section h1 {
@@ -142,26 +183,32 @@
     }
 
     .center-section .site-link {
-      margin-top: 4px;
-      font-weight: 600;
-      text-decoration: none;
-      color: var(--link-color);
       display: block;
+
+      margin-top: 4px;
+
+      color: var(--link-color);
+
+      text-decoration: none;
+
+      font-weight: 600;
     }
 
     .mode-toggle {
       position: absolute;
+
       right: 20px;
       top: 50%;
+
       transform: translateY(-50%);
+
+      padding: 8px 16px;
 
       background: var(--primary-btn-bg);
       color: var(--primary-btn-text);
 
       border: none;
       border-radius: 8px;
-
-      padding: 8px 16px;
 
       cursor: pointer;
 
@@ -174,7 +221,10 @@
 
     .mode-toggle:hover {
       background-color: var(--hover-bg);
-      transform: translateY(-2px);
+
+      transform:
+        translateY(-50%)
+        translateY(-2px);
     }
 
     /* =========================================================
@@ -183,27 +233,39 @@
 
     .summary-strip {
       max-width: 95%;
-      margin: 0 auto 14px auto;
+
+      margin:
+        0 auto
+        14px auto;
 
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
       gap: 12px;
     }
 
     .summary-card {
-      background: var(--card-bg);
+      position: relative;
 
-      border: 1px solid var(--table-border);
-      border-radius: 10px;
+      overflow: hidden;
 
       padding: 14px 18px;
 
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      background: var(--card-bg);
+
+      border:
+        1px solid
+        var(--table-border);
+
+      border-radius: 10px;
+
+      box-shadow:
+        0 2px 6px
+        rgba(0,0,0,0.08);
 
       text-align: left;
-
-      position: relative;
-      overflow: hidden;
 
       transition:
         background-color 0.3s,
@@ -213,8 +275,12 @@
     }
 
     .summary-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+      transform:
+        translateY(-2px);
+
+      box-shadow:
+        0 4px 10px
+        rgba(0,0,0,0.12);
     }
 
     .summary-card::before {
@@ -230,85 +296,59 @@
     }
 
     .summary-card.total::before {
-      background: var(--mountain-green);
+      background:
+        var(--mountain-green);
     }
 
     .summary-card.active::before {
-      background: var(--vivid-blue);
+      background:
+        var(--vivid-blue);
     }
 
     .summary-card.testing::before {
-      background: var(--marigold);
+      background:
+        var(--marigold);
     }
 
     .summary-card.tools::before {
-      background: var(--slate-purple);
+      background:
+        var(--slate-purple);
     }
 
     .summary-value {
       display: block;
 
-      font-size: 1.8rem;
-      line-height: 1;
+      margin-bottom: 6px;
 
+      color:
+        var(--mountain-green);
+
+      font-size: 1.8rem;
       font-weight: 700;
 
-      color: var(--mountain-green);
-
-      margin-bottom: 6px;
+      line-height: 1;
     }
 
     .summary-label {
       display: block;
 
+      color:
+        var(--text-color);
+
       font-size: 0.72rem;
+      font-weight: 600;
 
       text-transform: uppercase;
 
       letter-spacing: 0.6px;
-
-      font-weight: 600;
-
-      color: var(--text-color);
     }
 
     .dark-mode .summary-value {
-      color: #fafafa;
+      color: var(--white-cap);
     }
 
     .dark-mode .summary-label {
       color: #d9e0de;
-    }
-
-    @media (max-width: 900px) {
-      .summary-strip {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 520px) {
-      .summary-strip {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* =========================================================
-       NEW BADGE
-       ========================================================= */
-
-    .new-badge {
-      background-color: var(--badge-new-bg);
-      color: #ffffff;
-
-      padding: 2px 6px;
-
-      border-radius: 4px;
-
-      font-size: 0.75em;
-
-      margin-right: 4px;
-
-      font-weight: 700;
     }
 
     /* =========================================================
@@ -316,25 +356,33 @@
        ========================================================= */
 
     .filter-bar {
-      background: var(--card-bg);
+      max-width: 95%;
 
-      border-radius: 8px;
-
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin:
+        0 auto
+        20px auto;
 
       padding: 20px;
 
       display: flex;
       flex-wrap: wrap;
 
-      justify-content: space-between;
+      justify-content:
+        space-between;
+
       align-items: center;
 
-      max-width: 95%;
+      background:
+        var(--card-bg);
 
-      margin: 0 auto 20px auto;
+      border-radius: 8px;
 
-      transition: background-color 0.3s;
+      box-shadow:
+        0 2px 6px
+        rgba(0,0,0,0.1);
+
+      transition:
+        background-color 0.3s;
     }
 
     .filters-left {
@@ -351,27 +399,29 @@
 
       padding: 8px;
 
+      background:
+        var(--input-bg);
+
+      color:
+        var(--text-color);
+
+      border:
+        1px solid
+        var(--input-border);
+
       border-radius: 6px;
 
-      border: 1px solid var(--input-border);
-
-      background: var(--input-bg);
-
-      color: var(--text-color);
-
-      font-family: 'Inter', sans-serif;
-      font-weight: 400;
+      font-family:
+        'Inter',
+        sans-serif;
 
       font-size: 14px;
-
-      transition:
-        background-color 0.3s,
-        color 0.3s,
-        border-color 0.3s;
+      font-weight: 400;
     }
 
     .search-box::placeholder {
       color: #6f7774;
+
       opacity: 1;
     }
 
@@ -381,15 +431,18 @@
 
     .dark-mode .search-box::placeholder {
       color: #b8c3c0;
-      opacity: 1;
     }
 
     .filter-btn,
     .action-btn {
-      background: var(--mountain-green);
-      color: var(--primary-btn-text);
+      padding:
+        8px 16px;
 
-      padding: 8px 16px;
+      background:
+        var(--mountain-green);
+
+      color:
+        var(--white-cap);
 
       border: none;
 
@@ -397,34 +450,46 @@
 
       cursor: pointer;
 
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
+      font-family:
+        'Inter',
+        sans-serif;
 
       font-size: 14px;
+      font-weight: 500;
+
+      text-align: center;
 
       transition:
         background-color 0.3s,
         transform 0.2s;
-
-      text-align: center;
     }
 
     .filter-btn:hover,
     .action-btn:hover {
-      background-color: var(--hover-bg);
-      transform: translateY(-2px);
-    }
+      background-color:
+        var(--hover-bg);
 
-    .export-btn {
-      background: var(--export-btn-bg);
+      transform:
+        translateY(-2px);
     }
 
     .reset-btn {
-      background: var(--reset-btn-bg);
+      background:
+        var(--reset-btn-bg);
     }
+
+    .export-btn {
+      background:
+        var(--export-btn-bg);
+    }
+
+    /* =========================================================
+       DROPDOWNS
+       ========================================================= */
 
     .dropdown {
       position: relative;
+
       display: inline-block;
     }
 
@@ -433,45 +498,32 @@
 
       position: absolute;
 
-      width: var(--dropdown-width);
+      width:
+        var(--dropdown-width);
 
-      background-color: var(--card-bg);
-
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      margin-top: 8px;
 
       padding: 12px;
 
+      background-color:
+        var(--card-bg);
+
+      border:
+        1px solid
+        var(--table-border);
+
+      box-shadow:
+        0 8px 16px
+        rgba(0,0,0,0.2);
+
       text-align: left;
-
-      border: 1px solid var(--table-border);
-
-      margin-top: 8px;
 
       z-index: 999;
 
       opacity: 0;
 
-      transform: translateY(-5px);
-
-      transition:
-        opacity 0.2s,
-        transform 0.2s,
-        background-color 0.3s,
-        border-color 0.3s;
-    }
-
-    .dropdown-content label {
-      display: block;
-
-      padding: 5px 0;
-
-      cursor: pointer;
-
-      font-weight: 400;
-    }
-
-    .dropdown-content label:hover {
-      background-color: var(--hover-bg);
+      transform:
+        translateY(-5px);
     }
 
     .dropdown-content.show {
@@ -479,7 +531,24 @@
 
       opacity: 1;
 
-      transform: translateY(0);
+      transform:
+        translateY(0);
+    }
+
+    .dropdown-content label {
+      display: block;
+
+      padding:
+        5px 0;
+
+      cursor: pointer;
+
+      font-weight: 400;
+    }
+
+    .dropdown-content label:hover {
+      background-color:
+        var(--row-hover-bg);
     }
 
     .dark-mode .dropdown-content {
@@ -487,25 +556,128 @@
     }
 
     /* =========================================================
+       TOOL FILTER
+       ========================================================= */
+
+    .tool-option {
+      display: flex !important;
+
+      align-items: center;
+
+      gap: 8px;
+
+      margin: 4px 0;
+
+      padding:
+        7px 8px !important;
+
+      border-radius: 7px;
+
+      transition:
+        background-color 0.2s;
+    }
+
+    .tool-option input {
+      width: 15px;
+      height: 15px;
+
+      cursor: pointer;
+    }
+
+    .tool-filter-badge {
+      display: inline-flex;
+
+      align-items: center;
+
+      padding:
+        4px 9px;
+
+      border-radius: 999px;
+
+      color: #ffffff;
+
+      font-size: 0.82rem;
+      font-weight: 600;
+
+      line-height: 1.2;
+
+      white-space: nowrap;
+    }
+
+    /* Stellar Cyber */
+
+    .tool-option.stellar input {
+      accent-color:
+        var(--stellar-color);
+    }
+
+    .tool-filter-badge.stellar {
+      background:
+        var(--stellar-color);
+    }
+
+    /* CrowdStrike */
+
+    .tool-option.crowdstrike input {
+      accent-color:
+        var(--crowdstrike-color);
+    }
+
+    .tool-filter-badge.crowdstrike {
+      background:
+        var(--crowdstrike-color);
+    }
+
+    /* SentinelOne */
+
+    .tool-option.sentinelone input {
+      accent-color:
+        var(--sentinelone-color);
+    }
+
+    .tool-filter-badge.sentinelone {
+      background:
+        var(--sentinelone-color);
+    }
+
+    /* Cyflare ITDR */
+
+    .tool-option.cyflare-itdr input {
+      accent-color:
+        var(--cyflare-itdr-color);
+    }
+
+    .tool-filter-badge.cyflare-itdr {
+      background:
+        linear-gradient(
+          135deg,
+          var(--cyflare-itdr-dark),
+          var(--cyflare-itdr-color)
+        );
+    }
+
+    /* =========================================================
        TABLE
        ========================================================= */
 
     .table-container {
-      background: var(--card-bg);
-
-      border-radius: 12px;
-
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-
       max-width: 98%;
-
-      margin: 0 auto 20px auto;
-
       max-height: 85vh;
+
+      margin:
+        0 auto
+        20px auto;
 
       overflow: auto;
 
-      transition: background-color 0.3s;
+      background:
+        var(--card-bg);
+
+      border-radius: 12px;
+
+      box-shadow:
+        0 4px 10px
+        rgba(0,0,0,0.1);
     }
 
     table {
@@ -513,25 +685,25 @@
 
       border: none;
 
-      border-collapse: collapse;
-      border-spacing: 0;
+      border-collapse:
+        collapse;
 
-      transition: border-color 0.3s;
+      border-spacing: 0;
     }
 
     th,
     td {
       padding: 12px;
 
-      border-bottom: 1px solid var(--table-border);
+      border-bottom:
+        1px solid
+        var(--table-border);
 
       transition:
         border-color 0.3s,
         background-color 0.2s,
         color 0.3s;
     }
-
-    /* Table Header */
 
     thead th {
       position: sticky;
@@ -540,70 +712,87 @@
 
       z-index: 2;
 
-      background: var(--header-bg);
+      background:
+        var(--header-bg);
 
-      color: var(--header-text);
+      color:
+        var(--header-text);
+
+      border:
+        none !important;
 
       cursor: pointer;
-
-      border: none !important;
 
       font-weight: 600;
     }
 
-    /* Light Mode Rows */
-
     tbody tr:nth-child(even) {
-      background: var(--row-even-bg);
+      background:
+        var(--row-even-bg);
     }
 
     tbody tr:hover {
-      background: var(--row-hover-bg);
+      background:
+        var(--row-hover-bg);
     }
 
     /* =========================================================
-       DARK MODE TABLE READABILITY
+       DARK MODE TABLE
        ========================================================= */
 
-    .dark-mode #detectionsTable tbody tr:nth-child(odd) {
-      background-color: #30171c;
+    .dark-mode
+    #detectionsTable
+    tbody
+    tr:nth-child(odd) {
+      background-color:
+        #30171c;
     }
 
-    .dark-mode #detectionsTable tbody tr:nth-child(even) {
-      background-color: #3a2026;
+    .dark-mode
+    #detectionsTable
+    tbody
+    tr:nth-child(even) {
+      background-color:
+        #3a2026;
     }
 
-    .dark-mode #detectionsTable tbody tr:hover {
-      background-color: #4a2a31;
+    .dark-mode
+    #detectionsTable
+    tbody
+    tr:hover {
+      background-color:
+        #4a2a31;
     }
 
-    .dark-mode #detectionsTable tbody td {
+    .dark-mode
+    #detectionsTable
+    tbody
+    td {
       color: #e6ecea;
+
       font-weight: 400;
     }
 
-    /*
-      Make Detection Name more prominent
-      without making the whole table overly bright.
-    */
-    .dark-mode #detectionsTable tbody td:first-child {
+    .dark-mode
+    #detectionsTable
+    tbody
+    td:first-child {
       color: #f4f7f6;
+
       font-weight: 500;
     }
 
-    /*
-      Slightly brighter description text so long descriptions
-      remain easy to scan.
-    */
-    .dark-mode #detectionsTable tbody td:nth-child(2) {
+    .dark-mode
+    #detectionsTable
+    tbody
+    td:nth-child(2) {
       color: #e9eeec;
     }
 
-    /*
-      MITRE / Connector / Tool columns remain readable but
-      slightly softer than primary detection information.
-    */
-    .dark-mode #detectionsTable tbody td:nth-child(n+4) {
+    .dark-mode
+    #detectionsTable
+    tbody
+    td:nth-child(n+4) {
       color: #dbe3e0;
     }
 
@@ -630,15 +819,92 @@
     .status-badge {
       display: inline-block;
 
-      padding: 4px 8px;
+      padding:
+        4px 8px;
 
       border-radius: 12px;
-
-      color: var(--badge-new-text);
 
       font-weight: 700;
 
       cursor: default;
+    }
+
+    /* =========================================================
+       TOOL TABLE BADGES
+       ========================================================= */
+
+    .table-tool-badge {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-width: 110px;
+
+      padding:
+        5px 10px;
+
+      border-radius: 999px;
+
+      color: #ffffff !important;
+
+      font-size: 0.78rem;
+      font-weight: 600;
+
+      line-height: 1.2;
+
+      white-space: nowrap;
+
+      box-shadow:
+        0 1px 3px
+        rgba(0,0,0,0.14);
+    }
+
+    .table-tool-badge.stellar {
+      background:
+        var(--stellar-color);
+    }
+
+    .table-tool-badge.crowdstrike {
+      background:
+        var(--crowdstrike-color);
+    }
+
+    .table-tool-badge.sentinelone {
+      background:
+        var(--sentinelone-color);
+    }
+
+    .table-tool-badge.cyflare-itdr {
+      background:
+        linear-gradient(
+          135deg,
+          var(--cyflare-itdr-dark),
+          var(--cyflare-itdr-color)
+        );
+    }
+
+    .table-tool-badge.other {
+      background:
+        var(--mountain-green);
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 900px) {
+      .summary-strip {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .summary-strip {
+        grid-template-columns:
+          1fr;
+      }
     }
 
   </style>
@@ -653,11 +919,17 @@
   <div class="top-bar">
 
     <div class="logo-section">
-      <img src="cyflare logo.png" alt="Cyflare Logo">
+      <img
+        src="cyflare logo.png"
+        alt="Cyflare Logo"
+      >
     </div>
 
     <div class="center-section">
-      <h1>Cyflare Detections Board</h1>
+
+      <h1>
+        Cyflare Detections Board
+      </h1>
 
       <a
         href="https://cyflare.com/"
@@ -666,6 +938,7 @@
       >
         Visit Cyflare.com
       </a>
+
     </div>
 
     <button
@@ -678,12 +951,13 @@
   </div>
 
   <!-- =========================================================
-       SUMMARY STRIP
+       SUMMARY
        ========================================================= -->
 
   <div class="summary-strip">
 
     <div class="summary-card total">
+
       <span
         class="summary-value"
         id="summaryTotal"
@@ -694,9 +968,11 @@
       <span class="summary-label">
         Total Detections
       </span>
+
     </div>
 
     <div class="summary-card active">
+
       <span
         class="summary-value"
         id="summaryActive"
@@ -707,9 +983,11 @@
       <span class="summary-label">
         Active
       </span>
+
     </div>
 
     <div class="summary-card testing">
+
       <span
         class="summary-value"
         id="summaryTesting"
@@ -720,9 +998,11 @@
       <span class="summary-label">
         Testing / New
       </span>
+
     </div>
 
     <div class="summary-card tools">
+
       <span
         class="summary-value"
         id="summaryTools"
@@ -733,6 +1013,7 @@
       <span class="summary-label">
         Tools
       </span>
+
     </div>
 
   </div>
@@ -744,8 +1025,6 @@
   <div class="filter-bar">
 
     <div class="filters-left">
-
-      <!-- Search -->
 
       <input
         type="text"
@@ -835,7 +1114,9 @@
 
       </div>
 
-      <!-- Tool -->
+      <!-- =====================================================
+           TOOL FILTER
+           ===================================================== -->
 
       <div class="dropdown">
 
@@ -851,44 +1132,80 @@
           class="dropdown-content"
         >
 
-          <label>
+          <label
+            class="tool-option stellar"
+          >
+
             <input
               type="checkbox"
               value="Stellar Cyber"
               checked
               onchange="filterTable()"
             >
-            Stellar Cyber
+
+            <span
+              class="tool-filter-badge stellar"
+            >
+              Stellar Cyber
+            </span>
+
           </label>
 
-          <label>
+          <label
+            class="tool-option crowdstrike"
+          >
+
             <input
               type="checkbox"
               value="CrowdStrike"
               checked
               onchange="filterTable()"
             >
-            CrowdStrike
+
+            <span
+              class="tool-filter-badge crowdstrike"
+            >
+              CrowdStrike
+            </span>
+
           </label>
 
-          <label>
+          <label
+            class="tool-option sentinelone"
+          >
+
             <input
               type="checkbox"
               value="SentinelOne EDR"
               checked
               onchange="filterTable()"
             >
-            SentinelOne EDR
+
+            <span
+              class="tool-filter-badge sentinelone"
+            >
+              SentinelOne EDR
+            </span>
+
           </label>
 
-          <label>
+          <label
+            class="tool-option cyflare-itdr"
+          >
+
             <input
               type="checkbox"
               value="Cyflare ITDR"
               checked
               onchange="filterTable()"
             >
-            Cyflare ITDR
+
+            <span
+              class="tool-filter-badge cyflare-itdr"
+            >
+              Cyflare ITDR
+            </span>
+
           </label>
 
         </div>
@@ -996,8 +1313,6 @@
 
       </div>
 
-      <!-- Actions -->
-
       <button
         class="reset-btn action-btn"
         onclick="resetFilters()"
@@ -1097,27 +1412,26 @@
   <script>
 
     /* =========================================================
-       LIGHT / DARK MODE
+       DARK / LIGHT MODE
        ========================================================= */
 
     function toggleMode() {
 
-      document.body.classList.toggle('dark-mode');
+      document.body
+        .classList
+        .toggle('dark-mode');
 
       const button =
-        document.querySelector('.mode-toggle');
+        document.querySelector(
+          '.mode-toggle'
+        );
 
-      if (
-        document.body.classList.contains('dark-mode')
-      ) {
-
-        button.textContent = '☀️';
-
-      } else {
-
-        button.textContent = '🌙';
-
-      }
+      button.textContent =
+        document.body.classList.contains(
+          'dark-mode'
+        )
+          ? '☀️'
+          : '🌙';
 
     }
 
@@ -1141,7 +1455,9 @@
       function(e) {
 
         if (
-          !e.target.closest('.dropdown')
+          !e.target.closest(
+            '.dropdown'
+          )
         ) {
 
           document
@@ -1150,7 +1466,9 @@
             )
             .forEach(
               dropdown =>
-                dropdown.classList.remove('show')
+                dropdown
+                  .classList
+                  .remove('show')
             );
 
         }
@@ -1160,10 +1478,11 @@
 
 
     /* =========================================================
-       NEW DETECTIONS FILTER
+       NEW FILTER
        ========================================================= */
 
-    let newOnlyFilter = false;
+    let newOnlyFilter =
+      false;
 
 
     function toggleNewOnlyFilter() {
@@ -1172,7 +1491,9 @@
         !newOnlyFilter;
 
       document
-        .getElementById('newFilterBtn')
+        .getElementById(
+          'newFilterBtn'
+        )
         .textContent =
           newOnlyFilter
             ? 'Show All'
@@ -1208,21 +1529,27 @@
           : checkbox.checked;
 
       const ths =
-        table.getElementsByTagName('th');
+        table.getElementsByTagName(
+          'th'
+        );
 
       if (
         ths[colIndex]
       ) {
 
-        ths[colIndex].style.display =
-          show
-            ? ''
-            : 'none';
+        ths[colIndex]
+          .style
+          .display =
+            show
+              ? ''
+              : 'none';
 
       }
 
       const rows =
-        table.getElementsByTagName('tr');
+        table.getElementsByTagName(
+          'tr'
+        );
 
       for (
         let i = 1;
@@ -1232,16 +1559,20 @@
 
         const cells =
           rows[i]
-            .getElementsByTagName('td');
+            .getElementsByTagName(
+              'td'
+            );
 
         if (
           cells[colIndex]
         ) {
 
-          cells[colIndex].style.display =
-            show
-              ? ''
-              : 'none';
+          cells[colIndex]
+            .style
+            .display =
+              show
+                ? ''
+                : 'none';
 
         }
 
@@ -1251,13 +1582,15 @@
 
 
     /* =========================================================
-       RESET FILTERS
+       RESET
        ========================================================= */
 
     function resetFilters() {
 
       document
-        .getElementById('search')
+        .getElementById(
+          'search'
+        )
         .value = '';
 
       document
@@ -1265,7 +1598,8 @@
           '#statusDropdown input[type="checkbox"]'
         )
         .forEach(
-          cb => cb.checked = true
+          cb =>
+            cb.checked = true
         );
 
       document
@@ -1273,7 +1607,8 @@
           '#toolDropdown input[type="checkbox"]'
         )
         .forEach(
-          cb => cb.checked = true
+          cb =>
+            cb.checked = true
         );
 
       document
@@ -1293,10 +1628,13 @@
           }
         );
 
-      newOnlyFilter = false;
+      newOnlyFilter =
+        false;
 
       document
-        .getElementById('newFilterBtn')
+        .getElementById(
+          'newFilterBtn'
+        )
         .textContent =
           'Show New Only';
 
@@ -1306,10 +1644,11 @@
 
 
     /* =========================================================
-       MITRE COLUMN TOGGLE
+       MITRE COLUMNS
        ========================================================= */
 
-    let mitreVisible = true;
+    let mitreVisible =
+      true;
 
 
     function toggleMitreColumns() {
@@ -1337,9 +1676,10 @@
             columnCheckboxes[index]
           ) {
 
-            columnCheckboxes[index]
-              .checked =
-                mitreVisible;
+            columnCheckboxes[
+              index
+            ].checked =
+              mitreVisible;
 
           }
 
@@ -1366,7 +1706,9 @@
 
       const searchValue =
         document
-          .getElementById('search')
+          .getElementById(
+            'search'
+          )
           .value
           .toLowerCase();
 
@@ -1377,7 +1719,9 @@
 
       const checkedStatuses =
         Array
-          .from(statusCheckboxes)
+          .from(
+            statusCheckboxes
+          )
           .filter(
             cb => cb.checked
           )
@@ -1396,7 +1740,9 @@
 
       const checkedTools =
         Array
-          .from(toolCheckboxes)
+          .from(
+            toolCheckboxes
+          )
           .filter(
             cb => cb.checked
           )
@@ -1417,7 +1763,9 @@
         row => {
 
           const cells =
-            row.querySelectorAll('td');
+            row.querySelectorAll(
+              'td'
+            );
 
           const name =
             cells[0]
@@ -1434,22 +1782,37 @@
               .textContent
               .trim();
 
+          /*
+            Works even though Tool is now
+            displayed as a colored badge,
+            because textContent still returns
+            the tool name.
+          */
+
           const tool =
             cells[8]
               .textContent
               .trim();
 
           const matchesSearch =
-            name.includes(searchValue) ||
-            description.includes(searchValue);
+            name.includes(
+              searchValue
+            ) ||
+            description.includes(
+              searchValue
+            );
 
           const matchesStatus =
             allStatusesChecked ||
-            checkedStatuses.includes(status);
+            checkedStatuses.includes(
+              status
+            );
 
           const matchesTool =
             allToolsChecked ||
-            checkedTools.includes(tool);
+            checkedTools.includes(
+              tool
+            );
 
           let newOnlyPass =
             true;
@@ -1486,7 +1849,7 @@
 
 
     /* =========================================================
-       SUMMARY METRICS
+       SUMMARY
        ========================================================= */
 
     function updateSummaryMetrics() {
@@ -1497,20 +1860,18 @@
         );
 
       let total = 0;
-
       let active = 0;
-
       let testingNew = 0;
 
       const tools =
         new Set();
 
-
       rows.forEach(
         row => {
 
           if (
-            row.style.display === 'none'
+            row.style.display ===
+            'none'
           ) {
 
             return;
@@ -1518,7 +1879,9 @@
           }
 
           const cells =
-            row.querySelectorAll('td');
+            row.querySelectorAll(
+              'td'
+            );
 
           if (
             cells.length < 9
@@ -1561,13 +1924,14 @@
             tool
           ) {
 
-            tools.add(tool);
+            tools.add(
+              tool
+            );
 
           }
 
         }
       );
-
 
       document
         .getElementById(
@@ -1576,7 +1940,6 @@
         .textContent =
           total;
 
-
       document
         .getElementById(
           'summaryActive'
@@ -1584,14 +1947,12 @@
         .textContent =
           active;
 
-
       document
         .getElementById(
           'summaryTesting'
         )
         .textContent =
           testingNew;
-
 
       document
         .getElementById(
@@ -1604,7 +1965,72 @@
 
 
     /* =========================================================
-       EXPORT CSV
+       TOOL BADGES
+       ========================================================= */
+
+    function getToolClass(tool) {
+
+      switch (
+        tool
+      ) {
+
+        case 'Stellar Cyber':
+
+          return 'stellar';
+
+
+        case 'CrowdStrike':
+
+          return 'crowdstrike';
+
+
+        case 'SentinelOne EDR':
+
+          return 'sentinelone';
+
+
+        case 'Cyflare ITDR':
+
+          return 'cyflare-itdr';
+
+
+        default:
+
+          return 'other';
+
+      }
+
+    }
+
+
+    function getToolBadge(tool) {
+
+      if (
+        !tool
+      ) {
+
+        return '';
+
+      }
+
+      const toolClass =
+        getToolClass(
+          tool
+        );
+
+      return `
+        <span
+          class="table-tool-badge ${toolClass}"
+        >
+          ${tool}
+        </span>
+      `;
+
+    }
+
+
+    /* =========================================================
+       CSV EXPORT
        ========================================================= */
 
     function exportTableToCSV() {
@@ -1615,17 +2041,19 @@
         );
 
       const rows =
-        table.querySelectorAll('tr');
+        table.querySelectorAll(
+          'tr'
+        );
 
       const csv =
         [];
-
 
       rows.forEach(
         row => {
 
           if (
-            row.style.display === 'none'
+            row.style.display ===
+            'none'
           ) {
 
             return;
@@ -1635,7 +2063,6 @@
           const rowData =
             [];
 
-
           row
             .querySelectorAll(
               'th, td'
@@ -1644,7 +2071,8 @@
               cell => {
 
                 if (
-                  cell.style.display === 'none'
+                  cell.style.display ===
+                  'none'
                 ) {
 
                   return;
@@ -1667,7 +2095,6 @@
               }
             );
 
-
           if (
             rowData.length > 0
           ) {
@@ -1681,10 +2108,8 @@
         }
       );
 
-
       const csvContent =
         csv.join('\n');
-
 
       const blob =
         new Blob(
@@ -1695,41 +2120,33 @@
           }
         );
 
-
       const url =
         URL.createObjectURL(
           blob
         );
-
 
       const link =
         document.createElement(
           'a'
         );
 
-
       link.href =
         url;
-
 
       link.setAttribute(
         'download',
         'detections_board.csv'
       );
 
-
       document.body.appendChild(
         link
       );
 
-
       link.click();
-
 
       document.body.removeChild(
         link
       );
-
 
       URL.revokeObjectURL(
         url
@@ -1739,7 +2156,7 @@
 
 
     /* =========================================================
-       DATE HELPERS
+       DATES
        ========================================================= */
 
     function parseDate(str) {
@@ -1752,10 +2169,8 @@
 
       }
 
-
       const parts =
         str.split('-');
-
 
       return new Date(
         parts[2],
@@ -1766,13 +2181,14 @@
     }
 
 
-    function isRecent(dateStr) {
+    function isRecent(
+      dateStr
+    ) {
 
       const dt =
         parseDate(
           dateStr
         );
-
 
       if (
         !dt
@@ -1782,14 +2198,11 @@
 
       }
 
-
       const today =
         new Date();
 
-
       const diffMs =
         today - dt;
-
 
       const diffDays =
         diffMs /
@@ -1799,7 +2212,6 @@
           60 *
           24
         );
-
 
       return (
         diffDays <= 30
@@ -1812,7 +2224,9 @@
        STATUS BADGES
        ========================================================= */
 
-    function getStatusColor(status) {
+    function getStatusColor(
+      status
+    ) {
 
       switch (
         status
@@ -1859,7 +2273,9 @@
     }
 
 
-    function getStatusDescription(status) {
+    function getStatusDescription(
+      status
+    ) {
 
       switch (
         status
@@ -1909,7 +2325,9 @@
     }
 
 
-    function getStatusTextColor(status) {
+    function getStatusTextColor(
+      status
+    ) {
 
       switch (
         status
@@ -1932,26 +2350,26 @@
 
 
     /* =========================================================
-       SORTING
+       SORT TABLE
        ========================================================= */
 
     const sortDirections =
       {};
 
 
-    function sortTable(columnIndex) {
+    function sortTable(
+      columnIndex
+    ) {
 
       const table =
         document.getElementById(
           'detectionsTable'
         );
 
-
       const tbody =
         table.querySelector(
           'tbody'
         );
-
 
       const rowsArray =
         Array.from(
@@ -1960,19 +2378,19 @@
           )
         );
 
-
-      sortDirections[columnIndex] =
-        sortDirections[columnIndex] ===
-        'asc'
+      sortDirections[
+        columnIndex
+      ] =
+        sortDirections[
+          columnIndex
+        ] === 'asc'
           ? 'desc'
           : 'asc';
-
 
       const direction =
         sortDirections[
           columnIndex
         ];
-
 
       const visibleRows =
         rowsArray.filter(
@@ -1981,29 +2399,24 @@
             'none'
         );
 
-
       visibleRows.sort(
         (a, b) => {
 
           const cellA =
-            a
-              .children[
-                columnIndex
-              ]
+            a.children[
+              columnIndex
+            ]
               .textContent
               .trim()
               .toLowerCase();
-
 
           const cellB =
-            b
-              .children[
-                columnIndex
-              ]
+            b.children[
+              columnIndex
+            ]
               .textContent
               .trim()
               .toLowerCase();
-
 
           if (
             cellA < cellB
@@ -2016,7 +2429,6 @@
 
           }
 
-
           if (
             cellA > cellB
           ) {
@@ -2028,12 +2440,10 @@
 
           }
 
-
           return 0;
 
         }
       );
-
 
       visibleRows.forEach(
         row =>
@@ -2042,12 +2452,10 @@
           )
       );
 
-
       const allTh =
         table.querySelectorAll(
           'thead th'
         );
-
 
       allTh.forEach(
         th => {
@@ -2064,11 +2472,11 @@
         }
       );
 
-
       allTh[
         columnIndex
       ].textContent +=
-        direction === 'asc'
+        direction ===
+        'asc'
           ? ' ▲'
           : ' ▼';
 
@@ -2101,23 +2509,19 @@
                 )
             );
 
-
             const tbody =
               document.querySelector(
                 '#detectionsTable tbody'
               );
 
-
             tbody.innerHTML =
               '';
-
 
             data.forEach(
               det => {
 
                 let displayDesc =
                   det.description;
-
 
                 if (
                   det.dateAdded &&
@@ -2132,24 +2536,25 @@
 
                 }
 
-
                 const statusColor =
                   getStatusColor(
                     det.defaultStatus
                   );
-
 
                 const statusDescription =
                   getStatusDescription(
                     det.defaultStatus
                   );
 
+                const toolBadge =
+                  getToolBadge(
+                    det.tool
+                  );
 
                 const row =
                   document.createElement(
                     'tr'
                   );
-
 
                 row.innerHTML = `
 
@@ -2171,9 +2576,7 @@
                       "
                       title="${statusDescription}"
                     >
-
                       ${det.defaultStatus}
-
                     </span>
 
                   </td>
@@ -2199,11 +2602,10 @@
                   </td>
 
                   <td>
-                    ${det.tool}
+                    ${toolBadge}
                   </td>
 
                 `;
-
 
                 tbody.appendChild(
                   row
@@ -2211,7 +2613,6 @@
 
               }
             );
-
 
             updateSummaryMetrics();
 
