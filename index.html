@@ -15,7 +15,10 @@
     :root {
       --dropdown-width: 270px;
 
-      /* Cyflare */
+      /* =======================================================
+         CYFLARE BRAND
+         ======================================================= */
+
       --mountain-green: #435f57;
       --white-cap: #fafafa;
       --vivid-blue: #066cf4;
@@ -23,42 +26,74 @@
       --slate-purple: #8282d2;
       --crimson: #220c10;
 
-      /* Tool colors */
+      /* =======================================================
+         TOOL COLORS
+         ======================================================= */
+
       --stellar-color: #f58220;
       --crowdstrike-color: #d12127;
       --sentinelone-color: #6f3ff5;
       --cyflare-itdr-color: #066cf4;
       --cyflare-itdr-dark: #435f57;
 
-      /* Light */
+      /* =======================================================
+         LIGHT MODE
+         ======================================================= */
+
       --bg-color: var(--white-cap);
       --text-color: var(--crimson);
+
       --card-bg: #ffffff;
-      --table-border: #d7dedb;
+
+      --table-border: #e4e9e7;
+      --table-border-soft: #edf1ef;
+
       --header-bg: var(--mountain-green);
       --header-text: var(--white-cap);
-      --hover-bg: var(--mountain-green);
-      --row-even-bg: #f3f6f5;
-      --row-hover-bg: #e5ece9;
+
+      --row-even-bg: #f7f9f8;
+      --row-hover-bg: #eef4f2;
+
       --input-bg: #ffffff;
       --input-border: #c5cfcc;
+
       --link-color: var(--vivid-blue);
+
+      --connector-bg: #edf2f0;
+      --connector-text: #435f57;
     }
+
+    /* =========================================================
+       DARK MODE
+       ========================================================= */
 
     .dark-mode {
       --bg-color: var(--crimson);
       --text-color: #f1f4f3;
+
       --card-bg: #30171c;
-      --table-border: #604950;
+
+      --table-border: #523b41;
+      --table-border-soft: #493338;
+
       --header-bg: var(--mountain-green);
       --header-text: var(--white-cap);
-      --hover-bg: var(--slate-purple);
-      --row-even-bg: #3a2026;
-      --row-hover-bg: #4a2a31;
+
+      --row-even-bg: #372026;
+      --row-hover-bg: #472a31;
+
       --input-bg: #3a2026;
       --input-border: #765d63;
+
       --link-color: var(--marigold);
+
+      --connector-bg: #493238;
+      --connector-text: #e7eeeb;
     }
+
+    /* =========================================================
+       GLOBAL
+       ========================================================= */
 
     * {
       box-sizing: border-box;
@@ -66,15 +101,23 @@
 
     body {
       margin: 0;
-      background: var(--bg-color);
+
+      background-color: var(--bg-color);
       color: var(--text-color);
+
       font-family: 'Inter', sans-serif;
+      font-weight: 400;
+
       text-align: center;
+
+      transition:
+        background-color 0.25s,
+        color 0.25s;
     }
 
-    /* =========================
-       TOP
-       ========================= */
+    /* =========================================================
+       TOP BAR
+       ========================================================= */
 
     .top-bar {
       position: relative;
@@ -83,27 +126,36 @@
 
     .logo-section {
       position: absolute;
+
       left: 20px;
       top: 50%;
+
       transform: translateY(-50%);
     }
 
     .logo-section img {
       max-width: 250px;
       height: auto;
+
       display: block;
     }
 
     .center-section {
       position: absolute;
+
       left: 50%;
       top: 50%;
+
       transform: translate(-50%, -50%);
+
+      text-align: center;
     }
 
     .center-section h1 {
       margin: 0;
+
       color: var(--mountain-green);
+
       font-size: 2rem;
       font-weight: 600;
     }
@@ -114,54 +166,110 @@
 
     .site-link {
       display: block;
+
       margin-top: 4px;
+
       color: var(--link-color);
+
       text-decoration: none;
+
+      font-size: 0.9rem;
       font-weight: 600;
     }
 
     .mode-toggle {
       position: absolute;
+
       right: 20px;
       top: 50%;
+
       transform: translateY(-50%);
+
       padding: 8px 16px;
+
       background: var(--vivid-blue);
-      color: white;
+      color: #ffffff;
+
       border: none;
       border-radius: 8px;
+
       cursor: pointer;
+
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+
+      transition:
+        background-color 0.2s,
+        transform 0.2s;
     }
 
-    /* =========================
+    .mode-toggle:hover {
+      transform:
+        translateY(-50%)
+        translateY(-2px);
+    }
+
+    /* =========================================================
        SUMMARY
-       ========================= */
+       ========================================================= */
 
     .summary-strip {
       max-width: 95%;
+
       margin: 0 auto 14px auto;
+
       display: grid;
+
       grid-template-columns: repeat(4, 1fr);
+
       gap: 12px;
     }
 
     .summary-card {
       position: relative;
+
       overflow: hidden;
-      padding: 14px 18px;
+
+      padding: 15px 18px;
+
       background: var(--card-bg);
+
       border: 1px solid var(--table-border);
       border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+      box-shadow:
+        0 2px 6px
+        rgba(0,0,0,0.07);
+
       text-align: left;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.18s,
+        box-shadow 0.18s,
+        border-color 0.18s;
+    }
+
+    .summary-card:hover {
+      transform: translateY(-2px);
+
+      border-color: #ccd6d2;
+
+      box-shadow:
+        0 5px 14px
+        rgba(0,0,0,0.11);
     }
 
     .summary-card::before {
       content: "";
+
       position: absolute;
+
       left: 0;
       top: 0;
       bottom: 0;
+
       width: 5px;
     }
 
@@ -183,10 +291,15 @@
 
     .summary-value {
       display: block;
+
       margin-bottom: 6px;
+
       color: var(--mountain-green);
+
       font-size: 1.8rem;
       font-weight: 700;
+
+      line-height: 1;
     }
 
     .dark-mode .summary-value {
@@ -195,62 +308,123 @@
 
     .summary-label {
       display: block;
-      font-size: 0.72rem;
-      font-weight: 600;
+
+      font-size: 0.7rem;
+      font-weight: 700;
+
       text-transform: uppercase;
-      letter-spacing: 0.6px;
+
+      letter-spacing: 0.7px;
     }
 
-    /* =========================
+    .summary-action {
+      display: block;
+
+      margin-top: 7px;
+
+      color: #87928e;
+
+      font-size: 0.67rem;
+      font-weight: 500;
+    }
+
+    .dark-mode .summary-action {
+      color: #aeb9b5;
+    }
+
+    /* =========================================================
        FILTER BAR
-       ========================= */
+       ========================================================= */
 
     .filter-bar {
       max-width: 95%;
-      margin: 0 auto 20px auto;
-      padding: 20px;
+
+      margin: 0 auto 18px auto;
+
+      padding: 18px;
+
       display: flex;
       flex-wrap: wrap;
+
       justify-content: space-between;
       align-items: center;
+
       background: var(--card-bg);
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+      border: 1px solid var(--table-border);
+
+      border-radius: 10px;
+
+      box-shadow:
+        0 2px 7px
+        rgba(0,0,0,0.07);
     }
 
     .filters-left {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+
+      gap: 9px;
+
       align-items: center;
     }
 
     .search-box {
       width: 300px;
-      padding: 8px;
+
+      padding: 9px 11px;
+
       background: var(--input-bg);
       color: var(--text-color);
+
       border: 1px solid var(--input-border);
-      border-radius: 6px;
+      border-radius: 7px;
+
       font-family: 'Inter', sans-serif;
+      font-size: 13px;
+    }
+
+    .search-box:focus {
+      outline: none;
+
+      border-color: var(--vivid-blue);
+
+      box-shadow:
+        0 0 0 2px
+        rgba(6,108,244,0.10);
     }
 
     .filter-btn,
     .action-btn {
-      padding: 8px 16px;
+      padding: 9px 15px;
+
       background: var(--mountain-green);
-      color: white;
+      color: #ffffff;
+
       border: none;
-      border-radius: 8px;
+      border-radius: 7px;
+
       cursor: pointer;
+
       font-family: 'Inter', sans-serif;
+      font-size: 13px;
       font-weight: 500;
+
+      transition:
+        transform 0.16s,
+        background-color 0.16s;
+    }
+
+    .filter-btn:hover,
+    .action-btn:hover {
+      transform: translateY(-1px);
     }
 
     .filter-btn.filter-active,
     .action-btn.filter-active {
       background: var(--marigold);
       color: var(--crimson);
+
       font-weight: 600;
     }
 
@@ -262,26 +436,37 @@
       background: var(--mountain-green);
     }
 
-    /* =========================
+    /* =========================================================
        DROPDOWNS
-       ========================= */
+       ========================================================= */
 
     .dropdown {
       position: relative;
+
       display: inline-block;
     }
 
     .dropdown-content {
       display: none;
+
       position: absolute;
+
       width: var(--dropdown-width);
+
       margin-top: 8px;
       padding: 12px;
+
       background: var(--card-bg);
+
       border: 1px solid var(--table-border);
-      border-radius: 8px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      border-radius: 9px;
+
+      box-shadow:
+        0 10px 25px
+        rgba(0,0,0,0.18);
+
       text-align: left;
+
       z-index: 999;
     }
 
@@ -291,10 +476,15 @@
 
     .dropdown-content label {
       display: flex;
+
       align-items: center;
+
       gap: 8px;
+
       padding: 6px 5px;
+
       border-radius: 6px;
+
       cursor: pointer;
     }
 
@@ -304,39 +494,54 @@
 
     .filter-option-row {
       flex: 1;
+
       display: flex;
-      justify-content: space-between;
+
       align-items: center;
+      justify-content: space-between;
     }
 
     .filter-option-pill {
       display: inline-flex;
+
       align-items: center;
+
       padding: 4px 9px;
-      border-radius: 999px;
-      font-size: 0.82rem;
+
+      border-radius: 8px;
+
+      font-size: 0.78rem;
       font-weight: 600;
+
       white-space: nowrap;
     }
 
     .filter-count {
       min-width: 30px;
+
       margin-left: 8px;
+
       padding: 3px 7px;
-      border-radius: 999px;
+
       background: #edf1f0;
       color: var(--mountain-green);
-      font-size: 0.74rem;
+
+      border-radius: 999px;
+
+      font-size: 0.72rem;
       font-weight: 700;
+
       text-align: center;
     }
 
     .dark-mode .filter-count {
       background: #52363c;
-      color: white;
+      color: #ffffff;
     }
 
-    /* Status filter colors */
+    /* =========================================================
+       STATUS DROPDOWN COLORS
+       ========================================================= */
 
     .status-option.active input {
       accent-color: var(--mountain-green);
@@ -344,7 +549,7 @@
 
     .status-option.active .filter-option-pill {
       background: var(--mountain-green);
-      color: white;
+      color: #ffffff;
     }
 
     .status-option.alert-preferences input {
@@ -353,7 +558,7 @@
 
     .status-option.alert-preferences .filter-option-pill {
       background: var(--vivid-blue);
-      color: white;
+      color: #ffffff;
     }
 
     .status-option.testing input,
@@ -373,7 +578,7 @@
 
     .status-option.muted .filter-option-pill {
       background: var(--slate-purple);
-      color: white;
+      color: #ffffff;
     }
 
     .status-option.not-active input {
@@ -382,10 +587,12 @@
 
     .status-option.not-active .filter-option-pill {
       background: var(--crimson);
-      color: white;
+      color: #ffffff;
     }
 
-    /* Tool filter colors */
+    /* =========================================================
+       TOOL COLORS
+       ========================================================= */
 
     .tool-option.stellar input {
       accent-color: var(--stellar-color);
@@ -393,7 +600,7 @@
 
     .tool-option.stellar .filter-option-pill {
       background: var(--stellar-color);
-      color: white;
+      color: #ffffff;
     }
 
     .tool-option.crowdstrike input {
@@ -402,7 +609,7 @@
 
     .tool-option.crowdstrike .filter-option-pill {
       background: var(--crowdstrike-color);
-      color: white;
+      color: #ffffff;
     }
 
     .tool-option.sentinelone input {
@@ -411,7 +618,7 @@
 
     .tool-option.sentinelone .filter-option-pill {
       background: var(--sentinelone-color);
-      color: white;
+      color: #ffffff;
     }
 
     .tool-option.cyflare-itdr input {
@@ -419,113 +626,276 @@
     }
 
     .tool-option.cyflare-itdr .filter-option-pill {
-      background: linear-gradient(
-        135deg,
-        var(--cyflare-itdr-dark),
-        var(--cyflare-itdr-color)
-      );
-      color: white;
+      background:
+        linear-gradient(
+          135deg,
+          var(--cyflare-itdr-dark),
+          var(--cyflare-itdr-color)
+        );
+
+      color: #ffffff;
     }
 
-    /* Column colors */
+    /* =========================================================
+       SELECT COLUMNS
+       ========================================================= */
 
     .column-option.primary .filter-option-pill {
       background: var(--mountain-green);
-      color: white;
+      color: #ffffff;
     }
 
     .column-option.status .filter-option-pill {
       background: var(--vivid-blue);
-      color: white;
+      color: #ffffff;
     }
 
     .column-option.tool .filter-option-pill {
       background: var(--slate-purple);
-      color: white;
+      color: #ffffff;
     }
 
     .column-option.connector .filter-option-pill {
       background: #4c87c8;
-      color: white;
+      color: #ffffff;
     }
 
     .column-option.mitre .filter-option-pill {
       background: #f1d7a9;
       color: var(--crimson);
+
       border: 1px solid var(--marigold);
     }
 
-    /* =========================
+    /* =========================================================
+       TABLE META BAR
+       ========================================================= */
+
+    .table-meta-bar {
+      max-width: 98%;
+
+      margin: 0 auto 7px auto;
+
+      display: flex;
+
+      justify-content: flex-end;
+      align-items: center;
+
+      color: #87928e;
+
+      font-size: 0.72rem;
+      font-weight: 500;
+    }
+
+    .table-meta-dot {
+      width: 6px;
+      height: 6px;
+
+      margin-right: 6px;
+
+      background: var(--vivid-blue);
+
+      border-radius: 50%;
+    }
+
+    .dark-mode .table-meta-bar {
+      color: #b9c3bf;
+    }
+
+    /* =========================================================
        TABLE
-       ========================= */
+       ========================================================= */
 
     .table-container {
       max-width: 98%;
       max-height: 85vh;
+
       margin: 0 auto 20px auto;
+
       overflow: auto;
+
       background: var(--card-bg);
+
+      border: 1px solid var(--table-border);
+
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+      box-shadow:
+        0 4px 14px
+        rgba(0,0,0,0.08);
     }
 
     table {
       width: 100%;
-      border-collapse: collapse;
+
+      border-collapse: separate;
+      border-spacing: 0;
     }
 
     th,
     td {
-      padding: 12px;
-      border-bottom: 1px solid var(--table-border);
+      padding: 13px 12px;
     }
+
+    /* =========================================================
+       PREMIUM TABLE HEADER
+       ========================================================= */
 
     thead th {
       position: sticky;
+
       top: 0;
+
       z-index: 2;
+
+      padding-top: 15px;
+      padding-bottom: 15px;
+
       background: var(--header-bg);
-      color: white;
+      color: var(--header-text);
+
       border: none;
+
       cursor: pointer;
-      font-weight: 600;
+
+      font-size: 0.69rem;
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.55px;
+
+      white-space: nowrap;
+
+      box-shadow:
+        inset 0 -1px 0
+        rgba(255,255,255,0.12);
     }
 
+    thead {
+      filter:
+        drop-shadow(
+          0 2px 3px
+          rgba(0,0,0,0.10)
+        );
+    }
+
+    .header-content {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 5px;
+    }
+
+    .sort-indicator {
+      display: inline-block;
+
+      min-width: 10px;
+
+      color: rgba(255,255,255,0.42);
+
+      font-size: 0.8rem;
+      font-weight: 700;
+
+      transition: color 0.15s;
+    }
+
+    th.sort-active .sort-indicator {
+      color: #ffffff;
+    }
+
+    /* =========================================================
+       MODERN ROWS
+       ========================================================= */
+
     tbody tr {
+      position: relative;
+
       cursor: pointer;
+
+      background: var(--card-bg);
+
       transition:
-        background-color 0.15s,
-        transform 0.1s;
+        background-color 0.16s,
+        box-shadow 0.16s;
     }
 
     tbody tr:nth-child(even) {
       background: var(--row-even-bg);
     }
 
-    tbody tr:hover {
-      background: var(--row-hover-bg);
+    tbody td {
+      border-bottom:
+        1px solid
+        var(--table-border-soft);
+
+      color: var(--text-color);
     }
 
-    .dark-mode #detectionsTable tbody tr:nth-child(odd) {
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Blue interaction accent */
+
+    tbody tr:hover {
+      background: var(--row-hover-bg);
+
+      box-shadow:
+        inset 4px 0 0
+        var(--vivid-blue);
+    }
+
+    .dark-mode #detectionsTable tbody tr {
       background: #30171c;
     }
 
     .dark-mode #detectionsTable tbody tr:nth-child(even) {
-      background: #3a2026;
+      background: var(--row-even-bg);
     }
 
     .dark-mode #detectionsTable tbody tr:hover {
-      background: #4a2a31;
+      background: var(--row-hover-bg);
+
+      box-shadow:
+        inset 4px 0 0
+        var(--vivid-blue);
     }
 
-    .dark-mode #detectionsTable tbody td {
-      color: #e6ecea;
+    /* =========================================================
+       DETECTION NAME / DESCRIPTION HIERARCHY
+       ========================================================= */
+
+    .detection-name {
+      color: var(--mountain-green);
+
+      font-size: 0.88rem;
+      font-weight: 600;
+
+      line-height: 1.35;
     }
 
-    .dark-mode #detectionsTable tbody td:first-child {
+    .dark-mode .detection-name {
       color: #f4f7f6;
-      font-weight: 500;
     }
+
+    .detection-description {
+      color: #66716d;
+
+      font-size: 0.79rem;
+      font-weight: 400;
+
+      line-height: 1.45;
+    }
+
+    .dark-mode .detection-description {
+      color: #d0d9d6;
+    }
+
+    /* =========================================================
+       ALIGNMENT
+       ========================================================= */
 
     #detectionsTable th:nth-child(1),
     #detectionsTable td:nth-child(1),
@@ -539,27 +909,47 @@
       text-align: center;
     }
 
-    /* =========================
-       BADGES
-       ========================= */
+    /* =========================================================
+       REFINED BADGES
+       ========================================================= */
 
     .status-badge {
-      display: inline-block;
-      padding: 4px 8px;
-      border-radius: 12px;
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 4px 9px;
+
+      border-radius: 8px;
+
+      font-size: 0.72rem;
       font-weight: 700;
+
+      line-height: 1.15;
+
+      white-space: nowrap;
     }
 
     .table-tool-badge {
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
-      min-width: 110px;
-      padding: 5px 10px;
-      border-radius: 999px;
-      color: white !important;
-      font-size: 0.78rem;
-      font-weight: 600;
+
+      min-width: 102px;
+
+      padding: 4px 9px;
+
+      border-radius: 8px;
+
+      color: #ffffff !important;
+
+      font-size: 0.72rem;
+      font-weight: 650;
+
+      line-height: 1.15;
+
       white-space: nowrap;
     }
 
@@ -576,41 +966,89 @@
     }
 
     .table-tool-badge.cyflare-itdr {
-      background: linear-gradient(
-        135deg,
-        var(--cyflare-itdr-dark),
-        var(--cyflare-itdr-color)
-      );
+      background:
+        linear-gradient(
+          135deg,
+          var(--cyflare-itdr-dark),
+          var(--cyflare-itdr-color)
+        );
     }
 
     .table-tool-badge.other {
       background: var(--mountain-green);
     }
 
+    /* =========================================================
+       CONNECTOR BADGE
+       ========================================================= */
+
+    .connector-badge {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      max-width: 185px;
+
+      padding: 4px 9px;
+
+      background: var(--connector-bg);
+      color: var(--connector-text);
+
+      border: 1px solid var(--table-border);
+
+      border-radius: 8px;
+
+      font-size: 0.71rem;
+      font-weight: 550;
+
+      line-height: 1.2;
+
+      white-space: normal;
+    }
+
+    /* =========================================================
+       NEW BADGE
+       ========================================================= */
+
     .new-badge {
-      background: var(--marigold);
-      color: white;
+      display: inline-block;
+
+      margin-right: 5px;
+
       padding: 2px 6px;
-      border-radius: 4px;
-      margin-right: 4px;
-      font-size: 0.75em;
+
+      background: var(--marigold);
+      color: #ffffff;
+
+      border-radius: 5px;
+
+      font-size: 0.66rem;
       font-weight: 700;
     }
 
-    /* =========================
-       DETECTION MODAL
-       ========================= */
+    /* =========================================================
+       MODAL
+       ========================================================= */
 
     .modal-overlay {
       display: none;
+
       position: fixed;
+
       inset: 0;
-      background: rgba(15, 20, 19, 0.62);
-      backdrop-filter: blur(3px);
+
+      padding: 24px;
+
+      background:
+        rgba(15,20,19,0.64);
+
+      backdrop-filter: blur(4px);
+
       z-index: 10000;
+
       align-items: center;
       justify-content: center;
-      padding: 24px;
     }
 
     .modal-overlay.show {
@@ -620,65 +1058,95 @@
     .detection-modal {
       width: min(760px, 95vw);
       max-height: 88vh;
+
       overflow-y: auto;
+
       background: var(--card-bg);
       color: var(--text-color);
+
       border-radius: 14px;
-      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+
+      box-shadow:
+        0 20px 55px
+        rgba(0,0,0,0.36);
+
       text-align: left;
-      animation: modalIn 0.18s ease-out;
+
+      animation:
+        modalIn
+        0.18s
+        ease-out;
     }
 
     @keyframes modalIn {
       from {
         opacity: 0;
-        transform: translateY(8px) scale(0.99);
+        transform:
+          translateY(8px)
+          scale(0.99);
       }
 
       to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform:
+          translateY(0)
+          scale(1);
       }
     }
 
     .modal-header {
       position: sticky;
+
       top: 0;
+
       z-index: 2;
+
       display: flex;
+
       align-items: center;
       justify-content: space-between;
+
       padding: 18px 22px;
+
       background: var(--mountain-green);
       color: var(--white-cap);
-      border-radius: 14px 14px 0 0;
+
+      border-radius:
+        14px
+        14px
+        0
+        0;
     }
 
     .modal-header-title {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
+      font-size: 0.76rem;
       font-weight: 700;
-      opacity: 0.9;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.9px;
     }
 
     .modal-close {
       width: 34px;
       height: 34px;
+
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
-      background: rgba(255,255,255,0.12);
-      color: white;
+
+      background:
+        rgba(255,255,255,0.12);
+
+      color: #ffffff;
+
       border: none;
       border-radius: 8px;
-      cursor: pointer;
-      font-size: 22px;
-      line-height: 1;
-    }
 
-    .modal-close:hover {
-      background: rgba(255,255,255,0.22);
+      cursor: pointer;
+
+      font-size: 22px;
     }
 
     .modal-body {
@@ -686,10 +1154,14 @@
     }
 
     .modal-detection-name {
-      margin: 0 0 14px 0;
+      margin:
+        0 0 14px 0;
+
       color: var(--mountain-green);
+
       font-size: 1.55rem;
       font-weight: 700;
+
       line-height: 1.25;
     }
 
@@ -700,7 +1172,9 @@
     .modal-badges {
       display: flex;
       flex-wrap: wrap;
+
       gap: 8px;
+
       margin-bottom: 24px;
     }
 
@@ -708,17 +1182,17 @@
       margin-bottom: 22px;
     }
 
-    .modal-section:last-child {
-      margin-bottom: 0;
-    }
-
     .modal-section-title {
       margin-bottom: 7px;
+
       color: var(--mountain-green);
-      font-size: 0.72rem;
+
+      font-size: 0.7rem;
       font-weight: 700;
-      letter-spacing: 0.8px;
+
       text-transform: uppercase;
+
+      letter-spacing: 0.8px;
     }
 
     .dark-mode .modal-section-title {
@@ -727,20 +1201,31 @@
 
     .modal-description {
       margin: 0;
+
       line-height: 1.65;
-      color: var(--text-color);
     }
 
     .modal-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      grid-template-columns:
+        repeat(
+          2,
+          minmax(0,1fr)
+        );
+
       gap: 12px;
     }
 
     .modal-field {
       padding: 13px 14px;
+
       background: #f3f6f5;
-      border: 1px solid var(--table-border);
+
+      border:
+        1px solid
+        var(--table-border);
+
       border-radius: 8px;
     }
 
@@ -750,11 +1235,16 @@
 
     .modal-field-label {
       display: block;
+
       margin-bottom: 5px;
+
       color: #71807b;
-      font-size: 0.68rem;
+
+      font-size: 0.67rem;
       font-weight: 700;
+
       text-transform: uppercase;
+
       letter-spacing: 0.6px;
     }
 
@@ -764,18 +1254,33 @@
 
     .modal-field-value {
       display: block;
+
+      font-size: 0.84rem;
       font-weight: 500;
+
       word-break: break-word;
     }
 
-    @media (max-width: 700px) {
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 900px) {
+
       .summary-strip {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
+    }
+
+    @media (max-width: 700px) {
+
       .modal-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
       }
+
     }
 
   </style>
@@ -783,16 +1288,24 @@
 
 <body>
 
-  <!-- TOP -->
+  <!-- =========================================================
+       TOP BAR
+       ========================================================= -->
 
   <div class="top-bar">
 
     <div class="logo-section">
-      <img src="cyflare logo.png" alt="Cyflare Logo">
+      <img
+        src="cyflare logo.png"
+        alt="Cyflare Logo"
+      >
     </div>
 
     <div class="center-section">
-      <h1>Cyflare Detections Board</h1>
+
+      <h1>
+        Cyflare Detections Board
+      </h1>
 
       <a
         href="https://cyflare.com/"
@@ -801,6 +1314,7 @@
       >
         Visit Cyflare.com
       </a>
+
     </div>
 
     <button
@@ -812,33 +1326,109 @@
 
   </div>
 
-  <!-- SUMMARY -->
+  <!-- =========================================================
+       CLICKABLE SUMMARY
+       ========================================================= -->
 
   <div class="summary-strip">
 
-    <div class="summary-card total">
-      <span class="summary-value" id="summaryTotal">0</span>
-      <span class="summary-label">Total Detections</span>
+    <div
+      class="summary-card total"
+      onclick="showAllDetections()"
+      title="Reset filters and show all detections"
+    >
+
+      <span
+        class="summary-value"
+        id="summaryTotal"
+      >
+        0
+      </span>
+
+      <span class="summary-label">
+        Total Detections
+      </span>
+
+      <span class="summary-action">
+        Click to show all
+      </span>
+
     </div>
 
-    <div class="summary-card active">
-      <span class="summary-value" id="summaryActive">0</span>
-      <span class="summary-label">Active</span>
+    <div
+      class="summary-card active"
+      onclick="filterActiveDetections()"
+      title="Show Active detections"
+    >
+
+      <span
+        class="summary-value"
+        id="summaryActive"
+      >
+        0
+      </span>
+
+      <span class="summary-label">
+        Active
+      </span>
+
+      <span class="summary-action">
+        Click to filter
+      </span>
+
     </div>
 
-    <div class="summary-card testing">
-      <span class="summary-value" id="summaryTesting">0</span>
-      <span class="summary-label">Testing / New</span>
+    <div
+      class="summary-card testing"
+      onclick="filterTestingNewDetections()"
+      title="Show Testing and New Detection statuses"
+    >
+
+      <span
+        class="summary-value"
+        id="summaryTesting"
+      >
+        0
+      </span>
+
+      <span class="summary-label">
+        Testing / New
+      </span>
+
+      <span class="summary-action">
+        Click to filter
+      </span>
+
     </div>
 
-    <div class="summary-card tools">
-      <span class="summary-value" id="summaryTools">0</span>
-      <span class="summary-label">Tools</span>
+    <div
+      class="summary-card tools"
+      onclick="openToolDropdown()"
+      title="Open Tool filter"
+    >
+
+      <span
+        class="summary-value"
+        id="summaryTools"
+      >
+        0
+      </span>
+
+      <span class="summary-label">
+        Tools
+      </span>
+
+      <span class="summary-action">
+        Click to view tools
+      </span>
+
     </div>
 
   </div>
 
-  <!-- FILTERS -->
+  <!-- =========================================================
+       FILTERS
+       ========================================================= -->
 
   <div class="filter-bar">
 
@@ -849,7 +1439,7 @@
         id="search"
         class="search-box"
         onkeyup="filterTable()"
-        placeholder="Search Detections..."
+        placeholder="Search detections, MITRE IDs, tools, connectors..."
       >
 
       <!-- STATUS -->
@@ -879,8 +1469,18 @@
             >
 
             <div class="filter-option-row">
-              <span class="filter-option-pill">Active</span>
-              <span class="filter-count" data-count-status="Active">0</span>
+
+              <span class="filter-option-pill">
+                Active
+              </span>
+
+              <span
+                class="filter-count"
+                data-count-status="Active"
+              >
+                0
+              </span>
+
             </div>
 
           </label>
@@ -895,8 +1495,18 @@
             >
 
             <div class="filter-option-row">
-              <span class="filter-option-pill">Alert Preferences</span>
-              <span class="filter-count" data-count-status="Alert Preferences">0</span>
+
+              <span class="filter-option-pill">
+                Alert Preferences
+              </span>
+
+              <span
+                class="filter-count"
+                data-count-status="Alert Preferences"
+              >
+                0
+              </span>
+
             </div>
 
           </label>
@@ -911,8 +1521,18 @@
             >
 
             <div class="filter-option-row">
-              <span class="filter-option-pill">New Detection</span>
-              <span class="filter-count" data-count-status="New Detection">0</span>
+
+              <span class="filter-option-pill">
+                New Detection
+              </span>
+
+              <span
+                class="filter-count"
+                data-count-status="New Detection"
+              >
+                0
+              </span>
+
             </div>
 
           </label>
@@ -927,8 +1547,18 @@
             >
 
             <div class="filter-option-row">
-              <span class="filter-option-pill">Testing</span>
-              <span class="filter-count" data-count-status="Testing">0</span>
+
+              <span class="filter-option-pill">
+                Testing
+              </span>
+
+              <span
+                class="filter-count"
+                data-count-status="Testing"
+              >
+                0
+              </span>
+
             </div>
 
           </label>
@@ -943,8 +1573,18 @@
             >
 
             <div class="filter-option-row">
-              <span class="filter-option-pill">Muted</span>
-              <span class="filter-count" data-count-status="Muted">0</span>
+
+              <span class="filter-option-pill">
+                Muted
+              </span>
+
+              <span
+                class="filter-count"
+                data-count-status="Muted"
+              >
+                0
+              </span>
+
             </div>
 
           </label>
@@ -959,8 +1599,18 @@
             >
 
             <div class="filter-option-row">
-              <span class="filter-option-pill">Not Active</span>
-              <span class="filter-count" data-count-status="Not Active">0</span>
+
+              <span class="filter-option-pill">
+                Not Active
+              </span>
+
+              <span
+                class="filter-count"
+                data-count-status="Not Active"
+              >
+                0
+              </span>
+
             </div>
 
           </label>
@@ -996,8 +1646,18 @@
             >
 
             <div class="filter-option-row">
-              <span class="filter-option-pill">Stellar Cyber</span>
-              <span class="filter-count" data-count-tool="Stellar Cyber">0</span>
+
+              <span class="filter-option-pill">
+                Stellar Cyber
+              </span>
+
+              <span
+                class="filter-count"
+                data-count-tool="Stellar Cyber"
+              >
+                0
+              </span>
+
             </div>
 
           </label>
@@ -1012,8 +1672,18 @@
             >
 
             <div class="filter-option-row">
-              <span class="filter-option-pill">CrowdStrike</span>
-              <span class="filter-count" data-count-tool="CrowdStrike">0</span>
+
+              <span class="filter-option-pill">
+                CrowdStrike
+              </span>
+
+              <span
+                class="filter-count"
+                data-count-tool="CrowdStrike"
+              >
+                0
+              </span>
+
             </div>
 
           </label>
@@ -1028,8 +1698,18 @@
             >
 
             <div class="filter-option-row">
-              <span class="filter-option-pill">SentinelOne EDR</span>
-              <span class="filter-count" data-count-tool="SentinelOne EDR">0</span>
+
+              <span class="filter-option-pill">
+                SentinelOne EDR
+              </span>
+
+              <span
+                class="filter-count"
+                data-count-tool="SentinelOne EDR"
+              >
+                0
+              </span>
+
             </div>
 
           </label>
@@ -1044,8 +1724,18 @@
             >
 
             <div class="filter-option-row">
-              <span class="filter-option-pill">Cyflare ITDR</span>
-              <span class="filter-count" data-count-tool="Cyflare ITDR">0</span>
+
+              <span class="filter-option-pill">
+                Cyflare ITDR
+              </span>
+
+              <span
+                class="filter-count"
+                data-count-tool="Cyflare ITDR"
+              >
+                0
+              </span>
+
             </div>
 
           </label>
@@ -1145,34 +1835,170 @@
     </div>
 
     <div>
+
       <button
         class="export-btn action-btn"
         onclick="exportTableToCSV()"
       >
         Export CSV
       </button>
+
     </div>
 
   </div>
 
-  <!-- TABLE -->
+  <!-- =========================================================
+       TABLE HINT
+       ========================================================= -->
+
+  <div class="table-meta-bar">
+
+    <span class="table-meta-dot"></span>
+
+    Click any detection to view details
+
+  </div>
+
+  <!-- =========================================================
+       TABLE
+       ========================================================= -->
 
   <div class="table-container">
 
     <table id="detectionsTable">
 
       <thead>
+
         <tr>
-          <th onclick="sortTable(0)">Detection Name</th>
-          <th onclick="sortTable(1)">Description</th>
-          <th onclick="sortTable(2)">Default Status</th>
-          <th onclick="sortTable(3)">Tool</th>
-          <th onclick="sortTable(4)">Connector</th>
-          <th onclick="sortTable(5)">MITRE Tactic</th>
-          <th onclick="sortTable(6)">MITRE Tactic ID</th>
-          <th onclick="sortTable(7)">MITRE Technique</th>
-          <th onclick="sortTable(8)">MITRE Technique ID</th>
+
+          <th onclick="sortTable(0)">
+
+            <span class="header-content">
+
+              Detection Name
+
+              <span class="sort-indicator">
+                ↕
+              </span>
+
+            </span>
+
+          </th>
+
+          <th onclick="sortTable(1)">
+
+            <span class="header-content">
+
+              Description
+
+              <span class="sort-indicator">
+                ↕
+              </span>
+
+            </span>
+
+          </th>
+
+          <th onclick="sortTable(2)">
+
+            <span class="header-content">
+
+              Default Status
+
+              <span class="sort-indicator">
+                ↕
+              </span>
+
+            </span>
+
+          </th>
+
+          <th onclick="sortTable(3)">
+
+            <span class="header-content">
+
+              Tool
+
+              <span class="sort-indicator">
+                ↕
+              </span>
+
+            </span>
+
+          </th>
+
+          <th onclick="sortTable(4)">
+
+            <span class="header-content">
+
+              Connector
+
+              <span class="sort-indicator">
+                ↕
+              </span>
+
+            </span>
+
+          </th>
+
+          <th onclick="sortTable(5)">
+
+            <span class="header-content">
+
+              MITRE Tactic
+
+              <span class="sort-indicator">
+                ↕
+              </span>
+
+            </span>
+
+          </th>
+
+          <th onclick="sortTable(6)">
+
+            <span class="header-content">
+
+              MITRE Tactic ID
+
+              <span class="sort-indicator">
+                ↕
+              </span>
+
+            </span>
+
+          </th>
+
+          <th onclick="sortTable(7)">
+
+            <span class="header-content">
+
+              MITRE Technique
+
+              <span class="sort-indicator">
+                ↕
+              </span>
+
+            </span>
+
+          </th>
+
+          <th onclick="sortTable(8)">
+
+            <span class="header-content">
+
+              MITRE Technique ID
+
+              <span class="sort-indicator">
+                ↕
+              </span>
+
+            </span>
+
+          </th>
+
         </tr>
+
       </thead>
 
       <tbody></tbody>
@@ -1182,7 +2008,7 @@
   </div>
 
   <!-- =========================================================
-       DETECTION DETAILS MODAL
+       MODAL
        ========================================================= -->
 
   <div
@@ -1248,23 +2074,55 @@
           <div class="modal-grid">
 
             <div class="modal-field">
-              <span class="modal-field-label">Connector</span>
-              <span class="modal-field-value" id="modalConnector"></span>
+
+              <span class="modal-field-label">
+                Connector
+              </span>
+
+              <span
+                class="modal-field-value"
+                id="modalConnector"
+              ></span>
+
             </div>
 
             <div class="modal-field">
-              <span class="modal-field-label">Detection ID</span>
-              <span class="modal-field-value" id="modalDetectionID"></span>
+
+              <span class="modal-field-label">
+                Detection ID
+              </span>
+
+              <span
+                class="modal-field-value"
+                id="modalDetectionID"
+              ></span>
+
             </div>
 
             <div class="modal-field">
-              <span class="modal-field-label">Date Added</span>
-              <span class="modal-field-value" id="modalDateAdded"></span>
+
+              <span class="modal-field-label">
+                Date Added
+              </span>
+
+              <span
+                class="modal-field-value"
+                id="modalDateAdded"
+              ></span>
+
             </div>
 
             <div class="modal-field">
-              <span class="modal-field-label">Kill Chain Stage</span>
-              <span class="modal-field-value" id="modalKillChain"></span>
+
+              <span class="modal-field-label">
+                Kill Chain Stage
+              </span>
+
+              <span
+                class="modal-field-value"
+                id="modalKillChain"
+              ></span>
+
             </div>
 
           </div>
@@ -1280,23 +2138,55 @@
           <div class="modal-grid">
 
             <div class="modal-field">
-              <span class="modal-field-label">Tactic</span>
-              <span class="modal-field-value" id="modalMitreTactic"></span>
+
+              <span class="modal-field-label">
+                Tactic
+              </span>
+
+              <span
+                class="modal-field-value"
+                id="modalMitreTactic"
+              ></span>
+
             </div>
 
             <div class="modal-field">
-              <span class="modal-field-label">Tactic ID</span>
-              <span class="modal-field-value" id="modalMitreTacticID"></span>
+
+              <span class="modal-field-label">
+                Tactic ID
+              </span>
+
+              <span
+                class="modal-field-value"
+                id="modalMitreTacticID"
+              ></span>
+
             </div>
 
             <div class="modal-field">
-              <span class="modal-field-label">Technique</span>
-              <span class="modal-field-value" id="modalMitreTechnique"></span>
+
+              <span class="modal-field-label">
+                Technique
+              </span>
+
+              <span
+                class="modal-field-value"
+                id="modalMitreTechnique"
+              ></span>
+
             </div>
 
             <div class="modal-field">
-              <span class="modal-field-label">Technique ID</span>
-              <span class="modal-field-value" id="modalMitreTechniqueID"></span>
+
+              <span class="modal-field-label">
+                Technique ID
+              </span>
+
+              <span
+                class="modal-field-value"
+                id="modalMitreTechniqueID"
+              ></span>
+
             </div>
 
           </div>
@@ -1316,37 +2206,171 @@
 
     const sortDirections = {};
 
-    /* =========================
+    /* =========================================================
        MODE
-       ========================= */
+       ========================================================= */
 
     function toggleMode() {
 
-      document.body.classList.toggle(
-        'dark-mode'
-      );
-
-      document.querySelector(
-        '.mode-toggle'
-      ).textContent =
-        document.body.classList.contains(
+      document.body
+        .classList
+        .toggle(
           'dark-mode'
+        );
+
+      document
+        .querySelector(
+          '.mode-toggle'
         )
-          ? '☀️'
-          : '🌙';
+        .textContent =
+          document.body
+            .classList
+            .contains(
+              'dark-mode'
+            )
+              ? '☀️'
+              : '🌙';
 
     }
 
-    /* =========================
+    /* =========================================================
+       SUMMARY CARD ACTIONS
+       ========================================================= */
+
+    function showAllDetections() {
+
+      resetFilters();
+
+    }
+
+    function filterActiveDetections() {
+
+      const statusCheckboxes =
+        document.querySelectorAll(
+          '#statusDropdown input[type="checkbox"]'
+        );
+
+      statusCheckboxes.forEach(
+        checkbox => {
+
+          checkbox.checked =
+            checkbox.value ===
+            'Active';
+
+        }
+      );
+
+      newOnlyFilter =
+        false;
+
+      document
+        .getElementById(
+          'newFilterBtn'
+        )
+        .textContent =
+          'Show New Only';
+
+      filterTable();
+
+    }
+
+    function filterTestingNewDetections() {
+
+      const statusCheckboxes =
+        document.querySelectorAll(
+          '#statusDropdown input[type="checkbox"]'
+        );
+
+      statusCheckboxes.forEach(
+        checkbox => {
+
+          checkbox.checked =
+            (
+              checkbox.value ===
+              'Testing' ||
+              checkbox.value ===
+              'New Detection'
+            );
+
+        }
+      );
+
+      newOnlyFilter =
+        false;
+
+      document
+        .getElementById(
+          'newFilterBtn'
+        )
+        .textContent =
+          'Show New Only';
+
+      filterTable();
+
+    }
+
+    function openToolDropdown() {
+
+      document
+        .querySelectorAll(
+          '.dropdown-content.show'
+        )
+        .forEach(
+          dropdown =>
+            dropdown
+              .classList
+              .remove(
+                'show'
+              )
+        );
+
+      document
+        .getElementById(
+          'toolDropdown'
+        )
+        .classList
+        .add(
+          'show'
+        );
+
+    }
+
+    /* =========================================================
        DROPDOWNS
-       ========================= */
+       ========================================================= */
 
     function toggleDropdown(id) {
 
+      const target =
+        document.getElementById(id);
+
       document
-        .getElementById(id)
+        .querySelectorAll(
+          '.dropdown-content.show'
+        )
+        .forEach(
+          dropdown => {
+
+            if (
+              dropdown !== target
+            ) {
+
+              dropdown
+                .classList
+                .remove(
+                  'show'
+                );
+
+            }
+
+          }
+        );
+
+      target
         .classList
-        .toggle('show');
+        .toggle(
+          'show'
+        );
 
     }
 
@@ -1357,6 +2381,9 @@
         if (
           !e.target.closest(
             '.dropdown'
+          ) &&
+          !e.target.closest(
+            '.summary-card.tools'
           )
         ) {
 
@@ -1368,7 +2395,9 @@
               dropdown =>
                 dropdown
                   .classList
-                  .remove('show')
+                  .remove(
+                    'show'
+                  )
             );
 
         }
@@ -1376,61 +2405,71 @@
       }
     );
 
-    /* =========================
+    /* =========================================================
        MODAL
-       ========================= */
+       ========================================================= */
 
     function openDetectionModal(det) {
 
       document.getElementById(
         'modalDetectionName'
       ).textContent =
-        det.name || 'Unnamed Detection';
+        det.name ||
+        'Unnamed Detection';
 
       document.getElementById(
         'modalDescription'
       ).textContent =
-        det.description || 'No description available.';
+        det.description ||
+        'No description available.';
 
       document.getElementById(
         'modalConnector'
       ).textContent =
-        det.connector || 'N/A';
+        det.connector ||
+        'N/A';
 
       document.getElementById(
         'modalDetectionID'
       ).textContent =
-        det.detectionID || 'N/A';
+        det.detectionID ||
+        'N/A';
 
       document.getElementById(
         'modalDateAdded'
       ).textContent =
-        det.dateAdded || 'N/A';
+        det.dateAdded ||
+        'N/A';
 
       document.getElementById(
         'modalKillChain'
       ).textContent =
-        det.killChainStage || 'N/A';
+        det.killChainStage ||
+        'N/A';
 
       document.getElementById(
         'modalMitreTactic'
       ).textContent =
-        det.mitreTactic || 'N/A';
+        det.mitreTactic ||
+        'N/A';
 
       document.getElementById(
         'modalMitreTacticID'
       ).textContent =
-        det.mitreTacticID || 'N/A';
+        det.mitreTacticID ||
+        'N/A';
 
       document.getElementById(
         'modalMitreTechnique'
       ).textContent =
-        det.mitreTechnique || 'N/A';
+        det.mitreTechnique ||
+        'N/A';
 
       document.getElementById(
         'modalMitreTechniqueID'
       ).textContent =
-        det.mitreTechniqueID || 'N/A';
+        det.mitreTechniqueID ||
+        'N/A';
 
       const statusBadge = `
         <span
@@ -1444,21 +2483,22 @@
         </span>
       `;
 
-      const toolBadge =
-        getToolBadge(det.tool);
-
       document.getElementById(
         'modalBadges'
       ).innerHTML =
         statusBadge +
-        toolBadge;
+        getToolBadge(
+          det.tool
+        );
 
       document
         .getElementById(
           'detectionModalOverlay'
         )
         .classList
-        .add('show');
+        .add(
+          'show'
+        );
 
       document.body.style.overflow =
         'hidden';
@@ -1472,7 +2512,9 @@
           'detectionModalOverlay'
         )
         .classList
-        .remove('show');
+        .remove(
+          'show'
+        );
 
       document.body.style.overflow =
         '';
@@ -1499,7 +2541,8 @@
       function(event) {
 
         if (
-          event.key === 'Escape'
+          event.key ===
+          'Escape'
         ) {
 
           closeDetectionModal();
@@ -1509,29 +2552,31 @@
       }
     );
 
-    /* =========================
+    /* =========================================================
        NEW FILTER
-       ========================= */
+       ========================================================= */
 
     function toggleNewOnlyFilter() {
 
       newOnlyFilter =
         !newOnlyFilter;
 
-      document.getElementById(
-        'newFilterBtn'
-      ).textContent =
-        newOnlyFilter
-          ? 'Showing New Only'
-          : 'Show New Only';
+      document
+        .getElementById(
+          'newFilterBtn'
+        )
+        .textContent =
+          newOnlyFilter
+            ? 'Showing New Only'
+            : 'Show New Only';
 
       filterTable();
 
     }
 
-    /* =========================
+    /* =========================================================
        COLUMN VISIBILITY
-       ========================= */
+       ========================================================= */
 
     function toggleColumn(
       colIndex,
@@ -1553,59 +2598,53 @@
           ? forceShow
           : checkbox.checked;
 
-      const ths =
-        table.getElementsByTagName(
-          'th'
-        );
+      const th =
+        table.querySelectorAll(
+          'thead th'
+        )[colIndex];
 
       if (
-        ths[colIndex]
+        th
       ) {
 
-        ths[colIndex].style.display =
+        th.style.display =
           show
             ? ''
             : 'none';
 
       }
 
-      const rows =
-        table.getElementsByTagName(
-          'tr'
+      table
+        .querySelectorAll(
+          'tbody tr'
+        )
+        .forEach(
+          row => {
+
+            const cell =
+              row.children[
+                colIndex
+              ];
+
+            if (
+              cell
+            ) {
+
+              cell.style.display =
+                show
+                  ? ''
+                  : 'none';
+
+            }
+
+          }
         );
-
-      for (
-        let i = 1;
-        i < rows.length;
-        i++
-      ) {
-
-        const cells =
-          rows[i]
-            .getElementsByTagName(
-              'td'
-            );
-
-        if (
-          cells[colIndex]
-        ) {
-
-          cells[colIndex]
-            .style
-            .display =
-              show
-                ? ''
-                : 'none';
-
-        }
-
-      }
 
     }
 
-    /* =========================
+    /* =========================================================
        MITRE
-       ========================= */
+       ========================================================= */
 
     function toggleMitreColumns() {
 
@@ -1623,45 +2662,50 @@
       indices.forEach(
         index => {
 
-          toggleColumn(
-            index,
-            mitreVisible
-          );
-
           checkboxes[
             index
           ].checked =
             mitreVisible;
 
+          toggleColumn(
+            index,
+            mitreVisible
+          );
+
         }
       );
 
-      document.getElementById(
-        'toggleMitreBtn'
-      ).textContent =
-        mitreVisible
-          ? 'Hide MITRE Columns'
-          : 'Show MITRE Columns';
+      document
+        .getElementById(
+          'toggleMitreBtn'
+        )
+        .textContent =
+          mitreVisible
+            ? 'Hide MITRE Columns'
+            : 'Show MITRE Columns';
 
     }
 
-    /* =========================
+    /* =========================================================
        RESET
-       ========================= */
+       ========================================================= */
 
     function resetFilters() {
 
-      document.getElementById(
-        'search'
-      ).value = '';
+      document
+        .getElementById(
+          'search'
+        )
+        .value = '';
 
       document
         .querySelectorAll(
           '#statusDropdown input[type="checkbox"]'
         )
         .forEach(
-          cb =>
-            cb.checked = true
+          checkbox =>
+            checkbox.checked =
+              true
         );
 
       document
@@ -1669,8 +2713,9 @@
           '#toolDropdown input[type="checkbox"]'
         )
         .forEach(
-          cb =>
-            cb.checked = true
+          checkbox =>
+            checkbox.checked =
+              true
         );
 
       document
@@ -1678,9 +2723,13 @@
           '#columnDropdown input[type="checkbox"]'
         )
         .forEach(
-          (cb, index) => {
+          (
+            checkbox,
+            index
+          ) => {
 
-            cb.checked = true;
+            checkbox.checked =
+              true;
 
             toggleColumn(
               index,
@@ -1696,23 +2745,27 @@
       mitreVisible =
         true;
 
-      document.getElementById(
-        'newFilterBtn'
-      ).textContent =
-        'Show New Only';
+      document
+        .getElementById(
+          'newFilterBtn'
+        )
+        .textContent =
+          'Show New Only';
 
-      document.getElementById(
-        'toggleMitreBtn'
-      ).textContent =
-        'Hide MITRE Columns';
+      document
+        .getElementById(
+          'toggleMitreBtn'
+        )
+        .textContent =
+          'Hide MITRE Columns';
 
       filterTable();
 
     }
 
-    /* =========================
-       HELPERS
-       ========================= */
+    /* =========================================================
+       SEARCH HELPERS
+       ========================================================= */
 
     function rowMatchesSearch(
       cells,
@@ -1728,7 +2781,9 @@
       }
 
       return Array
-        .from(cells)
+        .from(
+          cells
+        )
         .some(
           cell =>
             cell
@@ -1763,9 +2818,9 @@
 
     }
 
-    /* =========================
+    /* =========================================================
        FILTER BUTTON STATES
-       ========================= */
+       ========================================================= */
 
     function updateFilterButtonStates() {
 
@@ -1780,8 +2835,8 @@
             statusCheckboxes
           )
           .filter(
-            cb =>
-              cb.checked
+            checkbox =>
+              checkbox.checked
           );
 
       const statusButton =
@@ -1797,18 +2852,22 @@
         statusButton.textContent =
           'Default Status';
 
-        statusButton.classList.remove(
-          'filter-active'
-        );
+        statusButton
+          .classList
+          .remove(
+            'filter-active'
+          );
 
       } else {
 
         statusButton.textContent =
           `Default Status (${selectedStatuses.length}/${statusCheckboxes.length})`;
 
-        statusButton.classList.add(
-          'filter-active'
-        );
+        statusButton
+          .classList
+          .add(
+            'filter-active'
+          );
 
       }
 
@@ -1823,8 +2882,8 @@
             toolCheckboxes
           )
           .filter(
-            cb =>
-              cb.checked
+            checkbox =>
+              checkbox.checked
           );
 
       const toolButton =
@@ -1840,18 +2899,22 @@
         toolButton.textContent =
           'Tool';
 
-        toolButton.classList.remove(
-          'filter-active'
-        );
+        toolButton
+          .classList
+          .remove(
+            'filter-active'
+          );
 
       } else {
 
         toolButton.textContent =
           `Tool (${selectedTools.length}/${toolCheckboxes.length})`;
 
-        toolButton.classList.add(
-          'filter-active'
-        );
+        toolButton
+          .classList
+          .add(
+            'filter-active'
+          );
 
       }
 
@@ -1867,9 +2930,9 @@
 
     }
 
-    /* =========================
-       DROPDOWN COUNTS
-       ========================= */
+    /* =========================================================
+       FACET COUNTS
+       ========================================================= */
 
     function updateDropdownCounts() {
 
@@ -1895,12 +2958,12 @@
             )
           )
           .filter(
-            cb =>
-              cb.checked
+            checkbox =>
+              checkbox.checked
           )
           .map(
-            cb =>
-              cb.value
+            checkbox =>
+              checkbox.value
           );
 
       const checkedTools =
@@ -1911,12 +2974,12 @@
             )
           )
           .filter(
-            cb =>
-              cb.checked
+            checkbox =>
+              checkbox.checked
           )
           .map(
-            cb =>
-              cb.value
+            checkbox =>
+              checkbox.value
           );
 
       const statusCounts = {};
@@ -2000,12 +3063,15 @@
           element => {
 
             const key =
-              element.getAttribute(
-                'data-count-status'
-              );
+              element
+                .getAttribute(
+                  'data-count-status'
+                );
 
             element.textContent =
-              statusCounts[key] || 0;
+              statusCounts[
+                key
+              ] || 0;
 
           }
         );
@@ -2018,21 +3084,24 @@
           element => {
 
             const key =
-              element.getAttribute(
-                'data-count-tool'
-              );
+              element
+                .getAttribute(
+                  'data-count-tool'
+                );
 
             element.textContent =
-              toolCounts[key] || 0;
+              toolCounts[
+                key
+              ] || 0;
 
           }
         );
 
     }
 
-    /* =========================
-       FILTER TABLE
-       ========================= */
+    /* =========================================================
+       FILTER
+       ========================================================= */
 
     function filterTable() {
 
@@ -2053,12 +3122,12 @@
             )
           )
           .filter(
-            cb =>
-              cb.checked
+            checkbox =>
+              checkbox.checked
           )
           .map(
-            cb =>
-              cb.value
+            checkbox =>
+              checkbox.value
           );
 
       const checkedTools =
@@ -2069,12 +3138,12 @@
             )
           )
           .filter(
-            cb =>
-              cb.checked
+            checkbox =>
+              checkbox.checked
           )
           .map(
-            cb =>
-              cb.value
+            checkbox =>
+              checkbox.value
           );
 
       document
@@ -2123,14 +3192,16 @@
         );
 
       updateFilterButtonStates();
+
       updateDropdownCounts();
+
       updateSummaryMetrics();
 
     }
 
-    /* =========================
-       SUMMARY
-       ========================= */
+    /* =========================================================
+       SUMMARY METRICS
+       ========================================================= */
 
     function updateSummaryMetrics() {
 
@@ -2175,7 +3246,8 @@
                 .trim();
 
             if (
-              status === 'Active'
+              status ===
+              'Active'
             ) {
 
               active++;
@@ -2183,8 +3255,10 @@
             }
 
             if (
-              status === 'Testing' ||
-              status === 'New Detection'
+              status ===
+              'Testing' ||
+              status ===
+              'New Detection'
             ) {
 
               testingNew++;
@@ -2195,38 +3269,48 @@
               tool
             ) {
 
-              tools.add(tool);
+              tools.add(
+                tool
+              );
 
             }
 
           }
         );
 
-      document.getElementById(
-        'summaryTotal'
-      ).textContent =
-        total;
+      document
+        .getElementById(
+          'summaryTotal'
+        )
+        .textContent =
+          total;
 
-      document.getElementById(
-        'summaryActive'
-      ).textContent =
-        active;
+      document
+        .getElementById(
+          'summaryActive'
+        )
+        .textContent =
+          active;
 
-      document.getElementById(
-        'summaryTesting'
-      ).textContent =
-        testingNew;
+      document
+        .getElementById(
+          'summaryTesting'
+        )
+        .textContent =
+          testingNew;
 
-      document.getElementById(
-        'summaryTools'
-      ).textContent =
-        tools.size;
+      document
+        .getElementById(
+          'summaryTools'
+        )
+        .textContent =
+          tools.size;
 
     }
 
-    /* =========================
+    /* =========================================================
        TOOL BADGES
-       ========================= */
+       ========================================================= */
 
     function getToolClass(tool) {
 
@@ -2273,9 +3357,34 @@
 
     }
 
-    /* =========================
+    /* =========================================================
+       CONNECTOR BADGE
+       ========================================================= */
+
+    function getConnectorBadge(
+      connector
+    ) {
+
+      const displayValue =
+        connector &&
+        connector.trim()
+          ? connector
+          : 'N/A';
+
+      return `
+        <span
+          class="connector-badge"
+          title="${displayValue}"
+        >
+          ${displayValue}
+        </span>
+      `;
+
+    }
+
+    /* =========================================================
        STATUS
-       ========================= */
+       ========================================================= */
 
     function getStatusColor(status) {
 
@@ -2309,7 +3418,9 @@
 
     }
 
-    function getStatusTextColor(status) {
+    function getStatusTextColor(
+      status
+    ) {
 
       switch (
         status
@@ -2326,7 +3437,9 @@
 
     }
 
-    function getStatusDescription(status) {
+    function getStatusDescription(
+      status
+    ) {
 
       switch (
         status
@@ -2335,11 +3448,17 @@
         case 'Active':
           return 'This detection is actively monitored and alerts are generated.';
 
+        case 'Active via Custom Rules':
+          return 'Enabled custom rules track noteworthy activity.';
+
         case 'Not Active':
           return 'This detection has low standalone value.';
 
         case 'Alert Preferences':
           return 'Toggling available under Alert Preferences.';
+
+        case 'New Detection':
+          return 'A newly introduced detection awaiting assessment.';
 
         case 'Testing':
           return 'Under SOC evaluation.';
@@ -2354,9 +3473,9 @@
 
     }
 
-    /* =========================
+    /* =========================================================
        DATE
-       ========================= */
+       ========================================================= */
 
     function parseDate(str) {
 
@@ -2369,7 +3488,9 @@
       }
 
       const parts =
-        str.split('-');
+        str.split(
+          '-'
+        );
 
       return new Date(
         parts[2],
@@ -2379,7 +3500,9 @@
 
     }
 
-    function isRecent(dateStr) {
+    function isRecent(
+      dateStr
+    ) {
 
       const dt =
         parseDate(
@@ -2411,11 +3534,13 @@
 
     }
 
-    /* =========================
+    /* =========================================================
        SORT
-       ========================= */
+       ========================================================= */
 
-    function sortTable(columnIndex) {
+    function sortTable(
+      columnIndex
+    ) {
 
       const tbody =
         document.querySelector(
@@ -2481,11 +3606,70 @@
           )
       );
 
+      const headers =
+        document.querySelectorAll(
+          '#detectionsTable thead th'
+        );
+
+      headers.forEach(
+        (
+          header,
+          index
+        ) => {
+
+          header
+            .classList
+            .remove(
+              'sort-active'
+            );
+
+          const indicator =
+            header.querySelector(
+              '.sort-indicator'
+            );
+
+          if (
+            indicator
+          ) {
+
+            indicator.textContent =
+              '↕';
+
+          }
+
+          if (
+            index ===
+            columnIndex
+          ) {
+
+            header
+              .classList
+              .add(
+                'sort-active'
+              );
+
+            if (
+              indicator
+            ) {
+
+              indicator.textContent =
+                direction ===
+                'asc'
+                  ? '↑'
+                  : '↓';
+
+            }
+
+          }
+
+        }
+      );
+
     }
 
-    /* =========================
+    /* =========================================================
        CSV
-       ========================= */
+       ========================================================= */
 
     function exportTableToCSV() {
 
@@ -2587,9 +3771,9 @@
 
     }
 
-    /* =========================
+    /* =========================================================
        LOAD DATA
-       ========================= */
+       ========================================================= */
 
     function loadData() {
 
@@ -2625,7 +3809,8 @@
               det => {
 
                 let description =
-                  det.description || '';
+                  det.description ||
+                  '';
 
                 if (
                   det.dateAdded &&
@@ -2635,7 +3820,7 @@
                 ) {
 
                   description =
-                    '<span class="new-badge">New</span> ' +
+                    '<span class="new-badge">New</span>' +
                     description;
 
                 }
@@ -2651,14 +3836,19 @@
                 row.innerHTML = `
 
                   <td>
-                    ${det.name || ''}
+                    <span class="detection-name">
+                      ${det.name || ''}
+                    </span>
                   </td>
 
                   <td>
-                    ${description}
+                    <span class="detection-description">
+                      ${description}
+                    </span>
                   </td>
 
                   <td>
+
                     <span
                       class="status-badge"
                       style="
@@ -2669,6 +3859,7 @@
                     >
                       ${det.defaultStatus || ''}
                     </span>
+
                   </td>
 
                   <td>
@@ -2676,7 +3867,7 @@
                   </td>
 
                   <td>
-                    ${det.connector || ''}
+                    ${getConnectorBadge(det.connector)}
                   </td>
 
                   <td>
@@ -2696,11 +3887,6 @@
                   </td>
 
                 `;
-
-                /*
-                  THIS IS WHAT MAKES
-                  THE ROW CLICKABLE.
-                */
 
                 row.addEventListener(
                   'click',
