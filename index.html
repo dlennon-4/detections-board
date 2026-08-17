@@ -15,7 +15,7 @@
 
   <style>
     :root {
-      --dropdown-width: 255px;
+      --dropdown-width: 270px;
 
       /* =======================================================
          CYFLARE BRAND COLORS
@@ -140,30 +140,24 @@
 
     .logo-section {
       position: absolute;
-
       left: 20px;
       top: 50%;
-
       transform: translateY(-50%);
     }
 
     .logo-section img {
       max-width: 250px;
       height: auto;
-
       display: block;
-
       background-color: transparent;
     }
 
     .center-section {
       position: absolute;
-
       left: 50%;
       top: 50%;
 
       transform: translate(-50%, -50%);
-
       text-align: center;
     }
 
@@ -212,18 +206,6 @@
 
       font-family: 'Inter', sans-serif;
       font-size: 14px;
-
-      transition:
-        background-color 0.3s,
-        transform 0.2s;
-    }
-
-    .mode-toggle:hover {
-      background-color: var(--hover-bg);
-
-      transform:
-        translateY(-50%)
-        translateY(-2px);
     }
 
     /* =========================================================
@@ -259,20 +241,6 @@
         rgba(0,0,0,0.08);
 
       text-align: left;
-
-      transition:
-        background-color 0.3s,
-        border-color 0.3s,
-        transform 0.2s,
-        box-shadow 0.2s;
-    }
-
-    .summary-card:hover {
-      transform: translateY(-2px);
-
-      box-shadow:
-        0 4px 10px
-        rgba(0,0,0,0.12);
     }
 
     .summary-card::before {
@@ -361,9 +329,6 @@
       box-shadow:
         0 2px 6px
         rgba(0,0,0,0.1);
-
-      transition:
-        background-color 0.3s;
     }
 
     .filters-left {
@@ -381,27 +346,18 @@
       padding: 8px;
 
       background: var(--input-bg);
-
       color: var(--text-color);
 
-      border:
-        1px solid
-        var(--input-border);
-
+      border: 1px solid var(--input-border);
       border-radius: 6px;
 
       font-family: 'Inter', sans-serif;
       font-size: 14px;
-      font-weight: 400;
     }
 
     .search-box::placeholder {
       color: #6f7774;
       opacity: 1;
-    }
-
-    .dark-mode .search-box {
-      color: #f4f7f6;
     }
 
     .dark-mode .search-box::placeholder {
@@ -424,18 +380,13 @@
       font-size: 14px;
       font-weight: 500;
 
-      text-align: center;
-
       transition:
-        background-color 0.3s,
-        color 0.3s,
-        transform 0.2s,
-        box-shadow 0.2s;
+        background-color 0.2s,
+        transform 0.2s;
     }
 
     .filter-btn:hover,
     .action-btn:hover {
-      background-color: var(--hover-bg);
       transform: translateY(-2px);
     }
 
@@ -445,10 +396,6 @@
       color: var(--crimson);
 
       font-weight: 600;
-
-      box-shadow:
-        0 0 0 2px
-        rgba(222,158,54,0.18);
     }
 
     .reset-btn {
@@ -480,10 +427,7 @@
 
       background-color: var(--card-bg);
 
-      border:
-        1px solid
-        var(--table-border);
-
+      border: 1px solid var(--table-border);
       border-radius: 8px;
 
       box-shadow:
@@ -493,18 +437,10 @@
       text-align: left;
 
       z-index: 999;
-
-      opacity: 0;
-
-      transform: translateY(-5px);
     }
 
     .dropdown-content.show {
       display: block;
-
-      opacity: 1;
-
-      transform: translateY(0);
     }
 
     .dropdown-content label {
@@ -518,8 +454,6 @@
 
       cursor: pointer;
 
-      font-weight: 400;
-
       border-radius: 6px;
     }
 
@@ -532,7 +466,7 @@
     }
 
     /* =========================================================
-       FILTER OPTION PILLS
+       FILTER OPTION LAYOUT
        ========================================================= */
 
     .filter-option-pill {
@@ -547,13 +481,51 @@
       font-size: 0.82rem;
       font-weight: 600;
 
-      line-height: 1.2;
-
       white-space: nowrap;
     }
 
+    .filter-option-row {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      flex: 1;
+
+      min-width: 0;
+    }
+
+    .filter-count {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-width: 30px;
+
+      margin-left: 8px;
+
+      padding: 3px 7px;
+
+      border-radius: 999px;
+
+      background: #edf1f0;
+      color: var(--mountain-green);
+
+      font-size: 0.74rem;
+      font-weight: 700;
+
+      line-height: 1;
+    }
+
+    .dark-mode .filter-count {
+      background: #52363c;
+      color: #f4f7f6;
+    }
+
     /* =========================================================
-       DEFAULT STATUS DROPDOWN COLORS
+       STATUS COLORS
        ========================================================= */
 
     .status-option.active input {
@@ -574,19 +546,12 @@
       color: #ffffff;
     }
 
-    .status-option.new-detection input {
-      accent-color: var(--marigold);
-    }
-
-    .status-option.new-detection .filter-option-pill {
-      background: var(--marigold);
-      color: var(--crimson);
-    }
-
+    .status-option.new-detection input,
     .status-option.testing input {
       accent-color: var(--marigold);
     }
 
+    .status-option.new-detection .filter-option-pill,
     .status-option.testing .filter-option-pill {
       background: var(--marigold);
       color: var(--crimson);
@@ -611,15 +576,8 @@
     }
 
     /* =========================================================
-       TOOL FILTER
+       TOOL COLORS
        ========================================================= */
-
-    .tool-option input {
-      width: 15px;
-      height: 15px;
-
-      cursor: pointer;
-    }
 
     .tool-option.stellar input {
       accent-color: var(--stellar-color);
@@ -664,14 +622,8 @@
     }
 
     /* =========================================================
-       SELECT COLUMNS COLOR CODING
+       SELECT COLUMNS COLORS
        ========================================================= */
-
-    .column-option input {
-      cursor: pointer;
-    }
-
-    /* Primary detection information */
 
     .column-option.primary input {
       accent-color: var(--mountain-green);
@@ -682,8 +634,6 @@
       color: #ffffff;
     }
 
-    /* Status */
-
     .column-option.status input {
       accent-color: var(--vivid-blue);
     }
@@ -692,8 +642,6 @@
       background: var(--vivid-blue);
       color: #ffffff;
     }
-
-    /* Tool */
 
     .column-option.tool input {
       accent-color: var(--slate-purple);
@@ -704,18 +652,14 @@
       color: #ffffff;
     }
 
-    /* Connector */
-
     .column-option.connector input {
-      accent-color: var(--vivid-blue);
+      accent-color: #4c87c8;
     }
 
     .column-option.connector .filter-option-pill {
       background: #4c87c8;
       color: #ffffff;
     }
-
-    /* MITRE */
 
     .column-option.mitre input {
       accent-color: var(--marigold);
@@ -725,16 +669,7 @@
       background: #f1d7a9;
       color: var(--crimson);
 
-      border:
-        1px solid
-        var(--marigold);
-    }
-
-    .dark-mode .column-option.mitre .filter-option-pill {
-      background: #6a4a18;
-      color: #ffffff;
-
-      border-color: var(--marigold);
+      border: 1px solid var(--marigold);
     }
 
     /* =========================================================
@@ -761,10 +696,7 @@
     table {
       width: 100%;
 
-      border: none;
-
       border-collapse: collapse;
-      border-spacing: 0;
     }
 
     th,
@@ -774,11 +706,6 @@
       border-bottom:
         1px solid
         var(--table-border);
-
-      transition:
-        border-color 0.3s,
-        background-color 0.2s,
-        color 0.3s;
     }
 
     thead th {
@@ -789,7 +716,6 @@
       z-index: 2;
 
       background: var(--header-bg);
-
       color: var(--header-text);
 
       border: none !important;
@@ -811,52 +737,29 @@
        DARK TABLE
        ========================================================= */
 
-    .dark-mode
-    #detectionsTable
-    tbody
-    tr:nth-child(odd) {
+    .dark-mode #detectionsTable tbody tr:nth-child(odd) {
       background-color: #30171c;
     }
 
-    .dark-mode
-    #detectionsTable
-    tbody
-    tr:nth-child(even) {
+    .dark-mode #detectionsTable tbody tr:nth-child(even) {
       background-color: #3a2026;
     }
 
-    .dark-mode
-    #detectionsTable
-    tbody
-    tr:hover {
+    .dark-mode #detectionsTable tbody tr:hover {
       background-color: #4a2a31;
     }
 
-    .dark-mode
-    #detectionsTable
-    tbody
-    td {
+    .dark-mode #detectionsTable tbody td {
       color: #e6ecea;
-      font-weight: 400;
     }
 
-    .dark-mode
-    #detectionsTable
-    tbody
-    td:first-child {
+    .dark-mode #detectionsTable tbody td:first-child {
       color: #f4f7f6;
       font-weight: 500;
     }
 
-    .dark-mode
-    #detectionsTable
-    tbody
-    td:nth-child(2) {
-      color: #e9eeec;
-    }
-
     /* =========================================================
-       ALIGNMENT
+       TABLE ALIGNMENT
        ========================================================= */
 
     #detectionsTable th:nth-child(1),
@@ -872,25 +775,18 @@
     }
 
     /* =========================================================
-       STATUS BADGES
+       STATUS + TOOL BADGES
        ========================================================= */
 
     .status-badge {
       display: inline-block;
 
-      padding:
-        4px 8px;
+      padding: 4px 8px;
 
       border-radius: 12px;
 
       font-weight: 700;
-
-      cursor: default;
     }
-
-    /* =========================================================
-       TOOL TABLE BADGES
-       ========================================================= */
 
     .table-tool-badge {
       display: inline-flex;
@@ -900,8 +796,7 @@
 
       min-width: 110px;
 
-      padding:
-        5px 10px;
+      padding: 5px 10px;
 
       border-radius: 999px;
 
@@ -910,13 +805,7 @@
       font-size: 0.78rem;
       font-weight: 600;
 
-      line-height: 1.2;
-
       white-space: nowrap;
-
-      box-shadow:
-        0 1px 3px
-        rgba(0,0,0,0.14);
     }
 
     .table-tool-badge.stellar {
@@ -952,8 +841,7 @@
       background-color: var(--badge-new-bg);
       color: #ffffff;
 
-      padding:
-        2px 6px;
+      padding: 2px 6px;
 
       border-radius: 4px;
 
@@ -964,20 +852,9 @@
       font-weight: 700;
     }
 
-    /* =========================================================
-       RESPONSIVE
-       ========================================================= */
-
     @media (max-width: 900px) {
       .summary-strip {
-        grid-template-columns:
-          repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 520px) {
-      .summary-strip {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -987,7 +864,7 @@
 <body>
 
   <!-- =========================================================
-       TOP BAR
+       TOP
        ========================================================= -->
 
   <div class="top-bar">
@@ -1093,7 +970,7 @@
   </div>
 
   <!-- =========================================================
-       FILTER BAR
+       FILTERS
        ========================================================= -->
 
   <div class="filter-bar">
@@ -1108,9 +985,7 @@
         placeholder="Search Detections..."
       >
 
-      <!-- =====================================================
-           STATUS
-           ===================================================== -->
+      <!-- STATUS -->
 
       <div class="dropdown">
 
@@ -1127,7 +1002,10 @@
           class="dropdown-content"
         >
 
-          <label class="status-option active">
+          <label
+            class="status-option active"
+            data-status="Active"
+          >
 
             <input
               type="checkbox"
@@ -1136,13 +1014,27 @@
               onchange="filterTable()"
             >
 
-            <span class="filter-option-pill">
-              Active
-            </span>
+            <div class="filter-option-row">
+
+              <span class="filter-option-pill">
+                Active
+              </span>
+
+              <span
+                class="filter-count"
+                data-count-status="Active"
+              >
+                0
+              </span>
+
+            </div>
 
           </label>
 
-          <label class="status-option alert-preferences">
+          <label
+            class="status-option alert-preferences"
+            data-status="Alert Preferences"
+          >
 
             <input
               type="checkbox"
@@ -1151,13 +1043,27 @@
               onchange="filterTable()"
             >
 
-            <span class="filter-option-pill">
-              Alert Preferences
-            </span>
+            <div class="filter-option-row">
+
+              <span class="filter-option-pill">
+                Alert Preferences
+              </span>
+
+              <span
+                class="filter-count"
+                data-count-status="Alert Preferences"
+              >
+                0
+              </span>
+
+            </div>
 
           </label>
 
-          <label class="status-option new-detection">
+          <label
+            class="status-option new-detection"
+            data-status="New Detection"
+          >
 
             <input
               type="checkbox"
@@ -1166,13 +1072,27 @@
               onchange="filterTable()"
             >
 
-            <span class="filter-option-pill">
-              New Detection
-            </span>
+            <div class="filter-option-row">
+
+              <span class="filter-option-pill">
+                New Detection
+              </span>
+
+              <span
+                class="filter-count"
+                data-count-status="New Detection"
+              >
+                0
+              </span>
+
+            </div>
 
           </label>
 
-          <label class="status-option testing">
+          <label
+            class="status-option testing"
+            data-status="Testing"
+          >
 
             <input
               type="checkbox"
@@ -1181,13 +1101,27 @@
               onchange="filterTable()"
             >
 
-            <span class="filter-option-pill">
-              Testing
-            </span>
+            <div class="filter-option-row">
+
+              <span class="filter-option-pill">
+                Testing
+              </span>
+
+              <span
+                class="filter-count"
+                data-count-status="Testing"
+              >
+                0
+              </span>
+
+            </div>
 
           </label>
 
-          <label class="status-option muted">
+          <label
+            class="status-option muted"
+            data-status="Muted"
+          >
 
             <input
               type="checkbox"
@@ -1196,13 +1130,27 @@
               onchange="filterTable()"
             >
 
-            <span class="filter-option-pill">
-              Muted
-            </span>
+            <div class="filter-option-row">
+
+              <span class="filter-option-pill">
+                Muted
+              </span>
+
+              <span
+                class="filter-count"
+                data-count-status="Muted"
+              >
+                0
+              </span>
+
+            </div>
 
           </label>
 
-          <label class="status-option not-active">
+          <label
+            class="status-option not-active"
+            data-status="Not Active"
+          >
 
             <input
               type="checkbox"
@@ -1211,9 +1159,20 @@
               onchange="filterTable()"
             >
 
-            <span class="filter-option-pill">
-              Not Active
-            </span>
+            <div class="filter-option-row">
+
+              <span class="filter-option-pill">
+                Not Active
+              </span>
+
+              <span
+                class="filter-count"
+                data-count-status="Not Active"
+              >
+                0
+              </span>
+
+            </div>
 
           </label>
 
@@ -1221,9 +1180,7 @@
 
       </div>
 
-      <!-- =====================================================
-           TOOL
-           ===================================================== -->
+      <!-- TOOL -->
 
       <div class="dropdown">
 
@@ -1249,9 +1206,20 @@
               onchange="filterTable()"
             >
 
-            <span class="filter-option-pill">
-              Stellar Cyber
-            </span>
+            <div class="filter-option-row">
+
+              <span class="filter-option-pill">
+                Stellar Cyber
+              </span>
+
+              <span
+                class="filter-count"
+                data-count-tool="Stellar Cyber"
+              >
+                0
+              </span>
+
+            </div>
 
           </label>
 
@@ -1264,9 +1232,20 @@
               onchange="filterTable()"
             >
 
-            <span class="filter-option-pill">
-              CrowdStrike
-            </span>
+            <div class="filter-option-row">
+
+              <span class="filter-option-pill">
+                CrowdStrike
+              </span>
+
+              <span
+                class="filter-count"
+                data-count-tool="CrowdStrike"
+              >
+                0
+              </span>
+
+            </div>
 
           </label>
 
@@ -1279,9 +1258,20 @@
               onchange="filterTable()"
             >
 
-            <span class="filter-option-pill">
-              SentinelOne EDR
-            </span>
+            <div class="filter-option-row">
+
+              <span class="filter-option-pill">
+                SentinelOne EDR
+              </span>
+
+              <span
+                class="filter-count"
+                data-count-tool="SentinelOne EDR"
+              >
+                0
+              </span>
+
+            </div>
 
           </label>
 
@@ -1294,9 +1284,20 @@
               onchange="filterTable()"
             >
 
-            <span class="filter-option-pill">
-              Cyflare ITDR
-            </span>
+            <div class="filter-option-row">
+
+              <span class="filter-option-pill">
+                Cyflare ITDR
+              </span>
+
+              <span
+                class="filter-count"
+                data-count-tool="Cyflare ITDR"
+              >
+                0
+              </span>
+
+            </div>
 
           </label>
 
@@ -1304,9 +1305,7 @@
 
       </div>
 
-      <!-- =====================================================
-           SELECT COLUMNS
-           ===================================================== -->
+      <!-- SELECT COLUMNS -->
 
       <div class="dropdown">
 
@@ -1323,136 +1322,53 @@
         >
 
           <label class="column-option primary">
-
-            <input
-              type="checkbox"
-              checked
-              onchange="toggleColumn(0)"
-            >
-
-            <span class="filter-option-pill">
-              Detection Name
-            </span>
-
+            <input type="checkbox" checked onchange="toggleColumn(0)">
+            <span class="filter-option-pill">Detection Name</span>
           </label>
 
           <label class="column-option primary">
-
-            <input
-              type="checkbox"
-              checked
-              onchange="toggleColumn(1)"
-            >
-
-            <span class="filter-option-pill">
-              Description
-            </span>
-
+            <input type="checkbox" checked onchange="toggleColumn(1)">
+            <span class="filter-option-pill">Description</span>
           </label>
 
           <label class="column-option status">
-
-            <input
-              type="checkbox"
-              checked
-              onchange="toggleColumn(2)"
-            >
-
-            <span class="filter-option-pill">
-              Default Status
-            </span>
-
+            <input type="checkbox" checked onchange="toggleColumn(2)">
+            <span class="filter-option-pill">Default Status</span>
           </label>
 
           <label class="column-option tool">
-
-            <input
-              type="checkbox"
-              checked
-              onchange="toggleColumn(3)"
-            >
-
-            <span class="filter-option-pill">
-              Tool
-            </span>
-
+            <input type="checkbox" checked onchange="toggleColumn(3)">
+            <span class="filter-option-pill">Tool</span>
           </label>
 
           <label class="column-option connector">
-
-            <input
-              type="checkbox"
-              checked
-              onchange="toggleColumn(4)"
-            >
-
-            <span class="filter-option-pill">
-              Connector
-            </span>
-
+            <input type="checkbox" checked onchange="toggleColumn(4)">
+            <span class="filter-option-pill">Connector</span>
           </label>
 
           <label class="column-option mitre">
-
-            <input
-              type="checkbox"
-              checked
-              onchange="toggleColumn(5)"
-            >
-
-            <span class="filter-option-pill">
-              MITRE Tactic
-            </span>
-
+            <input type="checkbox" checked onchange="toggleColumn(5)">
+            <span class="filter-option-pill">MITRE Tactic</span>
           </label>
 
           <label class="column-option mitre">
-
-            <input
-              type="checkbox"
-              checked
-              onchange="toggleColumn(6)"
-            >
-
-            <span class="filter-option-pill">
-              MITRE Tactic ID
-            </span>
-
+            <input type="checkbox" checked onchange="toggleColumn(6)">
+            <span class="filter-option-pill">MITRE Tactic ID</span>
           </label>
 
           <label class="column-option mitre">
-
-            <input
-              type="checkbox"
-              checked
-              onchange="toggleColumn(7)"
-            >
-
-            <span class="filter-option-pill">
-              MITRE Technique
-            </span>
-
+            <input type="checkbox" checked onchange="toggleColumn(7)">
+            <span class="filter-option-pill">MITRE Technique</span>
           </label>
 
           <label class="column-option mitre">
-
-            <input
-              type="checkbox"
-              checked
-              onchange="toggleColumn(8)"
-            >
-
-            <span class="filter-option-pill">
-              MITRE Technique ID
-            </span>
-
+            <input type="checkbox" checked onchange="toggleColumn(8)">
+            <span class="filter-option-pill">MITRE Technique ID</span>
           </label>
 
         </div>
 
       </div>
-
-      <!-- Actions -->
 
       <button
         class="reset-btn action-btn"
@@ -1514,41 +1430,15 @@
 
         <tr>
 
-          <th onclick="sortTable(0)">
-            Detection Name
-          </th>
-
-          <th onclick="sortTable(1)">
-            Description
-          </th>
-
-          <th onclick="sortTable(2)">
-            Default Status
-          </th>
-
-          <th onclick="sortTable(3)">
-            Tool
-          </th>
-
-          <th onclick="sortTable(4)">
-            Connector
-          </th>
-
-          <th onclick="sortTable(5)">
-            MITRE Tactic
-          </th>
-
-          <th onclick="sortTable(6)">
-            MITRE Tactic ID
-          </th>
-
-          <th onclick="sortTable(7)">
-            MITRE Technique
-          </th>
-
-          <th onclick="sortTable(8)">
-            MITRE Technique ID
-          </th>
+          <th onclick="sortTable(0)">Detection Name</th>
+          <th onclick="sortTable(1)">Description</th>
+          <th onclick="sortTable(2)">Default Status</th>
+          <th onclick="sortTable(3)">Tool</th>
+          <th onclick="sortTable(4)">Connector</th>
+          <th onclick="sortTable(5)">MITRE Tactic</th>
+          <th onclick="sortTable(6)">MITRE Tactic ID</th>
+          <th onclick="sortTable(7)">MITRE Technique</th>
+          <th onclick="sortTable(8)">MITRE Technique ID</th>
 
         </tr>
 
@@ -1562,8 +1452,13 @@
 
   <script>
 
+    let newOnlyFilter = false;
+    let mitreVisible = true;
+
+    const sortDirections = {};
+
     /* =========================================================
-       LIGHT / DARK MODE
+       MODE
        ========================================================= */
 
     function toggleMode() {
@@ -1572,20 +1467,14 @@
         .classList
         .toggle('dark-mode');
 
-      const button =
-        document.querySelector(
-          '.mode-toggle'
-        );
-
-      button.textContent =
-        document.body
-          .classList
-          .contains('dark-mode')
+      document
+        .querySelector('.mode-toggle')
+        .textContent =
+          document.body.classList.contains('dark-mode')
             ? '☀️'
             : '🌙';
 
     }
-
 
     /* =========================================================
        DROPDOWNS
@@ -1600,15 +1489,12 @@
 
     }
 
-
     window.addEventListener(
       'click',
       function(e) {
 
         if (
-          !e.target.closest(
-            '.dropdown'
-          )
+          !e.target.closest('.dropdown')
         ) {
 
           document
@@ -1626,161 +1512,6 @@
 
       }
     );
-
-
-    /* =========================================================
-       NEW ONLY
-       ========================================================= */
-
-    let newOnlyFilter =
-      false;
-
-
-    function toggleNewOnlyFilter() {
-
-      newOnlyFilter =
-        !newOnlyFilter;
-
-      const button =
-        document.getElementById(
-          'newFilterBtn'
-        );
-
-      button.textContent =
-        newOnlyFilter
-          ? 'Showing New Only'
-          : 'Show New Only';
-
-      filterTable();
-
-    }
-
-
-    /* =========================================================
-       FILTER BUTTON STATES
-       ========================================================= */
-
-    function updateFilterButtonStates() {
-
-      const statusCheckboxes =
-        document.querySelectorAll(
-          '#statusDropdown input[type="checkbox"]'
-        );
-
-      const selectedStatuses =
-        Array
-          .from(statusCheckboxes)
-          .filter(
-            checkbox =>
-              checkbox.checked
-          );
-
-      const statusButton =
-        document.getElementById(
-          'statusFilterBtn'
-        );
-
-      if (
-        selectedStatuses.length ===
-        statusCheckboxes.length
-      ) {
-
-        statusButton.textContent =
-          'Default Status';
-
-        statusButton
-          .classList
-          .remove(
-            'filter-active'
-          );
-
-      } else {
-
-        statusButton.textContent =
-          `Default Status (${selectedStatuses.length}/${statusCheckboxes.length})`;
-
-        statusButton
-          .classList
-          .add(
-            'filter-active'
-          );
-
-      }
-
-
-      const toolCheckboxes =
-        document.querySelectorAll(
-          '#toolDropdown input[type="checkbox"]'
-        );
-
-      const selectedTools =
-        Array
-          .from(toolCheckboxes)
-          .filter(
-            checkbox =>
-              checkbox.checked
-          );
-
-      const toolButton =
-        document.getElementById(
-          'toolFilterBtn'
-        );
-
-      if (
-        selectedTools.length ===
-        toolCheckboxes.length
-      ) {
-
-        toolButton.textContent =
-          'Tool';
-
-        toolButton
-          .classList
-          .remove(
-            'filter-active'
-          );
-
-      } else {
-
-        toolButton.textContent =
-          `Tool (${selectedTools.length}/${toolCheckboxes.length})`;
-
-        toolButton
-          .classList
-          .add(
-            'filter-active'
-          );
-
-      }
-
-
-      const newButton =
-        document.getElementById(
-          'newFilterBtn'
-        );
-
-      if (
-        newOnlyFilter
-      ) {
-
-        newButton
-          .classList
-          .add(
-            'filter-active'
-          );
-
-      } else {
-
-        newButton
-          .classList
-          .remove(
-            'filter-active'
-          );
-
-      }
-
-    }
-
 
     /* =========================================================
        COLUMN VISIBILITY
@@ -1807,27 +1538,21 @@
           : checkbox.checked;
 
       const ths =
-        table.getElementsByTagName(
-          'th'
-        );
+        table.getElementsByTagName('th');
 
       if (
         ths[colIndex]
       ) {
 
-        ths[colIndex]
-          .style
-          .display =
-            show
-              ? ''
-              : 'none';
+        ths[colIndex].style.display =
+          show
+            ? ''
+            : 'none';
 
       }
 
       const rows =
-        table.getElementsByTagName(
-          'tr'
-        );
+        table.getElementsByTagName('tr');
 
       for (
         let i = 1;
@@ -1837,20 +1562,16 @@
 
         const cells =
           rows[i]
-            .getElementsByTagName(
-              'td'
-            );
+            .getElementsByTagName('td');
 
         if (
           cells[colIndex]
         ) {
 
-          cells[colIndex]
-            .style
-            .display =
-              show
-                ? ''
-                : 'none';
+          cells[colIndex].style.display =
+            show
+              ? ''
+              : 'none';
 
         }
 
@@ -1858,87 +1579,29 @@
 
     }
 
-
     /* =========================================================
-       RESET FILTERS
+       NEW FILTER
        ========================================================= */
 
-    function resetFilters() {
-
-      document
-        .getElementById(
-          'search'
-        )
-        .value = '';
-
-      document
-        .querySelectorAll(
-          '#statusDropdown input[type="checkbox"]'
-        )
-        .forEach(
-          checkbox =>
-            checkbox.checked = true
-        );
-
-      document
-        .querySelectorAll(
-          '#toolDropdown input[type="checkbox"]'
-        )
-        .forEach(
-          checkbox =>
-            checkbox.checked = true
-        );
-
-      document
-        .querySelectorAll(
-          '#columnDropdown input[type="checkbox"]'
-        )
-        .forEach(
-          (checkbox, index) => {
-
-            checkbox.checked =
-              true;
-
-            toggleColumn(
-              index,
-              true
-            );
-
-          }
-        );
+    function toggleNewOnlyFilter() {
 
       newOnlyFilter =
-        false;
+        !newOnlyFilter;
 
       document
-        .getElementById(
-          'newFilterBtn'
-        )
+        .getElementById('newFilterBtn')
         .textContent =
-          'Show New Only';
-
-      mitreVisible =
-        true;
-
-      document
-        .getElementById(
-          'toggleMitreBtn'
-        )
-        .textContent =
-          'Hide MITRE Columns';
+          newOnlyFilter
+            ? 'Showing New Only'
+            : 'Show New Only';
 
       filterTable();
 
     }
 
-
     /* =========================================================
-       MITRE TOGGLE
+       MITRE
        ========================================================= */
-
-    let mitreVisible =
-      true;
-
 
     function toggleMitreColumns() {
 
@@ -1948,7 +1611,7 @@
       mitreVisible =
         !mitreVisible;
 
-      const columnCheckboxes =
+      const checkboxes =
         document.querySelectorAll(
           '#columnDropdown input[type="checkbox"]'
         );
@@ -1961,24 +1624,16 @@
             mitreVisible
           );
 
-          if (
-            columnCheckboxes[index]
-          ) {
-
-            columnCheckboxes[
-              index
-            ].checked =
-              mitreVisible;
-
-          }
+          checkboxes[
+            index
+          ].checked =
+            mitreVisible;
 
         }
       );
 
       document
-        .getElementById(
-          'toggleMitreBtn'
-        )
+        .getElementById('toggleMitreBtn')
         .textContent =
           mitreVisible
             ? 'Hide MITRE Columns'
@@ -1986,104 +1641,201 @@
 
     }
 
-
     /* =========================================================
-       FILTER TABLE
+       RESET
        ========================================================= */
 
-    function filterTable() {
+    function resetFilters() {
 
-      const searchValue =
-        document
-          .getElementById(
-            'search'
-          )
-          .value
-          .trim()
-          .toLowerCase();
+      document
+        .getElementById('search')
+        .value = '';
 
-      const statusCheckboxes =
-        document.querySelectorAll(
+      document
+        .querySelectorAll(
           '#statusDropdown input[type="checkbox"]'
+        )
+        .forEach(
+          cb =>
+            cb.checked = true
         );
 
-      const checkedStatuses =
-        Array
-          .from(
-            statusCheckboxes
-          )
-          .filter(
-            checkbox =>
-              checkbox.checked
-          )
-          .map(
-            checkbox =>
-              checkbox.value
-          );
-
-      const allStatusesChecked =
-        checkedStatuses.length ===
-        statusCheckboxes.length;
-
-      const toolCheckboxes =
-        document.querySelectorAll(
+      document
+        .querySelectorAll(
           '#toolDropdown input[type="checkbox"]'
+        )
+        .forEach(
+          cb =>
+            cb.checked = true
         );
 
-      const checkedTools =
-        Array
-          .from(
-            toolCheckboxes
-          )
-          .filter(
-            checkbox =>
-              checkbox.checked
-          )
-          .map(
-            checkbox =>
-              checkbox.value
-          );
+      document
+        .querySelectorAll(
+          '#columnDropdown input[type="checkbox"]'
+        )
+        .forEach(
+          (cb, index) => {
 
-      const allToolsChecked =
-        checkedTools.length ===
-        toolCheckboxes.length;
+            cb.checked = true;
+
+            toggleColumn(
+              index,
+              true
+            );
+
+          }
+        );
+
+      newOnlyFilter =
+        false;
+
+      mitreVisible =
+        true;
+
+      document
+        .getElementById('newFilterBtn')
+        .textContent =
+          'Show New Only';
+
+      document
+        .getElementById('toggleMitreBtn')
+        .textContent =
+          'Hide MITRE Columns';
+
+      filterTable();
+
+    }
+
+    /* =========================================================
+       SEARCH MATCH HELPER
+       ========================================================= */
+
+    function rowMatchesSearch(
+      cells,
+      searchValue
+    ) {
+
+      if (
+        !searchValue
+      ) {
+
+        return true;
+
+      }
+
+      return Array
+        .from(cells)
+        .some(
+          cell =>
+            cell
+              .textContent
+              .toLowerCase()
+              .includes(searchValue)
+        );
+
+    }
+
+    /* =========================================================
+       NEW MATCH HELPER
+       ========================================================= */
+
+    function rowMatchesNewFilter(
+      cells
+    ) {
+
+      if (
+        !newOnlyFilter
+      ) {
+
+        return true;
+
+      }
+
+      return (
+        cells[1]
+          .innerHTML
+          .indexOf('new-badge') !== -1
+      );
+
+    }
+
+    /* =========================================================
+       UPDATE FACET COUNTS
+
+       Status counts:
+       search + tool + new
+       but IGNORE status selection.
+
+       Tool counts:
+       search + status + new
+       but IGNORE tool selection.
+       ========================================================= */
+
+    function updateDropdownCounts() {
 
       const rows =
         document.querySelectorAll(
           '#detectionsTable tbody tr'
         );
 
+      const searchValue =
+        document
+          .getElementById('search')
+          .value
+          .trim()
+          .toLowerCase();
+
+      const checkedStatuses =
+        Array
+          .from(
+            document.querySelectorAll(
+              '#statusDropdown input[type="checkbox"]'
+            )
+          )
+          .filter(
+            cb =>
+              cb.checked
+          )
+          .map(
+            cb =>
+              cb.value
+          );
+
+      const checkedTools =
+        Array
+          .from(
+            document.querySelectorAll(
+              '#toolDropdown input[type="checkbox"]'
+            )
+          )
+          .filter(
+            cb =>
+              cb.checked
+          )
+          .map(
+            cb =>
+              cb.value
+          );
+
+      const statusCounts =
+        {};
+
+      const toolCounts =
+        {};
+
       rows.forEach(
         row => {
 
           const cells =
-            row.querySelectorAll(
-              'td'
-            );
+            row.querySelectorAll('td');
 
-          /*
-            Column Layout
+          if (
+            cells.length < 9
+          ) {
 
-            0 Detection Name
-            1 Description
-            2 Default Status
-            3 Tool
-            4 Connector
-            5 MITRE Tactic
-            6 MITRE Tactic ID
-            7 MITRE Technique
-            8 MITRE Technique ID
-          */
+            return;
 
-          const name =
-            cells[0]
-              .textContent
-              .toLowerCase();
-
-          const description =
-            cells[1]
-              .textContent
-              .toLowerCase();
+          }
 
           const status =
             cells[2]
@@ -2095,99 +1847,315 @@
               .textContent
               .trim();
 
-          const connector =
-            cells[4]
-              .textContent
-              .trim()
-              .toLowerCase();
+          const matchesSearch =
+            rowMatchesSearch(
+              cells,
+              searchValue
+            );
 
-          const mitreTactic =
-            cells[5]
-              .textContent
-              .toLowerCase();
+          const matchesNew =
+            rowMatchesNewFilter(
+              cells
+            );
 
-          const mitreTacticID =
-            cells[6]
-              .textContent
-              .toLowerCase();
+          /*
+            STATUS COUNT
 
-          const mitreTechnique =
-            cells[7]
-              .textContent
-              .toLowerCase();
+            Ignore status selections,
+            but respect Tool filter.
+          */
 
-          const mitreTechniqueID =
-            cells[8]
+          const matchesToolForStatus =
+            checkedTools.includes(tool);
+
+          if (
+            matchesSearch &&
+            matchesNew &&
+            matchesToolForStatus
+          ) {
+
+            statusCounts[
+              status
+            ] =
+              (
+                statusCounts[
+                  status
+                ] || 0
+              ) + 1;
+
+          }
+
+          /*
+            TOOL COUNT
+
+            Ignore Tool selections,
+            but respect Status filter.
+          */
+
+          const matchesStatusForTool =
+            checkedStatuses.includes(
+              status
+            );
+
+          if (
+            matchesSearch &&
+            matchesNew &&
+            matchesStatusForTool
+          ) {
+
+            toolCounts[
+              tool
+            ] =
+              (
+                toolCounts[
+                  tool
+                ] || 0
+              ) + 1;
+
+          }
+
+        }
+      );
+
+      document
+        .querySelectorAll(
+          '[data-count-status]'
+        )
+        .forEach(
+          element => {
+
+            const status =
+              element.getAttribute(
+                'data-count-status'
+              );
+
+            element.textContent =
+              statusCounts[
+                status
+              ] || 0;
+
+          }
+        );
+
+      document
+        .querySelectorAll(
+          '[data-count-tool]'
+        )
+        .forEach(
+          element => {
+
+            const tool =
+              element.getAttribute(
+                'data-count-tool'
+              );
+
+            element.textContent =
+              toolCounts[
+                tool
+              ] || 0;
+
+          }
+        );
+
+    }
+
+    /* =========================================================
+       FILTER BUTTON STATES
+       ========================================================= */
+
+    function updateFilterButtonStates() {
+
+      const statusCheckboxes =
+        document.querySelectorAll(
+          '#statusDropdown input[type="checkbox"]'
+        );
+
+      const checkedStatuses =
+        Array
+          .from(statusCheckboxes)
+          .filter(
+            cb =>
+              cb.checked
+          );
+
+      const statusButton =
+        document.getElementById(
+          'statusFilterBtn'
+        );
+
+      if (
+        checkedStatuses.length ===
+        statusCheckboxes.length
+      ) {
+
+        statusButton.textContent =
+          'Default Status';
+
+        statusButton
+          .classList
+          .remove('filter-active');
+
+      } else {
+
+        statusButton.textContent =
+          `Default Status (${checkedStatuses.length}/${statusCheckboxes.length})`;
+
+        statusButton
+          .classList
+          .add('filter-active');
+
+      }
+
+      const toolCheckboxes =
+        document.querySelectorAll(
+          '#toolDropdown input[type="checkbox"]'
+        );
+
+      const checkedTools =
+        Array
+          .from(toolCheckboxes)
+          .filter(
+            cb =>
+              cb.checked
+          );
+
+      const toolButton =
+        document.getElementById(
+          'toolFilterBtn'
+        );
+
+      if (
+        checkedTools.length ===
+        toolCheckboxes.length
+      ) {
+
+        toolButton.textContent =
+          'Tool';
+
+        toolButton
+          .classList
+          .remove('filter-active');
+
+      } else {
+
+        toolButton.textContent =
+          `Tool (${checkedTools.length}/${toolCheckboxes.length})`;
+
+        toolButton
+          .classList
+          .add('filter-active');
+
+      }
+
+      const newButton =
+        document.getElementById(
+          'newFilterBtn'
+        );
+
+      newButton
+        .classList
+        .toggle(
+          'filter-active',
+          newOnlyFilter
+        );
+
+    }
+
+    /* =========================================================
+       FILTER TABLE
+       ========================================================= */
+
+    function filterTable() {
+
+      const searchValue =
+        document
+          .getElementById('search')
+          .value
+          .trim()
+          .toLowerCase();
+
+      const statusCheckboxes =
+        document.querySelectorAll(
+          '#statusDropdown input[type="checkbox"]'
+        );
+
+      const checkedStatuses =
+        Array
+          .from(statusCheckboxes)
+          .filter(
+            cb =>
+              cb.checked
+          )
+          .map(
+            cb =>
+              cb.value
+          );
+
+      const toolCheckboxes =
+        document.querySelectorAll(
+          '#toolDropdown input[type="checkbox"]'
+        );
+
+      const checkedTools =
+        Array
+          .from(toolCheckboxes)
+          .filter(
+            cb =>
+              cb.checked
+          )
+          .map(
+            cb =>
+              cb.value
+          );
+
+      const rows =
+        document.querySelectorAll(
+          '#detectionsTable tbody tr'
+        );
+
+      rows.forEach(
+        row => {
+
+          const cells =
+            row.querySelectorAll('td');
+
+          const status =
+            cells[2]
               .textContent
-              .toLowerCase();
+              .trim();
+
+          const tool =
+            cells[3]
+              .textContent
+              .trim();
 
           const matchesSearch =
-            name.includes(
-              searchValue
-            ) ||
-            description.includes(
-              searchValue
-            ) ||
-            status
-              .toLowerCase()
-              .includes(
-                searchValue
-              ) ||
-            tool
-              .toLowerCase()
-              .includes(
-                searchValue
-              ) ||
-            connector.includes(
-              searchValue
-            ) ||
-            mitreTactic.includes(
-              searchValue
-            ) ||
-            mitreTacticID.includes(
-              searchValue
-            ) ||
-            mitreTechnique.includes(
-              searchValue
-            ) ||
-            mitreTechniqueID.includes(
+            rowMatchesSearch(
+              cells,
               searchValue
             );
 
           const matchesStatus =
-            allStatusesChecked ||
             checkedStatuses.includes(
               status
             );
 
           const matchesTool =
-            allToolsChecked ||
             checkedTools.includes(
               tool
             );
 
-          let newOnlyPass =
-            true;
-
-          if (
-            newOnlyFilter
-          ) {
-
-            newOnlyPass =
-              cells[1]
-                .innerHTML
-                .indexOf(
-                  'new-badge'
-                ) !== -1;
-
-          }
+          const matchesNew =
+            rowMatchesNewFilter(
+              cells
+            );
 
           row.style.display =
             (
               matchesSearch &&
               matchesStatus &&
               matchesTool &&
-              newOnlyPass
+              matchesNew
             )
               ? ''
               : 'none';
@@ -2197,13 +2165,14 @@
 
       updateFilterButtonStates();
 
+      updateDropdownCounts();
+
       updateSummaryMetrics();
 
     }
 
-
     /* =========================================================
-       SUMMARY METRICS
+       SUMMARY
        ========================================================= */
 
     function updateSummaryMetrics() {
@@ -2233,17 +2202,7 @@
           }
 
           const cells =
-            row.querySelectorAll(
-              'td'
-            );
-
-          if (
-            cells.length < 9
-          ) {
-
-            return;
-
-          }
+            row.querySelectorAll('td');
 
           total++;
 
@@ -2278,9 +2237,7 @@
             tool
           ) {
 
-            tools.add(
-              tool
-            );
+            tools.add(tool);
 
           }
 
@@ -2288,35 +2245,26 @@
       );
 
       document
-        .getElementById(
-          'summaryTotal'
-        )
+        .getElementById('summaryTotal')
         .textContent =
           total;
 
       document
-        .getElementById(
-          'summaryActive'
-        )
+        .getElementById('summaryActive')
         .textContent =
           active;
 
       document
-        .getElementById(
-          'summaryTesting'
-        )
+        .getElementById('summaryTesting')
         .textContent =
           testingNew;
 
       document
-        .getElementById(
-          'summaryTools'
-        )
+        .getElementById('summaryTools')
         .textContent =
           tools.size;
 
     }
-
 
     /* =========================================================
        TOOL BADGES
@@ -2324,9 +2272,7 @@
 
     function getToolClass(tool) {
 
-      switch (
-        tool
-      ) {
+      switch (tool) {
 
         case 'Stellar Cyber':
           return 'stellar';
@@ -2347,7 +2293,6 @@
 
     }
 
-
     function getToolBadge(tool) {
 
       if (
@@ -2358,224 +2303,21 @@
 
       }
 
-      const toolClass =
-        getToolClass(
-          tool
-        );
-
       return `
-        <span
-          class="table-tool-badge ${toolClass}"
-        >
+        <span class="table-tool-badge ${getToolClass(tool)}">
           ${tool}
         </span>
       `;
 
     }
 
-
     /* =========================================================
-       CSV EXPORT
+       STATUS
        ========================================================= */
 
-    function exportTableToCSV() {
+    function getStatusColor(status) {
 
-      const table =
-        document.getElementById(
-          'detectionsTable'
-        );
-
-      const rows =
-        table.querySelectorAll(
-          'tr'
-        );
-
-      const csv =
-        [];
-
-      rows.forEach(
-        row => {
-
-          if (
-            row.style.display ===
-            'none'
-          ) {
-
-            return;
-
-          }
-
-          const rowData =
-            [];
-
-          row
-            .querySelectorAll(
-              'th, td'
-            )
-            .forEach(
-              cell => {
-
-                if (
-                  cell.style.display ===
-                  'none'
-                ) {
-
-                  return;
-
-                }
-
-                const text =
-                  cell
-                    .textContent
-                    .replace(
-                      /"/g,
-                      '""'
-                    )
-                    .trim();
-
-                rowData.push(
-                  `"${text}"`
-                );
-
-              }
-            );
-
-          if (
-            rowData.length > 0
-          ) {
-
-            csv.push(
-              rowData.join(',')
-            );
-
-          }
-
-        }
-      );
-
-      const csvContent =
-        csv.join('\n');
-
-      const blob =
-        new Blob(
-          [csvContent],
-          {
-            type:
-              'text/csv;charset=utf-8;'
-          }
-        );
-
-      const url =
-        URL.createObjectURL(
-          blob
-        );
-
-      const link =
-        document.createElement(
-          'a'
-        );
-
-      link.href =
-        url;
-
-      link.setAttribute(
-        'download',
-        'detections_board.csv'
-      );
-
-      document.body.appendChild(
-        link
-      );
-
-      link.click();
-
-      document.body.removeChild(
-        link
-      );
-
-      URL.revokeObjectURL(
-        url
-      );
-
-    }
-
-
-    /* =========================================================
-       DATE HELPERS
-       ========================================================= */
-
-    function parseDate(str) {
-
-      if (
-        !str
-      ) {
-
-        return null;
-
-      }
-
-      const parts =
-        str.split('-');
-
-      return new Date(
-        parts[2],
-        parts[0] - 1,
-        parts[1]
-      );
-
-    }
-
-
-    function isRecent(
-      dateStr
-    ) {
-
-      const dt =
-        parseDate(
-          dateStr
-        );
-
-      if (
-        !dt
-      ) {
-
-        return false;
-
-      }
-
-      const today =
-        new Date();
-
-      const diffMs =
-        today - dt;
-
-      const diffDays =
-        diffMs /
-        (
-          1000 *
-          60 *
-          60 *
-          24
-        );
-
-      return (
-        diffDays <= 30
-      );
-
-    }
-
-
-    /* =========================================================
-       STATUS BADGES
-       ========================================================= */
-
-    function getStatusColor(
-      status
-    ) {
-
-      switch (
-        status
-      ) {
+      switch (status) {
 
         case 'Active':
           return '#435f57';
@@ -2603,29 +2345,33 @@
 
     }
 
+    function getStatusTextColor(status) {
 
-    function getStatusDescription(
-      status
-    ) {
+      switch (status) {
 
-      switch (
-        status
-      ) {
+        case 'Testing':
+        case 'Muted':
+          return '#000000';
+
+        default:
+          return '#ffffff';
+
+      }
+
+    }
+
+    function getStatusDescription(status) {
+
+      switch (status) {
 
         case 'Active':
           return 'This detection is actively monitored and alerts are generated.';
-
-        case 'Active via Custom Rules':
-          return 'Enabled custom rules track noteworthy activity.';
 
         case 'Not Active':
           return 'This detection has low standalone value.';
 
         case 'Alert Preferences':
           return 'Toggling available under Alert Preferences.';
-
-        case 'New Detection':
-          return 'A newly introduced detection awaiting assessment.';
 
         case 'Testing':
           return 'Under SOC evaluation.';
@@ -2640,38 +2386,66 @@
 
     }
 
+    /* =========================================================
+       DATE
+       ========================================================= */
 
-    function getStatusTextColor(
-      status
-    ) {
+    function parseDate(str) {
 
-      switch (
-        status
+      if (
+        !str
       ) {
 
-        case 'Testing':
-        case 'Muted':
-          return '#000000';
-
-        default:
-          return '#ffffff';
+        return null;
 
       }
 
+      const parts =
+        str.split('-');
+
+      return new Date(
+        parts[2],
+        parts[0] - 1,
+        parts[1]
+      );
+
     }
 
+    function isRecent(dateStr) {
+
+      const dt =
+        parseDate(dateStr);
+
+      if (
+        !dt
+      ) {
+
+        return false;
+
+      }
+
+      const diffDays =
+        (
+          new Date() - dt
+        ) /
+        (
+          1000 *
+          60 *
+          60 *
+          24
+        );
+
+      return (
+        diffDays <= 30
+      );
+
+    }
 
     /* =========================================================
-       SORTING
+       SORT
        ========================================================= */
 
-    const sortDirections =
-      {};
-
-
-    function sortTable(
-      columnIndex
-    ) {
+    function sortTable(columnIndex) {
 
       const table =
         document.getElementById(
@@ -2679,15 +2453,11 @@
         );
 
       const tbody =
-        table.querySelector(
-          'tbody'
-        );
+        table.querySelector('tbody');
 
-      const rowsArray =
+      const rows =
         Array.from(
-          tbody.querySelectorAll(
-            'tr'
-          )
+          tbody.querySelectorAll('tr')
         );
 
       sortDirections[
@@ -2704,17 +2474,10 @@
           columnIndex
         ];
 
-      const visibleRows =
-        rowsArray.filter(
-          row =>
-            row.style.display !==
-            'none'
-        );
-
-      visibleRows.sort(
+      rows.sort(
         (a, b) => {
 
-          const cellA =
+          const aText =
             a.children[
               columnIndex
             ]
@@ -2722,7 +2485,7 @@
               .trim()
               .toLowerCase();
 
-          const cellB =
+          const bText =
             b.children[
               columnIndex
             ]
@@ -2730,72 +2493,134 @@
               .trim()
               .toLowerCase();
 
-          if (
-            cellA < cellB
-          ) {
-
-            return direction ===
-              'asc'
-                ? -1
-                : 1;
-
-          }
-
-          if (
-            cellA > cellB
-          ) {
-
-            return direction ===
-              'asc'
-                ? 1
-                : -1;
-
-          }
-
-          return 0;
+          return direction ===
+            'asc'
+              ? aText.localeCompare(
+                  bText
+                )
+              : bText.localeCompare(
+                  aText
+                );
 
         }
       );
 
-      visibleRows.forEach(
+      rows.forEach(
         row =>
-          tbody.appendChild(
-            row
-          )
+          tbody.appendChild(row)
       );
-
-      const allTh =
-        table.querySelectorAll(
-          'thead th'
-        );
-
-      allTh.forEach(
-        th => {
-
-          th.textContent =
-            th
-              .textContent
-              .replace(
-                /[▲▼]/g,
-                ''
-              )
-              .trim();
-
-        }
-      );
-
-      allTh[
-        columnIndex
-      ].textContent +=
-        direction === 'asc'
-          ? ' ▲'
-          : ' ▼';
 
     }
 
+    /* =========================================================
+       CSV
+       ========================================================= */
+
+    function exportTableToCSV() {
+
+      const table =
+        document.getElementById(
+          'detectionsTable'
+        );
+
+      const csv =
+        [];
+
+      table
+        .querySelectorAll('tr')
+        .forEach(
+          row => {
+
+            if (
+              row.style.display ===
+              'none'
+            ) {
+
+              return;
+
+            }
+
+            const rowData =
+              [];
+
+            row
+              .querySelectorAll(
+                'th, td'
+              )
+              .forEach(
+                cell => {
+
+                  if (
+                    cell.style.display ===
+                    'none'
+                  ) {
+
+                    return;
+
+                  }
+
+                  const text =
+                    cell
+                      .textContent
+                      .replace(
+                        /"/g,
+                        '""'
+                      )
+                      .trim();
+
+                  rowData.push(
+                    `"${text}"`
+                  );
+
+                }
+              );
+
+            csv.push(
+              rowData.join(',')
+            );
+
+          }
+        );
+
+      const blob =
+        new Blob(
+          [csv.join('\n')],
+          {
+            type:
+              'text/csv;charset=utf-8;'
+          }
+        );
+
+      const url =
+        URL.createObjectURL(
+          blob
+        );
+
+      const link =
+        document.createElement('a');
+
+      link.href =
+        url;
+
+      link.download =
+        'detections_board.csv';
+
+      document.body.appendChild(
+        link
+      );
+
+      link.click();
+
+      link.remove();
+
+      URL.revokeObjectURL(
+        url
+      );
+
+    }
 
     /* =========================================================
-       LOAD DATA
+       LOAD
        ========================================================= */
 
     function loadData() {
@@ -2831,8 +2656,8 @@
             data.forEach(
               det => {
 
-                let displayDesc =
-                  det.description;
+                let description =
+                  det.description || '';
 
                 if (
                   det.dateAdded &&
@@ -2841,26 +2666,11 @@
                   )
                 ) {
 
-                  displayDesc =
-                    '<span class="new-badge" title="This detection was added to this board within the last 30 days">New</span> ' +
-                    displayDesc;
+                  description =
+                    '<span class="new-badge">New</span> ' +
+                    description;
 
                 }
-
-                const statusColor =
-                  getStatusColor(
-                    det.defaultStatus
-                  );
-
-                const statusDescription =
-                  getStatusDescription(
-                    det.defaultStatus
-                  );
-
-                const toolBadge =
-                  getToolBadge(
-                    det.tool
-                  );
 
                 const row =
                   document.createElement(
@@ -2870,50 +2680,48 @@
                 row.innerHTML = `
 
                   <td>
-                    ${det.name}
+                    ${det.name || ''}
                   </td>
 
                   <td>
-                    ${displayDesc}
+                    ${description}
                   </td>
 
                   <td>
-
                     <span
                       class="status-badge"
                       style="
-                        background-color: ${statusColor};
+                        background-color: ${getStatusColor(det.defaultStatus)};
                         color: ${getStatusTextColor(det.defaultStatus)};
                       "
-                      title="${statusDescription}"
+                      title="${getStatusDescription(det.defaultStatus)}"
                     >
-                      ${det.defaultStatus}
+                      ${det.defaultStatus || ''}
                     </span>
-
                   </td>
 
                   <td>
-                    ${toolBadge}
+                    ${getToolBadge(det.tool)}
                   </td>
 
                   <td>
-                    ${det.connector}
+                    ${det.connector || ''}
                   </td>
 
                   <td>
-                    ${det.mitreTactic}
+                    ${det.mitreTactic || ''}
                   </td>
 
                   <td>
-                    ${det.mitreTacticID}
+                    ${det.mitreTacticID || ''}
                   </td>
 
                   <td>
-                    ${det.mitreTechnique}
+                    ${det.mitreTechnique || ''}
                   </td>
 
                   <td>
-                    ${det.mitreTechniqueID}
+                    ${det.mitreTechniqueID || ''}
                   </td>
 
                 `;
@@ -2925,9 +2733,7 @@
               }
             );
 
-            updateFilterButtonStates();
-
-            updateSummaryMetrics();
+            filterTable();
 
           }
         )
@@ -2941,7 +2747,6 @@
         );
 
     }
-
 
     window.onload =
       loadData;
