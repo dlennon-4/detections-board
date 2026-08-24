@@ -38,7 +38,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Azure AD",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "07-29-2025"
   },
   {
@@ -276,7 +276,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "",
-    "tool": "Stellar",
+    "tool": "Stellar Cyber",
     "dateAdded": "11-20-2025"
   },
   {
@@ -836,7 +836,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "",
-    "tool": "Stellar",
+    "tool": "Stellar Cyber",
     "dateAdded": "12-22-2025"
   },
   {
@@ -1606,7 +1606,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "07-29-2025"
   },
   {
@@ -2838,7 +2838,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -2852,7 +2852,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -2866,7 +2866,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -2880,7 +2880,7 @@
     "mitreTechnique": "Steal Application Access Token",
     "mitreTechniqueID": "T1528",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -2894,7 +2894,7 @@
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -2908,7 +2908,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -2922,7 +2922,7 @@
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -2936,7 +2936,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -2950,7 +2950,7 @@
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -2964,7 +2964,7 @@
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -2978,7 +2978,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -2992,7 +2992,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3006,7 +3006,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3020,7 +3020,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3034,7 +3034,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3048,7 +3048,7 @@
     "mitreTechnique": "Phishing",
     "mitreTechniqueID": "T1566",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3062,7 +3062,7 @@
     "mitreTechnique": "Modify Authentication Process",
     "mitreTechniqueID": "T1556",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3076,7 +3076,7 @@
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3090,7 +3090,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3104,7 +3104,7 @@
     "mitreTechnique": "Phishing",
     "mitreTechniqueID": "T1566",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3118,7 +3118,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3132,7 +3132,7 @@
     "mitreTechnique": "Steal Application Access Token",
     "mitreTechniqueID": "T1528",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3146,7 +3146,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3160,7 +3160,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3174,7 +3174,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3188,7 +3188,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3202,7 +3202,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3216,7 +3216,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3230,7 +3230,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3244,7 +3244,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3258,7 +3258,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3272,7 +3272,7 @@
     "mitreTechnique": "Phishing",
     "mitreTechniqueID": "T1566",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3286,7 +3286,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3300,7 +3300,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3314,7 +3314,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3328,7 +3328,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3342,7 +3342,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3356,7 +3356,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3370,7 +3370,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3384,7 +3384,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3398,7 +3398,7 @@
     "mitreTechnique": "Create Account",
     "mitreTechniqueID": "T1136",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3412,7 +3412,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3426,7 +3426,7 @@
     "mitreTechnique": "Data from Information Repositories",
     "mitreTechniqueID": "T1213",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3440,7 +3440,7 @@
     "mitreTechnique": "Permission Groups Discovery",
     "mitreTechniqueID": "T1069",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3454,7 +3454,7 @@
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3468,7 +3468,7 @@
     "mitreTechnique": "Permission Groups Discovery",
     "mitreTechniqueID": "T1069",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3482,7 +3482,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3496,7 +3496,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3510,7 +3510,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3524,7 +3524,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3538,7 +3538,7 @@
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3552,7 +3552,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3566,7 +3566,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3580,7 +3580,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -3594,7 +3594,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "Office 365 / Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -4140,7 +4140,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "",
-    "tool": "Stellar",
+    "tool": "Stellar Cyber",
     "dateAdded": "12-22-2025"
   },
   {
@@ -4280,7 +4280,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "FortiGate",
-    "tool": "Stellar",
+    "tool": "Stellar Cyber",
     "dateAdded": "11-20-2025"
   },
   {
@@ -4308,7 +4308,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "FortiGate",
-    "tool": "Stellar",
+    "tool": "Stellar Cyber",
     "dateAdded": "11-20-2025"
   },
   {
@@ -4364,7 +4364,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "FortiGate",
-    "tool": "Stellar",
+    "tool": "Stellar Cyber",
     "dateAdded": "12-08-2025"
   },
   {
@@ -5666,7 +5666,7 @@
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -5680,7 +5680,7 @@
     "mitreTechnique": "Impair Defenses",
     "mitreTechniqueID": "T1562",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -5694,7 +5694,7 @@
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -5708,7 +5708,7 @@
     "mitreTechnique": "Impair Defenses",
     "mitreTechniqueID": "T1562",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -5722,7 +5722,7 @@
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -5736,7 +5736,7 @@
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -5750,7 +5750,7 @@
     "mitreTechnique": "Email Collection",
     "mitreTechniqueID": "T1114",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -5764,7 +5764,7 @@
     "mitreTechnique": "Hide Artifacts",
     "mitreTechniqueID": "T1564",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -5778,7 +5778,7 @@
     "mitreTechnique": "Transfer Data to Cloud Account",
     "mitreTechniqueID": "T1537",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -5792,7 +5792,7 @@
     "mitreTechnique": "Transfer Data to Cloud Account",
     "mitreTechniqueID": "T1537",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -5806,7 +5806,7 @@
     "mitreTechnique": "Impair Defenses",
     "mitreTechniqueID": "T1562",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -5820,7 +5820,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -5834,7 +5834,7 @@
     "mitreTechnique": "Email Collection",
     "mitreTechniqueID": "T1114",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -5848,7 +5848,7 @@
     "mitreTechnique": "Impair Defenses",
     "mitreTechniqueID": "T1562",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -5862,7 +5862,7 @@
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -5876,7 +5876,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -6072,7 +6072,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -6086,7 +6086,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -6100,7 +6100,7 @@
     "mitreTechnique": "Use Alternate Authentication Material",
     "mitreTechniqueID": "T1550",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -6114,7 +6114,7 @@
     "mitreTechnique": "Steal Application Access Token",
     "mitreTechniqueID": "T1528",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -6128,7 +6128,7 @@
     "mitreTechnique": "Phishing",
     "mitreTechniqueID": "T1556",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "06-30-2026"
   },
   {
@@ -6142,7 +6142,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -6156,7 +6156,7 @@
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -6170,7 +6170,7 @@
     "mitreTechnique": "Brute Force",
     "mitreTechniqueID": "T1110",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -6198,7 +6198,7 @@
     "mitreTechnique": "Taint Shared Content",
     "mitreTechniqueID": "T1080",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -6212,7 +6212,7 @@
     "mitreTechnique": "Data from Cloud Storage",
     "mitreTechniqueID": "T1530",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -6226,7 +6226,7 @@
     "mitreTechnique": "Valid Accounts",
     "mitreTechniqueID": "T1078",
     "connector": "Office 365 / Entra ID",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -6254,7 +6254,7 @@
     "mitreTechnique": "Taint Shared Content",
     "mitreTechniqueID": "T1080",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -6268,7 +6268,7 @@
     "mitreTechnique": "Cloud Storage Object Discovery",
     "mitreTechniqueID": "T1619",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -6282,7 +6282,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -6296,7 +6296,7 @@
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -6310,7 +6310,7 @@
     "mitreTechnique": "Data from Information Repositories",
     "mitreTechniqueID": "T1213",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -6324,7 +6324,7 @@
     "mitreTechnique": "Domain or Tenant Policy Modification",
     "mitreTechniqueID": "T1484",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -6338,7 +6338,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -6352,7 +6352,7 @@
     "mitreTechnique": "Phishing",
     "mitreTechniqueID": "T1566",
     "connector": "Office 365",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "07-08-2026"
   },
   {
@@ -7206,7 +7206,7 @@
     "mitreTechnique": "Cloud Infrastructure Discovery",
     "mitreTechniqueID": "T1580",
     "connector": "OCI",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "09-05-2025"
   },
   {
@@ -7220,7 +7220,7 @@
     "mitreTechnique": "Permission Groups Discovery",
     "mitreTechniqueID": "T1069",
     "connector": "OCI",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "09-05-2025"
   },
   {
@@ -7234,7 +7234,7 @@
     "mitreTechnique": "Cloud Infrastructure Discovery",
     "mitreTechniqueID": "T1580",
     "connector": "OCI",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "09-05-2025"
   },
   {
@@ -7248,7 +7248,7 @@
     "mitreTechnique": "Permission Groups Discovery",
     "mitreTechniqueID": "T1069",
     "connector": "OCI",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "09-05-2025"
   },
   {
@@ -7262,7 +7262,7 @@
     "mitreTechnique": "Exploit Public-Facing Application",
     "mitreTechniqueID": "T1190",
     "connector": "OCI",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "09-05-2025"
   },
   {
@@ -7430,7 +7430,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "",
-    "tool": "Stellar",
+    "tool": "Stellar Cyber",
     "dateAdded": "12-22-2025"
   },
   {
@@ -8340,7 +8340,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "",
-    "tool": "CyFlare ITDR",
+    "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
   },
   {
@@ -9418,7 +9418,7 @@
     "mitreTechnique": "Impair Defenses",
     "mitreTechniqueID": "T1562",
     "connector": "OCI",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "09-05-2025"
   },
   {
@@ -9488,7 +9488,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "",
-    "tool": "Stellar",
+    "tool": "Stellar Cyber",
     "dateAdded": "12-22-2025"
   },
   {
@@ -9502,7 +9502,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "",
-    "tool": "Stellar",
+    "tool": "Stellar Cyber",
     "dateAdded": "11-20-2025"
   },
   {
@@ -9516,7 +9516,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "",
-    "tool": "Stellar",
+    "tool": "Stellar Cyber",
     "dateAdded": "11-20-2025"
   },
   {
@@ -9628,7 +9628,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "OCI",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "09-05-2025"
   },
   {
@@ -9656,7 +9656,7 @@
     "mitreTechnique": "",
     "mitreTechniqueID": "",
     "connector": "",
-    "tool": "Stellar",
+    "tool": "Stellar Cyber",
     "dateAdded": "12-22-2025"
   },
   {
@@ -9684,7 +9684,7 @@
     "mitreTechnique": "Cloud Infrastructure Discovery",
     "mitreTechniqueID": "T1580",
     "connector": "OCI",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "09-05-2025"
   },
   {
@@ -9698,7 +9698,7 @@
     "mitreTechnique": "Cloud Infrastructure Discovery",
     "mitreTechniqueID": "T1580",
     "connector": "OCI",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "09-05-2025"
   },
   {
@@ -9712,7 +9712,7 @@
     "mitreTechnique": "Indicator Removal",
     "mitreTechniqueID": "T1070",
     "connector": "OCI",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "09-05-2025"
   },
   {
@@ -9726,7 +9726,7 @@
     "mitreTechnique": "Account Access Remova",
     "mitreTechniqueID": "T1531",
     "connector": "OCI",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "09-05-2025"
   },
   {
@@ -9740,7 +9740,7 @@
     "mitreTechnique": "Account Manipulation",
     "mitreTechniqueID": "T1098",
     "connector": "OCI",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "09-05-2025"
   },
   {
@@ -9754,7 +9754,7 @@
     "mitreTechnique": "Exploit Public-Facing Application",
     "mitreTechniqueID": "T1190",
     "connector": "OCI",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "09-05-2025"
   },
   {
@@ -9768,7 +9768,7 @@
     "mitreTechnique": "Resource Hijacking",
     "mitreTechniqueID": "T1496",
     "connector": "OCI",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "09-05-2025"
   },
   {
@@ -9782,7 +9782,7 @@
     "mitreTechnique": "Transfer Data to Cloud Account",
     "mitreTechniqueID": "T1537",
     "connector": "OCI",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "09-05-2025"
   },
   {
@@ -9796,7 +9796,7 @@
     "mitreTechnique": "Data Destruction",
     "mitreTechniqueID": "T1485",
     "connector": "OCI",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "09-05-2025"
   },
   {
@@ -9810,7 +9810,7 @@
     "mitreTechnique": "Data Destruction",
     "mitreTechniqueID": "T1485",
     "connector": "OCI",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "09-05-2025"
   },
   {
@@ -9824,7 +9824,7 @@
     "mitreTechnique": "Impair Defenses",
     "mitreTechniqueID": "T1562",
     "connector": "OCI",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "09-05-2025"
   },
   {
@@ -9838,7 +9838,7 @@
     "mitreTechnique": "Active Scanning",
     "mitreTechniqueID": "T1595",
     "connector": "OCI",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "09-05-2025"
   },
   {
@@ -9852,7 +9852,7 @@
     "mitreTechnique": "Impair Defenses",
     "mitreTechniqueID": "T1562",
     "connector": "OCI",
-    "tool": "",
+    "tool": "Stellar Cyber",
     "dateAdded": "09-05-2025"
   },
   {
