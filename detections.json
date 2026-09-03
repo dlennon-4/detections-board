@@ -9660,6 +9660,20 @@
     "dateAdded": "12-22-2025"
   },
   {
+    "detectionID": "CY-0956",
+    "name": "Suspicious Mshta.exe Execution",
+    "description": "Detects suspicious execution of the Windows Microsoft HTML Application Host (mshta.exe) command-line references to commonly abused, user-writable directories. This behavior may indicate abuse of mshta.exe as a LOLBIN",
+    "defaultStatus": "Active",
+    "killChainStage": "Persistent Foothold",
+    "mitreTactic": "Execution",
+    "mitreTacticID": "TA0002",
+    "mitreTechnique": "Command and Scripting Interpreter",
+    "mitreTechniqueID": "T1059",
+    "connector": "N/A",
+    "tool": "Stellar Cyber",
+    "dateAdded": "09-03-2026"
+  },
+  {
     "detectionID": "CY-0740",
     "name": "Suspicious Notepad Activity on Domain Controller",
     "description": "Files located within ProgramData were accessed via Notepad on a Domain Controller, this could indicate potential Discovery efforts by a malicious actor.",

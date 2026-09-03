@@ -1,8 +1,9 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 0
+🆕 New Detections: 1
 ✏️ Updated Detections: 0
 🗑️ Deleted Detections: 0
-🟡 Awaiting Approval: 32
+🟡 Awaiting Approval: 31
 
 📋 Details:
+🆕 New: Suspicious Mshta.exe Execution (ID: CY-0956) Added on: 09-03-2026
