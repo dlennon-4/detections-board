@@ -1,8 +1,28 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 0
-✏️ Updated Detections: 0
+🆕 New Detections: 12
+✏️ Updated Detections: 8
 🗑️ Deleted Detections: 0
-🟡 Awaiting Approval: 31
+🟡 Awaiting Approval: 19
 
 📋 Details:
+🆕 New: Entra ID/O365 Multi-factor Authentication Disabled (ID: CY-0930) Added on: 10-03-2026
+🆕 New: M365 Sharing Policy Changed (ID: CY-0931) Added on: 10-03-2026
+🆕 New: Entra Privileged Account Assignment or Elevation (ID: CY-0932) Added on: 10-03-2026
+🆕 New: Unusual Account Creation (ID: CY-0933) Added on: 10-03-2026
+🆕 New: Changes to Privileged Role Assignment (ID: CY-0934) Added on: 10-03-2026
+🆕 New: Entra Changes to Device Registration Policy (ID: CY-0935) Added on: 10-03-2026
+🆕 New: M365 Multiple Files Restored (ID: CY-0936) Added on: 10-03-2026
+🆕 New: Password Policy Changed (ID: CY-0937) Added on: 10-03-2026
+🆕 New: Custom Domains Changed (ID: CY-0938) Added on: 10-03-2026
+🆕 New: Login Failure Anomalies (ID: CY-0939) Added on: 10-03-2026
+🆕 New: Entra Sign in from AzureHound (ID: CY-0940) Added on: 10-03-2026
+🆕 New: Suspicious OAuth Application Consent or Privileged Permission Grant (ID: CY-0942) Added on: 10-03-2026
+✏️ Updated: Entra ID Actor Token User Impersonation Abuse (ID: CY-0835)
+✏️ Updated: Entra ID MFA TOTP Brute Force Attempted (ID: CY-0840)
+✏️ Updated: M365 or Entra ID Identity Sign-in from a Suspicious Source (ID: CY-0847)
+✏️ Updated: Entra ID Federated Identity Credential Issuer Modified (ID: CY-0851)
+✏️ Updated: Entra ID/O365 Multi-factor Authentication Disabled (ID: CY-0855)
+✏️ Updated: M365 Identity User Brute Force Attempted (ID: CY-0887)
+✏️ Updated: M365 Identity User Account Lockouts (ID: CY-0889)
+✏️ Updated: M365 OneDrive/SharePoint Excessive File Downloads (ID: CY-0890)

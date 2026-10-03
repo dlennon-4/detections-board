@@ -1050,6 +1050,20 @@
     "dateAdded": "04-23-2025"
   },
   {
+    "detectionID": "CY-0934",
+    "name": "Changes to Privileged Role Assignment",
+    "description": "The Microsoft Entra Changes to Privileged Role Assignment rules are used to identify suspicious Microsoft Entra changes to privileged role assignment. Any one or more of these will trigger the Microsoft Entra Changes to Privileged Role Assignment alert type: Detects when a user is added to a privileged role. Detects when a PIM elevation is approved or denied. Outside of normal operations should be investigated. Detects when a user is removed from a privileged role. Bulk changes should be investigated.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Cyflare ITDR",
+    "dateAdded": "10-03-2026"
+  },
+  {
     "detectionID": "CY-0120",
     "name": "Cisco Umbrella Malicious Site Access",
     "description": "Cisco Umbrella detected a connection to a potentially malicious domain.",
@@ -1216,6 +1230,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0938",
+    "name": "Custom Domains Changed",
+    "description": "Microsoft Entra ID observed a custom domain being changed with the action \"Add verified domain\". This activity was related to the account .",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Cyflare ITDR",
+    "dateAdded": "10-03-2026"
   },
   {
     "detectionID": "CY-0214",
@@ -1762,6 +1790,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0935",
+    "name": "Entra Changes to Device Registration Policy",
+    "description": "Monitors and alert for changes to the device registration policy.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Cyflare ITDR",
+    "dateAdded": "10-03-2026"
   },
   {
     "detectionID": "CY-0563",
@@ -2831,7 +2873,7 @@
     "detectionID": "CY-0835",
     "name": "Entra ID Actor Token User Impersonation Abuse",
     "description": "Identifies potential abuse of actor tokens in Microsoft Entra ID audit logs. Actor tokens are undocumented backend mechanisms used by Microsoft for service-to-service (S2S) operations, allowing services to perform actions on behalf of users. These tokens appear in logs with the service's display name but the impersonated user's UPN. While some legitimate Microsoft operations use actor tokens, unexpected usage may indicate exploitation of CVE-2025-55241, which allowed unauthorized access to Azure AD Graph API across tenants before being patched by Microsoft.",
-    "defaultStatus": "Not Active",
+    "defaultStatus": "Active",
     "killChainStage": "",
     "mitreTactic": "Initial Access",
     "mitreTacticID": "TA0001",
@@ -2985,7 +3027,7 @@
     "detectionID": "CY-0851",
     "name": "Entra ID Federated Identity Credential Issuer Modified",
     "description": "Detects when the issuer URL of a federated identity credential is changed on an Entra ID application. Adversaries may modify the issuer to point to an attacker-controlled identity provider, enabling them to authenticate as the application's service principal and gain persistent access to Azure resources. This technique allows bypassing traditional authentication controls by federating trust with a malicious external identity provider.",
-    "defaultStatus": "Not Active",
+    "defaultStatus": "Active",
     "killChainStage": "",
     "mitreTactic": "Persistence",
     "mitreTacticID": "TA0003",
@@ -3052,24 +3094,10 @@
     "dateAdded": "08-19-2026"
   },
   {
-    "detectionID": "CY-0855",
-    "name": "Entra ID MFA Disabled for User",
-    "description": "Identifies when multi-factor authentication (MFA) is disabled for an Entra ID user account. An adversary may disable MFA for a user account in order to weaken the authentication requirements for the account.",
-    "defaultStatus": "Active",
-    "killChainStage": "",
-    "mitreTactic": "Persistence",
-    "mitreTacticID": "TA0003",
-    "mitreTechnique": "Modify Authentication Process",
-    "mitreTechniqueID": "T1556",
-    "connector": "Entra ID",
-    "tool": "Cyflare ITDR",
-    "dateAdded": "08-19-2026"
-  },
-  {
     "detectionID": "CY-0840",
     "name": "Entra ID MFA TOTP Brute Force Attempted",
     "description": "Identifies brute force attempts against Azure Entra multi-factor authentication (MFA) Time-based One-Time Password (TOTP) verification codes. This rule detects high frequency failed TOTP code attempts for a single user in a short time-span with a high number of distinct session IDs. Adversaries may programmatically attemopt to brute-force TOTP codes by generating several sessions and attempt to guess the correct code.",
-    "defaultStatus": "Not Active",
+    "defaultStatus": "Active",
     "killChainStage": "",
     "mitreTactic": "Credential Access",
     "mitreTacticID": "TA0006",
@@ -3582,6 +3610,62 @@
     "connector": "Entra ID",
     "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
+  },
+  {
+    "detectionID": "CY-0855",
+    "name": "Entra ID/O365 Multi-factor Authentication Disabled",
+    "description": "Identifies when multi-factor authentication (MFA) is disabled for an Entra ID user account. An adversary may disable MFA for a user account in order to weaken the authentication requirements for the account.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "Persistence",
+    "mitreTacticID": "TA0003",
+    "mitreTechnique": "Modify Authentication Process",
+    "mitreTechniqueID": "T1556",
+    "connector": "Entra ID",
+    "tool": "Cyflare ITDR",
+    "dateAdded": "08-19-2026"
+  },
+  {
+    "detectionID": "CY-0930",
+    "name": "Entra ID/O365 Multi-factor Authentication Disabled",
+    "description": "Multi-factor authentication was disabled for a user in your environment.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Cyflare ITDR",
+    "dateAdded": "10-03-2026"
+  },
+  {
+    "detectionID": "CY-0932",
+    "name": "Entra Privileged Account Assignment or Elevation",
+    "description": "Detects when a user has been elevated to manage all Azure Subscriptions. This change should be investigated immediately if it isn't planned. This setting could allow an attacker access to Azure subscriptions in your environment.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Cyflare ITDR",
+    "dateAdded": "10-03-2026"
+  },
+  {
+    "detectionID": "CY-0940",
+    "name": "Entra Sign in from AzureHound",
+    "description": "Detects AzureHound enumeration activity against Entra ID — matches any successful event where the user-agent contains the string \"azurehound,\" which is the default UA used by the AzureHound collector tool (the Azure/Entra equivalent of BloodHound's SharpHound). High-fidelity recon signal; near-zero legitimate use outside sanctioned pentests.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Cyflare ITDR",
+    "dateAdded": "10-03-2026"
   },
   {
     "detectionID": "CY-0929",
@@ -5586,6 +5670,20 @@
     "dateAdded": "12-22-2025"
   },
   {
+    "detectionID": "CY-0939",
+    "name": "Login Failure Anomalies",
+    "description": "ML Rule to detect spikes in login failures",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Cyflare ITDR",
+    "dateAdded": "10-03-2026"
+  },
+  {
     "detectionID": "CY-0319",
     "name": "Login Time Anomaly",
     "description": "A user logged in at an abnormal time. Check with the user.",
@@ -6149,7 +6247,7 @@
     "detectionID": "CY-0889",
     "name": "M365 Identity User Account Lockouts",
     "description": "Detects a burst of Microsoft 365 user account lockouts within a short 5-minute window. A high number of IdsLocked login errors across multiple user accounts may indicate brute-force attempts for the same users resulting in lockouts.",
-    "defaultStatus": "Not Active",
+    "defaultStatus": "Active",
     "killChainStage": "",
     "mitreTactic": "Credential Access",
     "mitreTacticID": "TA0006",
@@ -6163,7 +6261,7 @@
     "detectionID": "CY-0887",
     "name": "M365 Identity User Brute Force Attempted",
     "description": "Identifies brute-force authentication activity targeting Microsoft 365 user accounts using failed sign-in patterns that match password spraying, credential stuffing, or password guessing behavior. Adversaries may attempt brute-force authentication with credentials obtained from previous breaches, leaks, marketplaces or guessable passwords.",
-    "defaultStatus": "Not Active",
+    "defaultStatus": "Active",
     "killChainStage": "",
     "mitreTactic": "Credential Access",
     "mitreTacticID": "TA0006",
@@ -6172,6 +6270,20 @@
     "connector": "Office 365",
     "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
+  },
+  {
+    "detectionID": "CY-0936",
+    "name": "M365 Multiple Files Restored",
+    "description": "Office 365 observed that multiple files were restored in a short period.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Cyflare ITDR",
+    "dateAdded": "10-03-2026"
   },
   {
     "detectionID": "CY-0625",
@@ -6205,7 +6317,7 @@
     "detectionID": "CY-0890",
     "name": "M365 OneDrive/SharePoint Excessive File Downloads",
     "description": "Identifies when an excessive number of files are downloaded from OneDrive or SharePoint by an authorized user or application in a short period of time. This may indicate a potential data exfiltration event, especially if the downloads are performed using OAuth authentication which could suggest an OAuth phishing attack such as Device Code Authentication phishing.",
-    "defaultStatus": "Not Active",
+    "defaultStatus": "Active",
     "killChainStage": "",
     "mitreTactic": "Collection",
     "mitreTacticID": "TA0009",
@@ -6219,7 +6331,7 @@
     "detectionID": "CY-0847",
     "name": "M365 or Entra ID Identity Sign-in from a Suspicious Source",
     "description": "This rule correlate Entra-ID or Microsoft 365 mail successful sign-in events with network security alerts by source address. Adversaries may trigger some network security alerts such as reputation or other anomalies before accessing cloud resources.",
-    "defaultStatus": "Not Active",
+    "defaultStatus": "Active",
     "killChainStage": "",
     "mitreTactic": "Initial Access",
     "mitreTacticID": "TA0001",
@@ -6312,6 +6424,20 @@
     "connector": "Office 365",
     "tool": "Cyflare ITDR",
     "dateAdded": "08-19-2026"
+  },
+  {
+    "detectionID": "CY-0931",
+    "name": "M365 Sharing Policy Changed",
+    "description": "This rule detects changes to Microsoft 365 sharing policies across Exchange Online, SharePoint Online, and OneDrive. These policies control how users can share mailbox, calendar, site, and file resources with external users.",
+    "defaultStatus": "Not Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Cyflare ITDR",
+    "dateAdded": "10-03-2026"
   },
   {
     "detectionID": "CY-0915",
@@ -7628,6 +7754,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "01-01-2025"
+  },
+  {
+    "detectionID": "CY-0937",
+    "name": "Password Policy Changed",
+    "description": "This rule detects changes to password and account lockout policies within Microsoft 365 and Microsoft Entra ID environments.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Cyflare ITDR",
+    "dateAdded": "10-03-2026"
   },
   {
     "detectionID": "CY-0453",
@@ -9688,6 +9828,20 @@
     "dateAdded": "09-12-2025"
   },
   {
+    "detectionID": "CY-0942",
+    "name": "Suspicious OAuth Application Consent or Privileged Permission Grant",
+    "description": "Detects the addition, modification, or consent of an OAuth application in Microsoft 365 / Entra ID that requests high-risk API permissions associated with directory administration, mailbox access, or SharePoint/OneDrive data access.",
+    "defaultStatus": "Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Cyflare ITDR",
+    "dateAdded": "10-03-2026"
+  },
+  {
     "detectionID": "CY-0709",
     "name": "Suspicious OCI Bucket Enumeration",
     "description": "The Suspicious OCI Bucket Enumeration rules are used to identify suspicious bucket enumeration activity in OCI. Any one or more of these will trigger the Suspicious OCI Bucket Enumeration alert type.",
@@ -10302,6 +10456,20 @@
     "connector": "N/A",
     "tool": "Stellar Cyber",
     "dateAdded": "11-20-2025"
+  },
+  {
+    "detectionID": "CY-0933",
+    "name": "Unusual Account Creation",
+    "description": "The Microsoft Entra Unusual Account Creation rules are used to identify Microsoft Entra unusual account creation activity. Any one or more of these will trigger the Microsoft Entra Unusual Account Creation alert type.",
+    "defaultStatus": "Not Active",
+    "killChainStage": "",
+    "mitreTactic": "",
+    "mitreTacticID": "",
+    "mitreTechnique": "",
+    "mitreTechniqueID": "",
+    "connector": "",
+    "tool": "Cyflare ITDR",
+    "dateAdded": "10-03-2026"
   },
   {
     "detectionID": "CY-0657",
