@@ -1,35 +1,8 @@
 🛠 Detections Update Summary
 ----------------------------
-🆕 New Detections: 16
-✏️ Updated Detections: 10
-🗑️ Deleted Detections: 1
+🆕 New Detections: 0
+✏️ Updated Detections: 0
+🗑️ Deleted Detections: 0
 🟡 Awaiting Approval: 28
 
 📋 Details:
-🆕 New: curl.exe Downloading Executable Content into ProgramData Directory (ID: CY-0960) Added on: 11-10-2026
-🆕 New: Linux PHP Spawning Bash (Potential RCE Webshell) (ID: CY-0961) Added on: 11-10-2026
-🆕 New: NodeJS Abuse - Masquerading NodeJS (ID: CY-0963) Added on: 11-10-2026
-🆕 New: Renamed Cloudflare Daemon Executable Potentially Abused for Tunneling Activity (ID: CY-0965) Added on: 11-10-2026
-🆕 New: Suspicious Apache spawned process on Linux (ID: CY-0962) Added on: 11-10-2026
-🆕 New: ScreenConnect abuse for Rclone Data Exfiltration (ID: CY-0964) Added on: 11-10-2026
-🆕 New: macOS AMOS Stealer - Curl Exfiltration to C2 (ID: CY-0966) Added on: 11-10-2026
-🆕 New: WinWord Abuse for DLL SideLoading (ID: CY-0967) Added on: 11-10-2026
-🆕 New: curl.exe Downloading Executable Content into ProgramData Directory (ID: CY-0974) Added on: 11-10-2026
-🆕 New: ScreenConnect abuse for Rclone Data Exfiltration (ID: CY-0969) Added on: 11-10-2026
-🆕 New: macOS AMOS Stealer - Curl Exfiltration to C2 (ID: CY-0970) Added on: 11-10-2026
-🆕 New: WinWord Abuse for DLL SideLoading (ID: CY-0968) Added on: 11-10-2026
-🆕 New: Linux PHP Spawning Bash (Potential RCE Webshell) (ID: CY-0972) Added on: 11-10-2026
-🆕 New: NodeJS Abuse - Masquerading NodeJS (ID: CY-0973) Added on: 11-10-2026
-🆕 New: Renamed Cloudflare Daemon Executable Potentially Abused for Tunneling Activity (ID: CY-0971) Added on: 11-10-2026
-🆕 New: Suspicious Apache spawned process on Linux (ID: CY-0975) Added on: 11-10-2026
-✏️ Updated: Potential Web Shell Creation in LAYOUTS Directory (ID: CY-0724)
-✏️ Updated: Web Shell File Detected in LAYOUTS Directory (ID: CY-0725)
-✏️ Updated: Suspicious Process Spawned by SharePoint IIS Worker Process (ID: CY-0726)
-✏️ Updated: Base64 Decode and Execute Memory Dump Python Script (ID: CY-0727)
-✏️ Updated: AMSI Disabled via Registry Modification (ID: CY-0728)
-✏️ Updated: APDS XSS Redirection (ID: CY-0729)
-✏️ Updated: Bloodhound Tool Execution (ID: CY-0730)
-✏️ Updated: Browser Executing PuTTY and Launching Rundll32 (ID: CY-0732)
-✏️ Updated: Clear Windows RDP Event Log via Wevtutil Command Execution (ID: CY-0734)
-✏️ Updated: IP Console Routing Activity (ID: CY-0770)
-🗑️ Deleted: Potential TrustConnect RAT Installed (ID: CY-0834)
